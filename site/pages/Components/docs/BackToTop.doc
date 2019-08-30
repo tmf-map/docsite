@@ -1,0 +1,24 @@
+/**
+ * @title 代码演示
+ * @desc 在首页滚动页面，右下角即可显示该组件
+ */
+import BackToTop from 'earth-ui/lib/BackToTop'
+
+const BackToTopBasic = () => {
+  const config = {
+    icon: 'eject',
+    topDistance: 10,
+    timing: 'easeIn',
+    background: 'rgba(73, 73, 73, 1)',
+    hover: {background: 'rgba(43, 43, 43, 1)'},
+    position: {
+      bottom: '10%',
+      right: '40px'
+    }
+  }
+  return (
+    <BackToTop {...config} />
+  )
+}
+
+@component BackToTop

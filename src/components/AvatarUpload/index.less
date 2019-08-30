@@ -1,0 +1,89 @@
+@import '~variable';
+
+@default: 30px;
+@lg: 92px;
+@xl: 112px;
+@cover-bg: rgba(0, 0, 0, 0.6);
+
+.@{prefix-cls}-avatar-upload {
+  display: flex;
+  // todo: post-css
+  -webkit-user-select: none;
+  -moz-user-select:none;
+  -o-user-select:none;
+  -ms-user-select:none;
+}
+
+// 第一次上传头像
+.@{prefix-cls}-avatar-upload__first {
+  width: @default;
+  height: @default;
+  line-height: @default;
+  border: 1px solid @lite-darker;
+  background-color: @lite-darker;
+  color: @white;
+  text-align: center;
+  font-size: 13px;
+  img {
+    display: block;
+    border: 1px solid @lite-dark;
+    margin-bottom: 0;
+  }
+  &:hover {
+    cursor: pointer;
+    background-color: @cover-bg;
+  }
+}
+
+.@{prefix-cls}-avatar-upload__shallow-cover_square {
+  &:extend(.@{prefix-cls}-avatar-upload__first);
+}
+
+.@{prefix-cls}-avatar-upload__shallow-cover_circle {
+  border-radius: 50%;
+}
+
+.@{prefix-cls}-avatar-upload__shallow-cover_lg {
+  width: @lg;
+  height: @lg;
+  line-height: @lg;
+}
+
+.@{prefix-cls}-avatar-upload__shallow-cover_xl {
+  width: @xl;
+  height: @xl;
+  line-height: @xl;
+}
+
+// 更新已经上传的头像
+.@{prefix-cls}-avatar-upload__update {
+  position: relative;
+  .@{prefix-cls}-avatar-upload__cover {
+    display: none;
+  }
+  &:hover {
+    .@{prefix-cls}-avatar-upload__cover {
+      display: block;
+      position: absolute;
+      border-radius: 50%;
+      color: @white;
+      top: 0;
+      left: 50%;
+      cursor: pointer;
+      text-align: center;
+      background: @cover-bg;
+    }
+    .@{prefix-cls}-avatar-upload__cover_lg {
+      width: @lg;
+      height: @lg;
+      line-height: @lg;
+      margin-left: -(@lg)/2;
+    }
+    .@{prefix-cls}-avatar-upload__cover_xl {
+      width: @xl;
+      height: @xl;
+      line-height: @xl;
+      margin-left: -(@xl)/2;
+    }
+  }
+}

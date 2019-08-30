@@ -1,0 +1,32 @@
+@import '~variable';
+
+.@{prefix-cls}-select__option {
+  cursor: pointer;
+  padding: 0 10px;
+  line-height: 40px;
+  padding-right: 28px;
+  border-bottom: 1px solid @lite-lite;
+  &:last-child {
+    border-bottom: none;
+  }
+  &:hover {
+    background-color: #f5f5f5;
+  }
+}
+
+.@{prefix-cls}-select__option_selected {
+  position: relative;
+  color: @theme;
+}
+
+.@{prefix-cls}-select__option_active,
+.@{prefix-cls}-select__option_active:hover {
+  background-color: @medium-liter;
+}
+
+.@{prefix-cls}-select__option-icon_selected {
+  position: absolute;
+  right: 9px;
+  top: 50%;
+  margin-top: -6px;
+}

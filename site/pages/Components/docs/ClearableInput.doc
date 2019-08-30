@@ -1,0 +1,24 @@
+/**
+ * @title 基本功能
+ * @desc 改变默认值或初始值的时候出现清除按钮
+ */
+import ClearableInput from 'earth-ui/lib/ClearableInput'
+
+const ClearableInputBasic = () => {
+  return (
+    <ClearableInput defaultValue="默认值" />
+  )
+}
+
+/**
+ * @title 禁用
+ */
+import ClearableInput from 'earth-ui/lib/ClearableInput'
+
+const ClearableInputDisabled = () => {
+  return (
+    <ClearableInput defaultValue="默认值" disabled />
+  )
+}
+
+@component ClearableInput

@@ -1,0 +1,75 @@
+@import '~variable';
+@danger-color: @red;
+
+.@{prefix-cls}-form__item {
+  padding-top: 0;
+  padding-bottom: 22px;
+}
+
+.@{prefix-cls}-form__item-label {
+  height: 22px;
+  line-height: 22px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #222;
+  margin-bottom: 12px;
+}
+
+.@{prefix-cls}-form__item-content {
+  overflow: hidden;
+}
+
+.@{prefix-cls}-form__item-label_required {
+  &:after {
+    content: '* ';
+    color: @danger-color;
+    font-size: 14px;
+    font-weight: bold;
+    vertical-align: middle;
+    margin-left: 5px;
+  }
+}
+
+.@{prefix-cls}-form__item-tip {
+  font-size: 12px;
+  margin-top: 11px;
+  display: block;
+  color: #999;
+  > .@{prefix-cls}-icon {
+    margin-right: 3px;
+  }
+}
+
+.@{prefix-cls}-form__item_error {
+  .@{prefix-cls}-input,
+  .@{prefix-cls}-form__textarea {
+    border-color: @danger-color;
+  }
+  .@{prefix-cls}-select,
+  .@{prefix-cls}-multiple-select {
+    border-color: @danger-color;
+  }
+  .@{prefix-cls}-form__item-tip {
+    color: @danger-color;
+  }
+}
+
+.@{prefix-cls}-form_sm {
+  .@{prefix-cls}-form__item-label {
+    font-size: 12px;
+  }
+  .@{prefix-cls}-form__item {
+    padding-top: 0;
+    padding-bottom: 15px;
+  }
+}
+
+.@{prefix-cls}-form_lg {
+  .@{prefix-cls}-form__item-label {
+    font-size: 16px;
+  }
+  .@{prefix-cls}-form__item {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}

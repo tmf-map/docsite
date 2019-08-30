@@ -1,0 +1,37 @@
+@import '~variable';
+
+@default: 30px;
+@sm: 20px;
+@lg: 92px;
+@xl: 112px;
+@border-color: #d7d7d7;
+
+.@{prefix-cls}-avatar {
+  vertical-align: top;
+  width: @default;
+  height: @default;
+  border: 1px solid @border-color;
+}
+
+.@{prefix-cls}-avatar__img_square {
+  &:extend(.@{prefix-cls}-avatar);
+}
+
+.@{prefix-cls}-avatar__img_circle {
+  border-radius: 50%;
+}
+
+.@{prefix-cls}-avatar__img_sm {
+  width: @sm;
+  height: @sm;
+}
+
+.@{prefix-cls}-avatar__img_lg {
+  width: @lg;
+  height: @lg;
+}
+
+.@{prefix-cls}-avatar__img_xl {
+  width: @xl;
+  height: @xl;
+}

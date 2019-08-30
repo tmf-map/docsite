@@ -1,0 +1,24 @@
+[
+  {"category": "design",
+  "cn": "视觉",
+  "icon": "retweet",
+  "components": [{
+    "name": "layout",
+    "cn": "布局"
+  }, {
+    "name": "color",
+    "cn": "颜色"
+  }, {
+    "name": "font",
+    "cn": "字体"
+  }, {
+    "name": "icon",
+    "cn": "图标"
+  }]
+}, {
+    "category": "motion",
+    "cn": "动效",
+    "icon": "th-large",
+    "components": []
+  }
+]

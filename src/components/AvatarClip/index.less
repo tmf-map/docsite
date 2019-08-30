@@ -1,0 +1,115 @@
+@import '~variable';
+
+.@{prefix-cls}-avatar-clip__title {
+  margin-top: @unit-double;
+  margin-bottom: @unit;
+  font-size: 24px;
+  font-weight: @fontweight-bold;
+  color: #262626;
+  text-align: center;
+  line-height: 28px;
+}
+.@{prefix-cls}-avatar-clip__subtitle {
+  padding: 0 38px;
+  margin-top: 4px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #8590a6;
+  text-align: center;
+}
+
+.@{prefix-cls}-avatar-clip__content {
+  text-align: center;
+  .@{prefix-cls}-avatar-clip__edit {
+    width: 240px;
+    height: 240px;
+    margin: 24px 42px 50px;
+    canvas {
+      cursor: move;
+    }
+  }
+  .@{prefix-cls}-avatar-clip__zoom {
+    line-height: 16px;
+    svg {
+      vertical-align: text-bottom;
+      fill: #9fadc7;
+    }
+    .@{prefix-cls}-avatar-clip__range-input{
+      width: 220px;
+      height: 12px;
+      padding: 0;
+      margin: 0 10px;
+      vertical-align: middle;
+      background: transparent;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none
+    }
+    .@{prefix-cls}-avatar-clip__range-input:focus{
+      outline: none;
+    }
+    .@{prefix-cls}-avatar-clip__range-input::-webkit-slider-runnable-track{
+      height: 5px;
+      cursor: pointer;
+      background: #f2f5fb;
+      border-radius: 2px;
+    }
+    .@{prefix-cls}-avatar-clip__range-input::-webkit-slider-thumb{
+      width: 12px;
+      height: 12px;
+      margin-top: -4px;
+      cursor: pointer;
+      background: #d2dbe8;
+      border-radius: 50%;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+    .@{prefix-cls}-avatar-clip__range-input::-moz-range-track{
+      height: 5px;
+      cursor: pointer;
+      background: #f2f5fb;
+      border-radius: 2px;
+    }
+    .@{prefix-cls}-avatar-clip__range-input::-moz-range-thumb{
+      width: 12px;
+      height: 12px;
+      cursor: pointer;
+      background: #d2dbe8;
+      border: none;
+      border-radius: 50%;
+    }
+    .@{prefix-cls}-avatar-clip__range-input::-ms-track{
+      width: 100%;
+      height: 5px;
+      color: transparent;
+      cursor: pointer;
+      background: transparent;
+      border-color: transparent;
+    }
+    .@{prefix-cls}-avatar-clip__range-input::-ms-fill-lower,
+    .@{prefix-cls}-avatar-clip__range-input::-ms-fill-upper {
+      background: #f2f5fb;
+      border-radius: 2px;
+    }
+    .@{prefix-cls}-avatar-clip__range-input::-ms-thumb {
+      width: 12px;
+      height: 12px;
+      cursor: pointer;
+      background: #d2dbe8;
+      border: none;
+      border-radius: 50%;
+    }
+    .@{prefix-cls}-avatar-clip__range-input::-ms-tooltip {
+      display: none
+    }
+  }
+  .@{prefix-cls}-avatar-clip__footer {
+    margin-top: 40px;
+    margin-bottom: 10px;
+    button {
+      width: 220px;
+      height: 33px;
+      font-size: 14px;
+    }
+  }
+}

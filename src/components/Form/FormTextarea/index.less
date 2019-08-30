@@ -1,0 +1,18 @@
+@import '~variable';
+
+.@{prefix-cls}-form__textarea {
+  display: block;
+  width: 100%;
+  color: inherit;
+  border: 2px solid @lite;
+  padding: 10px;
+  background-color: @white;
+  resize: none;
+  font-size: 13px;
+  -webkit-appearance: none;
+  transition: border-color @transition-fast ease;
+  &:focus {
+    outline: none;
+    border-color: @medium-liter;
+  }
+}

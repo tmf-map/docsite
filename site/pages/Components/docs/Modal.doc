@@ -1,0 +1,88 @@
+/**
+ * @title 基本功能
+ */
+import { Modal, ModalHeader, ModalBody } from 'earth-ui/lib/Modal'
+import Button from 'earth-ui/lib/Button'
+
+class ModalBasic extends Component {
+  handleOpen = () => {
+    this.refs.modal.open()
+  }
+
+  render() {
+    return (
+      <div>
+        <Button onClick={this.handleOpen}>Open</Button>
+        <Modal ref="modal">
+          <ModalHeader title="标题" />
+          <ModalBody>
+            内容...
+          </ModalBody>
+        </Modal>
+      </div>
+    )
+  }
+}
+
+/**
+ * @title 锁定的
+ * @desc 点击半透明背景不会自动关闭
+ */
+import { Modal, ModalHeader, ModalBody } from 'earth-ui/lib/Modal'
+import Button from 'earth-ui/lib/Button'
+
+class ModalLock extends Component {
+  handleOpen = () => {
+    this.refs.modal.open()
+  }
+
+  render() {
+    return (
+      <div>
+        <Button onClick={this.handleOpen}>Open</Button>
+        <Modal ref="modal" lock>
+          <ModalHeader title="锁定的" />
+          <ModalBody>
+            点击半透明背景不会自动关闭
+          </ModalBody>
+        </Modal>
+      </div>
+    )
+  }
+}
+
+/**
+ * @title 嵌套的
+ */
+import { Modal, ModalHeader, ModalBody } from 'earth-ui/lib/Modal'
+import Button from 'earth-ui/lib/Button'
+
+class ModalNested extends Component {
+  handleOpen = () => {
+    this.refs.modal.open()
+  }
+
+  render() {
+    return (
+      <div>
+        <Button onClick={this.handleOpen}>Open</Button>
+        <Modal ref="modal">
+          <ModalHeader title="第一层模态框" />
+          <ModalBody>
+            <Button onClick={() => this.refs.modal2.open()}>
+              打开第二层模态框
+            </Button>
+            <Modal ref="modal2" size="lg">
+              <ModalHeader title="第二层模态框" />
+              <ModalBody>
+                第二层模态框内容...
+              </ModalBody>
+            </Modal>
+          </ModalBody>
+        </Modal>
+      </div>
+    )
+  }
+}
+
+@component Modal/Modal

@@ -1,0 +1,95 @@
+/**
+ * @title 点击更换头像进行裁剪
+ */
+import React, { Component } from 'react'
+import AvatarClip from 'earth-ui/lib/AvatarClip'
+import AvatarUpload from 'earth-ui/lib/AvatarUpload'
+import Upload from 'earth-ui/lib/Upload'
+import xhr from 'earth-ui/lib/xhr'
+
+class ProfileAvatar extends Component {
+  constructor (props) {
+    super(props)
+    this.state = {
+      cropperOpen: false,
+      img: null,
+      imgSrc: 'https://avatars0.githubusercontent.com/u/12554487'
+    }
+  }
+  onUpload = files => {
+    let reader = new FileReader()
+    let file = files[0]
+    if (!file) return
+
+    reader.onload = function (img) {
+      this.setState({
+        img: img.target.result,
+        cropperOpen: true
+      })
+    }.bind(this)
+
+    reader.readAsDataURL(file)
+  }
+  // 当对话框点击X按钮时候回调
+  onClose = () => {
+    this.setState({
+      cropperOpen: false
+    })
+  }
+  dataURLtoBlob (dataURL) {
+    const arr = dataURL.split(',')
+    const mime = arr[0].match(/:(.*?);/)[1]
+    const bstr = atob(arr[1])
+    let n = bstr.length
+    const u8arr = new Uint8Array(n)
+    while (n--) {
+      u8arr[n] = bstr.charCodeAt(n)
+    }
+    return new Blob([u8arr], {type: mime})
+  }
+  handleSave = dataURL => {
+    const blob = this.dataURLtoBlob(dataURL)
+
+    xhr.header = {
+      userId: window.runtime.userId
+    }
+
+    const fd = new FormData()
+    // API: https://developer.mozilla.org/zh-CN/docs/Web/API/FormData/append
+    fd.append('files', blob, 'image.jpg')
+
+    xhr({
+      type: 'post',
+      url: '/api/v1/updateUserAvatar',
+      data: fd,
+      success: data => {
+        this.props.onComplete(data)
+      },
+      error: msg => {
+        console.error('error!', msg)
+      }
+    })
+  }
+  render () {
+    return (
+      <div>
+        <Upload onUpload={this.onUpload}>
+          <AvatarUpload size="lg" text="更换头像" src="https://avatars0.githubusercontent.com/u/12554487"/>
+        </Upload>
+        {this.state.cropperOpen &&
+          <AvatarClip
+            open={this.state.cropperOpen}
+            onSave={this.handleSave}
+            onClose={this.onClose}
+            cropButtonName="保存"
+            image={this.state.img}
+            width={160}
+            height={160}
+          />
+        }
+      </div>
+    )
+  }
+}
+
+@component AvatarClip

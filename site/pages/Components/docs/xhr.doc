@@ -1,0 +1,20 @@
+/**
+ * @title 基本功能
+ * @desc 打开控制台查看 response
+ */
+import xhr from 'earth-ui/lib/xhr'
+import Button from 'earth-ui/lib/Button'
+
+const MessageSuccess = () => {
+  return (
+    <Button onClick={() => xhr({
+      type: 'DELETE',
+      url: '/user/test',
+      success(data) {
+        console.log(data)
+      }
+    })}>删除</Button>
+  )
+}
+
+@component xhr

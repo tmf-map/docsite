@@ -1,0 +1,29 @@
+// 适用于 Chrome 和 Safari
+.scrollbar-mixin() {
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar:horizontal {
+    height: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #b2b2b2;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: #878787;
+  }
+}
+.scrollbar-lite-mixin() {
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+  &::-webkit-scrollbar:horizontal {
+    height: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #cfcfcf;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: #878787;
+  }
+}

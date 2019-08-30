@@ -1,0 +1,53 @@
+@import '~variable';
+@success-color: @green;
+@danger-color: @red-lite;
+
+.@{prefix-cls}-message {
+  position: fixed;
+  z-index: 9999;
+  min-width: 200px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: 40%;
+  padding: 33px 88px;
+  text-align: center;
+  border: 1px solid transparent;
+  word-wrap: break-word;
+  font-size: 14px;
+  background-color: rgba(0, 0, 0, .75);
+  color: @white;
+  opacity: 0;
+  transform: translate(-50%, -25%);
+  transition: opacity .15s, transform .15s;
+}
+
+.@{prefix-cls}-message_open {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.@{prefix-cls}-message__symbol {
+  position: absolute;
+  left: 30px;
+  top: 50%;
+  font-size: 30px;
+  transform: translateY(-50%);
+}
+
+.@{prefix-cls}-message__remove {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.@{prefix-cls}-message_success {
+  .@{prefix-cls}-message__symbol {
+    color: @success-color;
+  }
+}
+
+.@{prefix-cls}-message_danger {
+  .@{prefix-cls}-message__symbol {
+    color: @danger-color;
+  }
+}

@@ -1,0 +1,108 @@
+@import '~variable';
+
+.@{prefix-cls}-button__btn {
+  color: @white;
+  padding: 0 20px;
+  height: 30px;
+  font-size: @fontsize-small;
+  background-color: @theme;
+  border: 1px solid @theme;
+  border-radius: @btn-border-radius;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+  &:hover {
+    border-color: @theme-dark;
+    background-color: @theme-dark;
+  }
+  &:active {
+    border-color: @theme-darker;
+    background-color: @theme-darker;
+  }
+  &:focus {
+    outline: none;
+  }
+  &[disabled] {
+    background-color: #eceff1;
+    border-color: #eaeaea;
+    color: #9e9e9e;
+    cursor: not-allowed;
+  }
+  .@{prefix-cls}-icon {
+    margin-right: 5px;
+  }
+  +.@{prefix-cls}-button__btn {
+    margin-left: 10px;
+  }
+}
+
+.@{prefix-cls}-button__btn_minor {
+  color: @theme;
+  background-color: @theme-liter;
+  border-color: @theme;
+  &:hover:enabled {
+    color: @white;
+  }
+}
+
+.@{prefix-cls}-button__btn_sm {
+  padding: 0 10px;
+  height: 22px;
+}
+
+.@{prefix-cls}-button__btn_lg {
+  padding: 0 33px;
+  height: 40px;
+  font-size: 14px;
+}
+
+.@{prefix-cls}-button__icon,
+.@{prefix-cls}-button__btn_circle {
+  padding: 0;
+  width: 30px;
+  text-align: center;
+  &.@{prefix-cls}-button__btn_sm {
+    width: 22px;
+  }
+  &.@{prefix-cls}-button__btn_lg {
+    width: 40px;
+  }
+}
+
+.@{prefix-cls}-button__icon {
+  .@{prefix-cls}-button__icon {
+    margin-right: 0;
+  }
+}
+
+.@{prefix-cls}-button__btn_circle {
+  border-radius: 50%;
+}
+
+.@{prefix-cls}-button__btn_transparent {
+  border: 0;
+  background-color: transparent;
+  color: inherit;
+  opacity: .7;
+  transition: opacity .1s ease;
+  &:hover:enabled {
+    color: inherit;
+    background-color: transparent;
+    opacity: .85;
+  }
+  &:active:enabled {
+    color: inherit;
+    background-color: transparent;
+    opacity: 1;
+  }
+}
+
+.@{prefix-cls}-button__btn_ghost {
+  border: 1px solid @theme;
+  background-color: transparent;
+  color: @theme;
+  &:hover:enabled {
+    color: @white;
+  }
+}

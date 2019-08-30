@@ -1,0 +1,57 @@
+@import 'mixin.less';
+@import 'variable.less';
+@import 'normalize.less';
+
+html {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  //.scrollbar-mixin();
+}
+
+body {
+  font-family: @fontfamily;
+  font-size: @fontsize;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/**
+ * customer style
+ */
+
+button {
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+input:-webkit-autofill {
+  border: 1px solid @white;
+  border-bottom-color: @medium-litest;
+  -webkit-text-fill-color: @medium-litest;
+  -webkit-box-shadow: 0 0 0px 50px @white inset;
+}
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: @theme-dark;
+}
+
+//html, body, body > div, div[data-reactroot], div[data-reactroot] > div {
+  //height: 100%;
+//}
+
+//html,body,h1,h2,h3,h4,h5,h6,div,dl,dt,dd,ul,ol,li,p,blockquote,pre,hr,figure,table,caption,th,td,form,fieldset,legend,input,button,textarea,menu{margin:0;padding:0;}
+
+//li{list-style:none;}

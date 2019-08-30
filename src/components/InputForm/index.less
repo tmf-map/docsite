@@ -1,0 +1,65 @@
+@import '~variable';
+
+@width: 460px;
+@height: @unit-sixfold;
+@input-height: @unit-double + 4;
+
+.@{prefix-cls}-input-form, .@{prefix-cls}-input-form_active, .@{prefix-cls}-input-form_nobutton {
+  position: relative;
+  width: @width;
+  height: @height;
+  line-height: @height;
+  font-size: @fontsize;
+  font-weight: @fontweight;
+  border-bottom: 1px solid @lite-lite;
+  vertical-align: middle;
+  .@{prefix-cls}-input-form__label {
+    color: @medium-dark;
+  }
+  .@{prefix-cls}-input-form__content {
+    position: absolute;
+    left: 92px;
+    color: @medium-litest;
+    border: none;
+    outline: none;
+    top: 50%;
+    margin-top: -@input-height / 2;
+    height: @input-height;
+    width: @width - 172;
+    line-height: @input-height;
+    font-size: @fontsize;
+    font-weight: @fontweight;
+  }
+  .@{prefix-cls}-input-form__btn, .@{prefix-cls}-input-form__btn-cancel {
+    display: none;
+  }
+  .@{prefix-cls}-input-form__btn_active {
+    float: right;
+    color: @theme;
+    cursor: pointer;
+    &:hover {
+      font-weight: @fontweight-bold;
+    }
+  }
+  .@{prefix-cls}-input-form__btn-cancel_active {
+    &:extend(.@{prefix-cls}-input-form .@{prefix-cls}-input-form__btn_active);
+    &:hover {
+      font-weight: @fontweight-bold;
+    }
+    color: @dark-lite;
+    margin-left: @unit;
+  }
+}
+
+.@{prefix-cls}-input-form_active {
+  border-bottom-color: @theme;
+}
+
+.@{prefix-cls}-input-form_nobutton:hover {
+  border-bottom-color: @theme;
+}
+
+::-webkit-input-placeholder { color: @lite; }
+::-moz-placeholder { color: @lite; } /* firefox 19+ */
+:-ms-input-placeholder { color: @lite; } /* ie */
+input:-moz-placeholder { color: @lite; }

@@ -1,0 +1,40 @@
+/**
+ * @title 基本功能
+ */
+
+import React, { Component } from 'react'
+import { Nav, SubNav, NavItemGroup, NavItem } from 'earth-ui/lib/Nav'
+import message from 'earth-ui/lib/message'
+
+class NavBasic extends Component {
+  handleClick = res => {
+    console.log(res)
+    message.success(res.title);
+  }
+  render () {
+    return (
+      <Nav selectedId="1" width={240} onItemClick={this.handleClick}>
+        <NavItem id="1" icon="envelope-o" title="NavItem 1" />
+        <SubNav icon="th" title="SubNav 1" defaultOpen>
+          <NavItem id="2" title="NavItem 2" />
+          <NavItem id="3" title="NavItem 3" />
+        </SubNav>
+        <SubNav icon="th" title="SubNav 2" defaultOpen>
+          <NavItemGroup title="NavItemGroup 1">
+            <NavItem id="4" title="NavItem 4" />
+            <NavItem id="5" title="NavItem 5" />
+          </NavItemGroup>
+          <NavItemGroup title="NavItemGroup 2">
+            <NavItem id="7" title="NavItem 7" />
+            <NavItem id="8" title="NavItem 8" />
+          </NavItemGroup>
+        </SubNav>
+      </Nav>
+    )
+  }
+}
+
+@component Nav/Nav
+@component Nav/SubNav
+@component Nav/NavItemGroup
+@component Nav/NavItem

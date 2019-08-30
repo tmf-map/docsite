@@ -1,0 +1,92 @@
+/**
+ * @title 基本功能
+ */
+import { Dropdown, DropdownToggle, DropdownMenu } from 'earth-ui/lib/Dropdown'
+import Button from 'earth-ui/lib/Button'
+
+const DropdownBasic = () => {
+  return (
+    <Dropdown>
+      <DropdownToggle>
+        <Button>Open</Button>
+      </DropdownToggle>
+      <DropdownMenu>
+        Nullam quis risus eget urna mollis
+        ornare vel eu leo. Cum sociis natoque
+        penatibus et magnis dis parturient montes
+      </DropdownMenu>
+    </Dropdown>
+  )
+}
+
+/**
+ * @title 自定义方向、对齐方式
+ */
+import { Dropdown, DropdownToggle, DropdownMenu } from 'earth-ui/lib/Dropdown'
+import Button from 'earth-ui/lib/Button'
+
+const DropdownRight = () => {
+  return (
+    <Dropdown>
+      <DropdownToggle>
+        <Button>Open</Button>
+      </DropdownToggle>
+      <DropdownMenu direction="up" align="right">
+        Nullam quis risus eget urna mollis
+        ornare vel eu leo. Cum sociis natoque
+        penatibus et magnis dis parturient montes
+      </DropdownMenu>
+    </Dropdown>
+  )
+}
+
+/**
+ * @title 嵌套的
+ */
+import { Dropdown, DropdownToggle, DropdownMenu } from 'earth-ui/lib/Dropdown'
+import Button from 'earth-ui/lib/Button'
+
+const DropdownNested = () => {
+  return (
+    <Dropdown>
+      <DropdownToggle>
+        <Button>Open</Button>
+      </DropdownToggle>
+      <DropdownMenu>
+        Nullam quis risus eget urna mollis
+        ornare vel eu leo. Cum sociis natoque
+        penatibus et magnis dis parturient montes
+        <Dropdown>
+          <DropdownToggle>
+            <a href="javascript:">more...</a>
+          </DropdownToggle>
+          <DropdownMenu direction="right">
+            Nullam quis risus eget urna mollis
+            ornare vel eu leo. Cum sociis natoque
+            penatibus et magnis dis parturient montes
+          </DropdownMenu>
+        </Dropdown>
+      </DropdownMenu>
+    </Dropdown>
+  )
+}
+
+/**
+ * @title 不可用的
+ */
+import { Dropdown, DropdownToggle, DropdownMenu } from 'earth-ui/lib/Dropdown'
+import Button from 'earth-ui/lib/Button'
+
+const DropdownDisabled = () => {
+  return (
+    <Dropdown disabled>
+      <DropdownToggle>
+        <Button>Open</Button>
+      </DropdownToggle>
+      <DropdownMenu></DropdownMenu>
+    </Dropdown>
+  )
+}
+
+@component Dropdown/Dropdown
+@component Dropdown/DropdownMenu

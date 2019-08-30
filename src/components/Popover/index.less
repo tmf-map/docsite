@@ -1,0 +1,131 @@
+@import '~variable';
+@padding: 7px;
+@arrowRelative: 20px + @padding;
+@keyframes-popover: ~"@{prefix-cls}-popover";
+
+.@{prefix-cls}-popover__trigger {
+  cursor: pointer;
+  user-select: none;
+}
+
+.@{prefix-cls}-popover__trigger_disabled,
+.@{prefix-cls}-popover__trigger_disabled * {
+  background-color: #eceff1!important;
+  border-color: #eaeaea!important;
+  cursor: not-allowed!important;
+  color: #999!important;
+  user-select: none;
+}
+
+.@{prefix-cls}-popover {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+  &:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+  }
+}
+
+.@{prefix-cls}-popover_animation {
+  animation: @keyframes-popover .15s;
+}
+
+@keyframes @keyframes-popover {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.@{prefix-cls}-popover_up {
+  padding-bottom: @padding;
+  margin-top: -@padding;
+   //popover arrow
+  &:after {
+    left: 50%;
+    bottom: 1px;
+    margin-left: -@padding;
+    border-left: @padding solid transparent;
+    border-right: @padding solid transparent;
+    border-top: @padding - 1px solid #fff;
+  }
+}
+
+.@{prefix-cls}-popover_down {
+  padding-top: @padding;
+  &:after {
+    left: 50%;
+    top: 1px;
+    margin-left: -@padding;
+    border-left: @padding solid transparent;
+    border-right: @padding solid transparent;
+    border-bottom: @padding - 1px solid #fff;
+  }
+}
+
+.@{prefix-cls}-popover_left {
+  padding-right: @padding;
+  &:after {
+    top: 50%;
+    right: 1px;
+    margin-top: -@padding;
+    border-top: @padding solid transparent;
+    border-bottom: @padding solid transparent;
+    border-left: @padding - 1px solid #fff;
+  }
+}
+
+.@{prefix-cls}-popover_right {
+  padding-left: @padding;
+  &:after {
+    top: 50%;
+    left: 1px;
+    margin-top: -@padding;
+    border-top: @padding solid transparent;
+    border-bottom: @padding solid transparent;
+    border-right: @padding - 1px solid #fff;
+  }
+}
+
+.@{prefix-cls}-popover_align-left {
+  &:after {
+    left: @arrowRelative;
+  }
+}
+
+.@{prefix-cls}-popover_align-right {
+  &:after {
+    left: auto;
+    right: @arrowRelative;
+  }
+}
+
+.@{prefix-cls}-popover_align-top {
+  &:after {
+    top: @arrowRelative;
+  }
+}
+
+.@{prefix-cls}-popover_align-bottom {
+  &:after {
+    top: auto;
+    bottom: @arrowRelative;
+  }
+}
+
+.@{prefix-cls}-popover__content {
+  padding: 10px 12px;
+  background: #fff;
+  word-wrap: break-word;
+  border: 1px solid #333;
+  max-width: 200px;
+  max-height: 330px;
+  overflow: auto;
+  font-size: 13px;
+}

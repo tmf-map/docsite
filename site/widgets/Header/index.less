@@ -1,0 +1,121 @@
+@import "~variable";
+
+@primary-color: @theme;
+@header-padding: 40px;
+
+.header {
+  position: relative;
+  background-color: @dark-darker;
+  padding: 15px @header-padding;
+  color: @white;
+  transition: all .2s;
+  z-index: @zindex-header;
+  a {
+    color: @white;
+    text-decoration: none;
+    &:hover {
+      color: @primary-color;
+      text-decoration: none;
+    }
+  }
+  .header__logo {
+    display: block;
+    font-size: 16px;
+    font-weight: @fontweight-medium;
+    line-height: 30px;
+    vertical-align: middle;
+    margin-right: 40px;
+    svg {
+      width: 30px;
+      height: 30px;
+      vertical-align: middle;
+      margin-right: 10px;
+      fill: @white;
+    }
+    img.header__logo-img {
+      position: relative;
+      top: 5px;
+      width: 23px;
+      margin-right: 10px;
+    }
+    img.header__logo-text {
+      position: relative;
+      top: 2px;
+      width: 58px;
+      margin-right: 10px;
+    }
+    sub {
+      margin-left: 3px;
+      bottom: 2px;
+      font-size: 12px;
+    }
+  }
+
+  .header__nav {
+    font-size: 14px;
+    margin-top: 2px;
+    @media (max-width: 670px) {
+      display: none;
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+      li {
+        display: inline-block;
+        a {
+          display: block;
+          padding: 0 22px;
+          line-height: 26px;
+          font-weight: @fontweight-medium;
+          transition: all .2s;
+          &:hover,
+          &.active {
+            font-weight: @fontweight-bold;
+            color: @primary-color;
+          }
+        }
+      }
+    }
+  }
+
+  .header__nav-toggle {
+    display: none;
+    margin-right: 10px;
+    font-size: 14px;
+    @media (max-width: 670px) {
+      display: inline-block;
+    }
+  }
+
+  .header__nav-toggle-popover {
+    left: initial;
+    right: 0;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      a {
+        display: block;
+        line-height: 30px;
+        padding: 0 14px;
+        transition: all .2s;
+        color: @primary-color;
+        &:hover,
+        &.active {
+          background-color: @primary-color;
+          color: @white;
+        }
+      }
+    }
+  }
+
+  .header__github {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 26px;
+    line-height: 30px;
+  }
+}

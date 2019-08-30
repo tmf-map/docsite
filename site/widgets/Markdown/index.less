@@ -1,0 +1,54 @@
+@import "../Pre/index.less";
+
+.markdown {
+  margin-bottom: 50px;
+  counter-reset: h2;
+  h2 {
+    counter-reset: h3;
+    &:before {
+      counter-increment: h2;
+      content: counter(h2)". ";
+    }
+  }
+  h3 {
+    &:before {
+      counter-increment: h3;
+      content: counter(h2) "."counter(h3)". ";
+    }
+  }
+  h1, h2 {
+    &:not(:first-child) {
+      margin-top: 50px;
+    }
+  }
+  pre {
+    background-color: #f7f7f7;
+  }
+  p, h1, h2, h3, h4, h5, li {
+    > code {
+      padding: 3px 5px;
+      background-color: #f5f5f5;
+      border-radius: 2px;
+    }
+  }
+  ul {
+    list-style-type: circle;
+  }
+  li {
+    line-height: 20px;
+    margin-bottom: 3px;
+  }
+  blockquote {
+    margin: 20px 0 10px 0;
+    padding: 8px 15px;
+    border-left: 5px solid #f9e33f;
+    background: #fff8c4;
+    border-radius: 2px;
+    p {
+      margin: 0;
+    }
+    ol, ul {
+      padding-left: 1em;
+    }
+  }
+}

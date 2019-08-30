@@ -1,0 +1,33 @@
+@import '~variable';
+
+.@{prefix-cls}-layout__row {
+  &:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+    font-size: 0;
+  }
+}
+
+.@{prefix-cls}-layout__row_gutter {
+  margin-left: -8px;
+  margin-right: -8px;
+  > .@{prefix-cls}-layout__col {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+.@{prefix-cls}-layout__row_fluid {
+  > .@{prefix-cls}-layout__col {
+    float: left;
+  }
+}
+
+.@{prefix-cls}-layout__row {
+  .@{prefix-cls}-layout__col_right {
+    float: right;
+  }
+}

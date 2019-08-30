@@ -1,0 +1,31 @@
+[{
+  "name": "Layout",
+  "cn": "布局"
+}, {
+  "name": "Icon",
+  "cn": "图标"
+}, {
+  "cn": "公共组件",
+  "name": "Basic",
+  "components": [{
+    "group": "Basic",
+    "cn": "基础组件",
+    "icon": "th-large",
+    "components": [{
+      "name": "Button",
+      "cn": "按钮"
+    }, {
+      "name": "Modal",
+      "cn": "模态框"
+    }, {
+      "name": "Dropdown",
+      "cn": "下拉菜单"
+    }, {
+      "name": "Nav",
+      "cn": "导航"
+    }, {
+      "name": "Spinner",
+      "cn": "加载中"
+    }]
+  }]
+}]

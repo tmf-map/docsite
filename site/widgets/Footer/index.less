@@ -1,0 +1,101 @@
+@import '~variable';
+
+@background-color: @theme-footer;
+
+.container {
+  position: relative;
+  width: 100%;
+  background-color: @background-color;
+  color: @white;
+  border-top: @theme-footer-bottom-top 1px solid;
+  .first-line, .second-line {
+    overflow: hidden;
+  }
+  h2 {
+    color: @theme-footer-text-top;
+    display: block;
+    font-size: @fontsize-medium;
+    font-weight: @fontweight-medium;
+    height: @unit-double;
+    line-height: @unit-double;
+    vertical-align: middle;
+    margin-bottom: 28px;
+  }
+  .left {
+    float: left;
+  }
+  .right {
+    float: right;
+  }
+  .intro, .pay, .help {
+    color: @theme-footer-text-middle;
+    font-size: @fontsize;
+    font-family: @fontfamily-footer-bottom;
+    font-weight: 600;
+    max-width: 342px;
+    margin-right: 70px;
+    cursor: default;
+    img {
+      width: 80px;
+      height: 80px;
+      display: inline-block;
+      vertical-align: middle;
+      -moz-background-size: 100% 100%;
+      background-size: 100% 100%;
+      margin-right: 10px;
+    }
+  }
+  .intro {
+    line-height: 25px;
+    color: rgba(255, 255, 255, 0.65);
+    font-weight: @fontweight-medium;
+  }
+  .help {
+    margin-right: 0;
+    div {
+      margin-bottom: 15px;
+      a {
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.9);
+        &:hover {
+          color: @theme;
+        }
+      }
+    }
+  }
+  .first-line {
+    padding: 60px 138px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  }
+  .second-line {
+    padding: 16px 138px;
+    font-size: @fontsize;
+    font-family: @fontfamily-footer-bottom;
+    font-weight: 600;
+    color: @theme-footer-text-bottom;
+    cursor: default;
+    line-height: 32px;
+    span {
+      line-height: 32px;
+    }
+    .left span {
+      display: inline-table;
+      margin-right: 50px;
+    }
+    .right span {
+      display: inline-table;
+      &:after {
+        content: '';
+        display: inline-block;
+        text-align: center;
+        width: @unit-half;
+      }
+      &:last-child {
+        &:after {
+          content: '';
+          width: 0;
+        }
+      }
+    }
+  }
+}

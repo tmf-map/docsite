@@ -1,0 +1,64 @@
+/**
+ * @title 成功信息
+ */
+import message from 'earth-ui/lib/message'
+import Button from 'earth-ui/lib/Button'
+
+const MessageSuccess = () => {
+  return (
+    <Button onClick={() => message.success('操作成功')}>成功</Button>
+  )
+}
+
+/**
+ * @title 失败信息
+ */
+import message from 'earth-ui/lib/message'
+import Button from 'earth-ui/lib/Button'
+
+const MessageDanger = () => {
+  return (
+    <Button onClick={() => message.danger('操作失败')}>失败</Button>
+  )
+}
+
+/**
+ * @title 自定义关闭时间，单位秒
+ */
+import message from 'earth-ui/lib/message'
+import Button from 'earth-ui/lib/Button'
+
+const MessageCustomDuration = () => {
+  return (
+    <Button onClick={() => message.danger('操作失败, 10秒后自动关闭', 10)}>10秒后关闭</Button>
+  )
+}
+
+/**
+ * @title 消息队列
+ */
+import message from 'earth-ui/lib/message'
+import Button from 'earth-ui/lib/Button'
+
+const MessageQueue = () => {
+  return (
+    <Button onClick={() => {
+      message.success('操作成功')
+      message.danger('操作失败')
+    }}>消息队列</Button>
+  )
+}
+
+/**
+ * @title 手动关闭
+ */
+import message from 'earth-ui/lib/message'
+import Button from 'earth-ui/lib/Button'
+
+const MessageManual = () => {
+  return (
+    <Button onClick={() => message.danger('操作失败, 手动关闭', 0)}>手动关闭</Button>
+  )
+}
+
+@component message

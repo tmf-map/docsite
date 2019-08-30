@@ -1,0 +1,30 @@
+@import '~variable';
+@mainColor: #333;
+
+.@{prefix-cls}-tooltip__popover {
+  white-space: pre-wrap;
+  > .@{prefix-cls}-popover__content {
+    background-color: @mainColor;
+    color: #fff;
+  }
+  &.@{prefix-cls}-popover_up {
+    &:after {
+      border-top-color: @mainColor;
+    }
+  }
+  &.@{prefix-cls}-popover_down {
+    &:after {
+      border-bottom-color: @mainColor;
+    }
+  }
+  &.@{prefix-cls}-popover_left {
+    &:after {
+      border-left-color: @mainColor;
+    }
+  }
+  &.@{prefix-cls}-popover_right {
+    &:after {
+      border-right-color: @mainColor;
+    }
+  }
+}

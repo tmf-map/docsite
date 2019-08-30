@@ -1,0 +1,56 @@
+@import '~variable';
+
+.demo {
+  //border-radius: 2px;
+  border: 1px solid #f0f0f0;
+  margin-top: 20px;
+  background-color: #fefefe;
+  &:first-child {
+    margin-top: 0;
+  }
+
+}
+
+@media (max-width: 991px) {
+  // todo do not rely on earthui classname
+  .@{prefix-cls}-layout__col:last-child > .demo:first-child {
+    margin-top: 20px;
+  }
+}
+
+.demo__title {
+  margin: 20px;
+  font-size: 14px;
+}
+
+.demo__content {
+  margin: 20px;
+}
+
+.demo__desc {
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+.demo__toggle {
+  border-top: 1px solid #ececec;
+  text-align: right;
+  .icon {
+    transition: transform .2s;
+  }
+}
+
+.demo__code {
+  display: none;
+  margin-top: -10px;
+}
+
+.demo__open {
+  .demo__toggle .icon {
+    transform: rotate(90deg);
+    transition: transform .2s;
+  }
+  .demo__code {
+    display: block;
+  }
+}

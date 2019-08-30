@@ -1,0 +1,31 @@
+/**
+ * @title 尺寸
+ */
+import Input from 'earth-ui/lib/Input'
+
+const InputSize = () => {
+  return (
+    <div>
+      <Input placeholder="小尺寸" size="sm" width={460} />
+      <br/><br/>
+      <Input placeholder="默认尺寸" width={460} />
+      <br/><br/>
+      <Input placeholder="大尺寸" size="lg" width={460} />
+    </div>
+  )
+}
+
+/**
+ * @title 不可用
+ */
+import Input from 'earth-ui/lib/Input'
+
+const InputDisabled = () => {
+  return (
+    <div>
+      <Input placeholder="不可用" width={460} disabled />
+    </div>
+  )
+}
+
+@component Input

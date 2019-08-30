@@ -1,0 +1,45 @@
+@import '~variable';
+
+@width: 100%;
+
+.@{prefix-cls}-input {
+  width: @width;
+  height: 40px;
+  padding-left: 10px;
+  padding-right: 10px;
+  outline: none;
+  font-size: @fontsize-small;
+  border: 2px solid @lite;
+  background-color: @white;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  transition: border-color @transition-fast ease;
+  &:focus {
+    border-color: @medium-liter;
+    // box-shadow: inset 0 1px 2px rgba(0, 0, 0, .3);
+  }
+  &[disabled] {
+    background-color: @lite-liter;
+    color: @medium-litest;
+    cursor: not-allowed;
+  }
+}
+
+.@{prefix-cls}-input_sm {
+  height: 36px;
+}
+
+.@{prefix-cls}-input_lg {
+  height: 48px;
+  font-size: @fontsize;
+}
+
+// remove IE clearfield
+.@{prefix-cls}-input::-ms-clear {
+  display: none;
+}
+
+//::-webkit-input-placeholder { color: @lite; }
+//::-moz-placeholder { color: @lite; } /* firefox 19+ */
+//:-ms-input-placeholder { color: @lite; } /* ie */
+//input:-moz-placeholder { color: @lite; }

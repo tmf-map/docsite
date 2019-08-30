@@ -1,0 +1,132 @@
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import cx from 'classnames'
+import xhr from '../xhr'
+import Spinner from '../Spinner'
+import './index.less'
+
+class Fetch extends Component {
+  constructor () {
+    super()
+    this.state = {
+      xhr: 'init',
+      msg: null
+    }
+  }
+
+  componentWillReceiveProps (nextProps) {
+    if (nextProps.url && nextProps.url !== (this.props.url || this.url)) {
+      this.fetch(nextProps.url)
+    }
+  }
+
+  componentWillMount () {
+    this.props.url && this.fetch(this.props.url)
+  }
+
+  componentWillUnmount () {
+    clearTimeout(this.timer)
+    this.handleSuccess = this.handleError = () => {}
+  }
+
+  fetch (url, callback) {
+    this.url = url
+    this.timer = this.lazyShowLoading()
+    setTimeout(() => {
+      xhr({
+        url,
+        complete: () => {
+          clearTimeout(this.timer)
+        },
+        success: res => {
+          this.setState({xhr: 'success'})
+          callback ? callback(res) : this.handleSuccess(res)
+        },
+        error: this.handleError
+      })
+    }, this.props.delay || 0)
+  }
+
+  lazyShowLoading () {
+    return setTimeout(() => {
+      this.setState({xhr: 'loading'})
+    }, 150)
+  }
+
+  handleSuccess (res) {
+    this.props.onSuccess && this.props.onSuccess(res)
+  }
+
+  handleError = msg => {
+    this.setState({xhr: 'error', msg})
+  }
+
+  /**
+   * @public
+   * @name reload
+   * @param  {function} [callback] 加载成功后的回调，可覆盖 Fetch onSuccess
+   * @description 强制 Fetch 重新加载
+   */
+  reload (callback) {
+    this.fetch(this.url, callback)
+  }
+
+  stateMap = {
+    init () {
+      return this.props.url ? null : this.props.children
+    },
+    success () {
+      return this.props.children
+    },
+    loading () {
+      return (
+        <div className={`${prefixCls}-fetch__mask`}>
+          <Spinner height={this.props.spinnerHeight} className={`${prefixCls}-fetch__state`} />
+        </div>
+      )
+    },
+    error () {
+      return (
+        <div className={`${prefixCls}-fetch__mask`}>
+          <div className={`${prefixCls}-fetch__state ${prefixCls}-fetch__state-error`}>{this.state.msg}</div>
+        </div>
+      )
+    }
+  }
+
+  render () {
+    const { className, url, onSuccess, defaultHeight, delay, spinnerHeight, ...other } = this.props
+    if (defaultHeight) {
+      other.style = Object.assign(other.style || {}, {
+        minHeight: defaultHeight + 'px'
+      })
+    }
+    return (
+      <div className={cx(`${prefixCls}-fetch`, className)} {...other}>
+        {this.stateMap[this.state.xhr].call(this)}
+      </div>
+    )
+  }
+}
+
+Fetch.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
+
+  // 数据源 URL，内部调用 xhr 模块
+  url: PropTypes.string,
+
+  // 成功后的回调，参数为返回的数据。error 时会直接显示在对应的容器内
+  onSuccess: PropTypes.func,
+
+  // 默认高度，单位像素
+  defaultHeight: PropTypes.number,
+
+  // 加载动画高度，默认 30px，可根据场景更改大小
+  spinnerHeight: PropTypes.number,
+
+  // 请求延迟，单位毫秒。测试使用
+  delay: PropTypes.number
+}
+
+export default Fetch

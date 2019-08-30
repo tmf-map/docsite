@@ -1,0 +1,30 @@
+{
+  "extends": [
+    "standard",
+    "standard-react"
+  ],
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "jest": true
+  },
+  "globals": {
+    __CLIENT__: true,
+    __SERVER__: true,
+    __DEVELOPMENT__: true,
+    __DEVTOOLS__: true,
+    runtime: true,
+    jsdom: true,
+    prefixCls: true
+  },
+  "parser": "babel-eslint",
+  "rules": {
+    "jsx-quotes": ["error", "prefer-double"],
+    "react/jsx-no-bind": 0,
+    //    "indent": ["error", 4],
+    //    "react/jsx-indent": ["error", 4],
+    //    "react/jsx-indent-props": ["error", 4]
+    //    "react/jsx-indent-props": 0
+  }
+}

@@ -1,0 +1,11 @@
+/**
+ * @title 基本功能
+ * @desc 全部继承自 Font Awesome Icon，大小通过 font-size 控制
+ */
+import Icon from 'earth-ui/lib/Icon'
+
+const IconBasic = () => {
+  return <Icon type="star" />
+}
+
+@component Icon
