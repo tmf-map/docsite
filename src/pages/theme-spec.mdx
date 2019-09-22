@@ -1,0 +1,358 @@
+---
+title: Theme Spec
+---
+
+import Note from '../components/note'
+
+# Theme Specification
+
+Theme UI is based on the [System UI Theme Specification][], with a few **optional** additions.
+The top-level naming convention used in the `theme` object come from this specification.
+Additionally, naming conventions for colors and typography are included
+to help ensure deeper interoperability with components from various other libraries.
+This is also intended to help ensure that themes created for Theme UI are suitable for white-label applications and general purpose theming.
+
+## Theme Scales
+
+The `theme` object is made up of the following scales (i.e. property-specific objects) for use in CSS styles.
+
+| Theme Key        | CSS Properties                                                                                                                                                                                     |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `colors`         | `color`, `background-color`, `border-color`                                                                                                                                                        |
+| `fonts`          | `font-family`                                                                                                                                                                                      |
+| `fontSizes`      | `font-size`                                                                                                                                                                                        |
+| `fontWeights`    | `font-weight`                                                                                                                                                                                      |
+| `lineHeights`    | `line-height`                                                                                                                                                                                      |
+| `space`          | `margin`, `margin-top`, `margin-right`, `margin-bottom`, `margin-left`, `padding`, `padding-top`, `padding-right`, `padding-bottom`, `padding-left`, `grid-gap`, `grid-column-gap`, `grid-row-gap` |
+| `letterSpacings` | `letter-spacing`                                                                                                                                                                                   |
+| `sizes`          | `width`, `height`, `min-width`, `max-width`, `min-height`, `max-height`                                                                                                                            |
+| `borders`        | `border`, `border-top`, `border-right`, `border-bottom`, `border-left`                                                                                                                             |
+| `borderWidths`   | `border-width`                                                                                                                                                                                     |
+| `borderStyles`   | `border-style`                                                                                                                                                                                     |
+| `radii`          | `border-radius`                                                                                                                                                                                    |
+| `shadows`        | `box-shadow`, `text-shadow`                                                                                                                                                                        |
+| `zIndices`       | `z-index`                                                                                                                                                                                          |
+
+<Note>
+
+A theme does not require that all these fields be present and can include additional values as needed.
+
+</Note>
+
+```js
+// example theme
+{
+  colors: {
+    text: '#000',
+    background: '#fff',
+    primary: '#07c',
+    secondary: '#05a',
+    accent: '#609',
+    muted: '#f6f6f6f',
+  },
+  fonts: {
+    body: 'system-ui, sans-serif',
+    heading: 'system-ui, sans-serif',
+    monospace: 'Menlo, monospace',
+  },
+  fontWeights: {
+    body: 400,
+    heading: 700,
+    bold: 700,
+  },
+  lineHeights: {
+    body: 1.5,
+    heading: 1.125,
+  },
+}
+```
+
+## Color
+
+The `theme.colors` scale (i.e. color palette) should be an object literal with the following keys.
+
+| Key          | Description                                                                                                     |
+| ------------ | --------------------------------------------------------------------------------------------------------------- |
+| `text`       | Body foreground color                                                                                           |
+| `background` | Body background color                                                                                           |
+| `primary`    | Primary brand color for links, buttons, etc.                                                                    |
+| `secondary`  | A secondary brand color for alternative styling                                                                 |
+| `accent`     | A contrast color for emphasizing UI                                                                             |
+| `muted`      | A faint color for backgrounds, borders, and accents that do not require high contrast with the background color |
+
+Other color keys can be added, including raw color values for aliasing the values above.
+
+<!--
+## Aliasing Colors
+TK
+-->
+
+## Color Modes
+
+To use Theme UI color modes, color scales should include _at least_ a `text` and `background` color.
+These values are used in the `ColorMode` component to set body foreground and background colors.
+Color modes should be defined as nested objects within a `theme.colors.modes` object.
+Each key in this object should correspond to a color mode name,
+where the name can be anything, but typically `light` and `dark` are used for applications with a dark mode.
+The `initialColorMode` key is required to enable color modes and will be used as the name for the root color palette.
+
+```js
+// example color scale with modes
+{
+  initialColorMode: 'light',
+  colors: {
+    text: '#000',
+    background: '#fff',
+    primary: '#07c',
+    secondary: '#05a',
+    muted: '#f6f6f6f',
+    modes: {
+      dark: {
+        text: '#fff',
+        background: '#000',
+        primary: '#0cf',
+        secondary: '#09c',
+        muted: '#111',
+      },
+      papaya: {
+        // this color mode will fallback to the root color object
+        // for values not defined here
+        text: '#433',
+        background: 'papayawhip',
+      },
+    },
+  },
+}
+```
+
+<Note>
+
+Any undefined color keys in the nested color modes objects will fallback to values in the base colors object.
+
+</Note>
+
+
+## Typography
+
+To ensure that themes built for Theme UI are as portable and interoperable as possible, the following keys should be defined within each theme scale.
+Additional keys can be included for more complex styling.
+
+- `fonts`
+  - `body`: default body font family
+  - `heading`: default heading font family
+  - `monospace`: default monospace font family for `<pre>`, `<code>`, etc.
+- `fontWeights`
+  - `body`: body font weight
+  - `heading`: default heading font weight
+  - `bold`: default bold font weight
+- `lineHeights`
+  - `body`: body line height
+  - `heading`: default heading line height
+
+## Font Sizes (Typographic Scale)
+
+Font sizes are typically defined as an array, from smallest to largest.
+
+```js
+// example fontSizes scale
+{
+  fontSizes: [
+    12, 14, 16, 20, 24, 32, 48, 64,
+  ],
+}
+```
+
+<Note>
+
+Arrays are _not_ required, and plain objects will work as well.
+
+</Note>
+
+
+For illustration purposes, the index values of the array can be thought of as loosely mapping to heading levels,
+but these values are *not* in any way tied to HTML elements.
+
+| Index | Heading-Level Equivalent |
+| ----- | ------------------------ |
+| 0     | `h6`                     |
+| 1     | `h5`                     |
+| 2     | `h4`                     |
+| 3     | `h3`                     |
+| 4     | `h2`                     |
+| 5     | `h1`                     |
+
+## Variants
+
+Use variants to define custom groups of styles.
+These are commonly used for typographic styles, buttons, and themeable layout components.
+
+```js
+// example typographic style variants
+{
+  colors: {
+    white: #FFFFFF,
+    primary: #663399,
+    text: #393939,
+    secondary: #DAA520,
+  },
+  fonts: {
+    body: 'system-ui, sans-serif',
+    heading: 'system-ui, sans-serif',
+    monospace: 'Menlo, monospace',
+  },
+  fontWeights: {
+    body: 400,
+    heading: 700,
+    bold: 700,
+  },
+  lineHeights: {
+    body: 1.5,
+    heading: 1.125,
+  },
+  // variants can use custom, user-defined names
+  text: {
+    heading: {
+      fontFamily: 'heading',
+      lineHeight: 'heading',
+      fontWeight: 'heading',
+    },
+    caps: {
+      textTransform: 'uppercase',
+      letterSpacing: '0.1em',
+    },
+  },
+  // variants for buttons
+  buttons: {
+    primary: {
+      // you can reference other values defined in the theme
+      color: 'white',
+      bg: 'primary',
+    },
+    secondary: {
+      color: 'text',
+      bg: 'secondary',
+    },
+  }
+}
+```
+
+User-defined variants can then be referenced in the `sx` prop or in `theme.styles`.
+
+```js
+// example using variants
+<h1
+  sx={{
+    variant: 'text.heading',
+  }}>
+  Hello
+</h1>
+<button
+  sx={{
+    variant: 'buttons.primary',
+  }}>
+  Beep
+</button>
+```
+
+## Styles
+
+The Theme UI `styles` object is primarily used as a way to style MDX content
+and helps avoid the need to use global CSS.
+The styles defined within this object can also be used with the [`Styled`](/styled) component.
+
+The `theme.styles` object may include the following keys, which map to elements that can be rendered by markdown:
+
+- `p` (paragraph)
+- `a` (anchor link)
+- `h1` (heading)
+- `h2`
+- `h3`
+- `h4`
+- `h5`
+- `h6`
+- `img`
+- `pre`
+- `code`
+- `ol` (ordered list)
+- `ul` (unordered list)
+- `li` (list item)
+- `blockquote`
+- `hr` (horizontal rule)
+- `em` (emphasis)
+- `table`
+- `tr` (table row)
+- `th` (table header)
+- `td` (table data)
+- `strong`
+- `delete`
+- `b` (bold)
+- `i` (italic)
+- `inlineCode` (MDX-specific key for `<code>` that is not a child of `<pre>`
+- `thematicBreak` (MDX-specific key for `<hr>`)
+- `div` (not rendered in MDX)
+- `root` (theme-ui-specific)
+
+<Note>
+
+Not all HTML elements are available with the dot notation syntax.
+For example `button` is not rendered by markdown,
+and not included.
+See [variants](#variants) for an alternative way to style elements.
+
+</Note>
+
+Objects within `theme.styles` can reference other values in the `theme` object.
+For example, headings can be defined with values from the typographic scales.
+
+```js
+// example heading styles
+{
+  styles: {
+    h1: {
+      fontFamily: 'heading',
+      fontWeight: 'heading',
+      lineHeight: 'heading',
+      fontSize: 5,
+    },
+  },
+}
+```
+
+Variants can also be used within the `theme.styles` object.
+
+```js
+// example heading using text styles variant
+{
+  // ...base theme object
+  text: {
+    heading: {
+      fontFamily: 'heading',
+      fontWeight: 'heading',
+      lineHeight: 'heading',
+    }
+  },
+  styles: {
+    h1: {
+      variant: 'text.heading',
+      fontSize: 5,
+    }
+  }
+}
+```
+
+## Breakpoints
+
+To configure the default breakpoints used in responsive array values, add a `breakpoints` array to your theme.
+Each breakpoint should be a string with a CSS length unit included.
+These values will be used to generate mobile-first (i.e. `min-width`) media queries, which can then be used to apply [responsive styles](/getting-started/#responsive-styles).
+
+```js
+// example custom breakpoints
+{
+  breakpoints: [
+    '40em', '56em', '64em',
+  ],
+}
+```
+
+[system ui theme specification]: https://system-ui.com/theme
