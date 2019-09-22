@@ -1,0 +1,152 @@
+---
+title: API
+---
+
+# API
+
+## `theme-ui`
+
+The core `theme-ui` package exports the following modules.
+
+### `css`
+
+The `css` utility comes from the [`@styled-system/css`][styled-system/css] package and is intended for use with the Emotion `css` prop.
+It will attempt to use values from the `theme` object for many common CSS properties, and will fall back to raw values when there is no corresponding theme value.
+
+To see a list of supported CSS properties, see the [Styled System CSS docs](https://styled-system.com/css/#theme-keys).
+
+```js
+css(styleObject)(theme)
+```
+
+**Usage:**
+
+```jsx
+<div css={css(styles)} />
+```
+
+| Argument      | Type   | Description                                                                                          |
+| ------------- | ------ | ---------------------------------------------------------------------------------------------------- |
+| `styleObject` | Object | a theme-aware style object with support for responsive array values and Styled System prop shortcuts |
+| `theme`       | Object | the Emotion theming context object                                                                   |
+
+### `jsx`
+
+The `jsx` export is a React create element function intended for use with a custom pragma comment.
+It adds support for the `sx` prop, which uses Emotion's create element function internally and parses style objects with the Theme UI `css` utility.
+
+**Usage:**
+
+```jsx
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+
+export default props => (
+  <div
+    {...props}
+    sx={{
+      color: 'primary',
+    }}
+  />
+)
+```
+
+### `ThemeProvider`
+
+The `ThemeProvider` component is a wrapper around Emotion's `ThemeProvider` and MDX's `MDXProvider`.
+It provides default styled components to MDX content that pick up values from `theme.styles`.
+It also handles color mode state.
+
+| Prop         | Type   | Description                    |
+| ------------ | ------ | ------------------------------ |
+| `theme`      | Object | Theming context object         |
+| `components` | Object | Optional custom MDX components |
+| `children`   | Node   | React children                 |
+
+### `useThemeUI`
+
+The `useThemeUI` hook returns the full Theme UI context object, which includes `theme`, `components`, and color mode.
+
+```js
+const context = useThemeUI()
+```
+
+### `ColorMode`
+
+The `ColorMode` component applies foreground and background color to the `<body>` element, based on the color modes defined in a theme.
+It is also used in `gatsby-plugin-theme-ui` for helping reduce flashes of style changes on page load.
+
+**Usage**
+
+```jsx
+<ThemeProvider theme={theme}>
+  <ColorMode />
+  {props.children}
+</ThemeProvider>
+```
+
+### `useColorMode`
+
+The `useColorMode` hook returns an array with two values: the current color mode state and an updater function.
+The color mode state can be any string and should match the name of a color mode defined in `theme.colors.modes` or be a name for the default color mode.
+
+```js
+const [colorMode, setColorMode] = useColorMode()
+```
+
+### `Styled`
+
+The [`Styled`](/styled) export is an object of Emotion styled components that map to keys in the `theme.styles` object.
+Each component will pick up styles from its corresponding theme object.
+These are primarily meant to be used as a mechanism to use styles defined in a `theme` object outside of MDX.
+
+```jsx
+// picks up styles from `theme.styles.h1`
+<Styled.h1 />
+```
+
+| Prop | Type                | Description                             |
+| ---- | ------------------- | --------------------------------------- |
+| `as` | String or Component | Changes the underlying rendered element |
+
+### `BaseStyles`
+
+The `BaseStyles` component can be used to style child content that isn't generated from MDX. Note that this will increase the CSS specificity of child elements, and you may run into issues with the cascade (i.e. specificity) when using this component.
+
+```jsx
+<BaseStyles>
+  <h1>Styled based on <code>theme.styles</code></h1>
+</BaseStyles>
+```
+
+<!-- under consideration for deprecation
+### `Box`
+### `Flex`
+
+The `Flex` component is an extension of the `Box` component with `display: 'flex'` applied.
+-->
+
+### `Layout`
+
+The `Layout` component is the root-level page layout component, with flexbox styles applied.
+
+See the [layout components docs](/layout) for more info.
+
+### `Header`
+
+The `Header` component is intended for use as a page header.
+
+### `Main`
+
+The `Main` component is intended for use as a wrapper around the main page area.
+It includes flexbox styles to wrap the `Container` component and optional sidebar elements.
+
+### `Container`
+
+The `Container` component includes a max-width and `marginX: 'auto'` for horizontal centering.
+
+### `Footer`
+
+The `Footer` component is intended for use as a page footer.
+
+[styled-system/css]: https://styled-system.com/css

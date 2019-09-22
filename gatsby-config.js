@@ -25,5 +25,12 @@ module.exports = {
         basePath: '/recipes',
       },
     },
+    {
+      resolve: 'gatsby-plugin-i18n',
+      options: {
+        langKeyDefault: 'zh-cn',
+        useLangKeyLayout: false,
+      },
+    },
   ],
 }
