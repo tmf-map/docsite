@@ -1,0 +1,298 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>组件测试 · Test Site</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="组件测试本身就是单元测试，但是其又包括快照测试（Snapshot Test）这种特有的测试。"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="组件测试 · Test Site"/><meta property="og:type" content="website"/><meta property="og:url" content="http://thinkbucket.github.io/docsite/"/><meta property="og:description" content="组件测试本身就是单元测试，但是其又包括快照测试（Snapshot Test）这种特有的测试。"/><meta property="og:image" content="http://thinkbucket.github.io/docsite/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="http://thinkbucket.github.io/docsite/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/docsite/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/docsite/js/code-blocks-buttons.js"></script><script src="/docsite/js/scrollSpy.js"></script><link rel="stylesheet" href="/docsite/css/main.css"/><script src="/docsite/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/docsite/en"><img class="logo" src="/docsite/img/favicon.ico" alt="Test Site"/><h2 class="headerTitleWithLogo">Test Site</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docsite/docs/en/doc4" target="_self">JavaScript</a></li><li class=""><a href="/docsite/docs/en/doc4" target="_self">Web</a></li><li class=""><a href="/docsite/docs/en/doc4" target="_self">CSS</a></li><li class="siteNavGroupActive"><a href="/docsite/docs/en/react/1.react-basic/jsx" target="_self">React</a></li><li class=""><a href="/docsite/docs/en/doc4" target="_self">设计模式</a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/docsite/img/language.svg" alt="Languages icon"/>English</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/docsite/docs/zh-CN/react/5.test/component-test">中文</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>测试</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">React 基础<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/1.react-basic/jsx">JSX</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/1.react-basic/lifecycle">生命周期</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/1.react-basic/state">状态</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/1.react-basic/communication">通信</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/1.react-basic/category">种类</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/1.react-basic/abstraction">抽象</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/1.react-basic/event">事件</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/1.react-basic/style">样式</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">组件开发<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/2.components-development/ui-component">UI组件</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/2.components-development/redux-component">Redux 组件</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/2.components-development/container-component">contianer 组件</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/2.components-development/presentational-component">presentational 组件</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/2.components-development/pure-render">PureRender</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/2.components-development/purify-component">组件提纯</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/2.components-development/render-props">Render Props</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/2.components-development/hoc">HOC</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/2.components-development/hooks">Hooks</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/2.components-development/context">Context</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/2.components-development/portal">Portal</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/2.components-development/performance">性能分析</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">状态管理<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/3.state-management/redux">Redux</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/3.state-management/store">Store</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/3.state-management/reducer">Reducer</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/3.state-management/action">Action</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/3.state-management/selector">Selector</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/3.state-management/middleware">Middleware</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/3.state-management/model">Model</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">路由管理<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/4.router-management/router">Router</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/4.router-management/route">Route</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/4.router-management/link">Link</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">测试<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/5.test/test-category">测试种类</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/5.test/unit-test">单元测试</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docsite/docs/en/react/5.test/component-test">组件测试</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/5.test/state-test">状态测试</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">安全规约<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/security-guide">安全规约</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">附录<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/appendix1-references">附录A 参考资料</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/appendix2-related-websites">附录B 常用网站</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">组件测试</h1></header><article><div><span><p>组件测试本身就是单元测试，但是其又包括快照测试（Snapshot Test）这种特有的测试。</p>
+<h2><a class="anchor" aria-hidden="true" id="组件测试基础概念"></a><a href="#组件测试基础概念" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>组件测试基础概念</h2>
+<h3><a class="anchor" aria-hidden="true" id="快照测试"></a><a href="#快照测试" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>快照测试</h3>
+<p>一般的快照测试是测试你的渲染组件的图片，并将其与组件的以前的图片进行比较。Jest 的快照测试也是其特有的功能，它不是拍摄渲染组件的图片，而是渲染组件 <strong>标记</strong> 的快照。 这使得 Jest 快照测试比传统快照测试快得多。</p>
+<blockquote>
+<p>如何生成快照？</p>
+</blockquote>
+<p>Jest 首次运行快照测试，会让 UI 框架生产一个可读的快照，再次测试时便会通过比对快照文件和新 UI 框架产生的快照判断测试是否通过。对于 React ，我们可以通过下面的方法生产一个快照：</p>
+<pre><code class="hljs css language-jsx"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> Link <span class="hljs-keyword">from</span> <span class="hljs-string">'../Link.react'</span>;
+<span class="hljs-keyword">import</span> renderer <span class="hljs-keyword">from</span> <span class="hljs-string">'react-test-renderer'</span>;
+
+it(<span class="hljs-string">'should renders correctly'</span>, () =&gt; {
+    <span class="hljs-keyword">const</span> tree = renderer.create(
+        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Link</span> <span class="hljs-attr">page</span>=<span class="hljs-string">"http://www.facebook.com"</span>&gt;</span>Facebook<span class="hljs-tag">&lt;/<span class="hljs-name">Link</span>&gt;</span></span>
+    ).toJSON();
+    expect(tree).toMatchSnapshot();
+});
+</code></pre>
+<blockquote>
+<p>快照长什么样？</p>
+</blockquote>
+<p>运行快照测试的时候将会自动生成一份以 <code>.snap</code> 结尾的文件，一般在该组件所在文件夹下的 <code>snapshots</code> 文件夹。</p>
+<pre><code class="hljs css language-javascript">exports[<span class="hljs-string">`should renders correctly 1`</span>] = <span class="hljs-string">`
+&lt;a
+    className="normal"
+    href="http://www.facebook.com"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+&gt;
+    Facebook
+&lt;/a&gt;
+`</span>;
+</code></pre>
+<p>如果测试用例中调用两次快照方法 <code>.toMatchSnapshot()</code> 那么会生成两个快照：</p>
+<pre><code class="hljs css language-javascript">exports[<span class="hljs-string">`should renders correctly 1`</span>] = <span class="hljs-string">`
+&lt;a
+    className="normal"
+    href="http://www.facebook.com"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+&gt;
+    Facebook
+&lt;/a&gt;
+`</span>;
+
+exports[<span class="hljs-string">`should renders correctly 2`</span>] = <span class="hljs-string">`
+&lt;a
+    className="normal"
+    href="http://www.facebook.com"
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+&gt;
+    Facebook
+&lt;/a&gt;
+`</span>;
+</code></pre>
+<p>这个可读的快照文件以可读的形式展示了 React 渲染出的 DOM 结构。相比于肉眼观察效果的 UI 测试，快照测试直接由Jest进行比对、速度更快；而且由于直接展示了 DOM 结构，也能让我们在检查快照的时候，快速、准确地发现问题。</p>
+<blockquote>
+<p>如何更新快照？</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/ThinkBucket/oss/master/image-1.png" alt="how to update snapshot test"></p>
+<p>详细参考：<a href="https://jestjs.io/docs/zh-Hans/snapshot-testing">https://jestjs.io/docs/zh-Hans/snapshot-testing</a></p>
+<h3><a class="anchor" aria-hidden="true" id="浅渲染"></a><a href="#浅渲染" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>浅渲染</h3>
+<p>浅渲染（shallow rendering）意思就是只渲染组件中的第一层，这样测试执行器就不需要关心 DOM 和执行环境了。</p>
+<p>在实际开发中，组件的层级非常深，所以测试顶层组件时，如果需要把所有子组件全部渲染出来，成本变得非常高。因为 React 组件良好的封装性，测试组件时，大部分测试只需要关注组件本身，它的子组件测试应该在子组件的测试代码里做。这样测试执行得更快。</p>
+<p>但浅渲染的优点也对于着其缺点：只能测试一级节点，如果需要测试子组件，那就只能做全渲染。</p>
+<p>例如有如下组件：</p>
+<pre><code class="hljs css language-jsx"><span class="hljs-keyword">const</span> ButtonWithIcon = <span class="hljs-function">(<span class="hljs-params">{icon, children}</span>) =&gt;</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">{icon}</span> /&gt;</span>{children}<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+);
+</span></code></pre>
+<p>React 渲染后：</p>
+<pre><code class="hljs css language-html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"icon icon_coffee"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span>
+    Hello Jest!
+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+</code></pre>
+<p>但是如果经过 shallow rendering 将会是这样:</p>
+<pre><code class="hljs css language-html"><span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">"coffee"</span> /&gt;</span>
+    Hello Jest!
+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+</code></pre>
+<p>注意 Icon 组件并没有被渲染。</p>
+<h3><a class="anchor" aria-hidden="true" id="全渲染"></a><a href="#全渲染" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>全渲染</h3>
+<p>全渲染（full rendering）就是完整渲染出当前组件及其所有子组件，就像在真实浏览器渲染那样，当组件内部直接改变了 DOM 时，就需要使用全渲染来测试。全渲染需要真实地模拟 DOM 环境，流行的做法有以下几种：</p>
+<ul>
+<li><strong>使用 JSDOM</strong>：使用 JS 模拟 DOM 环境，能满足90%的使用场景。这是 Jest 内部所使用的全渲染框架。</li>
+<li><strong>使用 Cheerio</strong>：类似 JSDOM，更轻的实现，类似 jQuery 的语法。这是 Enzyme 内部使用的全渲染框架。</li>
+<li><strong>使用 Karma</strong>：在真实的浏览器中执行测试，也支持在多个浏览器中依次执行测试，使用的是真实DOM 环境，但速度稍慢。</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="组件测试框架"></a><a href="#组件测试框架" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>组件测试框架</h2>
+<h3><a class="anchor" aria-hidden="true" id="jest-组件测试"></a><a href="#jest-组件测试" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Jest 组件测试</h3>
+<p>Jest 在组件测试方面特点有：</p>
+<ul>
+<li><strong>特有的快照测试功能：</strong>通过比对 UI 代码生成的快照文件，确保组件呈现正确的样式。</li>
+<li><strong>JSDOM</strong>：不需要真实 DOM 环境执行，而是 JSDOM 模拟的 DOM。</li>
+</ul>
+<p>以上的例子如果用 Jest 来写，如下：</p>
+<pre><code class="hljs css language-jsx"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> renderer <span class="hljs-keyword">from</span> <span class="hljs-string">'react-test-renderer'</span>;
+<span class="hljs-keyword">import</span> ButtonWithIcon <span class="hljs-keyword">from</span> <span class="hljs-string">'./ButtonWithIcon'</span>;
+
+it(<span class="hljs-string">'should render ButtonWithIcon correctly'</span>, () =&gt; {
+  <span class="hljs-keyword">const</span> component = renderer.create(ButtonWithIcon({<span class="hljs-string">'coffee'</span>, <span class="hljs-string">'Hello Jest!'</span>}));
+  expect(result.type).toBe(<span class="hljs-string">'button'</span>);
+  expect(result.props.children).toEqual([
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Icon</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">"coffee"</span> /&gt;</span>,
+    'Hello Jest!'
+  ])
+})
+</span></code></pre>
+<h3><a class="anchor" aria-hidden="true" id="enzyme-组件测试"></a><a href="#enzyme-组件测试" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Enzyme 组件测试</h3>
+<p><a href="http://airbnb.io/enzyme/">Enzyme</a> 是由 Airbnb 开源的 React 组件测试框架，与 Jest 的组件测试相比，Enzyme 提供类似 jQuery 操作 DOM 的语法，在做测试断言时更灵活、易用。</p>
+<p>Enzyme 提供 3 种不同的方式来测试组件：</p>
+<ul>
+<li><a href="http://airbnb.io/enzyme/docs/api/shallow.html"><strong>shallow</strong></a>：推荐的方式，浅渲染，只会渲染本地组件内容（只渲染不包含 children 的组件），引用的外部组件不会渲染，提供更好的隔离性。</li>
+<li><a href="http://airbnb.io/enzyme/docs/api/render.html"><strong>render</strong></a>：如果 shallow 不能满足，才会使用它，能够渲染所有的子组件。基于 Cheerio 来模拟 DOM 环境（Cheerio 是类似 JSDOM 的另一框架）。</li>
+<li><a href="http://airbnb.io/enzyme/docs/api/mount.html"><strong>mount</strong></a>：类似 render，会做全渲染，对测试生命周期非常有用，能够访问到组件的生命周期方法，比如 <code>componentDidUpdate</code> 等。一般用于集成测试。</li>
+</ul>
+<p><a href="http://airbnb.io/enzyme/docs/api/selector.html">Enzyme Selector</a></p>
+<blockquote>
+<p><strong>推荐</strong>：一般组件的快照测试使用 shallow 方法即可。</p>
+</blockquote>
+<blockquote>
+<p><strong>推荐</strong>：如果要测试子组件，并且对组件的生命周期等方法不怎么关注，使用 render 方法。</p>
+</blockquote>
+<blockquote>
+<p><strong>推荐</strong>：如果要测试组件生命周期方法、子组件，使用 mount 方法。</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="编写组件测试"></a><a href="#编写组件测试" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>编写组件测试</h2>
+<h3><a class="anchor" aria-hidden="true" id="测试-rendering"></a><a href="#测试-rendering" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>测试 rendering</h3>
+<p>对于大部分非交互组件使用 <code>toMatchSnapshot()</code> 即可：</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-keyword">import</span> { shallow } <span class="hljs-keyword">from</span> <span class="hljs-string">'enzyme'</span>;
+
+it(<span class="hljs-string">'should render a label'</span>, () =&gt; {
+    <span class="hljs-keyword">const</span> wrapper = shallow(
+        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Label</span>&gt;</span>Hello Jest!<span class="hljs-tag">&lt;/<span class="hljs-name">Label</span>&gt;</span></span>
+    );
+    expect(wrapper).toMatchSnapshot();
+});
+
+it(<span class="hljs-string">'should render a small label'</span>, () =&gt; {
+    <span class="hljs-keyword">const</span> wrapper = shallow(
+        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">small</span>&gt;</span>Hello Jest!<span class="hljs-tag">&lt;/<span class="hljs-name">Label</span>&gt;</span></span>
+    );
+    expect(wrapper).toMatchSnapshot();
+});
+
+it(<span class="hljs-string">'should render a grayish label'</span>, () =&gt; {
+    <span class="hljs-keyword">const</span> wrapper = shallow(
+        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Label</span> <span class="hljs-attr">light</span>&gt;</span>Hello Jest!<span class="hljs-tag">&lt;/<span class="hljs-name">Label</span>&gt;</span></span>
+    );
+    expect(wrapper).toMatchSnapshot();
+});
+</code></pre>
+<p>写组件测试的时候需要将 Enzyme 和 Jest 结合起来使用，两者是互补的，它们已经是 React 应用测试中大家公认的标准库。</p>
+<blockquote>
+<p><strong>注意</strong>：这种直接使用 <code>toMatchSnapshot()</code> 方法的测试比较笼统、简单粗暴，且没有针对性，只是比较方便，权衡使用。</p>
+</blockquote>
+<blockquote>
+<p><strong>注意</strong>：每调一次 <code>toMatchSnapshot()</code> 方法就会生成一份快照，虽然还是一个快照文件，但里面可能会有不同状态的快照。</p>
+</blockquote>
+<blockquote>
+<p><strong>注意</strong>：快照测试抛错不过，不一定是写代码有问题，有可能组件加入了新属性等原因导致的，属于正常的，手动更新一下快照即可。</p>
+</blockquote>
+<blockquote>
+<p><strong>注意</strong>：使用snapshot test后组件的测试覆盖率将会大幅提高，部分会达到100%。</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="测试-props"></a><a href="#测试-props" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>测试 <strong>props</strong></h3>
+<p>有时候你想更有针对性地测试，比如组件的某个属性是否渲染正确，你可以使用 Enzyme API + Jest 断言的组合方式：</p>
+<pre><code class="hljs css language-javascript">it(<span class="hljs-string">'should render a document title'</span>, () =&gt; {
+    <span class="hljs-keyword">const</span> props = { <span class="hljs-attr">title</span>: <span class="hljs-string">'Events'</span> }
+    <span class="hljs-keyword">const</span> wrapper = shallow(&lt;DocumentTitle {...props} /&gt;);
+    expect(wrapper.prop('title')).toEqual('Events');
+});
+
+it('should render a document title and a parent title', () =&gt; {
+    const props = { title: 'Events', parent: 'Event Radar' }
+    const wrapper = shallow(&lt;DocumentTitle {...props} /&gt;);
+    expect(wrapper.prop('title')).toEqual('Events — Event Radar');
+});
+</code></pre>
+<p>在某些情况下是不太适合使用 <code>toMatchSnapshot()</code> 的，例如组件中 id 属性是随机产生的：</p>
+<pre><code class="hljs css language-javascript">it(<span class="hljs-string">'should render a popover with a random ID'</span>, () =&gt; {
+    <span class="hljs-keyword">const</span> wrapper = shallow(
+        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Popover</span>&gt;</span>Hello Jest!<span class="hljs-tag">&lt;/<span class="hljs-name">Popover</span>&gt;</span></span>
+    );
+    expect(wrapper.prop(<span class="hljs-string">'id'</span>)).toMatch(<span class="hljs-regexp">/Popover\d+/</span>);
+});
+</code></pre>
+<p>如果用 <code>toMatchSnapshot()</code> 的话每次测试都会不过，需要不断更新快照。</p>
+<h3><a class="anchor" aria-hidden="true" id="测试-events"></a><a href="#测试-events" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>测试 <strong>events</strong></h3>
+<p>Enzyme 可以模拟事件操作后（例如 click 或 change等）再和测试快照进行对比：</p>
+<pre><code class="hljs css language-javascript">it(<span class="hljs-string">'should render Markdown in preview mode when click toggle-preview'</span>, () =&gt; {
+    <span class="hljs-keyword">const</span> wrapper = shallow(
+        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">MarkdownEditor</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"**Hello** Jest!"</span> /&gt;</span>
+    );
+    expect(wrapper).toMatchSnapshot();
+    wrapper.find('[name="toggle-preview"]').simulate('click');
+    expect(wrapper).toMatchSnapshot();
+});
+</span></code></pre>
+<p>如果你需要测试与组件中某一个元素或子组件的交互，此时需要调用 Enzyme 中的 <code>render/mount</code> 方法而不是 <code>shallow</code> 方法：</p>
+<pre><code class="hljs css language-javascript">it(<span class="hljs-string">'should open a code editor after clicked the button'</span>, () =&gt; {
+    <span class="hljs-keyword">const</span> wrapper = render(
+        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Playground</span> <span class="hljs-attr">code</span>=<span class="hljs-string">{code}</span> /&gt;</span>
+    );
+    expect(wrapper.find('.ReactCodeMirror')).toHaveLength(0);
+    wrapper.find('button').simulate('click');
+    expect(wrapper.find('.ReactCodeMirror')).toHaveLength(1);
+});
+</span></code></pre>
+<h3><a class="anchor" aria-hidden="true" id="测试-event-handlers"></a><a href="#测试-event-handlers" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>测试 <strong>event handlers</strong></h3>
+<p>和 Testing events 差不多，主要区别是 Testing events 关注的是事件后对组件渲染产生的影响，而 Testing event handlers 关注的是事件处理函数：</p>
+<pre><code class="hljs css language-javascript">it(<span class="hljs-string">'should pass a selected value to the onChange handler'</span>, () =&gt; {
+    <span class="hljs-keyword">const</span> value = <span class="hljs-string">'2'</span>;
+    <span class="hljs-keyword">const</span> onChange = jest.fn();
+    <span class="hljs-keyword">const</span> wrapper = shallow(
+        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Select</span> <span class="hljs-attr">items</span>=<span class="hljs-string">{ITEMS}</span> <span class="hljs-attr">onChange</span>=<span class="hljs-string">{onChange}</span> /&gt;</span>
+    );
+    expect(wrapper).toMatchSnapshot();
+    wrapper.find('select').simulate('change', {
+        target: { value },
+    });
+    expect(onChange).toBeCalledWith(value);
+});
+</span></code></pre>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 9/23/2019 by Kimi Gao</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docsite/docs/en/react/5.test/unit-test"><span class="arrow-prev">← </span><span>单元测试</span></a><a class="docs-next button" href="/docsite/docs/en/react/5.test/state-test"><span>状态测试</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#组件测试基础概念">组件测试基础概念</a><ul class="toc-headings"><li><a href="#快照测试">快照测试</a></li><li><a href="#浅渲染">浅渲染</a></li><li><a href="#全渲染">全渲染</a></li></ul></li><li><a href="#组件测试框架">组件测试框架</a><ul class="toc-headings"><li><a href="#jest-组件测试">Jest 组件测试</a></li><li><a href="#enzyme-组件测试">Enzyme 组件测试</a></li></ul></li><li><a href="#编写组件测试">编写组件测试</a><ul class="toc-headings"><li><a href="#测试-rendering">测试 rendering</a></li><li><a href="#测试-props">测试 <strong>props</strong></a></li><li><a href="#测试-events">测试 <strong>events</strong></a></li><li><a href="#测试-event-handlers">测试 <strong>event handlers</strong></a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/docsite/" class="nav-home"><img src="/docsite/img/favicon.ico" alt="Test Site" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docsite/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/docsite/docs/en/doc2.html">Guides (or other categories)</a><a href="/docsite/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/docsite/en/users.html">User Showcase</a><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/docsite/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/docsite/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div></body></html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>事件 · Test Site</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="## 合成事件与原生事件"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="事件 · Test Site"/><meta property="og:type" content="website"/><meta property="og:url" content="http://thinkbucket.github.io/docsite/"/><meta property="og:description" content="## 合成事件与原生事件"/><meta property="og:image" content="http://thinkbucket.github.io/docsite/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="http://thinkbucket.github.io/docsite/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/docsite/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/docsite/js/code-blocks-buttons.js"></script><script src="/docsite/js/scrollSpy.js"></script><link rel="stylesheet" href="/docsite/css/main.css"/><script src="/docsite/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/docsite/en"><img class="logo" src="/docsite/img/favicon.ico" alt="Test Site"/><h2 class="headerTitleWithLogo">Test Site</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docsite/docs/en/doc4" target="_self">JavaScript</a></li><li class=""><a href="/docsite/docs/en/doc4" target="_self">Web</a></li><li class=""><a href="/docsite/docs/en/doc4" target="_self">CSS</a></li><li class="siteNavGroupActive"><a href="/docsite/docs/en/react/1.react-basic/jsx" target="_self">React</a></li><li class=""><a href="/docsite/docs/en/doc4" target="_self">设计模式</a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/docsite/img/language.svg" alt="Languages icon"/>English</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/docsite/docs/zh-CN/react/1.react-basic/event">中文</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>React 基础</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">React 基础<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/1.react-basic/jsx">JSX</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/1.react-basic/lifecycle">生命周期</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/1.react-basic/state">状态</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/1.react-basic/communication">通信</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/1.react-basic/category">种类</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/1.react-basic/abstraction">抽象</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docsite/docs/en/react/1.react-basic/event">事件</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/1.react-basic/style">样式</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">组件开发<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/2.components-development/ui-component">UI组件</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/2.components-development/redux-component">Redux 组件</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/2.components-development/container-component">contianer 组件</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/2.components-development/presentational-component">presentational 组件</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/2.components-development/pure-render">PureRender</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/2.components-development/purify-component">组件提纯</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/2.components-development/render-props">Render Props</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/2.components-development/hoc">HOC</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/2.components-development/hooks">Hooks</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/2.components-development/context">Context</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/2.components-development/portal">Portal</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/2.components-development/performance">性能分析</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">状态管理<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/3.state-management/redux">Redux</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/3.state-management/store">Store</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/3.state-management/reducer">Reducer</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/3.state-management/action">Action</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/3.state-management/selector">Selector</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/3.state-management/middleware">Middleware</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/3.state-management/model">Model</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">路由管理<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/4.router-management/router">Router</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/4.router-management/route">Route</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/4.router-management/link">Link</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">测试<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/5.test/test-category">测试种类</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/5.test/unit-test">单元测试</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/5.test/component-test">组件测试</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/5.test/state-test">状态测试</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">安全规约<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/security-guide">安全规约</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle collapsible">附录<span class="arrow"><svg width="24" height="24" viewBox="0 0 24 24"><path fill="#565656" d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"></path><path d="M0 0h24v24H0z" fill="none"></path></svg></span></h3><ul class="hide"><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/appendix1-references">附录A 参考资料</a></li><li class="navListItem"><a class="navItem" href="/docsite/docs/en/react/appendix2-related-websites">附录B 常用网站</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">事件</h1></header><article><div><span><h2><a class="anchor" aria-hidden="true" id="合成事件与原生事件"></a><a href="#合成事件与原生事件" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>合成事件与原生事件</h2>
+<h3><a class="anchor" aria-hidden="true" id="合成事件"></a><a href="#合成事件" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>合成事件</h3>
+<p>在 JSX 中直接绑定的事件，如</p>
+<pre><code class="hljs css language-jsx">&lt;a ref="aTag" onClick={(e)=&gt;this.handleClick(e)}&gt;UPDATE&lt;/a&gt;
+</code></pre>
+<p>这里的 <code>handleClick</code> 事件就是合成事件。</p>
+<p>VirtualDOM 在内存中是以 <strong>对象</strong> 的形式存在，React 基于 VirtualDOM 实现了一个 SyntheticEvent（合成事件）层，我们所定义的事件处理器会接收到一个 SyntheticEvent 对象的实例（比如<code>handleChange(reactEvent)</code>），且与原生的浏览器事件有同样的接口。</p>
+<blockquote>
+<p><strong>注意</strong>：React 使用事件委托机制，会将所有的事件都绑定在最外层(<code>document</code>)元素上，依赖事件的冒泡机制完成委派，在冒泡阶段处理事件，不支持捕获阶段处理事件。</p>
+</blockquote>
+<blockquote>
+<p><strong>推荐</strong>：阻止合成事件间的冒泡，用 e.stopPropagation() 。</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="原生事件"></a><a href="#原生事件" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>原生事件</h3>
+<p>通过 JS 原生代码绑定的事件，如：</p>
+<pre><code class="hljs css language-javascript"><span class="hljs-built_in">document</span>.body.addEventListener(<span class="hljs-string">'click'</span>,e =&gt; {
+  <span class="hljs-comment">// 通过e.target判断阻止冒泡</span>
+  <span class="hljs-keyword">if</span>(e.target &amp;&amp; e.target.matches(<span class="hljs-string">'a'</span>)){
+    <span class="hljs-keyword">return</span>;
+  }
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'body'</span>);
+})
+<span class="hljs-comment">// 或</span>
+<span class="hljs-keyword">this</span>.refs.update.addEventListener(<span class="hljs-string">'click'</span>,e =&gt; {
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'update'</span>);
+});
+</code></pre>
+<p>Q：为什么有时候还需要原生事件？</p>
+<p>A：react 的 app 一般是挂在 body 下面某个div 结点上，如果我想将事件绑定在 body 上（比如监听 body 的滚动事件，window 的 resize 事件）就需要用原生事件。实际上，react 合成事件只是原生 DOM 事件的一个子集，它仅仅实现了 <a href="https://www.w3.org/TR/DOM-Level-3-Events/">DOM Level 3</a> 的事件接口，并且统一了浏览器的兼容问题，有些事件 React 并没有实现。</p>
+<p>Q：在什么生命周期才可以绑定原生事件？</p>
+<p>A：组件挂载完成之后，即 componentDidMount。</p>
+<blockquote>
+<p><strong>强制</strong>：一定要在组件卸载（componentWillUnmount）时手动移除，否则很可能出现内存泄漏的问题，而合成事件不需要，因为 react 内部已经帮你自动处理了。</p>
+</blockquote>
+<blockquote>
+<p><strong>注意</strong>：合成事件中阻止事件冒泡是没办法阻止原生事件的冒泡。即使是 reactEvent.nativeEvent.stopPropagation()。</p>
+</blockquote>
+<p>reactEvent 是封装好的事件，它是在 document 的回调里进行封装，并执行回调的。而原生的监听，在document 接收到冒泡时早就执行完了。<code>reactEvent.nativeEvent.stopPropagation()</code> 方法实际上是在最外层节点上调用了原生的 stopPropagation， 只阻止了 document 的冒泡。</p>
+<blockquote>
+<p><strong>注意</strong>：原生事件中阻止冒泡是可以阻止合成事件的冒泡。</p>
+</blockquote>
+<blockquote>
+<p><strong>推荐</strong>：阻止合成事件与最外层 document 上的事件间的冒泡，用e.nativeEvent.stopImmediatePropagation() 。</p>
+</blockquote>
+<blockquote>
+<p><strong>推荐</strong>：阻止合成事件与除最外层 document 上的原生事件上的冒泡，通过判断 e.target 来避免。</p>
+</blockquote>
+<h2><a class="anchor" aria-hidden="true" id="合成事件的绑定"></a><a href="#合成事件的绑定" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>合成事件的绑定</h2>
+<p>对于 <strong>合成事件</strong> 根据组件事件绑定的创建时间主要有两类方法：</p>
+<h3><a class="anchor" aria-hidden="true" id="方式一-render-时绑定"></a><a href="#方式一-render-时绑定" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>方式一：render 时绑定</h3>
+<p>渲染时绑定主要有三种：</p>
+<h4><a class="anchor" aria-hidden="true" id="bind-显式绑定方式"></a><a href="#bind-显式绑定方式" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>bind 显式绑定方式：</h4>
+<pre><code class="hljs css language-jsx">onChange = {<span class="hljs-keyword">this</span>.handleChange.bind(<span class="hljs-keyword">this</span>)}
+</code></pre>
+<blockquote>
+<p><strong>注意</strong>：这种方法有一个潜在的性能问题：当组件每次重新渲染时，都会有一个新的函数创建。</p>
+</blockquote>
+<p>但是在真正的开发场景中，由此引发的性能问题往往不值一提（除非是大型组件消费类应用或游戏）。</p>
+<h4><a class="anchor" aria-hidden="true" id="箭头函数隐式绑定"></a><a href="#箭头函数隐式绑定" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>箭头函数隐式绑定：</h4>
+<p>这种方法其实和第一种类似，我们可以利用ES6 箭头函数 <strong>隐式</strong> 绑定 this：</p>
+<pre><code class="hljs css language-jsx">onChange = {e =&gt; <span class="hljs-keyword">this</span>.handleChange(e)}
+</code></pre>
+<blockquote>
+<p><strong>注意</strong>：这种方法与第一种方法一样，同样存在潜在的性能问题。</p>
+</blockquote>
+<blockquote>
+<p><strong>推荐</strong>：函数式组件优先使用箭头函数隐式绑定this。</p>
+</blockquote>
+<h4><a class="anchor" aria-hidden="true" id="双冒号隐式绑定"></a><a href="#双冒号隐式绑定" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>双冒号隐式绑定：</h4>
+<p>ES next <strong>Stage-0</strong> 中 <a href="https://github.com/zenparsing/es-function-bind">Function bind syntax</a> 提案：</p>
+<pre><code class="hljs css language-jsx">onChange = {::<span class="hljs-keyword">this</span>.handleChange}
+</code></pre>
+<p>函数绑定运算符是并排的两个双冒号（ :: ），双冒号左边是一个对象，右边是一个函数。该运算符会自动将左边的对象，作为上下文环境（即 this 对象），绑定到右边的函数上面。如果双冒号左边为空，右边是一个对象的方法，则等于将该方法绑定在该对象上面。</p>
+<blockquote>
+<p><strong>注意</strong>：该方法不能带参数。</p>
+</blockquote>
+<blockquote>
+<p><strong>Tips</strong>：babel 会将该方法转译成 <code>.bind(this)</code> 的方式。</p>
+</blockquote>
+<h3><a class="anchor" aria-hidden="true" id="方式二-创建实例时绑定"></a><a href="#方式二-创建实例时绑定" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>方式二：创建实例时绑定</h3>
+<h4><a class="anchor" aria-hidden="true" id="constructor-内绑定"></a><a href="#constructor-内绑定" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>constructor 内绑定：</h4>
+<p>constructor 方法是类的默认方法，通过new命令生成对象实例时，自动调用该方法。 所以我们可以：</p>
+<pre><code class="hljs css language-jsx"><span class="hljs-keyword">constructor</span>(props) {
+  <span class="hljs-keyword">super</span>(props);
+  <span class="hljs-keyword">this</span>.handleChange = <span class="hljs-keyword">this</span>.handleChange.bind(<span class="hljs-keyword">this</span>);
+}
+</code></pre>
+<p>就个人习惯而言，与前两种方法相比，constructor 内绑定在可读性和可维护性上也许有些欠缺。 同时，我们知道在 constructor 声明的方法不会存在实例的原型上，而属于实例本身的方法。每个实例都有同样一个 handleChange，这本身也是一种重复和浪费。</p>
+<p>缺点：即使不用到state，也需要添加类构造函数来绑定this，代码量多； 添加参数要在构造函数中bind时指定，不在render中。</p>
+<blockquote>
+<p><strong>注意</strong>：组件实例会重复绑定该方法。</p>
+</blockquote>
+<blockquote>
+<p><strong>推荐</strong>：class 类型的组件优先使用该方法，也是性能最好的。</p>
+</blockquote>
+<h4><a class="anchor" aria-hidden="true" id="class-属性中使用-和箭头函数"></a><a href="#class-属性中使用-和箭头函数" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>class 属性中使用 = 和箭头函数：</h4>
+<p>这个方法依赖于 ES next 的新特性，请参考：<a href="https://tc39.github.io/proposal-class-public-fields/">https://tc39.github.io/proposal-class-public-fields/</a></p>
+<pre><code class="hljs css language-jsx">handleChange = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+  <span class="hljs-comment">// call this function from render </span>
+  <span class="hljs-comment">// and this.whatever in here works fine.</span>
+};
+</code></pre>
+<p>总结一下这种方式的优点：</p>
+<ul>
+<li>使用箭头函数，有效绑定了 this；</li>
+<li>没有方式一的潜在性能问题；</li>
+<li>避免了constructor 内绑定的组件实例重复问题；</li>
+</ul>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 9/23/2019 by Kimi Gao</em></div><div class="docs-prevnext"><a class="docs-prev button" href="/docsite/docs/en/react/1.react-basic/abstraction"><span class="arrow-prev">← </span><span>抽象</span></a><a class="docs-next button" href="/docsite/docs/en/react/1.react-basic/style"><span>样式</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#合成事件与原生事件">合成事件与原生事件</a><ul class="toc-headings"><li><a href="#合成事件">合成事件</a></li><li><a href="#原生事件">原生事件</a></li></ul></li><li><a href="#合成事件的绑定">合成事件的绑定</a><ul class="toc-headings"><li><a href="#方式一-render-时绑定">方式一：render 时绑定</a></li><li><a href="#方式二-创建实例时绑定">方式二：创建实例时绑定</a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/docsite/" class="nav-home"><img src="/docsite/img/favicon.ico" alt="Test Site" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docsite/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/docsite/docs/en/doc2.html">Guides (or other categories)</a><a href="/docsite/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/docsite/en/users.html">User Showcase</a><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/docsite/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/docsite/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div></body></html>

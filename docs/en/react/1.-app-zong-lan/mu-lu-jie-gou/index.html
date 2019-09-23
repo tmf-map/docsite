@@ -1,0 +1,162 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>react/1.-app-zong-lan/mu-lu-jie-gou · Test Site</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="# 目录结构"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="react/1.-app-zong-lan/mu-lu-jie-gou · Test Site"/><meta property="og:type" content="website"/><meta property="og:url" content="http://thinkbucket.github.io/docsite/"/><meta property="og:description" content="# 目录结构"/><meta property="og:image" content="http://thinkbucket.github.io/docsite/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="http://thinkbucket.github.io/docsite/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/docsite/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script><script type="text/javascript" src="/docsite/js/code-blocks-buttons.js"></script><script src="/docsite/js/scrollSpy.js"></script><link rel="stylesheet" href="/docsite/css/main.css"/><script src="/docsite/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/docsite/en"><img class="logo" src="/docsite/img/favicon.ico" alt="Test Site"/><h2 class="headerTitleWithLogo">Test Site</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="/docsite/docs/en/doc4" target="_self">JavaScript</a></li><li class=""><a href="/docsite/docs/en/doc4" target="_self">Web</a></li><li class=""><a href="/docsite/docs/en/doc4" target="_self">CSS</a></li><li class=""><a href="/docsite/docs/en/react/1.react-basic/jsx" target="_self">React</a></li><li class=""><a href="/docsite/docs/en/doc4" target="_self">设计模式</a></li><span><li><a id="languages-menu" href="#"><img class="languages-icon" src="/docsite/img/language.svg" alt="Languages icon"/>English</a><div id="languages-dropdown" class="hide"><ul id="languages-dropdown-items"><li><a href="/docsite/docs/zh-CN/react/1.-app-zong-lan/mu-lu-jie-gou">中文</a></li></ul></div></li><script>
+        const languagesMenuItem = document.getElementById("languages-menu");
+        const languagesDropDown = document.getElementById("languages-dropdown");
+        languagesMenuItem.addEventListener("click", function(event) {
+          event.preventDefault();
+
+          if (languagesDropDown.className == "hide") {
+            languagesDropDown.className = "visible";
+          } else {
+            languagesDropDown.className = "hide";
+          }
+        });
+      </script></span></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container mainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">react/1.-app-zong-lan/mu-lu-jie-gou</h1></header><article><div><span><h1><a class="anchor" aria-hidden="true" id="目录结构"></a><a href="#目录结构" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>目录结构</h1>
+<h2><a class="anchor" aria-hidden="true" id="原始的-redux-项目目录结构"></a><a href="#原始的-redux-项目目录结构" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>原始的 Redux 项目目录结构</h2>
+<pre><code class="hljs css language-text">Project/App
+├── index.js                                      # 入口文件
+├── router.js                                     # App路由
+├── store.js                                      # 生成Store
+├── <manifest.json>                               # App的相关配置
+├── components                                    # 展示型组件
+│   └── Header                                    # 以<Header>组件为例
+│       ├── index.js                            
+│       ├── index.less                            # 样式文件
+│       └── __tests__                             # 测试
+│           ├── __snapshots__                     # 快照测试文件夹，自动生成
+│           └── index.test.js                     # 展示型组件测试 
+├── ui                                            # 自定义的基础ui组件
+│   └── Button                                    # 以<Button>组件为例
+│       ├── index.js                       
+│       ├── index.less                     
+│       └── __tests__                              
+│           ├── __snapshots__                      
+│           └── index.test.js                
+├── states                                        # 状态管理相关，主要是Redux
+│   ├── containers                                # 容器型组件
+│   │   ├── Header.js
+│   │   ├── index.js                              # 将所有container聚合
+│   │   └── __tests__                             
+│   │       └── Header.test.js   
+│   ├── middlewares                               # 中间件
+│   │   ├── middlewareOne.js              
+│   │   ├── middlewareTwo.js              
+│   │   ├── index.js                              # 将所有中间件聚合
+│   │   └── __tests__                              
+│   │       ├── middlewareOne.test.js     
+│   │       └── middlewareTwo.test.js    
+│   ├── selectors                                                           
+│   │   ├── selectorOne.js              
+│   │   ├── selectorTwo.js              
+│   │   ├── index.js                              # 将所有异步selector聚合
+│   │   └── __tests__                              
+│   │       ├── selectorOne.test.js     
+│   │       └── selectorTwo.test.js      
+│   ├── actions                                  
+│   │   ├── sync                                  # 同步action
+│   │   │   ├── actionOne.js              
+│   │   │   ├── actionTwo.js              
+│   │   │   ├── index.js                          # 将所有同步action聚合
+│   │   │   └── __tests__                          
+│   │   │       ├── actionOne.test.js     
+│   │   │       └── actionTwo.test.js      
+│   │   └── async                                 # 异步action
+│   │       ├── actionOne.js               
+│   │       ├── actionTwo.js               
+│   │       ├── index.js                          # 将所有异步action聚合
+│   │       └── __tests__                          
+│   │           ├── actionOne.test.js      
+│   │           └── actionTwo.test.js       
+│   ├── reducers                                    
+│   │   ├── reducerOne.js              
+│   │   ├── reducerTwo.js              
+│   │   ├── index.js                              # 将所有异步reducer聚合
+│   │   └── __tests__                              
+│   │       ├── reducerOne.test.js     
+│   │       └── reducerTwo.test.js      
+│   ├── types                             
+│   │   ├── typeOne.js              
+│   │   ├── typeTwo.js              
+│   │   ├── index.js                              # 将所有异步type聚合
+│   │   └── __tests__                              
+│   │       ├── typeOne.test.js     
+│   │       └── typeTwo.test.js  
+├── apis                                           
+│   ├── apiOne.js              
+│   ├── apiTwo.js              
+│   ├── index.js                                  # 将所有api聚合
+│   └── __tests__                              
+│       ├── apiOne.test.js     
+│       └── apiTwo.test.js     
+└── utils                                         # 一些公共的工具类文件
+    ├── utilOne.js              
+    ├── utilTwo.js              
+    ├── index.js                                  # 将所有util聚合
+    └── __tests__                              
+        ├── utilOne.test.js     
+        └── utilTwo.test.js        
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="rematch-https-githubcom-rematch-rematch-封装的-redux-项目结构"></a><a href="#rematch-https-githubcom-rematch-rematch-封装的-redux-项目结构" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><a href="https://github.com/rematch/rematch">Rematch</a> 封装的 Redux 项目结构</h2>
+<p>在实际开发中，使用原始 Redux 开发时，会发现每加一个新功能就需要定义一堆 <code>action</code> , <code>type</code> , <code>reducer</code> , 非常繁琐，哪怕是一个非常小的功能。这时候就可以使用 Rematch 去改造 Redux 项目。由于 Redux 和 Rematch 的 model 定义可以共存，在定义项目的结构的时候可以调整为如下方式：</p>
+<pre><code class="hljs css language-text">Project/App
+├── index.js                                      # 入口文件
+├── router.js                                     # App路由
+├── store.js                                      # 生成Store
+├── <manifest.json>                               # App的相关配置
+├── components                                    # 展示型组件
+│   └── Header                                    # 以<Header>组件为例
+│       ├── index.js                            
+│       ├── index.less                            # 样式文件
+│       └── __tests__                             # 测试
+│           ├── __snapshots__                     # 快照测试文件夹，自动生成
+│           └── index.test.js                     # 展示型组件测试 
+├── ui                                            # 自定义的基础ui组件
+│   └── Button                                    # 以<Button>组件为例
+│       ├── index.js                       
+│       ├── index.less                     
+│       └── __tests__                              
+│           ├── __snapshots__                      
+│           └── index.test.js                
+├── states                                        # 状态管理相关
+│   ├── containers                                # 容器型组件
+│   │   ├── Header.js
+│   │   ├── index.js                              # 将所有container聚合
+│   │   └── __tests__                             
+│   │       └── Header.test.js   
+│   ├── middlewares                               # 中间件
+│   │   ├── middlewareOne.js              
+│   │   ├── middlewareTwo.js              
+│   │   ├── index.js                              # 将所有中间件聚合
+│   │   └── __tests__                              
+│   │       ├── middlewareOne.test.js     
+│   │       └── middlewareTwo.test.js      
+│   ├── selectors                                                           
+│   │   ├── selectorOne.js              
+│   │   ├── selectorTwo.js              
+│   │   ├── index.js                              # 将所有异步selector聚合
+│   │   └── __tests__                              
+│   │       ├── selectorOne.test.js     
+│   │       └── selectorTwo.test.js      
+│   ├── models                                    # model层，替代原始Redux
+│   │   ├── modelOne.js              
+│   │   ├── modelTwo.js              
+│   │   ├── index.js                              # 将所有model聚合
+│   │   └── __tests__                              
+│   │       ├── modelOne.test.js     
+│   │       └── modelTwo.test.js  
+├── apis                                           
+│   ├── apiOne.js              
+│   ├── apiTwo.js              
+│   ├── index.js                                  # 将所有api聚合
+│   └── __tests__                              
+│       ├── apiOne.test.js     
+│       └── apiTwo.test.js     
+└── utils                                         # 一些公共的工具类文件
+    ├── utilOne.js              
+    ├── utilTwo.js              
+    ├── index.js                                  # 将所有util聚合
+    └── __tests__                              
+        ├── utilOne.test.js     
+        └── utilTwo.test.js        
+</code></pre>
+<p>Rematch 的使用方式，以及如何和 Redux 项目进行兼容，详细见其文档教程：<a href="https://rematch.gitbook.io/handbook/">https://rematch.gitbook.io/handbook/</a></p>
+</span></div></article></div><div class="docLastUpdate"><em>Last updated on 9/23/2019 by Kimi Gao</em></div><div class="docs-prevnext"></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#原始的-redux-项目目录结构">原始的 Redux 项目目录结构</a></li><li><a href="#rematch-封装的-redux-项目结构"><a href="https://github.com/rematch/rematch">Rematch</a> 封装的 Redux 项目结构</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/docsite/" class="nav-home"><img src="/docsite/img/favicon.ico" alt="Test Site" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docsite/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/docsite/docs/en/doc2.html">Guides (or other categories)</a><a href="/docsite/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/docsite/en/users.html">User Showcase</a><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/docsite/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/docsite/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2019 Your Name or Your Company Name</section></footer></div></body></html>
