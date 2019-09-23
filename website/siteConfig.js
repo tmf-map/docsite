@@ -40,11 +40,11 @@ const siteConfig = {
 
   // For no header links in the top nav bar -> headerLinks: [],
   headerLinks: [
-    {doc: 'doc1', label: 'JavaScript'},
+    {doc: 'doc4', label: 'JavaScript'},
     {doc: 'doc4', label: 'Web'},
-    {page: 'help', label: 'CSS'},
-    {page: 'help', label: 'React'},
-    {page: 'help', label: '设计模式'},
+    {doc: 'doc4', label: 'CSS'},
+    {doc: 'react/1.react-basic/jsx', label: 'React'},
+    {doc: 'doc4', label: '设计模式'},
     // { languages: false }
     // {blog: true, label: 'Blog'},
   ],
