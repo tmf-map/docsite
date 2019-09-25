@@ -1,8 +1,0 @@
-.cache
-public
-package-lock.json
-yarn.lock
-node_modules
-dist
-coverage
-src/pages/index.mdx
