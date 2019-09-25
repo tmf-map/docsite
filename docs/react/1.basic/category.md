@@ -60,7 +60,9 @@ sidebar_label: 种类
 
 由于 `undefined == null` 是 true，如果value 绑定的值初始状态是null 或 undefined 的时候 react 会认为该组件是非受控组件，控制台会出现：
 
-> Warning: MyForm is changing an uncontrolled input of type text to be controlled. Input elements should not switch from uncontrolled to controlled \(or vice versa\). Decide between using a controlled or uncontrolled input element for the lifetime of the component.
+```text
+Warning: MyForm is changing an uncontrolled input of type text to be controlled. Input elements should not switch from uncontrolled to controlled \(or vice versa\). Decide between using a controlled or uncontrolled input element for the lifetime of the component.
+```
 
 > **强制**：受控组件的 value/checked 属性的初始值必须是空字符串（''）。
 

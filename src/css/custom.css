@@ -21,3 +21,17 @@
   --ifm-color-primary-lighter: rgb(102, 212, 189);
   --ifm-color-primary-lightest: rgb(146, 224, 208);
 }
+
+blockquote {
+  background-color: rgba(255,229,100,.3);
+  border-left: 8px solid #ffe564;
+  padding: 15px 30px 15px 15px;
+}
+
+blockquote p {
+  margin-bottom: 0;
+}
+
+html[data-theme="dark"] blockquote {
+  color: var(--ifm-code-color);
+}

@@ -21,7 +21,7 @@ module.exports = {
         src: 'img/logo.svg',
       },
       links: [
-        {to: 'docs/react/1.react-basic/jsx', label: 'React', position: 'left'},
+        {to: 'docs/react/1.basic/jsx', label: 'React', position: 'left'},
         {to: 'docs/doc1', label: 'Docs', position: 'left'},
         {to: 'blog', label: 'Blog', position: 'left'},
         {

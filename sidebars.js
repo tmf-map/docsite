@@ -7,69 +7,49 @@
 
 module.exports = {
   "react": {
-    "React 基础": [
-      "react/1.react-basic/jsx",
-      "react/1.react-basic/lifecycle",
-      "react/1.react-basic/state",
-      "react/1.react-basic/communication",
-      "react/1.react-basic/category",
-      "react/1.react-basic/abstraction",
-      "react/1.react-basic/event",
-      "react/1.react-basic/style"
+    "1.组件基础": [
+      "react/1.basic/jsx",
+      "react/1.basic/lifecycle",
+      "react/1.basic/state",
+      "react/1.basic/communication",
+      "react/1.basic/category",
+      "react/1.basic/event",
+      "react/1.basic/style"
     ],
-    "组件开发": [
-      "react/2.components-development/ui-component",
-      {
-        type: 'category',
-        label: 'Redux 组件',
-        items: [
-          "react/2.components-development/container-component",
-          "react/2.components-development/presentational-component"
-        ],
-      },
-      {
-        type: 'category',
-        label: '纯组件',
-        items: [
-          "react/2.components-development/pure-render",
-          "react/2.components-development/purify-component",
-        ],
-      },
-      {
-        type: 'category',
-        label: '组件复用',
-        items: [
-          "react/2.components-development/render-props",
-          "react/2.components-development/hoc",
-          "react/2.components-development/hooks",
-        ],
-      },
-      
-      "react/2.components-development/context",
-      "react/2.components-development/portal",
-      "react/2.components-development/performance"
+    "2.组件进阶": [
+      "react/2.advanced/render-props",
+      "react/2.advanced/hoc",
+      "react/2.advanced/hooks",
+      "react/2.advanced/context",
+      "react/2.advanced/portal",
     ],
-    "状态管理": [
-      "react/3.state-management/redux",
-      "react/3.state-management/store",
-      "react/3.state-management/reducer",
-      "react/3.state-management/action",
-      "react/3.state-management/selector",
-      "react/3.state-management/middleware",
-      "react/3.state-management/model"
+    "3.组件开发": [
+      "react/3.development/ui-component",
+      "react/3.development/redux-component",
+      "react/3.development/pure-component",
+      "react/3.development/performance"
     ],
-    "路由管理": [
-      "react/4.router-management/router",
-      "react/4.router-management/route",
-      "react/4.router-management/link"
+    "4.状态管理": [
+      "react/4.state-management/redux",
+      "react/4.state-management/store",
+      "react/4.state-management/reducer",
+      "react/4.state-management/action",
+      "react/4.state-management/selector",
+      "react/4.state-management/middleware",
+      "react/4.state-management/model"
     ],
-    "测试": [
-      "react/5.test/test-category",
-      "react/5.test/unit-test",
-      "react/5.test/component-test",
-      "react/5.test/state-test"
+    "5.路由管理": [
+      "react/5.router-management/router",
+      "react/5.router-management/route",
+      "react/5.router-management/link"
     ],
-    "安全规约": [
+    "6.测试": [
+      "react/6.test/test-category",
+      "react/6.test/unit-test",
+      "react/6.test/component-test",
+      "react/6.test/state-test"
+    ],
+    "7.安全规约": [
       "react/security-guide"
     ],
     "附录": [
