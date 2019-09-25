@@ -13,7 +13,7 @@
       7,
       8,
       9,
-      124,
+      116,
       0
     ],
     "1": [
@@ -25,7 +25,7 @@
       6,
       7,
       9,
-      124,
+      116,
       1
     ],
     "2": [
@@ -114,324 +114,300 @@
     "@site/docs/react/1.-app-zong-lan/wen-jian-he-wen-jian-jia-shuo-ming.md": [
       22
     ],
-    "@site/docs/react/1.react-basic/abstraction.md": [
+    "@site/docs/react/1.basic/category.md": [
       23
     ],
-    "@site/docs/react/1.react-basic/category.md": [
+    "@site/docs/react/1.basic/communication.md": [
       24
     ],
-    "@site/docs/react/1.react-basic/communication.md": [
+    "@site/docs/react/1.basic/event.md": [
       25
     ],
-    "@site/docs/react/1.react-basic/event.md": [
+    "@site/docs/react/1.basic/jsx.md": [
       26
     ],
-    "@site/docs/react/1.react-basic/jsx.md": [
+    "@site/docs/react/1.basic/lifecycle.md": [
       27
     ],
-    "@site/docs/react/1.react-basic/lifecycle.md": [
+    "@site/docs/react/1.basic/README.md": [
       28
     ],
-    "@site/docs/react/1.react-basic/README.md": [
+    "@site/docs/react/1.basic/state.md": [
       29
     ],
-    "@site/docs/react/1.react-basic/state.md": [
+    "@site/docs/react/1.basic/style.md": [
       30
     ],
-    "@site/docs/react/1.react-basic/style.md": [
+    "@site/docs/react/2.advanced/context.md": [
       31
     ],
-    "@site/docs/react/2.components-development/container-component.md": [
+    "@site/docs/react/2.advanced/hoc.md": [
       32
     ],
-    "@site/docs/react/2.components-development/context.md": [
+    "@site/docs/react/2.advanced/hooks.md": [
       33
     ],
-    "@site/docs/react/2.components-development/hoc.md": [
+    "@site/docs/react/2.advanced/portal.md": [
       34
     ],
-    "@site/docs/react/2.components-development/hooks.md": [
+    "@site/docs/react/2.advanced/render-props.md": [
       35
     ],
-    "@site/docs/react/2.components-development/performance.md": [
+    "@site/docs/react/3.development/performance.md": [
       36
     ],
-    "@site/docs/react/2.components-development/portal.md": [
+    "@site/docs/react/3.development/pure-component.md": [
       37
     ],
-    "@site/docs/react/2.components-development/presentational-component.md": [
+    "@site/docs/react/3.development/redux-component.md": [
       38
     ],
-    "@site/docs/react/2.components-development/pure-render.md": [
+    "@site/docs/react/3.development/ui-component.md": [
       39
     ],
-    "@site/docs/react/2.components-development/purify-component.md": [
+    "@site/docs/react/4.state-management/action.md": [
       40
     ],
-    "@site/docs/react/2.components-development/render-props.md": [
+    "@site/docs/react/4.state-management/middleware.md": [
       41
     ],
-    "@site/docs/react/2.components-development/ui-component.md": [
+    "@site/docs/react/4.state-management/model.md": [
       42
     ],
-    "@site/docs/react/3.state-management/action.md": [
+    "@site/docs/react/4.state-management/reducer.md": [
       43
     ],
-    "@site/docs/react/3.state-management/middleware.md": [
+    "@site/docs/react/4.state-management/redux.md": [
       44
     ],
-    "@site/docs/react/3.state-management/model.md": [
+    "@site/docs/react/4.state-management/selector.md": [
       45
     ],
-    "@site/docs/react/3.state-management/reducer.md": [
+    "@site/docs/react/4.state-management/store.md": [
       46
     ],
-    "@site/docs/react/3.state-management/redux.md": [
+    "@site/docs/react/5.router-management/link.md": [
       47
     ],
-    "@site/docs/react/3.state-management/selector.md": [
+    "@site/docs/react/5.router-management/README.md": [
       48
     ],
-    "@site/docs/react/3.state-management/store.md": [
+    "@site/docs/react/5.router-management/route.md": [
       49
     ],
-    "@site/docs/react/4.router-management/link.md": [
+    "@site/docs/react/5.router-management/router.md": [
       50
     ],
-    "@site/docs/react/4.router-management/README.md": [
+    "@site/docs/react/6.test/component-test.md": [
       51
     ],
-    "@site/docs/react/4.router-management/route.md": [
+    "@site/docs/react/6.test/state-test.md": [
       52
     ],
-    "@site/docs/react/4.router-management/router.md": [
+    "@site/docs/react/6.test/test-category.md": [
       53
     ],
-    "@site/docs/react/5.test/component-test.md": [
+    "@site/docs/react/6.test/unit-test.md": [
       54
     ],
-    "@site/docs/react/5.test/state-test.md": [
+    "@site/docs/react/appendix1-references.md": [
       55
     ],
-    "@site/docs/react/5.test/test-category.md": [
+    "@site/docs/react/appendix2-related-websites.md": [
       56
     ],
-    "@site/docs/react/5.test/unit-test.md": [
+    "@site/docs/react/README.md": [
       57
     ],
-    "@site/docs/react/appendix1-references.md": [
+    "@site/docs/react/7.security-guide.md": [
       58
     ],
-    "@site/docs/react/appendix2-related-websites.md": [
+    "@site/docs/react/shuo-ming.md": [
       59
     ],
-    "@site/docs/react/README.md": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-420.json": [
       60
     ],
-    "@site/docs/react/6.security-guide.md": [
+    "main": [
+      114,
       61
     ],
-    "@site/docs/react/shuo-ming.md": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-blog/docsite-blog-6d6.json": [
       62
     ],
-    "@site/docs/react/SUMMARY.md": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-blog/docsite-blog-tags-docusaurus-07f.json": [
       63
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-420.json": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-blog/docsite-blog-tags-facebook-84d.json": [
       64
     ],
-    "main": [
-      122,
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-blog/docsite-blog-tags-hello-021.json": [
       65
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-blog/docsite-blog-6d6.json": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-blog/docsite-blog-tags-hola-0c5.json": [
       66
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-blog/docsite-blog-tags-docusaurus-07f.json": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-blog/docsite-blog-welcome-c6a.json": [
       67
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-blog/docsite-blog-tags-facebook-84d.json": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-doc-1-6d4.json": [
       68
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-blog/docsite-blog-tags-hello-021.json": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-doc-2-164.json": [
       69
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-blog/docsite-blog-tags-hola-0c5.json": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-doc-3-a16.json": [
       70
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-blog/docsite-blog-welcome-c6a.json": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-mdx-0f8.json": [
       71
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-doc-1-6d4.json": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-1-app-zong-lan-mu-lu-jie-gou-05a.json": [
       72
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-doc-2-164.json": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-1-app-zong-lan-readme-83f.json": [
       73
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-doc-3-a16.json": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-1-app-zong-lan-wen-jian-he-wen-jian-jia-shuo-ming-d32.json": [
       74
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-mdx-0f8.json": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-1-basic-category-c97.json": [
       75
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-1-app-zong-lan-mu-lu-jie-gou-05a.json": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-1-basic-communication-443.json": [
       76
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-1-app-zong-lan-readme-83f.json": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-1-basic-event-e4d.json": [
       77
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-1-app-zong-lan-wen-jian-he-wen-jian-jia-shuo-ming-d32.json": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-1-basic-jsx-72c.json": [
       78
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-1-react-basic-abstraction-6af.json": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-1-basic-lifecycle-619.json": [
       79
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-1-react-basic-category-969.json": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-1-basic-readme-8c0.json": [
       80
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-1-react-basic-communication-b1b.json": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-1-basic-state-024.json": [
       81
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-1-react-basic-event-695.json": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-1-basic-style-377.json": [
       82
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-1-react-basic-jsx-94e.json": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-2-advanced-context-bc8.json": [
       83
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-1-react-basic-lifecycle-2cb.json": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-2-advanced-hoc-cbb.json": [
       84
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-1-react-basic-readme-4a0.json": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-2-advanced-hooks-44f.json": [
       85
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-1-react-basic-state-a2f.json": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-2-advanced-portal-e9e.json": [
       86
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-1-react-basic-style-cc5.json": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-2-advanced-render-props-4c3.json": [
       87
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-2-components-development-container-component-1ba.json": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-3-development-performance-743.json": [
       88
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-2-components-development-context-c96.json": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-3-development-pure-component-6b2.json": [
       89
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-2-components-development-hoc-96b.json": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-3-development-redux-component-a9d.json": [
       90
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-2-components-development-hooks-ead.json": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-3-development-ui-component-aa0.json": [
       91
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-2-components-development-performance-6be.json": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-4-state-management-action-6eb.json": [
       92
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-2-components-development-portal-5ba.json": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-4-state-management-middleware-26d.json": [
       93
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-2-components-development-presentational-component-77e.json": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-4-state-management-model-730.json": [
       94
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-2-components-development-pure-render-ef1.json": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-4-state-management-reducer-851.json": [
       95
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-2-components-development-purify-component-67f.json": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-4-state-management-redux-e4d.json": [
       96
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-2-components-development-render-props-ad2.json": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-4-state-management-selector-e50.json": [
       97
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-2-components-development-ui-component-da8.json": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-4-state-management-store-a55.json": [
       98
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-3-state-management-action-7e7.json": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-5-router-management-link-b57.json": [
       99
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-3-state-management-middleware-59d.json": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-5-router-management-readme-aff.json": [
       100
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-3-state-management-model-c9b.json": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-5-router-management-route-23b.json": [
       101
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-3-state-management-reducer-f3b.json": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-5-router-management-router-0fd.json": [
       102
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-3-state-management-redux-e8a.json": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-6-test-component-test-328.json": [
       103
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-3-state-management-selector-8cf.json": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-6-test-state-test-300.json": [
       104
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-3-state-management-store-609.json": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-6-test-test-category-569.json": [
       105
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-4-router-management-link-5af.json": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-6-test-unit-test-cb9.json": [
       106
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-4-router-management-readme-023.json": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-appendix-1-references-92f.json": [
       107
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-4-router-management-route-7ac.json": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-appendix-2-related-websites-426.json": [
       108
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-4-router-management-router-0dd.json": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-readme-1a9.json": [
       109
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-5-test-component-test-59b.json": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-security-guide-f2c.json": [
       110
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-5-test-state-test-4c4.json": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-shuo-ming-b69.json": [
       111
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-5-test-test-category-5f1.json": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-blog/docsite-blog-hola-191.json": [
       112
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-5-test-unit-test-968.json": [
+    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-blog/docsite-blog-hello-world-3d6.json": [
       113
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-appendix-1-references-92f.json": [
+    "runtime~main": [
+      61,
       114
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-appendix-2-related-websites-426.json": [
-      115
-    ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-readme-1a9.json": [
-      116
-    ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-security-guide-f2c.json": [
-      117
-    ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-shuo-ming-b69.json": [
-      118
-    ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-summary-af1.json": [
-      119
-    ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-blog/docsite-blog-hola-191.json": [
-      120
-    ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-blog/docsite-blog-hello-world-3d6.json": [
-      121
-    ],
-    "runtime~main": [
-      65,
-      122
-    ],
     "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-blog/docsite-blog-tags-tags-45d.json": [
-      123
+      115
     ],
     "@theme/NotFound": [
       0,
       1,
-      124
+      116
     ]
   },
   "assets": {
     "0": {
       "js": [
         {
-          "file": "0.b5abf2bd7a362cbc9d0b.js",
-          "hash": "3326d7f019d02cd70f3d",
-          "publicPath": "/docsite/0.b5abf2bd7a362cbc9d0b.js"
+          "file": "0.0048f5f93262716a8305.js",
+          "hash": "9c81d255e86aa340b112",
+          "publicPath": "/docsite/0.0048f5f93262716a8305.js"
         }
       ]
     },
@@ -439,15 +415,15 @@
       "css": [
         {
           "file": "1.196ce05925ea6d776920.css",
-          "hash": "00b6d1e114260a68cd0c",
+          "hash": "68653c8084b5f8b9b982",
           "publicPath": "/docsite/1.196ce05925ea6d776920.css"
         }
       ],
       "js": [
         {
-          "file": "1.889f77b4758ea9b88cde.js",
-          "hash": "00b6d1e114260a68cd0c",
-          "publicPath": "/docsite/1.889f77b4758ea9b88cde.js"
+          "file": "1.3e7309d681e3cfa4ccaf.js",
+          "hash": "68653c8084b5f8b9b982",
+          "publicPath": "/docsite/1.3e7309d681e3cfa4ccaf.js"
         }
       ]
     },
@@ -455,15 +431,15 @@
       "css": [
         {
           "file": "2.702de9bbb01fe4f46fa1.css",
-          "hash": "2da4d8852c6f5db6099f",
+          "hash": "376d1ffe083c0c2665ad",
           "publicPath": "/docsite/2.702de9bbb01fe4f46fa1.css"
         }
       ],
       "js": [
         {
-          "file": "2.e8c7b323f4e2e2529224.js",
-          "hash": "2da4d8852c6f5db6099f",
-          "publicPath": "/docsite/2.e8c7b323f4e2e2529224.js"
+          "file": "2.3c84b51b285ce3e043f8.js",
+          "hash": "376d1ffe083c0c2665ad",
+          "publicPath": "/docsite/2.3c84b51b285ce3e043f8.js"
         }
       ]
     },
@@ -471,51 +447,51 @@
       "css": [
         {
           "file": "component---site-src-pages-index-jsc-4-f-f99.9f99729bff7f082bd679.css",
-          "hash": "e2775fd7157214d343a8",
+          "hash": "2536046df2604fb98380",
           "publicPath": "/docsite/component---site-src-pages-index-jsc-4-f-f99.9f99729bff7f082bd679.css"
         }
       ],
       "js": [
         {
-          "file": "component---site-src-pages-index-jsc-4-f-f99.91c40153ff2e47f955f7.js",
-          "hash": "e2775fd7157214d343a8",
-          "publicPath": "/docsite/component---site-src-pages-index-jsc-4-f-f99.91c40153ff2e47f955f7.js"
+          "file": "component---site-src-pages-index-jsc-4-f-f99.fd8cf93fcee5e33b2573.js",
+          "hash": "2536046df2604fb98380",
+          "publicPath": "/docsite/component---site-src-pages-index-jsc-4-f-f99.fd8cf93fcee5e33b2573.js"
         }
       ]
     },
     "4": {
       "js": [
         {
-          "file": "component---theme-blog-list-pagea-6-a-7ba.178c6ff1f10dd5e7d364.js",
-          "hash": "7ebeffdfe91c5b52539b",
-          "publicPath": "/docsite/component---theme-blog-list-pagea-6-a-7ba.178c6ff1f10dd5e7d364.js"
+          "file": "component---theme-blog-list-pagea-6-a-7ba.02261ac3cbc2506c61ba.js",
+          "hash": "0b34f276bc3d61a5a3aa",
+          "publicPath": "/docsite/component---theme-blog-list-pagea-6-a-7ba.02261ac3cbc2506c61ba.js"
         }
       ]
     },
     "5": {
       "js": [
         {
-          "file": "component---theme-blog-post-pageccc-cab.28ca33fb53f31f4ab47f.js",
-          "hash": "c9b5f83f3cb127b296c4",
-          "publicPath": "/docsite/component---theme-blog-post-pageccc-cab.28ca33fb53f31f4ab47f.js"
+          "file": "component---theme-blog-post-pageccc-cab.210f66a78c470eaa14f5.js",
+          "hash": "2ba729b7df0c6c1e6f92",
+          "publicPath": "/docsite/component---theme-blog-post-pageccc-cab.210f66a78c470eaa14f5.js"
         }
       ]
     },
     "6": {
       "js": [
         {
-          "file": "component---theme-blog-tags-list-page-01-a-d0b.137e152578e735c7a4f5.js",
-          "hash": "da8d03927f88629a716c",
-          "publicPath": "/docsite/component---theme-blog-tags-list-page-01-a-d0b.137e152578e735c7a4f5.js"
+          "file": "component---theme-blog-tags-list-page-01-a-d0b.7b4863ed46b94f843b6a.js",
+          "hash": "abf7ec00e7a951ba60b7",
+          "publicPath": "/docsite/component---theme-blog-tags-list-page-01-a-d0b.7b4863ed46b94f843b6a.js"
         }
       ]
     },
     "7": {
       "js": [
         {
-          "file": "component---theme-blog-tags-posts-page-687-b6c.80949abc9934ad201b73.js",
-          "hash": "52e481b2221b6ab93e37",
-          "publicPath": "/docsite/component---theme-blog-tags-posts-page-687-b6c.80949abc9934ad201b73.js"
+          "file": "component---theme-blog-tags-posts-page-687-b6c.85c5ff68b6bdf57fa90d.js",
+          "hash": "62eac0de20f3aef23450",
+          "publicPath": "/docsite/component---theme-blog-tags-posts-page-687-b6c.85c5ff68b6bdf57fa90d.js"
         }
       ]
     },
@@ -523,15 +499,15 @@
       "css": [
         {
           "file": "component---theme-doc-legacy-item-031-769.1f1ce10374de019f5d3a.css",
-          "hash": "608a283888be11168c93",
+          "hash": "e5af46c0c3b7aa61a91e",
           "publicPath": "/docsite/component---theme-doc-legacy-item-031-769.1f1ce10374de019f5d3a.css"
         }
       ],
       "js": [
         {
-          "file": "component---theme-doc-legacy-item-031-769.b996b9ddf092596eddf8.js",
-          "hash": "608a283888be11168c93",
-          "publicPath": "/docsite/component---theme-doc-legacy-item-031-769.b996b9ddf092596eddf8.js"
+          "file": "component---theme-doc-legacy-item-031-769.e3d3e1c8418c84422cd5.js",
+          "hash": "e5af46c0c3b7aa61a91e",
+          "publicPath": "/docsite/component---theme-doc-legacy-item-031-769.e3d3e1c8418c84422cd5.js"
         }
       ]
     },
@@ -539,1057 +515,985 @@
       "css": [
         {
           "file": "component---theme-doc-legacy-page-9-e-7-ca5.3c38a2f40a51efdd72a0.css",
-          "hash": "0ae81f7c525f22a7870f",
+          "hash": "0f013911d79e2c2a8497",
           "publicPath": "/docsite/component---theme-doc-legacy-page-9-e-7-ca5.3c38a2f40a51efdd72a0.css"
         }
       ],
       "js": [
         {
-          "file": "component---theme-doc-legacy-page-9-e-7-ca5.1a941b4488ca0ab95dbe.js",
-          "hash": "0ae81f7c525f22a7870f",
-          "publicPath": "/docsite/component---theme-doc-legacy-page-9-e-7-ca5.1a941b4488ca0ab95dbe.js"
+          "file": "component---theme-doc-legacy-page-9-e-7-ca5.9d6c43606139fcc73a3b.js",
+          "hash": "0f013911d79e2c2a8497",
+          "publicPath": "/docsite/component---theme-doc-legacy-page-9-e-7-ca5.9d6c43606139fcc73a3b.js"
         }
       ]
     },
     "10": {
       "js": [
         {
-          "file": "content---docsite-blog-357-e89.15ab78c470b49be2d66b.js",
-          "hash": "6e54f0f332f6aac18d4f",
-          "publicPath": "/docsite/content---docsite-blog-357-e89.15ab78c470b49be2d66b.js"
+          "file": "content---docsite-blog-357-e89.7d5b5f43403caefa4638.js",
+          "hash": "b59236d4d8c3df8c5be6",
+          "publicPath": "/docsite/content---docsite-blog-357-e89.7d5b5f43403caefa4638.js"
         }
       ]
     },
     "11": {
       "js": [
         {
-          "file": "content---docsite-blog-8-e-9-cce.696573631cebbd1c6c42.js",
-          "hash": "6d78aa2468318bdce010",
-          "publicPath": "/docsite/content---docsite-blog-8-e-9-cce.696573631cebbd1c6c42.js"
+          "file": "content---docsite-blog-8-e-9-cce.d459cb10065f7c536409.js",
+          "hash": "c01a829281bad26ba268",
+          "publicPath": "/docsite/content---docsite-blog-8-e-9-cce.d459cb10065f7c536409.js"
         }
       ]
     },
     "12": {
       "js": [
         {
-          "file": "content---docsite-blog-hello-worldd-61-877.0d171c067a16029ac450.js",
-          "hash": "9897f1018f2de892729e",
-          "publicPath": "/docsite/content---docsite-blog-hello-worldd-61-877.0d171c067a16029ac450.js"
+          "file": "content---docsite-blog-hello-worldd-61-877.9122060eccbe3f390201.js",
+          "hash": "d9664e1cc4e499c021a4",
+          "publicPath": "/docsite/content---docsite-blog-hello-worldd-61-877.9122060eccbe3f390201.js"
         }
       ]
     },
     "13": {
       "js": [
         {
-          "file": "content---docsite-blog-holabdd-cc6.f058d6cc942e5f6ba834.js",
-          "hash": "63db0e457d66487aab03",
-          "publicPath": "/docsite/content---docsite-blog-holabdd-cc6.f058d6cc942e5f6ba834.js"
+          "file": "content---docsite-blog-holabdd-cc6.258ad7e9a5f0300c1985.js",
+          "hash": "9ef07f10496c9d7252b9",
+          "publicPath": "/docsite/content---docsite-blog-holabdd-cc6.258ad7e9a5f0300c1985.js"
         }
       ]
     },
     "14": {
       "js": [
         {
-          "file": "content---docsite-blog-welcome-286-fbe.84e0b3bcc9e60f675797.js",
-          "hash": "2068e9eb65dba460a9af",
-          "publicPath": "/docsite/content---docsite-blog-welcome-286-fbe.84e0b3bcc9e60f675797.js"
+          "file": "content---docsite-blog-welcome-286-fbe.280ee3ff0a1d6e4d5c1b.js",
+          "hash": "3f1072002f8859951c79",
+          "publicPath": "/docsite/content---docsite-blog-welcome-286-fbe.280ee3ff0a1d6e4d5c1b.js"
         }
       ]
     },
     "15": {
       "js": [
         {
-          "file": "content---docsite-blogaf-1-fa9.eb55714af3ae9c93b9b2.js",
-          "hash": "09aeb7e67ad6010f3013",
-          "publicPath": "/docsite/content---docsite-blogaf-1-fa9.eb55714af3ae9c93b9b2.js"
+          "file": "content---docsite-blogaf-1-fa9.7e3c9a7e2812c9750ac8.js",
+          "hash": "0299eb5b8f1f483358e6",
+          "publicPath": "/docsite/content---docsite-blogaf-1-fa9.7e3c9a7e2812c9750ac8.js"
         }
       ]
     },
     "16": {
       "js": [
         {
-          "file": "content---docsite-docs-doc-1-b-2-f-57e.7ee4a532c79cd9053c86.js",
-          "hash": "2d25533bb6459aae2667",
-          "publicPath": "/docsite/content---docsite-docs-doc-1-b-2-f-57e.7ee4a532c79cd9053c86.js"
+          "file": "content---docsite-docs-doc-1-b-2-f-57e.dc6a4c2b69ca7aa1e145.js",
+          "hash": "133cf1a4bd8827e26abd",
+          "publicPath": "/docsite/content---docsite-docs-doc-1-b-2-f-57e.dc6a4c2b69ca7aa1e145.js"
         }
       ]
     },
     "17": {
       "js": [
         {
-          "file": "content---docsite-docs-doc-2-df-3-e73.219edf0007ece8d83e3b.js",
-          "hash": "4b4011d4bfdfd52fd8e7",
-          "publicPath": "/docsite/content---docsite-docs-doc-2-df-3-e73.219edf0007ece8d83e3b.js"
+          "file": "content---docsite-docs-doc-2-df-3-e73.1f7759e2df14ee60863a.js",
+          "hash": "c3c2af80fb7f7a05eeb4",
+          "publicPath": "/docsite/content---docsite-docs-doc-2-df-3-e73.1f7759e2df14ee60863a.js"
         }
       ]
     },
     "18": {
       "js": [
         {
-          "file": "content---docsite-docs-doc-3616-679.aaf8ec48c046ed42331b.js",
-          "hash": "7996591cb9c06c2549da",
-          "publicPath": "/docsite/content---docsite-docs-doc-3616-679.aaf8ec48c046ed42331b.js"
+          "file": "content---docsite-docs-doc-3616-679.08a8ed454deb9b341cbc.js",
+          "hash": "fe1a8b65e799fad28887",
+          "publicPath": "/docsite/content---docsite-docs-doc-3616-679.08a8ed454deb9b341cbc.js"
         }
       ]
     },
     "19": {
       "js": [
         {
-          "file": "content---docsite-docs-mdxce-3-ecf.f6859bc1c6b7792ed790.js",
-          "hash": "3108f02a9050e4c52421",
-          "publicPath": "/docsite/content---docsite-docs-mdxce-3-ecf.f6859bc1c6b7792ed790.js"
+          "file": "content---docsite-docs-mdxce-3-ecf.9310b84be5638175952c.js",
+          "hash": "38c6bb18e495332cfead",
+          "publicPath": "/docsite/content---docsite-docs-mdxce-3-ecf.9310b84be5638175952c.js"
         }
       ]
     },
     "20": {
       "js": [
         {
-          "file": "content---docsite-docs-react-1-app-zong-lan-mu-lu-jie-gou-53-a-f80.1fd71d648f95c5d454a7.js",
-          "hash": "e85486c35a166a3508ca",
-          "publicPath": "/docsite/content---docsite-docs-react-1-app-zong-lan-mu-lu-jie-gou-53-a-f80.1fd71d648f95c5d454a7.js"
+          "file": "content---docsite-docs-react-1-app-zong-lan-mu-lu-jie-gou-53-a-f80.8c4346d660b7c9e2011b.js",
+          "hash": "0eeb5f48066a4507aa3f",
+          "publicPath": "/docsite/content---docsite-docs-react-1-app-zong-lan-mu-lu-jie-gou-53-a-f80.8c4346d660b7c9e2011b.js"
         }
       ]
     },
     "21": {
       "js": [
         {
-          "file": "content---docsite-docs-react-1-app-zong-lan-readm-ef-0-a-0b1.c0cceb881663245543d5.js",
-          "hash": "49f19d33dc050c1c364f",
-          "publicPath": "/docsite/content---docsite-docs-react-1-app-zong-lan-readm-ef-0-a-0b1.c0cceb881663245543d5.js"
+          "file": "content---docsite-docs-react-1-app-zong-lan-readm-ef-0-a-0b1.94a9c691d738c363f568.js",
+          "hash": "579adfe4a55cbfeae2f1",
+          "publicPath": "/docsite/content---docsite-docs-react-1-app-zong-lan-readm-ef-0-a-0b1.94a9c691d738c363f568.js"
         }
       ]
     },
     "22": {
       "js": [
         {
-          "file": "content---docsite-docs-react-1-app-zong-lan-wen-jian-he-wen-jian-jia-shuo-ming-381-462.39dbdd61ec120366a77d.js",
-          "hash": "3583ccbe03b93442530c",
-          "publicPath": "/docsite/content---docsite-docs-react-1-app-zong-lan-wen-jian-he-wen-jian-jia-shuo-ming-381-462.39dbdd61ec120366a77d.js"
+          "file": "content---docsite-docs-react-1-app-zong-lan-wen-jian-he-wen-jian-jia-shuo-ming-381-462.2ba1f261e5984b0a5a63.js",
+          "hash": "d7b88a833320d09f7c36",
+          "publicPath": "/docsite/content---docsite-docs-react-1-app-zong-lan-wen-jian-he-wen-jian-jia-shuo-ming-381-462.2ba1f261e5984b0a5a63.js"
         }
       ]
     },
     "23": {
       "js": [
         {
-          "file": "content---docsite-docs-react-1-react-basic-abstractionb-93-8a1.47b9dcad507a5bfab03a.js",
-          "hash": "7056d7e4156757b27832",
-          "publicPath": "/docsite/content---docsite-docs-react-1-react-basic-abstractionb-93-8a1.47b9dcad507a5bfab03a.js"
+          "file": "content---docsite-docs-react-1-basic-categoryb-79-31f.b8626d91ffe183f33494.js",
+          "hash": "15bcde1acc965299bf8d",
+          "publicPath": "/docsite/content---docsite-docs-react-1-basic-categoryb-79-31f.b8626d91ffe183f33494.js"
         }
       ]
     },
     "24": {
       "js": [
         {
-          "file": "content---docsite-docs-react-1-react-basic-categoryb-6-a-0cd.7fecb1e7b60e1acb8b59.js",
-          "hash": "86e067f00daf0897525d",
-          "publicPath": "/docsite/content---docsite-docs-react-1-react-basic-categoryb-6-a-0cd.7fecb1e7b60e1acb8b59.js"
+          "file": "content---docsite-docs-react-1-basic-communicationef-2-b0f.56b2fa9ffa0554c666c9.js",
+          "hash": "aa3870a697593f533c5b",
+          "publicPath": "/docsite/content---docsite-docs-react-1-basic-communicationef-2-b0f.56b2fa9ffa0554c666c9.js"
         }
       ]
     },
     "25": {
       "js": [
         {
-          "file": "content---docsite-docs-react-1-react-basic-communicationb-3-f-bdf.c917959a932661803758.js",
-          "hash": "571f09be2f85530ca5f9",
-          "publicPath": "/docsite/content---docsite-docs-react-1-react-basic-communicationb-3-f-bdf.c917959a932661803758.js"
+          "file": "content---docsite-docs-react-1-basic-evente-9-b-30b.3a6ff0ee6a96005f63f1.js",
+          "hash": "ce87171f1f14f54b9984",
+          "publicPath": "/docsite/content---docsite-docs-react-1-basic-evente-9-b-30b.3a6ff0ee6a96005f63f1.js"
         }
       ]
     },
     "26": {
       "js": [
         {
-          "file": "content---docsite-docs-react-1-react-basic-eventca-3-7da.bf0e9c5cca82fc552531.js",
-          "hash": "d37df7b2b4da3bcac818",
-          "publicPath": "/docsite/content---docsite-docs-react-1-react-basic-eventca-3-7da.bf0e9c5cca82fc552531.js"
+          "file": "content---docsite-docs-react-1-basic-jsx-6-ce-242.f11332359051ecac5960.js",
+          "hash": "d2083fcb2afc6fee5faa",
+          "publicPath": "/docsite/content---docsite-docs-react-1-basic-jsx-6-ce-242.f11332359051ecac5960.js"
         }
       ]
     },
     "27": {
       "js": [
         {
-          "file": "content---docsite-docs-react-1-react-basic-jsxba-6-522.fbba4465d8e5882c20cf.js",
-          "hash": "90426300b40b6adb5f49",
-          "publicPath": "/docsite/content---docsite-docs-react-1-react-basic-jsxba-6-522.fbba4465d8e5882c20cf.js"
+          "file": "content---docsite-docs-react-1-basic-lifecycle-58-a-ea4.738bad7dea62faddab81.js",
+          "hash": "c8d69c849dce13fa9a8c",
+          "publicPath": "/docsite/content---docsite-docs-react-1-basic-lifecycle-58-a-ea4.738bad7dea62faddab81.js"
         }
       ]
     },
     "28": {
       "js": [
         {
-          "file": "content---docsite-docs-react-1-react-basic-lifecycle-087-6e3.ef9aacb838302f38174d.js",
-          "hash": "b54ea06e63f2729181eb",
-          "publicPath": "/docsite/content---docsite-docs-react-1-react-basic-lifecycle-087-6e3.ef9aacb838302f38174d.js"
+          "file": "content---docsite-docs-react-1-basic-readm-ec-5-a-742.3560e12b7b9cbf5a8b97.js",
+          "hash": "7a0c2cc6e5b4d07e555f",
+          "publicPath": "/docsite/content---docsite-docs-react-1-basic-readm-ec-5-a-742.3560e12b7b9cbf5a8b97.js"
         }
       ]
     },
     "29": {
       "js": [
         {
-          "file": "content---docsite-docs-react-1-react-basic-readm-ebe-2-dac.a7bb04d6ac8d740e7d13.js",
-          "hash": "0c4c0bec44ce7b07548f",
-          "publicPath": "/docsite/content---docsite-docs-react-1-react-basic-readm-ebe-2-dac.a7bb04d6ac8d740e7d13.js"
+          "file": "content---docsite-docs-react-1-basic-stateb-58-0ab.5f608f8ab99422d26316.js",
+          "hash": "fd26f63486c00cf5385a",
+          "publicPath": "/docsite/content---docsite-docs-react-1-basic-stateb-58-0ab.5f608f8ab99422d26316.js"
         }
       ]
     },
     "30": {
       "js": [
         {
-          "file": "content---docsite-docs-react-1-react-basic-state-7-de-82a.fc6c38df4358cd9f9ecf.js",
-          "hash": "b23ee7fac087174af3ed",
-          "publicPath": "/docsite/content---docsite-docs-react-1-react-basic-state-7-de-82a.fc6c38df4358cd9f9ecf.js"
+          "file": "content---docsite-docs-react-1-basic-style-608-23e.3f0e423a52f4f4dab030.js",
+          "hash": "8c6b6b19c4e6c32b325a",
+          "publicPath": "/docsite/content---docsite-docs-react-1-basic-style-608-23e.3f0e423a52f4f4dab030.js"
         }
       ]
     },
     "31": {
       "js": [
         {
-          "file": "content---docsite-docs-react-1-react-basic-style-68-f-e9d.de0683b1bf9068a22f59.js",
-          "hash": "0641506fc6c5af8f4a5f",
-          "publicPath": "/docsite/content---docsite-docs-react-1-react-basic-style-68-f-e9d.de0683b1bf9068a22f59.js"
+          "file": "content---docsite-docs-react-2-advanced-contextfc-8-3ee.aa095e8eeba6cec123b0.js",
+          "hash": "26c1d8e0c0841a4ee076",
+          "publicPath": "/docsite/content---docsite-docs-react-2-advanced-contextfc-8-3ee.aa095e8eeba6cec123b0.js"
         }
       ]
     },
     "32": {
       "js": [
         {
-          "file": "content---docsite-docs-react-2-components-development-container-componentddf-366.ff930ff4fe35bc055478.js",
-          "hash": "ea93b125a3aba9144ea5",
-          "publicPath": "/docsite/content---docsite-docs-react-2-components-development-container-componentddf-366.ff930ff4fe35bc055478.js"
+          "file": "content---docsite-docs-react-2-advanced-hoc-033-f9b.8ce6a29a4b009d2bb485.js",
+          "hash": "c04a49f5d74044c9f76a",
+          "publicPath": "/docsite/content---docsite-docs-react-2-advanced-hoc-033-f9b.8ce6a29a4b009d2bb485.js"
         }
       ]
     },
     "33": {
       "js": [
         {
-          "file": "content---docsite-docs-react-2-components-development-context-808-580.e79ec5b2b19e701c08fd.js",
-          "hash": "9f9b9e0e2a53b6a42315",
-          "publicPath": "/docsite/content---docsite-docs-react-2-components-development-context-808-580.e79ec5b2b19e701c08fd.js"
+          "file": "content---docsite-docs-react-2-advanced-hooksaec-e85.28849f2b1b99dbce0ae7.js",
+          "hash": "b1e0ec48504fac7e430a",
+          "publicPath": "/docsite/content---docsite-docs-react-2-advanced-hooksaec-e85.28849f2b1b99dbce0ae7.js"
         }
       ]
     },
     "34": {
       "js": [
         {
-          "file": "content---docsite-docs-react-2-components-development-hoc-8-a-0-226.2bdc3c7a8653acf6eb7c.js",
-          "hash": "056b49a020ab93ae7768",
-          "publicPath": "/docsite/content---docsite-docs-react-2-components-development-hoc-8-a-0-226.2bdc3c7a8653acf6eb7c.js"
+          "file": "content---docsite-docs-react-2-advanced-portal-0-f-7-7e4.15c91f69f90db9550288.js",
+          "hash": "968b15dd8e672b13b88f",
+          "publicPath": "/docsite/content---docsite-docs-react-2-advanced-portal-0-f-7-7e4.15c91f69f90db9550288.js"
         }
       ]
     },
     "35": {
       "js": [
         {
-          "file": "content---docsite-docs-react-2-components-development-hooks-8-e-3-dce.d292cd6ee3c0a6e39499.js",
-          "hash": "88e7b222e34647ec90ad",
-          "publicPath": "/docsite/content---docsite-docs-react-2-components-development-hooks-8-e-3-dce.d292cd6ee3c0a6e39499.js"
+          "file": "content---docsite-docs-react-2-advanced-render-propse-18-eaf.10413af31ba88bd16fca.js",
+          "hash": "fe71fcc1497401f9079d",
+          "publicPath": "/docsite/content---docsite-docs-react-2-advanced-render-propse-18-eaf.10413af31ba88bd16fca.js"
         }
       ]
     },
     "36": {
       "js": [
         {
-          "file": "content---docsite-docs-react-2-components-development-performance-62-d-b39.886441a2ce13b1164dc1.js",
-          "hash": "9746280c2d562d99938d",
-          "publicPath": "/docsite/content---docsite-docs-react-2-components-development-performance-62-d-b39.886441a2ce13b1164dc1.js"
+          "file": "content---docsite-docs-react-3-development-performance-4-fb-868.7e91fe04ccdb210edbd2.js",
+          "hash": "55e03cbe57dc987c90e4",
+          "publicPath": "/docsite/content---docsite-docs-react-3-development-performance-4-fb-868.7e91fe04ccdb210edbd2.js"
         }
       ]
     },
     "37": {
       "js": [
         {
-          "file": "content---docsite-docs-react-2-components-development-portal-7-a-7-36c.28da80efc0fa9adb5725.js",
-          "hash": "8268e3853b9efd4e0714",
-          "publicPath": "/docsite/content---docsite-docs-react-2-components-development-portal-7-a-7-36c.28da80efc0fa9adb5725.js"
+          "file": "content---docsite-docs-react-3-development-pure-componentef-9-b5a.2656e9d8ed3cd7a5812f.js",
+          "hash": "198bbfe7b045e505853e",
+          "publicPath": "/docsite/content---docsite-docs-react-3-development-pure-componentef-9-b5a.2656e9d8ed3cd7a5812f.js"
         }
       ]
     },
     "38": {
       "js": [
         {
-          "file": "content---docsite-docs-react-2-components-development-presentational-component-58-c-082.156e01fdfbf7a82b0878.js",
-          "hash": "a844c420f50f0712eeca",
-          "publicPath": "/docsite/content---docsite-docs-react-2-components-development-presentational-component-58-c-082.156e01fdfbf7a82b0878.js"
+          "file": "content---docsite-docs-react-3-development-redux-componentea-7-2df.bb20948104f24cb9d4a3.js",
+          "hash": "eacbafb16a48de4fc2a0",
+          "publicPath": "/docsite/content---docsite-docs-react-3-development-redux-componentea-7-2df.bb20948104f24cb9d4a3.js"
         }
       ]
     },
     "39": {
       "js": [
         {
-          "file": "content---docsite-docs-react-2-components-development-pure-rendered-1-2b6.a2f5c6ccf78adffd8488.js",
-          "hash": "222abc5e520ce6961027",
-          "publicPath": "/docsite/content---docsite-docs-react-2-components-development-pure-rendered-1-2b6.a2f5c6ccf78adffd8488.js"
+          "file": "content---docsite-docs-react-3-development-ui-componentc-85-2be.e471832e7a412c3e8b0b.js",
+          "hash": "374eccaee245c3a14543",
+          "publicPath": "/docsite/content---docsite-docs-react-3-development-ui-componentc-85-2be.e471832e7a412c3e8b0b.js"
         }
       ]
     },
     "40": {
       "js": [
         {
-          "file": "content---docsite-docs-react-2-components-development-purify-component-636-31f.3695ea012dae2ba1225a.js",
-          "hash": "b0bc377fa98175263a12",
-          "publicPath": "/docsite/content---docsite-docs-react-2-components-development-purify-component-636-31f.3695ea012dae2ba1225a.js"
+          "file": "content---docsite-docs-react-4-state-management-actionf-7-e-659.948e0b2dadea63e2a7a0.js",
+          "hash": "dd375f33e96702cf3d3b",
+          "publicPath": "/docsite/content---docsite-docs-react-4-state-management-actionf-7-e-659.948e0b2dadea63e2a7a0.js"
         }
       ]
     },
     "41": {
       "js": [
         {
-          "file": "content---docsite-docs-react-2-components-development-render-props-528-76c.c935cf7b8f8b444380c1.js",
-          "hash": "bfe134c730d07bddc2d6",
-          "publicPath": "/docsite/content---docsite-docs-react-2-components-development-render-props-528-76c.c935cf7b8f8b444380c1.js"
+          "file": "content---docsite-docs-react-4-state-management-middleware-140-3e9.198c887f17e18d43bd9a.js",
+          "hash": "0eeeb0b235434edde8a2",
+          "publicPath": "/docsite/content---docsite-docs-react-4-state-management-middleware-140-3e9.198c887f17e18d43bd9a.js"
         }
       ]
     },
     "42": {
       "js": [
         {
-          "file": "content---docsite-docs-react-2-components-development-ui-component-6-af-3b7.fdfddc5828f22dba2918.js",
-          "hash": "5844a66d6debdcddeff5",
-          "publicPath": "/docsite/content---docsite-docs-react-2-components-development-ui-component-6-af-3b7.fdfddc5828f22dba2918.js"
+          "file": "content---docsite-docs-react-4-state-management-modeleda-5cf.1a754a968383d40ed1e1.js",
+          "hash": "f6c623d14ac09c92ba96",
+          "publicPath": "/docsite/content---docsite-docs-react-4-state-management-modeleda-5cf.1a754a968383d40ed1e1.js"
         }
       ]
     },
     "43": {
       "js": [
         {
-          "file": "content---docsite-docs-react-3-state-management-action-725-23b.4e942931c536a382e3f0.js",
-          "hash": "4a0d6315b7ae2f8a5ef4",
-          "publicPath": "/docsite/content---docsite-docs-react-3-state-management-action-725-23b.4e942931c536a382e3f0.js"
+          "file": "content---docsite-docs-react-4-state-management-reducer-403-0c5.ffa47a893c97bd037e42.js",
+          "hash": "afea4c0e24aeafcc38f7",
+          "publicPath": "/docsite/content---docsite-docs-react-4-state-management-reducer-403-0c5.ffa47a893c97bd037e42.js"
         }
       ]
     },
     "44": {
       "js": [
         {
-          "file": "content---docsite-docs-react-3-state-management-middleware-5-bf-e59.7607e8121cae9c657d12.js",
-          "hash": "58f2b1dfd141acfdf10d",
-          "publicPath": "/docsite/content---docsite-docs-react-3-state-management-middleware-5-bf-e59.7607e8121cae9c657d12.js"
+          "file": "content---docsite-docs-react-4-state-management-reduxa-14-db8.82d262a375dcd2c1b62b.js",
+          "hash": "202b12ae9a606f781884",
+          "publicPath": "/docsite/content---docsite-docs-react-4-state-management-reduxa-14-db8.82d262a375dcd2c1b62b.js"
         }
       ]
     },
     "45": {
       "js": [
         {
-          "file": "content---docsite-docs-react-3-state-management-model-353-5b3.b0c9677dfc183f4e06e1.js",
-          "hash": "e8eb9e4553a5d4d3a106",
-          "publicPath": "/docsite/content---docsite-docs-react-3-state-management-model-353-5b3.b0c9677dfc183f4e06e1.js"
+          "file": "content---docsite-docs-react-4-state-management-selector-4-c-8-91e.e5793f9e888949d0bb0d.js",
+          "hash": "7b3f59abdd04f676a1c7",
+          "publicPath": "/docsite/content---docsite-docs-react-4-state-management-selector-4-c-8-91e.e5793f9e888949d0bb0d.js"
         }
       ]
     },
     "46": {
       "js": [
         {
-          "file": "content---docsite-docs-react-3-state-management-reducer-295-22c.3f017b3be3bfe4d3d740.js",
-          "hash": "cfc32ebef8e027291bcf",
-          "publicPath": "/docsite/content---docsite-docs-react-3-state-management-reducer-295-22c.3f017b3be3bfe4d3d740.js"
+          "file": "content---docsite-docs-react-4-state-management-store-6-ef-862.a403ca31a25422379666.js",
+          "hash": "79e550f4c4b24a186333",
+          "publicPath": "/docsite/content---docsite-docs-react-4-state-management-store-6-ef-862.a403ca31a25422379666.js"
         }
       ]
     },
     "47": {
       "js": [
         {
-          "file": "content---docsite-docs-react-3-state-management-reduxbb-5-5d9.d669d724c05eb9e0250e.js",
-          "hash": "9cb8f289df654480f206",
-          "publicPath": "/docsite/content---docsite-docs-react-3-state-management-reduxbb-5-5d9.d669d724c05eb9e0250e.js"
+          "file": "content---docsite-docs-react-5-router-management-link-0-cf-146.e079e4921c2e93839d07.js",
+          "hash": "8545d0b439e384ebaca8",
+          "publicPath": "/docsite/content---docsite-docs-react-5-router-management-link-0-cf-146.e079e4921c2e93839d07.js"
         }
       ]
     },
     "48": {
       "js": [
         {
-          "file": "content---docsite-docs-react-3-state-management-selectorbe-2-2fb.db8b723e81c765f1075e.js",
-          "hash": "15dbaa957f8e3bd86fa5",
-          "publicPath": "/docsite/content---docsite-docs-react-3-state-management-selectorbe-2-2fb.db8b723e81c765f1075e.js"
+          "file": "content---docsite-docs-react-5-router-management-readm-ea-41-107.890013dc214653f7323f.js",
+          "hash": "e98f022c898bc9dc65ea",
+          "publicPath": "/docsite/content---docsite-docs-react-5-router-management-readm-ea-41-107.890013dc214653f7323f.js"
         }
       ]
     },
     "49": {
       "js": [
         {
-          "file": "content---docsite-docs-react-3-state-management-store-826-337.dab224c71884ee6e130a.js",
-          "hash": "d7cf468bae1fb3f7fa20",
-          "publicPath": "/docsite/content---docsite-docs-react-3-state-management-store-826-337.dab224c71884ee6e130a.js"
+          "file": "content---docsite-docs-react-5-router-management-routee-01-076.d7a82aec65b5ca872c10.js",
+          "hash": "0831661b6912dab3edb8",
+          "publicPath": "/docsite/content---docsite-docs-react-5-router-management-routee-01-076.d7a82aec65b5ca872c10.js"
         }
       ]
     },
     "50": {
       "js": [
         {
-          "file": "content---docsite-docs-react-4-router-management-link-329-c62.7f8b579cf86d7d1b0cb1.js",
-          "hash": "c8f38ca3a9313b9ec269",
-          "publicPath": "/docsite/content---docsite-docs-react-4-router-management-link-329-c62.7f8b579cf86d7d1b0cb1.js"
+          "file": "content---docsite-docs-react-5-router-management-router-904-e8b.944dd8d4d7a87559d9a8.js",
+          "hash": "2f23b0f7043bc5a1d646",
+          "publicPath": "/docsite/content---docsite-docs-react-5-router-management-router-904-e8b.944dd8d4d7a87559d9a8.js"
         }
       ]
     },
     "51": {
       "js": [
         {
-          "file": "content---docsite-docs-react-4-router-management-readm-ed-93-5d1.4b073c8a442d70e642e6.js",
-          "hash": "448bb37af1aec8189621",
-          "publicPath": "/docsite/content---docsite-docs-react-4-router-management-readm-ed-93-5d1.4b073c8a442d70e642e6.js"
+          "file": "content---docsite-docs-react-6-test-component-test-4-a-3-8c6.6d66c52ebedfc9d01db9.js",
+          "hash": "37b0674bf01723ad96be",
+          "publicPath": "/docsite/content---docsite-docs-react-6-test-component-test-4-a-3-8c6.6d66c52ebedfc9d01db9.js"
         }
       ]
     },
     "52": {
       "js": [
         {
-          "file": "content---docsite-docs-react-4-router-management-routec-1-d-579.30ca0d3bc230d72d5432.js",
-          "hash": "84b48dbe30c11f8cdf74",
-          "publicPath": "/docsite/content---docsite-docs-react-4-router-management-routec-1-d-579.30ca0d3bc230d72d5432.js"
+          "file": "content---docsite-docs-react-6-test-state-test-458-5c7.6cf18021a7189a0e8158.js",
+          "hash": "4ffcd8282ba9e9f72c6c",
+          "publicPath": "/docsite/content---docsite-docs-react-6-test-state-test-458-5c7.6cf18021a7189a0e8158.js"
         }
       ]
     },
     "53": {
       "js": [
         {
-          "file": "content---docsite-docs-react-4-router-management-routerf-10-20b.78790928a99efd106818.js",
-          "hash": "ecce2a6651844a451ca6",
-          "publicPath": "/docsite/content---docsite-docs-react-4-router-management-routerf-10-20b.78790928a99efd106818.js"
+          "file": "content---docsite-docs-react-6-test-test-categoryef-4-0c8.fbfc058f31712dddf83f.js",
+          "hash": "0092859ee4a481ffafd7",
+          "publicPath": "/docsite/content---docsite-docs-react-6-test-test-categoryef-4-0c8.fbfc058f31712dddf83f.js"
         }
       ]
     },
     "54": {
       "js": [
         {
-          "file": "content---docsite-docs-react-5-test-component-test-263-536.540326d9823838b42649.js",
-          "hash": "b7392fae5ed8d1cfbba9",
-          "publicPath": "/docsite/content---docsite-docs-react-5-test-component-test-263-536.540326d9823838b42649.js"
+          "file": "content---docsite-docs-react-6-test-unit-testbbe-8c7.928879f1726c5fc8e55f.js",
+          "hash": "dc2960e7a3982517cbf6",
+          "publicPath": "/docsite/content---docsite-docs-react-6-test-unit-testbbe-8c7.928879f1726c5fc8e55f.js"
         }
       ]
     },
     "55": {
       "js": [
         {
-          "file": "content---docsite-docs-react-5-test-state-test-670-17c.203eb84a0ea9106af6cf.js",
-          "hash": "cfb02f9181efea2e313e",
-          "publicPath": "/docsite/content---docsite-docs-react-5-test-state-test-670-17c.203eb84a0ea9106af6cf.js"
+          "file": "content---docsite-docs-react-appendix-1-references-14-f-380.b92803351b2579a49b58.js",
+          "hash": "e492d8a0594f192a7122",
+          "publicPath": "/docsite/content---docsite-docs-react-appendix-1-references-14-f-380.b92803351b2579a49b58.js"
         }
       ]
     },
     "56": {
       "js": [
         {
-          "file": "content---docsite-docs-react-5-test-test-category-733-671.18449722261a3d42523c.js",
-          "hash": "cd526a9f4b1ea43ba099",
-          "publicPath": "/docsite/content---docsite-docs-react-5-test-test-category-733-671.18449722261a3d42523c.js"
+          "file": "content---docsite-docs-react-appendix-2-related-websitesc-28-0af.6b56a743054f0a0d7182.js",
+          "hash": "e7d34f84e53246bf10d6",
+          "publicPath": "/docsite/content---docsite-docs-react-appendix-2-related-websitesc-28-0af.6b56a743054f0a0d7182.js"
         }
       ]
     },
     "57": {
       "js": [
         {
-          "file": "content---docsite-docs-react-5-test-unit-test-116-a2b.bd24b78d931593d4929e.js",
-          "hash": "f52b5d66f0596545e981",
-          "publicPath": "/docsite/content---docsite-docs-react-5-test-unit-test-116-a2b.bd24b78d931593d4929e.js"
+          "file": "content---docsite-docs-react-readme-377-926.f8e6d429969c58afbc16.js",
+          "hash": "1bbf1ba400ac42a6f57f",
+          "publicPath": "/docsite/content---docsite-docs-react-readme-377-926.f8e6d429969c58afbc16.js"
         }
       ]
     },
     "58": {
       "js": [
         {
-          "file": "content---docsite-docs-react-appendix-1-references-14-f-380.1248e2a4a7457449786f.js",
-          "hash": "9d7dc682cfb6c0dc5133",
-          "publicPath": "/docsite/content---docsite-docs-react-appendix-1-references-14-f-380.1248e2a4a7457449786f.js"
+          "file": "content---docsite-docs-react-security-guide-74-a-370.4a4db31166e9593a9d11.js",
+          "hash": "e99204ea3691a019e7c3",
+          "publicPath": "/docsite/content---docsite-docs-react-security-guide-74-a-370.4a4db31166e9593a9d11.js"
         }
       ]
     },
     "59": {
       "js": [
         {
-          "file": "content---docsite-docs-react-appendix-2-related-websitesc-28-0af.4bc89cf3cc695a3450ea.js",
-          "hash": "084d96cd35cd7b1609e4",
-          "publicPath": "/docsite/content---docsite-docs-react-appendix-2-related-websitesc-28-0af.4bc89cf3cc695a3450ea.js"
+          "file": "content---docsite-docs-react-shuo-ming-273-7d2.dd4d1ded77c9b5d87720.js",
+          "hash": "db2507b3bf93a0da6c96",
+          "publicPath": "/docsite/content---docsite-docs-react-shuo-ming-273-7d2.dd4d1ded77c9b5d87720.js"
         }
       ]
     },
     "60": {
       "js": [
         {
-          "file": "content---docsite-docs-react-readme-377-926.ce0db6f0baacb91e9e66.js",
-          "hash": "a8cee6de2b76f5ab0e04",
-          "publicPath": "/docsite/content---docsite-docs-react-readme-377-926.ce0db6f0baacb91e9e66.js"
+          "file": "docsMetadata---docsite-docs-6-dd-ccc.4f95eed2f63796e64261.js",
+          "hash": "c9ad2ed3c9e4e7a2be3f",
+          "publicPath": "/docsite/docsMetadata---docsite-docs-6-dd-ccc.4f95eed2f63796e64261.js"
         }
       ]
     },
     "61": {
+      "css": [
+        {
+          "file": "main.5af442a778040b828313.css",
+          "hash": "dc81593fcb99e5014c76",
+          "publicPath": "/docsite/main.5af442a778040b828313.css"
+        }
+      ],
       "js": [
         {
-          "file": "content---docsite-docs-react-security-guidecac-779.f6aa1db38763e6581e41.js",
-          "hash": "ac2ee58ae4aaa4e820df",
-          "publicPath": "/docsite/content---docsite-docs-react-security-guidecac-779.f6aa1db38763e6581e41.js"
+          "file": "main.1327fab92a7f01990c21.js",
+          "hash": "dc81593fcb99e5014c76",
+          "publicPath": "/docsite/main.1327fab92a7f01990c21.js"
         }
       ]
     },
     "62": {
       "js": [
         {
-          "file": "content---docsite-docs-react-shuo-ming-273-7d2.368d4704f16ff12102a4.js",
-          "hash": "041ed36a719db8d070f8",
-          "publicPath": "/docsite/content---docsite-docs-react-shuo-ming-273-7d2.368d4704f16ff12102a4.js"
+          "file": "metadata---docsite-blog-218-2ba.69136b579a7384fb9b04.js",
+          "hash": "6c834fe328f5fb9ddb81",
+          "publicPath": "/docsite/metadata---docsite-blog-218-2ba.69136b579a7384fb9b04.js"
         }
       ]
     },
     "63": {
       "js": [
         {
-          "file": "content---docsite-docs-react-summar-yf-26-399.b08176e90ee9fc4b2099.js",
-          "hash": "1185a924507c0995778a",
-          "publicPath": "/docsite/content---docsite-docs-react-summar-yf-26-399.b08176e90ee9fc4b2099.js"
+          "file": "metadata---docsite-blog-tags-docusaurus-350-a8e.dd3520aca16f3194f3b8.js",
+          "hash": "fea879333280a019d101",
+          "publicPath": "/docsite/metadata---docsite-blog-tags-docusaurus-350-a8e.dd3520aca16f3194f3b8.js"
         }
       ]
     },
     "64": {
       "js": [
         {
-          "file": "docsMetadata---docsite-docs-6-dd-ccc.51014fb98f2181d0ca1f.js",
-          "hash": "11d225102550c220e092",
-          "publicPath": "/docsite/docsMetadata---docsite-docs-6-dd-ccc.51014fb98f2181d0ca1f.js"
+          "file": "metadata---docsite-blog-tags-facebook-628-fc9.078a315ebfd83c8abb15.js",
+          "hash": "743eebd4f8798355e5ff",
+          "publicPath": "/docsite/metadata---docsite-blog-tags-facebook-628-fc9.078a315ebfd83c8abb15.js"
         }
       ]
     },
     "65": {
-      "css": [
-        {
-          "file": "main.cf96eb97e7d5d7563dca.css",
-          "hash": "1a85e3b75fc39de38b82",
-          "publicPath": "/docsite/main.cf96eb97e7d5d7563dca.css"
-        }
-      ],
       "js": [
         {
-          "file": "main.bf0328a78b5f16c77cb9.js",
-          "hash": "1a85e3b75fc39de38b82",
-          "publicPath": "/docsite/main.bf0328a78b5f16c77cb9.js"
+          "file": "metadata---docsite-blog-tags-hellobcb-730.ad3e68a572375e7e7761.js",
+          "hash": "5d8495d59eb2be5c9778",
+          "publicPath": "/docsite/metadata---docsite-blog-tags-hellobcb-730.ad3e68a572375e7e7761.js"
         }
       ]
     },
     "66": {
       "js": [
         {
-          "file": "metadata---docsite-blog-218-2ba.448dd327476ada718e35.js",
-          "hash": "9f67b7b09834fab004ca",
-          "publicPath": "/docsite/metadata---docsite-blog-218-2ba.448dd327476ada718e35.js"
+          "file": "metadata---docsite-blog-tags-hola-233-95b.edb20021aa19dee4cddb.js",
+          "hash": "3e425926f8d325faf394",
+          "publicPath": "/docsite/metadata---docsite-blog-tags-hola-233-95b.edb20021aa19dee4cddb.js"
         }
       ]
     },
     "67": {
       "js": [
         {
-          "file": "metadata---docsite-blog-tags-docusaurus-350-a8e.8a20099ab34e9c85a760.js",
-          "hash": "f6282a198b5eb533b5d9",
-          "publicPath": "/docsite/metadata---docsite-blog-tags-docusaurus-350-a8e.8a20099ab34e9c85a760.js"
+          "file": "metadata---docsite-blog-welcome-769-d0e.14cf1fe19d820fcb944b.js",
+          "hash": "491300b0750f8b502e6e",
+          "publicPath": "/docsite/metadata---docsite-blog-welcome-769-d0e.14cf1fe19d820fcb944b.js"
         }
       ]
     },
     "68": {
       "js": [
         {
-          "file": "metadata---docsite-blog-tags-facebook-628-fc9.8a0a5701fd0f1721d266.js",
-          "hash": "025b99f436c0c0358a87",
-          "publicPath": "/docsite/metadata---docsite-blog-tags-facebook-628-fc9.8a0a5701fd0f1721d266.js"
+          "file": "metadata---docsite-docs-doc-13-f-5-2b6.f30f2eb9342661072ee5.js",
+          "hash": "d7f618bcaf7fb6828974",
+          "publicPath": "/docsite/metadata---docsite-docs-doc-13-f-5-2b6.f30f2eb9342661072ee5.js"
         }
       ]
     },
     "69": {
       "js": [
         {
-          "file": "metadata---docsite-blog-tags-hellobcb-730.51a332f29e1bd780fa9d.js",
-          "hash": "fb168d6f5ec0b662eebf",
-          "publicPath": "/docsite/metadata---docsite-blog-tags-hellobcb-730.51a332f29e1bd780fa9d.js"
+          "file": "metadata---docsite-docs-doc-2-cd-2-869.9f63c3882b5e02d38585.js",
+          "hash": "55748a8cfa41081d2ebc",
+          "publicPath": "/docsite/metadata---docsite-docs-doc-2-cd-2-869.9f63c3882b5e02d38585.js"
         }
       ]
     },
     "70": {
       "js": [
         {
-          "file": "metadata---docsite-blog-tags-hola-233-95b.27f479e29c92af04e1a1.js",
-          "hash": "1afb9e35521ab15c4e0d",
-          "publicPath": "/docsite/metadata---docsite-blog-tags-hola-233-95b.27f479e29c92af04e1a1.js"
+          "file": "metadata---docsite-docs-doc-3-cf-9-b82.aed42387d9ee494992d2.js",
+          "hash": "857a8f3522251d71246a",
+          "publicPath": "/docsite/metadata---docsite-docs-doc-3-cf-9-b82.aed42387d9ee494992d2.js"
         }
       ]
     },
     "71": {
       "js": [
         {
-          "file": "metadata---docsite-blog-welcome-769-d0e.c608381d95e6724d4336.js",
-          "hash": "0e70261ff4c41a27b5e1",
-          "publicPath": "/docsite/metadata---docsite-blog-welcome-769-d0e.c608381d95e6724d4336.js"
+          "file": "metadata---docsite-docs-mdxdf-5-7ef.aa0e4c335b9ad26ee47a.js",
+          "hash": "ef29d801cbe227e1bbad",
+          "publicPath": "/docsite/metadata---docsite-docs-mdxdf-5-7ef.aa0e4c335b9ad26ee47a.js"
         }
       ]
     },
     "72": {
       "js": [
         {
-          "file": "metadata---docsite-docs-doc-13-f-5-2b6.efcdf1f13cfb2ef4344b.js",
-          "hash": "0eb5a05a70d38942177a",
-          "publicPath": "/docsite/metadata---docsite-docs-doc-13-f-5-2b6.efcdf1f13cfb2ef4344b.js"
+          "file": "metadata---docsite-docs-react-1-app-zong-lan-mu-lu-jie-gou-4-ae-67c.da47e3ba886968740962.js",
+          "hash": "ff54d2a3b7b83986aa00",
+          "publicPath": "/docsite/metadata---docsite-docs-react-1-app-zong-lan-mu-lu-jie-gou-4-ae-67c.da47e3ba886968740962.js"
         }
       ]
     },
     "73": {
       "js": [
         {
-          "file": "metadata---docsite-docs-doc-2-cd-2-869.ea9eb50186463f685e2f.js",
-          "hash": "e06b0aee30c0ffeecef4",
-          "publicPath": "/docsite/metadata---docsite-docs-doc-2-cd-2-869.ea9eb50186463f685e2f.js"
+          "file": "metadata---docsite-docs-react-1-app-zong-lan-readme-0-f-8-485.9a56f34120612aaa19a9.js",
+          "hash": "1d67605ebdc56c46a047",
+          "publicPath": "/docsite/metadata---docsite-docs-react-1-app-zong-lan-readme-0-f-8-485.9a56f34120612aaa19a9.js"
         }
       ]
     },
     "74": {
       "js": [
         {
-          "file": "metadata---docsite-docs-doc-3-cf-9-b82.3759e5d183f764b77e5b.js",
-          "hash": "f773cb0a3ab204643842",
-          "publicPath": "/docsite/metadata---docsite-docs-doc-3-cf-9-b82.3759e5d183f764b77e5b.js"
+          "file": "metadata---docsite-docs-react-1-app-zong-lan-wen-jian-he-wen-jian-jia-shuo-mingbcf-ecd.28d10f8c887f80a6e424.js",
+          "hash": "e2d84f427d3af714f40a",
+          "publicPath": "/docsite/metadata---docsite-docs-react-1-app-zong-lan-wen-jian-he-wen-jian-jia-shuo-mingbcf-ecd.28d10f8c887f80a6e424.js"
         }
       ]
     },
     "75": {
       "js": [
         {
-          "file": "metadata---docsite-docs-mdxdf-5-7ef.f74fbca0728b0fcd91ef.js",
-          "hash": "48ae41c740f36c7f185d",
-          "publicPath": "/docsite/metadata---docsite-docs-mdxdf-5-7ef.f74fbca0728b0fcd91ef.js"
+          "file": "metadata---docsite-docs-react-1-basic-category-453-065.d8499cf1965f6f27051e.js",
+          "hash": "789b49ebb064ae9acaa9",
+          "publicPath": "/docsite/metadata---docsite-docs-react-1-basic-category-453-065.d8499cf1965f6f27051e.js"
         }
       ]
     },
     "76": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-1-app-zong-lan-mu-lu-jie-gou-4-ae-67c.215efe3de25da15d5821.js",
-          "hash": "a99f0fa808ac0e2d2809",
-          "publicPath": "/docsite/metadata---docsite-docs-react-1-app-zong-lan-mu-lu-jie-gou-4-ae-67c.215efe3de25da15d5821.js"
+          "file": "metadata---docsite-docs-react-1-basic-communication-567-9ee.71e68c6f0ed958980765.js",
+          "hash": "9d7b317adca0f426bac0",
+          "publicPath": "/docsite/metadata---docsite-docs-react-1-basic-communication-567-9ee.71e68c6f0ed958980765.js"
         }
       ]
     },
     "77": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-1-app-zong-lan-readme-0-f-8-485.c183d0277177c484610f.js",
-          "hash": "844c599d9fcc61206e4f",
-          "publicPath": "/docsite/metadata---docsite-docs-react-1-app-zong-lan-readme-0-f-8-485.c183d0277177c484610f.js"
+          "file": "metadata---docsite-docs-react-1-basic-eventa-09-980.fcede56c8ba67385e7f0.js",
+          "hash": "84dd76420f91bbb02bd8",
+          "publicPath": "/docsite/metadata---docsite-docs-react-1-basic-eventa-09-980.fcede56c8ba67385e7f0.js"
         }
       ]
     },
     "78": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-1-app-zong-lan-wen-jian-he-wen-jian-jia-shuo-mingbcf-ecd.7502a5ad5885029ed53a.js",
-          "hash": "c2e33295720c49cafab4",
-          "publicPath": "/docsite/metadata---docsite-docs-react-1-app-zong-lan-wen-jian-he-wen-jian-jia-shuo-mingbcf-ecd.7502a5ad5885029ed53a.js"
+          "file": "metadata---docsite-docs-react-1-basic-jsx-295-0d0.88b2cbed3fa9ddb812f8.js",
+          "hash": "9d20d466f4a172946dc1",
+          "publicPath": "/docsite/metadata---docsite-docs-react-1-basic-jsx-295-0d0.88b2cbed3fa9ddb812f8.js"
         }
       ]
     },
     "79": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-1-react-basic-abstractiona-3-d-2bd.a0d2e84c217581689986.js",
-          "hash": "d4746d9c3dae15c3450f",
-          "publicPath": "/docsite/metadata---docsite-docs-react-1-react-basic-abstractiona-3-d-2bd.a0d2e84c217581689986.js"
+          "file": "metadata---docsite-docs-react-1-basic-lifecycle-962-1c3.f5bd3b0ea0044b37cda0.js",
+          "hash": "9564b3e2c19dee8db40e",
+          "publicPath": "/docsite/metadata---docsite-docs-react-1-basic-lifecycle-962-1c3.f5bd3b0ea0044b37cda0.js"
         }
       ]
     },
     "80": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-1-react-basic-category-018-1f0.2f4a209d407d783daac1.js",
-          "hash": "79f597504bb0a44569aa",
-          "publicPath": "/docsite/metadata---docsite-docs-react-1-react-basic-category-018-1f0.2f4a209d407d783daac1.js"
+          "file": "metadata---docsite-docs-react-1-basic-readme-0-e-0-acd.f1972fc1eb9d9f7fe6d6.js",
+          "hash": "ffaefbe7cc6b75ca45b2",
+          "publicPath": "/docsite/metadata---docsite-docs-react-1-basic-readme-0-e-0-acd.f1972fc1eb9d9f7fe6d6.js"
         }
       ]
     },
     "81": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-1-react-basic-communication-7-ba-d1c.128908ce57fdac1dc959.js",
-          "hash": "3ed840f957da9cf95d84",
-          "publicPath": "/docsite/metadata---docsite-docs-react-1-react-basic-communication-7-ba-d1c.128908ce57fdac1dc959.js"
+          "file": "metadata---docsite-docs-react-1-basic-state-8-bd-531.60770d0b161460d43fec.js",
+          "hash": "01ebc3d8f5f3e7271f8e",
+          "publicPath": "/docsite/metadata---docsite-docs-react-1-basic-state-8-bd-531.60770d0b161460d43fec.js"
         }
       ]
     },
     "82": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-1-react-basic-eventa-88-4e0.1bee7178b296feba5650.js",
-          "hash": "961bf9a7ece815d48729",
-          "publicPath": "/docsite/metadata---docsite-docs-react-1-react-basic-eventa-88-4e0.1bee7178b296feba5650.js"
+          "file": "metadata---docsite-docs-react-1-basic-style-57-d-5e7.edc9c1fbb757f371b744.js",
+          "hash": "e9a5857ddee90e271b38",
+          "publicPath": "/docsite/metadata---docsite-docs-react-1-basic-style-57-d-5e7.edc9c1fbb757f371b744.js"
         }
       ]
     },
     "83": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-1-react-basic-jsx-963-19d.b948b53d0af75c40a303.js",
-          "hash": "233953683e70d2d6734b",
-          "publicPath": "/docsite/metadata---docsite-docs-react-1-react-basic-jsx-963-19d.b948b53d0af75c40a303.js"
+          "file": "metadata---docsite-docs-react-2-advanced-contextfb-8-65a.c7f30dba195109928744.js",
+          "hash": "2e188d08ba2ca2c5bf04",
+          "publicPath": "/docsite/metadata---docsite-docs-react-2-advanced-contextfb-8-65a.c7f30dba195109928744.js"
         }
       ]
     },
     "84": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-1-react-basic-lifecycle-586-865.7e95db5d255e7e3467c5.js",
-          "hash": "8675e701ffc985a2855a",
-          "publicPath": "/docsite/metadata---docsite-docs-react-1-react-basic-lifecycle-586-865.7e95db5d255e7e3467c5.js"
+          "file": "metadata---docsite-docs-react-2-advanced-hoc-70-e-184.4957f37cd62273d89d13.js",
+          "hash": "0ea0aebbdb4dc3d964a9",
+          "publicPath": "/docsite/metadata---docsite-docs-react-2-advanced-hoc-70-e-184.4957f37cd62273d89d13.js"
         }
       ]
     },
     "85": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-1-react-basic-readm-ede-9-2d3.975c57f9e816f2d1c1dc.js",
-          "hash": "460c0cf6b9e49baac3b2",
-          "publicPath": "/docsite/metadata---docsite-docs-react-1-react-basic-readm-ede-9-2d3.975c57f9e816f2d1c1dc.js"
+          "file": "metadata---docsite-docs-react-2-advanced-hooksfbd-7b0.b500f1271e85d6f5d7e8.js",
+          "hash": "d837f7e3e6b64ac2fdb0",
+          "publicPath": "/docsite/metadata---docsite-docs-react-2-advanced-hooksfbd-7b0.b500f1271e85d6f5d7e8.js"
         }
       ]
     },
     "86": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-1-react-basic-statef-1-e-99f.a4703a5a5814092dba63.js",
-          "hash": "a79b207ec77fa549a3b7",
-          "publicPath": "/docsite/metadata---docsite-docs-react-1-react-basic-statef-1-e-99f.a4703a5a5814092dba63.js"
+          "file": "metadata---docsite-docs-react-2-advanced-portale-57-1ff.7aee9c5e638076c99bfc.js",
+          "hash": "bdde968779af6e2f51f9",
+          "publicPath": "/docsite/metadata---docsite-docs-react-2-advanced-portale-57-1ff.7aee9c5e638076c99bfc.js"
         }
       ]
     },
     "87": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-1-react-basic-style-994-338.5935bb58589ed2d1f996.js",
-          "hash": "77d8545e0db910bebc9b",
-          "publicPath": "/docsite/metadata---docsite-docs-react-1-react-basic-style-994-338.5935bb58589ed2d1f996.js"
+          "file": "metadata---docsite-docs-react-2-advanced-render-props-80-d-af8.e9dc19d52e331a297e4e.js",
+          "hash": "42584ec2bb439f5f76ef",
+          "publicPath": "/docsite/metadata---docsite-docs-react-2-advanced-render-props-80-d-af8.e9dc19d52e331a297e4e.js"
         }
       ]
     },
     "88": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-2-components-development-container-component-5-c-2-987.6feb54c6a938892c4db1.js",
-          "hash": "27cec25bc38906930539",
-          "publicPath": "/docsite/metadata---docsite-docs-react-2-components-development-container-component-5-c-2-987.6feb54c6a938892c4db1.js"
+          "file": "metadata---docsite-docs-react-3-development-performance-5-ad-ce3.051cedaf085a09a94779.js",
+          "hash": "be6fb696d6f55028a400",
+          "publicPath": "/docsite/metadata---docsite-docs-react-3-development-performance-5-ad-ce3.051cedaf085a09a94779.js"
         }
       ]
     },
     "89": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-2-components-development-context-267-5c0.4527d8c0184538a9d05e.js",
-          "hash": "43bc1842bafecc493143",
-          "publicPath": "/docsite/metadata---docsite-docs-react-2-components-development-context-267-5c0.4527d8c0184538a9d05e.js"
+          "file": "metadata---docsite-docs-react-3-development-pure-componente-63-d9b.4c1e9eae9e2a4be2606d.js",
+          "hash": "ad1fe8c46569b4e8e765",
+          "publicPath": "/docsite/metadata---docsite-docs-react-3-development-pure-componente-63-d9b.4c1e9eae9e2a4be2606d.js"
         }
       ]
     },
     "90": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-2-components-development-hoc-82-e-6ec.74b78994dc62bd083727.js",
-          "hash": "d6833d042c54bf9de26a",
-          "publicPath": "/docsite/metadata---docsite-docs-react-2-components-development-hoc-82-e-6ec.74b78994dc62bd083727.js"
+          "file": "metadata---docsite-docs-react-3-development-redux-componentda-9-858.b129edb30fb5b2bbf480.js",
+          "hash": "107c562764c3abec2d5d",
+          "publicPath": "/docsite/metadata---docsite-docs-react-3-development-redux-componentda-9-858.b129edb30fb5b2bbf480.js"
         }
       ]
     },
     "91": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-2-components-development-hooks-1-ef-6fb.60896ab66697428a1886.js",
-          "hash": "c3308f6ed6e8a2ef6d6c",
-          "publicPath": "/docsite/metadata---docsite-docs-react-2-components-development-hooks-1-ef-6fb.60896ab66697428a1886.js"
+          "file": "metadata---docsite-docs-react-3-development-ui-component-49-b-622.bd199926031d7c928a94.js",
+          "hash": "f9ce948fb8f186266b51",
+          "publicPath": "/docsite/metadata---docsite-docs-react-3-development-ui-component-49-b-622.bd199926031d7c928a94.js"
         }
       ]
     },
     "92": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-2-components-development-performance-7-ba-2db.5878dba2d6adf5a86e3d.js",
-          "hash": "9a9f74f1ba193f734074",
-          "publicPath": "/docsite/metadata---docsite-docs-react-2-components-development-performance-7-ba-2db.5878dba2d6adf5a86e3d.js"
+          "file": "metadata---docsite-docs-react-4-state-management-action-543-f79.1a3bf726c8e5402a625e.js",
+          "hash": "63135e906055a4be6c96",
+          "publicPath": "/docsite/metadata---docsite-docs-react-4-state-management-action-543-f79.1a3bf726c8e5402a625e.js"
         }
       ]
     },
     "93": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-2-components-development-portale-9-d-978.b903891366652ca5e02d.js",
-          "hash": "5311a44bba35f0eb1f1c",
-          "publicPath": "/docsite/metadata---docsite-docs-react-2-components-development-portale-9-d-978.b903891366652ca5e02d.js"
+          "file": "metadata---docsite-docs-react-4-state-management-middlewared-4-d-1b2.615d352ac886707b9533.js",
+          "hash": "83f7d6f0e1ed210108a2",
+          "publicPath": "/docsite/metadata---docsite-docs-react-4-state-management-middlewared-4-d-1b2.615d352ac886707b9533.js"
         }
       ]
     },
     "94": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-2-components-development-presentational-componentc-14-983.7484b6b52eeb019fe33f.js",
-          "hash": "98d839d1745100605293",
-          "publicPath": "/docsite/metadata---docsite-docs-react-2-components-development-presentational-componentc-14-983.7484b6b52eeb019fe33f.js"
+          "file": "metadata---docsite-docs-react-4-state-management-model-578-a22.eae0e9b9409f01584b3d.js",
+          "hash": "c5b82b80ca80624d3f67",
+          "publicPath": "/docsite/metadata---docsite-docs-react-4-state-management-model-578-a22.eae0e9b9409f01584b3d.js"
         }
       ]
     },
     "95": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-2-components-development-pure-renderbaa-d6b.bf43a4831a40b16acdbd.js",
-          "hash": "2646a1dd392eba2d13a8",
-          "publicPath": "/docsite/metadata---docsite-docs-react-2-components-development-pure-renderbaa-d6b.bf43a4831a40b16acdbd.js"
+          "file": "metadata---docsite-docs-react-4-state-management-reducerb-81-f86.54dd4dd74d45d1db2dec.js",
+          "hash": "369568c15765ef4db933",
+          "publicPath": "/docsite/metadata---docsite-docs-react-4-state-management-reducerb-81-f86.54dd4dd74d45d1db2dec.js"
         }
       ]
     },
     "96": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-2-components-development-purify-componentf-02-acb.a83f67fadb3b237ccad5.js",
-          "hash": "4e86769e12e3e7d92b34",
-          "publicPath": "/docsite/metadata---docsite-docs-react-2-components-development-purify-componentf-02-acb.a83f67fadb3b237ccad5.js"
+          "file": "metadata---docsite-docs-react-4-state-management-redux-0-fd-dd9.98704fd8a7d50ded9b39.js",
+          "hash": "40810a630add818f0dbe",
+          "publicPath": "/docsite/metadata---docsite-docs-react-4-state-management-redux-0-fd-dd9.98704fd8a7d50ded9b39.js"
         }
       ]
     },
     "97": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-2-components-development-render-props-3-e-5-c20.0f2d7f8667e871d853f3.js",
-          "hash": "03d42d735426bc24c85d",
-          "publicPath": "/docsite/metadata---docsite-docs-react-2-components-development-render-props-3-e-5-c20.0f2d7f8667e871d853f3.js"
+          "file": "metadata---docsite-docs-react-4-state-management-selectoreb-5-bbe.9ea9a60b3c7c954a9356.js",
+          "hash": "b32af0253a7765f78c4c",
+          "publicPath": "/docsite/metadata---docsite-docs-react-4-state-management-selectoreb-5-bbe.9ea9a60b3c7c954a9356.js"
         }
       ]
     },
     "98": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-2-components-development-ui-component-00-c-6a6.f9ca7d905f295c0cdf58.js",
-          "hash": "5c34423cabf6fd8960c7",
-          "publicPath": "/docsite/metadata---docsite-docs-react-2-components-development-ui-component-00-c-6a6.f9ca7d905f295c0cdf58.js"
+          "file": "metadata---docsite-docs-react-4-state-management-storead-0-cfd.640e415ac203b1ef0351.js",
+          "hash": "d7a16ee0ac1db3496860",
+          "publicPath": "/docsite/metadata---docsite-docs-react-4-state-management-storead-0-cfd.640e415ac203b1ef0351.js"
         }
       ]
     },
     "99": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-3-state-management-actionebf-deb.47765db35c6e5a4a4d02.js",
-          "hash": "52b3ffe2d20adc35c7ec",
-          "publicPath": "/docsite/metadata---docsite-docs-react-3-state-management-actionebf-deb.47765db35c6e5a4a4d02.js"
+          "file": "metadata---docsite-docs-react-5-router-management-linkd-5-b-66d.3371d5fbb22c6fa5b1e1.js",
+          "hash": "a2453501abbbd2c5cc10",
+          "publicPath": "/docsite/metadata---docsite-docs-react-5-router-management-linkd-5-b-66d.3371d5fbb22c6fa5b1e1.js"
         }
       ]
     },
     "100": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-3-state-management-middlewarefe-7-57e.fdae525bbef0a6e2dd93.js",
-          "hash": "f6873d8115a4543af40a",
-          "publicPath": "/docsite/metadata---docsite-docs-react-3-state-management-middlewarefe-7-57e.fdae525bbef0a6e2dd93.js"
+          "file": "metadata---docsite-docs-react-5-router-management-readm-eee-6-481.18ca2c6d302bac6239b7.js",
+          "hash": "9693fe7f5586ed957945",
+          "publicPath": "/docsite/metadata---docsite-docs-react-5-router-management-readm-eee-6-481.18ca2c6d302bac6239b7.js"
         }
       ]
     },
     "101": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-3-state-management-model-268-3dd.846fd3837402a510a798.js",
-          "hash": "1949a3741bf0de8b6c1b",
-          "publicPath": "/docsite/metadata---docsite-docs-react-3-state-management-model-268-3dd.846fd3837402a510a798.js"
+          "file": "metadata---docsite-docs-react-5-router-management-route-777-705.1a9f0508df4e4766d785.js",
+          "hash": "d602eca9637321c246c2",
+          "publicPath": "/docsite/metadata---docsite-docs-react-5-router-management-route-777-705.1a9f0508df4e4766d785.js"
         }
       ]
     },
     "102": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-3-state-management-reducerd-7-d-e0e.ffb25a93563264b4367a.js",
-          "hash": "0d77f9514f1e3a4a7da1",
-          "publicPath": "/docsite/metadata---docsite-docs-react-3-state-management-reducerd-7-d-e0e.ffb25a93563264b4367a.js"
+          "file": "metadata---docsite-docs-react-5-router-management-routere-88-bd6.52fde26ccbd0ad6dcda0.js",
+          "hash": "421836eabf4f7c9a11b1",
+          "publicPath": "/docsite/metadata---docsite-docs-react-5-router-management-routere-88-bd6.52fde26ccbd0ad6dcda0.js"
         }
       ]
     },
     "103": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-3-state-management-redux-4-f-9-f2a.f1d739898e98c291b3e7.js",
-          "hash": "ee649e99523e83fbb122",
-          "publicPath": "/docsite/metadata---docsite-docs-react-3-state-management-redux-4-f-9-f2a.f1d739898e98c291b3e7.js"
+          "file": "metadata---docsite-docs-react-6-test-component-test-6-e-8-ab7.72dae1987c17b41298ed.js",
+          "hash": "b5b9588a9ddbf8300792",
+          "publicPath": "/docsite/metadata---docsite-docs-react-6-test-component-test-6-e-8-ab7.72dae1987c17b41298ed.js"
         }
       ]
     },
     "104": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-3-state-management-selectorbe-7-7e5.a51c644ca9d2727ceae1.js",
-          "hash": "ea514db516790b3027c0",
-          "publicPath": "/docsite/metadata---docsite-docs-react-3-state-management-selectorbe-7-7e5.a51c644ca9d2727ceae1.js"
+          "file": "metadata---docsite-docs-react-6-test-state-test-95-c-d9f.19569995b292a92708b7.js",
+          "hash": "6ff23aa18d587992d64b",
+          "publicPath": "/docsite/metadata---docsite-docs-react-6-test-state-test-95-c-d9f.19569995b292a92708b7.js"
         }
       ]
     },
     "105": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-3-state-management-storede-9-237.02d2e743a2359fe66527.js",
-          "hash": "f5cb89f44cbde23fe6a8",
-          "publicPath": "/docsite/metadata---docsite-docs-react-3-state-management-storede-9-237.02d2e743a2359fe66527.js"
+          "file": "metadata---docsite-docs-react-6-test-test-category-5-e-3-789.2a556f2445f855a191b8.js",
+          "hash": "16e27cb1acfb935b12e6",
+          "publicPath": "/docsite/metadata---docsite-docs-react-6-test-test-category-5-e-3-789.2a556f2445f855a191b8.js"
         }
       ]
     },
     "106": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-4-router-management-linkb-7-f-711.43583547a1ca6db908ea.js",
-          "hash": "3e411d24a7020b7eca98",
-          "publicPath": "/docsite/metadata---docsite-docs-react-4-router-management-linkb-7-f-711.43583547a1ca6db908ea.js"
+          "file": "metadata---docsite-docs-react-6-test-unit-test-982-d87.3eb513e760754ba71875.js",
+          "hash": "9fbf173ccface5311776",
+          "publicPath": "/docsite/metadata---docsite-docs-react-6-test-unit-test-982-d87.3eb513e760754ba71875.js"
         }
       ]
     },
     "107": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-4-router-management-readm-ed-32-5a8.f45a9a25b68ec6e97b2c.js",
-          "hash": "e26da10be35d604c6a4a",
-          "publicPath": "/docsite/metadata---docsite-docs-react-4-router-management-readm-ed-32-5a8.f45a9a25b68ec6e97b2c.js"
+          "file": "metadata---docsite-docs-react-appendix-1-references-5-bc-3c7.4ea3ac9218d0e1270210.js",
+          "hash": "b43720382abb8af3d0dd",
+          "publicPath": "/docsite/metadata---docsite-docs-react-appendix-1-references-5-bc-3c7.4ea3ac9218d0e1270210.js"
         }
       ]
     },
     "108": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-4-router-management-routee-26-c8c.e0f10a8d1ee4c40ff6d9.js",
-          "hash": "2ca701dfa6ee3f8ed539",
-          "publicPath": "/docsite/metadata---docsite-docs-react-4-router-management-routee-26-c8c.e0f10a8d1ee4c40ff6d9.js"
+          "file": "metadata---docsite-docs-react-appendix-2-related-websitesd-88-f2c.78bc1a8ec973c7ac3364.js",
+          "hash": "c69fba4cc9b4792a9063",
+          "publicPath": "/docsite/metadata---docsite-docs-react-appendix-2-related-websitesd-88-f2c.78bc1a8ec973c7ac3364.js"
         }
       ]
     },
     "109": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-4-router-management-router-2-bf-661.a63da4a66b601d85a468.js",
-          "hash": "1d49a70d9cb7464022f1",
-          "publicPath": "/docsite/metadata---docsite-docs-react-4-router-management-router-2-bf-661.a63da4a66b601d85a468.js"
+          "file": "metadata---docsite-docs-react-readme-0-d-3-7c3.526559ee4c9abe657706.js",
+          "hash": "6cdb942b77cca8e78a88",
+          "publicPath": "/docsite/metadata---docsite-docs-react-readme-0-d-3-7c3.526559ee4c9abe657706.js"
         }
       ]
     },
     "110": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-5-test-component-test-461-186.bd980f436eb771269bf8.js",
-          "hash": "fa28cd6624dbde132a4b",
-          "publicPath": "/docsite/metadata---docsite-docs-react-5-test-component-test-461-186.bd980f436eb771269bf8.js"
+          "file": "metadata---docsite-docs-react-security-guidec-8-a-e29.a6c64341e44c76100a34.js",
+          "hash": "04003428b32b52d1bb6a",
+          "publicPath": "/docsite/metadata---docsite-docs-react-security-guidec-8-a-e29.a6c64341e44c76100a34.js"
         }
       ]
     },
     "111": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-5-test-state-test-0-ee-f21.e5923986c6bc6ad9d699.js",
-          "hash": "5addcdae3debef6dab84",
-          "publicPath": "/docsite/metadata---docsite-docs-react-5-test-state-test-0-ee-f21.e5923986c6bc6ad9d699.js"
+          "file": "metadata---docsite-docs-react-shuo-ming-7-b-8-07d.8c4620a3b8f518d79aad.js",
+          "hash": "2adca53209964d5652ed",
+          "publicPath": "/docsite/metadata---docsite-docs-react-shuo-ming-7-b-8-07d.8c4620a3b8f518d79aad.js"
         }
       ]
     },
     "112": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-5-test-test-category-8-fd-01c.8b5e3ef57916487a0ab3.js",
-          "hash": "47ad86a6deb56f25c220",
-          "publicPath": "/docsite/metadata---docsite-docs-react-5-test-test-category-8-fd-01c.8b5e3ef57916487a0ab3.js"
+          "file": "nextItem---docsite-blog-hello-worldeec-c62.d3f76e0429a73000d7ec.js",
+          "hash": "b542748170b94c31be42",
+          "publicPath": "/docsite/nextItem---docsite-blog-hello-worldeec-c62.d3f76e0429a73000d7ec.js"
         }
       ]
     },
     "113": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-5-test-unit-test-848-0e8.20b5a0286011ec2038f1.js",
-          "hash": "8dada891ee62fc50f8cd",
-          "publicPath": "/docsite/metadata---docsite-docs-react-5-test-unit-test-848-0e8.20b5a0286011ec2038f1.js"
+          "file": "nextItem---docsite-blog-welcome-552-1b1.c73594547be4af5d0734.js",
+          "hash": "40230b6097bc58b9b81e",
+          "publicPath": "/docsite/nextItem---docsite-blog-welcome-552-1b1.c73594547be4af5d0734.js"
         }
       ]
     },
     "114": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-appendix-1-references-5-bc-3c7.59b762e69a34bae0aa67.js",
-          "hash": "d08296013e72622a222c",
-          "publicPath": "/docsite/metadata---docsite-docs-react-appendix-1-references-5-bc-3c7.59b762e69a34bae0aa67.js"
+          "file": "runtime~main.08e011c509c3e14482bd.js",
+          "hash": "b8169debe399fe26c77e",
+          "publicPath": "/docsite/runtime~main.08e011c509c3e14482bd.js"
         }
       ]
     },
     "115": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-appendix-2-related-websitesd-88-f2c.25060adbb86c4679b416.js",
-          "hash": "735a92edba91949dcb00",
-          "publicPath": "/docsite/metadata---docsite-docs-react-appendix-2-related-websitesd-88-f2c.25060adbb86c4679b416.js"
+          "file": "tags---docsite-blog-tagsb-23-7b0.4450ac79b72965a3d91c.js",
+          "hash": "a07d7a388b44a1acfb50",
+          "publicPath": "/docsite/tags---docsite-blog-tagsb-23-7b0.4450ac79b72965a3d91c.js"
         }
       ]
     },
     "116": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-readme-0-d-3-7c3.ff117c4719bd4c046168.js",
-          "hash": "7c3c2ae8be5d7c261dd1",
-          "publicPath": "/docsite/metadata---docsite-docs-react-readme-0-d-3-7c3.ff117c4719bd4c046168.js"
-        }
-      ]
-    },
-    "117": {
-      "js": [
-        {
-          "file": "metadata---docsite-docs-react-security-guidec-8-a-e29.ea2f77e96843bad260f7.js",
-          "hash": "328fc8b330b06e469dc0",
-          "publicPath": "/docsite/metadata---docsite-docs-react-security-guidec-8-a-e29.ea2f77e96843bad260f7.js"
-        }
-      ]
-    },
-    "118": {
-      "js": [
-        {
-          "file": "metadata---docsite-docs-react-shuo-ming-7-b-8-07d.43d09c7171ee422edd3c.js",
-          "hash": "c755a6a752513fa04acc",
-          "publicPath": "/docsite/metadata---docsite-docs-react-shuo-ming-7-b-8-07d.43d09c7171ee422edd3c.js"
-        }
-      ]
-    },
-    "119": {
-      "js": [
-        {
-          "file": "metadata---docsite-docs-react-summar-yc-55-2b7.f552cbbbe21ffd725e12.js",
-          "hash": "f8cf2863c8be355bb748",
-          "publicPath": "/docsite/metadata---docsite-docs-react-summar-yc-55-2b7.f552cbbbe21ffd725e12.js"
-        }
-      ]
-    },
-    "120": {
-      "js": [
-        {
-          "file": "nextItem---docsite-blog-hello-worldeec-c62.c1d14c3bd5b153bf43d8.js",
-          "hash": "bdcb37d5fef8b8b93ff8",
-          "publicPath": "/docsite/nextItem---docsite-blog-hello-worldeec-c62.c1d14c3bd5b153bf43d8.js"
-        }
-      ]
-    },
-    "121": {
-      "js": [
-        {
-          "file": "nextItem---docsite-blog-welcome-552-1b1.5530ac344afdc58d3051.js",
-          "hash": "ee2f1b294b3c13f29fe8",
-          "publicPath": "/docsite/nextItem---docsite-blog-welcome-552-1b1.5530ac344afdc58d3051.js"
-        }
-      ]
-    },
-    "122": {
-      "js": [
-        {
-          "file": "runtime~main.f1d2c53d0d5720603ddb.js",
-          "hash": "b5c60a0d994b4373e9e9",
-          "publicPath": "/docsite/runtime~main.f1d2c53d0d5720603ddb.js"
-        }
-      ]
-    },
-    "123": {
-      "js": [
-        {
-          "file": "tags---docsite-blog-tagsb-23-7b0.54c6ac871bd39ad41780.js",
-          "hash": "c026091b604f25d4a102",
-          "publicPath": "/docsite/tags---docsite-blog-tagsb-23-7b0.54c6ac871bd39ad41780.js"
-        }
-      ]
-    },
-    "124": {
-      "js": [
-        {
-          "file": "124.34c96d2d4ecbdd0daadf.js",
-          "hash": "aac7b2d6972f7d769cab",
-          "publicPath": "/docsite/124.34c96d2d4ecbdd0daadf.js"
+          "file": "116.828c31f32ae42c1dae18.js",
+          "hash": "89d2dca5da275d60c802",
+          "publicPath": "/docsite/116.828c31f32ae42c1dae18.js"
         }
       ]
     }
