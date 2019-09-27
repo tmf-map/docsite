@@ -57,6 +57,34 @@ module.exports = {
       "react/appendix2-related-websites"
     ]
   },
+  "web": {
+    "1.http协议": [
+      "web/1.http/http-connection",
+      "web/1.http/http-status",
+      "web/1.http/http-cache",
+      "web/1.http/http1.1",
+      "web/1.http/http2",
+      "web/1.http/https",
+      "web/1.http/ajax",
+      "web/1.http/fetch",
+      "web/1.http/websocket"
+    ],
+    "2.同源协议": [
+      "web/2.same-origin-policy/same-origin-policy"
+    ],
+    "3.跨域请求": [
+      "web/3.cross-domain/jsonp",
+      "web/3.cross-domain/cors",
+      "web/3.cross-domain/websocket"
+    ],
+    "4.跨文档通信": [
+      "web/4.cross-document/iframe",
+      "web/4.cross-document/postMassage"
+
+    ],
+    "5.webWorker": [
+      "web/5.webworker/webworker"    ]
+  },
   "algorithm": {
     "1.数组": [
       "algorithm/1.array/duplicated-number-in-array",

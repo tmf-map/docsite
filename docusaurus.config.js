@@ -22,6 +22,7 @@ module.exports = {
       },
       links: [
         {to: 'docs/react/1.basic/jsx', label: 'React', position: 'left'},
+        {to: 'docs/web/1.http/http-connection', label: 'Web', position: 'left'},
         {to: 'docs/algorithm/1.array/duplicated-number-in-array', label: 'Algorithm', position: 'left'},
         {to: 'docs/doc1', label: 'Docs', position: 'left'},
         {to: 'blog', label: 'Blog', position: 'left'},
