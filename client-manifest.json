@@ -13,7 +13,7 @@
       7,
       8,
       9,
-      162,
+      148,
       0
     ],
     "1": [
@@ -25,7 +25,7 @@
       6,
       7,
       9,
-      162,
+      148,
       1
     ],
     "2": [
@@ -93,491 +93,449 @@
     "@site/blog/2019-05-30-welcome.md?truncated=true": [
       15
     ],
-    "@site/docs/algorithm/1.array/duplicated-number-in-array.md": [
+    "@site/docs/doc1.md": [
       16
     ],
-    "@site/docs/algorithm/4.linkedlist/merge-two-sorted-lists.md": [
+    "@site/docs/doc2.md": [
       17
     ],
-    "@site/docs/algorithm/4.linkedlist/reverse-linked-list.md": [
+    "@site/docs/doc3.md": [
       18
     ],
-    "@site/docs/algorithm/5.binary-tree/build-tree.md": [
+    "@site/docs/mdx.md": [
       19
     ],
-    "@site/docs/algorithm/5.binary-tree/mirror-tree.md": [
+    "@site/docs/react/1.-app-zong-lan/mu-lu-jie-gou.md": [
       20
     ],
-    "@site/docs/algorithm/8.sort/merged-sort.md": [
+    "@site/docs/react/1.-app-zong-lan/README.md": [
       21
     ],
-    "@site/docs/algorithm/8.sort/quick-sort.md": [
+    "@site/docs/react/1.-app-zong-lan/wen-jian-he-wen-jian-jia-shuo-ming.md": [
       22
     ],
-    "@site/docs/doc1.md": [
+    "@site/docs/react/1.basic/category.md": [
       23
     ],
-    "@site/docs/doc2.md": [
+    "@site/docs/react/1.basic/communication.md": [
       24
     ],
-    "@site/docs/doc3.md": [
+    "@site/docs/react/1.basic/event.md": [
       25
     ],
-    "@site/docs/mdx.md": [
+    "@site/docs/react/1.basic/jsx.md": [
       26
     ],
-    "@site/docs/react/1.-app-zong-lan/mu-lu-jie-gou.md": [
+    "@site/docs/react/1.basic/lifecycle.md": [
       27
     ],
-    "@site/docs/react/1.-app-zong-lan/README.md": [
+    "@site/docs/react/1.basic/README.md": [
       28
     ],
-    "@site/docs/react/1.-app-zong-lan/wen-jian-he-wen-jian-jia-shuo-ming.md": [
+    "@site/docs/react/1.basic/state.md": [
       29
     ],
-    "@site/docs/react/1.basic/category.md": [
+    "@site/docs/react/1.basic/style.md": [
       30
     ],
-    "@site/docs/react/1.basic/communication.md": [
+    "@site/docs/react/2.advanced/context.md": [
       31
     ],
-    "@site/docs/react/1.basic/event.md": [
+    "@site/docs/react/2.advanced/hoc.md": [
       32
     ],
-    "@site/docs/react/1.basic/jsx.md": [
+    "@site/docs/react/2.advanced/hooks.md": [
       33
     ],
-    "@site/docs/react/1.basic/lifecycle.md": [
+    "@site/docs/react/2.advanced/portal.md": [
       34
     ],
-    "@site/docs/react/1.basic/README.md": [
+    "@site/docs/react/2.advanced/render-props.md": [
       35
     ],
-    "@site/docs/react/1.basic/state.md": [
+    "@site/docs/react/3.development/performance.md": [
       36
     ],
-    "@site/docs/react/1.basic/style.md": [
+    "@site/docs/react/3.development/pure-component.md": [
       37
     ],
-    "@site/docs/react/2.advanced/context.md": [
+    "@site/docs/react/3.development/redux-component.md": [
       38
     ],
-    "@site/docs/react/2.advanced/hoc.md": [
+    "@site/docs/react/3.development/ui-component.md": [
       39
     ],
-    "@site/docs/react/2.advanced/hooks.md": [
+    "@site/docs/react/4.state-management/action.md": [
       40
     ],
-    "@site/docs/react/2.advanced/portal.md": [
+    "@site/docs/react/4.state-management/middleware.md": [
       41
     ],
-    "@site/docs/react/2.advanced/render-props.md": [
+    "@site/docs/react/4.state-management/model.md": [
       42
     ],
-    "@site/docs/react/3.development/performance.md": [
+    "@site/docs/react/4.state-management/reducer.md": [
       43
     ],
-    "@site/docs/react/3.development/pure-component.md": [
+    "@site/docs/react/4.state-management/redux.md": [
       44
     ],
-    "@site/docs/react/3.development/redux-component.md": [
+    "@site/docs/react/4.state-management/selector.md": [
       45
     ],
-    "@site/docs/react/3.development/ui-component.md": [
+    "@site/docs/react/4.state-management/store.md": [
       46
     ],
-    "@site/docs/react/4.state-management/action.md": [
+    "@site/docs/react/5.router-management/link.md": [
       47
     ],
-    "@site/docs/react/4.state-management/middleware.md": [
+    "@site/docs/react/5.router-management/README.md": [
       48
     ],
-    "@site/docs/react/4.state-management/model.md": [
+    "@site/docs/react/5.router-management/route.md": [
       49
     ],
-    "@site/docs/react/4.state-management/reducer.md": [
+    "@site/docs/react/5.router-management/router.md": [
       50
     ],
-    "@site/docs/react/4.state-management/redux.md": [
+    "@site/docs/react/6.test/component-test.md": [
       51
     ],
-    "@site/docs/react/4.state-management/selector.md": [
+    "@site/docs/react/6.test/state-test.md": [
       52
     ],
-    "@site/docs/react/4.state-management/store.md": [
+    "@site/docs/react/6.test/test-category.md": [
       53
     ],
-    "@site/docs/react/5.router-management/link.md": [
+    "@site/docs/react/6.test/unit-test.md": [
       54
     ],
-    "@site/docs/react/5.router-management/README.md": [
+    "@site/docs/react/appendix1-references.md": [
       55
     ],
-    "@site/docs/react/5.router-management/route.md": [
+    "@site/docs/react/appendix2-related-websites.md": [
       56
     ],
-    "@site/docs/react/5.router-management/router.md": [
+    "@site/docs/react/README.md": [
       57
     ],
-    "@site/docs/react/6.test/component-test.md": [
+    "@site/docs/react/7.security-guide.md": [
       58
     ],
-    "@site/docs/react/6.test/state-test.md": [
+    "@site/docs/react/shuo-ming.md": [
       59
     ],
-    "@site/docs/react/6.test/test-category.md": [
+    "@site/docs/web/1.http/ajax.md": [
       60
     ],
-    "@site/docs/react/6.test/unit-test.md": [
+    "@site/docs/web/1.http/fetch.md": [
       61
     ],
-    "@site/docs/react/appendix1-references.md": [
+    "@site/docs/web/1.http/http1.1.md": [
       62
     ],
-    "@site/docs/react/appendix2-related-websites.md": [
+    "@site/docs/web/1.http/http2.md": [
       63
     ],
-    "@site/docs/react/README.md": [
+    "@site/docs/web/1.http/http-cache.md": [
       64
     ],
-    "@site/docs/react/7.security-guide.md": [
+    "@site/docs/web/1.http/http-connection.md": [
       65
     ],
-    "@site/docs/react/shuo-ming.md": [
+    "@site/docs/web/1.http/http-status.md": [
       66
     ],
-    "@site/docs/web/1.http/ajax.md": [
+    "@site/docs/web/1.http/https.md": [
       67
     ],
-    "@site/docs/web/1.http/fetch.md": [
+    "@site/docs/web/1.http/websocket.md": [
       68
     ],
-    "@site/docs/web/1.http/http1.1.md": [
+    "@site/docs/web/2.same-origin-policy/same-origin-policy.md": [
       69
     ],
-    "@site/docs/web/1.http/http2.md": [
+    "@site/docs/web/3.cross-domain/cors.md": [
       70
     ],
-    "@site/docs/web/1.http/http-cache.md": [
+    "@site/docs/web/3.cross-domain/jsonp.md": [
       71
     ],
-    "@site/docs/web/1.http/http-connection.md": [
+    "@site/docs/web/3.cross-domain/websocket.md": [
       72
     ],
-    "@site/docs/web/1.http/http-status.md": [
+    "@site/docs/web/4.cross-document/iframe.md": [
       73
     ],
-    "@site/docs/web/1.http/https.md": [
+    "@site/docs/web/4.cross-document/postMassage.md": [
       74
     ],
-    "@site/docs/web/1.http/websocket.md": [
+    "@site/docs/web/5.webworker/webworker.md": [
       75
     ],
-    "@site/docs/web/2.same-origin-policy/same-origin-policy.md": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-420.json": [
       76
     ],
-    "@site/docs/web/3.cross-domain/cors.md": [
+    "main": [
+      146,
       77
     ],
-    "@site/docs/web/3.cross-domain/jsonp.md": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-blog/docsite-blog-6d6.json": [
       78
     ],
-    "@site/docs/web/3.cross-domain/websocket.md": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-blog/docsite-blog-tags-docusaurus-07f.json": [
       79
     ],
-    "@site/docs/web/4.cross-document/iframe.md": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-blog/docsite-blog-tags-facebook-84d.json": [
       80
     ],
-    "@site/docs/web/4.cross-document/postMassage.md": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-blog/docsite-blog-tags-hello-021.json": [
       81
     ],
-    "@site/docs/web/5.webworker/webworker.md": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-blog/docsite-blog-tags-hola-0c5.json": [
       82
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-420.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-blog/docsite-blog-welcome-c6a.json": [
       83
     ],
-    "main": [
-      160,
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-doc-1-6d4.json": [
       84
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-blog/docsite-blog-6d6.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-doc-2-164.json": [
       85
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-blog/docsite-blog-tags-docusaurus-07f.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-doc-3-a16.json": [
       86
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-blog/docsite-blog-tags-facebook-84d.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-mdx-0f8.json": [
       87
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-blog/docsite-blog-tags-hello-021.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-1-app-zong-lan-mu-lu-jie-gou-05a.json": [
       88
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-blog/docsite-blog-tags-hola-0c5.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-1-app-zong-lan-readme-83f.json": [
       89
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-blog/docsite-blog-welcome-c6a.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-1-app-zong-lan-wen-jian-he-wen-jian-jia-shuo-ming-d32.json": [
       90
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-algorithm-1-array-duplicated-number-in-array-fbe.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-1-basic-category-c97.json": [
       91
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-algorithm-4-linkedlist-merge-two-sorted-lists-62e.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-1-basic-communication-443.json": [
       92
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-algorithm-4-linkedlist-reverse-linked-list-5d2.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-1-basic-event-e4d.json": [
       93
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-algorithm-5-binary-tree-build-tree-1eb.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-1-basic-jsx-72c.json": [
       94
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-algorithm-5-binary-tree-mirror-tree-e3e.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-1-basic-lifecycle-619.json": [
       95
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-algorithm-8-sort-merged-sort-bbb.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-1-basic-readme-8c0.json": [
       96
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-algorithm-8-sort-quick-sort-46c.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-1-basic-state-024.json": [
       97
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-doc-1-6d4.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-1-basic-style-377.json": [
       98
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-doc-2-164.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-2-advanced-context-bc8.json": [
       99
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-doc-3-a16.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-2-advanced-hoc-cbb.json": [
       100
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-mdx-0f8.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-2-advanced-hooks-44f.json": [
       101
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-1-app-zong-lan-mu-lu-jie-gou-05a.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-2-advanced-portal-e9e.json": [
       102
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-1-app-zong-lan-readme-83f.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-2-advanced-render-props-4c3.json": [
       103
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-1-app-zong-lan-wen-jian-he-wen-jian-jia-shuo-ming-d32.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-3-development-performance-743.json": [
       104
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-1-basic-category-c97.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-3-development-pure-component-6b2.json": [
       105
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-1-basic-communication-443.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-3-development-redux-component-a9d.json": [
       106
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-1-basic-event-e4d.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-3-development-ui-component-aa0.json": [
       107
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-1-basic-jsx-72c.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-4-state-management-action-6eb.json": [
       108
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-1-basic-lifecycle-619.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-4-state-management-middleware-26d.json": [
       109
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-1-basic-readme-8c0.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-4-state-management-model-730.json": [
       110
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-1-basic-state-024.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-4-state-management-reducer-851.json": [
       111
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-1-basic-style-377.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-4-state-management-redux-e4d.json": [
       112
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-2-advanced-context-bc8.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-4-state-management-selector-e50.json": [
       113
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-2-advanced-hoc-cbb.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-4-state-management-store-a55.json": [
       114
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-2-advanced-hooks-44f.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-5-router-management-link-b57.json": [
       115
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-2-advanced-portal-e9e.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-5-router-management-readme-aff.json": [
       116
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-2-advanced-render-props-4c3.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-5-router-management-route-23b.json": [
       117
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-3-development-performance-743.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-5-router-management-router-0fd.json": [
       118
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-3-development-pure-component-6b2.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-6-test-component-test-328.json": [
       119
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-3-development-redux-component-a9d.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-6-test-state-test-300.json": [
       120
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-3-development-ui-component-aa0.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-6-test-test-category-569.json": [
       121
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-4-state-management-action-6eb.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-6-test-unit-test-cb9.json": [
       122
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-4-state-management-middleware-26d.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-appendix-1-references-92f.json": [
       123
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-4-state-management-model-730.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-appendix-2-related-websites-426.json": [
       124
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-4-state-management-reducer-851.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-readme-1a9.json": [
       125
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-4-state-management-redux-e4d.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-security-guide-f2c.json": [
       126
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-4-state-management-selector-e50.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-shuo-ming-b69.json": [
       127
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-4-state-management-store-a55.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-web-1-http-ajax-9cd.json": [
       128
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-5-router-management-link-b57.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-web-1-http-fetch-5b7.json": [
       129
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-5-router-management-readme-aff.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-web-1-http-http-1-1-98b.json": [
       130
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-5-router-management-route-23b.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-web-1-http-http-2-086.json": [
       131
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-5-router-management-router-0fd.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-web-1-http-http-cache-dc0.json": [
       132
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-6-test-component-test-328.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-web-1-http-http-connection-5d9.json": [
       133
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-6-test-state-test-300.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-web-1-http-http-status-b70.json": [
       134
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-6-test-test-category-569.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-web-1-http-https-63c.json": [
       135
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-6-test-unit-test-cb9.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-web-1-http-websocket-4e7.json": [
       136
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-appendix-1-references-92f.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-web-2-same-origin-policy-same-origin-policy-a32.json": [
       137
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-appendix-2-related-websites-426.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-web-3-cross-domain-cors-c60.json": [
       138
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-readme-1a9.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-web-3-cross-domain-jsonp-fc1.json": [
       139
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-security-guide-f2c.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-web-3-cross-domain-websocket-e87.json": [
       140
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-react-shuo-ming-b69.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-web-4-cross-document-iframe-0f4.json": [
       141
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-web-1-http-ajax-9cd.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-web-4-cross-document-post-massage-31d.json": [
       142
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-web-1-http-fetch-5b7.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-web-5-webworker-webworker-f95.json": [
       143
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-web-1-http-http-1-1-98b.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-blog/docsite-blog-hola-191.json": [
       144
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-web-1-http-http-2-086.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-blog/docsite-blog-hello-world-3d6.json": [
       145
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-web-1-http-http-cache-dc0.json": [
+    "runtime~main": [
+      77,
       146
     ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-web-1-http-http-connection-5d9.json": [
+    "/Users/Robbie/TS/docsite/.docusaurus/docusaurus-plugin-content-blog/docsite-blog-tags-tags-45d.json": [
       147
-    ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-web-1-http-http-status-b70.json": [
-      148
-    ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-web-1-http-https-63c.json": [
-      149
-    ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-web-1-http-websocket-4e7.json": [
-      150
-    ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-web-2-same-origin-policy-same-origin-policy-a32.json": [
-      151
-    ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-web-3-cross-domain-cors-c60.json": [
-      152
-    ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-web-3-cross-domain-jsonp-fc1.json": [
-      153
-    ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-web-3-cross-domain-websocket-e87.json": [
-      154
-    ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-web-4-cross-document-iframe-0f4.json": [
-      155
-    ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-web-4-cross-document-post-massage-31d.json": [
-      156
-    ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-docs/docsite-docs-web-5-webworker-webworker-f95.json": [
-      157
-    ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-blog/docsite-blog-hola-191.json": [
-      158
-    ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-blog/docsite-blog-hello-world-3d6.json": [
-      159
-    ],
-    "runtime~main": [
-      84,
-      160
-    ],
-    "/Users/kimi/Documents/projects/my-projects/docsite/.docusaurus/docusaurus-plugin-content-blog/docsite-blog-tags-tags-45d.json": [
-      161
     ],
     "@theme/NotFound": [
       0,
       1,
-      162
+      148
     ]
   },
   "assets": {
     "0": {
       "js": [
         {
-          "file": "0.dbceefd770629ffeface.js",
-          "hash": "e78acd98300fb74ef6fd",
-          "publicPath": "/docsite/0.dbceefd770629ffeface.js"
+          "file": "0.ab617625fbad78b7542c.js",
+          "hash": "c29f06ce44fc00df61cf",
+          "publicPath": "/docsite/0.ab617625fbad78b7542c.js"
         }
       ]
     },
     "1": {
       "css": [
         {
-          "file": "1.196ce05925ea6d776920.css",
-          "hash": "0909f62d61378c578ad7",
-          "publicPath": "/docsite/1.196ce05925ea6d776920.css"
+          "file": "1.7cc1ec06bd83c57cc543.css",
+          "hash": "d5f28a38492928b5191c",
+          "publicPath": "/docsite/1.7cc1ec06bd83c57cc543.css"
         }
       ],
       "js": [
         {
-          "file": "1.11d2c34cd5acf8ed4350.js",
-          "hash": "0909f62d61378c578ad7",
-          "publicPath": "/docsite/1.11d2c34cd5acf8ed4350.js"
+          "file": "1.14f8813c89d75cd00ee5.js",
+          "hash": "d5f28a38492928b5191c",
+          "publicPath": "/docsite/1.14f8813c89d75cd00ee5.js"
         }
       ]
     },
     "2": {
       "css": [
         {
-          "file": "2.702de9bbb01fe4f46fa1.css",
-          "hash": "fad5b6fdecb1ab3921c8",
-          "publicPath": "/docsite/2.702de9bbb01fe4f46fa1.css"
+          "file": "2.159fbf7b5c0652c5c101.css",
+          "hash": "635ca3aba3bbba42b9e5",
+          "publicPath": "/docsite/2.159fbf7b5c0652c5c101.css"
         }
       ],
       "js": [
         {
-          "file": "2.c2ffa85edada3d9a0678.js",
-          "hash": "fad5b6fdecb1ab3921c8",
-          "publicPath": "/docsite/2.c2ffa85edada3d9a0678.js"
+          "file": "2.f41fc10771d9062cbada.js",
+          "hash": "635ca3aba3bbba42b9e5",
+          "publicPath": "/docsite/2.f41fc10771d9062cbada.js"
         }
       ]
     },
@@ -585,51 +543,51 @@
       "css": [
         {
           "file": "component---site-src-pages-index-jsc-4-f-f99.9f99729bff7f082bd679.css",
-          "hash": "0d256d22e2e0f41a394f",
+          "hash": "b3a50a7db496365585a7",
           "publicPath": "/docsite/component---site-src-pages-index-jsc-4-f-f99.9f99729bff7f082bd679.css"
         }
       ],
       "js": [
         {
-          "file": "component---site-src-pages-index-jsc-4-f-f99.697b285df6f09b66d5e3.js",
-          "hash": "0d256d22e2e0f41a394f",
-          "publicPath": "/docsite/component---site-src-pages-index-jsc-4-f-f99.697b285df6f09b66d5e3.js"
+          "file": "component---site-src-pages-index-jsc-4-f-f99.c216850f69bdeb2f1270.js",
+          "hash": "b3a50a7db496365585a7",
+          "publicPath": "/docsite/component---site-src-pages-index-jsc-4-f-f99.c216850f69bdeb2f1270.js"
         }
       ]
     },
     "4": {
       "js": [
         {
-          "file": "component---theme-blog-list-pagea-6-a-7ba.07405792f2318ca6671e.js",
-          "hash": "1e9502e1ae95f093b498",
-          "publicPath": "/docsite/component---theme-blog-list-pagea-6-a-7ba.07405792f2318ca6671e.js"
+          "file": "component---theme-blog-list-pagea-6-a-7ba.09ed02a5799dc78d5299.js",
+          "hash": "908e8fbad49eeba0f7b1",
+          "publicPath": "/docsite/component---theme-blog-list-pagea-6-a-7ba.09ed02a5799dc78d5299.js"
         }
       ]
     },
     "5": {
       "js": [
         {
-          "file": "component---theme-blog-post-pageccc-cab.c4472147804887b1c544.js",
-          "hash": "34845cbbd4319c672bb1",
-          "publicPath": "/docsite/component---theme-blog-post-pageccc-cab.c4472147804887b1c544.js"
+          "file": "component---theme-blog-post-pageccc-cab.dcf594a39d0d4ecfe22a.js",
+          "hash": "140f4d8009d152121ebc",
+          "publicPath": "/docsite/component---theme-blog-post-pageccc-cab.dcf594a39d0d4ecfe22a.js"
         }
       ]
     },
     "6": {
       "js": [
         {
-          "file": "component---theme-blog-tags-list-page-01-a-d0b.8284cfcde0649231f96e.js",
-          "hash": "d96897032279bc34d799",
-          "publicPath": "/docsite/component---theme-blog-tags-list-page-01-a-d0b.8284cfcde0649231f96e.js"
+          "file": "component---theme-blog-tags-list-page-01-a-d0b.c3f517fb8b1e27339e0e.js",
+          "hash": "7d7435517cedf1fe7da9",
+          "publicPath": "/docsite/component---theme-blog-tags-list-page-01-a-d0b.c3f517fb8b1e27339e0e.js"
         }
       ]
     },
     "7": {
       "js": [
         {
-          "file": "component---theme-blog-tags-posts-page-687-b6c.f700184758d840c52ced.js",
-          "hash": "08332471f480456fab30",
-          "publicPath": "/docsite/component---theme-blog-tags-posts-page-687-b6c.f700184758d840c52ced.js"
+          "file": "component---theme-blog-tags-posts-page-687-b6c.a38ee4e60f588b4ec6ce.js",
+          "hash": "9d4dcc657813148bcb81",
+          "publicPath": "/docsite/component---theme-blog-tags-posts-page-687-b6c.a38ee4e60f588b4ec6ce.js"
         }
       ]
     },
@@ -637,15 +595,15 @@
       "css": [
         {
           "file": "component---theme-doc-legacy-item-031-769.1f1ce10374de019f5d3a.css",
-          "hash": "675b1c27ba3d7ef6bae3",
+          "hash": "71b9505e234fed14a9a4",
           "publicPath": "/docsite/component---theme-doc-legacy-item-031-769.1f1ce10374de019f5d3a.css"
         }
       ],
       "js": [
         {
-          "file": "component---theme-doc-legacy-item-031-769.7b818c4a9dc18b14ea7d.js",
-          "hash": "675b1c27ba3d7ef6bae3",
-          "publicPath": "/docsite/component---theme-doc-legacy-item-031-769.7b818c4a9dc18b14ea7d.js"
+          "file": "component---theme-doc-legacy-item-031-769.a94b9881ed3427fa9144.js",
+          "hash": "71b9505e234fed14a9a4",
+          "publicPath": "/docsite/component---theme-doc-legacy-item-031-769.a94b9881ed3427fa9144.js"
         }
       ]
     },
@@ -653,1399 +611,1273 @@
       "css": [
         {
           "file": "component---theme-doc-legacy-page-9-e-7-ca5.3c38a2f40a51efdd72a0.css",
-          "hash": "5bcbea3181a9807a017e",
+          "hash": "050b0b3f820d3a409795",
           "publicPath": "/docsite/component---theme-doc-legacy-page-9-e-7-ca5.3c38a2f40a51efdd72a0.css"
         }
       ],
       "js": [
         {
-          "file": "component---theme-doc-legacy-page-9-e-7-ca5.940c3af927e996ca97b4.js",
-          "hash": "5bcbea3181a9807a017e",
-          "publicPath": "/docsite/component---theme-doc-legacy-page-9-e-7-ca5.940c3af927e996ca97b4.js"
+          "file": "component---theme-doc-legacy-page-9-e-7-ca5.457ff154c25ba1fda178.js",
+          "hash": "050b0b3f820d3a409795",
+          "publicPath": "/docsite/component---theme-doc-legacy-page-9-e-7-ca5.457ff154c25ba1fda178.js"
         }
       ]
     },
     "10": {
       "js": [
         {
-          "file": "content---docsite-blog-357-e89.9e6a5f0aecf297fbc92d.js",
-          "hash": "d47ca09167f2d03bc25f",
-          "publicPath": "/docsite/content---docsite-blog-357-e89.9e6a5f0aecf297fbc92d.js"
+          "file": "content---docsite-blog-357-e89.0c7a1b78701b4ca9e639.js",
+          "hash": "8a49410d87d952d0049f",
+          "publicPath": "/docsite/content---docsite-blog-357-e89.0c7a1b78701b4ca9e639.js"
         }
       ]
     },
     "11": {
       "js": [
         {
-          "file": "content---docsite-blog-8-e-9-cce.fcb954ab87c22a41e01f.js",
-          "hash": "4589fbbf157697e4cb50",
-          "publicPath": "/docsite/content---docsite-blog-8-e-9-cce.fcb954ab87c22a41e01f.js"
+          "file": "content---docsite-blog-8-e-9-cce.b54fba2ece0513c91bc5.js",
+          "hash": "08474c7e8e3d0bb71cf2",
+          "publicPath": "/docsite/content---docsite-blog-8-e-9-cce.b54fba2ece0513c91bc5.js"
         }
       ]
     },
     "12": {
       "js": [
         {
-          "file": "content---docsite-blog-hello-worldd-61-877.ed67dc1c377b1d049ac6.js",
-          "hash": "debdd77b871cc58d5e14",
-          "publicPath": "/docsite/content---docsite-blog-hello-worldd-61-877.ed67dc1c377b1d049ac6.js"
+          "file": "content---docsite-blog-hello-worldd-61-877.981371203c671250481a.js",
+          "hash": "7772df268207d79b90ba",
+          "publicPath": "/docsite/content---docsite-blog-hello-worldd-61-877.981371203c671250481a.js"
         }
       ]
     },
     "13": {
       "js": [
         {
-          "file": "content---docsite-blog-holabdd-cc6.4977f714514ab74ea9bf.js",
-          "hash": "30b9713792c730911261",
-          "publicPath": "/docsite/content---docsite-blog-holabdd-cc6.4977f714514ab74ea9bf.js"
+          "file": "content---docsite-blog-holabdd-cc6.bad108c8498f972d5a68.js",
+          "hash": "f0b316d031bee57e2e61",
+          "publicPath": "/docsite/content---docsite-blog-holabdd-cc6.bad108c8498f972d5a68.js"
         }
       ]
     },
     "14": {
       "js": [
         {
-          "file": "content---docsite-blog-welcome-286-fbe.9c1ae8043490ee0cad3e.js",
-          "hash": "606c8fc3b6926b3d3700",
-          "publicPath": "/docsite/content---docsite-blog-welcome-286-fbe.9c1ae8043490ee0cad3e.js"
+          "file": "content---docsite-blog-welcome-286-fbe.ed1aba3d70accf89539b.js",
+          "hash": "c069ccb9014a890b3343",
+          "publicPath": "/docsite/content---docsite-blog-welcome-286-fbe.ed1aba3d70accf89539b.js"
         }
       ]
     },
     "15": {
       "js": [
         {
-          "file": "content---docsite-blogaf-1-fa9.26fc67715f26db7defc4.js",
-          "hash": "70c17e8e9414e015c40d",
-          "publicPath": "/docsite/content---docsite-blogaf-1-fa9.26fc67715f26db7defc4.js"
+          "file": "content---docsite-blogaf-1-fa9.88b98cbf0a6449c5f70b.js",
+          "hash": "7bd590b345f0bad8e826",
+          "publicPath": "/docsite/content---docsite-blogaf-1-fa9.88b98cbf0a6449c5f70b.js"
         }
       ]
     },
     "16": {
       "js": [
         {
-          "file": "content---docsite-docs-algorithm-1-array-duplicated-number-in-array-2-e-8-ddb.dd865e21fbc9aad60516.js",
-          "hash": "5f68d0c44543b1b14169",
-          "publicPath": "/docsite/content---docsite-docs-algorithm-1-array-duplicated-number-in-array-2-e-8-ddb.dd865e21fbc9aad60516.js"
+          "file": "content---docsite-docs-doc-1-b-2-f-57e.c1d45c1c3f36248ae0b6.js",
+          "hash": "7871ba998860ac265e23",
+          "publicPath": "/docsite/content---docsite-docs-doc-1-b-2-f-57e.c1d45c1c3f36248ae0b6.js"
         }
       ]
     },
     "17": {
       "js": [
         {
-          "file": "content---docsite-docs-algorithm-4-linkedlist-merge-two-sorted-lists-159-257.6905b1fb12a9ca8ccfd8.js",
-          "hash": "69ae588d9943bfabe785",
-          "publicPath": "/docsite/content---docsite-docs-algorithm-4-linkedlist-merge-two-sorted-lists-159-257.6905b1fb12a9ca8ccfd8.js"
+          "file": "content---docsite-docs-doc-2-df-3-e73.9e3d82ca680c384aeaab.js",
+          "hash": "d6cceac15b58bbf07533",
+          "publicPath": "/docsite/content---docsite-docs-doc-2-df-3-e73.9e3d82ca680c384aeaab.js"
         }
       ]
     },
     "18": {
       "js": [
         {
-          "file": "content---docsite-docs-algorithm-4-linkedlist-reverse-linked-list-016-819.c1b5f58e07ac77a5d59e.js",
-          "hash": "b6bd64cbd0ba797fdf81",
-          "publicPath": "/docsite/content---docsite-docs-algorithm-4-linkedlist-reverse-linked-list-016-819.c1b5f58e07ac77a5d59e.js"
+          "file": "content---docsite-docs-doc-3616-679.e5cfab736efe2ed392a9.js",
+          "hash": "cc4ead720715dfe401ee",
+          "publicPath": "/docsite/content---docsite-docs-doc-3616-679.e5cfab736efe2ed392a9.js"
         }
       ]
     },
     "19": {
       "js": [
         {
-          "file": "content---docsite-docs-algorithm-5-binary-tree-build-tree-01-d-826.6f5382bf90da05909710.js",
-          "hash": "dbe400387877a19b1e79",
-          "publicPath": "/docsite/content---docsite-docs-algorithm-5-binary-tree-build-tree-01-d-826.6f5382bf90da05909710.js"
+          "file": "content---docsite-docs-mdxce-3-ecf.6a96d1aaf6b78382e14a.js",
+          "hash": "df56f66e8dda91f65c19",
+          "publicPath": "/docsite/content---docsite-docs-mdxce-3-ecf.6a96d1aaf6b78382e14a.js"
         }
       ]
     },
     "20": {
       "js": [
         {
-          "file": "content---docsite-docs-algorithm-5-binary-tree-mirror-treef-6-a-cb3.eeb971ef33d79b131f9b.js",
-          "hash": "dd9512438e8aac4fe1bd",
-          "publicPath": "/docsite/content---docsite-docs-algorithm-5-binary-tree-mirror-treef-6-a-cb3.eeb971ef33d79b131f9b.js"
+          "file": "content---docsite-docs-react-1-app-zong-lan-mu-lu-jie-gou-53-a-f80.1aaf2072f142d9c82f55.js",
+          "hash": "cabd74928d5a825ca2a1",
+          "publicPath": "/docsite/content---docsite-docs-react-1-app-zong-lan-mu-lu-jie-gou-53-a-f80.1aaf2072f142d9c82f55.js"
         }
       ]
     },
     "21": {
       "js": [
         {
-          "file": "content---docsite-docs-algorithm-8-sort-merged-sort-1-f-8-685.bd19b15bc7822e7d8ddf.js",
-          "hash": "ba62e81df3c3ec683c86",
-          "publicPath": "/docsite/content---docsite-docs-algorithm-8-sort-merged-sort-1-f-8-685.bd19b15bc7822e7d8ddf.js"
+          "file": "content---docsite-docs-react-1-app-zong-lan-readm-ef-0-a-0b1.f77a0b89585303caf3a3.js",
+          "hash": "54d4bbafe51924970f4e",
+          "publicPath": "/docsite/content---docsite-docs-react-1-app-zong-lan-readm-ef-0-a-0b1.f77a0b89585303caf3a3.js"
         }
       ]
     },
     "22": {
       "js": [
         {
-          "file": "content---docsite-docs-algorithm-8-sort-quick-sort-03-d-9e9.999a57397cad9c9812d0.js",
-          "hash": "c79e19c25728569ed9b6",
-          "publicPath": "/docsite/content---docsite-docs-algorithm-8-sort-quick-sort-03-d-9e9.999a57397cad9c9812d0.js"
+          "file": "content---docsite-docs-react-1-app-zong-lan-wen-jian-he-wen-jian-jia-shuo-ming-381-462.29c3aeef82ed0b125f23.js",
+          "hash": "e1c05177c635ee13e54e",
+          "publicPath": "/docsite/content---docsite-docs-react-1-app-zong-lan-wen-jian-he-wen-jian-jia-shuo-ming-381-462.29c3aeef82ed0b125f23.js"
         }
       ]
     },
     "23": {
       "js": [
         {
-          "file": "content---docsite-docs-doc-1-b-2-f-57e.83490f3569abb61c0220.js",
-          "hash": "f4357e7a115355d3e531",
-          "publicPath": "/docsite/content---docsite-docs-doc-1-b-2-f-57e.83490f3569abb61c0220.js"
+          "file": "content---docsite-docs-react-1-basic-categoryb-79-31f.56f22c19d638f4ed7a81.js",
+          "hash": "a8d08e4bf37b1cd5be74",
+          "publicPath": "/docsite/content---docsite-docs-react-1-basic-categoryb-79-31f.56f22c19d638f4ed7a81.js"
         }
       ]
     },
     "24": {
       "js": [
         {
-          "file": "content---docsite-docs-doc-2-df-3-e73.35db4a6c5311fd338df6.js",
-          "hash": "476d4f98e1d6b14e82fe",
-          "publicPath": "/docsite/content---docsite-docs-doc-2-df-3-e73.35db4a6c5311fd338df6.js"
+          "file": "content---docsite-docs-react-1-basic-communicationef-2-b0f.0b0eaf4c58bfb78927ce.js",
+          "hash": "f36d49e015d9fcde6253",
+          "publicPath": "/docsite/content---docsite-docs-react-1-basic-communicationef-2-b0f.0b0eaf4c58bfb78927ce.js"
         }
       ]
     },
     "25": {
       "js": [
         {
-          "file": "content---docsite-docs-doc-3616-679.b790b57fe5898a66f501.js",
-          "hash": "07c3efc9145f242e73f9",
-          "publicPath": "/docsite/content---docsite-docs-doc-3616-679.b790b57fe5898a66f501.js"
+          "file": "content---docsite-docs-react-1-basic-evente-9-b-30b.6785c2dffd625988d91e.js",
+          "hash": "2c6005e19fd023687b44",
+          "publicPath": "/docsite/content---docsite-docs-react-1-basic-evente-9-b-30b.6785c2dffd625988d91e.js"
         }
       ]
     },
     "26": {
       "js": [
         {
-          "file": "content---docsite-docs-mdxce-3-ecf.fdedac26cb7e869285d2.js",
-          "hash": "57ed9561090b24b56613",
-          "publicPath": "/docsite/content---docsite-docs-mdxce-3-ecf.fdedac26cb7e869285d2.js"
+          "file": "content---docsite-docs-react-1-basic-jsx-6-ce-242.e311b0eafe6eda353349.js",
+          "hash": "54951750c98d9e250559",
+          "publicPath": "/docsite/content---docsite-docs-react-1-basic-jsx-6-ce-242.e311b0eafe6eda353349.js"
         }
       ]
     },
     "27": {
       "js": [
         {
-          "file": "content---docsite-docs-react-1-app-zong-lan-mu-lu-jie-gou-53-a-f80.f6df64935c811922b6bf.js",
-          "hash": "f13b7c82e599c99974cc",
-          "publicPath": "/docsite/content---docsite-docs-react-1-app-zong-lan-mu-lu-jie-gou-53-a-f80.f6df64935c811922b6bf.js"
+          "file": "content---docsite-docs-react-1-basic-lifecycle-58-a-ea4.9528f78c7864ed8dfe59.js",
+          "hash": "7c5f057646905b3d221c",
+          "publicPath": "/docsite/content---docsite-docs-react-1-basic-lifecycle-58-a-ea4.9528f78c7864ed8dfe59.js"
         }
       ]
     },
     "28": {
       "js": [
         {
-          "file": "content---docsite-docs-react-1-app-zong-lan-readm-ef-0-a-0b1.a821ae1a0769ae1178dd.js",
-          "hash": "9b81c8b85ca26ec02d7b",
-          "publicPath": "/docsite/content---docsite-docs-react-1-app-zong-lan-readm-ef-0-a-0b1.a821ae1a0769ae1178dd.js"
+          "file": "content---docsite-docs-react-1-basic-readm-ec-5-a-742.a03a09d21467c6eb5399.js",
+          "hash": "c451e9012a6cf34c089c",
+          "publicPath": "/docsite/content---docsite-docs-react-1-basic-readm-ec-5-a-742.a03a09d21467c6eb5399.js"
         }
       ]
     },
     "29": {
       "js": [
         {
-          "file": "content---docsite-docs-react-1-app-zong-lan-wen-jian-he-wen-jian-jia-shuo-ming-381-462.bc9bfbaf07120a8c6c3d.js",
-          "hash": "ffdfec05d71526a998f9",
-          "publicPath": "/docsite/content---docsite-docs-react-1-app-zong-lan-wen-jian-he-wen-jian-jia-shuo-ming-381-462.bc9bfbaf07120a8c6c3d.js"
+          "file": "content---docsite-docs-react-1-basic-stateb-58-0ab.3072490aac2e40a72d93.js",
+          "hash": "43b15c425190dacb773f",
+          "publicPath": "/docsite/content---docsite-docs-react-1-basic-stateb-58-0ab.3072490aac2e40a72d93.js"
         }
       ]
     },
     "30": {
       "js": [
         {
-          "file": "content---docsite-docs-react-1-basic-categoryb-79-31f.e26d6c6613a51ab0a331.js",
-          "hash": "3253d14d84970d888a65",
-          "publicPath": "/docsite/content---docsite-docs-react-1-basic-categoryb-79-31f.e26d6c6613a51ab0a331.js"
+          "file": "content---docsite-docs-react-1-basic-style-608-23e.aa21893736e5d75fda79.js",
+          "hash": "0c44f68605da3fb746c4",
+          "publicPath": "/docsite/content---docsite-docs-react-1-basic-style-608-23e.aa21893736e5d75fda79.js"
         }
       ]
     },
     "31": {
       "js": [
         {
-          "file": "content---docsite-docs-react-1-basic-communicationef-2-b0f.616444e109befc3e5453.js",
-          "hash": "e5df5fba7cd5d38ff26b",
-          "publicPath": "/docsite/content---docsite-docs-react-1-basic-communicationef-2-b0f.616444e109befc3e5453.js"
+          "file": "content---docsite-docs-react-2-advanced-contextfc-8-3ee.4fa8d8dbca118a2469ab.js",
+          "hash": "1638dbcfd315347d67e0",
+          "publicPath": "/docsite/content---docsite-docs-react-2-advanced-contextfc-8-3ee.4fa8d8dbca118a2469ab.js"
         }
       ]
     },
     "32": {
       "js": [
         {
-          "file": "content---docsite-docs-react-1-basic-evente-9-b-30b.04c5e9925cf43adba29f.js",
-          "hash": "82f9284af54bbfcb75c6",
-          "publicPath": "/docsite/content---docsite-docs-react-1-basic-evente-9-b-30b.04c5e9925cf43adba29f.js"
+          "file": "content---docsite-docs-react-2-advanced-hoc-033-f9b.6e69ffd2026d978d0439.js",
+          "hash": "628cc0b7a2efba05bcb8",
+          "publicPath": "/docsite/content---docsite-docs-react-2-advanced-hoc-033-f9b.6e69ffd2026d978d0439.js"
         }
       ]
     },
     "33": {
       "js": [
         {
-          "file": "content---docsite-docs-react-1-basic-jsx-6-ce-242.430a8cbe8745899206fb.js",
-          "hash": "13297d2a858408f66e3b",
-          "publicPath": "/docsite/content---docsite-docs-react-1-basic-jsx-6-ce-242.430a8cbe8745899206fb.js"
+          "file": "content---docsite-docs-react-2-advanced-hooksaec-e85.f0944bad99e31705bd6d.js",
+          "hash": "906da713beba968db9d2",
+          "publicPath": "/docsite/content---docsite-docs-react-2-advanced-hooksaec-e85.f0944bad99e31705bd6d.js"
         }
       ]
     },
     "34": {
       "js": [
         {
-          "file": "content---docsite-docs-react-1-basic-lifecycle-58-a-ea4.1897023750bc7da79436.js",
-          "hash": "1e53881661ef77204de0",
-          "publicPath": "/docsite/content---docsite-docs-react-1-basic-lifecycle-58-a-ea4.1897023750bc7da79436.js"
+          "file": "content---docsite-docs-react-2-advanced-portal-0-f-7-7e4.341a3213e91d9cee56e8.js",
+          "hash": "bba197d5a41f861a3e15",
+          "publicPath": "/docsite/content---docsite-docs-react-2-advanced-portal-0-f-7-7e4.341a3213e91d9cee56e8.js"
         }
       ]
     },
     "35": {
       "js": [
         {
-          "file": "content---docsite-docs-react-1-basic-readm-ec-5-a-742.74e40d998bd1b35463c4.js",
-          "hash": "1962ff497bdbb486861f",
-          "publicPath": "/docsite/content---docsite-docs-react-1-basic-readm-ec-5-a-742.74e40d998bd1b35463c4.js"
+          "file": "content---docsite-docs-react-2-advanced-render-propse-18-eaf.130621f2e862b2eb39f1.js",
+          "hash": "7dc210713e0804290d40",
+          "publicPath": "/docsite/content---docsite-docs-react-2-advanced-render-propse-18-eaf.130621f2e862b2eb39f1.js"
         }
       ]
     },
     "36": {
       "js": [
         {
-          "file": "content---docsite-docs-react-1-basic-stateb-58-0ab.2d6273ac114c06787bbe.js",
-          "hash": "65d65142c68b6fb376de",
-          "publicPath": "/docsite/content---docsite-docs-react-1-basic-stateb-58-0ab.2d6273ac114c06787bbe.js"
+          "file": "content---docsite-docs-react-3-development-performance-4-fb-868.203000ec613df7dd16ec.js",
+          "hash": "da371d61e8f90a18e4e1",
+          "publicPath": "/docsite/content---docsite-docs-react-3-development-performance-4-fb-868.203000ec613df7dd16ec.js"
         }
       ]
     },
     "37": {
       "js": [
         {
-          "file": "content---docsite-docs-react-1-basic-style-608-23e.06584baab6182628c298.js",
-          "hash": "6ef01ec750f91715317c",
-          "publicPath": "/docsite/content---docsite-docs-react-1-basic-style-608-23e.06584baab6182628c298.js"
+          "file": "content---docsite-docs-react-3-development-pure-componentef-9-b5a.d1d26761f37baada0783.js",
+          "hash": "baf674653ee5c284e55d",
+          "publicPath": "/docsite/content---docsite-docs-react-3-development-pure-componentef-9-b5a.d1d26761f37baada0783.js"
         }
       ]
     },
     "38": {
       "js": [
         {
-          "file": "content---docsite-docs-react-2-advanced-contextfc-8-3ee.e6ebc88b8b8b7be614bb.js",
-          "hash": "fe71b92938aded0fb4eb",
-          "publicPath": "/docsite/content---docsite-docs-react-2-advanced-contextfc-8-3ee.e6ebc88b8b8b7be614bb.js"
+          "file": "content---docsite-docs-react-3-development-redux-componentea-7-2df.f7b6d783c5826f7a7c1e.js",
+          "hash": "337fcf8c9e17b16681e0",
+          "publicPath": "/docsite/content---docsite-docs-react-3-development-redux-componentea-7-2df.f7b6d783c5826f7a7c1e.js"
         }
       ]
     },
     "39": {
       "js": [
         {
-          "file": "content---docsite-docs-react-2-advanced-hoc-033-f9b.47d809a062b41fe786e7.js",
-          "hash": "80f2197c1eed740ebc72",
-          "publicPath": "/docsite/content---docsite-docs-react-2-advanced-hoc-033-f9b.47d809a062b41fe786e7.js"
+          "file": "content---docsite-docs-react-3-development-ui-componentc-85-2be.b5330b8295f41c15c97a.js",
+          "hash": "bba134c97d5de28dac98",
+          "publicPath": "/docsite/content---docsite-docs-react-3-development-ui-componentc-85-2be.b5330b8295f41c15c97a.js"
         }
       ]
     },
     "40": {
       "js": [
         {
-          "file": "content---docsite-docs-react-2-advanced-hooksaec-e85.8806475ad2be6577fa24.js",
-          "hash": "bce2a9ed0f9ded54f5d0",
-          "publicPath": "/docsite/content---docsite-docs-react-2-advanced-hooksaec-e85.8806475ad2be6577fa24.js"
+          "file": "content---docsite-docs-react-4-state-management-actionf-7-e-659.e48409ed21c691c52795.js",
+          "hash": "d750b34318c215c1d693",
+          "publicPath": "/docsite/content---docsite-docs-react-4-state-management-actionf-7-e-659.e48409ed21c691c52795.js"
         }
       ]
     },
     "41": {
       "js": [
         {
-          "file": "content---docsite-docs-react-2-advanced-portal-0-f-7-7e4.6f0c2be5714961be010e.js",
-          "hash": "2e6ee012a3c2d7bacad8",
-          "publicPath": "/docsite/content---docsite-docs-react-2-advanced-portal-0-f-7-7e4.6f0c2be5714961be010e.js"
+          "file": "content---docsite-docs-react-4-state-management-middleware-140-3e9.4d1093b539ad2dbedaab.js",
+          "hash": "54d8aee77d1dfb7116ff",
+          "publicPath": "/docsite/content---docsite-docs-react-4-state-management-middleware-140-3e9.4d1093b539ad2dbedaab.js"
         }
       ]
     },
     "42": {
       "js": [
         {
-          "file": "content---docsite-docs-react-2-advanced-render-propse-18-eaf.64ed7261e54bc1e7a434.js",
-          "hash": "89821427b99b309fe357",
-          "publicPath": "/docsite/content---docsite-docs-react-2-advanced-render-propse-18-eaf.64ed7261e54bc1e7a434.js"
+          "file": "content---docsite-docs-react-4-state-management-modeleda-5cf.9062eb44fa9207f4f0c9.js",
+          "hash": "956d7351f33f39285a61",
+          "publicPath": "/docsite/content---docsite-docs-react-4-state-management-modeleda-5cf.9062eb44fa9207f4f0c9.js"
         }
       ]
     },
     "43": {
       "js": [
         {
-          "file": "content---docsite-docs-react-3-development-performance-4-fb-868.08124aa1f853818015e2.js",
-          "hash": "5fdd1324e5c388553fae",
-          "publicPath": "/docsite/content---docsite-docs-react-3-development-performance-4-fb-868.08124aa1f853818015e2.js"
+          "file": "content---docsite-docs-react-4-state-management-reducer-403-0c5.d6a20888aa72642110db.js",
+          "hash": "f9458cc746f2b030b894",
+          "publicPath": "/docsite/content---docsite-docs-react-4-state-management-reducer-403-0c5.d6a20888aa72642110db.js"
         }
       ]
     },
     "44": {
       "js": [
         {
-          "file": "content---docsite-docs-react-3-development-pure-componentef-9-b5a.aeb2faf825746030e26c.js",
-          "hash": "532c9056d85954dcd725",
-          "publicPath": "/docsite/content---docsite-docs-react-3-development-pure-componentef-9-b5a.aeb2faf825746030e26c.js"
+          "file": "content---docsite-docs-react-4-state-management-reduxa-14-db8.4f76cd95f6e5e2755fa0.js",
+          "hash": "4a1cdbcbe00ca624e24b",
+          "publicPath": "/docsite/content---docsite-docs-react-4-state-management-reduxa-14-db8.4f76cd95f6e5e2755fa0.js"
         }
       ]
     },
     "45": {
       "js": [
         {
-          "file": "content---docsite-docs-react-3-development-redux-componentea-7-2df.84a4e3966dd65219cc5c.js",
-          "hash": "d7c9035b2dbc58facb6c",
-          "publicPath": "/docsite/content---docsite-docs-react-3-development-redux-componentea-7-2df.84a4e3966dd65219cc5c.js"
+          "file": "content---docsite-docs-react-4-state-management-selector-4-c-8-91e.920d8964f44eaf82a6ab.js",
+          "hash": "25a84ba302c143621a30",
+          "publicPath": "/docsite/content---docsite-docs-react-4-state-management-selector-4-c-8-91e.920d8964f44eaf82a6ab.js"
         }
       ]
     },
     "46": {
       "js": [
         {
-          "file": "content---docsite-docs-react-3-development-ui-componentc-85-2be.247d4a5fd186f85f4d89.js",
-          "hash": "33c685e207acc049b8f1",
-          "publicPath": "/docsite/content---docsite-docs-react-3-development-ui-componentc-85-2be.247d4a5fd186f85f4d89.js"
+          "file": "content---docsite-docs-react-4-state-management-store-6-ef-862.b6ca5ed3217807f06989.js",
+          "hash": "d581e75051f388613acf",
+          "publicPath": "/docsite/content---docsite-docs-react-4-state-management-store-6-ef-862.b6ca5ed3217807f06989.js"
         }
       ]
     },
     "47": {
       "js": [
         {
-          "file": "content---docsite-docs-react-4-state-management-actionf-7-e-659.eaca12d4ac0fbd438540.js",
-          "hash": "e56c337e21c6dbcd9389",
-          "publicPath": "/docsite/content---docsite-docs-react-4-state-management-actionf-7-e-659.eaca12d4ac0fbd438540.js"
+          "file": "content---docsite-docs-react-5-router-management-link-0-cf-146.e2fa3a086172648ecc82.js",
+          "hash": "1c1fb23cfec11be5d5a8",
+          "publicPath": "/docsite/content---docsite-docs-react-5-router-management-link-0-cf-146.e2fa3a086172648ecc82.js"
         }
       ]
     },
     "48": {
       "js": [
         {
-          "file": "content---docsite-docs-react-4-state-management-middleware-140-3e9.d6b93893d38e30fa339d.js",
-          "hash": "681e1a2019b0e975f401",
-          "publicPath": "/docsite/content---docsite-docs-react-4-state-management-middleware-140-3e9.d6b93893d38e30fa339d.js"
+          "file": "content---docsite-docs-react-5-router-management-readm-ea-41-107.a63ab93f741f6c463d4a.js",
+          "hash": "72a18ba1f55c8b88d9a9",
+          "publicPath": "/docsite/content---docsite-docs-react-5-router-management-readm-ea-41-107.a63ab93f741f6c463d4a.js"
         }
       ]
     },
     "49": {
       "js": [
         {
-          "file": "content---docsite-docs-react-4-state-management-modeleda-5cf.8c35aed11fa9fda352f9.js",
-          "hash": "94f3be94459465a074a1",
-          "publicPath": "/docsite/content---docsite-docs-react-4-state-management-modeleda-5cf.8c35aed11fa9fda352f9.js"
+          "file": "content---docsite-docs-react-5-router-management-routee-01-076.233a9e0caa70c3657492.js",
+          "hash": "b29d4e07eb6e1923345a",
+          "publicPath": "/docsite/content---docsite-docs-react-5-router-management-routee-01-076.233a9e0caa70c3657492.js"
         }
       ]
     },
     "50": {
       "js": [
         {
-          "file": "content---docsite-docs-react-4-state-management-reducer-403-0c5.e0641b97244724a13ad5.js",
-          "hash": "a34e4434e95e69693cd1",
-          "publicPath": "/docsite/content---docsite-docs-react-4-state-management-reducer-403-0c5.e0641b97244724a13ad5.js"
+          "file": "content---docsite-docs-react-5-router-management-router-904-e8b.beeff375a8215fe319dd.js",
+          "hash": "b962da86f172113caf0c",
+          "publicPath": "/docsite/content---docsite-docs-react-5-router-management-router-904-e8b.beeff375a8215fe319dd.js"
         }
       ]
     },
     "51": {
       "js": [
         {
-          "file": "content---docsite-docs-react-4-state-management-reduxa-14-db8.3a409e11266d097f4de8.js",
-          "hash": "ef17b3dab89928ab7337",
-          "publicPath": "/docsite/content---docsite-docs-react-4-state-management-reduxa-14-db8.3a409e11266d097f4de8.js"
+          "file": "content---docsite-docs-react-6-test-component-test-4-a-3-8c6.1dad1f8882589c2b7f06.js",
+          "hash": "ffc29b615438d1e082c2",
+          "publicPath": "/docsite/content---docsite-docs-react-6-test-component-test-4-a-3-8c6.1dad1f8882589c2b7f06.js"
         }
       ]
     },
     "52": {
       "js": [
         {
-          "file": "content---docsite-docs-react-4-state-management-selector-4-c-8-91e.72c40d6bbd08fa199ce0.js",
-          "hash": "ac80fb1308caacd07779",
-          "publicPath": "/docsite/content---docsite-docs-react-4-state-management-selector-4-c-8-91e.72c40d6bbd08fa199ce0.js"
+          "file": "content---docsite-docs-react-6-test-state-test-458-5c7.182e72ac8d3582c7644d.js",
+          "hash": "a259d04c005333372d79",
+          "publicPath": "/docsite/content---docsite-docs-react-6-test-state-test-458-5c7.182e72ac8d3582c7644d.js"
         }
       ]
     },
     "53": {
       "js": [
         {
-          "file": "content---docsite-docs-react-4-state-management-store-6-ef-862.dafffadf566edb98ad40.js",
-          "hash": "65a0bade8bb62c3c2b28",
-          "publicPath": "/docsite/content---docsite-docs-react-4-state-management-store-6-ef-862.dafffadf566edb98ad40.js"
+          "file": "content---docsite-docs-react-6-test-test-categoryef-4-0c8.cf179c9e2c4139b2f595.js",
+          "hash": "f2e6833ae510fe1cb073",
+          "publicPath": "/docsite/content---docsite-docs-react-6-test-test-categoryef-4-0c8.cf179c9e2c4139b2f595.js"
         }
       ]
     },
     "54": {
       "js": [
         {
-          "file": "content---docsite-docs-react-5-router-management-link-0-cf-146.ac67a59c500601188d08.js",
-          "hash": "701d7acb9c409444143e",
-          "publicPath": "/docsite/content---docsite-docs-react-5-router-management-link-0-cf-146.ac67a59c500601188d08.js"
+          "file": "content---docsite-docs-react-6-test-unit-testbbe-8c7.d267334ef0975f5cbba4.js",
+          "hash": "1786ef1c667c0fc6f754",
+          "publicPath": "/docsite/content---docsite-docs-react-6-test-unit-testbbe-8c7.d267334ef0975f5cbba4.js"
         }
       ]
     },
     "55": {
       "js": [
         {
-          "file": "content---docsite-docs-react-5-router-management-readm-ea-41-107.338811e7463c14d7be01.js",
-          "hash": "59847b152f13fab441da",
-          "publicPath": "/docsite/content---docsite-docs-react-5-router-management-readm-ea-41-107.338811e7463c14d7be01.js"
+          "file": "content---docsite-docs-react-appendix-1-references-14-f-380.3d3af4e788663ceac40d.js",
+          "hash": "7922e8d5a7829e48b87b",
+          "publicPath": "/docsite/content---docsite-docs-react-appendix-1-references-14-f-380.3d3af4e788663ceac40d.js"
         }
       ]
     },
     "56": {
       "js": [
         {
-          "file": "content---docsite-docs-react-5-router-management-routee-01-076.7bccc11f99b867a30721.js",
-          "hash": "68c8ea86db855cf6d98c",
-          "publicPath": "/docsite/content---docsite-docs-react-5-router-management-routee-01-076.7bccc11f99b867a30721.js"
+          "file": "content---docsite-docs-react-appendix-2-related-websitesc-28-0af.f1d3b4825773810e3589.js",
+          "hash": "6cdd3b18ce2c26ef313c",
+          "publicPath": "/docsite/content---docsite-docs-react-appendix-2-related-websitesc-28-0af.f1d3b4825773810e3589.js"
         }
       ]
     },
     "57": {
       "js": [
         {
-          "file": "content---docsite-docs-react-5-router-management-router-904-e8b.7df1294bbfb43d2294ad.js",
-          "hash": "8b8e0ba3dc08649aa346",
-          "publicPath": "/docsite/content---docsite-docs-react-5-router-management-router-904-e8b.7df1294bbfb43d2294ad.js"
+          "file": "content---docsite-docs-react-readme-377-926.5c922e9bc3bbac1e14c4.js",
+          "hash": "f211c33a53b2971a8e4e",
+          "publicPath": "/docsite/content---docsite-docs-react-readme-377-926.5c922e9bc3bbac1e14c4.js"
         }
       ]
     },
     "58": {
       "js": [
         {
-          "file": "content---docsite-docs-react-6-test-component-test-4-a-3-8c6.ae2bc3ec7520e3f0c771.js",
-          "hash": "5dbffdee4951cf2c8060",
-          "publicPath": "/docsite/content---docsite-docs-react-6-test-component-test-4-a-3-8c6.ae2bc3ec7520e3f0c771.js"
+          "file": "content---docsite-docs-react-security-guide-74-a-370.9d9bb84e0f2ac810dd87.js",
+          "hash": "b40b3a93278b6985cd16",
+          "publicPath": "/docsite/content---docsite-docs-react-security-guide-74-a-370.9d9bb84e0f2ac810dd87.js"
         }
       ]
     },
     "59": {
       "js": [
         {
-          "file": "content---docsite-docs-react-6-test-state-test-458-5c7.6a50d487c1c6210212c0.js",
-          "hash": "29386601b45cf441691c",
-          "publicPath": "/docsite/content---docsite-docs-react-6-test-state-test-458-5c7.6a50d487c1c6210212c0.js"
+          "file": "content---docsite-docs-react-shuo-ming-273-7d2.0568f206435926db558c.js",
+          "hash": "83564c171c2fb42cd181",
+          "publicPath": "/docsite/content---docsite-docs-react-shuo-ming-273-7d2.0568f206435926db558c.js"
         }
       ]
     },
     "60": {
       "js": [
         {
-          "file": "content---docsite-docs-react-6-test-test-categoryef-4-0c8.670cbb2232630ab8aa91.js",
-          "hash": "c42acc78873099743521",
-          "publicPath": "/docsite/content---docsite-docs-react-6-test-test-categoryef-4-0c8.670cbb2232630ab8aa91.js"
+          "file": "content---docsite-docs-web-1-http-ajax-5-a-1-a10.d1014724d7c7ded06f1e.js",
+          "hash": "88b39308d46046963bca",
+          "publicPath": "/docsite/content---docsite-docs-web-1-http-ajax-5-a-1-a10.d1014724d7c7ded06f1e.js"
         }
       ]
     },
     "61": {
       "js": [
         {
-          "file": "content---docsite-docs-react-6-test-unit-testbbe-8c7.eb5c45f44fd568d6da87.js",
-          "hash": "a2274575b7f29267812e",
-          "publicPath": "/docsite/content---docsite-docs-react-6-test-unit-testbbe-8c7.eb5c45f44fd568d6da87.js"
+          "file": "content---docsite-docs-web-1-http-fetch-96-d-718.649bea98f50a45289530.js",
+          "hash": "b0a124d45783554ec588",
+          "publicPath": "/docsite/content---docsite-docs-web-1-http-fetch-96-d-718.649bea98f50a45289530.js"
         }
       ]
     },
     "62": {
       "js": [
         {
-          "file": "content---docsite-docs-react-appendix-1-references-14-f-380.50be47e1f5fbcbb9084b.js",
-          "hash": "8f3f7052291d537541ec",
-          "publicPath": "/docsite/content---docsite-docs-react-appendix-1-references-14-f-380.50be47e1f5fbcbb9084b.js"
+          "file": "content---docsite-docs-web-1-http-http-1-1674-fb3.5e029462de844e264a7a.js",
+          "hash": "7bceea15e80e913b511c",
+          "publicPath": "/docsite/content---docsite-docs-web-1-http-http-1-1674-fb3.5e029462de844e264a7a.js"
         }
       ]
     },
     "63": {
       "js": [
         {
-          "file": "content---docsite-docs-react-appendix-2-related-websitesc-28-0af.de0753cfa9ba302747cc.js",
-          "hash": "371ec76517e650b1429f",
-          "publicPath": "/docsite/content---docsite-docs-react-appendix-2-related-websitesc-28-0af.de0753cfa9ba302747cc.js"
+          "file": "content---docsite-docs-web-1-http-http-2972-eb7.4f7ad758f453e6ccb7cc.js",
+          "hash": "e00e039724c5b411c536",
+          "publicPath": "/docsite/content---docsite-docs-web-1-http-http-2972-eb7.4f7ad758f453e6ccb7cc.js"
         }
       ]
     },
     "64": {
       "js": [
         {
-          "file": "content---docsite-docs-react-readme-377-926.c9c30086e0a6f4a807a5.js",
-          "hash": "b21bce84197a3e3cf315",
-          "publicPath": "/docsite/content---docsite-docs-react-readme-377-926.c9c30086e0a6f4a807a5.js"
+          "file": "content---docsite-docs-web-1-http-http-cache-85-c-259.07b59c83e4c0614bb220.js",
+          "hash": "013b3b93b6805976345b",
+          "publicPath": "/docsite/content---docsite-docs-web-1-http-http-cache-85-c-259.07b59c83e4c0614bb220.js"
         }
       ]
     },
     "65": {
       "js": [
         {
-          "file": "content---docsite-docs-react-security-guide-74-a-370.e731fab94f4cff5d136d.js",
-          "hash": "93a1921e45adffff5440",
-          "publicPath": "/docsite/content---docsite-docs-react-security-guide-74-a-370.e731fab94f4cff5d136d.js"
+          "file": "content---docsite-docs-web-1-http-http-connectiond-32-0d6.e15095e9687d1b777541.js",
+          "hash": "933c554ebefd784d8114",
+          "publicPath": "/docsite/content---docsite-docs-web-1-http-http-connectiond-32-0d6.e15095e9687d1b777541.js"
         }
       ]
     },
     "66": {
       "js": [
         {
-          "file": "content---docsite-docs-react-shuo-ming-273-7d2.125f6f116c78d86af3be.js",
-          "hash": "12c416466fe07ac977c7",
-          "publicPath": "/docsite/content---docsite-docs-react-shuo-ming-273-7d2.125f6f116c78d86af3be.js"
+          "file": "content---docsite-docs-web-1-http-http-statusdd-5-aa2.f47fd6d581a6710c3f05.js",
+          "hash": "74b1e4558e36f55397e8",
+          "publicPath": "/docsite/content---docsite-docs-web-1-http-http-statusdd-5-aa2.f47fd6d581a6710c3f05.js"
         }
       ]
     },
     "67": {
       "js": [
         {
-          "file": "content---docsite-docs-web-1-http-ajax-5-a-1-a10.1f12bc82c1c0ee5744c1.js",
-          "hash": "7ae73bac243a0352bf1d",
-          "publicPath": "/docsite/content---docsite-docs-web-1-http-ajax-5-a-1-a10.1f12bc82c1c0ee5744c1.js"
+          "file": "content---docsite-docs-web-1-http-https-724-bd0.a62795903190a79e1b31.js",
+          "hash": "ffce198c9c2d04787d85",
+          "publicPath": "/docsite/content---docsite-docs-web-1-http-https-724-bd0.a62795903190a79e1b31.js"
         }
       ]
     },
     "68": {
       "js": [
         {
-          "file": "content---docsite-docs-web-1-http-fetch-96-d-718.26acca161a7e8ffafab9.js",
-          "hash": "5bd07f1a92c4c176d1a9",
-          "publicPath": "/docsite/content---docsite-docs-web-1-http-fetch-96-d-718.26acca161a7e8ffafab9.js"
+          "file": "content---docsite-docs-web-1-http-websocket-4-ca-27e.aa49ca476cdfd39cca75.js",
+          "hash": "7e678f5d5b322e996637",
+          "publicPath": "/docsite/content---docsite-docs-web-1-http-websocket-4-ca-27e.aa49ca476cdfd39cca75.js"
         }
       ]
     },
     "69": {
       "js": [
         {
-          "file": "content---docsite-docs-web-1-http-http-1-1674-fb3.63e9f0c304ee86e9900f.js",
-          "hash": "521691d3b978c024efbf",
-          "publicPath": "/docsite/content---docsite-docs-web-1-http-http-1-1674-fb3.63e9f0c304ee86e9900f.js"
+          "file": "content---docsite-docs-web-2-same-origin-policy-same-origin-policy-2-b-9-ca5.0c7e8002e9e6d52c0a53.js",
+          "hash": "85264cb675b8ff4d8331",
+          "publicPath": "/docsite/content---docsite-docs-web-2-same-origin-policy-same-origin-policy-2-b-9-ca5.0c7e8002e9e6d52c0a53.js"
         }
       ]
     },
     "70": {
       "js": [
         {
-          "file": "content---docsite-docs-web-1-http-http-2972-eb7.43dd8a5737e33b906861.js",
-          "hash": "957e20564e16d280fd97",
-          "publicPath": "/docsite/content---docsite-docs-web-1-http-http-2972-eb7.43dd8a5737e33b906861.js"
+          "file": "content---docsite-docs-web-3-cross-domain-cors-00-e-6a3.a2467f881939c8cf75c4.js",
+          "hash": "367df3b75f01c4d42077",
+          "publicPath": "/docsite/content---docsite-docs-web-3-cross-domain-cors-00-e-6a3.a2467f881939c8cf75c4.js"
         }
       ]
     },
     "71": {
       "js": [
         {
-          "file": "content---docsite-docs-web-1-http-http-cache-85-c-259.5bbfb2456374cc30ba2f.js",
-          "hash": "52c71e3cffb93f43afd3",
-          "publicPath": "/docsite/content---docsite-docs-web-1-http-http-cache-85-c-259.5bbfb2456374cc30ba2f.js"
+          "file": "content---docsite-docs-web-3-cross-domain-jsonp-6-ab-d39.a9a14dfc23bfc29c8b66.js",
+          "hash": "b63019fe6f099c4efdc5",
+          "publicPath": "/docsite/content---docsite-docs-web-3-cross-domain-jsonp-6-ab-d39.a9a14dfc23bfc29c8b66.js"
         }
       ]
     },
     "72": {
       "js": [
         {
-          "file": "content---docsite-docs-web-1-http-http-connectiond-32-0d6.5b955b3104dcaf14fdde.js",
-          "hash": "2b6c04224efb95455ef3",
-          "publicPath": "/docsite/content---docsite-docs-web-1-http-http-connectiond-32-0d6.5b955b3104dcaf14fdde.js"
+          "file": "content---docsite-docs-web-3-cross-domain-websocket-988-020.ecc1ff56202a5d4ff5c9.js",
+          "hash": "b043ecd154d54efb9e59",
+          "publicPath": "/docsite/content---docsite-docs-web-3-cross-domain-websocket-988-020.ecc1ff56202a5d4ff5c9.js"
         }
       ]
     },
     "73": {
       "js": [
         {
-          "file": "content---docsite-docs-web-1-http-http-statusdd-5-aa2.b4ff6a864ea1129941f2.js",
-          "hash": "c6e363db834620635b4f",
-          "publicPath": "/docsite/content---docsite-docs-web-1-http-http-statusdd-5-aa2.b4ff6a864ea1129941f2.js"
+          "file": "content---docsite-docs-web-4-cross-document-iframeac-2-84a.461678236d4ff38e2b0f.js",
+          "hash": "2126b997fc0b38f3e74a",
+          "publicPath": "/docsite/content---docsite-docs-web-4-cross-document-iframeac-2-84a.461678236d4ff38e2b0f.js"
         }
       ]
     },
     "74": {
       "js": [
         {
-          "file": "content---docsite-docs-web-1-http-https-724-bd0.f37e6148e1050d37c6ab.js",
-          "hash": "9a7ec0db5ed23ad720ac",
-          "publicPath": "/docsite/content---docsite-docs-web-1-http-https-724-bd0.f37e6148e1050d37c6ab.js"
+          "file": "content---docsite-docs-web-4-cross-document-post-massage-479-bdf.c79c575c193e8e090735.js",
+          "hash": "adb0f783ae7991b5769b",
+          "publicPath": "/docsite/content---docsite-docs-web-4-cross-document-post-massage-479-bdf.c79c575c193e8e090735.js"
         }
       ]
     },
     "75": {
       "js": [
         {
-          "file": "content---docsite-docs-web-1-http-websocket-4-ca-27e.d13c4f24efeb312c04e7.js",
-          "hash": "bd2ed76a4b63beed59f0",
-          "publicPath": "/docsite/content---docsite-docs-web-1-http-websocket-4-ca-27e.d13c4f24efeb312c04e7.js"
+          "file": "content---docsite-docs-web-5-webworker-webworker-76-b-808.8d5d538abbe920e4bf8f.js",
+          "hash": "9d99794fa77eb63d1a3e",
+          "publicPath": "/docsite/content---docsite-docs-web-5-webworker-webworker-76-b-808.8d5d538abbe920e4bf8f.js"
         }
       ]
     },
     "76": {
       "js": [
         {
-          "file": "content---docsite-docs-web-2-same-origin-policy-same-origin-policy-2-b-9-ca5.324bc78a2e2457c94ac3.js",
-          "hash": "d31a3b6b4287545e2195",
-          "publicPath": "/docsite/content---docsite-docs-web-2-same-origin-policy-same-origin-policy-2-b-9-ca5.324bc78a2e2457c94ac3.js"
+          "file": "docsMetadata---docsite-docs-304-90c.1381eaf75057ce2fb871.js",
+          "hash": "42f3000776c37a4cbf24",
+          "publicPath": "/docsite/docsMetadata---docsite-docs-304-90c.1381eaf75057ce2fb871.js"
         }
       ]
     },
     "77": {
+      "css": [
+        {
+          "file": "main.1f78f84cd899566e8d60.css",
+          "hash": "eeb0a1cbc7cf33d41e77",
+          "publicPath": "/docsite/main.1f78f84cd899566e8d60.css"
+        }
+      ],
       "js": [
         {
-          "file": "content---docsite-docs-web-3-cross-domain-cors-00-e-6a3.30abfb3499728b9198d5.js",
-          "hash": "3d2ee5f3d44f3ad3b2a5",
-          "publicPath": "/docsite/content---docsite-docs-web-3-cross-domain-cors-00-e-6a3.30abfb3499728b9198d5.js"
+          "file": "main.37d671f7e5058bcabf8b.js",
+          "hash": "eeb0a1cbc7cf33d41e77",
+          "publicPath": "/docsite/main.37d671f7e5058bcabf8b.js"
         }
       ]
     },
     "78": {
       "js": [
         {
-          "file": "content---docsite-docs-web-3-cross-domain-jsonp-6-ab-d39.955cc2b1d77911e7704f.js",
-          "hash": "6819bd2d2049a1a4fd5e",
-          "publicPath": "/docsite/content---docsite-docs-web-3-cross-domain-jsonp-6-ab-d39.955cc2b1d77911e7704f.js"
+          "file": "metadata---docsite-blog-0-e-6-256.24cacd1eb55433a36be4.js",
+          "hash": "66e269886f235582d786",
+          "publicPath": "/docsite/metadata---docsite-blog-0-e-6-256.24cacd1eb55433a36be4.js"
         }
       ]
     },
     "79": {
       "js": [
         {
-          "file": "content---docsite-docs-web-3-cross-domain-websocket-988-020.bb6edc7c90c5a68e65e4.js",
-          "hash": "7332978889e62cccc286",
-          "publicPath": "/docsite/content---docsite-docs-web-3-cross-domain-websocket-988-020.bb6edc7c90c5a68e65e4.js"
+          "file": "metadata---docsite-blog-tags-docusaurus-00-d-6b1.14fc7924a8abb8834b48.js",
+          "hash": "5b6f86b9a4c4e386a977",
+          "publicPath": "/docsite/metadata---docsite-blog-tags-docusaurus-00-d-6b1.14fc7924a8abb8834b48.js"
         }
       ]
     },
     "80": {
       "js": [
         {
-          "file": "content---docsite-docs-web-4-cross-document-iframeac-2-84a.8525debcccd4bbb0a07b.js",
-          "hash": "8cc448af7056ad618acb",
-          "publicPath": "/docsite/content---docsite-docs-web-4-cross-document-iframeac-2-84a.8525debcccd4bbb0a07b.js"
+          "file": "metadata---docsite-blog-tags-facebook-4-b-8-308.4c63ece5ddf17208bfc5.js",
+          "hash": "51449ef4a9d4db50479c",
+          "publicPath": "/docsite/metadata---docsite-blog-tags-facebook-4-b-8-308.4c63ece5ddf17208bfc5.js"
         }
       ]
     },
     "81": {
       "js": [
         {
-          "file": "content---docsite-docs-web-4-cross-document-post-massage-479-bdf.e725a63735ee9bf5a78e.js",
-          "hash": "65b3492a41dab2aa9cbd",
-          "publicPath": "/docsite/content---docsite-docs-web-4-cross-document-post-massage-479-bdf.e725a63735ee9bf5a78e.js"
+          "file": "metadata---docsite-blog-tags-hello-8-f-3-265.bb7c7c5106371f8333f9.js",
+          "hash": "a5d81062e2fced46469d",
+          "publicPath": "/docsite/metadata---docsite-blog-tags-hello-8-f-3-265.bb7c7c5106371f8333f9.js"
         }
       ]
     },
     "82": {
       "js": [
         {
-          "file": "content---docsite-docs-web-5-webworker-webworker-76-b-808.760fd4a1884a2c2061f8.js",
-          "hash": "3e3f9ff76e073e7350bd",
-          "publicPath": "/docsite/content---docsite-docs-web-5-webworker-webworker-76-b-808.760fd4a1884a2c2061f8.js"
+          "file": "metadata---docsite-blog-tags-hola-5-a-7-966.a95045256c6285fd90ee.js",
+          "hash": "931e802c8819e3ec7adb",
+          "publicPath": "/docsite/metadata---docsite-blog-tags-hola-5-a-7-966.a95045256c6285fd90ee.js"
         }
       ]
     },
     "83": {
       "js": [
         {
-          "file": "docsMetadata---docsite-docs-6-dd-ccc.de7261344ae8a532d328.js",
-          "hash": "3a15d734215c8d6afee3",
-          "publicPath": "/docsite/docsMetadata---docsite-docs-6-dd-ccc.de7261344ae8a532d328.js"
+          "file": "metadata---docsite-blog-welcome-47-b-759.aad6780791ad122b7384.js",
+          "hash": "65f56408224fa8ad6106",
+          "publicPath": "/docsite/metadata---docsite-blog-welcome-47-b-759.aad6780791ad122b7384.js"
         }
       ]
     },
     "84": {
-      "css": [
-        {
-          "file": "main.5af442a778040b828313.css",
-          "hash": "4e5b4fe9ba9e251042a5",
-          "publicPath": "/docsite/main.5af442a778040b828313.css"
-        }
-      ],
       "js": [
         {
-          "file": "main.d1c89d24c751a4f6ffed.js",
-          "hash": "4e5b4fe9ba9e251042a5",
-          "publicPath": "/docsite/main.d1c89d24c751a4f6ffed.js"
+          "file": "metadata---docsite-docs-doc-1265-858.50c752b509179730d685.js",
+          "hash": "05540b57bd60a85fe170",
+          "publicPath": "/docsite/metadata---docsite-docs-doc-1265-858.50c752b509179730d685.js"
         }
       ]
     },
     "85": {
       "js": [
         {
-          "file": "metadata---docsite-blog-218-2ba.c91f2b17fd579e378f51.js",
-          "hash": "95146bdcf9d5e1946cf3",
-          "publicPath": "/docsite/metadata---docsite-blog-218-2ba.c91f2b17fd579e378f51.js"
+          "file": "metadata---docsite-docs-doc-2-fa-9-444.406145feff5945593e0b.js",
+          "hash": "98d0e7f37ee12b781a8a",
+          "publicPath": "/docsite/metadata---docsite-docs-doc-2-fa-9-444.406145feff5945593e0b.js"
         }
       ]
     },
     "86": {
       "js": [
         {
-          "file": "metadata---docsite-blog-tags-docusaurus-350-a8e.d7744a50dc3cc8acde05.js",
-          "hash": "f635f619ced91ad616bc",
-          "publicPath": "/docsite/metadata---docsite-blog-tags-docusaurus-350-a8e.d7744a50dc3cc8acde05.js"
+          "file": "metadata---docsite-docs-doc-3774-17d.a754cc287d379203cb57.js",
+          "hash": "71d5054594e2e44be110",
+          "publicPath": "/docsite/metadata---docsite-docs-doc-3774-17d.a754cc287d379203cb57.js"
         }
       ]
     },
     "87": {
       "js": [
         {
-          "file": "metadata---docsite-blog-tags-facebook-628-fc9.f318b12781f528f5fa40.js",
-          "hash": "e12aba29b0675158d7aa",
-          "publicPath": "/docsite/metadata---docsite-blog-tags-facebook-628-fc9.f318b12781f528f5fa40.js"
+          "file": "metadata---docsite-docs-mdxfce-0c0.8969db5ea6e42b788e11.js",
+          "hash": "34acc5c4d08929d007f3",
+          "publicPath": "/docsite/metadata---docsite-docs-mdxfce-0c0.8969db5ea6e42b788e11.js"
         }
       ]
     },
     "88": {
       "js": [
         {
-          "file": "metadata---docsite-blog-tags-hellobcb-730.e2572919486f6f4d6bfb.js",
-          "hash": "0902cc5a5e15c6c99160",
-          "publicPath": "/docsite/metadata---docsite-blog-tags-hellobcb-730.e2572919486f6f4d6bfb.js"
+          "file": "metadata---docsite-docs-react-1-app-zong-lan-mu-lu-jie-gouce-4-2b0.be8ecb3714d28dca050c.js",
+          "hash": "f891dd1c731f1f49a3b1",
+          "publicPath": "/docsite/metadata---docsite-docs-react-1-app-zong-lan-mu-lu-jie-gouce-4-2b0.be8ecb3714d28dca050c.js"
         }
       ]
     },
     "89": {
       "js": [
         {
-          "file": "metadata---docsite-blog-tags-hola-233-95b.ca43be0fc108dbf27b1e.js",
-          "hash": "636613cf36e53d7664fa",
-          "publicPath": "/docsite/metadata---docsite-blog-tags-hola-233-95b.ca43be0fc108dbf27b1e.js"
+          "file": "metadata---docsite-docs-react-1-app-zong-lan-readm-ed-74-5a4.578ac7272cb54576ae8b.js",
+          "hash": "346b8a10de2d30a4db87",
+          "publicPath": "/docsite/metadata---docsite-docs-react-1-app-zong-lan-readm-ed-74-5a4.578ac7272cb54576ae8b.js"
         }
       ]
     },
     "90": {
       "js": [
         {
-          "file": "metadata---docsite-blog-welcome-769-d0e.78030638f405e0d1ca8b.js",
-          "hash": "4b04ff2777154e06720c",
-          "publicPath": "/docsite/metadata---docsite-blog-welcome-769-d0e.78030638f405e0d1ca8b.js"
+          "file": "metadata---docsite-docs-react-1-app-zong-lan-wen-jian-he-wen-jian-jia-shuo-ming-853-23c.ef4204de641960d24725.js",
+          "hash": "3aacd4294e3bb99a1fed",
+          "publicPath": "/docsite/metadata---docsite-docs-react-1-app-zong-lan-wen-jian-he-wen-jian-jia-shuo-ming-853-23c.ef4204de641960d24725.js"
         }
       ]
     },
     "91": {
       "js": [
         {
-          "file": "metadata---docsite-docs-algorithm-1-array-duplicated-number-in-array-51-b-3c9.f0e1738de212561ad1e3.js",
-          "hash": "caa0f3dbe83e1baf0409",
-          "publicPath": "/docsite/metadata---docsite-docs-algorithm-1-array-duplicated-number-in-array-51-b-3c9.f0e1738de212561ad1e3.js"
+          "file": "metadata---docsite-docs-react-1-basic-category-6-ce-60a.2c1d1411d366512ffb29.js",
+          "hash": "398fae06a3011fdaa265",
+          "publicPath": "/docsite/metadata---docsite-docs-react-1-basic-category-6-ce-60a.2c1d1411d366512ffb29.js"
         }
       ]
     },
     "92": {
       "js": [
         {
-          "file": "metadata---docsite-docs-algorithm-4-linkedlist-merge-two-sorted-lists-3-ff-978.389e7af5b29efc97d61c.js",
-          "hash": "9e2dbdb1ddde63a1ea96",
-          "publicPath": "/docsite/metadata---docsite-docs-algorithm-4-linkedlist-merge-two-sorted-lists-3-ff-978.389e7af5b29efc97d61c.js"
+          "file": "metadata---docsite-docs-react-1-basic-communication-565-4de.3716a51e512616aea253.js",
+          "hash": "f2d90830baa2d596647e",
+          "publicPath": "/docsite/metadata---docsite-docs-react-1-basic-communication-565-4de.3716a51e512616aea253.js"
         }
       ]
     },
     "93": {
       "js": [
         {
-          "file": "metadata---docsite-docs-algorithm-4-linkedlist-reverse-linked-list-733-a7c.19ae35469c0b62727d97.js",
-          "hash": "b2f1516d50e79bd70814",
-          "publicPath": "/docsite/metadata---docsite-docs-algorithm-4-linkedlist-reverse-linked-list-733-a7c.19ae35469c0b62727d97.js"
+          "file": "metadata---docsite-docs-react-1-basic-eventf-3-e-395.75ce4b2460267a07f960.js",
+          "hash": "4dc6c6159570ce700583",
+          "publicPath": "/docsite/metadata---docsite-docs-react-1-basic-eventf-3-e-395.75ce4b2460267a07f960.js"
         }
       ]
     },
     "94": {
       "js": [
         {
-          "file": "metadata---docsite-docs-algorithm-5-binary-tree-build-tree-9-c-7-24e.b459db95ab67f779a4fa.js",
-          "hash": "7fe3c0f4099f2fad6a0d",
-          "publicPath": "/docsite/metadata---docsite-docs-algorithm-5-binary-tree-build-tree-9-c-7-24e.b459db95ab67f779a4fa.js"
+          "file": "metadata---docsite-docs-react-1-basic-jsxe-72-7a0.537d4b6e180899f4c705.js",
+          "hash": "9e8fa7e677ca11c461d6",
+          "publicPath": "/docsite/metadata---docsite-docs-react-1-basic-jsxe-72-7a0.537d4b6e180899f4c705.js"
         }
       ]
     },
     "95": {
       "js": [
         {
-          "file": "metadata---docsite-docs-algorithm-5-binary-tree-mirror-tree-11-d-459.67d0fa38bbd28df2f6b4.js",
-          "hash": "cab99e8ec512a344028c",
-          "publicPath": "/docsite/metadata---docsite-docs-algorithm-5-binary-tree-mirror-tree-11-d-459.67d0fa38bbd28df2f6b4.js"
+          "file": "metadata---docsite-docs-react-1-basic-lifecycle-460-8c5.5cbe964f1303d2da3bf7.js",
+          "hash": "ace43058c03aa2018d32",
+          "publicPath": "/docsite/metadata---docsite-docs-react-1-basic-lifecycle-460-8c5.5cbe964f1303d2da3bf7.js"
         }
       ]
     },
     "96": {
       "js": [
         {
-          "file": "metadata---docsite-docs-algorithm-8-sort-merged-sort-7-cb-901.8e488ec65c6a05ee8907.js",
-          "hash": "30075aea8ba387abc678",
-          "publicPath": "/docsite/metadata---docsite-docs-algorithm-8-sort-merged-sort-7-cb-901.8e488ec65c6a05ee8907.js"
+          "file": "metadata---docsite-docs-react-1-basic-readm-ead-7-f66.a1607abdb1631188c5d2.js",
+          "hash": "02c2ed2ef3d7ae9429cd",
+          "publicPath": "/docsite/metadata---docsite-docs-react-1-basic-readm-ead-7-f66.a1607abdb1631188c5d2.js"
         }
       ]
     },
     "97": {
       "js": [
         {
-          "file": "metadata---docsite-docs-algorithm-8-sort-quick-sortdc-4-1cb.a9bb47cacf61a77e819d.js",
-          "hash": "6e2164246eb7f2935bbe",
-          "publicPath": "/docsite/metadata---docsite-docs-algorithm-8-sort-quick-sortdc-4-1cb.a9bb47cacf61a77e819d.js"
+          "file": "metadata---docsite-docs-react-1-basic-state-7-a-5-c14.208e4fbe97ffde76b410.js",
+          "hash": "2f5ba24cd61447bee118",
+          "publicPath": "/docsite/metadata---docsite-docs-react-1-basic-state-7-a-5-c14.208e4fbe97ffde76b410.js"
         }
       ]
     },
     "98": {
       "js": [
         {
-          "file": "metadata---docsite-docs-doc-13-f-5-2b6.e07762feb40af6881423.js",
-          "hash": "c2fdd18c2afd1485d77b",
-          "publicPath": "/docsite/metadata---docsite-docs-doc-13-f-5-2b6.e07762feb40af6881423.js"
+          "file": "metadata---docsite-docs-react-1-basic-style-020-275.f2dbbf872b86005383a6.js",
+          "hash": "9df22b8d980066b11dcb",
+          "publicPath": "/docsite/metadata---docsite-docs-react-1-basic-style-020-275.f2dbbf872b86005383a6.js"
         }
       ]
     },
     "99": {
       "js": [
         {
-          "file": "metadata---docsite-docs-doc-2-cd-2-869.43004a931299281e7590.js",
-          "hash": "f6a15cfdb92fdcbb5eec",
-          "publicPath": "/docsite/metadata---docsite-docs-doc-2-cd-2-869.43004a931299281e7590.js"
+          "file": "metadata---docsite-docs-react-2-advanced-contextd-33-a1b.d2fbe05a4c5ac843d800.js",
+          "hash": "ec61ba4aaaece333f7a9",
+          "publicPath": "/docsite/metadata---docsite-docs-react-2-advanced-contextd-33-a1b.d2fbe05a4c5ac843d800.js"
         }
       ]
     },
     "100": {
       "js": [
         {
-          "file": "metadata---docsite-docs-doc-3-cf-9-b82.1276fbd767f228dfe524.js",
-          "hash": "5aa08c3a9f803fe1d1d4",
-          "publicPath": "/docsite/metadata---docsite-docs-doc-3-cf-9-b82.1276fbd767f228dfe524.js"
+          "file": "metadata---docsite-docs-react-2-advanced-hoc-8-da-7cd.977ca42f6579a12f5a45.js",
+          "hash": "87faec9812b9b1e7514c",
+          "publicPath": "/docsite/metadata---docsite-docs-react-2-advanced-hoc-8-da-7cd.977ca42f6579a12f5a45.js"
         }
       ]
     },
     "101": {
       "js": [
         {
-          "file": "metadata---docsite-docs-mdxdf-5-7ef.b5f5e45ac62d96fce3eb.js",
-          "hash": "a60c31708581f2c680b2",
-          "publicPath": "/docsite/metadata---docsite-docs-mdxdf-5-7ef.b5f5e45ac62d96fce3eb.js"
+          "file": "metadata---docsite-docs-react-2-advanced-hookse-22-d43.6f02e60dc3c06f5790e1.js",
+          "hash": "5ff6478b467265243879",
+          "publicPath": "/docsite/metadata---docsite-docs-react-2-advanced-hookse-22-d43.6f02e60dc3c06f5790e1.js"
         }
       ]
     },
     "102": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-1-app-zong-lan-mu-lu-jie-gou-4-ae-67c.f39af28254a0d8bfad7a.js",
-          "hash": "8c58697d001a9d1fbd93",
-          "publicPath": "/docsite/metadata---docsite-docs-react-1-app-zong-lan-mu-lu-jie-gou-4-ae-67c.f39af28254a0d8bfad7a.js"
+          "file": "metadata---docsite-docs-react-2-advanced-portal-1-bb-1d2.eb3f8b73e8b61f1ff2df.js",
+          "hash": "4e7a011485765bfbfb0b",
+          "publicPath": "/docsite/metadata---docsite-docs-react-2-advanced-portal-1-bb-1d2.eb3f8b73e8b61f1ff2df.js"
         }
       ]
     },
     "103": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-1-app-zong-lan-readme-0-f-8-485.b146d154323a61b237c7.js",
-          "hash": "25f979a5f9b48a4df561",
-          "publicPath": "/docsite/metadata---docsite-docs-react-1-app-zong-lan-readme-0-f-8-485.b146d154323a61b237c7.js"
+          "file": "metadata---docsite-docs-react-2-advanced-render-props-1-d-5-76e.bade84c7b5fcf4fc8768.js",
+          "hash": "16b9c5be6ff6ca76ac03",
+          "publicPath": "/docsite/metadata---docsite-docs-react-2-advanced-render-props-1-d-5-76e.bade84c7b5fcf4fc8768.js"
         }
       ]
     },
     "104": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-1-app-zong-lan-wen-jian-he-wen-jian-jia-shuo-mingbcf-ecd.0b56c7d9f277bc60e3ec.js",
-          "hash": "d413b5fefa0761229412",
-          "publicPath": "/docsite/metadata---docsite-docs-react-1-app-zong-lan-wen-jian-he-wen-jian-jia-shuo-mingbcf-ecd.0b56c7d9f277bc60e3ec.js"
+          "file": "metadata---docsite-docs-react-3-development-performance-6-a-7-93a.61542f4f551adf9e692f.js",
+          "hash": "5e7139551597c2cfe944",
+          "publicPath": "/docsite/metadata---docsite-docs-react-3-development-performance-6-a-7-93a.61542f4f551adf9e692f.js"
         }
       ]
     },
     "105": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-1-basic-category-453-065.3547a723d5c29fa3d879.js",
-          "hash": "271c6c5a5ad6eed047a6",
-          "publicPath": "/docsite/metadata---docsite-docs-react-1-basic-category-453-065.3547a723d5c29fa3d879.js"
+          "file": "metadata---docsite-docs-react-3-development-pure-component-142-d94.037106f832ecd282599a.js",
+          "hash": "18160a82918e80b79c25",
+          "publicPath": "/docsite/metadata---docsite-docs-react-3-development-pure-component-142-d94.037106f832ecd282599a.js"
         }
       ]
     },
     "106": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-1-basic-communication-567-9ee.5ba39cc690794915741e.js",
-          "hash": "7afcd7a0ad1395e8bb2f",
-          "publicPath": "/docsite/metadata---docsite-docs-react-1-basic-communication-567-9ee.5ba39cc690794915741e.js"
+          "file": "metadata---docsite-docs-react-3-development-redux-component-215-ee3.4ee7c9273a294cc34844.js",
+          "hash": "f5e6aa3ea052af28c41e",
+          "publicPath": "/docsite/metadata---docsite-docs-react-3-development-redux-component-215-ee3.4ee7c9273a294cc34844.js"
         }
       ]
     },
     "107": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-1-basic-eventa-09-980.69b62fd848fbdd30fa43.js",
-          "hash": "4750efb083346f311ef3",
-          "publicPath": "/docsite/metadata---docsite-docs-react-1-basic-eventa-09-980.69b62fd848fbdd30fa43.js"
+          "file": "metadata---docsite-docs-react-3-development-ui-componenta-05-5ee.d283105eba707a8ccbb5.js",
+          "hash": "921d30dee37cf881eb4e",
+          "publicPath": "/docsite/metadata---docsite-docs-react-3-development-ui-componenta-05-5ee.d283105eba707a8ccbb5.js"
         }
       ]
     },
     "108": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-1-basic-jsx-295-0d0.020d5597e397a50f7070.js",
-          "hash": "9f9fcd0a5294db2a09af",
-          "publicPath": "/docsite/metadata---docsite-docs-react-1-basic-jsx-295-0d0.020d5597e397a50f7070.js"
+          "file": "metadata---docsite-docs-react-4-state-management-action-589-997.41485b12fb776d34e938.js",
+          "hash": "6c9bc5083d3e1d4c7fab",
+          "publicPath": "/docsite/metadata---docsite-docs-react-4-state-management-action-589-997.41485b12fb776d34e938.js"
         }
       ]
     },
     "109": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-1-basic-lifecycle-962-1c3.34cdd5661aab5666b673.js",
-          "hash": "85b6919b728f58f45db4",
-          "publicPath": "/docsite/metadata---docsite-docs-react-1-basic-lifecycle-962-1c3.34cdd5661aab5666b673.js"
+          "file": "metadata---docsite-docs-react-4-state-management-middleware-87-d-083.c6bfd06d96d662d38484.js",
+          "hash": "4e0f96b197e284154f88",
+          "publicPath": "/docsite/metadata---docsite-docs-react-4-state-management-middleware-87-d-083.c6bfd06d96d662d38484.js"
         }
       ]
     },
     "110": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-1-basic-readme-0-e-0-acd.94f77837357c11cbe589.js",
-          "hash": "f32b9ff3f4c108137236",
-          "publicPath": "/docsite/metadata---docsite-docs-react-1-basic-readme-0-e-0-acd.94f77837357c11cbe589.js"
+          "file": "metadata---docsite-docs-react-4-state-management-modeld-71-0ac.22aa743c84bb846b371b.js",
+          "hash": "04a9ae06f990cca51b34",
+          "publicPath": "/docsite/metadata---docsite-docs-react-4-state-management-modeld-71-0ac.22aa743c84bb846b371b.js"
         }
       ]
     },
     "111": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-1-basic-state-8-bd-531.b85e1d79b3efd1849c2c.js",
-          "hash": "7b8853a0fd78a0e4ca4c",
-          "publicPath": "/docsite/metadata---docsite-docs-react-1-basic-state-8-bd-531.b85e1d79b3efd1849c2c.js"
+          "file": "metadata---docsite-docs-react-4-state-management-reducer-92-c-829.b57885421fc0a5ce5730.js",
+          "hash": "1fa543c8f3cda69a737f",
+          "publicPath": "/docsite/metadata---docsite-docs-react-4-state-management-reducer-92-c-829.b57885421fc0a5ce5730.js"
         }
       ]
     },
     "112": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-1-basic-style-57-d-5e7.ca5c39f1f97780935d43.js",
-          "hash": "894c989dc1e27168a725",
-          "publicPath": "/docsite/metadata---docsite-docs-react-1-basic-style-57-d-5e7.ca5c39f1f97780935d43.js"
+          "file": "metadata---docsite-docs-react-4-state-management-reduxdee-d2f.698adc060527521b2a0c.js",
+          "hash": "c1bce03219d3eb2b8c81",
+          "publicPath": "/docsite/metadata---docsite-docs-react-4-state-management-reduxdee-d2f.698adc060527521b2a0c.js"
         }
       ]
     },
     "113": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-2-advanced-contextfb-8-65a.d0ce833bcc47ec444969.js",
-          "hash": "df4533713531fbc1ecd3",
-          "publicPath": "/docsite/metadata---docsite-docs-react-2-advanced-contextfb-8-65a.d0ce833bcc47ec444969.js"
+          "file": "metadata---docsite-docs-react-4-state-management-selector-576-1fe.0402b094be19be165fe4.js",
+          "hash": "70ff82f746ca326d9cef",
+          "publicPath": "/docsite/metadata---docsite-docs-react-4-state-management-selector-576-1fe.0402b094be19be165fe4.js"
         }
       ]
     },
     "114": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-2-advanced-hoc-70-e-184.876c98baf1e43ce9111d.js",
-          "hash": "1fbef6730b8fa2faa5c2",
-          "publicPath": "/docsite/metadata---docsite-docs-react-2-advanced-hoc-70-e-184.876c98baf1e43ce9111d.js"
+          "file": "metadata---docsite-docs-react-4-state-management-store-33-c-f69.752b78e84136be2cbf94.js",
+          "hash": "6236a31df493fa30eea8",
+          "publicPath": "/docsite/metadata---docsite-docs-react-4-state-management-store-33-c-f69.752b78e84136be2cbf94.js"
         }
       ]
     },
     "115": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-2-advanced-hooksfbd-7b0.fbbbea44fc06fa84959a.js",
-          "hash": "ef2e990edd59b7fe0b3e",
-          "publicPath": "/docsite/metadata---docsite-docs-react-2-advanced-hooksfbd-7b0.fbbbea44fc06fa84959a.js"
+          "file": "metadata---docsite-docs-react-5-router-management-link-059-90c.1f2cb1e0bc55a271e103.js",
+          "hash": "a5624db7f806a5d2e645",
+          "publicPath": "/docsite/metadata---docsite-docs-react-5-router-management-link-059-90c.1f2cb1e0bc55a271e103.js"
         }
       ]
     },
     "116": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-2-advanced-portale-57-1ff.ed79274854cc515ea054.js",
-          "hash": "9bb1ca397f3f8ee14f34",
-          "publicPath": "/docsite/metadata---docsite-docs-react-2-advanced-portale-57-1ff.ed79274854cc515ea054.js"
+          "file": "metadata---docsite-docs-react-5-router-management-readm-ec-2-a-853.8ef2c2098fade85e5413.js",
+          "hash": "d79b9cfefa234aad0d35",
+          "publicPath": "/docsite/metadata---docsite-docs-react-5-router-management-readm-ec-2-a-853.8ef2c2098fade85e5413.js"
         }
       ]
     },
     "117": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-2-advanced-render-props-80-d-af8.78260c227ca4bc238aaa.js",
-          "hash": "ce94ba45121495ca40b2",
-          "publicPath": "/docsite/metadata---docsite-docs-react-2-advanced-render-props-80-d-af8.78260c227ca4bc238aaa.js"
+          "file": "metadata---docsite-docs-react-5-router-management-route-1-cb-af2.c2fa91cd57c473e232d3.js",
+          "hash": "5bf6727bc23f2f3c64b1",
+          "publicPath": "/docsite/metadata---docsite-docs-react-5-router-management-route-1-cb-af2.c2fa91cd57c473e232d3.js"
         }
       ]
     },
     "118": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-3-development-performance-5-ad-ce3.3ce4044192926c06fa2f.js",
-          "hash": "287fe95f213f58a58d75",
-          "publicPath": "/docsite/metadata---docsite-docs-react-3-development-performance-5-ad-ce3.3ce4044192926c06fa2f.js"
+          "file": "metadata---docsite-docs-react-5-router-management-router-3-f-1-cd3.0e42a435d27bb434dfe0.js",
+          "hash": "a266f592d6dc03ee10b2",
+          "publicPath": "/docsite/metadata---docsite-docs-react-5-router-management-router-3-f-1-cd3.0e42a435d27bb434dfe0.js"
         }
       ]
     },
     "119": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-3-development-pure-componente-63-d9b.aac69b6e18db8915f71a.js",
-          "hash": "f7343cafa1cd79a125af",
-          "publicPath": "/docsite/metadata---docsite-docs-react-3-development-pure-componente-63-d9b.aac69b6e18db8915f71a.js"
+          "file": "metadata---docsite-docs-react-6-test-component-test-4-c-9-026.a8fe38f38826aa8a70ba.js",
+          "hash": "049cf4b894fde791c0af",
+          "publicPath": "/docsite/metadata---docsite-docs-react-6-test-component-test-4-c-9-026.a8fe38f38826aa8a70ba.js"
         }
       ]
     },
     "120": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-3-development-redux-componentda-9-858.7f1f71a81ef9b308ac64.js",
-          "hash": "5c5e990ea1fd1e948484",
-          "publicPath": "/docsite/metadata---docsite-docs-react-3-development-redux-componentda-9-858.7f1f71a81ef9b308ac64.js"
+          "file": "metadata---docsite-docs-react-6-test-state-test-874-072.a107df7719d8853f6a26.js",
+          "hash": "6ae63fb221cb38864b6d",
+          "publicPath": "/docsite/metadata---docsite-docs-react-6-test-state-test-874-072.a107df7719d8853f6a26.js"
         }
       ]
     },
     "121": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-3-development-ui-component-49-b-622.c943c8614f53a147c1bd.js",
-          "hash": "d3abe6cf4631e799cb71",
-          "publicPath": "/docsite/metadata---docsite-docs-react-3-development-ui-component-49-b-622.c943c8614f53a147c1bd.js"
+          "file": "metadata---docsite-docs-react-6-test-test-categoryc-50-c60.94d917c34b3bc2d4d0d3.js",
+          "hash": "3e730182e93f7e71b991",
+          "publicPath": "/docsite/metadata---docsite-docs-react-6-test-test-categoryc-50-c60.94d917c34b3bc2d4d0d3.js"
         }
       ]
     },
     "122": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-4-state-management-action-543-f79.48a753a5888b636d840d.js",
-          "hash": "c06b68b24da824c14432",
-          "publicPath": "/docsite/metadata---docsite-docs-react-4-state-management-action-543-f79.48a753a5888b636d840d.js"
+          "file": "metadata---docsite-docs-react-6-test-unit-testd-8-d-3a6.d36e2e7395e518a9b0d8.js",
+          "hash": "0526cefffc748b7b03e5",
+          "publicPath": "/docsite/metadata---docsite-docs-react-6-test-unit-testd-8-d-3a6.d36e2e7395e518a9b0d8.js"
         }
       ]
     },
     "123": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-4-state-management-middlewared-4-d-1b2.6b31b52b8c6ae27d5cb3.js",
-          "hash": "b6067bf63efa16d93e3b",
-          "publicPath": "/docsite/metadata---docsite-docs-react-4-state-management-middlewared-4-d-1b2.6b31b52b8c6ae27d5cb3.js"
+          "file": "metadata---docsite-docs-react-appendix-1-references-8-e-1-f92.3b6de371735275877b63.js",
+          "hash": "50c48471cdf59c201dcf",
+          "publicPath": "/docsite/metadata---docsite-docs-react-appendix-1-references-8-e-1-f92.3b6de371735275877b63.js"
         }
       ]
     },
     "124": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-4-state-management-model-578-a22.5dcf11ec21853d95c301.js",
-          "hash": "c5b0b4f3ba06b096af3c",
-          "publicPath": "/docsite/metadata---docsite-docs-react-4-state-management-model-578-a22.5dcf11ec21853d95c301.js"
+          "file": "metadata---docsite-docs-react-appendix-2-related-websites-28-b-80e.fe796d4ff8f965bd0e52.js",
+          "hash": "d369fddd6ce2699630b8",
+          "publicPath": "/docsite/metadata---docsite-docs-react-appendix-2-related-websites-28-b-80e.fe796d4ff8f965bd0e52.js"
         }
       ]
     },
     "125": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-4-state-management-reducerb-81-f86.b38935a4bec0a6e37869.js",
-          "hash": "3d5b64c92d03ef825ff9",
-          "publicPath": "/docsite/metadata---docsite-docs-react-4-state-management-reducerb-81-f86.b38935a4bec0a6e37869.js"
+          "file": "metadata---docsite-docs-react-readme-544-e1a.23818a3abcb6454cfedb.js",
+          "hash": "ab388635225f01d7207d",
+          "publicPath": "/docsite/metadata---docsite-docs-react-readme-544-e1a.23818a3abcb6454cfedb.js"
         }
       ]
     },
     "126": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-4-state-management-redux-0-fd-dd9.26e49814d7283b0847df.js",
-          "hash": "c2800893077d8c24352d",
-          "publicPath": "/docsite/metadata---docsite-docs-react-4-state-management-redux-0-fd-dd9.26e49814d7283b0847df.js"
+          "file": "metadata---docsite-docs-react-security-guide-01-b-ed2.607d00cf0699ba73ffdd.js",
+          "hash": "3b1cbc7281552c6bbe97",
+          "publicPath": "/docsite/metadata---docsite-docs-react-security-guide-01-b-ed2.607d00cf0699ba73ffdd.js"
         }
       ]
     },
     "127": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-4-state-management-selectoreb-5-bbe.e606fb1d96a5099aa903.js",
-          "hash": "27a543d8f2830ce2fa26",
-          "publicPath": "/docsite/metadata---docsite-docs-react-4-state-management-selectoreb-5-bbe.e606fb1d96a5099aa903.js"
+          "file": "metadata---docsite-docs-react-shuo-ming-746-b31.efacaff57a0ea3ee2f2f.js",
+          "hash": "93113eeaa90b40606ee7",
+          "publicPath": "/docsite/metadata---docsite-docs-react-shuo-ming-746-b31.efacaff57a0ea3ee2f2f.js"
         }
       ]
     },
     "128": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-4-state-management-storead-0-cfd.a89bfcd5b876dcb45d72.js",
-          "hash": "7d569eb023585b38a6ae",
-          "publicPath": "/docsite/metadata---docsite-docs-react-4-state-management-storead-0-cfd.a89bfcd5b876dcb45d72.js"
+          "file": "metadata---docsite-docs-web-1-http-ajax-818-f40.081d55b8f3e28e51c24d.js",
+          "hash": "4f2ef9423052f527deaf",
+          "publicPath": "/docsite/metadata---docsite-docs-web-1-http-ajax-818-f40.081d55b8f3e28e51c24d.js"
         }
       ]
     },
     "129": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-5-router-management-linkd-5-b-66d.23615acd4784c88dde5c.js",
-          "hash": "2922be7c607720f89eda",
-          "publicPath": "/docsite/metadata---docsite-docs-react-5-router-management-linkd-5-b-66d.23615acd4784c88dde5c.js"
+          "file": "metadata---docsite-docs-web-1-http-fetchfd-7-9ff.21f2272948d5e27b51be.js",
+          "hash": "c86646bbdde349b80fc3",
+          "publicPath": "/docsite/metadata---docsite-docs-web-1-http-fetchfd-7-9ff.21f2272948d5e27b51be.js"
         }
       ]
     },
     "130": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-5-router-management-readm-eee-6-481.470d0c5e2ff75ee36f82.js",
-          "hash": "1912a397a3000539aa58",
-          "publicPath": "/docsite/metadata---docsite-docs-react-5-router-management-readm-eee-6-481.470d0c5e2ff75ee36f82.js"
+          "file": "metadata---docsite-docs-web-1-http-http-1-1-cf-5-0ab.5e0a84cc66367983d9b4.js",
+          "hash": "4ff5bee40fc17bf822f8",
+          "publicPath": "/docsite/metadata---docsite-docs-web-1-http-http-1-1-cf-5-0ab.5e0a84cc66367983d9b4.js"
         }
       ]
     },
     "131": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-5-router-management-route-777-705.89752020824754666c1c.js",
-          "hash": "70674f3bd782bfc79d51",
-          "publicPath": "/docsite/metadata---docsite-docs-react-5-router-management-route-777-705.89752020824754666c1c.js"
+          "file": "metadata---docsite-docs-web-1-http-http-2853-3d1.a8d07dd6d4ab62c6eb34.js",
+          "hash": "a3386befb8a8ac6764d2",
+          "publicPath": "/docsite/metadata---docsite-docs-web-1-http-http-2853-3d1.a8d07dd6d4ab62c6eb34.js"
         }
       ]
     },
     "132": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-5-router-management-routere-88-bd6.f01079860bf6728de91d.js",
-          "hash": "1a791fba7cd62964cb85",
-          "publicPath": "/docsite/metadata---docsite-docs-react-5-router-management-routere-88-bd6.f01079860bf6728de91d.js"
+          "file": "metadata---docsite-docs-web-1-http-http-cache-8-e-4-a44.5ad02f7354816bb88841.js",
+          "hash": "142b263ebcbe6fa12571",
+          "publicPath": "/docsite/metadata---docsite-docs-web-1-http-http-cache-8-e-4-a44.5ad02f7354816bb88841.js"
         }
       ]
     },
     "133": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-6-test-component-test-6-e-8-ab7.d833fc51d5b83c2a2d3e.js",
-          "hash": "40e0a25dca680a690362",
-          "publicPath": "/docsite/metadata---docsite-docs-react-6-test-component-test-6-e-8-ab7.d833fc51d5b83c2a2d3e.js"
+          "file": "metadata---docsite-docs-web-1-http-http-connection-87-d-472.6d3559367cf2cb18bbee.js",
+          "hash": "250e3e27f78bf93c6a2d",
+          "publicPath": "/docsite/metadata---docsite-docs-web-1-http-http-connection-87-d-472.6d3559367cf2cb18bbee.js"
         }
       ]
     },
     "134": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-6-test-state-test-95-c-d9f.e1059d1662ae79290ed2.js",
-          "hash": "19c5fdbccfcf21f82599",
-          "publicPath": "/docsite/metadata---docsite-docs-react-6-test-state-test-95-c-d9f.e1059d1662ae79290ed2.js"
+          "file": "metadata---docsite-docs-web-1-http-http-status-66-e-9e2.0fa34b6ccf787250e0b9.js",
+          "hash": "40f50d8bfb48e837c7a7",
+          "publicPath": "/docsite/metadata---docsite-docs-web-1-http-http-status-66-e-9e2.0fa34b6ccf787250e0b9.js"
         }
       ]
     },
     "135": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-6-test-test-category-5-e-3-789.727e9a8136199abcc1c7.js",
-          "hash": "f4c4e83d4a89d4532b85",
-          "publicPath": "/docsite/metadata---docsite-docs-react-6-test-test-category-5-e-3-789.727e9a8136199abcc1c7.js"
+          "file": "metadata---docsite-docs-web-1-http-https-97-f-5f7.371e30149819d44e3d7f.js",
+          "hash": "36447a0b22f22bf3b5d7",
+          "publicPath": "/docsite/metadata---docsite-docs-web-1-http-https-97-f-5f7.371e30149819d44e3d7f.js"
         }
       ]
     },
     "136": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-6-test-unit-test-982-d87.1eb4ac38606ccbc8e31b.js",
-          "hash": "ca37caaf88690196ecec",
-          "publicPath": "/docsite/metadata---docsite-docs-react-6-test-unit-test-982-d87.1eb4ac38606ccbc8e31b.js"
+          "file": "metadata---docsite-docs-web-1-http-websocket-083-f91.31f7c8fa7ac185f02330.js",
+          "hash": "f44de5fc3bc688b31539",
+          "publicPath": "/docsite/metadata---docsite-docs-web-1-http-websocket-083-f91.31f7c8fa7ac185f02330.js"
         }
       ]
     },
     "137": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-appendix-1-references-5-bc-3c7.dabf884ceaff6ee1620e.js",
-          "hash": "d2adbd6bd276c8f142aa",
-          "publicPath": "/docsite/metadata---docsite-docs-react-appendix-1-references-5-bc-3c7.dabf884ceaff6ee1620e.js"
+          "file": "metadata---docsite-docs-web-2-same-origin-policy-same-origin-policy-53-f-4dc.540109ee13108d3bc91e.js",
+          "hash": "6e187c30f072fd37eae3",
+          "publicPath": "/docsite/metadata---docsite-docs-web-2-same-origin-policy-same-origin-policy-53-f-4dc.540109ee13108d3bc91e.js"
         }
       ]
     },
     "138": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-appendix-2-related-websitesd-88-f2c.b349537f76f918972c36.js",
-          "hash": "21227efe141d55d8c08b",
-          "publicPath": "/docsite/metadata---docsite-docs-react-appendix-2-related-websitesd-88-f2c.b349537f76f918972c36.js"
+          "file": "metadata---docsite-docs-web-3-cross-domain-cors-376-fdb.6c3be3c3603cba9aa29e.js",
+          "hash": "35ebebe30dfcc4be454b",
+          "publicPath": "/docsite/metadata---docsite-docs-web-3-cross-domain-cors-376-fdb.6c3be3c3603cba9aa29e.js"
         }
       ]
     },
     "139": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-readme-0-d-3-7c3.c8ccfe34797ee4a9dedf.js",
-          "hash": "013e48968aff4425e687",
-          "publicPath": "/docsite/metadata---docsite-docs-react-readme-0-d-3-7c3.c8ccfe34797ee4a9dedf.js"
+          "file": "metadata---docsite-docs-web-3-cross-domain-jsonpb-4-d-9b8.a2d92b6d681caceaee0a.js",
+          "hash": "7591dffcb4c533a0ff2c",
+          "publicPath": "/docsite/metadata---docsite-docs-web-3-cross-domain-jsonpb-4-d-9b8.a2d92b6d681caceaee0a.js"
         }
       ]
     },
     "140": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-security-guidec-8-a-e29.4fbaed5bd140f22cfac1.js",
-          "hash": "6ca5121a0dc3308929e3",
-          "publicPath": "/docsite/metadata---docsite-docs-react-security-guidec-8-a-e29.4fbaed5bd140f22cfac1.js"
+          "file": "metadata---docsite-docs-web-3-cross-domain-websocket-8-d-5-b40.ceddc8b43e28949a6b8f.js",
+          "hash": "82c73cec43436c7378e4",
+          "publicPath": "/docsite/metadata---docsite-docs-web-3-cross-domain-websocket-8-d-5-b40.ceddc8b43e28949a6b8f.js"
         }
       ]
     },
     "141": {
       "js": [
         {
-          "file": "metadata---docsite-docs-react-shuo-ming-7-b-8-07d.fa7198c82385ed4f0da8.js",
-          "hash": "975599029164487b335b",
-          "publicPath": "/docsite/metadata---docsite-docs-react-shuo-ming-7-b-8-07d.fa7198c82385ed4f0da8.js"
+          "file": "metadata---docsite-docs-web-4-cross-document-iframe-535-e61.80f72921c2a24a5b7f69.js",
+          "hash": "c2d38b35df7170d260dd",
+          "publicPath": "/docsite/metadata---docsite-docs-web-4-cross-document-iframe-535-e61.80f72921c2a24a5b7f69.js"
         }
       ]
     },
     "142": {
       "js": [
         {
-          "file": "metadata---docsite-docs-web-1-http-ajaxc-6-c-05f.91eedf0007c08e23dda9.js",
-          "hash": "10a494def34770d52bde",
-          "publicPath": "/docsite/metadata---docsite-docs-web-1-http-ajaxc-6-c-05f.91eedf0007c08e23dda9.js"
+          "file": "metadata---docsite-docs-web-4-cross-document-post-massage-260-7ff.4668c60401652a8854ab.js",
+          "hash": "609d4631e52c9934ed4a",
+          "publicPath": "/docsite/metadata---docsite-docs-web-4-cross-document-post-massage-260-7ff.4668c60401652a8854ab.js"
         }
       ]
     },
     "143": {
       "js": [
         {
-          "file": "metadata---docsite-docs-web-1-http-fetchcf-4-f13.56625d508188811a4473.js",
-          "hash": "8ee20ab39d8802d40ab9",
-          "publicPath": "/docsite/metadata---docsite-docs-web-1-http-fetchcf-4-f13.56625d508188811a4473.js"
+          "file": "metadata---docsite-docs-web-5-webworker-webworker-903-2ec.cdfa41ef80190cf07aa1.js",
+          "hash": "52061b431c32bbcd2d61",
+          "publicPath": "/docsite/metadata---docsite-docs-web-5-webworker-webworker-903-2ec.cdfa41ef80190cf07aa1.js"
         }
       ]
     },
     "144": {
       "js": [
         {
-          "file": "metadata---docsite-docs-web-1-http-http-1-1-f-32-26e.e4c9fc2d75aa17c89313.js",
-          "hash": "5232d8885d742615c9d2",
-          "publicPath": "/docsite/metadata---docsite-docs-web-1-http-http-1-1-f-32-26e.e4c9fc2d75aa17c89313.js"
+          "file": "nextItem---docsite-blog-hello-worlde-62-72c.abfa707a36c3a6d0ad23.js",
+          "hash": "9b89f86e4b48b051bdde",
+          "publicPath": "/docsite/nextItem---docsite-blog-hello-worlde-62-72c.abfa707a36c3a6d0ad23.js"
         }
       ]
     },
     "145": {
       "js": [
         {
-          "file": "metadata---docsite-docs-web-1-http-http-236-d-3c4.e4185855caaf9879d921.js",
-          "hash": "c172dbd6be7cad8c4989",
-          "publicPath": "/docsite/metadata---docsite-docs-web-1-http-http-236-d-3c4.e4185855caaf9879d921.js"
+          "file": "nextItem---docsite-blog-welcomeba-0-fe7.0510a6d142c4f8ccb5f0.js",
+          "hash": "1f5e7bf06c133bf7c47c",
+          "publicPath": "/docsite/nextItem---docsite-blog-welcomeba-0-fe7.0510a6d142c4f8ccb5f0.js"
         }
       ]
     },
     "146": {
       "js": [
         {
-          "file": "metadata---docsite-docs-web-1-http-http-cache-62-c-fbf.ef1c01efc93c07583904.js",
-          "hash": "81c699a76d6529a92507",
-          "publicPath": "/docsite/metadata---docsite-docs-web-1-http-http-cache-62-c-fbf.ef1c01efc93c07583904.js"
+          "file": "runtime~main.f440c009afa021472474.js",
+          "hash": "a9e830954cb6e2a865ae",
+          "publicPath": "/docsite/runtime~main.f440c009afa021472474.js"
         }
       ]
     },
     "147": {
       "js": [
         {
-          "file": "metadata---docsite-docs-web-1-http-http-connection-60-c-80b.cfeed0f08ea4f7b115ec.js",
-          "hash": "704c514490b23db85b5e",
-          "publicPath": "/docsite/metadata---docsite-docs-web-1-http-http-connection-60-c-80b.cfeed0f08ea4f7b115ec.js"
+          "file": "tags---docsite-blog-tags-986-9da.abf873ebc0accbd24939.js",
+          "hash": "0200ac1e9329e545dadc",
+          "publicPath": "/docsite/tags---docsite-blog-tags-986-9da.abf873ebc0accbd24939.js"
         }
       ]
     },
     "148": {
       "js": [
         {
-          "file": "metadata---docsite-docs-web-1-http-http-status-003-aa7.eeee56d3532fc8b964e5.js",
-          "hash": "55ec10428c2e7ff0db67",
-          "publicPath": "/docsite/metadata---docsite-docs-web-1-http-http-status-003-aa7.eeee56d3532fc8b964e5.js"
-        }
-      ]
-    },
-    "149": {
-      "js": [
-        {
-          "file": "metadata---docsite-docs-web-1-http-httpsd-5-a-aac.13a13d71be984efce621.js",
-          "hash": "5f238ed06c7338144f7e",
-          "publicPath": "/docsite/metadata---docsite-docs-web-1-http-httpsd-5-a-aac.13a13d71be984efce621.js"
-        }
-      ]
-    },
-    "150": {
-      "js": [
-        {
-          "file": "metadata---docsite-docs-web-1-http-websocketf-73-e32.0ba508512f61783a0c7e.js",
-          "hash": "d43428e330dfc60a6a5d",
-          "publicPath": "/docsite/metadata---docsite-docs-web-1-http-websocketf-73-e32.0ba508512f61783a0c7e.js"
-        }
-      ]
-    },
-    "151": {
-      "js": [
-        {
-          "file": "metadata---docsite-docs-web-2-same-origin-policy-same-origin-policybc-0-c1d.b39c085a5f0ecf6718c6.js",
-          "hash": "aa7dc513472a91bb4fc5",
-          "publicPath": "/docsite/metadata---docsite-docs-web-2-same-origin-policy-same-origin-policybc-0-c1d.b39c085a5f0ecf6718c6.js"
-        }
-      ]
-    },
-    "152": {
-      "js": [
-        {
-          "file": "metadata---docsite-docs-web-3-cross-domain-corsd-03-084.ff2b36c103f268fd7edc.js",
-          "hash": "5d07b6fecf08a09a68fc",
-          "publicPath": "/docsite/metadata---docsite-docs-web-3-cross-domain-corsd-03-084.ff2b36c103f268fd7edc.js"
-        }
-      ]
-    },
-    "153": {
-      "js": [
-        {
-          "file": "metadata---docsite-docs-web-3-cross-domain-jsonp-9-e-8-91e.6533ee13ebd938c9f7a6.js",
-          "hash": "2a10a5fd26b8e82333bf",
-          "publicPath": "/docsite/metadata---docsite-docs-web-3-cross-domain-jsonp-9-e-8-91e.6533ee13ebd938c9f7a6.js"
-        }
-      ]
-    },
-    "154": {
-      "js": [
-        {
-          "file": "metadata---docsite-docs-web-3-cross-domain-websocketda-5-b45.75d3807e08a4eba9a819.js",
-          "hash": "80a0129bd5b0ea73282c",
-          "publicPath": "/docsite/metadata---docsite-docs-web-3-cross-domain-websocketda-5-b45.75d3807e08a4eba9a819.js"
-        }
-      ]
-    },
-    "155": {
-      "js": [
-        {
-          "file": "metadata---docsite-docs-web-4-cross-document-iframe-767-a37.cd6ae48e718df744d5c9.js",
-          "hash": "f420c6abc086a0bd74a2",
-          "publicPath": "/docsite/metadata---docsite-docs-web-4-cross-document-iframe-767-a37.cd6ae48e718df744d5c9.js"
-        }
-      ]
-    },
-    "156": {
-      "js": [
-        {
-          "file": "metadata---docsite-docs-web-4-cross-document-post-massageeeb-061.56074f947b212fb083cf.js",
-          "hash": "a2a06839d97bd93ff59f",
-          "publicPath": "/docsite/metadata---docsite-docs-web-4-cross-document-post-massageeeb-061.56074f947b212fb083cf.js"
-        }
-      ]
-    },
-    "157": {
-      "js": [
-        {
-          "file": "metadata---docsite-docs-web-5-webworker-webworker-63-a-ef9.45fa8316f1b4ae0e146d.js",
-          "hash": "e36853af7226a5046488",
-          "publicPath": "/docsite/metadata---docsite-docs-web-5-webworker-webworker-63-a-ef9.45fa8316f1b4ae0e146d.js"
-        }
-      ]
-    },
-    "158": {
-      "js": [
-        {
-          "file": "nextItem---docsite-blog-hello-worldeec-c62.f3da3dbcf925f4ed12dc.js",
-          "hash": "26ea2be5475c77c952c9",
-          "publicPath": "/docsite/nextItem---docsite-blog-hello-worldeec-c62.f3da3dbcf925f4ed12dc.js"
-        }
-      ]
-    },
-    "159": {
-      "js": [
-        {
-          "file": "nextItem---docsite-blog-welcome-552-1b1.793f1d22ad1513b23600.js",
-          "hash": "0329b14f3d9ca1b004df",
-          "publicPath": "/docsite/nextItem---docsite-blog-welcome-552-1b1.793f1d22ad1513b23600.js"
-        }
-      ]
-    },
-    "160": {
-      "js": [
-        {
-          "file": "runtime~main.89c52923d759f745daa8.js",
-          "hash": "aef971e6fa9e409fb927",
-          "publicPath": "/docsite/runtime~main.89c52923d759f745daa8.js"
-        }
-      ]
-    },
-    "161": {
-      "js": [
-        {
-          "file": "tags---docsite-blog-tagsb-23-7b0.31f9bdb5948ea201192a.js",
-          "hash": "45d1033519798c34e300",
-          "publicPath": "/docsite/tags---docsite-blog-tagsb-23-7b0.31f9bdb5948ea201192a.js"
-        }
-      ]
-    },
-    "162": {
-      "js": [
-        {
-          "file": "162.6e338fdef62a81f55b65.js",
-          "hash": "28e4bdc2b67f1f08d367",
-          "publicPath": "/docsite/162.6e338fdef62a81f55b65.js"
+          "file": "148.18831766bb9fe60da9d5.js",
+          "hash": "d7b2a9fed8e0372cdcf7",
+          "publicPath": "/docsite/148.18831766bb9fe60da9d5.js"
         }
       ]
     }
