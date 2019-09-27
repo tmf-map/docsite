@@ -57,6 +57,19 @@ module.exports = {
       "react/appendix2-related-websites"
     ]
   },
+  "web": {
+    "1.http协议": [
+      "web/1.http/http-connection",
+      "web/1.http/http-stats",
+      "web/1.http/http-cache",
+      "web/1.http/http1.1",
+      "web/1.http/http2",
+      "web/1.http/https",
+      "web/1.http/ajax",
+      "web/1.http/fetch",
+      "web/1.http/websocket"
+    ]
+  },
   docs: {
     Docusaurus: ['doc1', 'doc2', 'doc3'],
     Features: ['mdx'],
