@@ -57,6 +57,23 @@ module.exports = {
       "react/appendix2-related-websites"
     ]
   },
+  "algorithm": {
+    "1.数组": [
+      "algorithm/1.array/duplicated-number-in-array",
+    ],
+    "3.链表": [
+      "algorithm/4.linkedlist/merge-two-sorted-lists",
+      "algorithm/4.linkedlist/reverse-linked-list",
+    ],
+    "5.二叉树": [
+      "algorithm/5.binary-tree/build-tree",
+      "algorithm/5.binary-tree/mirror-tree"
+    ],
+    "8.排序": [
+      "algorithm/8.sort/merged-sort",
+      "algorithm/8.sort/quick-sort",
+    ]
+  },
   docs: {
     Docusaurus: ['doc1', 'doc2', 'doc3'],
     Features: ['mdx'],
