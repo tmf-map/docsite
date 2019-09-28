@@ -19,7 +19,7 @@ function TreeNode(val) {
 ```
 
 <div align="center">
-    <img width="350" src="https://raw.githubusercontent.com/ThinkBucket/oss/master/uadFp0.png" />
+    <img width="350" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/SVRHY5.jpg" />
     <p>图：两棵互为镜像的二叉树</p>
 </div>
 
@@ -51,6 +51,6 @@ function mirror(root) {
 }
 ```
 
-## 相关拓展
+## 拓展
 
 如果不用递归实现，而是循环，则该如何实现？

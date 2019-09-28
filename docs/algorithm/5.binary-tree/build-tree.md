@@ -21,7 +21,7 @@ sidebar_label: 重建二叉树
 返回如下的二叉树：
 
 <div align="center">
-    <img width="160" src="https://raw.githubusercontent.com/ThinkBucket/oss/master/nfDSzm.png" />
+    <img width="160" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/HipCM5.jpg" />
     <p>图：构造后的二叉树</p>
 </div>
 
@@ -34,7 +34,7 @@ sidebar_label: 重建二叉树
 5. 最后返回根节点
 
 <div align="center">
-    <img width="430" src="https://raw.githubusercontent.com/ThinkBucket/oss/master/HkF4nq.png" />
+    <img width="430" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/HxOdfm.jpg" />
     <p>图：确定根结点后划分左右子树（前序和中序都要划分）</p>
 </div>
 
@@ -58,7 +58,7 @@ function buildTree(preorder, inorder) {
 }
 ```
 
-## 相关拓展
+## 拓展
 
 - 如何从中序与后序遍历序列构造二叉树？[LeetCode: 106](https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/)
 - 前序遍历和后序遍历可以构造二叉树吗？

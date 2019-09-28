@@ -133,9 +133,11 @@ module.exports = {
     "1.数组": [
       "algorithm/1.array/duplicated-number-in-array",
     ],
-    "3.链表": [
+    "2.栈与队列": [
+      "algorithm/3.stack-queue/min-stack",
+    ],
+    "4.链表": [
       "algorithm/4.linkedlist/merge-two-sorted-lists",
-      "algorithm/4.linkedlist/reverse-linked-list",
     ],
     "5.二叉树": [
       "algorithm/5.binary-tree/build-tree",
@@ -144,6 +146,14 @@ module.exports = {
     "8.排序": [
       "algorithm/8.sort/merged-sort",
       "algorithm/8.sort/quick-sort",
+    ],
+    "11.反转和旋转": [
+      "algorithm/11.reverse/reverse-linked-list",
+      "algorithm/11.reverse/rotate-string",
+      "algorithm/11.reverse/reverse-integer",
+    ],
+    "12.数学": [
+      "algorithm/12.math/powx-n",
     ]
   },
   docs: {

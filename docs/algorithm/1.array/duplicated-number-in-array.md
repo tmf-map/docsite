@@ -35,20 +35,38 @@ function duplicate (nums) {
             if (nums[nums[i]] === nums[i]) {
                 return nums[i];
             }
-            nums[i] = nums[i] ^ nums[nums[i]];
-            nums[nums[i]] = nums[i] ^ nums[nums[i]];
-            nums[i] = nums[i] ^ nums[nums[i]];
+            let temp = nums[i];
+            nums[i] = nums[temp];
+            nums[temp] = temp;
         }
     }
 }
 ```
 
+思考能否将交换数组元素的部分写成如下几种形式：
+
+```js
+let temp = nums[i];
+nums[i] = nums[nums[i]];
+nums[nums[i]] = nums[i];
+```
+
+```js
+nums[i] = nums[i] ^ nums[nums[i]];
+nums[nums[i]] = nums[i] ^ nums[nums[i]];
+nums[i] = nums[i] ^ nums[nums[i]];
+```
+
+```js
+[nums[nums[i]], nums[i]] = [nums[i], nums[nums[i]]];
+```
+
 ## 复杂度
 
-- 时间复杂度：虽然有两重循环，但每个数字最多只要交换两次就能找到属于它的位置，故总复杂度为 O(n)
+- 时间复杂度：O(n)，虽然有两重循环，但每个数字最多只要交换两次就能找到属于它的位置。 
 - 空间复杂度：O(1)
 
-## 相关拓展
+## 拓展
 
 在一个长度为 n+1 的数组里的所有数字都在 1～n 的范围内。 所以数组中至少有一个数字是重复的。请找出数组中任意一个重复的数字。但不能修改输入的数组。
 

@@ -19,7 +19,7 @@ function ListNode(val) {
 ```
 
 <div align="center">
-    <img width="580" src="https://raw.githubusercontent.com/ThinkBucket/oss/master/u0mCYK.png" />
+    <img width="580" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/EdkJGF.jpg" />
     <p>图1：合并两个有序链表的过程</p>
 </div>
 
@@ -29,7 +29,7 @@ function ListNode(val) {
 2. 可以从递归和迭代两个思路去思考如何进行合并
 
 <div align="center">
-    <img width="420" src="https://raw.githubusercontent.com/ThinkBucket/oss/master/NzXzvj.png" />
+    <img width="420" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/knh9ZM.jpg" />
     <p>图2：合并两个有序链表的过程</p>
 </div>
 

@@ -34,7 +34,7 @@ function ListNode(val) {
 5. 思考迭代和递归的实现
 
 <div align="center">
-    <img width="530" src="https://raw.githubusercontent.com/ThinkBucket/oss/master/ex0Dzp.png" />
+    <img width="530" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/O4XZYO.jpg" />
     <p>图：curr.next = prev 反转的时候出现断裂</p>
 </div>
 
