@@ -10,7 +10,7 @@ WebSocket 协议在2008年诞生，2011年成为国际标准。所有浏览器�
 
 它的最大特点就是，服务器可以主动向客户端推送信息，客户端也可以主动向服务器发送信息，是真正的双向平等对话，属于服务器推送技术的一种。
 
-<img src="https://raw.githubusercontent.com/ThinkBucket/oss/master/KkrB30.png" width="425" height="340" />
+<img src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/EoAH0t.png" width="425" height="340" />
 
 
 其他特点包括：
@@ -29,7 +29,7 @@ WebSocket 协议在2008年诞生，2011年成为国际标准。所有浏览器�
 
 > ws://example.com:80/some/path
 
-<img src="https://raw.githubusercontent.com/ThinkBucket/oss/master/RuWgZG.png" width="410" height="310" />
+<img src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/f9ZdFk.png" width="410" height="310" />
 
 客户端的简单示例
 WebSocket 的用法相当简单。

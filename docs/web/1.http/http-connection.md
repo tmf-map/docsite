@@ -6,7 +6,7 @@ sidebar_label: TCP三次握手和四次挥手
 
 ## 三次握手
 
-![](https://raw.githubusercontent.com/ThinkBucket/oss/master/3adqBj.png)
+![](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/0hGlBp.png)
 
 [Youtube: Wireshark 抓包分析实战](https://www.youtube.com/watch?v=QcapJPYUY58)
 
@@ -30,9 +30,8 @@ sidebar_label: TCP三次握手和四次挥手
 ## 四次挥手
 
 <div align="center">
-    <img src="https://raw.githubusercontent.com/ThinkBucket/oss/master/1IKUuI.png" width="200" height="300" align='left'/>
+    <img src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/ziozDM.png" width="200" height="300" align='left'/>
 </div>
-
 
 男（客户端-FIN）：我要挂了哦
 

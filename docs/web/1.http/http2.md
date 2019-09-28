@@ -19,7 +19,7 @@ HTTPS是HTTP/2的必要条件。
 
 可以用Chrome插件可以用来检测HTTP/2：HTTP/2 and SPDY indicator。它会给浏览器添加了一个闪电标记：
 
-<img src="https://raw.githubusercontent.com/ThinkBucket/oss/master/oMRy7v.png" width="500" height="50" />
+<img src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/NXGjYK.png" width="500" height="50" />
 
 <br/>
 

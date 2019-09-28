@@ -103,9 +103,8 @@ xhr.withCredentials = false;
 
 浏览器通常会发两次请求，一次是预检请求，当得到服务器的肯定答复后会又发一次真正的请求：
 
-![](https://raw.githubusercontent.com/ThinkBucket/oss/master/FVb2iC.png)
+![](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/jyd7ZJ.png)
 
-![](https://raw.githubusercontent.com/ThinkBucket/oss/master/Ckiq5a.png)
 "预检"请求用的请求方法是OPTIONS，表示这个请求是用来询问的。头信息里面，关键字段是Origin，表示请求来自哪个源。
 
 除了Origin字段，"预检"请求的头信息包括两个特殊字段。
@@ -121,7 +120,7 @@ xhr.withCredentials = false;
 预检请求的回应
 
 服务器收到"预检"请求以后，检查了Origin、Access-Control-Request-Method和Access-Control-Request-Headers字段以后，确认允许跨域请求，就可以做出回应。
-![](https://raw.githubusercontent.com/ThinkBucket/oss/master/Sj55R9.png)
+![](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/wBmuWq.png)
 
 上面的HTTP回应中，关键的是Access-Control-Allow-Origin字段，表示https://go.tradeshift.com可以请求数据。该字段也可以设为星号，表示同意任意跨源请求。
 ```
@@ -151,8 +150,10 @@ Access-Control-Allow-Origin: *
 
 下面是"预检"请求之后，浏览器的正常CORS请求。
 
-![](https://raw.githubusercontent.com/ThinkBucket/oss/master/ptQcF2.png)
+![](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/E2onl1.png)
 
 上面头信息的Origin字段是浏览器自动添加的。下面是服务器正常的回应。
-![](https://raw.githubusercontent.com/ThinkBucket/oss/master/Yz8B4V.png)
+
+![](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/u82c3I.png)
+
 上面头信息中，Access-Control-Allow-Origin字段是每次回应都必定包含的。
