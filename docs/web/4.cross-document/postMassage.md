@@ -3,7 +3,7 @@ id: postMassage
 title: postMassage
 sidebar_label: postMassage
 ---
-![](https://raw.githubusercontent.com/ThinkBucket/oss/master/YHgg8Y.png)
+![](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/pSaI0z.png)
 
 跨文档通信 API（Cross-document messaging）。它是HTML5 XMLHttpRequest Level 2中的API，且是为数不多可以跨域操作的window属性之一，它可用于解决以下方面的问题：
 

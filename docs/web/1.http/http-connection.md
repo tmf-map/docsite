@@ -56,8 +56,5 @@ sidebar_label: TCP三次握手和四次挥手
 
 ## 总结一下
 <div align="center">
-    <img src="https://raw.githubusercontent.com/ThinkBucket/oss/master/tdM3oV.png" width="360" height="400" />
+    <img src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/LqMuFk.png" width="360" height="400" />
 </div>
-
-
-

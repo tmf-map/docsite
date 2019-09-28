@@ -5,7 +5,7 @@ sidebar_label: 同源策略
 ---
 
 <div align="center">
-    <img src="https://raw.githubusercontent.com/ThinkBucket/oss/master/Wm03O4.png" width="345" height="125"/>
+    <img src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/VKSsM4.png" width="345" height="125"/>
     <p>图1：同源示意图</p >
 </div>
 

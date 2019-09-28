@@ -16,7 +16,7 @@ Worker 线程一旦新建成功，就会始终运行，不会被主线程上的�
 CPU核数即进程利用---cluster：master，worker
 线程利用---web worker / worker_threads
 
-![](https://raw.githubusercontent.com/ThinkBucket/oss/master/4DP1ju.png)
+![](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/FdcUi4.png)
 
 https://caniuse.com/#feat=webworkers
 https://zhuanlan.zhihu.com/p/38393122

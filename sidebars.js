@@ -83,7 +83,51 @@ module.exports = {
 
     ],
     "5.webWorker": [
-      "web/5.webworker/webworker"    ]
+      "web/5.webworker/webworker"    
+    ],
+    "6.浏览器渲染": [
+      "web/6.browser-rendering/js-single-thread","web/6.browser-rendering/page-rendering", 
+      "web/6.browser-rendering/async-defer", 
+      "web/6.browser-rendering/reflow-repaint", 
+      "web/6.browser-rendering/other",
+      "web/6.browser-rendering/DOMContentLoaded",
+    ],
+    "7.js动画": [
+      "web/7.js-animation/principle",
+      "web/7.js-animation/timer",
+      "web/7.js-animation/requestAnimationFrame"
+    ],
+    "8.DOM": [
+      "web/8.dom/node",
+      "web/8.dom/event"
+    ],
+    "9.前端路由": [
+      "web/9.rooter/hash-rooter",
+      "web/9.rooter/history-rooter",
+    ],
+    "10.浏览器存储": [
+      "web/10.storage/webstorage",
+      "web/10.storage/IndexedDB",
+      "web/10.storage/web-SQL",
+      "web/10.storage/service-workers",
+      "web/10.storage/summary"
+    ],
+    "11.安全机制与防范": [
+      "web/11.security/cookie",
+      "web/11.security/session",
+      "web/11.security/OAuth",
+      "web/11.security/JWT",
+      "web/11.security/CSRF",
+      "web/11.security/XSS"
+    ],
+    "12.web网页性能优化": [
+      "web/12.web-optimize/pic-optimize",
+      "web/12.web-optimize/delay-loading",
+      "web/12.web-optimize/http-cache"
+    ],
+    "13.浏览器内核": [
+      "web/13.rendering-engine/rendering-engine",
+    ] 
   },
   "algorithm": {
     "1.数组": [

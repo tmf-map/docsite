@@ -38,4 +38,4 @@ Keep-Alive，他解决了多次连接的问题，但是依然有两个效率上�
 
 **由于浏览器供应商难以实现，现被禁用或删除**
 
-![](https://raw.githubusercontent.com/ThinkBucket/oss/master/Q34xeD.png)
+![](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/RUc1N2.png)
