@@ -1,7 +1,7 @@
 ---
 id: number-in-sorted-array
-title: 数字在有序数组出现次数
-sidebar_label: 数字在有序数组出现次数
+title: 有序数组中某数字出现的次数
+sidebar_label: 有序数组中某数字出现的次数
 ---
 
 - 题源：《剑指Offer: 面试题 53-1》P263

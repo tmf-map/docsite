@@ -154,6 +154,7 @@ module.exports = {
       "algorithm/8.sort/quick-sort",
     ],
     "9.查找": [
+      "algorithm/9.search/number-same-as-index",
       "algorithm/9.search/number-in-sorted-array",
     ],
     "11.反转和旋转": [
