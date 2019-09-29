@@ -23,33 +23,39 @@ module.exports = {
       "react/2.advanced/context",
       "react/2.advanced/portal",
     ],
-    "3.组件开发": [
-      "react/3.development/ui-component",
-      "react/3.development/redux-component",
-      "react/3.development/pure-component",
-      "react/3.development/performance"
+    "3.组件优化": [
+      "react/3.optimization/performance",
+      "react/3.optimization/pure-component",
+      "react/3.optimization/memo",
+      "react/3.optimization/code-splitting",
+      "react/3.optimization/suspense",
     ],
-    "4.状态管理": [
-      "react/4.state-management/redux",
-      "react/4.state-management/store",
-      "react/4.state-management/reducer",
-      "react/4.state-management/action",
-      "react/4.state-management/selector",
-      "react/4.state-management/middleware",
-      "react/4.state-management/model"
+    "4.三大组件": [
+      "react/4.three-components/container-component",
+      "react/4.three-components/presentational-component",
+      "react/4.three-components/ui-component",
     ],
-    "5.路由管理": [
-      "react/5.router-management/router",
-      "react/5.router-management/route",
-      "react/5.router-management/link"
+    "5.状态管理": [
+      "react/5.state-management/redux",
+      "react/5.state-management/store",
+      "react/5.state-management/reducer",
+      "react/5.state-management/action",
+      "react/5.state-management/selector",
+      "react/5.state-management/middleware",
+      "react/5.state-management/model"
     ],
-    "6.测试": [
-      "react/6.test/test-category",
-      "react/6.test/unit-test",
-      "react/6.test/component-test",
-      "react/6.test/state-test"
+    "6.路由管理": [
+      "react/6.router-management/router",
+      "react/6.router-management/route",
+      "react/6.router-management/link"
     ],
-    "7.安全规约": [
+    "7.测试": [
+      "react/7.test/test-category",
+      "react/7.test/unit-test",
+      "react/7.test/component-test",
+      "react/7.test/state-test"
+    ],
+    "8.安全规约": [
       "react/security-guide"
     ],
     "附录": [

@@ -1,7 +1,7 @@
 ---
-id: redux-component
-title: Redux组件
-sidebar_label: Redux组件
+id: container-component
+title: 容器型组件
+sidebar_label: 容器型组件
 ---
 
 Redux 的一个重要思想是将组件主要分为 **container（容器型） 组件**和 **presentational（展示型） 组件**。
@@ -14,7 +14,6 @@ Redux 的一个重要思想是将组件主要分为 **container（容器型） �
 一个完整 React App 的组件树，根节点即 mountNode，叶子节点应该是 presentational 组件或 ui 组件，中间的节点是 container 组件，主要用与传递和监听数据，作为一个数据的中间容器。
 
 ![Redux 组件树](https://raw.githubusercontent.com/ThinkBucket/oss/master/pasted-image-0.png)
-
 
 ## contianer 组件
 
@@ -70,17 +69,3 @@ export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(Table);
 * _\[pure = true\] \(Boolean\)_: 如果为 true，connector 将执行 shouldComponentUpdate 并且浅对比 mergeProps 的结果，避免不必要的更新，前提是当前组件是一个“**纯**”组件，它不依赖于任何的输入或 state 而只依赖于 props 和 Redux store 的 state。**默认值为 true**。
 * _\[withRef = false\] \(Boolean\)_: 如果为 true，connector 会保存一个对被被包含的组件实例的引用，该引用通过 `getWrappedInstance()` 方法获得。**默认值为 false**。
 * **Component** 就是要被连接的 React 组件。
-
-## presentational 组件
-
-presentational 组件理论上可以全部为函数式组件，状态的监听和控制基本上由 Redux 控制即可。
-
-> **推荐**：presentational 组件可以嵌套粒度更小的函数式组件，避免该 presentational 组件 v-dom 过大。
-
-
-> **强制**：更小粒度的函数式组件的命名以类似 renderComponent 这样方式命名。
-
-
-> **强制**：更小粒度的函数式组件的 props 参数前面要加下划线，即 \_props 。否则会需要冗余的 PropType 验证。
-
-

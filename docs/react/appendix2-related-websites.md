@@ -1,7 +1,7 @@
 ---
 id: appendix2-related-websites
-title: 附录B 常用网站
-sidebar_label: 附录B 常用网站
+title: II 常用网站
+sidebar_label: II 常用网站
 ---
 
 1. [React官方文档（中文）](https://www.reactjscn.com/)
