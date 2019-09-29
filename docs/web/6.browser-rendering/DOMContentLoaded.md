@@ -16,13 +16,13 @@ sidebar_label: DOMContentLoaded和load
 
 通过这个[链接](https://testdrive-archive.azurewebsites.net/HTML5/DOMContentLoaded/Default.html)，可以直观感受下两者的不同。
 
-### 两者的意义
+## 两者的意义
 
 对于load来说，它代表了访问页面所需要的所有资源已经全部加载完毕。
 
 但是如果拿load事件来衡量网页加载速度其实并不准确，因为我们访问网页时可能并不需要文档的所有信息。打个比方，对于官方文档来说，你所需要关注的可能只有文档的文字是否已经加载完毕，并不需要等待页面上广告和图片的加载。而DOMContentLoaded则是来衡量网页从白屏到出现内容所需要的时间。
 
-## JS脚本与DOMContentLoaded事件的关系
+## JS脚本与DOMContentLoaded
 
 DOMContentLoaded事件的触发代表**HTML文档被加载和解析完成**，由[页面渲染](https://thinkbucket.github.io/docsite/docs/web/6.browser-rendering/page-rendering)这一节可知，JS脚本的加载、解析和执行会会影响DOM树的构建，那么两者之间到底是什么关系呢？本节将对两者的关系进行详细的介绍。
 
@@ -93,7 +93,7 @@ DOMContentLoaded事件的触发代表**HTML文档被加载和解析完成**，�
 
 ![](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/cdZQTk.png)
 
-## async和defer对DOMContentLoaded的影响
+## async和defer与DOMContentLoaded
 
 由[async和defer](https://thinkbucket.github.io/docsite/docs/web/6.browser-rendering/async-defer)这一节可知，当外联的script添加了async或defer时，会影响页面DOM树的构建。那么这两个属性和DOMContentLoaded是什么关系呢？
 

@@ -26,9 +26,7 @@ sidebar_label: 页面渲染
 
 ![](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/yw9qb5brpt.png)
 
-<img src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/s6T92W.png" width="650">
-
-
+<img src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/s6T92W.png" width="650"/>
 
 浏览器工作流程：构建DOM -> 构建CSSOM -> 构建渲染树 -> 布局 -> 绘制。
 
@@ -45,7 +43,7 @@ JavaScript的加载、解析与执行会阻塞DOM的构建，也就是说，在�
 
 此外，JavaScript不只是可以改DOM，它还可以更改样式，也就是它可以更改CSSOM。不完整的CSSOM是无法使用的，而JavaScript中想访问CSSOM并更改它，必须要能拿到完整的CSSOM。所以就导致了一个现象，如果浏览器尚未完成CSSOM的下载和构建，而我们却想在此时运行脚本，**那么浏览器将延迟脚本执行和DOM构建，直至其完成CSSOM的下载和构建**。也就是说，在这种情况下，**浏览器会先下载和构建CSSOM，然后再执行JavaScript，最后在继续构建DOM**。
 
-## 相关拓展：
+## 相关拓展
 相关内容: [DOMContentLoaded, 深入了解一下](https://thinkbucket.github.io/docsite/docs/web/6.browser-rendering/DOMContentLoaded)
 
 本文参考链接：
@@ -53,4 +51,3 @@ JavaScript的加载、解析与执行会阻塞DOM的构建，也就是说，在�
 [参考链接一](https://juejin.im/post/5b88ddca6fb9a019c7717096#heading-4)
 
 [参考链接二](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-blocking-css?hl=zh-cn)
-
