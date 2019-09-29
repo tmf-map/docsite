@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[144],{101:function(e){e.exports=JSON.parse('{"id":"react/1.basic/jsx","title":"JSX","sidebar_label":"JSX","description":"## JSX 基础概念","source":"@site/docs/react/1.basic/jsx.md","permalink":"/docsite/docs/react/1.basic/jsx","sidebar":"react","category":"1.组件基础","next":"react/1.basic/lifecycle","next_title":"生命周期"}')}}]);
