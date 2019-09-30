@@ -5,7 +5,6 @@ sidebar_label: 有序数组中值和下标相等的元素
 ---
 
 - 题源：《剑指Offer: 面试题 53-3》P267
-- 在线：[LeetCode: 268](https://leetcode-cn.com/problems/missing-number/)
 
 ## 题目
 
@@ -20,7 +19,7 @@ sidebar_label: 有序数组中值和下标相等的元素
 
 ## 思路
 
-因为是有序数组，直接二分查找，如果下标和元素相等则返回该元素。
+因为是有序数组，直接二分查找，如果下标和元素相等则返回该元素，时间复杂度 O(logn)。
 
 ## 代码实现
 

@@ -156,6 +156,7 @@ module.exports = {
     "9.查找": [
       "algorithm/9.search/number-same-as-index",
       "algorithm/9.search/number-in-sorted-array",
+      "algorithm/9.search/missing-number",
     ],
     "11.反转和旋转": [
       "algorithm/11.reverse/reverse-linked-list",
