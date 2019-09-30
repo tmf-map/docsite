@@ -34,7 +34,7 @@ sidebar_label: 有序数组中缺失的数字
 3. 法三：因为是有序的，可以利用二分查找，将时间复杂度降至 O(logn)
 
 <div align="center">
-    <img width="480" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/gMPrDu.png" />
+    <img width="520" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/nEcTPC.png" />
     <p>图：二分查找缺失数字步骤</p>
 </div>
 

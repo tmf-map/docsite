@@ -66,7 +66,7 @@ function merge (left, right) {
     let i = 0;
     let j = 0;
     while (i < left.length && j < right.length) {
-        left[i] < right[j] ? ans.push(left[i++]) : ans.push(right[j++]);
+        left[i] > right[j] ? ans.push(right[j++]) : ans.push(left[i++]);
     }
     while (i < left.length) {
         ans.push(left[i++]);
@@ -85,10 +85,10 @@ function merge (left, right) {
     if (!left.length) return right;
     if (!right.length) return left;
     let ans = [];
-    if (left[0] < right[0]) {
-        ans.push(left[0], ...merge(left.slice(1), right));
-    } else {
+    if (left[0] > right[0]) {
         ans.push(right[0], ...merge(left, right.slice(1)));
+    } else {
+        ans.push(left[0], ...merge(left.slice(1), right));
     }
     return ans;
 }
@@ -99,7 +99,19 @@ function merge (left, right) {
 记录数组的索引，使用 `left`、`right` 两个索引来限定当前分割的数组。
 
 - 优点：空间复杂度低，只需一个 ans 辅助空间，不需要拷贝数组
-- 缺点：写法复杂
+- 缺点：`sortArray` 函数略显复杂
+
+```js
+function sortArray (nums, from = 0, to = nums.length - 1) {
+    if (from === to) {
+        return [nums[from]];
+    }
+    let mid = from + (to - from >> 1);
+    let left = sortArray(nums, from, mid);
+    let right = sortArray(nums, mid + 1, to);
+    return merge(left, right);
+}
+```
 
 ## 复杂度
 

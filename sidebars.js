@@ -138,6 +138,7 @@ module.exports = {
   "algorithm": {
     "1.数组": [
       "algorithm/1.array/duplicated-number-in-array",
+      "algorithm/1.array/inverse-pairs",
     ],
     "2.栈与队列": [
       "algorithm/3.stack-queue/min-stack",
