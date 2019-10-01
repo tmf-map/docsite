@@ -148,7 +148,8 @@ module.exports = {
     ],
     "5.二叉树": [
       "algorithm/5.binary-tree/build-tree",
-      "algorithm/5.binary-tree/mirror-tree"
+      "algorithm/5.binary-tree/mirror-tree",
+      "algorithm/5.binary-tree/subtree",
     ],
     "8.排序": [
       "algorithm/8.sort/merged-sort",

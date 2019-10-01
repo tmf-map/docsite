@@ -34,7 +34,7 @@ sidebar_label: 数组中的逆序对
 
 <div align="center">
     <img width="630" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/9GHK67.png" />
-    <p>图2：每次从子数组末端进行比较合并，并在过程中统计逆序对</p>
+    <p>图2：子数组由后往前进行比较合并，并在过程中统计逆序对</p>
 </div>
 
 ## 代码实现
