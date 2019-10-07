@@ -13,13 +13,24 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: rgb(33, 175, 144);
-  --ifm-color-primary-darker: rgb(31, 165, 136);
-  --ifm-color-primary-darkest: rgb(26, 136, 112);
-  --ifm-color-primary-light: rgb(70, 203, 174);
-  --ifm-color-primary-lighter: rgb(102, 212, 189);
-  --ifm-color-primary-lightest: rgb(146, 224, 208);
+  --ifm-color-primary: #0195a5;
+  --ifm-color-primary-dark: rgb(2, 117, 129);
+  --ifm-color-primary-darker: rgb(2, 94, 104);
+  --ifm-color-primary-darkest: rgb(1, 61, 68);
+  --ifm-color-primary-light: #0299aa;
+  --ifm-color-primary-lighter: #03b5c9;
+  --ifm-color-primary-lightest: #04d4eb;
+
+  --ifm-navbar-shadow: 0 3px 8px 0 rgba(116, 129, 141, 0.1);
+  --ifm-navbar-height: 80px;
+  --ifm-menu-color-background-active: #fff;
+  --ifm-contents-border-color: #e6ecf1;
+  --ifm-color-emphasis-alpha-60: #5C6975;
+  --ifm-contents-link-color: rgb(116, 129, 141);
+  --ifm-heading-font-weight: 500;
+
+  -webkit-font-smoothing: antialiased;
+
 }
 
 blockquote {
@@ -34,4 +45,54 @@ blockquote p {
 
 html[data-theme="dark"] blockquote {
   color: var(--ifm-code-color);
+}
+
+.navbar.navbar--fixed-top {
+  border-bottom: 1px solid #d4dadf;
+}
+
+.navbar .navbar__inner {
+  width: 1400px;
+  margin: 0 auto;
+}
+
+.menu {
+  padding-left: 105px;
+}
+
+.row .col.col--3:first-child {
+  background-color: #f5f7f9;
+  padding-right: 0;
+}
+
+@media (min-width: 997px) {
+  .row .col.col--3:first-child > div {
+    padding-top: 26px;
+    padding-bottom: 26px;
+  }
+}
+
+.menu .menu__link {
+  border: 1px solid transparent;
+}
+.menu .menu__link:hover {
+  --ifm-menu-color-background-active: rgb(236, 240, 241);
+  border: 1px solid rgb(236, 240, 241);
+}
+
+.menu .menu__link.menu__link--active:not(.menu__link--sublist) {
+  border: 1px solid #e6ecf1;
+}
+
+.menu .menu__link.menu__link--active:not(.menu__link--sublist):hover {
+  --ifm-menu-color-background-active: #fff;
+  border: 1px solid #e6ecf1;
+}
+
+.contents__link {
+  font-weight: 500;
+  /* max-width: 224px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; */
 }

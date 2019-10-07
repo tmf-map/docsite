@@ -3,26 +3,29 @@ id: page-rendering
 title: 页面渲染
 sidebar_label: 页面渲染
 ---
+
 ## 浏览器页面渲染
 
 浏览器工作流程大体分为如下三部分：
 
 1. 浏览器会解析三个东西：
-    - 一个是HTML/SVG/XHTML，事实上，Webkit有三个C++的类对应这三类文档。解析这三种文件会产生一个DOM Tree。
-    - CSS，解析CSS会产生CSS规则树。
-    - Javascript，脚本，主要是通过DOM API和CSSOM API来操作DOM Tree和CSS Rule Tree.
 
-2. 解析完成后，浏览器引擎会通过DOM Tree 和 CSS Rule Tree 来构造 Rendering Tree。
+    - **HTML/SVG/XHTML**，解析这三种文件会产生一个DOM Tree。
+    - **CSS**，解析 CSS 会产生 CSS Rule Tree。
+    - **Javascript**，主要是通过 DOM API和 CSSOM API来操作 DOM Tree 和 CSS Rule Tree。
 
-    - Rendering Tree 渲染树并不等同于DOM树，因为**一些像`<headr>`元素或CSS设置display:none的节点**就没必要放在渲染树中了。
-    - CSS 的 Rule Tree主要是为了完成匹配并把CSS Rule附加上Rendering Tree上的每个Element。也就是DOM结点。也就是所谓的Frame。
-    - 然后，计算每个Frame（也就是每个Element）的位置，这又叫layout和reflow过程。
+2. 解析完成后，浏览器引擎会通过 DOM Tree 和 CSS Rule Tree 来构造 Rendering Tree。
 
-3. 最后通过调用操作系统Native GUI(图像用户接口)的API绘制。
+    - Render Tree 渲染树并不等同于 DOM Tree，因为**一些像`<head>`或 CSS 设置 `display:none` 的节点**就没必要放在渲染树中了。
+    - CSS Rule Tree 主要是为了完成匹配并把CSS Rule附加上 Render Tree上的每个Element。也就是DOM结点。也就是所谓的Frame。
+    - 然后，计算每个 Frame（也就是每个Element）的位置，包括 `layout` 和 `reflow` 过程。
+
+3. 最后通过调用操作系统 Native GUI(图像用户接口)的 API 绘制。
 
 ![](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/kBpnEt.png)
+<p align="center">图1：DOM、CSSOM 和 Render Tree 关系</p>
 
-[如上图所示](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-tree-construction?hl=zh-cn)，**在DOM树和CSS规则树合并成渲染树的时候会忽略`<head>`等不可见节点和设置了样式为display:none的节点**。生成渲染树后然后进入布局，布局计算每个对象的精确位置和大小，然后通过绘制，呈现出页面。
+[如图1所示](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-tree-construction?hl=zh-cn)，**在DOM树和CSS规则树合并成渲染树的时候会忽略`<head>`等不可见节点和设置了样式为display:none的节点**。生成渲染树后然后进入布局，布局计算每个对象的精确位置和大小，然后通过绘制，呈现出页面。
 
 ![](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/yw9qb5brpt.png)
 

@@ -6,6 +6,75 @@
  */
 
 module.exports = {
+  "javascript": {
+    "1.基础概念": [
+      "javascript/1.basic/workflow",
+      "javascript/1.basic/scope",
+      "javascript/1.basic/execute-context",
+    ],
+    "2.垃圾回收": [
+      "javascript/2.gc/old-new-space",
+      "javascript/2.gc/reference-counting",
+      "javascript/2.gc/memory-leak",
+      "javascript/2.gc/gc-optimization",
+    ],
+    "3.闭包": [
+      "javascript/3.closure/closure-external",
+      "javascript/3.closure/closure-internal",
+      "javascript/3.closure/closure-issues",
+      "javascript/3.closure/closure-application",
+      "javascript/3.closure/summary-test",
+    ],
+    "4.函数": [
+      "javascript/4.function/context-this",
+      "javascript/4.function/function-params",
+      "javascript/4.function/constructor",
+      "javascript/4.function/iife",
+      "javascript/4.function/chained-call",
+    ],
+    "5.类型机制": [
+      "javascript/5.typing/memory-space",
+      "javascript/5.typing/is-type",
+      "javascript/5.typing/type-conversion",
+      "javascript/5.typing/equal",
+      "javascript/5.typing/shallow-deep-clone",
+      "javascript/5.typing/data-binding",
+    ],
+    "6.引用类型应用": [
+      "javascript/6.reference-type/array",
+      "javascript/6.reference-type/object",
+      "javascript/6.reference-type/regex",
+      "javascript/6.reference-type/date",
+      "javascript/6.reference-type/set-map",
+    ],
+    "7.面向对象编程": [
+      "javascript/7.object-oriented-programming/constructor",
+      "javascript/7.object-oriented-programming/create-instance",
+      "javascript/7.object-oriented-programming/prototype-chain",
+      "javascript/7.object-oriented-programming/inherit",
+      "javascript/7.object-oriented-programming/class",
+      "javascript/7.object-oriented-programming/super",
+    ],
+    "8.异步编程": [
+      "javascript/8.async-programming/macro-task",
+      "javascript/8.async-programming/micro-task",
+      "javascript/8.async-programming/event-loop",
+      "javascript/8.async-programming/callback",
+      "javascript/8.async-programming/promise",
+      "javascript/8.async-programming/async-await",
+    ],
+    "9.模块机制": [
+      "javascript/9.modules/amd-cmd-umd",
+      "javascript/9.modules/es6-module",
+      "javascript/9.modules/import()",
+      "javascript/9.modules/browser-import",
+      "javascript/9.modules/babel",
+    ],
+    "附录": [
+      "javascript/appendix1-references",
+      "javascript/appendix2-related-websites"
+    ]
+  },
   "react": {
     "1.组件基础": [
       "react/1.basic/jsx",
@@ -150,23 +219,53 @@ module.exports = {
       "algorithm/5.binary-tree/build-tree",
       "algorithm/5.binary-tree/mirror-tree",
       "algorithm/5.binary-tree/subtree",
+      "algorithm/5.binary-tree/maximum-depth-of-binary-tree",
+      "algorithm/5.binary-tree/balanced-binary-tree",
     ],
     "8.排序": [
       "algorithm/8.sort/merged-sort",
       "algorithm/8.sort/quick-sort",
     ],
     "9.查找": [
-      "algorithm/9.search/number-same-as-index",
-      "algorithm/9.search/number-in-sorted-array",
-      "algorithm/9.search/missing-number",
+      {
+        type: 'category',
+        label: '二分查找',
+        items: [
+          "algorithm/9.search/number-same-as-index",
+          "algorithm/9.search/number-in-sorted-array",
+          "algorithm/9.search/missing-number",
+        ],
+      },
+      {
+        type: 'category',
+        label: 'BST',
+        items: [
+          "algorithm/9.search/k-node-in-bst",
+        ],
+      },
+      {
+        type: 'category',
+        label: '哈希表',
+        items: [
+          "algorithm/9.search/first-unique-character",
+        ],
+      },
     ],
-    "11.反转和旋转": [
-      "algorithm/11.reverse/reverse-linked-list",
-      "algorithm/11.reverse/rotate-string",
-      "algorithm/11.reverse/reverse-integer",
+    "10.回溯法": [
+      "algorithm/10.back-tracking/permutation",
+      "algorithm/10.back-tracking/combination",
+      "algorithm/10.back-tracking/n-queens",
     ],
-    "12.数学": [
-      "algorithm/12.math/powx-n",
+    "11.位运算": [
+      "algorithm/11.bit-operation/single-number",
+    ],
+    "12.反转和旋转": [
+      "algorithm/12.reverse/reverse-linked-list",
+      "algorithm/12.reverse/rotate-string",
+      "algorithm/12.reverse/reverse-integer",
+    ],
+    "13.数学": [
+      "algorithm/13.math/powx-n",
     ]
   },
   docs: {

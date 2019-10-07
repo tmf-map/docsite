@@ -10,7 +10,7 @@ module.exports = {
   tagline: 'The tagline of my site',
   url: 'https://thinkbucket.github.io',
   baseUrl: '/docsite/',
-  favicon: 'img/favicon.ico',
+  favicon: 'https://avatars1.githubusercontent.com/u/53037732?s=70&v=4',
   organizationName: 'ThinkBucket', // Usually your GitHub org/user name.
   projectName: 'docsite', // Usually your repo name.
   themeConfig: {
@@ -18,9 +18,10 @@ module.exports = {
       title: 'ThinkBucket',
       logo: {
         alt: 'ThinkBucket Logo',
-        src: 'img/logo.svg',
+        src: 'https://avatars1.githubusercontent.com/u/53037732?s=70&v=4',
       },
       links: [
+        {to: 'docs/javascript/1.basic/workflow', label: 'Javascript', position: 'left'},
         {to: 'docs/react/1.basic/jsx', label: 'React', position: 'left'},
         {to: 'docs/web/1.http/http-connection', label: 'Web', position: 'left'},
         {to: 'docs/algorithm/1.array/duplicated-number-in-array', label: 'Algorithm', position: 'left'},
