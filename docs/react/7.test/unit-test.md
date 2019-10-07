@@ -72,8 +72,8 @@ describe('Multiple branches test', () => {
 
 运行 `jest --coverage` 可看到生产的报告里展示了代码的覆盖率和未测试的行数：
 
-![test coverage1](https://raw.githubusercontent.com/ThinkBucket/oss/master/utest1.jpg)
+![test coverage1](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/QNgSXW.jpg)
 
 如果我们把 branches.test.js 中的注释去掉，跑遍测试对象中的所有分支，测试覆盖率就是100%了：
 
-![test coverage2](https://raw.githubusercontent.com/ThinkBucket/oss/master/utest2.jpg)
+![test coverage2](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/CK0h2A.jpg)

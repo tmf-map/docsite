@@ -4,7 +4,7 @@ title: 通信
 sidebar_label: 通信
 ---
 
-![组件之间的关系图谱](https://raw.githubusercontent.com/ThinkBucket/oss/master/RO2S67.jpg)
+![组件之间的关系图谱](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/io9G0J.jpg)
 
 ## 简单通信
 

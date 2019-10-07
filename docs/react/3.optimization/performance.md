@@ -10,7 +10,7 @@ sidebar_label: 性能分析
 
 示例：
 
-![performance analysis](https://raw.githubusercontent.com/ThinkBucket/oss/master/performancanalysis.png)
+![performance analysis](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/QwmpGS.jpg)
 
 Chrome浏览器内：
 

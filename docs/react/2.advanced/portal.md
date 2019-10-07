@@ -8,7 +8,7 @@ sidebar_label: Portal
 
 Portal 中文即“传送门”的意思，看一张电影海报，不用多说，你应该能猜出来是什么意思：
 
-![doctor strange](https://raw.githubusercontent.com/ThinkBucket/oss/master/S3OAKe.jpg)
+![doctor strange](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/hEPsMb.jpg)
 
 Portals 提供了一种很好的将子节点渲染到父组件以外的 DOM 节点的方式。
 

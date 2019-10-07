@@ -6,7 +6,7 @@ sidebar_label: 生命周期
 
 ## Before React v16.3
 
-![React v15 生命周期图](https://raw.githubusercontent.com/ThinkBucket/oss/master/react-v15-lifecycle.png)
+![React v15 生命周期图](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/C2ehgN.jpg)
 
 ## After React v16.3
 
@@ -25,4 +25,4 @@ React v16.3，引入了两个新的生命周期函数：
 
 新的生命周期图如下图所示：
 
-![React v16.3 生命周期图](https://raw.githubusercontent.com/ThinkBucket/oss/master/react-v16-lifecycle.png)
+![React v16.3 生命周期图](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/w9HKPM.jpg)

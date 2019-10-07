@@ -76,7 +76,7 @@ exports[`should renders correctly 2`] = `
 
 > 如何更新快照？
 
-![how to update snapshot test](https://raw.githubusercontent.com/ThinkBucket/oss/master/image-1.png)
+![how to update snapshot test](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/WqhdAS.jpg)
 
 详细参考：[https://jestjs.io/docs/zh-Hans/snapshot-testing](https://jestjs.io/docs/zh-Hans/snapshot-testing)
 
