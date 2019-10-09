@@ -22,7 +22,7 @@
   --ifm-color-primary-lightest: #04d4eb;
 
   --ifm-navbar-shadow: 0 3px 8px 0 rgba(116, 129, 141, 0.1);
-  --ifm-navbar-height: 80px;
+  --ifm-navbar-height: 70px;
   --ifm-menu-color-background-active: #fff;
   --ifm-contents-border-color: #e6ecf1;
   --ifm-color-emphasis-alpha-60: #5C6975;
@@ -31,6 +31,15 @@
 
   -webkit-font-smoothing: antialiased;
 
+}
+
+.markdown > h2 {
+  --ifm-heading-vertical-rhythm-bottom: 1;
+  --ifm-h2-vertical-rhythm-top: 1.8;
+}
+
+.markdown > pre {
+  -webkit-font-smoothing: auto;
 }
 
 blockquote {
