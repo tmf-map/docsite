@@ -13,24 +13,24 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #0195a5;
-  --ifm-color-primary-dark: rgb(2, 117, 129);
-  --ifm-color-primary-darker: rgb(2, 94, 104);
-  --ifm-color-primary-darkest: rgb(1, 61, 68);
-  --ifm-color-primary-light: #0299aa;
-  --ifm-color-primary-lighter: #03b5c9;
-  --ifm-color-primary-lightest: #04d4eb;
+  --ifm-color-primary-lightest: #d6f2ff;
+  --ifm-color-primary-lighter: #ade5ff;
+  --ifm-color-primary-light: #5ccbff;
+  --ifm-color-primary: #00aeff;
+  --ifm-color-primary-dark: #0085cc;
+  --ifm-color-primary-darker: #0065a3;
+  --ifm-color-primary-darkest: #00508a;
 
+  --ifm-color-emphasis-alpha-60: #5C6975;
+  --ifm-contents-border-color: rgba(191, 191, 191, 0.2);
+  --ifm-contents-link-color: rgb(116, 129, 141);
+  --ifm-code-background: rgba(191, 191, 191, 0.25);
+  --ifm-menu-color-background-active: #fff;
   --ifm-navbar-shadow: 0 3px 8px 0 rgba(116, 129, 141, 0.1);
   --ifm-navbar-height: 70px;
-  --ifm-menu-color-background-active: #fff;
-  --ifm-contents-border-color: #e6ecf1;
-  --ifm-color-emphasis-alpha-60: #5C6975;
-  --ifm-contents-link-color: rgb(116, 129, 141);
   --ifm-heading-font-weight: 500;
 
   -webkit-font-smoothing: antialiased;
-
 }
 
 .markdown > h2 {
@@ -39,12 +39,13 @@
 }
 
 .markdown > pre {
-  -webkit-font-smoothing: auto;
+  -webkit-font-smoothing: initial;
 }
 
 blockquote {
-  background-color: rgba(255,229,100,.3);
-  border-left: 8px solid #ffe564;
+  background-color: rgba(177, 219, 255, 0.2);
+  border-left: 5px solid rgba(142, 186, 249, 0.4);
+  border-radius: 3px;
   padding: 15px 30px 15px 15px;
 }
 
@@ -52,12 +53,8 @@ blockquote p {
   margin-bottom: 0;
 }
 
-html[data-theme="dark"] blockquote {
-  color: var(--ifm-code-color);
-}
-
 .navbar.navbar--fixed-top {
-  border-bottom: 1px solid #d4dadf;
+  border-bottom: 1px solid rgba(131, 133, 133, 0.23);
 }
 
 .navbar .navbar__inner {
@@ -70,13 +67,13 @@ html[data-theme="dark"] blockquote {
 }
 
 .row .col.col--3:first-child {
-  background-color: #f5f7f9;
+  background-color: rgba(185, 202, 218, 0.15);
   padding-right: 0;
 }
 
 @media (min-width: 997px) {
   .row .col.col--3:first-child > div {
-    padding-top: 26px;
+    padding-top: 23px;
     padding-bottom: 26px;
   }
 }
@@ -90,7 +87,7 @@ html[data-theme="dark"] blockquote {
 }
 
 .menu .menu__link.menu__link--active:not(.menu__link--sublist) {
-  border: 1px solid #e6ecf1;
+  border: 1px solid rgba(167, 167, 167, 0.2);
 }
 
 .menu .menu__link.menu__link--active:not(.menu__link--sublist):hover {
@@ -104,4 +101,29 @@ html[data-theme="dark"] blockquote {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap; */
+}
+
+/* dark theme */
+
+html[data-theme="dark"] {
+  --ifm-navbar-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+html[data-theme="dark"] blockquote {
+  color: var(--ifm-code-color);
+}
+
+html[data-theme="dark"] .menu .menu__link.menu__link--active:not(.menu__link--sublist) {
+  --ifm-menu-color-background-active: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(167, 167, 167, 0.1);
+}
+
+html[data-theme="dark"] .menu .menu__link.menu__link--active:not(.menu__link--sublist):hover {
+  --ifm-menu-color-background-active: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(167, 167, 167, 0.2);
+}
+
+html[data-theme="dark"] .menu .menu__link:hover {
+  --ifm-menu-color-background-active: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(167, 167, 167, 0.1);
 }

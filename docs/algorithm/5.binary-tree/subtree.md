@@ -47,23 +47,23 @@ function TreeNode(val) {
 ## 代码实现
 
 ```js
-function isSubTree (a, b) {
+function isSubtree (a, b) {
     let ans = false;
     if (a && b) {
         if (a.val === b.val) {
-            ans = isSubTreeFromThisNode(a, b)
+            ans = isSubtreeFromThisNode(a, b)
         }
         if (!ans) {
-            ans = isSubTree(a.left, b)
+            ans = isSubtree(a.left, b)
         }
         if (!ans) {
-            ans = isSubTree(a.right, b)
+            ans = isSubtree(a.right, b)
         }
     }
     return ans;
 }
 
-function isSubTreeFromThisNode(a, b) {
+function isSubtreeFromThisNode(a, b) {
     // b 的叶节点已经遍历完
     if (!b) {
         return true;
@@ -75,8 +75,8 @@ function isSubTreeFromThisNode(a, b) {
     if (a.val !== b.val) {
         return false;
     }
-    return isSubTreeFromThisNode(a.left, b.left) &&
-        isSubTreeFromThisNode(a.right, b.right)
+    return isSubtreeFromThisNode(a.left, b.left) &&
+        isSubtreeFromThisNode(a.right, b.right)
 }
 ```
 
