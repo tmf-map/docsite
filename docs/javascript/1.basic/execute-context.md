@@ -3,6 +3,8 @@ title: 执行上下文
 sidebar_label: 执行上下文
 ---
 
+## 概述
+
 这是混淆经常出现的地方，“执行上下文（Execution Context）”更多地涉及作用域而不是如前所述的上下文（Context），可以理解为当前代码的执行环境。这是一个不幸的命名约定，但它是ECMAScript规范定义的术语。
 
 - **上下文**：方法属于哪一个对象，即this指代那个对象，即**上下文是基于对象的**。
@@ -48,7 +50,7 @@ executionContextObj = {
 }
 ```
 
-### Activation / Variable Object [AO/VO]
+## Activation / Variable Object [AO/VO]
 
 创建阶段解释器通过扫描传入的参数或参数的函数，本地函数声明和局部变量声明来创建executionContextObj。此扫描的结果将成为executionContextObj中的variableObject。
 
@@ -117,7 +119,7 @@ fooExecutionContext = {
 }
 ```
 
-### 变量名提升(Hoisting)
+## 变量名提升(Hoisting)
 
 掌握了关于解释器如何创建AO的新知识，很容易理解为什么会发生这种情况的细节。请以下代码：
 

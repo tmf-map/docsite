@@ -71,6 +71,7 @@ module.exports = {
       },
       copyright: `Copyright © ${new Date().getFullYear()} ThinkBucket.`,
     },
+    prismTheme: require('prism-react-renderer/themes/nightOwl'),
   },
   presets: [
     [
@@ -78,6 +79,11 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
+          editUrl: 'https://github.com/ThinkBucket/docsite/edit/master/docs/',
+          // Equivalent to `enableUpdateBy`.
+          showLastUpdateAuthor: true,
+          // Equivalent to `enableUpdateTime`.
+          showLastUpdateTime: true,
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
