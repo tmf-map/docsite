@@ -12,11 +12,13 @@ module.exports = {
       "javascript/1.basic/scope",
       "javascript/1.basic/execute-context",
     ],
-    "2.垃圾回收": [
-      "javascript/2.gc/old-new-space",
-      "javascript/2.gc/reference-counting",
-      "javascript/2.gc/memory-leak",
-      "javascript/2.gc/gc-optimization",
+    "2.内存管理": [
+      "javascript/2.memory/memory-space",
+      "javascript/2.memory/memory-check",
+      "javascript/2.memory/old-new-space",
+      "javascript/2.memory/reference-counting",
+      "javascript/2.memory/memory-leak",
+      "javascript/2.memory/gc-optimization",
     ],
     "3.闭包": [
       "javascript/3.closure/closure-external",
@@ -33,7 +35,6 @@ module.exports = {
       "javascript/4.function/chained-call",
     ],
     "5.类型机制": [
-      "javascript/5.typing/memory-space",
       "javascript/5.typing/is-type",
       "javascript/5.typing/type-conversion",
       "javascript/5.typing/equal",
