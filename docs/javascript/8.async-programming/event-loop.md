@@ -60,7 +60,7 @@ VM84:3 Wed Oct 09 2019 09:29:47 GMT+0800 (中国标准时间) 5 */
 2. 使用let定义变量 i
 3. 使用setTimeOut的第三个参数，将第三个参数作为setTimeout回调函数。
 
-[点击查看三种解决方案](https://thinkbucket.github.io/docsite/blog/setTimeOut)
+[点击查看三种解决方案](https://thinkbucket.github.io/docsite/blog/for循环中的setTimeout)
 
 ## 相关拓展
 [Event Loop 必知必会（六道题）](https://zhuanlan.zhihu.com/p/34182184)

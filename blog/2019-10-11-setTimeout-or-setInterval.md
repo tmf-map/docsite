@@ -19,7 +19,7 @@ tags: [setTimeout, setInterval]
 为什么使用`setTimeout`模仿`setInterval`呢？这需要通过事件循环机制来解释，如果不清楚的话可以点击查看[事件循环机制](https://thinkbucket.github.io/docsite/docs/javascript/8.async-programming/event-loop)和[浏览器内核](https://thinkbucket.github.io/docsite/docs/web/13.rendering-engine/rendering-engine)相关内容。
 
 由于`setInterval`或`setTimeout`不是JS中定义的，他们并不会在JS引擎线程中直接执行。当代码执行到`setInterval`或`setTimeout`时，事件循环机制会为`setTimeout`或`setInterval`开一个定时器线程并开始计时，等定义的时间过后，将回调函数放到回调队列里，等到函数调用栈空（`JS`引擎线程空闲）时，将回调函数放入函数调用栈（使用JS引擎线程）执行。
-
+<!--truncate-->
 这种机制导致`setInterval`两次回调函数开始执行的时间间隔总会小于设定的间隔。如下所示：
 ```
 .    *    *    *    *    *    *
@@ -27,7 +27,6 @@ tags: [setTimeout, setInterval]
 ```
 我们假设其中的`.`代表`setInterval`开始执行，`*`表示回调函数被触发， `[-]`表示回调函数的执行时间。很显然相邻的两次回调函数开始执行的时间会小于我们设定的interval。取个极限，假设回调执行**999ms,interval为1000ms，两次回调的间隔只用1ms**。很显然，使用setInterval很难满足两次回调函数执行间隔为固定为1000ms的需求。
 
-<!--truncate-->
 
 ## 模拟后两者的区别
 
@@ -86,7 +85,7 @@ Interval执行周期：
 
 对于`setInterval`来说，当下一次的回调函数入队时，会检测队列是否为空。如果不为空，则忽略本次回调。如果为空，将本次回调入队。
 
-我们假设下图中的`w`代表在队列中等待不能立即被执行的回调函数，`x`表示会被忽略的，不会执行的回调。的可以如下图所示：
+我们假设下图中的`w`代表在队列中等待不能立即被执行的回调函数，`x`表示会被忽略的、不会执行的回调。具体如下图所示：
 
 ```
 .    *    w    w    x    w    w    x
@@ -101,3 +100,9 @@ Interval执行周期：
 
 - 如果要保证回调函数执行间隔可以使用`setTimeout`代替`setInterval`。如果实现动画，在兼容性允许的情况下，使用requestAnimationFrame是更好的选择。
 
+## 参考文章
+[setTimeout or setInterval?](https://stackoverflow.com/questions/729921/settimeout-or-setinterval)
+
+[为什么要用setTimeout模拟setInterval](https://juejin.im/post/5ca81370f265da308c199fe7)
+
+[你真的了解setTimeout和setInterVal吗](http://qingbob.com/difference-between-settimeout-setinterval/)
