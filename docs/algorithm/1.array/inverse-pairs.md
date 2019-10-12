@@ -40,11 +40,11 @@ sidebar_label: 数组中的逆序对
 ## 代码实现
 
 ```js
-let count = [0];
+let count = 0;
 
 function inversePairs (nums) {
     sortArray(nums);
-    return count[0];
+    return count;
 }
 
 function sortArray (nums, from = 0, to = nums.length - 1) {
@@ -68,7 +68,7 @@ function merge (left, right) {
             // 从后往前插入比较大的值
             ans.unshift(left[i--]);
             // 表明 left[i] 比 right[j] 以及之前都大
-            count[0] += j + 1;
+            count += j + 1;
         } else {
             ans.unshift(right[j--]);
         }
