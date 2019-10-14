@@ -50,6 +50,10 @@
   line-height: 1.8;
 }
 
+.markdown img {
+  margin-bottom: 5px;
+}
+
 blockquote {
   background-color: rgba(185, 202, 218, 0.15);
   border-left: 4px solid rgba(130, 130, 136, 0.4);
