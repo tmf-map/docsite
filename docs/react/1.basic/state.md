@@ -4,6 +4,8 @@ title: 状态
 sidebar_label: 状态
 ---
 
+import Hint from '../../../src/components/Hint'
+
 ## state v.s. props
 
 * `state` 是组件自身的状态，组件自己维护，也可以从父组件传递而来。
@@ -17,7 +19,7 @@ sidebar_label: 状态
 
 通过这种方式，不用考虑性能的问题，通过 babel 转义后的 `... 运算符` 性能和原生的一致。
 
-> **强制**：请只传递 component 需要的 props，不要滥用。传得太多，或者层次传得太深，都会加重 shouldComponentUpdate 里面的数据比较负担，因此请慎用spread attributes。
+<Hint type="better">请只传递 component 需要的 props，不要滥用。传得太多，或者层次传得太深，都会加重 shouldComponentUpdate 里面的数据比较负担，因此请慎用spread attributes。</Hint>
 
 
 ## prop-types
@@ -30,7 +32,7 @@ propTypes // 组件属性名
 PropTypes // 类名
 ```
 
-> **注意**：命名，尤其是后面两个p的大小写
+<Hint type="warning">命名，尤其是后面两个p的大小写</Hint>
 
 
 ## defaultProps
@@ -48,9 +50,9 @@ PropTypes // 类名
 
 在合适的生命周期内调用 `this.setState()` 函数。
 
-> **强制**：绝对不要直接修改 this.state，这不仅是一种低效的做法，而且修改的状态有可能被之后的 setState 操作覆盖。
+<Hint type="must">绝对不要直接修改 this.state，这不仅是一种低效的做法，而且修改的状态有可能被之后的 setState 操作覆盖。</Hint>
 
 
-> **注意**：setState 方法只适用于 class 类型的组件，函数式组件一般无法调用该方法。
+<Hint type="warning">setState 方法只适用于 class 类型的组件，函数式组件一般无法调用该方法。</Hint>
 
 

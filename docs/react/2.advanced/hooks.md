@@ -4,6 +4,8 @@ title: Hooks
 sidebar_label: Hooks
 ---
 
+import Hint from '../../../src/components/Hint'
+
 ## 什么是State Hooks？
 
 看一个例子，我们分解来看到底state hooks做了什么：
@@ -70,7 +72,7 @@ function ExampleWithManyStates() {
 
 其次，useState接收的初始值没有规定一定要是string/number/boolean这种简单数据类型，它完全**可以接收对象或者数组作为参数**。最后，react也给我们提供了一个`useReducer`的hook，如果你更喜欢redux式的状态管理方案的话。
 
-> **注意**：之前我们的`this.setState`做的是**合并状态**后返回一个新状态，而`useState`是直接**替换**老状态后返回新状态。
+<Hint type="warning">之前我们的`this.setState`做的是**合并状态**后返回一个新状态，而`useState`是直接**替换**老状态后返回新状态。</Hint>
 
 
 从`ExampleWithManyStates`函数我们可以看到，`useState`无论调用多少次，相互之间是独立的。这一点至关重要。为什么这么说呢？
@@ -83,7 +85,7 @@ function ExampleWithManyStates() {
 
 还是看上面给出的`ExampleWithManyStates`例子，我们调用了三次`useState`，每次我们传的参数只是一个值（如42，‘banana’）_，_我们根本没有告诉react这些值对应的key是哪个，那react是怎么保证这三个useState找到它对应的state呢？
 
-> **Tips**：React是根据`useState`出现的顺序来定的。
+<Hint type="tip">React是根据`useState`出现的顺序来定的。</Hint>
 
 
 我们具体来看一下：
@@ -130,7 +132,7 @@ function ExampleWithManyStates() {
   useState([{ text: 'Learn Hooks' }]); //读取到的却是状态变量fruit的值，导致报错
 ```
 
-> **强制**：React规定我们必须把hooks写在函数的最外层，不能写在`ifelse`等条件语句当中，来确保hooks的执行顺序一致。
+<Hint type="must">React规定我们必须把hooks写在函数的最外层，不能写在`ifelse`等条件语句当中，来确保hooks的执行顺序一致。</Hint>
 
 
 ## Effect Hooks
@@ -207,6 +209,7 @@ function Example() {
   useEffect(() => {
     document.title = `You clicked ${count} times`;
   });
+}
 ```
 
 首先，我们声明了一个状态变量`count`，将它的初始值设为0。然后我们告诉react，我们的这个组件有一个副作用。我们给`useEffect`hook传了一个匿名函数，这个匿名函数就是我们的副作用。

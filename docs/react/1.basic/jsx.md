@@ -4,6 +4,8 @@ title: JSX
 sidebar_label: JSX
 ---
 
+import Hint from '../../../src/components/Hint'
+
 ## JSX 基础概念
 
 ### 形态
@@ -16,7 +18,7 @@ JSX， 乍看起来可能比较像是模版语言，但本质上是JS的一种�
 
 你可以任意地在 JSX 当中使用 [JS 表达式](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Expressions_and_Operators#Expressions)，在 JSX 当中的表达式要包含在`单大括号 {}`里。
 
-> **推荐**：对于需要换行的 JSX 代码，在其外面加上一个小括号\(\)，这样可以防止 [分号自动插入](http://stackoverflow.com/q/2846283) 的 bug，且便于 JSX 代码的换行对齐。
+<Hint type="better">对于需要换行的 JSX 代码，在其外面加上一个小括号\(\)，这样可以防止 [分号自动插入](http://stackoverflow.com/q/2846283) 的 bug，且便于 JSX 代码的换行对齐。</Hint>
 
 ### 属性
 
@@ -32,9 +34,9 @@ const element = <div tabIndex="0"></div>;
 const element = <img src={user.avatarUrl}></img>;
 ```
 
->**提示**：如果使用大括号包裹的 JS 表达式时就不要再到外面套引号了。否则 JSX 会将引号当中的内容识别为字符串而不是表达式。
+<Hint type="warning">如果使用大括号包裹的 JS 表达式时就不要再到外面套引号了。否则 JSX 会将引号当中的内容识别为字符串而不是表达式。</Hint>
 
-> **强制**：使用 `camelCase` 小驼峰命名来定义属性的名称，而不是使用 HTML 的属性名称。因为 JSX 的特性更接近 JavaScript 而不是 HTML 。
+<Hint type="better">使用 `camelCase` 小驼峰命名来定义属性的名称，而不是使用 HTML 的属性名称。因为 JSX 的特性更接近 JavaScript 而不是 HTML 。</Hint>
 
 ### 嵌套
 
@@ -114,7 +116,7 @@ const renderComponent = props => {
 }
 ```
 
->**推荐**：一般开发中建议不要使用该写法，除非不同条件下 return 的 v-dom 没有公共部分。
+<Hint type="better">一般开发中建议不要使用该写法，除非不同条件下 return 的 v-dom 没有公共部分。</Hint>
 
 ### JSX 写法：与运算
 
@@ -129,7 +131,7 @@ const renderComponent = props => {
 }
 ```
 
-> **强制**：与运算要使用 !! 进行显式强制转换，防止某些假值被渲染出来，[demo](https://codepen.io/muwenzi/pen/YjNYYp?editors=0010)。
+<Hint type="better">逻辑与运算要使用 !! 进行显式强制转换，防止某些假值被渲染出来，[demo](https://codepen.io/muwenzi/pen/YjNYYp?editors=0010)。</Hint>
 
 ### JSX 写法：三目运算
 
@@ -144,7 +146,7 @@ const renderComponent = props => {
 }
 ```
 
-> **推荐**：三目运算的判断可以不用加 !! ，因为其肯定会渲染后面二者之一。
+<Hint type="better">三目运算的判断可以不用加 !! ，因为其肯定会渲染后面二者之一。</Hint>
 
 ## 列表渲染
 
@@ -181,5 +183,5 @@ Warning: Each child in an array or iterator should have a unique "key" prop. Che
 * key 相同，若组件属性有所变化，则 react 只更新组件对应的属性，没有变化则不更新。
 * key 不同，则 react 先销毁该组件（有状态组件的componentWillUnmount会执行），然后重新创建该组件（constructor和componentWillUnmount都会执行）
 
-> **推荐**：不要使用 index 作为 key prop。
+<Hint type="better">不要使用 index 作为 key prop。</Hint>
 

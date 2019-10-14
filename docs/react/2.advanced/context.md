@@ -4,6 +4,8 @@ title: Context
 sidebar_label: Context
 ---
 
+import Hint from '../../../src/components/Hint'
+
 Context 通过组件树提供了一个传递数据的方法，从而避免了在每一个层级手动的传递 props 属性。在一个典型的 React 应用中，数据是通过 props 属性由上向下（由父及子）的进行传递的，但这对于某些类型的属性而言是极其繁琐的（例如：地区偏好，UI主题），这是应用程序中许多组件都所需要的。 Context 提供了一种在组件之间共享此类值的方式，而不必通过组件树的每个层级显式地传递 props 。
 
 ## 何时使用 Context
@@ -68,7 +70,7 @@ class App extends React.Component {
 }
 ```
 
-> **注意**：不要仅仅为了避免在几个层级下的组件传递 props 而使用 context，它是被用于在多个层级的多个组件需要访问相同数据的情景，即 **组件复用** 的场景。
+<Hint type="warning">不要仅仅为了避免在几个层级下的组件传递 props 而使用 context，它是被用于在多个层级的多个组件需要访问相同数据的情景，即 **组件复用** 的场景。</Hint>
 
 ## API
 
@@ -106,7 +108,7 @@ React 组件允许 Consumers 订阅 context 的改变。
 
 每当 Provider 的值发生改变时, 作为 Provider 后代的所有 Consumers 都会重新渲染。 从 Provider 到其后代的 Consumers 传播不受 `shouldComponentUpdate` 方法的约束，因此即使祖先组件没有更新，后代 Consumer 也会被更新。
 
-> **推荐**：因为内部通过使用与 `Object.is ` 相同的算法比较新值和旧值来确定变化。所以为了避免一些可能触发意外的渲染，可以将提升 `value` 到父节点的 state 里。
+<Hint type="better">因为内部通过使用与 `Object.is ` 相同的算法比较新值和旧值来确定变化。所以为了避免一些可能触发意外的渲染，可以将提升 `value` 到父节点的 state 里。</Hint>
 
 因为 context 使用 `reference identity` 确定何时重新渲染，在 Consumer 中，当一个 Provider 的父节点重新渲染的时候，有一些问题可能触发意外的渲染。例如下面的代码，所有的 Consumer 在 Provider 重新渲染之时，每次都将重新渲染，因为一个新的对象总是被创建对应 Provider 里的 `value：`
 
@@ -184,7 +186,7 @@ class MyClass extends React.Component {
 MyClass.contextType = MyContext;
 ```
 
-> **注意**: 使用这个 API，你只能订阅单个 context。 如果你想订阅多个 context，请参阅 [使用多个 Contexts](#使用多个-context)。
+<Hint type="warning">使用这个 API，你只能订阅单个 context。 如果你想订阅多个 context，请参阅 [使用多个 Contexts](#使用多个-context)。</Hint>
 
 如果你在使用实验性的 `public class fields` 语法, 你可以使用 `static class field` 来初始化你的 `contextType`:
 
@@ -207,7 +209,7 @@ const value = useContext(MyContext);
 
 `useContext` 接收一个 context 对象然后返回该 context 的值。当 `<MyContext.Provider>` 更新时，此 Hook 将触发重新渲染。
 
-> **Tips**: 不要忘记传入的参数是 Context。
+<Hint type="tip">不要忘记传入的参数是 Context。</Hint>
 
 - Correct: useContext(MyContext)
 - Incorrect: useContext(MyContext.Consumer)
@@ -229,7 +231,7 @@ function Button() {
 
 另外，`useContext(MyContext)` 仅仅用来读取 context 的值和订阅其更新，但仍然需要使用 `<MyContext.Provider>` 。
 
-> **Tips**: `useContext(MyContext)` 等价于 class 中的 `static contextType = MyContext` 或者 `<MyContext.Consumer>`。
+<Hint type="tip">`useContext(MyContext)` 等价于 class 中的 `static contextType = MyContext` 或者 `MyContext.Consumer`。</Hint>
 
 ## Examples
 
@@ -286,7 +288,7 @@ function Content() {
 }
 ```
 
-> **注意**：如果经常将两个或多个 context 值一起使用，你可以考虑使用 render props 的方法。
+<Hint type="warning">如果经常将两个或多个 context 值一起使用，你可以考虑使用 render props 的方法。</Hint>
 
 更加复杂的例子请参考：https://reactjs.org/docs/context.html#examples
 

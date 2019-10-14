@@ -9,9 +9,9 @@ import Hint from '../../../src/components/Hint'
 
 `this` 是由调用者决定的。子类自己的 `this` 对象，必须先通过父类的构造函数完成构造，得到与父类同样的**实例属性和方法**，然后再对其进行加工，加上子类自己的实例属性和方法。如果不调用 `super` 方法，子类就得不到 `this` 对象，那么对子类的进行加工，加上子类自己的实例属性和方法就无法实现。
 
-<Hint type="warning">要想在子类中使用 `this` 得先调用 `super()` 将父类 `constructor` 定义的属性和方法挂到自己的 `this` 上后再进行扩展。</Hint>
+<Hint type="must">要想在子类中使用 `this` 得先调用 `super()` 将父类 `constructor` 定义的属性和方法挂到自己的 `this` 上后再进行扩展。</Hint>
 
-## super 的两种含义
+## super 的两种用法与含义
 
 `super` 这个关键字有两种用法：作为函数或对象使用，分别指代：**父类构造函数**和**父类原型对象**。
 
@@ -112,13 +112,13 @@ b.m // undefined
 
 ### React 中使用继承 super(props) 的目的
 
-React 也必须遵循 JS ，强制在 `constructor` 中必须先调用 `super` 才能引用 `this`
+React 也必须遵循 JS ，强制在 `constructor` 中必须先调用 `super` 才能引用 `this` 。
+
+<Hint type="must">在 React class `constructor` 中使用 `this.props` 得先调用 `super(props)` 。</Hint>
 
 ### 为什么要传递 props 参数
 
 是为了在 `constructor` 中 使用 `this.props` 。这样在除了 `constructor` 的地方，都可以调用 `this.props`，比如 lifecycle，custom methods。
-
-<Hint type="force">在 React class `constructor` 中使用 `this.props` 得先调用 `super(props)` 。</Hint>
 
 ### 能用 super() 代替 super(props) 吗
 
@@ -137,7 +137,7 @@ class Button extends React.Component {
 
 <Hint type="warning">如果我们没有传递参数，React 会在我们的类组件 `constructor` **调用之后**，为我们的组件实例分配 `props` 。</Hint>
 
-<Hint type="recommend">React 官方文档里面有一句 [Class components should always call the base constructor with props](https://reactjs.org/docs/state-and-lifecycle.html#adding-local-state-to-a-class).</Hint>
+<Hint type="better">React 官方文档里面有一句 [Class components should always call the base constructor with props](https://reactjs.org/docs/state-and-lifecycle.html#adding-local-state-to-a-class).</Hint>
 
 ## 更多阅读
 

@@ -4,17 +4,19 @@ title: Reducer
 sidebar_label: Reducer
 ---
 
+import Hint from '../../../src/components/Hint'
+
 ## 什么是 Reducer ?
 
 用于修改 Store 的**纯函数**。
 
-> **强制**：Reducer 一定要是纯函数，禁止使用非纯函数。
+<Hint type="must">Reducer 一定要是纯函数，禁止使用非纯函数。</Hint>
 
-> **推荐**：Reducer 函数应该尽量简单，只是修改 Store 的操作，尽量不写业务代码。
+<Hint type="better">Reducer 函数应该尽量简单，只是修改 Store 的操作，尽量不写业务代码。</Hint>
 
 ## Reducer 模块化
 
-> **推荐**：不同的模块应该有不同的 Reducer，最后通过 combineReducers 来 combine 到一起。
+<Hint type="better">不同的模块应该有不同的 Reducer，最后通过 combineReducers 来 combine 到一起。</Hint>
 
 【问题】Reducer 的划分后之间的状态共享问题？否则一个 Reducer 会越来越大，case 的情况会越来越多，拆分后如何能很好地进行 Reducer 之间的通信和状态共享？
 
@@ -41,8 +43,8 @@ Immutable 有两个库：
 * [immutable-js](https://github.com/facebook/immutable-js)：Facebook 的项目，比较重，取数据必须用函数，对数据有极高的性能要求时用。
 * [seamless-immutable](https://github.com/rtfeldman/seamless-immutable)：精简版的 Immutable，取数据可以直接点取，大部分情况使用该库即可。
 
-> **强制**：Reducer 初始化 initialState 时必须使用 Immutable 的数据类型，防止在 Reducer 外的其他地方对 Store 发生修改操作。
+<Hint type="must">Reducer 初始化 initialState 时必须使用 Immutable 的数据类型，防止在 Reducer 外的其他地方对 Store 发生修改操作。</Hint>
 
 
-> **推荐**：Reducer 初始化 initialState 时使用 **immutable-js** 时建议用 Immutable.Map 方法而不是 fromJS 方法，效率更高。
+<Hint type="better">Reducer 初始化 initialState 时使用 **immutable-js** 时建议用 Immutable.Map 方法而不是 fromJS 方法，效率更高。</Hint>
 

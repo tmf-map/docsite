@@ -4,6 +4,8 @@ title: 事件
 sidebar_label: 事件
 ---
 
+import Hint from '../../../src/components/Hint'
+
 ## 合成事件与原生事件
 
 ### 合成事件
@@ -18,10 +20,10 @@ sidebar_label: 事件
 
 VirtualDOM 在内存中是以 **对象** 的形式存在，React 基于 VirtualDOM 实现了一个 SyntheticEvent（合成事件）层，我们所定义的事件处理器会接收到一个 SyntheticEvent 对象的实例（比如`handleChange(reactEvent)`），且与原生的浏览器事件有同样的接口。
 
-> **注意**：React 使用事件委托机制，会将所有的事件都绑定在最外层\(`document`\)元素上，依赖事件的冒泡机制完成委派，在冒泡阶段处理事件，不支持捕获阶段处理事件。
+<Hint type="warning">React 使用事件委托机制，会将所有的事件都绑定在最外层\(`document`\)元素上，依赖事件的冒泡机制完成委派，在冒泡阶段处理事件，不支持捕获阶段处理事件。</Hint>
 
 
-> **推荐**：阻止合成事件间的冒泡，用 e.stopPropagation\(\) 。
+<Hint type="better">阻止合成事件间的冒泡，用 `e.stopPropagation()` 。</Hint>
 
 
 ### 原生事件
@@ -50,21 +52,21 @@ Q：在什么生命周期才可以绑定原生事件？
 
 A：组件挂载完成之后，即 componentDidMount。
 
-> **强制**：一定要在组件卸载（componentWillUnmount）时手动移除，否则很可能出现内存泄漏的问题，而合成事件不需要，因为 react 内部已经帮你自动处理了。
+<Hint type="must">一定要在组件卸载（componentWillUnmount）时手动移除，否则很可能出现内存泄漏的问题，而合成事件不需要，因为 react 内部已经帮你自动处理了。</Hint>
 
 
-> **注意**：合成事件中阻止事件冒泡是没办法阻止原生事件的冒泡。即使是 reactEvent.nativeEvent.stopPropagation\(\)。
+<Hint type="warning">合成事件中阻止事件冒泡是没办法阻止原生事件的冒泡。即使是 reactEvent.nativeEvent.stopPropagation\(\)。</Hint>
 
 
 reactEvent 是封装好的事件，它是在 document 的回调里进行封装，并执行回调的。而原生的监听，在document 接收到冒泡时早就执行完了。`reactEvent.nativeEvent.stopPropagation()` 方法实际上是在最外层节点上调用了原生的 stopPropagation， 只阻止了 document 的冒泡。
 
-> **注意**：原生事件中阻止冒泡是可以阻止合成事件的冒泡。
+<Hint type="warning">原生事件中阻止冒泡是可以阻止合成事件的冒泡。</Hint>
 
 
-> **推荐**：阻止合成事件与最外层 document 上的事件间的冒泡，用e.nativeEvent.stopImmediatePropagation\(\) 。
+<Hint type="better">阻止合成事件与最外层 document 上的事件间的冒泡，用 `e.nativeEvent.stopImmediatePropagation()` 。</Hint>
 
 
-> **推荐**：阻止合成事件与除最外层 document 上的原生事件上的冒泡，通过判断 e.target 来避免。
+<Hint type="better">阻止合成事件与除最外层 document 上的原生事件上的冒泡，通过判断 e.target 来避免。</Hint>
 
 
 ## 合成事件的绑定
@@ -81,7 +83,7 @@ reactEvent 是封装好的事件，它是在 document 的回调里进行封装�
 onChange = {this.handleChange.bind(this)}
 ```
 
-> **注意**：这种方法有一个潜在的性能问题：当组件每次重新渲染时，都会有一个新的函数创建。
+<Hint type="warning">这种方法有一个潜在的性能问题：当组件每次重新渲染时，都会有一个新的函数创建。</Hint>
 
 
 但是在真正的开发场景中，由此引发的性能问题往往不值一提（除非是大型组件消费类应用或游戏）。
@@ -94,10 +96,10 @@ onChange = {this.handleChange.bind(this)}
 onChange = {e => this.handleChange(e)}
 ```
 
-> **注意**：这种方法与第一种方法一样，同样存在潜在的性能问题。
+<Hint type="warning">这种方法与第一种方法一样，同样存在潜在的性能问题。</Hint>
 
 
-> **推荐**：函数式组件优先使用箭头函数隐式绑定this。
+<Hint type="better">函数式组件优先使用箭头函数隐式绑定this。</Hint>
 
 
 #### 双冒号隐式绑定：
@@ -110,10 +112,10 @@ onChange = {::this.handleChange}
 
 函数绑定运算符是并排的两个双冒号（ :: ），双冒号左边是一个对象，右边是一个函数。该运算符会自动将左边的对象，作为上下文环境（即 this 对象），绑定到右边的函数上面。如果双冒号左边为空，右边是一个对象的方法，则等于将该方法绑定在该对象上面。
 
-> **注意**：该方法不能带参数。
+<Hint type="warning">该方法不能带参数。</Hint>
 
 
-> **Tips**：babel 会将该方法转译成 `.bind(this)` 的方式。
+<Hint type="tip">babel 会将该方法转译成 `.bind(this)` 的方式。</Hint>
 
 
 ### 方式二：创建实例时绑定
@@ -133,10 +135,10 @@ constructor(props) {
 
 缺点：即使不用到state，也需要添加类构造函数来绑定this，代码量多； 添加参数要在构造函数中bind时指定，不在render中。
 
-> **注意**：组件实例会重复绑定该方法。
+<Hint type="warning">组件实例会重复绑定该方法。</Hint>
 
 
-> **推荐**：class 类型的组件优先使用该方法，也是性能最好的。
+<Hint type="better">class 类型的组件优先使用该方法，也是性能最好的。</Hint>
 
 
 #### class 属性中使用 = 和箭头函数：

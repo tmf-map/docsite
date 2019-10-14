@@ -4,6 +4,8 @@ title: 组件测试
 sidebar_label: 组件测试
 ---
 
+import Hint from '../../../src/components/Hint'
+
 组件测试本身就是单元测试，但是其又包括快照测试（Snapshot Test）这种特有的测试。
 
 ## 组件测试基础概念
@@ -162,13 +164,13 @@ Enzyme 提供 3 种不同的方式来测试组件：
 
 [Enzyme Selector](http://airbnb.io/enzyme/docs/api/selector.html)
 
-> **推荐**：一般组件的快照测试使用 shallow 方法即可。
+<Hint type="better">一般组件的快照测试使用 shallow 方法即可。</Hint>
 
 
-> **推荐**：如果要测试子组件，并且对组件的生命周期等方法不怎么关注，使用 render 方法。
+<Hint type="better">如果要测试子组件，并且对组件的生命周期等方法不怎么关注，使用 render 方法。</Hint>
 
 
-> **推荐**：如果要测试组件生命周期方法、子组件，使用 mount 方法。
+<Hint type="better">如果要测试组件生命周期方法、子组件，使用 mount 方法。</Hint>
 
 
 ## 编写组件测试
@@ -204,16 +206,16 @@ it('should render a grayish label', () => {
 
 写组件测试的时候需要将 Enzyme 和 Jest 结合起来使用，两者是互补的，它们已经是 React 应用测试中大家公认的标准库。
 
-> **注意**：这种直接使用 `toMatchSnapshot()` 方法的测试比较笼统、简单粗暴，且没有针对性，只是比较方便，权衡使用。
+<Hint type="warning">这种直接使用 `toMatchSnapshot()` 方法的测试比较笼统、简单粗暴，且没有针对性，只是比较方便，权衡使用。</Hint>
 
 
-> **注意**：每调一次 `toMatchSnapshot()` 方法就会生成一份快照，虽然还是一个快照文件，但里面可能会有不同状态的快照。
+<Hint type="warning">每调一次 `toMatchSnapshot()` 方法就会生成一份快照，虽然还是一个快照文件，但里面可能会有不同状态的快照。</Hint>
 
 
-> **注意**：快照测试抛错不过，不一定是写代码有问题，有可能组件加入了新属性等原因导致的，属于正常的，手动更新一下快照即可。
+<Hint type="warning">快照测试抛错不过，不一定是写代码有问题，有可能组件加入了新属性等原因导致的，属于正常的，手动更新一下快照即可。</Hint>
 
 
-> **注意**：使用snapshot test后组件的测试覆盖率将会大幅提高，部分会达到100%。
+<Hint type="warning">使用snapshot test后组件的测试覆盖率将会大幅提高，部分会达到100%。</Hint>
 
 
 ### 测试 **props**

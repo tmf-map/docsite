@@ -129,8 +129,9 @@ module.exports = {
       "react/security-guide"
     ],
     "附录": [
-      "react/appendix1-references",
-      "react/appendix2-related-websites"
+      "react/appendix/note",
+      "react/appendix/references",
+      "react/appendix/related-websites"
     ]
   },
   "web": {

@@ -1,3 +1,5 @@
+import Hint from '../../../src/components/Hint'
+
 # 5. 路由管理
 
 ## react-router
@@ -10,10 +12,10 @@ React Router被拆分成三个包：`react-router`,`react-router-dom`和`react-r
 
 ## @reach/router
 
-> **推荐**：路由管理推荐使用 [@reach/router](https://github.com/reach/router)，功能简洁而强大，没有 react-router 的繁琐，详情请参考官方文档：[https://reach.tech/router](https://reach.tech/router)
+<Hint type="better">路由管理推荐使用 [@reach/router](https://github.com/reach/router)，功能简洁而强大，没有 react-router 的繁琐，详情请参考官方文档：[https://reach.tech/router](https://reach.tech/router)</Hint>
 
 
-> **Tips**: 在 `@reach/router` 中，父路由组件有一个特殊的 props: **`*`** ，它作为一个特殊的 key，可以帮助父路由组件取到子路由组件的 path。
+<Hint type="tip">在 `@reach/router` 中，父路由组件有一个特殊的 props: **`*`** ，它作为一个特殊的 key，可以帮助父路由组件取到子路由组件的 path。</Hint>
 
 
 详细的 Rematch 介绍请参考该文章：[Reach-Router “真香👍”](https://zhuanlan.zhihu.com/p/37718650)。

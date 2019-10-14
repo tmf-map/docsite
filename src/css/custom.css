@@ -38,6 +38,10 @@
   --ifm-h2-vertical-rhythm-top: 1.8;
 }
 
+.markdown > h3 {
+  margin-bottom: var(--ifm-leading);
+}
+
 .markdown > pre {
   -webkit-font-smoothing: initial;
 }
