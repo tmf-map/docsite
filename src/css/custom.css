@@ -26,6 +26,8 @@
   --ifm-contents-link-color: rgb(116, 129, 141);
   --ifm-code-background: rgba(191, 191, 191, 0.25);
   --ifm-menu-color-background-active: #fff;
+  --ifm-navbar-padding-horizontal: 1.5rem;
+  --ifm-spacing-horizontal: 1.5rem;
   --ifm-navbar-shadow: 0 3px 8px 0 rgba(116, 129, 141, 0.1);
   --ifm-navbar-height: 70px;
   --ifm-heading-font-weight: 500;
@@ -73,54 +75,20 @@ blockquote ul {
   border-bottom: 1px solid rgba(131, 133, 133, 0.23);
 }
 
-.navbar .navbar__inner {
-  width: 1400px;
-  margin: 0 auto;
-}
-
 .navbar .navbar__logo {
   border-radius: 3px;
 }
 
 /* Sidebar Nav */
 .navbar + div > div:not(.row) {
-  width: 25%;
   background-color: rgba(185, 202, 218, 0.15);
-  padding-right: 0;
+  width: 310px;
 }
-
-.menu {
-  padding-left: calc((100% - 338px) * 2);
-}
-
-h1 {
-  font-size: 2rem !important;
-  margin-bottom: 2rem !important;
-  padding-top: var(--ifm-contents-padding-vertical);
-}
-
-h2 {
-  padding-top: 2.4rem;
-  font-weight: 700;
-  border-top: 2px solid var(--ifm-contents-border-color);
-}
-
-.prism-code {
-  font-size: inherit;
-}
-
-.prism-code + button {
-  top: calc(var(--ifm-pre-padding) - 2px);
-}
-
-main .container .col:first-child > div {
-  max-width: 50em;
-}
-
 @media (min-width: 997px) {
   .navbar + div:not(.container) > div > div {
     padding-top: 1.8rem;
     padding-bottom: 2rem;
+    padding-left: 1.2rem;
   }
 }
 
@@ -155,6 +123,18 @@ main .container .col:first-child > div {
   transform: rotateZ(0);
 }
 
+.container {
+  max-width: none;
+}
+
+.container .col:first-child > div {
+  max-width: 51em;
+}
+
+.container .col--3 {
+  padding-left: 0;
+}
+
 .container .margin-vert--xl {
   margin-bottom: 4rem !important;
   margin-top: 4rem !important;
@@ -176,6 +156,26 @@ main .container .col:first-child > div {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap; */
+}
+
+h1 {
+  font-size: 2rem !important;
+  margin-bottom: 2rem !important;
+  padding-top: var(--ifm-contents-padding-vertical);
+}
+
+h2 {
+  padding-top: 2.4rem;
+  font-weight: 700;
+  border-top: 2px solid var(--ifm-contents-border-color);
+}
+
+.prism-code {
+  font-size: inherit;
+}
+
+.prism-code + button {
+  top: calc(var(--ifm-pre-padding) - 2px);
 }
 
 /* dark theme */
