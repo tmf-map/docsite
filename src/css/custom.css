@@ -25,6 +25,9 @@
   --ifm-contents-border-color: rgba(191, 191, 191, 0.2);
   --ifm-contents-link-color: rgb(116, 129, 141);
   --ifm-code-background: rgba(191, 191, 191, 0.25);
+  --ifm-table-border-color: rgba(191, 191, 191, 0.3);
+  --ifm-table-stripe-background: rgba(185, 202, 218, 0.15);
+  --ifm-table-cell-padding: 0.7rem;
   --ifm-menu-color-background-active: #fff;
   --ifm-navbar-padding-horizontal: 1.5rem;
   --ifm-spacing-horizontal: 1.5rem;
@@ -69,6 +72,15 @@ blockquote p {
 
 blockquote ul {
   margin-bottom: 0;
+}
+
+table thead {
+  font-size: 14px;
+  text-align: left;
+}
+
+table tbody {
+  font-size: 13px;
 }
 
 .navbar.navbar--fixed-top {
@@ -123,7 +135,7 @@ blockquote ul {
   transform: rotateZ(0);
 }
 
-.container {
+main .container {
   max-width: none;
 }
 

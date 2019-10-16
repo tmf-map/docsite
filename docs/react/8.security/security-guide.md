@@ -1,5 +1,4 @@
 ---
-id: security-guide
 title: 安全规约
 sidebar_label: 安全规约
 ---

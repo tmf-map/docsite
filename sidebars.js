@@ -89,7 +89,7 @@ module.exports = {
     "2.组件进阶": [
       "react/2.advanced/render-props",
       "react/2.advanced/hoc",
-      "react/2.advanced/hooks",
+      "react/2.advanced/hook",
       "react/2.advanced/context",
       "react/2.advanced/portal",
     ],
@@ -125,8 +125,8 @@ module.exports = {
       "react/7.test/component-test",
       "react/7.test/state-test"
     ],
-    "8.安全规约": [
-      "react/security-guide"
+    "8.安全": [
+      "react/8.security/security-guide"
     ],
     "附录": [
       "react/appendix/note",
