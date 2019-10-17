@@ -28,6 +28,7 @@ module.exports = {
       "javascript/3.closure/summary-test",
     ],
     "4.函数": [
+      "javascript/4.function/function-overview",
       "javascript/4.function/context-this",
       "javascript/4.function/function-params",
       "javascript/4.function/constructor",
