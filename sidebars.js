@@ -77,6 +77,42 @@ module.exports = {
       "javascript/appendix2-related-websites"
     ]
   },
+  "css": {
+    "1.视觉格式化模型": [
+      "css/1.visual-formatting-model/basic-concept",
+      "css/1.visual-formatting-model/box-model",
+      "css/1.visual-formatting-model/positioning-scheme",
+      "css/1.visual-formatting-model/normal-flow",
+      "css/1.visual-formatting-model/float",
+      "css/1.visual-formatting-model/absolute-positioning",
+      "css/1.visual-formatting-model/z-index",
+    ],
+    "2.单位与字体": [
+      "css/2.unit-font/unit",
+      "css/2.unit-font/font",
+    ],
+    "3.布局": [
+      "css/3.layout/flex",
+      "css/3.layout/grid",
+      "css/3.layout/cols",
+      "css/3.layout/rows",
+    ],
+    "4.居中": [
+      "css/4.center/horizontal-center",
+      "css/4.center/vertical-middle",
+    ],
+    "5.动画": [
+      "css/5.animation/bezier-curve",
+      "css/5.animation/transition",
+      "css/5.animation/animation",
+    ],
+    "6.响应式设计": [
+      "css/6.responsive-design/media-query",
+    ],
+    "7.附录": [
+      "css/7.appendix/related-websites"
+    ]
+  },
   "react": {
     "1.组件基础": [
       "react/1.basic/jsx",
