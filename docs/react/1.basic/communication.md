@@ -30,7 +30,7 @@ import Hint from '../../../src/components/Hint'
 
 在 `container` 里面直接在 `mapStateToProps` 里面从状态树或通过 `selector` 获取父组件的状态。
 
-<Hint type="better">超过两个层级的通信，推荐使用 Redux 去管理这个状态。</Hint>
+<Hint type="best">超过两个层级的通信，推荐使用 Redux 去管理这个状态。</Hint>
 
 
 ### 方式二：逐级传递

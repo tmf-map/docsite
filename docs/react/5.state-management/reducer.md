@@ -12,11 +12,11 @@ import Hint from '../../../src/components/Hint'
 
 <Hint type="must">Reducer 一定要是纯函数，禁止使用非纯函数。</Hint>
 
-<Hint type="better">Reducer 函数应该尽量简单，只是修改 Store 的操作，尽量不写业务代码。</Hint>
+<Hint type="best">Reducer 函数应该尽量简单，只是修改 Store 的操作，尽量不写业务代码。</Hint>
 
 ## Reducer 模块化
 
-<Hint type="better">不同的模块应该有不同的 Reducer，最后通过 combineReducers 来 combine 到一起。</Hint>
+<Hint type="best">不同的模块应该有不同的 Reducer，最后通过 combineReducers 来 combine 到一起。</Hint>
 
 【问题】Reducer 的划分后之间的状态共享问题？否则一个 Reducer 会越来越大，case 的情况会越来越多，拆分后如何能很好地进行 Reducer 之间的通信和状态共享？
 
@@ -46,5 +46,5 @@ Immutable 有两个库：
 <Hint type="must">Reducer 初始化 initialState 时必须使用 Immutable 的数据类型，防止在 Reducer 外的其他地方对 Store 发生修改操作。</Hint>
 
 
-<Hint type="better">Reducer 初始化 initialState 时使用 **immutable-js** 时建议用 Immutable.Map 方法而不是 fromJS 方法，效率更高。</Hint>
+<Hint type="best">Reducer 初始化 initialState 时使用 **immutable-js** 时建议用 Immutable.Map 方法而不是 fromJS 方法，效率更高。</Hint>
 

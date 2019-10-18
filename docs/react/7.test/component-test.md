@@ -164,13 +164,13 @@ Enzyme 提供 3 种不同的方式来测试组件：
 
 [Enzyme Selector](http://airbnb.io/enzyme/docs/api/selector.html)
 
-<Hint type="better">一般组件的快照测试使用 shallow 方法即可。</Hint>
+<Hint type="best">一般组件的快照测试使用 shallow 方法即可。</Hint>
 
 
-<Hint type="better">如果要测试子组件，并且对组件的生命周期等方法不怎么关注，使用 render 方法。</Hint>
+<Hint type="best">如果要测试子组件，并且对组件的生命周期等方法不怎么关注，使用 render 方法。</Hint>
 
 
-<Hint type="better">如果要测试组件生命周期方法、子组件，使用 mount 方法。</Hint>
+<Hint type="best">如果要测试组件生命周期方法、子组件，使用 mount 方法。</Hint>
 
 
 ## 编写组件测试

@@ -11,9 +11,13 @@ import Hint from '../../../src/components/Hint'
 
 `Object.defineProperty` 可以设置对象属性的数据属性和访问器属性。
 
-数据属性分为四种： `configurable` 、 `enumerable、` `writable` 和 `value` 。在不使用 `Object.defineProperty` 来定义对象时，四种的默认值都是 true，如果使用该方法时，默认值都是false.
+### 数据属性
 
-`configurable` 字段配置对象属性是否可以删除属性。
+数据属性分为四种： `configurable` 、 `enumerable` 、 `writable` 和 `value` 。
+
+<Hint type="warning">在不使用 `Object.defineProperty` 来定义对象时，四种的默认值都是 true ，如果使用该方法时，默认值都是 false 。</Hint>
+
+`configurable` 字段配置对象属性是否可以删除属性：
 
 ```js
 var person = {}
@@ -22,7 +26,7 @@ delete person.name
 console.log(person) //{name: 'robbie'}
 ```
 
-enumerable配置属性是否是可枚举类型
+`enumerable` 配置属性是否是可枚举类型：
 
 ```js
 var person = {}
@@ -30,7 +34,7 @@ Object.defineProperty(person, 'name', { enumerable: false, value: 'robbie'});
 Object.keys(person) // []
 ```
 
-writable用来配置属性是否可修改
+`writable` 用来配置属性是否可修改：
 
 ```js
 var person = {}
@@ -39,7 +43,7 @@ person.name = 'sherry'
 console.log(person) //{name: 'robbie'}
 ```
 
-value配置属性值
+`value` 配置属性值：
 
 ```js
 var person = {}
@@ -47,7 +51,9 @@ Object.defineProperty(person, 'name', { value: 'robbie' });
 console.log(person) // {name: "robbie"}
 ```
 
-访问器属性：在读取访问器属性的时候会访问getter属性，在写入访问器属性时会调用setter
+### 访问器属性
+
+在读取访问器属性的时候会访问 `getter` 属性，在写入访问器属性时会调用 `setter` ：
 
 ```js
 var obj = {
@@ -111,6 +117,12 @@ function (..arg)
 [【译】JS解构的五种有趣用法](https://juejin.im/post/5d673044f265da03d60f12f7)  
 可迭代 iterable
 
+## 变量作为对象的 key
+
+
+## 对象中的 this
+
+
 ## 属性的可枚举性
 
 对象的每个属性都有一个描述对象（Descriptor），用来控制该属性的行为。`Object.getOwnPropertyDescriptor` 方法可以获取该属性的描述对象。
@@ -137,7 +149,7 @@ Object.getOwnPropertyDescriptor(obj, 'foo')
 
 这四个操作之中，前三个是 ES5 就有的，最后一个 `Object.assign()` 是 ES6 新增的。
 
-<Hint type="warning">只有 `for...in` 会返回继承的属性，其他三个方法都会忽略继承的属性，只处理对象自身的属性。</Hint>
+<Hint type="warning">只有 `for...in` 会遍历继承的属性，其他三个都会忽略继承的属性，只处理对象自身的属性。</Hint>
 
 实际上，引入“可枚举”（enumerable）这个概念的最初目的，就是让某些属性可以规避掉 `for...in` 操作，不然所有内部属性和方法都会被遍历到。比如，对象原型的 `toString` 方法，以及数组的 `length` 属性，就通过“可枚举性”，从而避免被 `for...in` 遍历到。
 
@@ -160,9 +172,11 @@ Object.getOwnPropertyDescriptor(class {foo() {}}.prototype, 'foo').enumerable
 
 总的来说，操作中引入继承的属性会让问题复杂化，大多数时候，我们只关心对象自身的属性。
 
-<Hint type="better">尽量不要用 `for...in` 循环，而用 `Object.keys()`代替。</Hint>
+<Hint type="best">尽量不要用 `for...in` 循环，而用 `Object.keys()`代替。</Hint>
 
 ## 属性的遍历
+
+### 五大方法
 
 ES6 一共有 5 种方法可以遍历对象的属性。
 
@@ -186,13 +200,11 @@ ES6 一共有 5 种方法可以遍历对象的属性。
 
 `Reflect.ownKeys` 返回一个数组，包含对象自身的所有键名，不管键名是 Symbol 或字符串，也不管是否可枚举。基本就是 `getOwnPropertyNames` 和 `Object.getOwnPropertySymbols` 的合体。
 
-<Hint type="warning">不管是否可枚举，不管是不是Symbol，只要是对象自身的，都会遍历。</Hint>
+<Hint type="warning">不管是否可枚举，不管是不是Symbol，只要是对象自身的，`Reflect.ownKeys()` 都会遍历。</Hint>
 
 <Hint type="must">`Reflect.ownKeys()` 方法的第一个参数必须是对象，否则会报错。</Hint>
 
-## 变量作为对象的 key
-
-## 对象 key 顺序
+### key 的顺序
 
 对象 key 的顺序问题，你首先需要知道三点：
 
@@ -219,17 +231,14 @@ Reflect.ownKeys(obj) // ["1", "2", "3", "m", "b", "a", Symbol(b), Symbol(a)]
 前面说的 5 种方法遍历对象的键名，都遵守同样的属性遍历的次序规则：
 
 - 首先遍历所有 integer-like keys (包括 `1`, 和 `'1'`) 按照升序排列，按照升序排列。
-- 其次遍历所有 normal keys (包括加 `''` 和不加 `''`)，按照加入时间升序排列。
-- 最后遍历所有 symbol keys，按照加入时间升序排列。
+- 其次遍历所有 normal keys (包括加 `''` 和不加 `''`)，按照定义的顺序排列。
+- 最后遍历所有 symbol keys，按照定义的顺序排列。
 
 <Hint type="must">如果对象的 key 为 integer-like ，千万不要依赖其定义的顺序。</Hint>
 
 <Hint type="warning">如果在 Chrome 控制台上直接输入 `obj` 然后回车，打印出来的顺序还和 m 值的类型有关。这个顺序并不完全符合以上规则，但这只是控制台的表现，对实际的代码并无影响。</Hint>
 
 比如 m 为 函数的时候，打印出 `{1: "", 2: "", 3: "", b: "", a: "", Symbol(b): "", Symbol(a): "", m: ƒ}` ， 而 m 为字符串或数组的时候顺序却又在 3 和 b 之间。
-
-
-## 对象中的 this
 
 
 ## 参考资料

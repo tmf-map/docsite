@@ -10,7 +10,7 @@ import Hint from '../../../src/components/Hint'
 
 presentational 组件理论上可以全部为函数式组件，状态的监听和控制基本上由 Redux 控制即可。
 
-<Hint type="better">presentational 组件可以嵌套粒度更小的函数式组件，避免该 presentational 组件 v-dom 过大。</Hint>
+<Hint type="best">presentational 组件可以嵌套粒度更小的函数式组件，避免该 presentational 组件 v-dom 过大。</Hint>
 
 
 <Hint type="must">更小粒度的函数式组件的命名以类似 renderComponent 这样方式命名。</Hint>

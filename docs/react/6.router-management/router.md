@@ -8,7 +8,7 @@ import Hint from '../../../src/components/Hint'
 
 Router 翻译过来即“`路由器`“，对于 Web 项目，存在 `<BrowserRouter>`与`<HashRouter>`两种组件。当存在服务器来管理动态请求时，使用 `<BrowserRouter>` 组件，而 `<HashRouter>` 被用于静态网站。
 
-<Hint type="better">通常推荐选择 &lt;BrowserRouter&gt; ，但如果你的网站仅用来呈现静态文件，那么 &lt;HashRouter&gt; 将会是一个好选择。</Hint>
+<Hint type="best">通常推荐选择 &lt;BrowserRouter&gt; ，但如果你的网站仅用来呈现静态文件，那么 &lt;HashRouter&gt; 将会是一个好选择。</Hint>
 
 
 ## 渲染 &lt;Router&gt;

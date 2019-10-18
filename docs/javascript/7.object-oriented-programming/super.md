@@ -137,7 +137,7 @@ class Button extends React.Component {
 
 <Hint type="warning">如果我们没有传递参数，React 会在我们的类组件 `constructor` **调用之后**，为我们的组件实例分配 `props` 。</Hint>
 
-<Hint type="better">React 官方文档里面有一句 [Class components should always call the base constructor with props](https://reactjs.org/docs/state-and-lifecycle.html#adding-local-state-to-a-class).</Hint>
+<Hint type="best">React 官方文档里面有一句 [Class components should always call the base constructor with props](https://reactjs.org/docs/state-and-lifecycle.html#adding-local-state-to-a-class).</Hint>
 
 ## 更多阅读
 

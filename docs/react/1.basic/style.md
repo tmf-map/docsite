@@ -40,9 +40,9 @@ import cx from 'classnames';
 />
 ```
 
-<Hint type="better">不要使用类似 `clazz` 等方式传入父组件的类名，直接将 `className` 挂到 props 上往下传递，通过 cx 或 `className` 动态取都可以。</Hint>
+<Hint type="best">不要使用类似 `clazz` 等方式传入父组件的类名，直接将 `className` 挂到 props 上往下传递，通过 cx 或 `className` 动态取都可以。</Hint>
 
-<Hint type="better">库名用 cx 来命名，防止与 `className` 发生歧义。</Hint>
+<Hint type="best">库名用 cx 来命名，防止与 `className` 发生歧义。</Hint>
 
 
 ## cssModules

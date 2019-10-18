@@ -5,7 +5,7 @@ sidebar_label: I 规约说明
 
 import Hint from '../../../src/components/Hint'
 
-<Hint type="better">最好遵守，不遵守也不会出错</Hint>
+<Hint type="best">最好遵守，不遵守也不会出错</Hint>
 
 <Hint type="must">必须遵守，不遵守很有可能出错</Hint>
 

@@ -3,7 +3,7 @@ import marked from 'marked'
 import './Hint.css'
 
 const colorMap = {
-    better: {
+    best: {
         name: '推荐',
         color: '#50c610',
         icon: (

@@ -53,7 +53,7 @@ action 分为 syncAction 和 asyncAction 。
 <Hint type="must">syncAction 只单纯地返回一个 action 对象，是一个无副作用的纯函数。</Hint>
 
 
-<Hint type="better">syncAction 建议 export 出来。</Hint>
+<Hint type="best">syncAction 建议 export 出来。</Hint>
 
 
 ## Async Action
@@ -92,6 +92,6 @@ export const getTotalAmount = () => (dispatch, getState, utils) => {
 };
 ```
 
-<Hint type="better">asyncAction 中 request, success, error 建议不要 export 出来。</Hint>
+<Hint type="best">asyncAction 中 request, success, error 建议不要 export 出来。</Hint>
 
 

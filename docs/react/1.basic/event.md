@@ -23,7 +23,7 @@ VirtualDOM 在内存中是以 **对象** 的形式存在，React 基于 VirtualD
 <Hint type="warning">React 使用事件委托机制，会将所有的事件都绑定在最外层\(`document`\)元素上，依赖事件的冒泡机制完成委派，在冒泡阶段处理事件，不支持捕获阶段处理事件。</Hint>
 
 
-<Hint type="better">阻止合成事件间的冒泡，用 `e.stopPropagation()` 。</Hint>
+<Hint type="best">阻止合成事件间的冒泡，用 `e.stopPropagation()` 。</Hint>
 
 
 ### 原生事件
@@ -63,10 +63,10 @@ reactEvent 是封装好的事件，它是在 document 的回调里进行封装�
 <Hint type="warning">原生事件中阻止冒泡是可以阻止合成事件的冒泡。</Hint>
 
 
-<Hint type="better">阻止合成事件与最外层 document 上的事件间的冒泡，用 `e.nativeEvent.stopImmediatePropagation()` 。</Hint>
+<Hint type="best">阻止合成事件与最外层 document 上的事件间的冒泡，用 `e.nativeEvent.stopImmediatePropagation()` 。</Hint>
 
 
-<Hint type="better">阻止合成事件与除最外层 document 上的原生事件上的冒泡，通过判断 e.target 来避免。</Hint>
+<Hint type="best">阻止合成事件与除最外层 document 上的原生事件上的冒泡，通过判断 e.target 来避免。</Hint>
 
 
 ## 合成事件的绑定
@@ -99,7 +99,7 @@ onChange = {e => this.handleChange(e)}
 <Hint type="warning">这种方法与第一种方法一样，同样存在潜在的性能问题。</Hint>
 
 
-<Hint type="better">函数式组件优先使用箭头函数隐式绑定this。</Hint>
+<Hint type="best">函数式组件优先使用箭头函数隐式绑定this。</Hint>
 
 
 #### 双冒号隐式绑定：
@@ -138,7 +138,7 @@ constructor(props) {
 <Hint type="warning">组件实例会重复绑定该方法。</Hint>
 
 
-<Hint type="better">class 类型的组件优先使用该方法，也是性能最好的。</Hint>
+<Hint type="best">class 类型的组件优先使用该方法，也是性能最好的。</Hint>
 
 
 #### class 属性中使用 = 和箭头函数：

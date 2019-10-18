@@ -10,10 +10,10 @@ import Hint from '../../../src/components/Hint'
 
 mapStateToProps 中从状态树获取数据的方法也被叫做 selector，它主要用于从 redux 状态树获取数据时候的过滤和筛选，包括直接从状态树获取的数据的方法和计算推导状态的方法。
 
-<Hint type="better">在`mapStateToProps`中尽量避免使用`_.get`去拿数据，从状态树推导数据的方法尽可能地封装到 selector 里。</Hint>
+<Hint type="best">在`mapStateToProps`中尽量避免使用`_.get`去拿数据，从状态树推导数据的方法尽可能地封装到 selector 里。</Hint>
 
 
-<Hint type="better">在所有地方使用 selector，即使是在一个细小的位置。这样的好处是你很容易在多个 selector 中发现重复的逻辑，抽出共用的方法。即使是从状态树上直接获取的状态（非推导状态），如果有多个地方在使用，也应当放在 selector 中，避免重复逻辑。</Hint>
+<Hint type="best">在所有地方使用 selector，即使是在一个细小的位置。这样的好处是你很容易在多个 selector 中发现重复的逻辑，抽出共用的方法。即使是从状态树上直接获取的状态（非推导状态），如果有多个地方在使用，也应当放在 selector 中，避免重复逻辑。</Hint>
 
 
 ## reselect 计算缓存

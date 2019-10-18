@@ -30,10 +30,10 @@ connect: 一个柯里化函数，函数将被调用两次。
 
 connect 函数不会修改传入的 React 组件，返回的是一个新的已与 Redux store 连接的组件。
 
-<Hint type="better">mapStateToProps 和 mapDispatchToProps 里面的对象保持扁平化，不要发生嵌套。</Hint>
+<Hint type="best">mapStateToProps 和 mapDispatchToProps 里面的对象保持扁平化，不要发生嵌套。</Hint>
 
 
-<Hint type="better">connect 的参数名字可以自定义，但推荐使用默认的参数名字。</Hint>
+<Hint type="best">connect 的参数名字可以自定义，但推荐使用默认的参数名字。</Hint>
 
 
 * **mapStateToProps\(state, ownProps?\): stateProps** 在 store 发生改变的时候才会调用，然后把返回的结果作为组件的 props。

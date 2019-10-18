@@ -19,7 +19,7 @@ import Hint from '../../../src/components/Hint'
 
 通过这种方式，不用考虑性能的问题，通过 babel 转义后的 `... 运算符` 性能和原生的一致。
 
-<Hint type="better">请只传递 component 需要的 props，不要滥用。传得太多，或者层次传得太深，都会加重 shouldComponentUpdate 里面的数据比较负担，因此请慎用spread attributes。</Hint>
+<Hint type="best">请只传递 component 需要的 props，不要滥用。传得太多，或者层次传得太深，都会加重 shouldComponentUpdate 里面的数据比较负担，因此请慎用spread attributes。</Hint>
 
 
 ## prop-types

@@ -15,13 +15,13 @@ import Hint from '../../../src/components/Hint'
 | 生命周期 | 有 | 无 |
 | 使用场景 | 需要用到生命周期，需要维护自身的状态，比如处理用户的输入 | 不需要生命周期，不需要维护自身的状态，所有的状态都通过 props 传入 |
 
-<Hint type="better">函数式组件必须使用箭头函数的形式定义。</Hint>
+<Hint type="best">函数式组件必须使用箭头函数的形式定义。</Hint>
 
-<Hint type="better">如果有多个函数式组件嵌套，里面的函数式组件 `props` 参数推荐使用 `_props` 替代。</Hint>
+<Hint type="best">如果有多个函数式组件嵌套，里面的函数式组件 `props` 参数推荐使用 `_props` 替代。</Hint>
 
-<Hint type="better">组件不需要生命周期且不需要维护自身状态的时候，优先使用函数式组件。</Hint>
+<Hint type="best">组件不需要生命周期且不需要维护自身状态的时候，优先使用函数式组件。</Hint>
 
-<Hint type="better">presentational 组件优先使用函数式组件。</Hint>
+<Hint type="best">presentational 组件优先使用函数式组件。</Hint>
 
 ## 受控组件与非受控组件
 

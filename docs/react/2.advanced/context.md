@@ -108,7 +108,7 @@ React 组件允许 Consumers 订阅 context 的改变。
 
 每当 Provider 的值发生改变时, 作为 Provider 后代的所有 Consumers 都会重新渲染。 从 Provider 到其后代的 Consumers 传播不受 `shouldComponentUpdate` 方法的约束，因此即使祖先组件没有更新，后代 Consumer 也会被更新。
 
-<Hint type="better">因为内部通过使用与 `Object.is ` 相同的算法比较新值和旧值来确定变化。所以为了避免一些可能触发意外的渲染，可以将提升 `value` 到父节点的 state 里。</Hint>
+<Hint type="best">因为内部通过使用与 `Object.is ` 相同的算法比较新值和旧值来确定变化。所以为了避免一些可能触发意外的渲染，可以将提升 `value` 到父节点的 state 里。</Hint>
 
 因为 context 使用 `reference identity` 确定何时重新渲染，在 Consumer 中，当一个 Provider 的父节点重新渲染的时候，有一些问题可能触发意外的渲染。例如下面的代码，所有的 Consumer 在 Provider 重新渲染之时，每次都将重新渲染，因为一个新的对象总是被创建对应 Provider 里的 `value：`
 
