@@ -81,14 +81,17 @@ module.exports = {
     "1.视觉格式化模型": [
       "css/1.visual-formatting-model/basic-concept",
       "css/1.visual-formatting-model/box-model",
-      "css/1.visual-formatting-model/positioning-scheme",
       "css/1.visual-formatting-model/normal-flow",
       "css/1.visual-formatting-model/float",
-      "css/1.visual-formatting-model/absolute-positioning",
+      "css/1.visual-formatting-model/position",
       "css/1.visual-formatting-model/z-index",
     ],
     "2.单位与字体": [
-      "css/2.unit-font/unit",
+      "css/2.unit-font/px",
+      "css/2.unit-font/percentage",
+      "css/2.unit-font/em",
+      "css/2.unit-font/rem",
+      "css/2.unit-font/viewport",
       "css/2.unit-font/font",
     ],
     "3.布局": [
@@ -100,6 +103,7 @@ module.exports = {
     "4.居中": [
       "css/4.center/horizontal-center",
       "css/4.center/vertical-middle",
+      "css/4.center/horizontal-vertical-center",
     ],
     "5.动画": [
       "css/5.animation/bezier-curve",

@@ -1,11 +1,12 @@
 import React from 'react'
 
 function Img (props) {
-    const { align, width, src}  = props
+    const { align, width, src, legend} = props
     if (align) {
         return (
             <div align={align}>
                 <img src={src} width={width} />
+                {legend && <p>{legend}</p>}
             </div>
         )
     }
