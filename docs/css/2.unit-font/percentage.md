@@ -115,7 +115,51 @@ html, body{
 
 例如，一个元素的 `font-size` 是 12px ，那么 `line-height: 150%` 的效果是 `line-height: 18px` 。
 
-<Hint type="tip">`line-height: 1.5` 和 `line-height: 150%` 效果是一样的。</Hint>
+<Hint type="tip">`line-height: 1.5` 和 `line-height: 150%` 对于当前元素效果是一样的。</Hint>
+
+#### 百分比与无单位值之间的区别
+
+line-height 为百分比
+
+```css
+body {
+  font-size: 14px;
+  line-height: 150%;
+}
+p {
+  font-size: 26px;
+}
+
+/* 结果就是 */ 
+body {
+  line-height:21px; /* 14*150%=21 */
+}
+p {
+  line-heigt:21px; /* 继承父元素 */
+}
+```
+
+line-height 为数值
+
+```css
+body {
+  font-size: 14px;
+  line-height: 1.5;
+}
+p {
+  font-size: 26px;
+}
+
+/* 结果就是 */ 
+body {
+  line-height:21px; /* 14*1.5=21 */
+}
+p {
+  line-heigt:39px; /* 26*1.5=39 */
+}
+```
+
+<Hint type="best">`设置 `line-height` 的推荐使用无单位，这样子元素继承的也是无单位的值，而不是计算后的特定值。</Hint>
 
 ### vertical-align
 
@@ -144,3 +188,7 @@ html, body{
 <Hint type="warning">当百分比值用于可继承属性时，只有结合参照元素计算后的**绝对值会被继承**，而不是百分比值本身。</Hint>
 
 例如，一个元素的 `font-size` 是 14px，并定义了 `line-height:150%` ，那么该元素的下一级子元素继承到的 `line-height` 就是 21px ，而不会再和子元素自己的 `font-size` 有关。
+
+## 参考资料
+
+1. [CSS line-height 百分比和数值的区别, by: zhongxia245](https://github.com/zhongxia245/blog/issues/57)
