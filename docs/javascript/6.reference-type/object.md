@@ -5,7 +5,21 @@ sidebar_label: 对象
 
 import Hint from '../../../src/components/Hint'
 
-<img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/TUpxA2.jpg'/>
+- 对象属性模型的相关方法
+  - `Object.getOwnPropertyDescriptor()`: 获取某个属性的描述对象。
+  - `Object.defineProperty()`: 通过描述对象，定义某个属性。
+  - `Object.defineProperties()`: 通过描述对象，定义多个属性。
+- 控制对象状态的方法
+  - `Object.preventExtensions()`: 防止对象扩展。
+  - `Object.isExtensible()`: 判断对象是否可扩展。
+  - `Object.seal()`:禁止对象配置。
+  - `Object.isSealed()`: 判断一个对象是否可配置。
+  - `Object.freeze()`: 冻结一个对象。
+  - `Object.isFrozen()`: 判断一个对象是否被冻结。
+- 原型链相关方法
+  - `Object.create()`: 该方法可以指定原型对象和属性，返回一个新的对象。
+  - `Object.getPrototypeOf()`: 获取对象的 `prototype` 对象。
+
 
 ## Object.defineProperty
 
@@ -111,11 +125,35 @@ console.log('name', App.name) // 'asgh'
 
 ## rest v.s spread
 
-区别 以及对应es5的代码  
-= 左边是，右边是  
-function (..arg)  
-[【译】JS解构的五种有趣用法](https://juejin.im/post/5d673044f265da03d60f12f7)  
-可迭代 iterable
+- `=` 左边是 Rest，右边是 Spread
+- 函数参数也是 Rest，解构的值要是可迭代的(iterable)。
+
+#### Rest Parameter [ …rest]
+
+```js
+var myName = ["Marina" , "Magdy" , "Shafiq"] ;
+const [firstName , ...familyName] = myName ;
+console.log(firstName); // Marina ;
+console.log(familyName); // [ "Magdy" , "Shafiq"] ;
+```
+
+```js
+function myData(...args){
+  console.log(args) ; // ["Marina",24,"Front-End Developer"]
+}
+myData("Marina",24,"Front-End Developer") ;
+```
+
+Rest 就像是把多个值压缩成一个值，好像大喊一声，“其余的人都给我过来！”。
+
+#### Spread Operator […spread]
+
+```js
+var myName = ["Marina" , "Magdy" , "Shafiq"];
+var newArr = [...myName ,"FrontEnd" , 24];
+console.log(newArr) ; // ["Marina" , "Magdy" , "Shafiq" , "FrontEnd" , 24 ] ;
+```
+Spread 就像是把一个值解压成多个值，好像大喊一声，“原地解散！”。
 
 ## 变量作为对象的 key
 
@@ -244,4 +282,6 @@ Reflect.ownKeys(obj) // ["1", "2", "3", "m", "b", "a", Symbol(b), Symbol(a)]
 ## 参考资料
 
 1. [属性的可枚举性和遍历，作者：阮一峰](http://es6.ruanyifeng.com/#docs/object#%E5%B1%9E%E6%80%A7%E7%9A%84%E5%8F%AF%E6%9E%9A%E4%B8%BE%E6%80%A7%E5%92%8C%E9%81%8D%E5%8E%86)
-2. [stackoverflow: Does JavaScript Guarantee Object Property Order? ](https://stackoverflow.com/a/38218582)
+1. [stackoverflow: Does JavaScript Guarantee Object Property Order? ](https://stackoverflow.com/a/38218582)
+1. [ES6: What is the difference between Rest and Spread? By Marina Shafiq](https://medium.com/javascript-in-plain-english/es6-spread-parameter-vs-rest-operator-5e3c924c4e1f)
+1. [【译】JS解构的五种有趣用法](https://juejin.im/post/5d673044f265da03d60f12f7)
