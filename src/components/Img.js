@@ -2,9 +2,9 @@ import React from 'react'
 
 function Img (props) {
     const { align, width, src, legend} = props
-    if (align) {
+    if (align || legend) {
         return (
-            <div align={align}>
+            <div align={align || 'center'}>
                 <img src={src} width={width} />
                 {legend && <p>{legend}</p>}
             </div>
