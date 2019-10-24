@@ -16,7 +16,7 @@
   --ifm-color-primary-lightest: #d6f2ff;
   --ifm-color-primary-lighter: #ade5ff;
   --ifm-color-primary-light: #5ccbff;
-  --ifm-color-primary: #00aeff;
+  --ifm-color-primary: rgb(0, 122, 255);
   --ifm-color-primary-dark: #0085cc;
   --ifm-color-primary-darker: #0065a3;
   --ifm-color-primary-darkest: #00508a;
@@ -25,6 +25,7 @@
   --ifm-contents-border-color: rgba(191, 191, 191, 0.2);
   --ifm-contents-link-color: rgb(116, 129, 141);
   --ifm-code-background: rgba(191, 191, 191, 0.25);
+  --ifm-hero-background-color: #24292e;
   --ifm-table-border-color: rgba(191, 191, 191, 0.3);
   --ifm-table-stripe-background: rgba(185, 202, 218, 0.15);
   --ifm-table-cell-padding: 0.7rem;
@@ -34,8 +35,27 @@
   --ifm-navbar-shadow: 0 3px 8px 0 rgba(116, 129, 141, 0.1);
   --ifm-navbar-height: 70px;
   --ifm-heading-font-weight: 500;
+  
+  --my-board--background: rgba(185, 202, 218, 0.15);
 
   -webkit-font-smoothing: antialiased;
+}
+
+/* homepage banner */
+.hero.hero--primary {
+  color: rgba(255,255,255,0.65);
+  background-color: #24292e;
+  background-image: url(https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/homepage-star-bg.svg),linear-gradient(#191c20, #24292e 15%);
+  background-repeat: repeat-x;
+  background-position: center 0, 0 0, 0 0;
+  padding: 8rem 0 16rem 0;
+}
+
+header .button--outline {
+  color: #d1d1d1 !important;
+}
+header .button--outline:hover {
+  color: #333 !important;
 }
 
 .markdown > h2 {
@@ -60,7 +80,7 @@
   border-top-right-radius: var(--ifm-global-radius);
   /* border: 1px solid var(--ifm-contents-border-color);
   border-bottom: none; */
-  background-color: rgba(185, 202, 218, 0.15);
+  background-color: var(--my-board--background);
   line-height: 16px;
   font-size: 14px;
 }
@@ -88,8 +108,17 @@
   margin-bottom: 5px;
 }
 
+.inserted-sign.inserted {
+  font-style: normal !important;
+}
+
+.deleted-sign.deleted {
+  font-style: normal !important;
+  color: rgba(255, 117, 114, 0.94) !important;
+}
+
 blockquote {
-  background-color: rgba(185, 202, 218, 0.15);
+  background-color: var(--my-board--background);
   border-left: 4px solid rgba(130, 130, 136, 0.4);
   border-radius: 3px;
   padding: 15px 30px 15px 15px;
@@ -122,7 +151,7 @@ table tbody {
 
 /* Sidebar Nav */
 .navbar + div > div:not(.row) {
-  background-color: rgba(185, 202, 218, 0.15);
+  background-color: var(--my-board--background);
   width: 310px;
 }
 @media (min-width: 997px) {
@@ -222,6 +251,7 @@ h2 {
 /* dark theme */
 
 html[data-theme="dark"] {
+  --ifm-color-primary: rgb(10, 132, 255);
   --ifm-navbar-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
 }
 
