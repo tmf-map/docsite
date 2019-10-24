@@ -6,21 +6,88 @@ sidebar_label: Store
 
 import Hint from '../../../src/components/Hint'
 
-## Store 和 reducer
+## createStore 实现过程
 
-Store 其实和 reducer 息息相关。
+### 抽象出 dispatch 和 getState
 
-一个Redux app中只有一个store，所有的数据都在这个store中，而通过：
+将状态的改变和获取抽象成两个函数来操作：
+
+- dispatch
+- getState
+
+```diff js
+// redux :: (a -> b -> a) -> a -> [b] -> a
+function redux(reducer, initialState, eventStream) {
+  let state = initialState;
+  let action;
++ const dispatch = function (action) {
++   state = reducer(state, action);
++ }
++ const getState = function () {
++   return state;
++ }
+  for (let i = 0; i < eventStream.length; i++) {
+    let action = eventStream[i];
+-   state = reducer(state, action);
++   dispatch(action);
+  }
+- return state;
++ return getState();
+}
+```
+
+### 从 redux 进化到 createStore
+
+- 将 `redux` 函数改名为 `createStore` 不再默认暴露
+- `getState` 作为对象接口的形式暴露，同时形成了闭包 state 将会常驻内存，GC 不会回收。
+
+```diff js
+- // redux :: (a -> b -> a) -> a -> [b] -> a
++ // createStore :: (a -> b -> a) -> a -> [b] -> c
+- function redux(reducer, initialState, eventStream) {
++ function createStore(reducer, initialState, eventStream) {
+    let state = initialState;
+    let action;
+    const dispatch = function (action) {
+      state = reducer(state, action);
+    }
+-   const getState = function () {
+-     return state;
+-   }
+    for (let i = 0; i < eventStream.length; i++) {
+      let action = eventStream[i];
+      state = reducer(state, action);
+      dispatch(action);
+    }
+-   return getState();
++   return {
++     getState: function () {
++       return state;
++     }
++   }
+  }
++ export {
++   createStore
++ }
+```
+
+```diff
+- redux(reducer, initialState, eventStream);
++ const store = createStore(reducer, initialState, eventStream);
++ store.getState();
+```
+
+## 官方 createStore
+
+一个 Redux App 中只有一个 store ，所有的数据都在这个 store 中，通过：
 
 ```javascript
 createStore(reducer, [initState]) // initState 是可选参数
 ```
 
-也就是说决定 store 的是reducer，reducer 决定 store中存放什么样的数据、处理什么样的数据、处理数据的方式。
-
 Store 在创建的时候内部会执行 `dispatch({ type: ActionTypes.INIT })`，用来初始化整个 Store 的数据结构，同时获取 Reducer 中的默认数据。
 
-之所以能拿到全部的数据结构，是因为在 `dispatch({ type: ActionTypes.INIT })` 的时候，所有的Reducer 都会执行，并根据 Reducer 的 combine 结构生成数据。
+之所以能拿到全部的数据结构，是因为在 `dispatch({ type: ActionTypes.INIT })` 的时候，所有的 Reducer 都会执行，并根据 Reducer 的 combine 结构生成数据。
 
 <Hint type="warning">在 Redux 内，每执行一次 dispatch，所有的 Reducer 都会执行。</Hint>
 

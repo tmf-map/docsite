@@ -6,15 +6,58 @@ sidebar_label: Action
 
 import Hint from '../../../src/components/Hint'
 
+## 思想精华二：将所有事件抽象为 action
+
+采用**化整为零**的思想，将事件流抽象成一个个小 action，再将 `dispatch` 暴露出来，这样便可以将 `eventStream` 参数从 `createStore` 去掉，让用户灵活地从外部随时通过调用 `dispatch` 从而控制状态的“累加”。
+
+```diff js
+- // createStore :: (a -> b -> a) -> a -> [b] -> c
++ // createStore :: (a -> b -> a) -> a -> c
+- function createStore(reducer, initialState, eventStream) {
++ function createStore(reducer, initialState) {
+    let state = initialState;
+-   let action;
+-   for (let i = 0; i < eventStream.length; i++) {
+-     let action = eventStream[i];
+-     state = reducer(state, action);
+-     dispatch(action);
+-   }
+    return {
+      getState: function () {
+        return state;
+      },
++     dispatch: function(action) {
++       state = reducer(state, action)
++     }
+    }
+  }
+```
+
+```diff
+- const eventStream = [
+-   {type: 'SET_NAME', payload: {name: 'Robbie'}},
+-   {type: 'SET_AGE', payload: {age: 16}}
+- ];
+- const store = createStore(reducer, initialState, eventStream);
++ const store = createStore(reducer, initialState);
++ window.setName = function () {
++   const action = {type: 'SET_NAME', payload: {name: 'Robbie'}};
++   store.dispatch(action);
++ };
++ window.setAge = function () {
++   const action = {type: 'SET_AGE', payload: {age: 16}}
++   store.dispatch(action)
++ };
+```
+
+每经过一个 action，state 就进行相应地更新，这样也就形成流 state 关于 action 的线性函数： _`state = f(action)`_ ，这也是 Redux DevTools 可以通过 timeline 控制界面现实的原因。
+
 ## Action Type
 
 action type 是对每一个 action 的一个标识，主要用来 reducer 中根据不同的 action type 来更新状态树。
 
-<Hint type="must">action type 统一放在 actionTypes 文件夹下，每个文件以 `.type.js` 结尾。</Hint>
 
-
-<Hint type="must">action type 命名规范：状态树一级属性名称\_动词\_操作对象，且都为大写字母。</Hint>
-
+<Hint type="best">action type 命名规范：状态树一级属性名称\_动词\_操作对象，且都为大写字母。</Hint>
 
 示例：
 
@@ -26,8 +69,7 @@ export default {
 }
 ```
 
-<Hint type="must">对于异步 action，分别再最后面加上 REQUEST, SUCCESS, ERROR，三个缺一不可。</Hint>
-
+<Hint type="best">对于异步 action，分别再最后面加上 REQUEST, SUCCESS, ERROR。</Hint>
 
 示例：
 
