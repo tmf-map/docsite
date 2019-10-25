@@ -160,6 +160,9 @@ table tbody {
     padding-bottom: 2rem;
     padding-left: 1.2rem;
   }
+  .container .col:first-child > div {
+    max-width: 45.6vw !important;
+  }
 }
 
 .menu .menu__link {
