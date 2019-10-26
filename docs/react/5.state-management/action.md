@@ -10,7 +10,7 @@ import Hint from '../../../src/components/Hint'
 
 采用**化整为零**的思想，将事件流抽象成一个个小 action，再将 `dispatch` 暴露出来，这样便可以将 `eventStream` 参数从 `createStore` 去掉，让用户灵活地从外部随时通过调用 `dispatch` 从而控制状态的“累加”。
 
-```diff js
+```diff
 - // createStore :: (a -> b -> a) -> a -> [b] -> c
 + // createStore :: (a -> b -> a) -> a -> c
 - function createStore(reducer, initialState, eventStream) {

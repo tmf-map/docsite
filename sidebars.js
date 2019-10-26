@@ -149,10 +149,10 @@ module.exports = {
     "5.状态管理": [
       "react/5.state-management/redux",
       "react/5.state-management/store",
-      "react/5.state-management/reducer",
       "react/5.state-management/action",
-      "react/5.state-management/selector",
       "react/5.state-management/middleware",
+      "react/5.state-management/reducer",
+      "react/5.state-management/selector",
       "react/5.state-management/model"
     ],
     "6.路由管理": [
