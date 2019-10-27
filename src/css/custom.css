@@ -150,12 +150,12 @@ table tbody {
 }
 
 /* Sidebar Nav */
-.navbar + div > div:not(.row) {
+.navbar + main > div > div:not(.row) {
   background-color: var(--my-board--background);
   width: 310px;
 }
 @media (min-width: 997px) {
-  .navbar + div:not(.container) > div > div {
+  .navbar + main > div > div:not(.row) > div {
     padding-top: 1.8rem;
     padding-bottom: 2rem;
     padding-left: 1.2rem;
@@ -208,12 +208,16 @@ main .container {
   padding-left: 0;
 }
 
-.container .margin-vert--xl {
-  margin-bottom: 4rem !important;
+.container.margin-vert--xl {
   margin-top: 4rem !important;
 }
 
-.container.margin-vert--xl {
+.container.margin-vert--xl .margin-bottom--xl {
+  margin: 0 auto;
+}
+
+.container .margin-vert--xl {
+  margin-bottom: 4rem !important;
   margin-top: 4rem !important;
 }
 
