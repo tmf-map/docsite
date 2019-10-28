@@ -10,8 +10,7 @@ BFC中规定垂直方向属于同一个BFC里的元素**垂直方向**边距合�
 <!--more-->
 如下图所示：
 
-<img src='https://robbie-blog.oss-cn-shanghai.aliyuncs.com/img/20191014105734.png'/>
-![20191014105734.png]
+<img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20191014105734.png'/>
 
 [demo链接](https://codepen.io/ustc-han/pen/oNNbRxZ?editors=0100)
 
