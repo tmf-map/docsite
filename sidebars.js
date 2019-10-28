@@ -85,6 +85,7 @@ module.exports = {
       "css/1.visual-formatting-model/float",
       "css/1.visual-formatting-model/position",
       "css/1.visual-formatting-model/z-index",
+      "css/1.visual-formatting-model/margin"
     ],
     "2.单位与字体": [
       "css/2.unit-font/px",
