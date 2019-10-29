@@ -312,6 +312,11 @@ module.exports = {
       "algorithm/13.math/powx-n",
     ]
   },
+  "design-patterns": {
+    '3.行为模式': [
+      'design-patterns/3.behavior-pattern/pub-sub'
+    ]
+  },
   docs: {
     Docusaurus: ['doc1', 'doc2', 'doc3'],
     Features: ['mdx'],

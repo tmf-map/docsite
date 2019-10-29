@@ -26,6 +26,7 @@ module.exports = {
         {to: 'docs/web/1.http/http-connection', label: 'Web', position: 'left'},
         {to: 'docs/react/1.basic/jsx', label: 'React', position: 'left'},
         {to: 'docs/algorithm/1.array/duplicated-number-in-array', label: 'Algorithm', position: 'left'},
+        {to: 'docs/design-patterns/3.behavior-pattern/pub-sub', label: 'Design Patterns', position: 'left'},
         {to: 'docs/doc1', label: 'Docs', position: 'right'},
         {to: 'blog', label: 'Blog', position: 'right'},
         {
