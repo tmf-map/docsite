@@ -314,7 +314,8 @@ module.exports = {
   },
   "design-patterns": {
     '3.行为模式': [
-      'design-patterns/3.behavior-pattern/pub-sub'
+      'design-patterns/3.behavior-pattern/observer',
+      'design-patterns/3.behavior-pattern/pub-sub',
     ]
   },
   docs: {
