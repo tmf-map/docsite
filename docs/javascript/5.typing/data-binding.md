@@ -9,8 +9,10 @@ sidebar_label: 数据绑定
 
 ## Proxy
 
+[在线 Demo](https://codepen.io/muwenzi/pen/rNNGdvY)
+
 ```html
-<b id="count"></b>
+<div id="count"></div>
 <button onclick="increase()">+</button>
 <button onclick="decrease()">-</button>
 ```
@@ -18,26 +20,26 @@ sidebar_label: 数据绑定
 ```js
 const data = { count: 0 };
 const proxy = new Proxy(data, {
- get(target, property) {
-   return target[property];
- },
- set(target, property, value) {
-   target[property] = value;
-   render(value);
- }
+  get(target, property) {
+    return target[property];
+  },
+  set(target, property, value) {
+    target[property] = value;
+    render(value);
+  }
 });
 
 render(proxy.count);
 
 function render(value) {
- document.getElementById('count').innerHTML = value;
+  document.getElementById('count').innerHTML = value;
 }
 
 function increase() {
- proxy.count += 1;
+  proxy.count += 1;
 }
 
 function decrease() {
- proxy.count -= 1;
+  proxy.count -= 1;
 }
 ```
