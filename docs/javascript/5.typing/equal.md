@@ -106,9 +106,43 @@ Object.is(+0, -0) // false
 Object.is(NaN, NaN) // true
 ```
 
-## 如何实现 lodash 的 _.isEqual 函数？
+## 浅比较 shallowEqual
 
-`_.isEqual` 支持的比较的数据类型较多， 包括Set,Map和类数组类型等，要想了解 `_.isEqual` 的实现，首先需要对数据类型进行分类的判断。
+```js
+function shallowEqual (a, b) {
+  // 三等判断出是true，那肯定是true
+  if (a === b) return true;
+  if(Object.is(a, NaN)) return Object.is(b, NaN);
+
+  // 三等判断出是false，只要其中一个是原始类型，那这个false是有效的
+  // ps：如果a,b都是函数的话统统不等
+  if (typeof a !== 'object' || typeof b !== 'object') return false;
+  if (a === null || b === null) return false;
+
+  // 相同类的实例才继续，否则就没必要比了
+  if (a.__proto__ !== b.__proto__) return false;
+  if (a instanceof Date) return +a === +b;
+  if (a instanceof RegExp) return '' + a === '' + b;
+  if (a instanceof Set) return shallowEqual([...a], [...b]);
+  if (a instanceof Map) {
+    if(a.size !== b.size) return false;
+    for (let key of a.keys()) {
+      if (a.get(key) !== b.get(key)) return false
+    }
+    return true
+  }
+
+  // 先看看a, b的大小，不一样也没必要比了
+  const aKeys = Object.keys(a);
+  const bKeys = Object.keys(b);
+  if (aKeys.length !== bKeys.length) return false;
+
+  // 对其属性再进行递归比较
+  return aKeys.every(k => a[k] === b[k]);
+}
+```
+
+## 深比较 deepEqual
 
 1. 对于非引用类型：数字、字符串、 `null` 、 `undefined` 、布尔类型，使用 `===` 操作既可以判断出来。对于特殊的 `NaN === NaN` 为 false 和 `0 === -0` 为 true 这两种情况要特殊处理。这里我们不讨论这两种情况，因为我觉的这两种值没有意义，业务中也不会出现这两种值，但是他们在 `_.isEqual` 下是相等的。
 2. 对于日期类型、正则类型不能使用 `===` 处理，需要单独做处理。
@@ -116,26 +150,32 @@ Object.is(NaN, NaN) // true
 4. 如何实现对 `Set()` 、 `Map()` 、类数组对像等其他类型的实现。
 
 ```js
-const equals = (a, b) => {
- // 三等判断出是true，那肯定是true
- if (a === b) return true;
+function deepEqual(a, b) {
+  // 三等判断出是true，那肯定是true
+  if (a === b) return true;
+  if(Object.is(a, NaN)) return Object.is(b, NaN);
 
- // 三等判断出是false，只要其中一个是原始类型，那这个false是有效的
- // ps：如果a,b都是函数的话统统不等，lodash是这个效果
- if (typeof a !== 'object' || typeof b !== 'object') return false;
- if (a === null || b === null) return false;
+  // 三等判断出是false，只要其中一个是原始类型，那这个false是有效的
+  // ps：如果a,b都是函数的话统统不等，lodash是这个效果
+  if (typeof a !== 'object' || typeof b !== 'object') return false;
 
- // 相同类的实例才继续，否则就没必要比了
- if (a.__proto__ !== b.__proto__) return false;
- if (a instanceof RegExp) return ''+a === ''+b;
- if (a instanceof Date) return a.getTime() ===  b.getTime();
+  // 当a和b中一个是object,另一个是null
+  if (a === null || b === null) return false;
 
- // 先看看a, b的大小，不一样也没必要比了
- let keys = Object.keys(a);
- if (keys.length !== Object.keys(b).length) return false;
+  // 相同类的实例才继续，否则就没必要比了
+  if (a.__proto__ !== b.__proto__) return false;
+  if (a instanceof RegExp) return '' + a === '' + b;
+  if (a instanceof Date) return +a === +b;
+  if (a instanceof Set || a instanceof Map) return deepEqual([...a], [...b]);
+  
+  // 先看看a, b的大小，不一样也没必要比了
+  const keys = Object.keys(a);
+  if (keys.length !== Object.keys(b).length) return false;
+  
+  // a, b都是空对象
+  if(keys.length === 0) return true;
 
- // 对其属性再进行递归比较
- return keys.every(k => equals(a[k], b[k]));
-};
+  // 对其属性再进行递归比较
+  return keys.every(k => deepEqual(a[k], b[k]));
+}
 ```
-

@@ -39,7 +39,7 @@ module.exports = {
       "javascript/5.typing/is-type",
       "javascript/5.typing/type-conversion",
       "javascript/5.typing/equal",
-      "javascript/5.typing/shallow-deep-clone",
+      "javascript/5.typing/clone",
       "javascript/5.typing/data-binding",
     ],
     "6.引用类型应用": [

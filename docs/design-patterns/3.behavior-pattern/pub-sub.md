@@ -24,7 +24,7 @@ import Img from '../../../src/components/Img'
 
 <img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/XXaxLS.png'/>
 
-这个你只会收到该 issue 更新的通知，而不会收到该仓库其他 issue, PR, release 更新的通知。
+这样你只会收到该 issue 更新的通知，而不会收到该仓库其他 issue, PR, release 更新的通知。
 
 ## 实现
 
