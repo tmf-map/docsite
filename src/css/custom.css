@@ -212,7 +212,7 @@ main .container {
   margin-top: 4rem !important;
 }
 
-.container.margin-vert--xl .margin-bottom--xl {
+.container.margin-vert--xl .row .col > div {
   margin: 0 auto;
 }
 
