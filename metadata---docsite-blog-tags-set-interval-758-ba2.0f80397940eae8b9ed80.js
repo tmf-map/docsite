@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[209],{530:function(e){e.exports=JSON.parse('{"allTagsPath":"/docsite/blog/tags","slug":"set-interval","name":"setinterval","count":1,"permalink":"/docsite/blog/tags/set-interval"}')}}]);
