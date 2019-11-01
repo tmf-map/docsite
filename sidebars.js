@@ -72,6 +72,13 @@ module.exports = {
       "javascript/9.modules/browser-import",
       "javascript/9.modules/babel",
     ],
+    "10.性能优化": [
+      "javascript/10.performance-optimization/debounce",
+      "javascript/10.performance-optimization/throttle",
+      "javascript/10.performance-optimization/race-condition",
+      "javascript/10.performance-optimization/memorization",
+      "javascript/10.performance-optimization/tco",
+    ],
     "附录": [
       "javascript/appendix1-references",
       "javascript/appendix2-related-websites"
