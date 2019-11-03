@@ -76,7 +76,7 @@ module.exports = {
       "javascript/10.performance-optimization/debounce",
       "javascript/10.performance-optimization/throttle",
       "javascript/10.performance-optimization/race-condition",
-      "javascript/10.performance-optimization/memorization",
+      "javascript/10.performance-optimization/memoization",
       "javascript/10.performance-optimization/tco",
     ],
     "附录": [

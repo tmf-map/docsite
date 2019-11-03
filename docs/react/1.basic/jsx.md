@@ -14,7 +14,7 @@ import Hint from '../../../src/components/Hint'
 const element = <h1>Hello, world!</h1>;
 ```
 
-JSX， 乍看起来可能比较像是模版语言，但本质上是JS的一种扩展，完全是在 JS 内部实现的。 主要用来描述用户界面，常见于 render 方法里面的 return 和一些用户界面相关变量定义。
+JSX， 乍看起来可能比较像是模版语言，但本质上是 JS 的一种扩展，完全是在 JS 内部实现的。 主要用来描述用户界面，常见于 render 方法里面的 return 和一些用户界面相关变量定义。
 
 你可以任意地在 JSX 当中使用 [JS 表达式](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Expressions_and_Operators#Expressions)，在 JSX 当中的表达式要包含在`单大括号 {}`里。
 
