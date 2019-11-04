@@ -41,6 +41,10 @@
   -webkit-font-smoothing: antialiased;
 }
 
+/* .footer.footer--dark {
+  --ifm-footer-background-color: #000;
+} */
+
 /* homepage banner */
 .hero.hero--primary {
   color: rgba(255,255,255,0.65);
@@ -253,6 +257,10 @@ h2 {
 
 .prism-code + button {
   top: calc(var(--ifm-pre-padding) - 2px);
+}
+
+.footer__item + div {
+  margin-top: 8px;
 }
 
 /* dark theme */
