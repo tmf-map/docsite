@@ -1,9 +1,11 @@
 ---
-title: 缓存/记忆化
-sidebar_label: 缓存/记忆化
+title: 缓存与记忆化
+sidebar_label: 缓存与记忆化
 ---
 
 import Hint from '../../../src/components/Hint'
+
+## 什么是记忆化
 
 > 通过使用记忆化，遇到相同的输入会立即触发内部缓存命中直接返回结果。
 
@@ -12,6 +14,8 @@ import Hint from '../../../src/components/Hint'
 ```
 
 <Hint type="warning">单词是 memoize 不是 memorize 。</Hint>
+
+## 同步缓存
 
 ```js
 function memoize (fn) {
@@ -44,13 +48,4 @@ console.log(memorizedAdd(4));  // Fetching from cache
 
 为了简化生成密匙的逻辑，简单的记忆化仅限于一元函数。对于需要记忆化多个参数的函数可以使用柯里化，来避免缓存层给函数增加额外的开销和复杂度。
 
-### 记忆化递归版 factorial
-
-```js
-const factorial = memoize(n =>
- n === 1 ? 1 : n * factorial(n - 1)
-)
-
-factorial(100) // 0.123ms
-factorial(101) // 0.004ms
-```
+## 异步缓存

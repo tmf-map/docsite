@@ -1,6 +1,6 @@
 ---
-title: Event Loop
-sidebar_label: Event Loop
+title: 事件循环
+sidebar_label: 事件循环
 ---
 ## 浏览器事件循环
 
