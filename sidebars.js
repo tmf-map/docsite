@@ -74,7 +74,7 @@ module.exports = {
       "javascript/9.async-programming/async-await",
     ],
     "10.响应式编程": [
-      "javascript/10.responsive-programming/race-condition",
+      "javascript/10.reactive-programming/race-condition",
     ],
     "11.性能优化": [
       "javascript/11.performance-optimization/debounce",
@@ -212,12 +212,12 @@ module.exports = {
 
     ],
     "5.webWorker": [
-      "web/5.webworker/webworker"    
+      "web/5.webworker/webworker"
     ],
     "6.浏览器渲染": [
-      "web/6.browser-rendering/js-single-thread","web/6.browser-rendering/page-rendering", 
-      "web/6.browser-rendering/async-defer", 
-      "web/6.browser-rendering/reflow-repaint", 
+      "web/6.browser-rendering/js-single-thread","web/6.browser-rendering/page-rendering",
+      "web/6.browser-rendering/async-defer",
+      "web/6.browser-rendering/reflow-repaint",
       "web/6.browser-rendering/other",
       "web/6.browser-rendering/DOMContentLoaded",
     ],
@@ -256,7 +256,7 @@ module.exports = {
     ],
     "13.浏览器内核": [
       "web/13.rendering-engine/rendering-engine",
-    ] 
+    ]
   },
   "algorithm": {
     "1.数组": [
