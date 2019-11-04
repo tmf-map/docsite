@@ -74,7 +74,7 @@ module.exports = {
       "javascript/9.async-programming/async-await",
     ],
     "10.响应式编程": [
-      "javascript/10.performance-optimization/race-condition",
+      "javascript/10.responsive-programming/race-condition",
     ],
     "11.性能优化": [
       "javascript/11.performance-optimization/debounce",
