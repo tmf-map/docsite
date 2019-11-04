@@ -4,11 +4,42 @@ title: WebSocket
 sidebar_label: WebSocket
 ---
 
-WebSocket是一种通信协议，使用ws://（非加密）和wss://（加密）作为协议前缀。该协议不实行同源政策，只要服务器支持，就可以通过它进行跨源通信。
+## Websocket简介
+Websocket是HTML5的一个**持久化的通信协议**，使用ws://（非加密）和wss://（加密）作为协议前缀。它实现了**浏览器与服务器的全双工通信**，同时也是**跨域**的一种解决方案。WebSocket和HTTP都是**应用层协议**，都**基于 TCP 协议**。但是 WebSocket 是一种双向通信协议，**在建立连接之后，WebSocket 的 server 与 client 都能主动向对方发送或接收数据**。同时，WebSocket 在建立连接时需要借助 HTTP 协议，连接建立好了之后 client 与 server 之间的双向通信就与 HTTP 无关了。
 
-Websocket是HTML5的一个持久化的协议，它实现了浏览器与服务器的全双工通信，同时也是跨域的一种解决方案。WebSocket和HTTP都是应用层协议，都基于 TCP 协议。但是 WebSocket 是一种双向通信协议，在建立连接之后，WebSocket 的 server 与 client 都能主动向对方发送或接收数据。同时，WebSocket 在建立连接时需要借助 HTTP 协议，连接建立好了之后 client 与 server 之间的双向通信就与 HTTP 无关了。
+## Socket.io
 
 原生WebSocket API使用起来不太方便，我们常使用`Socket.io`，它很好地封装了webSocket接口，提供了更简单、灵活的接口，也对不支持webSocket的浏览器提供了向下兼容。
+
+利用Socket.io实现跨域：
+
+客户端代码：
+
+```js
+  var p = document.getElementsByTagName('p')[0];
+  var io = io.connect('http://127.0.0.1:3001');// 建立链接
+  io.on('data', function (data) { //监听服务器返回的数据
+      alert('2s后改变数据👻');
+      p.innerHTML = data
+  });
+```
+服务端代码：
+
+```js
+var server = require('http').createServer();// 创建服务器
+var io = require('socket.io')(server); // 调用socket.io
+
+io.on('connection', function (client) { // 监听客户端请求链接
+    client.emit('data', 'Hello WebSocket from 3001.'); // 发送数据给客户端
+});
+
+server.listen(3001, function () {
+    console.log('Responser is listening on port 3001');
+});    //监听3001端口
+```
+可以通过`git clone git@github.com:USTC-Han/cross-domain.git`将demo拷贝到本地，然后参考Readme中的步骤，运行其中的`8-WebSocket`项目。
+
+## webSocket跨域字段（待考证）
 
 下面是一个例子，浏览器发出的WebSocket请求的头信息（摘自维基百科）。
 ```

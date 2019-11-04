@@ -3,7 +3,7 @@ id: cors
 title: CORS
 sidebar_label: CORS
 ---
-
+## CORS简介
 CORS是跨源资源共享（Cross-Origin Resource Sharing）的缩写。它是W3C标准，是跨源AJAX请求的根本解决方法。相比JSONP只能发GET请求，**CORS允许任何类型的请求**。
 
 它允许浏览器向跨源服务器，发出XMLHttpRequest请求，从而克服了AJAX只能同源使用的限制。
@@ -15,9 +15,9 @@ CORS需要**浏览器和服务器同时支持**。目前，所有浏览器都支
 因此，实现CORS通信的**关键是服务器**。只要服务器实现了CORS接口，就可以跨源通信。
 
 两种请求
-浏览器将CORS请求分成两类：简单请求（simple request）和非简单请求（not-so-simple request）。
+浏览器将CORS请求分成两类：**简单请求（simple request）和非简单请求（not-so-simple request）。**
 
-只要同时满足以下两大条件，就属于简单请求。
+只要同时满足以下两大条件，就属于**简单请求**。
 ```
 1.请求方法是以下三种方法之一：
 HEAD
@@ -30,11 +30,11 @@ Content-Language
 Last-Event-ID
 Content-Type：只限于三个值application/x-www-form-urlencoded、multipart/form-data、text/plain
 ```
-凡是不同时满足上面两个条件，就属于非简单请求。
+凡是不同时满足上面两个条件，就属于**非简单请求**。
 
 浏览器对这两种请求的处理，是不一样的。
 
-简单请求基本流程
+## 简单请求基本流程
 
 对于简单请求，浏览器会将其加工一下变成CORS请求，即在头信息之中，增加一个Origin字段。
 
@@ -91,9 +91,9 @@ xhr.withCredentials = false;
 ```
 需要注意的是，如果要发送Cookie，Access-Control-Allow-Origin就不能设为星号，必须指定明确的、与请求网页一致的域名。同时，Cookie依然遵循同源政策，只有用服务器域名设置的Cookie才会上传，其他域名的Cookie并不会上传，且（跨源）原网页代码中的document.cookie也无法读取服务器域名下的Cookie。
 
-**非简单请求**
+## 非简单请求
 
-是那种对服务器有特殊要求的请求，比如请求方法是PUT或DELETE，或者Content-Type字段的类型是application/json。
+非简单请求是那种对服务器有特殊要求的请求，比如请求方法是PUT或DELETE，或者Content-Type字段的类型是application/json。
 
 非简单请求的CORS请求，会在正式通信之前，增加一次HTTP查询请求，**称为"预检"请求（preflight）**。
 
@@ -101,11 +101,11 @@ xhr.withCredentials = false;
 
 例如在代码中，HTTP请求的方法是DELETE，并且发送一系列自定义头信息`authorization,x-tradeshift-actorid,x-tradeshift-app,x-tradeshift-tenantid`。
 
-浏览器通常会发两次请求，一次是预检请求，当得到服务器的肯定答复后会又发一次真正的请求：
+浏览器通常会发两次请求，一次是**预检请求**，当得到服务器的肯定答复后会又发一次真正的请求：
 
 ![](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/jyd7ZJ.png)
 
-"预检"请求用的请求方法是OPTIONS，表示这个请求是用来询问的。头信息里面，关键字段是Origin，表示请求来自哪个源。
+"预检"请求用的请求方法是**options**，表示这个请求是用来询问的。头信息里面，关键字段是Origin，表示请求来自哪个源。
 
 除了Origin字段，"预检"请求的头信息包括两个特殊字段。
 
@@ -146,7 +146,7 @@ Access-Control-Allow-Origin: *
 
 浏览器的正常请求和回应
 
-一旦服务器通过了"预检"请求，浏览器会发送一个正常的CORS请求，就都跟简单请求一样，会有一个Origin头信息字段。服务器的回应，也都会有一个Access-Control-Allow-Origin头信息字段。
+**一旦服务器通过了"预检"请求，浏览器会发送一个正常的CORS请求**，就都跟简单请求一样，会有一个Origin头信息字段。服务器的回应，也都会有一个Access-Control-Allow-Origin头信息字段。
 
 下面是"预检"请求之后，浏览器的正常CORS请求。
 
@@ -157,3 +157,15 @@ Access-Control-Allow-Origin: *
 ![](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/u82c3I.png)
 
 上面头信息中，Access-Control-Allow-Origin字段是每次回应都必定包含的。
+
+## CORS跨域demo
+可以通过`git clone git@github.com:USTC-Han/cross-domain.git`将demo拷贝到本地，然后参考Readme中的步骤，运行其中的`1-CORS`项目，查看控制台network中接口的字段。
+
+**核心代码**
+
+```js
+app.get('/', (req, res) => {
+    res.set('Access-Control-Allow-Origin', 'http://localhost:3000'); // 设置允许跨域的origin，允许3000端口访问本端口（3001）
+    res.send("Hello world from CROS.");   // 空格部分为表情，可能在编辑器不会显示
+});
+```
