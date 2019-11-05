@@ -1,7 +1,6 @@
 ---
-id: http-connection
-title: TCP 三次握手和四次挥手
-sidebar_label: TCP三次握手和四次挥手
+title: TCP 握手和挥手
+sidebar_label: TCP 握手和挥手
 ---
 
 ## 三次握手

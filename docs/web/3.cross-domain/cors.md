@@ -1,9 +1,10 @@
 ---
-id: cors
 title: CORS
 sidebar_label: CORS
 ---
+
 ## CORS简介
+
 CORS是跨源资源共享（Cross-Origin Resource Sharing）的缩写。它是W3C标准，是跨源AJAX请求的根本解决方法。相比JSONP只能发GET请求，**CORS允许任何类型的请求**。
 
 它允许浏览器向跨源服务器，发出XMLHttpRequest请求，从而克服了AJAX只能同源使用的限制。

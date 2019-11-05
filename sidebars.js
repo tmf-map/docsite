@@ -7,12 +7,16 @@
 
 module.exports = {
   "javascript": {
-    "1.基础概念": [
+    "前言": [
+      "javascript/preface/overview",
+      "javascript/preface/note",
+    ],
+    "1. 基础概念": [
       "javascript/1.basic/workflow",
       "javascript/1.basic/scope",
       "javascript/1.basic/execute-context",
     ],
-    "2.内存管理": [
+    "2. 内存管理": [
       "javascript/2.memory/memory-space",
       "javascript/2.memory/memory-check",
       "javascript/2.memory/old-new-space",
@@ -20,14 +24,14 @@ module.exports = {
       "javascript/2.memory/memory-leak",
       "javascript/2.memory/gc-optimization",
     ],
-    "3.闭包": [
+    "3. 闭包": [
       "javascript/3.closure/closure-external",
       "javascript/3.closure/closure-internal",
       "javascript/3.closure/closure-issues",
       "javascript/3.closure/closure-application",
       "javascript/3.closure/summary-test",
     ],
-    "4.函数": [
+    "4. 函数": [
       "javascript/4.function/function-overview",
       "javascript/4.function/context-this",
       "javascript/4.function/function-params",
@@ -35,28 +39,28 @@ module.exports = {
       "javascript/4.function/iife",
       "javascript/4.function/chained-call",
     ],
-    "5.类型机制": [
+    "5. 类型机制": [
       "javascript/5.typing/is-type",
       "javascript/5.typing/type-conversion",
       "javascript/5.typing/equal",
       "javascript/5.typing/clone",
       "javascript/5.typing/data-binding",
     ],
-    "6.模块机制": [
+    "6. 模块机制": [
       "javascript/6.modules/amd-cmd-umd",
       "javascript/6.modules/es6-module",
       "javascript/6.modules/import()",
       "javascript/6.modules/browser-import",
       "javascript/6.modules/babel",
     ],
-    "7.引用类型应用": [
+    "7. 引用类型": [
       "javascript/7.reference-type/array",
       "javascript/7.reference-type/object",
       "javascript/7.reference-type/regex",
       "javascript/7.reference-type/date",
       "javascript/7.reference-type/set-map",
     ],
-    "8.面向对象编程": [
+    "8. 面向对象编程": [
       "javascript/8.object-oriented-programming/constructor",
       "javascript/8.object-oriented-programming/create-instance",
       "javascript/8.object-oriented-programming/prototype-chain",
@@ -64,7 +68,7 @@ module.exports = {
       "javascript/8.object-oriented-programming/class",
       "javascript/8.object-oriented-programming/super",
     ],
-    "9.异步编程": [
+    "9. 异步编程": [
       "javascript/9.async-programming/macro-task",
       "javascript/9.async-programming/micro-task",
       "javascript/9.async-programming/event-system",
@@ -73,10 +77,10 @@ module.exports = {
       "javascript/9.async-programming/promise",
       "javascript/9.async-programming/async-await",
     ],
-    "10.响应式编程": [
+    "10. 响应式编程": [
       "javascript/10.reactive-programming/race-condition",
     ],
-    "11.性能优化": [
+    "11. 性能优化": [
       "javascript/11.performance-optimization/debounce",
       "javascript/11.performance-optimization/throttle",
       "javascript/11.performance-optimization/memoization",
@@ -88,7 +92,11 @@ module.exports = {
     ]
   },
   "css": {
-    "1.视觉格式化模型": [
+    "前言": [
+      "css/preface/overview",
+      "css/preface/note",
+    ],
+    "1. 视觉格式化模型": [
       "css/1.visual-formatting-model/basic-concept",
       "css/1.visual-formatting-model/box-model",
       "css/1.visual-formatting-model/normal-flow",
@@ -97,7 +105,7 @@ module.exports = {
       "css/1.visual-formatting-model/z-index",
       "css/1.visual-formatting-model/margin"
     ],
-    "2.单位与字体": [
+    "2. 单位与字体": [
       "css/2.unit-font/px",
       "css/2.unit-font/percentage",
       "css/2.unit-font/em",
@@ -105,30 +113,34 @@ module.exports = {
       "css/2.unit-font/viewport",
       "css/2.unit-font/font",
     ],
-    "3.布局": [
+    "3. 布局": [
       "css/3.layout/flex",
       "css/3.layout/grid",
       "css/3.layout/cols",
       "css/3.layout/rows",
     ],
-    "4.居中": [
+    "4. 居中": [
       "css/4.center/horizontal-center",
       "css/4.center/vertical-middle",
       "css/4.center/horizontal-vertical-center",
     ],
-    "5.动画": [
+    "5. 动效": [
       "css/5.animation/bezier-curve",
       "css/5.animation/transition",
       "css/5.animation/animation",
     ],
-    "6.响应式设计": [
+    "6. 响应式设计": [
       "css/6.responsive-design/media-query",
     ],
-    "7.附录": [
-      "css/7.appendix/related-websites"
+    "附录": [
+      "css/appendix/related-websites"
     ]
   },
   "react": {
+    "前言": [
+      "react/preface/overview",
+      "react/preface/note",
+    ],
     "1.组件基础": [
       "react/1.basic/jsx",
       "react/1.basic/lifecycle",
@@ -177,110 +189,122 @@ module.exports = {
       "react/7.test/component-test",
       "react/7.test/state-test"
     ],
-    "8.安全": [
+    "8. 安全": [
       "react/8.security/security-guide"
     ],
     "附录": [
-      "react/appendix/note",
       "react/appendix/references",
       "react/appendix/related-websites"
     ]
   },
   "web": {
-    "1.http协议": [
+    "前言": [
+      "web/preface/overview",
+      "web/preface/note",
+    ],
+    "1. HTTP 协议": [
       "web/1.http/http-connection",
       "web/1.http/http-status",
       "web/1.http/http-cache",
       "web/1.http/http1.1",
       "web/1.http/http2",
       "web/1.http/https",
-      "web/1.http/ajax",
-      "web/1.http/fetch",
-      "web/1.http/websocket"
     ],
-    "2.同源协议": [
-      "web/2.same-origin-policy/same-origin-policy"
-    ],
-    "3.跨域请求": [
+    "2. 跨域请求": [
+      "web/3.cross-domain/same-origin-policy",
       "web/3.cross-domain/jsonp",
       "web/3.cross-domain/cors",
       "web/3.cross-domain/websocket"
     ],
-    "4.跨文档通信": [
-      "web/4.cross-document/iframe",
-      "web/4.cross-document/postMassage"
+    "3. 数据传输": [
+      "web/3.data-transmission/json",
+      "web/3.data-transmission/ajax",
+      "web/3.data-transmission/fetch",
+      "web/3.data-transmission/form",
+      "web/3.data-transmission/file",
+    ],
+    "4. 浏览器渲染": [
+      "web/4.browser-rendering/rendering-engine",
+      "web/4.browser-rendering/js-single-thread",
+      "web/4.browser-rendering/page-rendering",
+      "web/4.browser-rendering/async-defer",
+      "web/4.browser-rendering/reflow-repaint",
+      "web/4.browser-rendering/DOMContentLoaded",
+    ],
+    "5. 跨文档通信": [
+      "web/5.cross-document/iframe",
+      "web/5.cross-document/postMassage"
 
     ],
-    "5.webWorker": [
-      "web/5.webworker/webworker"
+    "6. 前端路由": [
+      "web/6.rooter/hash-rooter",
+      "web/6.rooter/history-rooter",
     ],
-    "6.浏览器渲染": [
-      "web/6.browser-rendering/js-single-thread","web/6.browser-rendering/page-rendering",
-      "web/6.browser-rendering/async-defer",
-      "web/6.browser-rendering/reflow-repaint",
-      "web/6.browser-rendering/other",
-      "web/6.browser-rendering/DOMContentLoaded",
+    "7. BOM": [
+      "web/7.bom/window",
+      "web/7.bom/location",
+      "web/7.bom/navigator",
+      "web/7.bom/screen",
+      "web/7.bom/history",
     ],
-    "7.js动画": [
-      "web/7.js-animation/principle",
-      "web/7.js-animation/timer",
-      "web/7.js-animation/requestAnimationFrame"
-    ],
-    "8.DOM": [
+    "8. DOM": [
       "web/8.dom/node",
       "web/8.dom/event"
     ],
-    "9.前端路由": [
-      "web/9.rooter/hash-rooter",
-      "web/9.rooter/history-rooter",
+    "9. 离线 & 存储": [
+      "web/9.offline-storage/webstorage",
+      "web/9.offline-storage/IndexedDB",
+      "web/9.offline-storage/web-SQL",
+      "web/9.offline-storage/service-workers",
+      "web/9.offline-storage/summary"
     ],
-    "10.浏览器存储": [
-      "web/10.storage/webstorage",
-      "web/10.storage/IndexedDB",
-      "web/10.storage/web-SQL",
-      "web/10.storage/service-workers",
-      "web/10.storage/summary"
+    "10. 绘画 & 动效": [
+      "web/10.graphics-effects/canvas",
+      "web/10.graphics-effects/webgl",
+      "web/10.graphics-effects/js-animation",
     ],
-    "11.安全机制与防范": [
-      "web/11.security/cookie",
-      "web/11.security/session",
-      "web/11.security/OAuth",
-      "web/11.security/JWT",
-      "web/11.security/CSRF",
-      "web/11.security/XSS"
+    "11. Web 安全机制": [
+      "web/11.web-security/cookie",
+      "web/11.web-security/session",
+      "web/11.web-security/OAuth",
+      "web/11.web-security/JWT",
+      "web/11.web-security/CSRF",
+      "web/11.web-security/XSS"
     ],
-    "12.web网页性能优化": [
+    "12. Web 性能优化": [
       "web/12.web-optimize/pic-optimize",
       "web/12.web-optimize/delay-loading",
-      "web/12.web-optimize/http-cache"
+      "web/12.web-optimize/http-cache",
+      "web/12.web-optimize/webworker",
     ],
-    "13.浏览器内核": [
-      "web/13.rendering-engine/rendering-engine",
-    ]
   },
   "algorithm": {
-    "1.数组": [
+    "前言": [
+      "algorithm/preface/overview",
+      "algorithm/preface/note",
+    ],
+    "1. 数组": [
       "algorithm/1.array/duplicated-number-in-array",
       "algorithm/1.array/inverse-pairs",
     ],
-    "2.栈与队列": [
+    "2. 栈与队列": [
       "algorithm/3.stack-queue/min-stack",
     ],
-    "4.链表": [
+    "4. 链表": [
       "algorithm/4.linkedlist/merge-two-sorted-lists",
     ],
-    "5.二叉树": [
+    "5. 二叉树": [
       "algorithm/5.binary-tree/build-tree",
       "algorithm/5.binary-tree/mirror-tree",
       "algorithm/5.binary-tree/subtree",
       "algorithm/5.binary-tree/maximum-depth-of-binary-tree",
       "algorithm/5.binary-tree/balanced-binary-tree",
     ],
-    "8.排序": [
+    "8. 排序": [
       "algorithm/8.sort/merged-sort",
       "algorithm/8.sort/quick-sort",
     ],
-    "9.查找": [
+    "9. 查找": [
       {
         type: 'category',
         label: '二分查找',
@@ -305,25 +329,29 @@ module.exports = {
         ],
       },
     ],
-    "10.回溯法": [
+    "10. 回溯法": [
       "algorithm/10.back-tracking/permutation",
       "algorithm/10.back-tracking/combination",
       "algorithm/10.back-tracking/n-queens",
     ],
-    "11.位运算": [
+    "11. 位运算": [
       "algorithm/11.bit-operation/single-number",
     ],
-    "12.反转和旋转": [
+    "12. 反转和旋转": [
       "algorithm/12.reverse/reverse-linked-list",
       "algorithm/12.reverse/rotate-string",
       "algorithm/12.reverse/reverse-integer",
     ],
-    "13.数学": [
+    "13. 数学": [
       "algorithm/13.math/powx-n",
     ]
   },
   "design-patterns": {
-    '3.行为模式': [
+    "前言": [
+      "design-patterns/preface/overview",
+      "design-patterns/preface/note",
+    ],
+    '3. 行为模式': [
       'design-patterns/3.behavior-pattern/observer',
       'design-patterns/3.behavior-pattern/pub-sub',
     ]

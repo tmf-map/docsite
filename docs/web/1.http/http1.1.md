@@ -1,7 +1,7 @@
 ---
 id: http1.1
-title: HTTP1.1
-sidebar_label: HTTP1.1
+title: HTTP/1.1
+sidebar_label: HTTP/1.1
 ---
 
 ## 长连接
