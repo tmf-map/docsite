@@ -1,17 +1,3 @@
-/**
- * Copyright (c) 2017-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
-
-/* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary-lightest: #d6f2ff;
   --ifm-color-primary-lighter: #ade5ff;
@@ -31,19 +17,15 @@
   --ifm-table-cell-padding: 0.7rem;
   --ifm-menu-color-background-active: #fff;
   --ifm-navbar-padding-horizontal: 1.5rem;
-  --ifm-spacing-horizontal: 1.5rem;
   --ifm-navbar-shadow: 0 3px 8px 0 rgba(116, 129, 141, 0.1);
   --ifm-navbar-height: 70px;
+  --ifm-spacing-horizontal: 1.5rem;
   --ifm-heading-font-weight: 500;
-  
+
   --my-board--background: rgba(185, 202, 218, 0.15);
 
   -webkit-font-smoothing: antialiased;
 }
-
-/* .footer.footer--dark {
-  --ifm-footer-background-color: #000;
-} */
 
 /* homepage banner */
 .hero.hero--primary {
@@ -158,16 +140,6 @@ table tbody {
   background-color: var(--my-board--background);
   width: 310px;
 }
-@media (min-width: 997px) {
-  .navbar + main > div > div:not(.row) > div {
-    padding-top: 1.8rem;
-    padding-bottom: 2rem;
-    padding-left: 1.2rem;
-  }
-  .container .col:first-child > div {
-    max-width: 45.6vw !important;
-  }
-}
 
 .menu .menu__link {
   border: 1px solid transparent;
@@ -259,6 +231,22 @@ h2 {
   top: calc(var(--ifm-pre-padding) - 2px);
 }
 
+footer.footer {
+  display: none;
+  -webkit-font-smoothing: initial;
+}
+
+.footer__title {
+  font-weight: 600;
+  margin-bottom: 1.3rem;
+  margin-top: 1.3rem;
+}
+
+.footer__item {
+  font-size: 14px;
+  line-height: 2.3;
+}
+
 .footer__item + div {
   margin-top: 8px;
 }
@@ -301,5 +289,19 @@ html[data-theme="dark"] .menu .menu__link.menu__link--active:not(.menu__link--su
 html[data-theme="dark"] .menu .menu__link.menu__link--active:not(.menu__link--sublist):hover {
   --ifm-menu-color-background-active: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(167, 167, 167, 0.2);
+}
+
+@media (min-width: 997px) {
+  .navbar + main > div > div:not(.row) > div {
+    padding-top: 1.8rem;
+    padding-bottom: 2rem;
+    padding-left: 1.2rem;
+  }
+  .container .col:first-child > div {
+    max-width: 45.6vw !important;
+  }
+  footer.footer {
+    display: block;
+  }
 }
 

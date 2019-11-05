@@ -141,7 +141,7 @@ module.exports = {
       "react/preface/overview",
       "react/preface/note",
     ],
-    "1.组件基础": [
+    "1. 组件基础": [
       "react/1.basic/jsx",
       "react/1.basic/lifecycle",
       "react/1.basic/state",
@@ -150,26 +150,26 @@ module.exports = {
       "react/1.basic/event",
       "react/1.basic/style"
     ],
-    "2.组件进阶": [
+    "2. 组件进阶": [
       "react/2.advanced/render-props",
       "react/2.advanced/hoc",
       "react/2.advanced/hook",
       "react/2.advanced/context",
       "react/2.advanced/portal",
     ],
-    "3.组件优化": [
+    "3. 组件优化": [
       "react/3.optimization/performance",
       "react/3.optimization/pure-component",
       "react/3.optimization/memo",
       "react/3.optimization/code-splitting",
       "react/3.optimization/suspense",
     ],
-    "4.三大组件": [
+    "4. 三大组件": [
       "react/4.three-components/container-component",
       "react/4.three-components/presentational-component",
       "react/4.three-components/ui-component",
     ],
-    "5.状态管理": [
+    "5. 状态管理": [
       "react/5.state-management/redux",
       "react/5.state-management/store",
       "react/5.state-management/action",
@@ -178,12 +178,12 @@ module.exports = {
       "react/5.state-management/selector",
       "react/5.state-management/model"
     ],
-    "6.路由管理": [
+    "6. 路由管理": [
       "react/6.router-management/router",
       "react/6.router-management/route",
       "react/6.router-management/link"
     ],
-    "7.测试": [
+    "7. 测试": [
       "react/7.test/test-category",
       "react/7.test/unit-test",
       "react/7.test/component-test",
@@ -258,7 +258,7 @@ module.exports = {
       "web/9.offline-storage/service-workers",
       "web/9.offline-storage/summary"
     ],
-    "10. 绘画 & 动效": [
+    "10. 绘图 & 动效": [
       "web/10.graphics-effects/canvas",
       "web/10.graphics-effects/webgl",
       "web/10.graphics-effects/js-animation",

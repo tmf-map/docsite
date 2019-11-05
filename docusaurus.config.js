@@ -1,23 +1,19 @@
-/**
- * Copyright (c) 2017-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
+const githubOrg = 'ThinkBucket'
+const githubRepo = 'docsite'
 
 module.exports = {
-  title: 'ThinkBucket',
+  title: githubOrg,
   tagline: 'The tagline of my site',
   url: 'https://thinkbucket.github.io',
   baseUrl: '/docsite/',
   favicon: 'https://avatars1.githubusercontent.com/u/53037732?s=70&v=4',
-  organizationName: 'ThinkBucket', // Usually your GitHub org/user name.
+  organizationName: githubOrg, // Usually your GitHub org/user name.
   projectName: 'docsite', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'ThinkBucket',
+      title: githubOrg,
       logo: {
-        alt: 'ThinkBucket Logo',
+        alt: 'Logo',
         src: 'https://avatars1.githubusercontent.com/u/53037732?s=70&v=4',
       },
       links: [
@@ -30,7 +26,7 @@ module.exports = {
         {to: 'docs/doc1', label: 'Docs', position: 'right'},
         {to: 'blog', label: 'Blog', position: 'right'},
         {
-          href: 'https://github.com/ThinkBucket/docsite',
+          href: `https://github.com/${githubOrg}/${githubRepo}`,
           label: 'GitHub',
           position: 'right',
         },
@@ -40,33 +36,53 @@ module.exports = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: '相关资源',
           items: [
             {
-              label: 'Docs',
-              to: 'docs/doc1',
+              label: '文档介绍',
+              to: '/',
+            },
+            {
+              label: 'MDX',
+              to: 'https://github.com/mdx-js/mdx',
+            },
+            {
+              label: 'Docusaurus',
+              to: 'https://github.com/facebook/docusaurus',
             },
           ],
         },
         {
-          title: 'Community',
+          title: '帮助',
           items: [
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              label: '更新日志',
+              href: `https://github.com/${githubOrg}/${githubRepo}/releases`,
+            },
+            {
+              label: '讨论列表',
+              href: `https://github.com/${githubOrg}/${githubRepo}/issues`,
+            },
+            {
+              label: '报告 Bug',
+              href: `https://github.com/${githubOrg}/${githubRepo}/issues/new`,
             },
           ],
         },
         {
-          title: 'Social',
+          title: '社区',
           items: [
             {
               label: 'Blog',
               to: 'blog',
             },
             {
+              label: 'GitHub',
+              href: `https://github.com/${githubOrg}/${githubRepo}`,
+            },
+            {
               html:
-                '<iframe src="https://ghbtns.com/github-btn.html?user=thinkbucket&repo=docsite&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>',
+                `<iframe src="https://ghbtns.com/github-btn.html?user=${githubOrg}&repo=${githubRepo}&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>`,
             }
           ],
         },
@@ -75,7 +91,7 @@ module.exports = {
         alt: 'Facebook Open Source Logo',
         src: 'https://docusaurus.io/img/oss_logo.png',
       },
-      copyright: `Copyright © ${new Date().getFullYear()} ThinkBucket.`,
+      copyright: `Copyright © ${new Date().getFullYear()} ${githubOrg}.`,
     },
     prismTheme: require('prism-react-renderer/themes/nightOwl'),
   },
@@ -85,7 +101,7 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/ThinkBucket/docsite/edit/master/docs/',
+          editUrl: `https://github.com/${githubOrg}/${githubRepo}/edit/master/docs/`,
           // Equivalent to `enableUpdateBy`.
           showLastUpdateAuthor: true,
           // Equivalent to `enableUpdateTime`.
