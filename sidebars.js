@@ -249,7 +249,8 @@ module.exports = {
     ],
     "8. DOM": [
       "web/8.dom/node",
-      "web/8.dom/event"
+      "web/8.dom/event",
+      "web/8.dom/mouseover-or-mouseenter"
     ],
     "9. 离线 & 存储": [
       "web/9.offline-storage/webstorage",
