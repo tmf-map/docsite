@@ -9,6 +9,7 @@ module.exports = {
   favicon: 'https://avatars1.githubusercontent.com/u/53037732?s=70&v=4',
   organizationName: githubOrg, // Usually your GitHub org/user name.
   projectName: 'docsite', // Usually your repo name.
+  themes: ['@docusaurus/theme-live-codeblock'],
   themeConfig: {
     navbar: {
       title: githubOrg,

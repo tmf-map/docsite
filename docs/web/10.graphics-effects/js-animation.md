@@ -120,15 +120,17 @@ window.requestAnimationFrame(step);
 动画变慢的结果其实是采用增量的方式来执行了动画，为了更精确的控制动画，更合适的方法是将动画与时间关联起来
 
 ## 示例：匀速运动
-[codesandbox demo](https://codesandbox.io/s/jsdonghuayunsuyundong-5sxqh)
-```js
+
+```jsx live
 class App extends React.Component {
-  state = {
-    width: 90,
-    height: 90,
-    backgroundColor: "red"
-  };
-  linerMove = () => {
+  constructor () {
+    this.state = {
+      width: 90,
+      height: 90,
+      backgroundColor: "red"
+    };
+  }
+  linerMove() {
     let begin = 0;
     let steps = 10;
     let target = 300;
@@ -148,7 +150,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <button onClick={this.linerMove}>匀速运动</button>
+        <button onClick={this.linerMove.bind(this)}>点击开始</button>
         <div id="box" style={{ ...this.state }} />
       </div>
     );
