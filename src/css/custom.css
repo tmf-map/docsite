@@ -136,6 +136,18 @@ table tbody {
   border-radius: 3px;
 }
 
+.navbar .navbar__link {
+  white-space: nowrap;
+}
+
+.navbar__items:first-child {
+  flex-grow: 2;
+}
+
+.navbar__items--right {
+  flex-grow: 1;
+}
+
 /* Sidebar Nav */
 .navbar + main > div > div:not(.row) {
   background-color: var(--my-board--background);
