@@ -3,6 +3,8 @@ title: JS 动画
 sidebar_label: JS 动画
 ---
 
+import Hint from '../../../src/components/Hint'
+
 ## JS 动画原理
 
 动画效果可以通过两种方式来实现：一种是通过JS间接的操作CSS，每隔几秒执行一次，另外一种是利用纯CSS实现，该方法在CSS3成熟后广泛应用。这里主要讲JS里面的动画:
@@ -30,7 +32,7 @@ var timerID = setTimeout(function[, delay, param1, parm2...])
 
 在同一个对象上（一个window或者worker），setTimeout()或者setInterval()在后续的调用不会重用同一个定时器编号。但是不同的对象使用独立的编号池。
 
-### 关于"this"的问题
+### this 指向
 
 由setTimeout()调用的代码运行在与所在函数完全分离的执行环境上。这会导致，这些代码中包含的 this 关键字在严格模式和非严格模式都会指向 window (或全局)对象。
 
@@ -46,7 +48,7 @@ var a = 1
 setTimeout(obj.foo, 0) // 1
 ```
 
-*备注：在严格模式下，setTimeout( )的回调函数里面的this仍然默认指向window对象， 并不是undefined。*
+<Hint type="warning">在严格模式下，`setTimeout` 的回调函数里面的 this 仍然默认指向 `window` 对象， 并不是 `undefined` 。</Hint>
 
 ### 取消定时器的方法
 

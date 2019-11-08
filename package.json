@@ -12,7 +12,7 @@
   "dependencies": {
     "@docusaurus/core": "2.0.0-alpha.33",
     "@docusaurus/preset-classic": "2.0.0-alpha.33",
-    "@docusaurus/theme-live-codeblock": "^2.0.0-alpha.32",
+    "@docusaurus/theme-live-codeblock": "2.0.0-alpha.33",
     "classnames": "^2.2.6",
     "marked": "^0.7.0",
     "react": "^16.8.4",
