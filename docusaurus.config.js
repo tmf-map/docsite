@@ -93,7 +93,9 @@ module.exports = {
       },
       copyright: `Copyright © ${new Date().getFullYear()} ${githubOrg}.`,
     },
-    prismTheme: require('prism-react-renderer/themes/nightOwl'),
+    prism: {
+      theme: require('prism-react-renderer/themes/nightOwl')
+    }
   },
   presets: [
     [
