@@ -71,7 +71,6 @@ module.exports = {
     "9. 异步编程": [
       "javascript/9.async-programming/macro-task",
       "javascript/9.async-programming/micro-task",
-      "javascript/9.async-programming/event-system",
       "javascript/9.async-programming/event-loop",
       "javascript/9.async-programming/callback",
       "javascript/9.async-programming/promise",
@@ -249,8 +248,10 @@ module.exports = {
     ],
     "8. DOM": [
       "web/8.dom/node",
+      "web/8.dom/node-crud",
+      "web/8.dom/event-system",
       "web/8.dom/event",
-      "web/8.dom/mouseover-or-mouseenter"
+      "web/8.dom/mouseover-or-mouseenter",
     ],
     "9. 离线 & 存储": [
       "web/9.offline-storage/webstorage",

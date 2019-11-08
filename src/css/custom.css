@@ -21,6 +21,7 @@
   --ifm-navbar-height: 70px;
   --ifm-spacing-horizontal: 1.5rem;
   --ifm-heading-font-weight: 500;
+  --ifm-list-item-margin: 0.18rem;
 
   --my-board--background: rgba(185, 202, 218, 0.15);
 
@@ -30,10 +31,10 @@
 /* homepage banner */
 .hero.hero--primary {
   color: rgba(255,255,255,0.65);
-  background-color: #24292e;
-  background-image: url(https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/homepage-star-bg.svg),linear-gradient(#191c20, #24292e 15%);
+  /* background-color: #fff; */
+  background-image: url(https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/homepage-cosmos-bg.svg),linear-gradient(135deg, #08003c 0%, #062875 100%);
   background-repeat: repeat-x;
-  background-position: center 0, 0 0, 0 0;
+  background-position: center;
   padding: 8rem 0 16rem 0;
 }
 
@@ -256,8 +257,8 @@ footer.footer {
 html[data-theme="dark"] {
   --ifm-color-primary: rgb(10, 132, 255);
   --ifm-navbar-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
-  --ifm-navbar-background-color: #292c2f;
-  --ifm-background-color: #1d1f21;
+  /* --ifm-navbar-background-color: #000; */
+  /* --ifm-background-color: #1d1f21; */
 }
 
 html[data-theme="dark"] .footer.footer--dark {
