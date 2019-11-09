@@ -1,5 +1,4 @@
 ---
-id: page-rendering
 title: 页面渲染
 sidebar_label: 页面渲染
 ---

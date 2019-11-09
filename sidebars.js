@@ -149,41 +149,37 @@ module.exports = {
       "web/1.http/https",
     ],
     "2. 跨域请求": [
-      "web/3.cross-domain/same-origin-policy",
-      "web/3.cross-domain/jsonp",
-      "web/3.cross-domain/cors",
-      "web/3.cross-domain/websocket"
+      "web/2.cross-domain/same-origin-policy",
+      "web/2.cross-domain/jsonp",
+      "web/2.cross-domain/cors",
+      "web/2.cross-domain/websocket"
     ],
     "3. 数据传输": [
+      "web/3.data-transmission/url",
       "web/3.data-transmission/json",
       "web/3.data-transmission/ajax",
       "web/3.data-transmission/fetch",
       "web/3.data-transmission/form",
       "web/3.data-transmission/file",
     ],
-    "4. 浏览器渲染": [
-      "web/4.browser-rendering/rendering-engine",
-      "web/4.browser-rendering/js-single-thread",
-      "web/4.browser-rendering/page-rendering",
-      "web/4.browser-rendering/async-defer",
-      "web/4.browser-rendering/reflow-repaint",
-      "web/4.browser-rendering/DOMContentLoaded",
+    "4. 浏览器": [
+      "web/4.browser/window",
+      "web/4.browser/navigator",
+      "web/4.browser/rendering-engine",
     ],
-    "5. 跨文档通信": [
-      "web/5.cross-document/iframe",
-      "web/5.cross-document/postMassage"
-
+    "5. 渲染与加载": [
+      "web/5.render-load/page-rendering",
+      "web/5.render-load/script",
+      "web/5.render-load/reflow-repaint",
+      "web/5.render-load/DOMContentLoaded",
     ],
-    "6. 前端路由": [
-      "web/6.rooter/hash-rooter",
-      "web/6.rooter/history-rooter",
+    "6. 跨文档通信": [
+      "web/6.cross-document/iframe",
+      "web/6.cross-document/postMassage",
     ],
-    "7. BOM": [
-      "web/7.bom/window",
-      "web/7.bom/location",
-      "web/7.bom/navigator",
-      "web/7.bom/screen",
-      "web/7.bom/history",
+    "7. 前端路由": [
+      "web/7.rooter/hash-rooter",
+      "web/7.rooter/history-rooter",
     ],
     "8. DOM": [
       "web/8.dom/node",
@@ -192,17 +188,17 @@ module.exports = {
       "web/8.dom/event-object",
       "web/8.dom/event-type",
     ],
-    "10. 动效 & 绘图": [
-      "web/10.graphics-effects/js-animation",
-      "web/10.graphics-effects/canvas",
-      "web/10.graphics-effects/webgl",
+    "9. 动效 & 绘图": [
+      "web/9.graphics-effects/js-animation",
+      "web/9.graphics-effects/canvas",
+      "web/9.graphics-effects/webgl",
     ],
-    "9. 离线 & 存储": [
-      "web/9.offline-storage/webstorage",
-      "web/9.offline-storage/IndexedDB",
-      "web/9.offline-storage/web-SQL",
-      "web/9.offline-storage/service-workers",
-      "web/9.offline-storage/summary"
+    "10. 离线 & 存储": [
+      "web/10.offline-storage/webstorage",
+      "web/10.offline-storage/IndexedDB",
+      "web/10.offline-storage/web-SQL",
+      "web/10.offline-storage/service-workers",
+      "web/10.offline-storage/summary"
     ],
     "11. Web 安全机制": [
       "web/11.web-security/cookie",
