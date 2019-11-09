@@ -19,6 +19,7 @@ module.exports = {
       },
       links: [
         {to: 'docs/javascript/preface/overview', label: 'Javascript', position: 'left'},
+        {to: 'docs/html/preface/overview', label: 'HTML', position: 'left'},
         {to: 'docs/css/preface/overview', label: 'CSS', position: 'left'},
         {to: 'docs/web/preface/overview', label: 'Web', position: 'left'},
         {to: 'docs/react/preface/overview', label: 'React Stack', position: 'left'},

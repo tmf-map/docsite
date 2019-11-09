@@ -90,6 +90,12 @@ module.exports = {
       "javascript/appendix2-related-websites"
     ]
   },
+  "html": {
+    "前言": [
+      "html/preface/overview",
+      "html/preface/note",
+    ],
+  },
   "css": {
     "前言": [
       "css/preface/overview",
