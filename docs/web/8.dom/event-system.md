@@ -6,25 +6,27 @@ sidebar_label: 事件系统
 import Hint from '../../../src/components/Hint'
 import Img from '../../../src/components/Img'
 
-![](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/vbRSoz.png)
+## 事件系统概述
 
-## 事件系统及发展史
+### 基础概念
 
-JavaScript和HTML之间的交互是通过事件来实现的。事件，就是文档或浏览器窗口之间发生的一些交互瞬间。可以使用侦听器（或处理程序）来监听事件，以便事情发生时执行相应的代码。
+JavaScript 和 HTML 之间的交互是通过事件来实现的。事件，就是文档或浏览器窗口之间发生的一些交互瞬间。可以使用侦听器（或处理程序）来监听事件，以便事情发生时执行相应的代码。
 
 一个完整的事件系统，通常存在以下三个角色：
 
 - 事件对象，用于储存事件的状态。
-- 事件源对象，当前事件在操作的对象，如元素节点，文档对象，window对象，XMLHttpRequest对象等。
-- 事件监听函数，当一个事件源生成一个事件对象时，它会调用相应的回调函数进行操作。在IE中，事件对象恒为全局属性window.event的分身。
+- 事件源对象，当前事件在操作的对象，如元素节点，文档对象，window 对象，XMLHttpRequest 对象等。
+- 事件监听函数，当一个事件源生成一个事件对象时，它会调用相应的回调函数进行操作。
 
 通俗点讲，事件源对象相当于”当事人“，事件监听函数相当于”监护人“，事件对象相当于”事故详情“。一个事件可以理解为，当事人出了点事，至于什么事情（被打了，还是被抢了）都记录在事故详情里，监护人根据事故详情得做出点反应（回调函数）。
 
-说起来好像是挺简单，但其实不然。
+### 历史
 
-事件最早是在IE3和Netscape Navigator2中出现的，当时是作为分担服务器运算负载的一种手段。到IE4 和Navigator4发布时，这两种浏览器都提供了相似但不相同的API，而且这些API并存且经历了好几个版本更新。再后来，DOM2级规范开始尝试以一种符合逻辑的方式来标准化DOM事件。（IE9、Firefox、Opera、Safari和Chrome全都已经实现了”DOM2级事件“模块的核心部分。IE8是最后一个仍然使用其专有事件系统的主要浏览器。）
+事件最早是在 IE3 和 Netscape Navigator2 中出现的，当时是作为分担服务器运算负载的一种手段。到 IE4 和 Navigator4 发布时，这两种浏览器都提供了相似但不相同的 API ，而且这些 API 并存且经历了好几个版本更新。再后来，DOM2 级规范开始尝试以一种符合逻辑的方式来标准化 DOM 事件。
 
-后话： 浏览器的事件系统相对比较复杂。尽管所有主要浏览器已经实现了”DOM2级事件“，但这个规范本身并没有涵盖所有的事件类型。浏览器对象模型（BOM）也支持一些事件，这些事件与文档对象模型（DOM）事件之间的关系并不十分清晰，因为BOM事件长期没有规范可以遵循（HMTL5后来给了详细说明）。随着DOM3级的出现，增强后的DOM事件API变的更加繁琐。使用事件有时相对简单，有时则非常复杂，难易程度会因为你的需求而不同。不过，有关事件的一些核心概念是一定要理解的。
+<Hint type="tip">IE9、Firefox、Opera、Safari 和 Chrome 全都已经实现了”DOM2级事件“模块的核心部分。IE8 是最后一个仍然使用其专有事件系统的主要浏览器。</Hint>
+
+浏览器的事件系统相对比较复杂。尽管所有主要浏览器已经实现了”DOM2级事件“，但这个规范本身并没有涵盖所有的事件类型。浏览器对象模型（BOM）也支持一些事件，这些事件与文档对象模型（DOM）事件之间的关系并不十分清晰，因为BOM事件长期没有规范可以遵循（HMTL5 后来给了详细说明）。随着 DOM3 级的出现，增强后的 DOM 事件 API 变的更加繁琐。使用事件有时相对简单，有时则非常复杂，难易程度会因为你的需求而不同。不过，有关事件的一些核心概念是一定要理解的。
 
 ## 事件传播
 
@@ -32,11 +34,9 @@ JavaScript和HTML之间的交互是通过事件来实现的。事件，就是文
 
 <Img width="500" align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/8szjEn.jpg'/>
 
-<Img width="700" align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/XMPlyf.jpg'/>
-
 事件流描述的就是从页面中接受事件的顺序。但有意思的是，IE和Netscape团队提出了几乎完全相反的事件流概念。IE的事件流是事件冒泡流，而Netscape Communicator的事件流是事件捕获流。
 
-### 事件冒泡与事件捕获
+### 事件冒泡流与事件捕获流
 
 - 事件冒泡流：事件开始由最具体的元素（文档中嵌套层次最深的那个节点）接收，然后逐级向上传播到较为不具体的节点（文档）。（由内及外）
 - 事件捕获流：由不太具体的节点更早接收到事件，而最具体的节点应该最后接收到事件。（由外及内）
@@ -63,10 +63,6 @@ JavaScript和HTML之间的交互是通过事件来实现的。事件，就是文
 
 1. “DOM2级事件”规范明确要求捕获阶段不会涉及实际目标的事件，但IE9、Chrome、Firefox、Safari和Opera9.5及更高版本都会在捕获阶段触发实际目标上的事件。结果，目标对象上的事件就会执行两次！
 2. 并非所有的事件都会有冒泡阶段。但所有的事件都会经过捕获阶段和处于目标阶段。eg:跳过冒泡阶段的事件：获得输入焦点的focus事件和失去输入焦点的blur事件
-
-附一张自己画的图：(注意：处于目标阶段事件发生，但事件的处理属于冒泡阶段)
-
-<img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/1LomPB.jpg'/>
 
 ### 典型例子
 
@@ -136,25 +132,7 @@ inner.addEventListener('click', function() {
 
 **A3**: wrap capture、outer capture、**inner bubbling**、**inner capture**、outer bubbling、wrap bubbling
 
-### 事件代理
-
-由于事件会在冒泡阶段向上传播到父节点，因此可以把子节点的监听函数定义在父节点上，由父节点的监听函数统一处理多个子元素的事件。这种方法叫做事件的代理（delegation）。
-
-```js
-var ul = document.querySelector('ul');
-
-ul.addEventListener('click', function (event) {
-  if (event.target.tagName.toLowerCase() === 'li') {
-    // some code
-  }
-});
-```
-
-上面代码中，click 事件的监听函数定义在 `<ul>` 节点，但是实际上，它处理的是子节点 `<li>` 的 click 事件。这样做的好处是，只要定义一个监听函数，就能处理多个子节点的事件，而不用在每个 `<li>` 节点上定义监听函数。而且以后再添加子节点，监听函数依然有效。
-
-### 阻止传播
-
-#### event.stopPropagation()
+### event.stopPropagation()
 
 如果希望事件到某个节点为止，不再传播，可以使用事件对象的 `stopPropagation` 方法。
 
@@ -188,7 +166,7 @@ p.addEventListener('click', function(event) {
 
 上面代码中，p元素绑定了两个click事件的监听函数。stopPropagation方法只能阻止这个事件向其他元素传播。因此，第二个监听函数会触发。输出结果会先是1，然后是2。
 
-#### event.stopImmediatePropagation()
+### event.stopImmediatePropagation()
 
 如果想要彻底阻止这个事件的传播，不再触发后面所有click的监听函数，可以使用 `stopImmediatePropagation` 方法。
 
@@ -205,6 +183,22 @@ p.addEventListener('click', function(event) {
 ```
 
 上面代码中，`stopImmediatePropagation` 方法可以彻底阻止这个事件传播，使得后面绑定的所有 click 监听函数都不再触发。所以，只会输出1，不会输出2。
+
+## 事件代理
+
+由于事件会在冒泡阶段向上传播到父节点，因此可以把子节点的监听函数定义在父节点上，由父节点的监听函数统一处理多个子元素的事件。这种方法叫做事件的代理（delegation）。
+
+```js
+var ul = document.querySelector('ul');
+
+ul.addEventListener('click', function (event) {
+  if (event.target.tagName.toLowerCase() === 'li') {
+    // some code
+  }
+});
+```
+
+上面代码中，click 事件的监听函数定义在 `<ul>` 节点，但是实际上，它处理的是子节点 `<li>` 的 click 事件。这样做的好处是，只要定义一个监听函数，就能处理多个子节点的事件，而不用在每个 `<li>` 节点上定义监听函数。而且以后再添加子节点，监听函数依然有效。在 React 事件系统中也应用事件代理这种方式。
 
 ## 事件监听函数
 
@@ -373,6 +367,39 @@ DOM2级事件监听函数的主要好处是可以添加多个事件监听函数�
 
 **A**: HTML事件监听函数与DOM0级事件监听函数不能同时存在，会覆盖。且DOM0级事件监听函数不能累积添加。只执行最后一个添加的事件监听函数.DOM2级事件程序不受HTML事件监听函数和DOM0级事件监听函数的影响。遵从先添加先执行的原则，可以累积添加事件。
 
-## 
+### this 指向
 
-1. [javaScript事件系统详解 by: 返回主页wanglehui](https://www.cnblogs.com/zxjwlh/p/6357362.html)
+<Hint type="tip">监听函数 **内部** 的 this 指向触发事件的那个元素节点。</Hint>
+
+```html
+<button id="btn" onclick="console.log(this.id)">点击</button>
+```
+
+执行上面代码，点击后会输出 btn。其他两种监听函数的写法，this 的指向也是如此。
+
+```js
+// HTML 代码如下
+// <button id="btn">点击</button>
+var btn = document.getElementById('btn');
+
+// DOM0 级事件监听函数
+btn.onclick = function () {
+  console.log(this.id);
+};
+
+// DOM2 级事件监听函数
+btn.addEventListener(
+  'click',
+  function (e) {
+    console.log(this.id);
+  },
+  false
+);
+```
+
+上面两种写法，点击按钮以后也是输出 btn。
+
+## 参考资料
+
+1. [javaScript事件系统详解，作者：wanglehui](https://www.cnblogs.com/zxjwlh/p/6357362.html)
+2. [JavaScript 标准参考教程（alpha）：事件模型，作者：阮一峰](http://javascript.ruanyifeng.com/dom/event.html)

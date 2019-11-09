@@ -1,6 +1,6 @@
 ---
-title: 节点种类与继承
-sidebar_label: 节点种类与继承
+title: 节点基础概念
+sidebar_label: 节点基础概念
 ---
 
 import Hint from '../../../src/components/Hint'

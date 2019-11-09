@@ -135,6 +135,90 @@ module.exports = {
       "css/appendix/related-websites"
     ]
   },
+  "web": {
+    "前言": [
+      "web/preface/overview",
+      "web/preface/note",
+    ],
+    "1. HTTP 协议": [
+      "web/1.http/http-connection",
+      "web/1.http/http-status",
+      "web/1.http/http-cache",
+      "web/1.http/http1.1",
+      "web/1.http/http2",
+      "web/1.http/https",
+    ],
+    "2. 跨域请求": [
+      "web/3.cross-domain/same-origin-policy",
+      "web/3.cross-domain/jsonp",
+      "web/3.cross-domain/cors",
+      "web/3.cross-domain/websocket"
+    ],
+    "3. 数据传输": [
+      "web/3.data-transmission/json",
+      "web/3.data-transmission/ajax",
+      "web/3.data-transmission/fetch",
+      "web/3.data-transmission/form",
+      "web/3.data-transmission/file",
+    ],
+    "4. 浏览器渲染": [
+      "web/4.browser-rendering/rendering-engine",
+      "web/4.browser-rendering/js-single-thread",
+      "web/4.browser-rendering/page-rendering",
+      "web/4.browser-rendering/async-defer",
+      "web/4.browser-rendering/reflow-repaint",
+      "web/4.browser-rendering/DOMContentLoaded",
+    ],
+    "5. 跨文档通信": [
+      "web/5.cross-document/iframe",
+      "web/5.cross-document/postMassage"
+
+    ],
+    "6. 前端路由": [
+      "web/6.rooter/hash-rooter",
+      "web/6.rooter/history-rooter",
+    ],
+    "7. BOM": [
+      "web/7.bom/window",
+      "web/7.bom/location",
+      "web/7.bom/navigator",
+      "web/7.bom/screen",
+      "web/7.bom/history",
+    ],
+    "8. DOM": [
+      "web/8.dom/node",
+      "web/8.dom/node-crud",
+      "web/8.dom/event-system",
+      "web/8.dom/event-object",
+      "web/8.dom/event-type",
+    ],
+    "10. 动效 & 绘图": [
+      "web/10.graphics-effects/js-animation",
+      "web/10.graphics-effects/canvas",
+      "web/10.graphics-effects/webgl",
+    ],
+    "9. 离线 & 存储": [
+      "web/9.offline-storage/webstorage",
+      "web/9.offline-storage/IndexedDB",
+      "web/9.offline-storage/web-SQL",
+      "web/9.offline-storage/service-workers",
+      "web/9.offline-storage/summary"
+    ],
+    "11. Web 安全机制": [
+      "web/11.web-security/cookie",
+      "web/11.web-security/session",
+      "web/11.web-security/OAuth",
+      "web/11.web-security/JWT",
+      "web/11.web-security/CSRF",
+      "web/11.web-security/XSS"
+    ],
+    "12. Web 性能优化": [
+      "web/12.web-optimize/pic-optimize",
+      "web/12.web-optimize/delay-loading",
+      "web/12.web-optimize/http-cache",
+      "web/12.web-optimize/webworker",
+    ],
+  },
   "react": {
     "前言": [
       "react/preface/overview",
@@ -196,89 +280,15 @@ module.exports = {
       "react/appendix/related-websites"
     ]
   },
-  "web": {
+  "design-patterns": {
     "前言": [
-      "web/preface/overview",
-      "web/preface/note",
+      "design-patterns/preface/overview",
+      "design-patterns/preface/note",
     ],
-    "1. HTTP 协议": [
-      "web/1.http/http-connection",
-      "web/1.http/http-status",
-      "web/1.http/http-cache",
-      "web/1.http/http1.1",
-      "web/1.http/http2",
-      "web/1.http/https",
-    ],
-    "2. 跨域请求": [
-      "web/3.cross-domain/same-origin-policy",
-      "web/3.cross-domain/jsonp",
-      "web/3.cross-domain/cors",
-      "web/3.cross-domain/websocket"
-    ],
-    "3. 数据传输": [
-      "web/3.data-transmission/json",
-      "web/3.data-transmission/ajax",
-      "web/3.data-transmission/fetch",
-      "web/3.data-transmission/form",
-      "web/3.data-transmission/file",
-    ],
-    "4. 浏览器渲染": [
-      "web/4.browser-rendering/rendering-engine",
-      "web/4.browser-rendering/js-single-thread",
-      "web/4.browser-rendering/page-rendering",
-      "web/4.browser-rendering/async-defer",
-      "web/4.browser-rendering/reflow-repaint",
-      "web/4.browser-rendering/DOMContentLoaded",
-    ],
-    "5. 跨文档通信": [
-      "web/5.cross-document/iframe",
-      "web/5.cross-document/postMassage"
-
-    ],
-    "6. 前端路由": [
-      "web/6.rooter/hash-rooter",
-      "web/6.rooter/history-rooter",
-    ],
-    "7. BOM": [
-      "web/7.bom/window",
-      "web/7.bom/location",
-      "web/7.bom/navigator",
-      "web/7.bom/screen",
-      "web/7.bom/history",
-    ],
-    "8. DOM": [
-      "web/8.dom/node",
-      "web/8.dom/node-crud",
-      "web/8.dom/event-system",
-      "web/8.dom/event",
-      "web/8.dom/mouseover-or-mouseenter",
-    ],
-    "9. 离线 & 存储": [
-      "web/9.offline-storage/webstorage",
-      "web/9.offline-storage/IndexedDB",
-      "web/9.offline-storage/web-SQL",
-      "web/9.offline-storage/service-workers",
-      "web/9.offline-storage/summary"
-    ],
-    "10. 绘图 & 动效": [
-      "web/10.graphics-effects/canvas",
-      "web/10.graphics-effects/webgl",
-      "web/10.graphics-effects/js-animation",
-    ],
-    "11. Web 安全机制": [
-      "web/11.web-security/cookie",
-      "web/11.web-security/session",
-      "web/11.web-security/OAuth",
-      "web/11.web-security/JWT",
-      "web/11.web-security/CSRF",
-      "web/11.web-security/XSS"
-    ],
-    "12. Web 性能优化": [
-      "web/12.web-optimize/pic-optimize",
-      "web/12.web-optimize/delay-loading",
-      "web/12.web-optimize/http-cache",
-      "web/12.web-optimize/webworker",
-    ],
+    '3. 行为模式': [
+      'design-patterns/3.behavior-pattern/observer',
+      'design-patterns/3.behavior-pattern/pub-sub',
+    ]
   },
   "algorithm": {
     "前言": [
@@ -346,16 +356,6 @@ module.exports = {
     ],
     "13. 数学": [
       "algorithm/13.math/powx-n",
-    ]
-  },
-  "design-patterns": {
-    "前言": [
-      "design-patterns/preface/overview",
-      "design-patterns/preface/note",
-    ],
-    '3. 行为模式': [
-      'design-patterns/3.behavior-pattern/observer',
-      'design-patterns/3.behavior-pattern/pub-sub',
     ]
   },
   docs: {
