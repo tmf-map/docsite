@@ -89,9 +89,11 @@ requestAnimationFrame(callback)
 它接收一个回调函数作为参数，在即将开始的浏览器重绘时，会调用这个函数，并会给这个函数传入调用回调函数时的时间作为参数。由于requestAnimationFrame的功效只是一次性的，所以若想达到动画效果，则必须连续不断的调用requestAnimationFrame，就像我们使用setTimeout来实现动画所做的那样。
 
 requestAnimationFrame函数会返回一个id，可以把它作为参数传入cancelAnimationFrame函数来取消 requestAnimationFrame 的回调。跟setTimeout的clearTimeout很相似。 可以这么说，requestAnimationFrame其实就是setTimeout的性能增强版。
-```
+
+```html
 <button  id="btn">清除</button>
 ```
+
 ```js
 var id;
 var time = new Date();
@@ -108,6 +110,7 @@ btn.onclick = function (){
 ```
 
 当setTimeout、setInterval甚至是requestAnimationFrame在循环里面要做很长的处理时，就会出现动画时间变慢的结果，使它本该在固定时间内结束而结果却是不尽人意的延迟：
+
 ```js
 function step() {
   var temp = div.offsetLeft + 2;
@@ -119,6 +122,7 @@ function step() {
 }
 window.requestAnimationFrame(step);
 ```
+
 动画变慢的结果其实是采用增量的方式来执行了动画，为了更精确的控制动画，更合适的方法是将动画与时间关联起来
 
 ## 示例：匀速运动

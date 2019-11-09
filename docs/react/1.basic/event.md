@@ -22,9 +22,7 @@ VirtualDOM 在内存中是以 **对象** 的形式存在，React 基于 VirtualD
 
 <Hint type="warning">React 使用事件委托机制，会将所有的事件都绑定在最外层\(`document`\)元素上，依赖事件的冒泡机制完成委派，在冒泡阶段处理事件，不支持捕获阶段处理事件。</Hint>
 
-
 <Hint type="best">阻止合成事件间的冒泡，用 `e.stopPropagation()` 。</Hint>
-
 
 ### 原生事件
 
@@ -54,20 +52,15 @@ A：组件挂载完成之后，即 componentDidMount。
 
 <Hint type="must">一定要在组件卸载（componentWillUnmount）时手动移除，否则很可能出现内存泄漏的问题，而合成事件不需要，因为 react 内部已经帮你自动处理了。</Hint>
 
-
 <Hint type="warning">合成事件中阻止事件冒泡是没办法阻止原生事件的冒泡。即使是 reactEvent.nativeEvent.stopPropagation\(\)。</Hint>
-
 
 reactEvent 是封装好的事件，它是在 document 的回调里进行封装，并执行回调的。而原生的监听，在document 接收到冒泡时早就执行完了。`reactEvent.nativeEvent.stopPropagation()` 方法实际上是在最外层节点上调用了原生的 stopPropagation， 只阻止了 document 的冒泡。
 
 <Hint type="warning">原生事件中阻止冒泡是可以阻止合成事件的冒泡。</Hint>
 
-
 <Hint type="best">阻止合成事件与最外层 document 上的事件间的冒泡，用 `e.nativeEvent.stopImmediatePropagation()` 。</Hint>
 
-
 <Hint type="best">阻止合成事件与除最外层 document 上的原生事件上的冒泡，通过判断 e.target 来避免。</Hint>
-
 
 ## 合成事件的绑定
 
@@ -85,7 +78,6 @@ onChange = {this.handleChange.bind(this)}
 
 <Hint type="warning">这种方法有一个潜在的性能问题：当组件每次重新渲染时，都会有一个新的函数创建。</Hint>
 
-
 但是在真正的开发场景中，由此引发的性能问题往往不值一提（除非是大型组件消费类应用或游戏）。
 
 #### 箭头函数隐式绑定：
@@ -98,9 +90,7 @@ onChange = {e => this.handleChange(e)}
 
 <Hint type="warning">这种方法与第一种方法一样，同样存在潜在的性能问题。</Hint>
 
-
 <Hint type="best">函数式组件优先使用箭头函数隐式绑定this。</Hint>
-
 
 #### 双冒号隐式绑定：
 
@@ -114,9 +104,7 @@ onChange = {::this.handleChange}
 
 <Hint type="warning">该方法不能带参数。</Hint>
 
-
 <Hint type="tip">babel 会将该方法转译成 `.bind(this)` 的方式。</Hint>
-
 
 ### 方式二：创建实例时绑定
 
@@ -137,9 +125,37 @@ constructor(props) {
 
 <Hint type="warning">组件实例会重复绑定该方法。</Hint>
 
-
 <Hint type="best">class 类型的组件优先使用该方法，也是性能最好的。</Hint>
 
+演示例子，可以打开浏览器控制来查看结果：
+
+```jsx live
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { isToggleOn: true };
+
+    // you can uncomment this line
+    // this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    // this will refer to window not undefined because there is no 'use strict'
+    console.log(this);
+    this.setState(state => ({
+      isToggleOn: !state.isToggleOn
+    }));
+  };
+
+  render() {
+    return (
+      <button onClick={this.handleClick}>
+        {this.state.isToggleOn ? "ON" : "OFF"}
+      </button>
+    );
+  }
+}
+```
 
 #### class 属性中使用 = 和箭头函数：
 
