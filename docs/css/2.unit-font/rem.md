@@ -25,16 +25,3 @@ rem 是 CSS3 新增的一个相对单位（root em），这个单位引起了广
 主要两个方案：
 - 自己写，需要考虑各个移动端的屏幕化分和 base font-size
 - 使用第三方 [postcss plugin](https://github.com/cuth/postcss-pxtorem) / [webpack loader](https://github.com/songsiqi/px2rem)
-
-## vh/vw
-
-v 指视窗/视区，那我们得首先明确 vh/vw 指的是什么？[在线 Demo](https://www.zhangxinxu.com/study/201209/vw-vh-to-pixel.html)
-
-```text
-vw ~ window.innerWidth
-vh ~ window.innerHeight
-```
-
-不清楚 `innerWidth` 指哪块的话可以参考下面这张图：
-
-<img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/JRbMZD.jpg'/>
