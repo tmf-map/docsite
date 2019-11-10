@@ -101,7 +101,7 @@ function Hint ({type, children}) {
     return (
         <div className="custom-hint" style={{borderLeft: `0.25rem solid ${colorMap[type].color}`}}>
             <div style={{float: 'left'}}>{colorMap[type].icon}</div>
-            <div dangerouslySetInnerHTML={{ __html: marked(`<strong>${colorMap[type].name}</strong>：${children}`) }} />
+            <div dangerouslySetInnerHTML={{ __html: marked(`<span>${colorMap[type].name}</span>：${children}`) }} />
         </div>
     )
 }

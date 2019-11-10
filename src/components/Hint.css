@@ -18,3 +18,7 @@
   line-height: 1.8;
   padding-left: 2rem;
 }
+
+.custom-hint span {
+  font-weight: 500;
+}
