@@ -9,8 +9,8 @@ const colorMap = {
         icon: (
             <svg
                 preserveAspectRatio="xMidYMid meet"
-                height="1em"
-                width="1em"
+                height="1rem"
+                width="1rem"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -34,8 +34,8 @@ const colorMap = {
         icon: (
             <svg
                 preserveAspectRatio="xMidYMid meet"
-                height="1em"
-                width="1em"
+                height="1rem"
+                width="1rem"
                 fill="#ff4642"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 1024 1024"
@@ -54,8 +54,8 @@ const colorMap = {
         icon: (
             <svg
                 preserveAspectRatio="xMidYMid meet"
-                height="1em"
-                width="1em"
+                height="1rem"
+                width="1rem"
                 fill="currentColor"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -75,8 +75,8 @@ const colorMap = {
         icon: (
             <svg
                 preserveAspectRatio="xMidYMid meet"
-                height="1em"
-                width="1em"
+                height="1rem"
+                width="1rem"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -99,7 +99,7 @@ const colorMap = {
 
 function Hint ({type, children}) {
     return (
-        <div className="custom-hint" style={{borderLeft: `4px solid ${colorMap[type].color}`}}>
+        <div className="custom-hint" style={{borderLeft: `0.25rem solid ${colorMap[type].color}`}}>
             <div style={{float: 'left'}}>{colorMap[type].icon}</div>
             <div dangerouslySetInnerHTML={{ __html: marked(`<strong>${colorMap[type].name}</strong>：${children}`) }} />
         </div>

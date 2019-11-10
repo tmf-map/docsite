@@ -19,7 +19,7 @@
   --ifm-table-cell-padding: 0.7rem;
   --ifm-menu-color-background-active: rgb(255, 255, 255);
   --ifm-navbar-shadow: 0 3px 8px 0 rgba(116, 129, 141, 0.1);
-  --ifm-navbar-height: 70px;
+  --ifm-navbar-height: 4.375rem;
   --ifm-navbar-padding-horizontal: 2rem;
   --ifm-spacing-horizontal: 1.5rem;
   --ifm-heading-font-weight: 500;
@@ -172,6 +172,7 @@ table tbody {
 
 .menu .menu__link {
   border: 1px solid transparent;
+  line-height: 1.25rem;
 }
 .menu .menu__link:hover {
   --ifm-menu-color-background-active: rgb(230, 236, 241);
@@ -293,12 +294,12 @@ footer.footer {
 }
 
 .footer__item {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 2.3;
 }
 
 .footer__item + div {
-  margin-top: 8px;
+  margin-top: 0.5rem;
 }
 
 .footer__items > div:first-child {
@@ -310,13 +311,14 @@ footer.footer {
 }
 
 .footer-reward {
-  width: 80px;
-  height: 80px;
+  width: 5rem;
+  height: 5rem;
   border-radius: 1px;
+  margin-top: 0.5rem;
 }
 
 .footer-logo {
-  width: 35px;
+  width: 2rem;
 }
 
 .footer-logo + span {
@@ -383,7 +385,33 @@ html[data-theme="dark"] .menu .menu__link.menu__link--active:not(.menu__link--su
   border: 1px solid rgba(167, 167, 167, 0.2);
 }
 
-@media (min-width: 997px) {
+/* Mobile */
+@media (width <= 996px) {
+  :root {
+    --ifm-font-size-base: 12px;
+  }
+  html {
+    font-size: 12px;
+  }
+}
+
+/* MacBook Pro 13.3 */
+@media (996px < width <= 1440px) {
+  :root {
+    --ifm-font-size-base: 14px;
+  }
+  html {
+    font-size: 14px;
+  }
+  .navbar + main > div > div:not(.row) {
+    width: 290px;
+  }
+  .footer.footer--dark .container .text--center {
+    font-size: 12px;
+  }
+}
+
+@media (width > 996px) {
   .navbar + main > div > div:not(.row) > div {
     padding-top: 1.8rem;
     padding-bottom: 2rem;
@@ -396,4 +424,3 @@ html[data-theme="dark"] .menu .menu__link.menu__link--active:not(.menu__link--su
     display: block;
   }
 }
-
