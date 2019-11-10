@@ -6,7 +6,7 @@ module.exports = {
   tagline: 'The tagline of my site',
   url: 'https://thinkbucket.github.io',
   baseUrl: '/docsite/',
-  favicon: 'https://avatars1.githubusercontent.com/u/53037732?s=70&v=4',
+  favicon: 'https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/docsite-logo-white-mode.png',
   organizationName: githubOrg, // Usually your GitHub org/user name.
   projectName: 'docsite', // Usually your repo name.
   themes: ['@docusaurus/theme-live-codeblock'],
@@ -15,7 +15,7 @@ module.exports = {
       title: githubOrg,
       logo: {
         alt: 'Logo',
-        src: 'https://avatars1.githubusercontent.com/u/53037732?s=70&v=4',
+        src: 'https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/docsite-logo-white-mode.png',
       },
       links: [
         {to: 'docs/javascript/preface/overview', label: 'Javascript', position: 'left'},
@@ -38,19 +38,21 @@ module.exports = {
       style: 'dark',
       links: [
         {
-          title: '相关资源',
+          title: '',
           items: [
             {
-              label: '文档介绍',
-              to: '/',
+              html: `<img class="footer-logo" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/docsite-logo-dark-mode.png" /><span>${githubOrg}</span>`
             },
             {
-              label: 'MDX',
-              to: 'https://github.com/mdx-js/mdx',
-            },
+              html: '<p class="footer-desc">致力于加强开发者对技术的学习和思考，专注于互联网技术发展，这里集聚了开发者的思考，总结和对未来互联网科技发展的畅想。</p>'
+            }
+          ],
+        },
+        {
+          title: '公众号',
+          items: [
             {
-              label: 'Docusaurus',
-              to: 'https://github.com/facebook/docusaurus',
+              html: '<img class="footer-reward" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/qrcode_for_wechat.jpg" />'
             },
           ],
         },
@@ -66,7 +68,7 @@ module.exports = {
               href: `https://github.com/${githubOrg}/${githubRepo}/issues`,
             },
             {
-              label: '报告 Bug',
+              label: '报告问题',
               href: `https://github.com/${githubOrg}/${githubRepo}/issues/new`,
             },
           ],
@@ -89,11 +91,11 @@ module.exports = {
           ],
         },
       ],
-      logo: {
-        alt: 'Facebook Open Source Logo',
-        src: 'https://docusaurus.io/img/oss_logo.png',
-      },
-      copyright: `Copyright © ${new Date().getFullYear()} ${githubOrg}.`,
+      // logo: {
+      //   alt: `${githubOrg} Logo`,
+      //   src: '',
+      // },
+      copyright: `Copyright © ${new Date().getFullYear()} ${githubOrg}`,
     },
     prism: {
       theme: require('prism-react-renderer/themes/nightOwl')

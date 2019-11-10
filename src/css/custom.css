@@ -1,3 +1,5 @@
+@import './fonts.css';
+
 :root {
   --ifm-color-primary-lightest: #d6f2ff;
   --ifm-color-primary-lighter: #ade5ff;
@@ -15,16 +17,18 @@
   --ifm-table-border-color: rgba(191, 191, 191, 0.3);
   --ifm-table-stripe-background: rgba(185, 202, 218, 0.15);
   --ifm-table-cell-padding: 0.7rem;
-  --ifm-menu-color-background-active: #fff;
-  --ifm-navbar-padding-horizontal: 1.5rem;
+  --ifm-menu-color-background-active: rgb(255, 255, 255);
   --ifm-navbar-shadow: 0 3px 8px 0 rgba(116, 129, 141, 0.1);
   --ifm-navbar-height: 70px;
+  --ifm-navbar-padding-horizontal: 2rem;
   --ifm-spacing-horizontal: 1.5rem;
   --ifm-heading-font-weight: 500;
   --ifm-list-item-margin: 0.18rem;
   --ifm-leading: 1rem;
+  --ifm-container-width: 1200px;
 
   --my-board--background: rgba(185, 202, 218, 0.15);
+  --my-logo-font-family: 'Eurofighter Expanded';
 
   -webkit-font-smoothing: antialiased;
 }
@@ -32,7 +36,7 @@
 /* homepage banner */
 .hero.hero--primary {
   color: rgba(255,255,255,0.65);
-  /* background-color: #fff; */
+  /* background-color: rgb(255, 255, 255); */
   background-image: url(https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/homepage-cosmos-bg.svg),linear-gradient(135deg, #08003c 0%, #062875 100%);
   background-repeat: repeat-x;
   background-position: center;
@@ -44,6 +48,11 @@ header .button--outline {
 }
 header .button--outline:hover {
   color: #333 !important;
+}
+
+.features_src-pages- .container {
+  padding-left: var(--ifm-navbar-padding-horizontal);
+  padding-right: var(--ifm-navbar-padding-horizontal);
 }
 
 .markdown > h2 {
@@ -137,6 +146,12 @@ table tbody {
   border-radius: 3px;
 }
 
+.navbar .navbar__logo + strong {
+  font-family: var(--my-logo-font-family);
+  color: #444;
+  font-weight: 500;
+}
+
 .navbar .navbar__link {
   white-space: nowrap;
 }
@@ -168,7 +183,7 @@ table tbody {
 }
 
 .menu .menu__link.menu__link--active:not(.menu__link--sublist):hover {
-  --ifm-menu-color-background-active: #fff;
+  --ifm-menu-color-background-active: rgb(255, 255, 255);
   border: 1px solid #e6ecf1;
 }
 
@@ -245,9 +260,30 @@ h2 {
   top: calc(var(--ifm-pre-padding) - 2px);
 }
 
+.footer.footer--dark {
+  --ifm-footer-background-color: #021626;
+}
+
+.footer.footer--dark .container .footer__links {
+  margin-bottom: 3.5rem;
+}
+
+.footer.footer--dark .container .text--center {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1.5rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 13px;
+}
+
+.footer.footer--dark .container .text--center .footer__logo {
+  color: rgb(255, 255, 255);
+}
+
 footer.footer {
   display: none;
   -webkit-font-smoothing: initial;
+  padding-top: 2.5rem;
+  padding-bottom: 1.5rem;
 }
 
 .footer__title {
@@ -265,6 +301,44 @@ footer.footer {
   margin-top: 8px;
 }
 
+.footer__items > div:first-child {
+  display: table;
+}
+
+.footer__col:first-child .footer__items > div:first-child {
+  margin-top: -5px;
+}
+
+.footer-reward {
+  width: 80px;
+  height: 80px;
+  border-radius: 1px;
+}
+
+.footer-logo {
+  width: 35px;
+}
+
+.footer-logo + span {
+  display: table-cell;
+  padding-left: 12px;
+  vertical-align: middle;
+  font-family: var(--my-logo-font-family);
+}
+
+.footer-desc {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 0.5rem;
+  line-height: 2;
+}
+
+.col.footer__col:first-child {
+  flex-grow: 1.5;
+  margin-right: 6rem;
+  flex-shrink: 0;
+}
+
 /* dark theme */
 
 html[data-theme="dark"] {
@@ -272,6 +346,10 @@ html[data-theme="dark"] {
   --ifm-navbar-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
   /* --ifm-navbar-background-color: #000; */
   /* --ifm-background-color: #1d1f21; */
+}
+
+html[data-theme="dark"] .navbar .navbar__logo + strong {
+  color: rgb(255, 255, 255);
 }
 
 html[data-theme="dark"] .footer.footer--dark {
@@ -287,7 +365,7 @@ html[data-theme="dark"] .markdown ul.tabs .tab-item {
 }
 
 html[data-theme="dark"] .markdown ul.tabs .tab-item--active {
-  color: rgba(255, 255, 255, 1);
+  color: rgb(255, 255, 255);
 }
 
 html[data-theme="dark"] .menu .menu__link:hover {
