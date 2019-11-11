@@ -388,10 +388,10 @@ html[data-theme="dark"] .menu .menu__link.menu__link--active:not(.menu__link--su
 /* Mobile */
 @media (width <= 996px) {
   :root {
-    --ifm-font-size-base: 12px;
+    --ifm-font-size-base: 14px;
   }
   html {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 
