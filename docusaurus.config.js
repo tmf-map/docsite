@@ -11,6 +11,7 @@ module.exports = {
   projectName: 'docsite', // Usually your repo name.
   themes: ['@docusaurus/theme-live-codeblock'],
   themeConfig: {
+    disableDarkMode: false,
     navbar: {
       title: githubOrg,
       logo: {

@@ -885,16 +885,16 @@
   resolved "https://registry.npm.taobao.org/@csstools/convert-colors/download/@csstools/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha1-rUldxBsS511YjG24uYNPCPoTHrc=
 
-"@docusaurus/core@2.0.0-alpha.33":
-  version "2.0.0-alpha.33"
-  resolved "https://registry.npm.taobao.org/@docusaurus/core/download/@docusaurus/core-2.0.0-alpha.33.tgz#b8c72f585222daf87a4f902c83c6503a600b07bc"
-  integrity sha1-uMcvWFIi2vh6T5Asg8ZQOmALB7w=
+"@docusaurus/core@2.0.0-alpha.34":
+  version "2.0.0-alpha.34"
+  resolved "https://registry.npm.taobao.org/@docusaurus/core/download/@docusaurus/core-2.0.0-alpha.34.tgz#e5b6018d1354a472a7efd8613fc7e85e95da380d"
+  integrity sha1-5bYBjRNUpHKn79hhP8foXpXaOA0=
   dependencies:
     "@babel/core" "^7.7.2"
     "@babel/plugin-syntax-dynamic-import" "^7.2.0"
     "@babel/preset-env" "^7.7.1"
     "@babel/preset-react" "^7.7.0"
-    "@docusaurus/utils" "^2.0.0-alpha.33"
+    "@docusaurus/utils" "^2.0.0-alpha.34"
     "@endiliey/static-site-generator-webpack-plugin" "^4.0.0"
     babel-loader "^8.0.6"
     babel-plugin-dynamic-import-node "^2.3.0"
@@ -940,10 +940,10 @@
     webpack-merge "^4.2.2"
     webpackbar "^4.0.0"
 
-"@docusaurus/mdx-loader@^2.0.0-alpha.33":
-  version "2.0.0-alpha.33"
-  resolved "https://registry.npm.taobao.org/@docusaurus/mdx-loader/download/@docusaurus/mdx-loader-2.0.0-alpha.33.tgz#919a7c2999c6d64f6cd9227392559baa0f59def9"
-  integrity sha1-kZp8KZnG1k9s2SJzklWbqg9Z3vk=
+"@docusaurus/mdx-loader@^2.0.0-alpha.34":
+  version "2.0.0-alpha.34"
+  resolved "https://registry.npm.taobao.org/@docusaurus/mdx-loader/download/@docusaurus/mdx-loader-2.0.0-alpha.34.tgz#bf2573f81855bf131813b643d667a4f4cc79208e"
+  integrity sha1-vyVz+BhVvxMYE7ZD1mek9Mx5II4=
   dependencies:
     "@babel/parser" "^7.7.2"
     "@babel/traverse" "^7.7.2"
@@ -958,78 +958,78 @@
     stringify-object "^3.3.0"
     unist-util-visit "^2.0.0"
 
-"@docusaurus/plugin-content-blog@^2.0.0-alpha.33":
-  version "2.0.0-alpha.33"
-  resolved "https://registry.npm.taobao.org/@docusaurus/plugin-content-blog/download/@docusaurus/plugin-content-blog-2.0.0-alpha.33.tgz#d7169fe8e318e0f957b22e1d48727c46df1e8991"
-  integrity sha1-1xaf6OMY4PlXsi4dSHJ8Rt8eiZE=
+"@docusaurus/plugin-content-blog@^2.0.0-alpha.34":
+  version "2.0.0-alpha.34"
+  resolved "https://registry.npm.taobao.org/@docusaurus/plugin-content-blog/download/@docusaurus/plugin-content-blog-2.0.0-alpha.34.tgz#d92bdbf3161a94d808f1318dcae3884493d08991"
+  integrity sha1-2Svb8xYalNgI8TGNyuOIRJPQiZE=
   dependencies:
-    "@docusaurus/mdx-loader" "^2.0.0-alpha.33"
-    "@docusaurus/utils" "^2.0.0-alpha.33"
+    "@docusaurus/mdx-loader" "^2.0.0-alpha.34"
+    "@docusaurus/utils" "^2.0.0-alpha.34"
     feed "^4.0.0"
     fs-extra "^8.1.0"
     globby "^10.0.1"
     loader-utils "^1.2.3"
     lodash "^4.17.15"
 
-"@docusaurus/plugin-content-docs@^2.0.0-alpha.33":
-  version "2.0.0-alpha.33"
-  resolved "https://registry.npm.taobao.org/@docusaurus/plugin-content-docs/download/@docusaurus/plugin-content-docs-2.0.0-alpha.33.tgz#28e9b1375dd860d89d156c127d4cbd1e4d05b3f4"
-  integrity sha1-KOmxN13YYNidFWwSfUy9Hk0Fs/Q=
+"@docusaurus/plugin-content-docs@^2.0.0-alpha.34":
+  version "2.0.0-alpha.34"
+  resolved "https://registry.npm.taobao.org/@docusaurus/plugin-content-docs/download/@docusaurus/plugin-content-docs-2.0.0-alpha.34.tgz#722a6d953f1914b23ffa67c1e81fff728a5d313d"
+  integrity sha1-ciptlT8ZFLI/+mfB6B//copdMT0=
   dependencies:
-    "@docusaurus/mdx-loader" "^2.0.0-alpha.33"
-    "@docusaurus/utils" "^2.0.0-alpha.33"
-    cross-spawn "^7.0.1"
+    "@docusaurus/mdx-loader" "^2.0.0-alpha.34"
+    "@docusaurus/utils" "^2.0.0-alpha.34"
+    execa "^3.2.0"
     fs-extra "^8.1.0"
     globby "^10.0.1"
     import-fresh "^3.1.0"
     loader-utils "^1.2.3"
     shelljs "^0.8.3"
 
-"@docusaurus/plugin-content-pages@^2.0.0-alpha.33":
-  version "2.0.0-alpha.33"
-  resolved "https://registry.npm.taobao.org/@docusaurus/plugin-content-pages/download/@docusaurus/plugin-content-pages-2.0.0-alpha.33.tgz#d4d0e2a993b4c889217f42c58cdf484453f2f8c6"
-  integrity sha1-1NDiqZO0yIkhf0LFjN9IRFPy+MY=
+"@docusaurus/plugin-content-pages@^2.0.0-alpha.34":
+  version "2.0.0-alpha.34"
+  resolved "https://registry.npm.taobao.org/@docusaurus/plugin-content-pages/download/@docusaurus/plugin-content-pages-2.0.0-alpha.34.tgz#333588d6427edd81a065e732258fef3f62466cdc"
+  integrity sha1-MzWI1kJ+3YGgZecyJY/vP2JGbNw=
   dependencies:
-    "@docusaurus/types" "^2.0.0-alpha.33"
-    "@docusaurus/utils" "^2.0.0-alpha.33"
+    "@docusaurus/types" "^2.0.0-alpha.34"
+    "@docusaurus/utils" "^2.0.0-alpha.34"
     globby "^10.0.1"
 
-"@docusaurus/plugin-google-analytics@^2.0.0-alpha.33":
-  version "2.0.0-alpha.33"
-  resolved "https://registry.npm.taobao.org/@docusaurus/plugin-google-analytics/download/@docusaurus/plugin-google-analytics-2.0.0-alpha.33.tgz#8d542f1dc5b2839867c4da5413cef9e3e8492bb4"
-  integrity sha1-jVQvHcWyg5hnxNpUE8754+hJK7Q=
+"@docusaurus/plugin-google-analytics@^2.0.0-alpha.34":
+  version "2.0.0-alpha.34"
+  resolved "https://registry.npm.taobao.org/@docusaurus/plugin-google-analytics/download/@docusaurus/plugin-google-analytics-2.0.0-alpha.34.tgz#45fb022aa0dcea0db1ef3ef32252d12992fa46f6"
+  integrity sha1-RfsCKqDc6g2x7z7zIlLRKZL6RvY=
 
-"@docusaurus/plugin-google-gtag@^2.0.0-alpha.33":
-  version "2.0.0-alpha.33"
-  resolved "https://registry.npm.taobao.org/@docusaurus/plugin-google-gtag/download/@docusaurus/plugin-google-gtag-2.0.0-alpha.33.tgz#49740ab3f6f13f97fdab893e8a55635ee87e54e7"
-  integrity sha1-SXQKs/bxP5f9q4k+ilVjXuh+VOc=
+"@docusaurus/plugin-google-gtag@^2.0.0-alpha.34":
+  version "2.0.0-alpha.34"
+  resolved "https://registry.npm.taobao.org/@docusaurus/plugin-google-gtag/download/@docusaurus/plugin-google-gtag-2.0.0-alpha.34.tgz#b0288dfe803f1127c4d9042aeedbe663282ad874"
+  integrity sha1-sCiN/oA/ESfE2QQq7tvmYygq2HQ=
 
-"@docusaurus/plugin-sitemap@^2.0.0-alpha.33":
-  version "2.0.0-alpha.33"
-  resolved "https://registry.npm.taobao.org/@docusaurus/plugin-sitemap/download/@docusaurus/plugin-sitemap-2.0.0-alpha.33.tgz#b3c69d62e5a4133f5998c526198e63de18646b26"
-  integrity sha1-s8adYuWkEz9ZmMUmGY5j3hhkayY=
+"@docusaurus/plugin-sitemap@^2.0.0-alpha.34":
+  version "2.0.0-alpha.34"
+  resolved "https://registry.npm.taobao.org/@docusaurus/plugin-sitemap/download/@docusaurus/plugin-sitemap-2.0.0-alpha.34.tgz#e95d8fe2378a6edb60468121f3b27831a7e50ccd"
+  integrity sha1-6V2P4jeKbttgRoEh87J4MaflDM0=
   dependencies:
-    "@docusaurus/types" "^2.0.0-alpha.33"
+    "@docusaurus/types" "^2.0.0-alpha.34"
     sitemap "^3.2.2"
 
-"@docusaurus/preset-classic@2.0.0-alpha.33":
-  version "2.0.0-alpha.33"
-  resolved "https://registry.npm.taobao.org/@docusaurus/preset-classic/download/@docusaurus/preset-classic-2.0.0-alpha.33.tgz#2f33b9b1f29c919d2476f83edb42eff6ff411290"
-  integrity sha1-LzO5sfKckZ0kdvg+20Lv9v9BEpA=
+"@docusaurus/preset-classic@2.0.0-alpha.34":
+  version "2.0.0-alpha.34"
+  resolved "https://registry.npm.taobao.org/@docusaurus/preset-classic/download/@docusaurus/preset-classic-2.0.0-alpha.34.tgz#35bc2cfbd050011b1037ab5e2f2353af9bed350a"
+  integrity sha1-Nbws+9BQARsQN6teLyNTr5vtNQo=
   dependencies:
-    "@docusaurus/plugin-content-blog" "^2.0.0-alpha.33"
-    "@docusaurus/plugin-content-docs" "^2.0.0-alpha.33"
-    "@docusaurus/plugin-content-pages" "^2.0.0-alpha.33"
-    "@docusaurus/plugin-google-analytics" "^2.0.0-alpha.33"
-    "@docusaurus/plugin-google-gtag" "^2.0.0-alpha.33"
-    "@docusaurus/plugin-sitemap" "^2.0.0-alpha.33"
-    "@docusaurus/theme-classic" "^2.0.0-alpha.33"
-    "@docusaurus/theme-search-algolia" "^2.0.0-alpha.33"
+    "@docusaurus/plugin-content-blog" "^2.0.0-alpha.34"
+    "@docusaurus/plugin-content-docs" "^2.0.0-alpha.34"
+    "@docusaurus/plugin-content-pages" "^2.0.0-alpha.34"
+    "@docusaurus/plugin-google-analytics" "^2.0.0-alpha.34"
+    "@docusaurus/plugin-google-gtag" "^2.0.0-alpha.34"
+    "@docusaurus/plugin-sitemap" "^2.0.0-alpha.34"
+    "@docusaurus/theme-classic" "^2.0.0-alpha.34"
+    "@docusaurus/theme-search-algolia" "^2.0.0-alpha.34"
 
-"@docusaurus/theme-classic@^2.0.0-alpha.33":
-  version "2.0.0-alpha.33"
-  resolved "https://registry.npm.taobao.org/@docusaurus/theme-classic/download/@docusaurus/theme-classic-2.0.0-alpha.33.tgz#9f7c52e1e316f91a953fc40b1953c2e6fbde4c42"
-  integrity sha1-n3xS4eMW+RqVP8QLGVPC5vveTEI=
+"@docusaurus/theme-classic@^2.0.0-alpha.34":
+  version "2.0.0-alpha.34"
+  resolved "https://registry.npm.taobao.org/@docusaurus/theme-classic/download/@docusaurus/theme-classic-2.0.0-alpha.34.tgz#9d81c36ab1d2bdf7b6fae229db9be06c03a4e21b"
+  integrity sha1-nYHDarHSvfe2+uIp25vgbAOk4hs=
   dependencies:
     "@mdx-js/mdx" "^1.5.1"
     "@mdx-js/react" "^1.5.1"
@@ -1040,10 +1040,10 @@
     prism-react-renderer "^1.0.2"
     react-toggle "^4.1.1"
 
-"@docusaurus/theme-live-codeblock@2.0.0-alpha.33":
-  version "2.0.0-alpha.33"
-  resolved "https://registry.npm.taobao.org/@docusaurus/theme-live-codeblock/download/@docusaurus/theme-live-codeblock-2.0.0-alpha.33.tgz#cafd07ae620d6bc59027bf9cd7886c3a3c50d4bf"
-  integrity sha1-yv0HrmINa8WQJ7+c14hsOjxQ1L8=
+"@docusaurus/theme-live-codeblock@2.0.0-alpha.34":
+  version "2.0.0-alpha.34"
+  resolved "https://registry.npm.taobao.org/@docusaurus/theme-live-codeblock/download/@docusaurus/theme-live-codeblock-2.0.0-alpha.34.tgz#724f1831a53a141d7b5b95060ae542e2a4852397"
+  integrity sha1-ck8YMaU6FB17W5UGCuVC4qSFI5c=
   dependencies:
     "@philpl/buble" "^0.19.7"
     classnames "^2.2.6"
@@ -1052,27 +1052,27 @@
     prism-react-renderer "^1.0.2"
     react-live "^2.2.1"
 
-"@docusaurus/theme-search-algolia@^2.0.0-alpha.33":
-  version "2.0.0-alpha.33"
-  resolved "https://registry.npm.taobao.org/@docusaurus/theme-search-algolia/download/@docusaurus/theme-search-algolia-2.0.0-alpha.33.tgz#714b9e945572138e883f2f8b47be49d7c8920a07"
-  integrity sha1-cUuelFVyE46IPy+LR75J18iSCgc=
+"@docusaurus/theme-search-algolia@^2.0.0-alpha.34":
+  version "2.0.0-alpha.34"
+  resolved "https://registry.npm.taobao.org/@docusaurus/theme-search-algolia/download/@docusaurus/theme-search-algolia-2.0.0-alpha.34.tgz#6345b126eb8244352610ecf2fb3c2f7d835e12ad"
+  integrity sha1-Y0WxJuuCRDUmEOzy+zwvfYNeEq0=
   dependencies:
     classnames "^2.2.6"
     docsearch.js "^2.6.3"
 
-"@docusaurus/types@^2.0.0-alpha.33":
-  version "2.0.0-alpha.33"
-  resolved "https://registry.npm.taobao.org/@docusaurus/types/download/@docusaurus/types-2.0.0-alpha.33.tgz#4a8add440ab43dc6d857d0475a9c7bc332014583"
-  integrity sha1-SordRAq0PcbYV9BHWpx7wzIBRYM=
+"@docusaurus/types@^2.0.0-alpha.34":
+  version "2.0.0-alpha.34"
+  resolved "https://registry.npm.taobao.org/@docusaurus/types/download/@docusaurus/types-2.0.0-alpha.34.tgz#fcb074f6be54802dbfddb331d879507772ea402e"
+  integrity sha1-/LB09r5UgC2/3bMx2HlQd3LqQC4=
   dependencies:
     "@types/webpack" "^4.32.0"
     commander "^2.20.0"
     querystring "0.2.0"
 
-"@docusaurus/utils@^2.0.0-alpha.33":
-  version "2.0.0-alpha.33"
-  resolved "https://registry.npm.taobao.org/@docusaurus/utils/download/@docusaurus/utils-2.0.0-alpha.33.tgz#01f46936133918bb1d5a251afe38f0e83180aa88"
-  integrity sha1-AfRpNhM5GLsdWiUa/jjw6DGAqog=
+"@docusaurus/utils@^2.0.0-alpha.34":
+  version "2.0.0-alpha.34"
+  resolved "https://registry.npm.taobao.org/@docusaurus/utils/download/@docusaurus/utils-2.0.0-alpha.34.tgz#17d671136e79340d78530aef9db640d2975d670d"
+  integrity sha1-F9ZxE255NA14UwrvnbZA0pddZw0=
   dependencies:
     escape-string-regexp "^2.0.0"
     fs-extra "^8.1.0"
@@ -2746,9 +2746,9 @@ cross-spawn@6.0.5, cross-spawn@^6.0.0:
     shebang-command "^1.2.0"
     which "^1.2.9"
 
-cross-spawn@^7.0.1:
+cross-spawn@^7.0.0:
   version "7.0.1"
-  resolved "https://registry.npm.taobao.org/cross-spawn/download/cross-spawn-7.0.1.tgz?cache=0&sync_timestamp=1570439926300&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcross-spawn%2Fdownload%2Fcross-spawn-7.0.1.tgz#0ab56286e0f7c24e153d04cc2aa027e43a9a5d14"
+  resolved "https://registry.npm.taobao.org/cross-spawn/download/cross-spawn-7.0.1.tgz?cache=0&sync_timestamp=1570440024132&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fcross-spawn%2Fdownload%2Fcross-spawn-7.0.1.tgz#0ab56286e0f7c24e153d04cc2aa027e43a9a5d14"
   integrity sha1-CrVihuD3wk4VPQTMKqAn5DqaXRQ=
   dependencies:
     path-key "^3.1.0"
@@ -3554,6 +3554,22 @@ execa@^1.0.0:
     signal-exit "^3.0.0"
     strip-eof "^1.0.0"
 
+execa@^3.2.0:
+  version "3.2.0"
+  resolved "https://registry.npm.taobao.org/execa/download/execa-3.2.0.tgz#18326b79c7ab7fbd6610fd900c1b9e95fa48f90a"
+  integrity sha1-GDJrecerf71mEP2QDBuelfpI+Qo=
+  dependencies:
+    cross-spawn "^7.0.0"
+    get-stream "^5.0.0"
+    human-signals "^1.1.1"
+    is-stream "^2.0.0"
+    merge-stream "^2.0.0"
+    npm-run-path "^4.0.0"
+    onetime "^5.1.0"
+    p-finally "^2.0.0"
+    signal-exit "^3.0.2"
+    strip-final-newline "^2.0.0"
+
 expand-brackets@^2.1.4:
   version "2.1.4"
   resolved "https://registry.npm.taobao.org/expand-brackets/download/expand-brackets-2.1.4.tgz#b77735e315ce30f6b6eff0f83b04151a22449622"
@@ -3992,6 +4008,13 @@ get-stream@^4.0.0:
   version "4.1.0"
   resolved "https://registry.npm.taobao.org/get-stream/download/get-stream-4.1.0.tgz#c1b255575f3dc21d59bfc79cd3d2b46b1c3a54b5"
   integrity sha1-wbJVV189wh1Zv8ec09K0axw6VLU=
+  dependencies:
+    pump "^3.0.0"
+
+get-stream@^5.0.0:
+  version "5.1.0"
+  resolved "https://registry.npm.taobao.org/get-stream/download/get-stream-5.1.0.tgz#01203cdc92597f9b909067c3e656cc1f4d3c4dc9"
+  integrity sha1-ASA83JJZf5uQkGfD5lbMH008Tck=
   dependencies:
     pump "^3.0.0"
 
@@ -4515,6 +4538,11 @@ https-browserify@^1.0.0:
   resolved "https://registry.npm.taobao.org/https-browserify/download/https-browserify-1.0.0.tgz#ec06c10e0a34c0f2faf199f7fd7fc78fffd03c73"
   integrity sha1-7AbBDgo0wPL68Zn3/X/Hj//QPHM=
 
+human-signals@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.npm.taobao.org/human-signals/download/human-signals-1.1.1.tgz#c5b1cd14f50aeae09ab6c59fe63ba3395fe4dfa3"
+  integrity sha1-xbHNFPUK6uCatsWf5jujOV/k36M=
+
 iconv-lite@0.4.24, iconv-lite@^0.4.24, iconv-lite@^0.4.4, iconv-lite@~0.4.13:
   version "0.4.24"
   resolved "https://registry.npm.taobao.org/iconv-lite/download/iconv-lite-0.4.24.tgz#2022b4b25fbddc21d2f524974a474aafe733908b"
@@ -5008,6 +5036,11 @@ is-stream@^1.0.1, is-stream@^1.1.0:
   version "1.1.0"
   resolved "https://registry.npm.taobao.org/is-stream/download/is-stream-1.1.0.tgz#12d4a3dd4e68e0b79ceb8dbc84173ae80d91ca44"
   integrity sha1-EtSj3U5o4Lec6428hBc66A2RykQ=
+
+is-stream@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npm.taobao.org/is-stream/download/is-stream-2.0.0.tgz#bde9c32680d6fae04129d6ac9d921ce7815f78e3"
+  integrity sha1-venDJoDW+uBBKdasnZIc54FfeOM=
 
 is-svg@^3.0.0:
   version "3.0.0"
@@ -5650,7 +5683,7 @@ mimic-fn@^1.0.0:
   resolved "https://registry.npm.taobao.org/mimic-fn/download/mimic-fn-1.2.0.tgz#820c86a39334640e99516928bd03fca88057d022"
   integrity sha1-ggyGo5M0ZA6ZUWkovQP8qIBX0CI=
 
-mimic-fn@^2.0.0:
+mimic-fn@^2.0.0, mimic-fn@^2.1.0:
   version "2.1.0"
   resolved "https://registry.npm.taobao.org/mimic-fn/download/mimic-fn-2.1.0.tgz#7ed2c2ccccaf84d3ffcb7a69b57711fc2083401b"
   integrity sha1-ftLCzMyvhNP/y3pptXcR/CCDQBs=
@@ -6024,6 +6057,13 @@ npm-run-path@^2.0.0:
   dependencies:
     path-key "^2.0.0"
 
+npm-run-path@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.npm.taobao.org/npm-run-path/download/npm-run-path-4.0.0.tgz?cache=0&sync_timestamp=1571055779038&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fnpm-run-path%2Fdownload%2Fnpm-run-path-4.0.0.tgz#d644ec1bd0569187d2a52909971023a0a58e8438"
+  integrity sha1-1kTsG9BWkYfSpSkJlxAjoKWOhDg=
+  dependencies:
+    path-key "^3.0.0"
+
 npmlog@^4.0.2:
   version "4.1.2"
   resolved "https://registry.npm.taobao.org/npmlog/download/npmlog-4.1.2.tgz#08a7f2a8bf734604779a9efa4ad5cc717abb954b"
@@ -6171,6 +6211,13 @@ onetime@^2.0.0:
   dependencies:
     mimic-fn "^1.0.0"
 
+onetime@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.npm.taobao.org/onetime/download/onetime-5.1.0.tgz#fff0f3c91617fe62bb50189636e99ac8a6df7be5"
+  integrity sha1-//DzyRYX/mK7UBiWNumayKbfe+U=
+  dependencies:
+    mimic-fn "^2.1.0"
+
 open@^6.3.0:
   version "6.4.0"
   resolved "https://registry.npm.taobao.org/open/download/open-6.4.0.tgz#5c13e96d0dc894686164f18965ecfe889ecfc8a9"
@@ -6246,6 +6293,11 @@ p-finally@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npm.taobao.org/p-finally/download/p-finally-1.0.0.tgz#3fbcfb15b899a44123b34b6dcc18b724336a2cae"
   integrity sha1-P7z7FbiZpEEjs0ttzBi3JDNqLK4=
+
+p-finally@^2.0.0:
+  version "2.0.1"
+  resolved "https://registry.npm.taobao.org/p-finally/download/p-finally-2.0.1.tgz#bd6fcaa9c559a096b680806f4d657b3f0f240561"
+  integrity sha1-vW/KqcVZoJa2gIBvTWV7Pw8kBWE=
 
 p-is-promise@^2.0.0:
   version "2.1.0"
@@ -6431,7 +6483,7 @@ path-key@^2.0.0, path-key@^2.0.1:
   resolved "https://registry.npm.taobao.org/path-key/download/path-key-2.0.1.tgz#411cadb574c5a140d3a4b1910d40d80cc9f40b40"
   integrity sha1-QRyttXTFoUDTpLGRDUDYDMn0C0A=
 
-path-key@^3.1.0:
+path-key@^3.0.0, path-key@^3.1.0:
   version "3.1.0"
   resolved "https://registry.npm.taobao.org/path-key/download/path-key-3.1.0.tgz#99a10d870a803bdd5ee6f0470e58dfcd2f9a54d3"
   integrity sha1-maENhwqAO91e5vBHDljfzS+aVNM=
@@ -8534,6 +8586,11 @@ strip-eof@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npm.taobao.org/strip-eof/download/strip-eof-1.0.0.tgz#bb43ff5598a6eb05d89b59fcd129c983313606bf"
   integrity sha1-u0P/VZim6wXYm1n80SnJgzE2Br8=
+
+strip-final-newline@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npm.taobao.org/strip-final-newline/download/strip-final-newline-2.0.0.tgz#89b852fb2fcbe936f6f4b3187afb0a12c1ab58ad"
+  integrity sha1-ibhS+y/L6Tb29LMYevsKEsGrWK0=
 
 strip-json-comments@~2.0.1:
   version "2.0.1"
