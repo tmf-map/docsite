@@ -4,8 +4,8 @@ const githubRepo = 'docsite'
 module.exports = {
   title: githubOrg,
   tagline: 'The tagline of my site',
-  url: 'https://thinkbucket.github.io',
-  baseUrl: '/docsite/',
+  url: 'http://106.75.115.39',
+  baseUrl: '/',
   favicon: 'https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/docsite-logo-white-mode.png',
   organizationName: githubOrg, // Usually your GitHub org/user name.
   projectName: 'docsite', // Usually your repo name.
