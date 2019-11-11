@@ -12,7 +12,7 @@ module.exports = {
       "javascript/preface/note",
     ],
     "1. 基础概念": [
-      "javascript/1.basic/workflow",
+      "javascript/1.basic/js-engine",
       "javascript/1.basic/scope",
       "javascript/1.basic/execute-context",
     ],
