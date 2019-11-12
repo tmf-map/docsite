@@ -37,7 +37,7 @@ sidebar_label: 媒体查询
 @media (min-width: 500px) and (max-width: 799px) {}
 ```
 
-这种写法在分界值，比较“丑陋”。在 Media Queries Level 4 中可以这样写：
+这种写法在分界值，比较“丑陋”。在 **Media Queries Level 4** 中可以这样写：
 
 ```css
 @media (width >= 400px) {}
