@@ -95,6 +95,15 @@ module.exports = {
       "html/preface/overview",
       "html/preface/note",
     ],
+    "标签": [
+      "html/tag/html-structure",
+      "html/tag/head-info",
+      "html/tag/document-structure",
+      "html/tag/text",
+      "html/tag/link",
+      "html/tag/image",
+      "html/tag/list",
+    ]
   },
   "css": {
     "前言": [
