@@ -121,11 +121,13 @@ margin 合并（重叠） 3 种场景：
 
 ### 兄弟合并
 
+<Img align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/hAZ0jg.jpg'/>
+
 #### 意义
 
 是为了让图文信息的排版更加舒服自然。设想，当我们上下排列一系列规则的块级元素（如段落P）时，那么块元素之间因为外边距重叠的存在，段落之间就不会产生双倍的距离。
 
-<Img align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/hAZ0jg.jpg'/>
+<Img align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/oNyETU.jpg'/>
 
 ```jsx live
 <>

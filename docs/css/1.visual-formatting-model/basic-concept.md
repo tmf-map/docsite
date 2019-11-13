@@ -11,7 +11,7 @@ import Img from '../../../src/components/Img'
 可替换元素（replaced element）是CSS世界中的另一个派系。从名字上理解：
 
 ```html
-<img src=”1.jpg”>
+<img src="1.jpg">
 ```
 
 如果把上面 `1.jpg` 换成 `2.jpg` ，那么该图片是不是会被替换？其导致的现象就是该图片内容或者宽高就会变得不一样了，所以浏览器将这一类元素话费为可替换元素，并为其设置一些默认样式，还有一些属性（比如 `src` ,  `width` ），来决定元素的具体显示内容。
@@ -45,7 +45,7 @@ CSS 能对可替换元素产生的唯一影响在于，部分属性支持控制�
 
 <Hint type="tip">我们常说“一个盒的包含块”表示“盒所在的包含块”，而不是它生成的包含块。如下图， `em` box的包含块指的是 `div.main1` 。</Hint>
 
-<img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/lTrogl.jpg'/>
+<Img width="550" align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/lTrogl.jpg'/>
 
 包含块(containing block) 这个概念实际上大家一直都有接触，就是元素用来计算和定位的一个框。比方说，`width:50%` ， 也就是宽度一半，那到底是哪个“元素”宽度的一半呢? 注意，这里的这个“元素”实际上就是指的“包含块”。有经验的人应该都知道，普通元素的百分比宽度是相对于父元素的 `content box` 宽度计算的，而绝对定位元素的宽度是相对于第一个 `position` 不为 `static` 的祖先元素计算的。实际上，大家已经和“包含块”打过交道了，对于这些计算规则，规范是有明确定义的，具体如下(剔除了不常用的部分内容)。
 
