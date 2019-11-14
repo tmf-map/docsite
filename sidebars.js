@@ -98,7 +98,7 @@ module.exports = {
     "标签": [
       "html/tag/html-structure",
       "html/tag/head-info",
-      "html/tag/document-structure",
+      "html/tag/section-divisions",
       "html/tag/text",
       "html/tag/link",
       "html/tag/image",

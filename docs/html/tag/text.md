@@ -1,6 +1,6 @@
 ---
-title: 文本
-sidebar_label: 文本
+title: 文本格式
+sidebar_label: 文本格式
 ---
 
 ## 加粗

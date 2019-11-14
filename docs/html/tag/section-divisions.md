@@ -1,6 +1,6 @@
 ---
-title: 内容结构
-sidebar_label: 内容结构
+title: 内容切分
+sidebar_label: 内容切分
 ---
 
 ## `<h1..h6>...</h1..h6>`
