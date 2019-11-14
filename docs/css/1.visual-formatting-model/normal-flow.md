@@ -94,7 +94,7 @@ IFC(Inline Formatting Context)，IFC和BFC都是虚拟概念。BFC可能和某�
 
 - **宽度**：line box的宽度由包含块和float情况决定，一般来说，line box的宽度等于包含块两边之间的宽度，然而float可以插入到包含块和line box边之间，如果有float，那么的宽度会比没有float时小。
 
-<img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/EQ4czq.jpg'/>
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/EQ4czq.jpg'/>
 
 - **高度**：line box的高度由line-height决定，而line box之间的高度各不相同(比如只含文本的line box高度与包含图片的line box高度之间)。
 - **垂直**：line box的高度能够容纳它包含的所有box，当box的高度小于line box的高度时(例如盒是baseline对齐)，盒的竖直对齐方式由vertical-align属性决定。
@@ -115,7 +115,7 @@ Demo: [inline box与换行，溢出](https://codepen.io/muwenzi/pen/jjZJyv&sa=D&
 
 ### 行高
 
-<img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/HNnrga.png'/>
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/HNnrga.png'/>
 
 如图，我们就知道了，在CSS中，line-height 不是相邻文本行间上一个baseline与下一文本行baseline之间的距离，而是line box的高度，也就是相邻文本行间底线的距离。
 
@@ -147,4 +147,4 @@ https://codepen.io/muwenzi/pen/LKQaqW
 
 补充：
 
-<img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/cOGAiu.jpg'/>
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/cOGAiu.jpg'/>

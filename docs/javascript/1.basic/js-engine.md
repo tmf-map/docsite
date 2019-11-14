@@ -15,7 +15,7 @@ import Img from '../../../src/components/Img'
 
 ## V8 Engine Workflow
 
-<img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/jyJKvS.jpg'/>
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/jyJKvS.jpg'/>
 
 JS 代码块加载完毕后，会首先进入语法 Parser 阶段。该阶段主要作用是生成 AST 和构建作用域。
 
@@ -24,7 +24,7 @@ JS 代码块加载完毕后，会首先进入语法 Parser 阶段。该阶段主
 - **词法分析**：(分词)从代码中读取一组字符并将它们组合成语句(tokens)，它还涉及删除空格字符、注释等。最后，整个代码串将被拆分为一系列语句。
 - **语法分析**：(也称为解析器)将在词法分析后获取一个简单的语句列表，并将其转换为树形表示即AST，并检查是否有语法错误。如果出现不正确，则向外抛出一个语法错误（SyntaxError），停止该JS代码的后续执行：
 
-<img width="400" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/V5pGiz.jpg" />
+<Img width="400" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/V5pGiz.jpg" />
 
 然后，AST(抽象语法树) 基于 Parser 的分类构造树状结构。
 
@@ -40,13 +40,13 @@ JS 代码块加载完毕后，会首先进入语法 Parser 阶段。该阶段主
 
 可以去这个网站生成一个AST(Abstract Syntax Tree)试试：https://astexplorer.net/
 
-<img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/Wc8x5N.jpg'/>
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/Wc8x5N.jpg'/>
 
 **Q**: 函数没调用会不会生成AST？
 
 **A**: 会，AST是对整个代码都会生成，不管有没有调用，通过 https://astexplorer.net/ 也可以看出。下面这段代码，从侧面也可以说明在进行语法分析生成AST。其实V8有用两个`Parser`，`Preparser` 对这些不是迫切需要执行的代码(顶级代码、立即调用函数表达式IIFE)只构建作用域，会跳过AST，但由于 `Ignition` 的引入，现在并没有用到 `Preparser`。
 
-<img width="400" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/DVCIa0.jpg'/>
+<Img width="400" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/DVCIa0.jpg'/>
 
 ## Compiler
 

@@ -42,7 +42,7 @@ module.exports = {
           title: '',
           items: [
             {
-              html: `<img class="footer-logo" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/docsite-logo-dark-mode.png" /><span>${githubOrg}</span>`
+              html: `<img class="footer-logo" loading="lazy" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/docsite-logo-dark-mode.png" /><span>${githubOrg}</span>`
             },
             {
               html: '<p class="footer-desc">致力于加强开发者对技术的学习和思考，专注于互联网技术发展，这里集聚了开发者的思考，总结和对未来互联网科技发展的畅想。</p>'
@@ -53,7 +53,7 @@ module.exports = {
           title: '公众号',
           items: [
             {
-              html: '<img class="footer-reward" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/qrcode_for_wechat.jpg" />'
+              html: '<img class="footer-reward" loading="lazy" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/qrcode_for_wechat.jpg" />'
             },
           ],
         },
