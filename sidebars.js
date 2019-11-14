@@ -103,6 +103,10 @@ module.exports = {
       "html/tag/link",
       "html/tag/image",
       "html/tag/list",
+      "html/tag/form",
+      "html/tag/table",
+      "html/tag/object-iframe",
+      "html/tag/html5-new-tags",
     ]
   },
   "css": {

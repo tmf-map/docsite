@@ -26,6 +26,8 @@
   --ifm-list-item-margin: 0.18rem;
   --ifm-leading: 1rem;
   --ifm-container-width: 1200px;
+  /* --ifm-font-family-base: Helvetica, Arial, sans-serif; */
+  /* --ifm-font-base-color: rgb(74, 74, 74); */
 
   --my-board--background: rgba(185, 202, 218, 0.15);
   --my-logo-font-family: 'Eurofighter Expanded';

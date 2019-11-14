@@ -3,9 +3,11 @@ title: 列表
 sidebar_label: 列表
 ---
 
-## `<li>...</li>`
+## 圆点列表
 
-## `<ul>...</ul>`
+### `<li>...</li>`
+
+### `<ul>...</ul>`
 
 ```jsx live
 <ul>
@@ -15,7 +17,9 @@ sidebar_label: 列表
 </ul>
 ```
 
-## `<ol>...</ol>`
+## 数字列表
+
+### `<ol>...</ol>`
 
 ```jsx live
 <ol>
@@ -25,19 +29,23 @@ sidebar_label: 列表
 </ol>
 ```
 
-## `<dt>...</dt>`
+## 描述列表
 
-## `<dd>...</dd>`
+描述列表是一个包含术语定义以及描述的列表，通常用于展示词汇表或者元数据 (键-值对列表)。
 
-## `<dl>...</dl>`
+### `<dt>...</dt>`
+
+### `<dd>...</dd>`
+
+### `<dl>...</dl>`
 
 ```jsx live
 <dl>
   <dt>Coffee</dt>
-  <dd>Type A</dd>
-  <dd>Type B</dd>
+  <dd>Latte</dd>
+  <dd>Mocha</dd>
   <dt>Tea</dt>
-  <dd>Type A</dd>
-  <dd>Type B</dd>
+  <dd>Green Tea</dd>
+  <dd>Black Tea</dd>
 </dl>
 ```
