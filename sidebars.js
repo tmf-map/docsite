@@ -228,7 +228,7 @@ module.exports = {
     ],
     "12. Web 性能优化": [
       "web/12.web-optimize/pic-optimize",
-      "web/12.web-optimize/delay-loading",
+      "web/12.web-optimize/lazy-loading",
       "web/12.web-optimize/http-cache",
       "web/12.web-optimize/webworker",
     ],
