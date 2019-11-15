@@ -50,7 +50,7 @@ JS中虽然变量的数据类型是不确定的，但是各种运算符对数据
 
 对象是 JavaScript 语言最主要的数据类型，三种原始类型的值——数值、字符串、布尔值——在一定条件下，也会自动转为对象，也就是原始类型的“**包装对象**”。
 
-<Img width="400" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/H28otE.jpg' />
+<Img width="400" align="left" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/H28otE.jpg' />
 
 包装对象的最大目的，首先是使得 JavaScript 的对象涵盖所有的值，其次使得**原始类型的值可以方便地调用某些方法**。比如可以使用Object对象提供的valueOf方法和toString方法：
 
@@ -76,7 +76,7 @@ new Boolean(true).toString() // "true"
 
 原始类型的值调用各种包装对象的属性和方法。这时，JavaScript 引擎会自动将原始类型的值转为包装对象实例，在使用后立刻销毁实例。比如，字符串可以调用 `length` 属性，返回字符串的长度：
 
-<Img width="250" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/4TWRnN.jpg'/>
+<Img width="250" align="left" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/4TWRnN.jpg'/>
 
 ```js
 // 等同于
@@ -92,7 +92,7 @@ strObj = null;
 
 <Hint type="warning">数值类型要想自动转成包装对象需要加上括号，否则会当成小数点处理。</Hint>
 
-<Img width="250" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/aURQwt.jpg'/>
+<Img width="250" align="left" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/aURQwt.jpg'/>
 
 三种包装对象除了提供很多实例方法，还可以在原型上添加自定义方法和属性，供原始类型的值直接调用。
 

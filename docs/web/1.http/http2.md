@@ -1,86 +1,148 @@
 ---
-id: http2
 title: HTTP2
 sidebar_label: HTTP2
 ---
 
+import Hint from '../../../src/components/Hint'
+import Img from '../../../src/components/Img'
+
 ## 简介
+
 HTTP/2主要目的是提高网页性能，最近几年比较火，将其单独抽成一块讲。2015年，HTTP/2 发布。它不叫 HTTP/2.0，是因为标准委员会不打算再发布子版本了，下一个新版本将是 HTTP/3。
 
 目前还有不少服务还是HTTP/1.1，NodeJS也是从v10才将http2转正。Express5.x才开始支持http/2。
 
-![](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/ilnweH.png)
+<Img w="600" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/ilnweH.png" />
 
 可以打开谷歌首页看看，基本上都是http/2协议，简写成h2
 
-![](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/yRkSCa.png)
+<Img w="600" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/yRkSCa.png" />
 
-HTTPS是HTTP/2的必要条件。
+<Hint type="tip">HTTPS 是 HTTP/2 的必要条件。</Hint>
 
 可以用Chrome插件可以用来检测HTTP/2：HTTP/2 and SPDY indicator。它会给浏览器添加了一个闪电标记：
 
-<img src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/NXGjYK.png" width="500" height="50" />
-
-<br/>
+<Img w="450" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/NXGjYK.png" />
 
 - 蓝色闪电，表示这个网页是运行在HTTP/2上
-
 - 红色闪电表示网页运行在SPDY上（spdy和h2的关系和参考这篇文章：[HTTP 协议入门](http://www.ruanyifeng.com/blog/2016/08/http.html)）
-
 - 灰色闪电则表示着这个网页既不是运行于HTTP/2，也不是运行于SPDY
 
-HTTP/1.1 版的**头信息**肯定是文本（ASCII编码），数据体可以是文本，也可以是二进制。HTTP/2 则是一个彻底的二进制协议，**头信息和数据体都是二进制**，并且统称为"帧"（frame）：头信息帧和数据帧。
-![](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/WQmV6R.png)
+## 一个 TCP 连接
 
-![](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/ixFt4p.png)
-二进制的一个好处是，可以定义额外的帧。HTTP/2 定义了近十种帧，为将来的高级应用打好了基础。如果使用文本实现这种功能，解析数据将会变得非常麻烦，二进制解析则方便得多。
+<Img w="500" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/hTkV0T.jpg'/>
 
-## 多路复用
-**原来是同一个 TCP 连接里面**，上一个回应（response）发送完了，服务器才能发送下一个，现在多路复用（Multiplexing）允许单一的 HTTP/2 连接同时发起多重的请求-响应消息。
+HTTP/1.1 中**同一个 TCP 连接里面**，上一个响应发送完了，服务器才能发送下一个，后面介绍的多路复用允许单一的 TCP 连接同时发起多重的请求响应，比如 `GET style.css` 和 `GET script.js` 差不多就是同时发送的。
 
-<img src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/xIKbUs.png" width="420" height="420" />
+<Img w="750" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/aomjQ8.png'/>
 
-<br/>
+- Each connection incurs full TCP handshake
+- Each connection incurs TLS handshake overhead (best case, resumed)
+- Each connection occupies server/proxy resources (memory, CPU, etc)
+- Each connection competes with others (broken congestion control)
 
-整个访问流程第一次请求index.html页面,之后浏览器会去请求style.css和scripts.js的文件。左边的图是顺序加载两个个文件的，右边则是并行加载两个文件。
+<Hint type="tip">Chrome 在 HTTP/1.1 中会建立 6 个 TCP ，在 HTTP/2 中同域名下会建立 1 个 TCP 。</Hint>
 
-**我们知道HTTP底层其实依赖的是TCP协议，那问题是在同一个连接里面同时发生两个请求响应着是怎么做到的？**
+**Domain sharding**
 
-首先你要知道，TCP连接相当于两根管道（一个用于服务器到客户端，一个用于客户端到服务器），管道里面数据传输是通过字节码传输，传输是有序的，每个字节都是一个一个来传输。
+<Img w="650" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/N2VrQ7.png'/>
 
-例如客户端要向服务器发送Hello、World两个单词，只能是先发送Hello再发送World，没办法同时发送这两个单词。不然服务器收到的可能就是HWeolrllod（注意是穿插着发过去了，但是顺序还是不会乱）。这样服务器就懵b了。
+<Img w="680" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/ItazEw.png'/>
 
-接上面的问题，能否同时发送Hello和World两个单词呢？当然也是可以的，可以将数据拆成包，给每个包打上标签。发的时候是这样的①H ②W ①e ②o ①l ②r ①l ②l ①o ②d。这样到了服务器，服务器根据标签把两个单词区分开来。实际的发送效果如下图：
+**What’s the optimal number of shards? **
 
+Trick question, the answer depends on device + network + network weather + page architecture. 
+Most sites **abuse** sharding, and hurt themselves… causing congestion, retransmissions, etc.
 
-多路复用就是为了解决上述keep-alive的两个性能问题，我们来看一下，他是如何解决的。
+## 二进制传输
 
-解决第一个：在HTTP1.1的协议中，我们传输的request和response都是基本于文本的，这样就会引发一个问题：**所有的数据必须按顺序传输**，比如需要传输：hello world，只能从h到d一个一个的传输，不能并行传输，因为接收端并不知道这些字符的顺序，所以并行传输在HTTP1.1是不能实现的。
+HTTP/1.1 **头信息**是文本（ASCII编码），数据体可以是文本，也可以是二进制。这样就会引发一个问题：**所有的数据必须按顺序传输**，比如需要传输：`helloworld`，只能从 h 到 d 一个一个的传输，不能并行传输，因为接收端并不知道这些字符的顺序，所以并行传输在 HTTP/1.1 是不能实现的。
 
-![](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/93XEwT.png)
+<Img w="420" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/93XEwT.png" />
 
-HTTP/2引入 **二进制数据帧和流**的概念，其中帧对数据进行顺序标识，如下图所示，这样浏览器收到数据之后，就可以按照序列对数据进行合并，而不会出现合并后数据错乱的情况。同样是因为有了序列，服务器就可以并行的传输数据，这就是流所做的事情。
+HTTP/2 则是一个彻底的二进制协议，二进制协议解析起来更高效。**头信息和数据体都是二进制**，并且统称为"帧"（frame）：
 
-![](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/939SIN.png)
+- 头信息帧（HEADERS frame）：存放头数据
+- 数据帧（DATA frame）：存放实体数据
 
-解决第二个问题：HTTP/2对同一域名下所有请求都是基于流，也就是说同一域名不管访问多少文件，也只建立一路连接。同样Apache的最大连接数为300，因为有了这个新特性，最大的并发就可以提升到300，比原来提升了6倍！
+<Img w="450" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/WQmV6R.png" />
 
-HTTP 性能优化的关键并不在于高带宽，而是低延迟。TCP 连接会随着时间进行自我「调谐」，起初会限制连接的最大速度，如果数据成功传输，会随着时间的推移提高传输的速度。这种调谐则被称为 TCP 慢启动。由于这种原因，让原本就具有突发性和短时性的 HTTP 连接变的十分低效。
+它把 TCP 协议的部分特性挪到了应用层，把原来的 "Header+Body" 的消息"打散"为数个小片的二进制帧，HTTP/2 数据分帧后 "Header+Body" 的报文结构就完全消失了，协议看到的只是一个个的"碎片"。这样发送的时候先后顺序无所谓了，可以根据帧号将它们重新排列起来。这样同一个 TCP 连接里面同时发生多个请求响应。
+
+<Img w="500" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/5M5mmS.png'/>
+
+<Img w="450" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/ixFt4p.png" />
+
+帧对数据进行顺序标识，如下图所示，这样浏览器收到数据之后，就可以按照序列对数据进行合并，而不会出现合并后数据错乱的情况。同样是因为有了序列，服务器就可以并行的传输数据，这就是流所做的事情。
+
+<Img w="320" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/939SIN.png" />
+
+二进制的一个好处是，可以定义额外的帧。HTTP/2 定义了近十种帧，为将来的高级应用打好了基础。如果使用文本实现这种功能，解析数据将会变得非常麻烦，二进制解析则方便得多，且解析起来更高效。。
+
+## 多路复用（Multiplexing）
+
+### 解决两大问题
+
+在 HTTP/2 中引入了多路复用的技术，解决了 keep-alive 的性能问题。主要包括：
+
+#### (1) 内存占用更少，连接吞吐量更大
+
+浏览器限制同一个域名下的请求数量。HTTP/2 对同一域名下所有请求都是基于流，也就是说同一域名不管访问多少文件，也只建立一个 TCP 连接。同样 Apache 的最大连接数为300，因为有了这个新特性，最大的并发就可以提升到300，比原来提升了 6 倍。
+
+#### (2) 提高传输的速度，降低延迟
+
+新开一个 TCP 连接都需要慢慢提升传输速度。HTTP 性能优化的关键并不在于高带宽，而是低延迟。TCP 连接会随着时间进行自我调谐，起初会限制连接的最大速度，如果数据成功传输，会随着时间的推移提高传输的速度。这种调谐则被称为 **TCP 慢启动**。由于这种原因，让原本就具有突发性和短时性的 HTTP 连接变的十分低效。
 
 HTTP/2 通过让所有数据流共用同一个连接，可以更有效地使用 TCP 连接，让高带宽也能真正的服务于 HTTP 的性能提升。
 
-Demo: https://http2.akamai.com/demo 通过下面两张图，我们可以更加深入的认识多路复用：
+### 实例对比
 
-![](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/yMOMBv.png)
+大家可以通过[该在线 Demo ](https://http2.akamai.com/demo)直观感受下 HTTP/2 比 HTTP/1 到底快了多少。
 
-![](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/odScPl.png)
+<Img w="750" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/http2.gif'/>
 
-以前我们做的性能优化不适用于HTTP/2了？
+下图是请求的对比：
 
-- **JS文件的合并**。我们现在优化的一个主要方向就是 **尽量的减少HTTP的请求数**， 对我们工程中的代码，研发时分模块开发，上线时我们会把所有的代码进行压缩合并，合并成一个文件，这样不管多少模块，都请求一个文件，减少了HTTP的请求数。但是这样做有一个非常严重的问题：**文件的缓存**。当我们有100个模块时，有一个模块改了东西，按照之前的方式，整个文件浏览器都需要重新下载，不能被缓存。现在我们有了HTTP/2了，模块就可以单独的压缩上线，而不影响其他没有修改的模块。
-- **多域名提高浏览器的下载速度**。之前我们有一个优化就是把css文件和js文件放到2个域名下面，这样浏览器就可以对这两个类型的文件进行同时下载，避免了浏览器6个通道的限制，这样做的缺点也是明显的，1.DNS的解析时间会变长。2.增加了服务器的压力。有了HTTP/2之后，根据上面讲的原理，我们就不用这么搞了，成本会更低。
+<Img w="705" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/yMOMBv.png" />
 
-总结下：多路复用技术：单连接多资源的方式，减少服务端的链接压力，内存占用更少，连接吞吐量更大；由于减少TCP 慢启动时间，提高传输的速度。
+<Img w="705" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/odScPl.png" />
+
+第二张图中，感觉有很多个 TCP 连接，但是放大看就会发现它们都是一个 TCP 连接，只是发送请求的时间间隔非常短。
+
+### 主要特性
+
+在 HTTP/2 中，有了二进制分帧之后，HTTP/2 不再依赖 TCP 连接去实现多流并行了，在 HTTP/2 中:
+
+- 同域名下所有通信都在单个连接上完成。
+- 单个连接可以承载任意数量的双向数据流。
+- 数据流以消息的形式发送，而消息又由一个或多个帧组成，多个帧之间可以乱序发送，因为根据帧首部的流标识可以重新组装。
+
+这一特性，使性能有了极大提升：
+
+- 同个域名只需要占用一个 TCP 连接，使用一个连接并行发送多个请求和响应，这样整个页面资源的下载过程只需要一次慢启动，同时也避免了多个 TCP 连接竞争带宽所带来的问题。
+- 并行交错地发送多个请求/响应，请求/响应之间互不影响。
+- 在 HTTP/2 中，每个请求都可以带一个 31bit 的优先值，0 表示最高优先级， 数值越大优先级越低。有了这个优先值，客户端和服务器就可以在处理不同的流时采取不同的策略，以最优的方式发送流、消息和帧。
+
+<Img w="700" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/ztdcOu.jpg'/>
+
+如上图所示，多路复用的技术可以只通过一个 TCP 连接就可以传输所有的请求数据。
+
+### 一些性能优化不再适用
+
+#### (1) JS 文件的合并
+
+我们现在优化的一个主要方向就是 **尽量的减少HTTP的请求数**， 对我们工程中的代码，研发时分模块开发，上线时我们会把所有的代码进行压缩合并，合并成一个文件，这样不管多少模块，都请求一个文件，减少了HTTP的请求数。
+
+但是这样做有一个非常严重的问题：**文件的缓存**。当我们有100个模块时，有一个模块改了东西，按照之前的方式，整个文件浏览器都需要重新下载，不能被缓存。现在我们有了HTTP/2了，模块就可以单独的压缩上线，而不影响其他没有修改的模块。
+
+#### (2) 多域名提高浏览器的下载速度
+
+之前我们有一个优化就是把css文件和js文件放到2个域名下面，这样浏览器就可以对这两个类型的文件进行同时下载，避免了浏览器6个通道的限制，这样做的缺点也是明显的：
+
+- 1.DNS的解析时间会变长。
+- 2.增加了服务器的压力。
+
+有了HTTP/2之后，根据上面讲的原理，我们就不用这么搞了，成本会更低。
 
 ## 服务器推送
 
@@ -88,7 +150,7 @@ Demo: https://http2.akamai.com/demo 通过下面两张图，我们可以更加�
 
 比如，浏览器只请求了index.html，但是服务器把index.html、style.css、example.png全部发送给浏览器。这样的话，只需要一轮 HTTP 通信，浏览器就得到了全部资源，提高了性能。
 
-![](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/B3hs9d.png)
+<Img w="750" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/B3hs9d.png" />
 
 如何开启呢，可以在服务器配置里面写死要推送的资源，当然这样不是很灵活，那么可以用另一种方法：后端应用产生 HTTP 请求的头信息Link命令。服务器发现有这个头信息，就会进行服务器推送。
 
@@ -111,10 +173,12 @@ Link: </styles.css>; rel=preload; as=style, </example.png>; rel=preload; as=imag
 服务器推送可以提高性能。[网上测评](https://www.smashingmagazine.com/2017/04/guide-http2-server-push/#measuring-server-push-performance)的结果是，打开这项功能，比不打开时的 HTTP/2 快了8%，比将资源都嵌入网页的 HTTP/1 快了5%。提升程度也不是特别多，大概是几百毫秒。而且，也不建议一次推送太多资源，这样反而会拖累性能，因为浏览器不得不处理所有推送过来的资源。只推送 CSS 样式表可能是一个比较好的选择。
 
 ## 头部压缩
+
 在HTTP/1.x中首部是没有压缩的，gzip只会压缩body，HTTP/2提供了首部压缩方案。一般轮询请求首部，特别是cookie占用很多大部份空间，首部压缩使得整个HTTP数据包小了很多，传输也就会更快。还有一些浏览器的信息，这些每个请求基本上都一样，没必要每次都传一份完整的。
 
 HTTP/2使用专门设计的HPACK。它是在服务器和客户端各维护一个“首部表”，表中用索引代表首部名，或者首部键-值对，上一次发送两端都会记住已发送过哪些首部，下一次发送只需要传输差异的数据，相同的数据直接用索引表示即可，另外还可以选择地对首部值压缩后再传输。按照这样的设计，两次轮询请求的首部基本是一样的，那之后的请求基本只需要发送几个索引就可以了。
-![](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/WIKfnl.png)
+
+<Img w="650" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/WIKfnl.png" />
 
 “首部表”有两种，一种是静态表，即HTTP/2协议内置了常用的一些首部名和首部键值对。另一种是动态表，保存自定义的首部或五花八门的键值对等，动态表可以通过SETTINGS帧的SETTINGS_HEADER_TABLE_SIZE规定大小。
 
@@ -124,13 +188,13 @@ HTTP/2使用专门设计的HPACK。它是在服务器和客户端各维护一个
 
 https://www.rrfed.com/2018/03/18/chrome-http2/
 
+## 总结
+
 ![](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/LP9NmA.png)
 
+## 参考资料
 
-
-
-
-
-
-
-
+1. [HTTP/2 is here, let's optimize! - Velocity SC 2015, By Ilya Grigorik](https://docs.google.com/presentation/d/1r7QXGYOLCh4fcUq0jDdDwKJWNqWK1o4xMtYpKZCJYjM)
+2. [How is HTTP/1.1 different from HTTP/2?](https://freecontent.manning.com/mental-model-graphic-how-is-http-1-1-different-from-http-2/)
+3. [The HTTP/2 Protocol: Its Pros & Cons and How to Start Using It, By Igor Chishkala](https://www.upwork.com/hiring/development/the-http2-protocol-its-pros-cons-and-how-to-start-using-it/)
+4. [Benefits of REST APIs With HTTP/2 By Guy Levin](https://dzone.com/articles/benefits-of-rest-apis-with-http2)
