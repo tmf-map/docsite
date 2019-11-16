@@ -16,6 +16,10 @@ import Img from '../../../src/components/Img'
 - **浪费处理时间、电池电量和其他系统资源**。 下载媒体资源后，浏览器必须将其解码，并在视窗中渲染其内容。
 延迟加载图像和视频时，可以减少初始页面加载时间、初始页面负载以及系统资源使用量，所有这一切都会对性能产生积极影响。
 
+[在线示例](https://www.zhangxinxu.com/study/201909/img-lazy-loading-demo.html)：
+
+<Img w="750" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/lazy-loding.gif' style={{border: '1px solid #ddd'}}/>
+
 ## 延迟加载图像
 
 ### HTML 中的图像
@@ -74,8 +78,10 @@ Chrome76 开始 `<img>` 和 `iframe` 支持原生懒加载特性，无需任何�
 在此标记中，我们应关注三个相关部分：
 
 - `class` 属性，这是我们在 JavaScript 中选择元素时要使用的类选择器。
-- `src` 属性，引用页面最初加载时显示的占位符图像。
-- `data-src` 和 `data-srcset` ([HTML5](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img))属性，属于占位符属性，其中包含元素进入视窗后要加载的图像的网址。
+- `src` 属性，引用页面最初加载时显示的占位符图像，比如模糊图片或默认图片。
+- `data-src` 和 `data-srcset` 属性，属于占位符属性，其中包含元素进入视窗后要加载的图像的地址，在 DOM 中可以通过 [HTMLElement.dataset](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLElement/dataset) API 读取元素上设置的所有自定义数据属性(`data-*`)集。
+
+<Hint type="tip">默认占位图片使用 `src` 属性即可，可以在 DOM 中动态插入 [HTML5: srcset](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img) 属性。</Hint>
 
 现在，我们来看看如何在 JavaScript 中使用 Intersection Observer，并通过以下标记模式延迟加载图像：
 

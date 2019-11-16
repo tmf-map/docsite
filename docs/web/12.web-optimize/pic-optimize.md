@@ -26,3 +26,9 @@ background：url(xx.img) no-repeat x y。
 对于系统中的小图标使用矢量图来代替小图片，它仅往HTML里插入字符和CSS样式，相对图片来说占用网络资源较小
 
 阿里小图标： https://www.iconfont.cn
+
+## 图片压缩
+
+https://github.com/google/guetzli/
+
+https://github.com/tinify/tinify-nodejs
