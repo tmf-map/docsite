@@ -7,10 +7,6 @@
 
 module.exports = {
   "javascript": {
-    "前言": [
-      "javascript/preface/overview",
-      "javascript/preface/note",
-    ],
     "1. 基础概念": [
       "javascript/1.basic/js-engine",
       "javascript/1.basic/scope",
@@ -110,10 +106,6 @@ module.exports = {
     ]
   },
   "css": {
-    "前言": [
-      "css/preface/overview",
-      "css/preface/note",
-    ],
     "1. 视觉格式化模型": [
       "css/1.visual-formatting-model/basic-concept",
       "css/1.visual-formatting-model/box-model",
@@ -154,10 +146,6 @@ module.exports = {
     ]
   },
   "web": {
-    "前言": [
-      "web/preface/overview",
-      "web/preface/note",
-    ],
     "1. HTTP 协议": [
       "web/1.http/http-connection",
       "web/1.http/http-status",
@@ -234,10 +222,6 @@ module.exports = {
     ],
   },
   "react": {
-    "前言": [
-      "react/preface/overview",
-      "react/preface/note",
-    ],
     "1. 组件基础": [
       "react/1.basic/jsx",
       "react/1.basic/lifecycle",
@@ -295,20 +279,12 @@ module.exports = {
     ]
   },
   "design-patterns": {
-    "前言": [
-      "design-patterns/preface/overview",
-      "design-patterns/preface/note",
-    ],
     '3. 行为模式': [
       'design-patterns/3.behavior-pattern/observer',
       'design-patterns/3.behavior-pattern/pub-sub',
     ]
   },
   "algorithm": {
-    "前言": [
-      "algorithm/preface/overview",
-      "algorithm/preface/note",
-    ],
     "1. 数组": [
       "algorithm/1.array/duplicated-number-in-array",
       "algorithm/1.array/inverse-pairs",

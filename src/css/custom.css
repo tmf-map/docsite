@@ -36,14 +36,13 @@
 }
 
 /* homepage banner */
-.hero.hero--primary {
+/* .hero.hero--primary {
   color: rgba(255,255,255,0.65);
-  /* background-color: rgb(255, 255, 255); */
   background-image: url(https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/homepage-cosmos-bg.svg),linear-gradient(135deg, #08003c 0%, #062875 100%);
   background-repeat: repeat-x;
   background-position: center;
   padding: 8rem 0 16rem 0;
-}
+} */
 
 header .button--outline {
   color: #d1d1d1 !important;
@@ -167,7 +166,7 @@ table tbody {
 }
 
 /* Sidebar Nav */
-.navbar + main > div > div:not(.row) {
+.navbar + main > div > div:not(.row):not(.main):not(.hero--primary) {
   background-color: var(--my-board--background);
   width: 310px;
 }
@@ -405,7 +404,7 @@ html[data-theme="dark"] .menu .menu__link.menu__link--active:not(.menu__link--su
   html {
     font-size: 14px;
   }
-  .navbar + main > div > div:not(.row) {
+  .navbar + main > div > div:not(.row):not(.hero):not(.main) {
     width: 290px;
   }
   .footer.footer--dark .container .text--center {
@@ -414,7 +413,7 @@ html[data-theme="dark"] .menu .menu__link.menu__link--active:not(.menu__link--su
 }
 
 @media (width > 996px) {
-  .navbar + main > div > div:not(.row) > div {
+  .navbar + main > div > div:not(.row) > div:not(.container) {
     padding-top: 1.8rem;
     padding-bottom: 2rem;
     padding-left: 1.2rem;

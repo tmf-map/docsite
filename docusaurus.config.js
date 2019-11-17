@@ -3,7 +3,7 @@ const githubRepo = 'docsite'
 
 module.exports = {
   title: githubOrg,
-  tagline: 'The tagline of my site',
+  tagline: 'Explore and study full stack technology',
   url: 'http://106.75.115.39',
   baseUrl: '/',
   favicon: 'https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/docsite-logo-white-mode.png',
@@ -23,14 +23,13 @@ module.exports = {
         src: 'https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/docsite-logo-white-mode.png',
       },
       links: [
-        {to: 'docs/javascript/preface/overview', label: 'Javascript', position: 'left'},
+        {to: 'docs/javascript/1.basic/js-engine', label: 'Javascript', position: 'left'},
         {to: 'docs/html/preface/overview', label: 'HTML', position: 'left'},
-        {to: 'docs/css/preface/overview', label: 'CSS', position: 'left'},
-        {to: 'docs/web/preface/overview', label: 'Web', position: 'left'},
-        {to: 'docs/react/preface/overview', label: 'React Stack', position: 'left'},
-        {to: 'docs/design-patterns/preface/overview', label: 'Design Patterns', position: 'left'},
-        {to: 'docs/algorithm/preface/overview', label: 'Algorithm', position: 'left'},
-        {to: 'docs/doc1', label: 'Docs', position: 'right'},
+        {to: 'docs/css/1.visual-formatting-model/basic-concept', label: 'CSS', position: 'left'},
+        {to: 'docs/web/1.http/http-connection', label: 'Web', position: 'left'},
+        {to: 'docs/react/1.basic/jsx', label: 'React Stack', position: 'left'},
+        {to: 'docs/design-patterns/3.behavior-pattern/observer', label: 'Design Patterns', position: 'left'},
+        {to: 'docs/algorithm/1.array/duplicated-number-in-array', label: 'Algorithm', position: 'left'},
         {to: 'blog', label: 'Blog', position: 'right'},
         {
           href: `https://github.com/${githubOrg}/${githubRepo}`,
