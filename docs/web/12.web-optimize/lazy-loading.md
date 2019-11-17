@@ -16,11 +16,11 @@ import Img from '../../../src/components/Img'
 - **浪费处理时间、电池电量和其他系统资源**。 下载媒体资源后，浏览器必须将其解码，并在视窗中渲染其内容。
 延迟加载图像和视频时，可以减少初始页面加载时间、初始页面负载以及系统资源使用量，所有这一切都会对性能产生积极影响。
 
-[在线示例](https://www.zhangxinxu.com/study/201909/img-lazy-loading-demo.html)：
+## 延迟加载图像
+
+图像的懒加载比较常见，尤其是图片比较或移动端网速受限等场景，[在线示例](https://www.zhangxinxu.com/study/201909/img-lazy-loading-demo.html)。
 
 <Img w="750" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/lazy-loding.gif' style={{border: '1px solid #ddd'}}/>
-
-## 延迟加载图像
 
 ### HTML 中的图像
 
@@ -59,7 +59,7 @@ Chrome76 开始 `<img>` 和 `iframe` 支持原生懒加载特性，无需任何�
 
 #### (2) 使用 Intersection Observer
 
-现代浏览器支持通过 Intersection Observer API 来检查元素的可见性，这种方式的**性能和效率更好**。兼容性方面可以使用 [polyfill](https://github.com/w3c/IntersectionObserver/tree/master/polyfill)，或者检测 Intersection Observer 不可用时回退到兼容性更好的旧方法。
+现代浏览器支持通过 [Intersection Observer API](https://developer.mozilla.org/zh-CN/docs/Web/API/Intersection_Observer_API) 来检查元素的可见性，这种方式的**性能和效率更好**。兼容性方面可以使用 [polyfill](https://github.com/w3c/IntersectionObserver/tree/master/polyfill)，或者检测 Intersection Observer 不可用时回退到兼容性更好的旧方法。
 
 <Img w="750" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/QP0bGN.png'/>
 
