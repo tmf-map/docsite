@@ -166,7 +166,7 @@ table tbody {
 }
 
 /* Sidebar Nav */
-.navbar + main > div > div:not(.row):not(.main):not(.hero--primary) {
+.navbar + .main-wrapper > div > div:not(.row):not(.main):not(.hero--primary) {
   background-color: var(--my-board--background);
   width: 310px;
 }
@@ -252,6 +252,12 @@ h2 {
   padding-top: 2.4rem;
   font-weight: 700;
   border-top: 2px solid var(--ifm-contents-border-color);
+}
+
+h2.blogPostTitle_node_modules-\@docusaurus-theme-classic-src-theme-BlogPostItem- {
+  font-size: 2rem !important;
+  padding-top: var(--ifm-contents-padding-vertical);
+  border-top: none;
 }
 
 .prism-code {
@@ -404,7 +410,7 @@ html[data-theme="dark"] .menu .menu__link.menu__link--active:not(.menu__link--su
   html {
     font-size: 14px;
   }
-  .navbar + main > div > div:not(.row):not(.hero):not(.main) {
+  .navbar + .main-wrapper > div > div:not(.row):not(.hero):not(.main) {
     width: 290px;
   }
   .footer.footer--dark .container .text--center {
@@ -413,7 +419,7 @@ html[data-theme="dark"] .menu .menu__link.menu__link--active:not(.menu__link--su
 }
 
 @media (width > 996px) {
-  .navbar + main > div > div:not(.row) > div:not(.container) {
+  .navbar + .main-wrapper > div > div:not(.row) > div:not(.container) {
     padding-top: 1.8rem;
     padding-bottom: 2rem;
     padding-left: 1.2rem;
