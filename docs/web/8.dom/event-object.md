@@ -225,7 +225,38 @@ function checkName(e) {
 
 ### Event.stopPropagation()
 
+`stopPropagation` 方法阻止事件在 DOM 中继续传播，防止再触发定义在别的节点上的监听函数，但是不包括在当前节点上其他的事件监听函数。
+
+```js
+function stopEvent(e) {
+  e.stopPropagation();
+}
+
+el.addEventListener('click', stopEvent, false);
+```
+
+上面代码中，`click` 事件将不会进一步冒泡到 el 节点的父节点。
+
 ### Event.stopImmediatePropagation()
+
+`Event.stopImmediatePropagation` 方法阻止同一个事件的其他监听函数被调用，不管监听函数定义在当前节点还是其他节点。也就是说，该方法阻止事件的传播，比 `Event.stopPropagation()` 更彻底。
+
+如果同一个节点对于同一个事件指定了多个监听函数，这些函数会根据添加的顺序依次调用。只要其中有一个监听函数调用了 `Event.stopImmediatePropagation` 方法，其他的监听函数就不会再执行了。
+
+```js
+function l1(e){
+  e.stopImmediatePropagation();
+}
+
+function l2(e){
+  console.log('hello world');
+}
+
+el.addEventListener('click', l1, false);
+el.addEventListener('click', l2, false);
+```
+
+上面代码在 el 节点上，为 click 事件添加了两个监听函数 l1 和 l2 。由于 l1 调用了 `event.stopImmediatePropagation` 方法，所以 l2 不会被调用。
 
 ### Event.composedPath()
 
