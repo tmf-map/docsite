@@ -2,6 +2,9 @@
 title: 事件循环
 sidebar_label: 事件循环
 ---
+
+import Img from '../../../src/components/Img'
+
 ## 浏览器事件循环
 
 事件循环可以理解成由三部分组成，分别是：
@@ -12,9 +15,7 @@ sidebar_label: 事件循环
 
 **任务队列**(task queue)就是以队列的数据结构对事件任务进行管理，特点是先进先出，后进后出。
 
-<div align="center">
-    <img width="792" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/image61.png" />
-</div>
+<Img width="650" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/image61.png" />
 
 在JS引擎主线程执行过程中：
 
@@ -26,9 +27,10 @@ sidebar_label: 事件循环
 
 这就是加入微任务后的详细事件循环：
 
-![](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/image9.png)
+<Img width="520" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/1Bf7ar.jpg'/>
 
 在事件循环中，每进行一次循环操作称为 tick，每一次 tick 的任务处理模型是比较复杂的，但关键步骤如下：
+
 1. 执行一个宏任务（栈中没有就从事件队列中获取）
 2. 执行过程中如果遇到微任务，就将它添加(没有执行)到微任务的任务队列中
 3. 宏任务执行完毕后，立即执行当前微任务队列中的所有微任务（依次执行）
@@ -37,15 +39,17 @@ sidebar_label: 事件循环
 
 流程图如下：
 
-![](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/image63.png)
+<Img width="550" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/image63.png'/>
 
 浏览器事件循环经典题目:
+
 ```js
 for (var i=0; i<5; i++) {
     setTimeout( function timer() {
         console.log(new Date, i);
     }, 1000);
 }
+
 /* VM84:3 Wed Oct 09 2019 09:29:47 GMT+0800 (中国标准时间) 5
 VM84:3 Wed Oct 09 2019 09:29:47 GMT+0800 (中国标准时间) 5
 VM84:3 Wed Oct 09 2019 09:29:47 GMT+0800 (中国标准时间) 5
@@ -56,6 +60,7 @@ VM84:3 Wed Oct 09 2019 09:29:47 GMT+0800 (中国标准时间) 5 */
 解析： 根据setTimeout定义的操作在函数调用栈清空之后才会执行的特点，for循环里定义了5个setTimeout操作。而等待1秒后，任务队列里的setTimeout开始依次执行时，for循环的i值，已经先一步变成了5。因为任务队列推到函数调用栈执行的时间可以忽略不记（毫秒级），所以打印的GMT时间（精确到秒）和i的值都是相同的。
 
 解决这个问题有三种方法：
+
 1. 使用闭包
 2. 使用let定义变量 i
 3. 使用setTimeOut的第三个参数，将第三个参数作为setTimeout回调函数。
@@ -63,9 +68,5 @@ VM84:3 Wed Oct 09 2019 09:29:47 GMT+0800 (中国标准时间) 5 */
 [点击查看三种解决方案](https://thinkbucket.github.io/docsite/blog/for循环中的setTimeout)
 
 ## 相关拓展
+
 [Event Loop 必知必会（六道题）](https://zhuanlan.zhihu.com/p/34182184)
-
-
-
-
-

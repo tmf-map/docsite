@@ -65,8 +65,7 @@ module.exports = {
       "javascript/8.object-oriented-programming/super",
     ],
     "9. 异步编程": [
-      "javascript/9.async-programming/macro-task",
-      "javascript/9.async-programming/micro-task",
+      "javascript/9.async-programming/macro-micro-task",
       "javascript/9.async-programming/event-loop",
       "javascript/9.async-programming/callback",
       "javascript/9.async-programming/promise",
