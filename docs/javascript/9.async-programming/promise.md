@@ -259,11 +259,11 @@ Promise.all([p1, p2])
 ```js
 function promiseAll(promises) {
     return new Promise(function(resolve, reject) {
-        if (typeof obj[Symbol.iterator] !== 'function') {
+        if (typeof promises[Symbol.iterator] !== 'function') {
             return reject(new TypeError('arguments must be iterator'));
         }
         let promiseValue = [];
-        let length = promises.length;
+        const length = promises.length;
 
         for (let i = 0; i < length; i++) {
             Promise.resolve(promises[i]).then(
@@ -274,7 +274,7 @@ function promiseAll(promises) {
                     }
                 },
                 function(reason) {
-                    return reject(reason)
+                    reject(reason)
                 }
             )
         }
@@ -322,15 +322,17 @@ Promise.race([promise1, promise2]).then(function(value) {
 
 ```js
 function promiseRace(promises) {
- return new Promise(function(resolve, reject) {
-   if (Arr.isArray(promise)) {
-       for (let item of promises) {
-       Promise.resolve(item).then(function(value) {
-          return resolve(value)
-       }, function(reason) {return reject(reason)});
-   }
-   }
- })
+    return new Promise(function(resolve, reject) {
+        if (Arr.isArray(promise)) {
+            for (let item of promises) {
+                Promise.resolve(item).then(function(value) {
+                  return resolve(value)
+                },function(reason) {
+                  return reject(reason)
+                });
+            }
+        }
+    })
 }
 ```
 
