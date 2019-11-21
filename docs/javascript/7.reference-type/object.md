@@ -20,12 +20,25 @@ import Hint from '../../../src/components/Hint'
   - `Object.create()`: 该方法可以指定原型对象和属性，返回一个新的对象。
   - `Object.getPrototypeOf()`: 获取对象的 `prototype` 对象。
 
-
 ## Object.defineProperty
 
-`Object.defineProperty` 可以设置对象属性的数据属性和访问器属性。
+```js
+Object.defineProperty(obj, prop, descriptor)
+```
 
-### 数据属性
+参数说明：
+
+- obj：必需。目标对象
+- prop：必需。需定义或修改的属性的名字
+- descriptor：必需。目标属性所拥有的特性
+
+返回值：**传入函数的对象，即第一个参数obj**。
+
+针对属性，我们可以给这个属性设置一些特性，比如是否只读不可以写；是否可以被 `for…in` 或 `Object.keys()` 遍历。
+
+给对象的属性添加特性描述，目前提供两种形式：数据描述和存取器描述。
+
+### 数据描述
 
 数据属性分为四种： `configurable` 、 `enumerable` 、 `writable` 和 `value` 。
 
@@ -40,7 +53,7 @@ delete person.name
 console.log(person) //{name: 'robbie'}
 ```
 
-`enumerable` 配置属性是否是可枚举类型：
+`enumerable` 配置属性是否是可枚举类型使用 `for…in` 或 `Object.keys()` ）：
 
 ```js
 var person = {}
@@ -65,28 +78,56 @@ Object.defineProperty(person, 'name', { value: 'robbie' });
 console.log(person) // {name: "robbie"}
 ```
 
-### 访问器属性
+### 存取器描述
 
-在读取访问器属性的时候会访问 `getter` 属性，在写入访问器属性时会调用 `setter` ：
+当设置或获取对象的某个属性的值的时候，可以提供getter/setter方法。
+
+- getter 是一种获得属性值的方法
+- setter 是一种设置属性值的方法
+
+在特性中使用 `get` / `set` 属性来定义对应的方法。
 
 ```js
-var obj = {
-  log: ['a', 'b', 'c'],
-  get latest() {
-    if (this.log.length == 0) {
-      return undefined;
+var obj = {log: ['a', 'b', 'c']};
+
+Object.defineProperty(obj, "latest", {
+    get: function (){
+        return this.log[this.log.length - 1];
     }
-    return this.log[this.log.length - 1];
-  },
-  set add(v) {
-    this.log.push(v);
-    return this.log
-  }
-}
+});
+
+Object.defineProperty(obj, "add", {
+    set: function (v){
+        this.log.push(v);
+        return this.log;
+    }
+});
+
 console.log(obj.latest) // 'c'
 obj.add = 'd'
 console.log(obj.log) // ["a", "b", "c", "d"]
 ```
+
+或者直接在对象里面进行 `get` / `set` :
+
+```js
+var obj = {
+    log: ['a', 'b', 'c'],
+    get latest() {
+        return this.log[this.log.length - 1];
+    },
+    set add(v) {
+        this.log.push(v);
+        return this.log;
+    }
+}
+
+console.log(obj.latest) // 'c'
+obj.add = 'd'
+console.log(obj.log) // ["a", "b", "c", "d"]
+```
+
+<Hint type="warning">get 或 set 不是必须成对出现，任写其一就可以。如果不设置方法，则 get 和 set 的默认值为 `undefined` 。</Hint>
 
 ## freeze v.s seal
 
@@ -278,10 +319,10 @@ Reflect.ownKeys(obj) // ["1", "2", "3", "m", "b", "a", Symbol(b), Symbol(a)]
 
 比如 m 为 函数的时候，打印出 `{1: "", 2: "", 3: "", b: "", a: "", Symbol(b): "", Symbol(a): "", m: ƒ}` ， 而 m 为字符串或数组的时候顺序却又在 3 和 b 之间。
 
-
 ## 参考资料
 
 1. [属性的可枚举性和遍历，作者：阮一峰](http://es6.ruanyifeng.com/#docs/object#%E5%B1%9E%E6%80%A7%E7%9A%84%E5%8F%AF%E6%9E%9A%E4%B8%BE%E6%80%A7%E5%92%8C%E9%81%8D%E5%8E%86)
-1. [stackoverflow: Does JavaScript Guarantee Object Property Order? ](https://stackoverflow.com/a/38218582)
-1. [ES6: What is the difference between Rest and Spread? By Marina Shafiq](https://medium.com/javascript-in-plain-english/es6-spread-parameter-vs-rest-operator-5e3c924c4e1f)
-1. [【译】JS解构的五种有趣用法](https://juejin.im/post/5d673044f265da03d60f12f7)
+2. [stackoverflow: Does JavaScript Guarantee Object Property Order? ](https://stackoverflow.com/a/38218582)
+3. [ES6: What is the difference between Rest and Spread? By Marina Shafiq](https://medium.com/javascript-in-plain-english/es6-spread-parameter-vs-rest-operator-5e3c924c4e1f)
+4. [【译】JS解构的五种有趣用法](https://juejin.im/post/5d673044f265da03d60f12f7)
+5. [理解Object.defineProperty的作用，作者：戎马](https://segmentfault.com/a/1190000007434923)
