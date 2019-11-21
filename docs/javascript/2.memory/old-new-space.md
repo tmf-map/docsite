@@ -2,6 +2,9 @@
 title: 分代回收
 sidebar_label: 分代回收
 ---
+
+import Img from '../../../src/components/Img'
+
 ### Node的GC特点
 
 https://github.com/v8/v8/wiki
@@ -14,8 +17,8 @@ https://github.com/v8/v8/wiki
 - 浏览器用不到。
 - GC，1.5GB垃圾需要1s左右的回收的时间，会阻塞JS主线程。
 
-<img width="400" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/6umXqr.jpg'/>
-<img width="400" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/x9XnBT.jpg'/>
+<Img width="400" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/6umXqr.jpg'/>
+<Img width="400" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/x9XnBT.jpg'/>
 
 process.memoryUsage返回一个对象，包含了 Node 进程的内存占用信息。该对象包含四个字段，单位是字节，含义如下：
 
@@ -42,7 +45,7 @@ GC的三大基础算法 https://segmentfault.com/a/1190000004665100#articleHeade
 - 基于分代式垃圾回收机制
 - 不同场景利于利用不同GC算法（和统计学相关）
 
-<img width="600" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/M2O65a.jpg'/>
+<Img width="600" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/M2O65a.jpg'/>
 
 ## 新生代：Scavenge算法
 
@@ -57,7 +60,7 @@ Scavenge，拷贝-收集算法，它将新生代划分为两半即 semi space �
 - 对象是否经历过Scavenge回收
 - To空间的内存占比是否超过25%（如果占比过高，To转成From后会影响后续内存分配）
 
-<img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/Scavenge.svg'/>
+<Img w="340" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/Scavenge.svg'/>
 
 ## 老生代：Mark-Sweep算法
 ### 老生代为什么不用Scavenge算法
@@ -77,12 +80,12 @@ Mark-Sweep即标记清除，分为标记和清除两个阶段。
 
 Mark-Sweep算法的操作过程如下图所示：
 
-<img width="300" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/8TjihR.jpg'/>
+<Img width="300" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/8TjihR.jpg'/>
 
 ### 变量清除后的问题
 
 对死对象进行清除后，内存可能会出现不连续的状态（如下图），这种情况会对后续的内存分配造成麻烦。
-<img width="600" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/yWLjGW.jpg'/>
+<Img width="600" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/yWLjGW.jpg'/>
 
 
 目前，IE、Firefox、Opera、Chrome和Safari的JavaScript实现使用的都是标记清除式的垃圾回收策略（或类似的策略），只不过垃圾收集的时间间隔互有不同。
@@ -96,4 +99,4 @@ V8 GC辅助算法，当从新生代晋升过来的对象过大，空间不足时
 
 Mark-Compact，标记整理。它是Mark-Sweep算法的增强，让所有存活的对象都向一端移动，然后直接清理掉端边界以外的内存。
 
-<img width="500" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/o7N0wh.jpg'/>
+<Img width="500" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/o7N0wh.jpg'/>
