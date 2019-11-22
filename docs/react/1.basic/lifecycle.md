@@ -79,18 +79,18 @@ component.componentDidMount && component.componentDidMount()
 
 React v16.3，引入了两个新的生命周期函数：
 
-* **static getDerivedStateFromProps**
-* **getSnapshotBeforeUpdate**
+* **static getDerivedStateFromProps**：取代 `componentWillMount` 和 `componentWillReceiveProps`
+* **getSnapshotBeforeUpdate**：取代 `componentWillUpdate`
 
 这两个生命周期虽然是新加的，但并不太常用。它们偶尔会很方便，但是大部分情况下可能都不需要它们。
 
-<Hint type="tip">`getDerivedStateFromProps` 实际上就是用来取代以前的 `componentWillMount` 和 `componentWillReceiveProps` 。</Hint>
+React 也为下面三个生命周期钩子加上了 `UNSAFE` 标记:
 
-随着 `getDerivedStateFromProps` 的推出，同时 Deprecate 了一组生命周期 API，包括：
+- **UNSAFE_componentWillMount**
+- **UNSAFE_componentWillReceiveProps**
+- **UNSAFE_componentWillUpdate**
 
-- **componentWillMount**
-- **componentWillReceiveProps**
-- **componentWillUpdate**
+<Hint type="warning">React 团队计划在 17.0 中彻底废弃掉这几个 API。</Hint>
 
 ### getDerivedStateFromProps
 
@@ -116,11 +116,11 @@ static getDerivedStateFromProps(props, state)
 getSnapshotBeforeUpdate(prevProps, prevState)
 ```
 
-`getSnapshotBeforeUpdate()` 在最近一次渲染输出（提交到 DOM 节点）之前调用。它使得组件能在发生更改之前从 DOM 中捕获一些信息（例如，滚动位置）。此生命周期的任何返回值将作为参数传递给 `componentDidUpdate()`。
+`getSnapshotBeforeUpdate()` 在最近一次渲染输出（提交到 DOM 节点）之前调用。它使得组件能在发生更改之前从 DOM 中捕获一些信息（例如，滚动位置）。
 
-此用法并不常见，但它可能出现在 UI 处理中，如需要以特殊方式处理滚动位置的聊天线程等。
+<Hint type="tip">此生命周期的任何返回值将作为参数传递给 `componentDidUpdate()`。</Hint>
 
-应返回 snapshot 的值（或 `null`）。例如：
+此用法并不常见，但它可能出现在 UI 处理中，如需要以特殊方式处理滚动位置的聊天线程等。应返回 snapshot 的值（或 `null`）。例如：
 
 ```jsx
 class ScrollingList extends React.Component {
@@ -159,3 +159,35 @@ class ScrollingList extends React.Component {
 
 在上述示例中，重点是从 `getSnapshotBeforeUpdate` 读取 `scrollHeight` 属性，因为 “render” 阶段生命周期（如 `render`）和 “commit” 阶段生命周期（如 `getSnapshotBeforeUpdate` 和 `componentDidUpdate`）之间可能存在延迟。
 
+## 为什么要弃用一些 API
+
+### 为何移除 componentWillMount
+
+<Hint type="warning">在 React 未来的版本中，[异步渲染机制(Concurrent Mode)](https://zh-hans.reactjs.org/docs/concurrent-mode-intro.html)可能会**导致单个组件实例可以多次调用该方法**。</Hint>
+
+很多开发者目前会将事件绑定、异步请求等写在 componentWillMount 中，一旦异步渲染时 componentWillMount 被多次调用，将会导致：
+
+- 进行重复的时间监听，无法正常取消重复的 Listener，更有可能**导致内存泄漏**
+- 发出重复的异步网络请求，**导致 IO 资源被浪费**
+- 在服务端渲染时，componentWillMount 会被调用，但是会因忽略异步获取的数据而**浪费 IO 资源**
+
+<Hint type="best">React 推荐将原本在 componentWillMount 中的网络请求移到 componentDidMount 中。</Hint>
+
+至于这样会不会导致请求被延迟发出影响用户体验，[React 团队是这么解释](https://zh-hans.reactjs.org/blog/2018/03/27/update-on-async-rendering.html)的：
+
+> There is a common misconception that fetching in componentWillMount lets you avoid the first empty rendering state. In practice this was never true because React has always executed render immediately after componentWillMount. If the data is not available by the time componentWillMount fires, the first render will still show a loading state regardless of where you initiate the fetch. This is why moving the fetch to componentDidMount has no perceptible effect in the vast majority of cases.
+
+componentWillMount、render 和 componentDidMount 方法虽然存在调用先后顺序，但在大多数情况下，几乎都是在很短的时间内先后执行完毕，几乎不会对用户体验产生影响。
+
+### 为何移除 componentWillUpdate
+
+大多数开发者使用 componentWillUpdate 的场景是配合 componentDidUpdate，分别获取 rerender 前后的视图状态，进行必要的处理。但随着 React 新的 `suspense`、`time slicing`、`异步渲染`等机制的到来，render 过程可以被分割成多次完成，还可以被暂停甚至回溯，**这导致 componentWillUpdate 和 componentDidUpdate 执行前后可能会间隔很长时间**，足够使用户进行交互操作更改当前组件的状态，这样可能会导致难以追踪的 BUG。
+
+React 新增的 `getSnapshotBeforeUpdate` 方法就是为了解决上述问题，它所带来的好处：
+
+- **状态信息更可靠**：getSnapshotBeforeUpdate 方法是在 componentWillUpdate 后（如果存在的话），在 React 真正更改 DOM 前调用的，它获取到组件状态信息更加可靠。
+- **节约内存，效率更高**：getSnapshotBeforeUpdate 调用的结果会作为第三个参数传入 componentDidUpdate，避免了 componentWillUpdate 和 componentDidUpdate 配合使用时将组件临时的状态数据存在组件实例上浪费内存，getSnapshotBeforeUpdate 返回的数据在 componentDidUpdate 中用完即被销毁，效率更高。
+
+## 参考资料
+
+1. [谈谈新的 React 新的生命周期钩子，作者：IMWeb HuQingyang](https://imweb.io/topic/5b8cacaa7cd95ea863193572)
