@@ -28,9 +28,9 @@ Object.defineProperty(obj, prop, descriptor)
 
 参数说明：
 
-- obj：必需。目标对象
-- prop：必需。需定义或修改的属性的名字
-- descriptor：必需。目标属性所拥有的特性
+- obj：必须。目标对象
+- prop：必须。定义或修改的属性的名字
+- descriptor：必须。目标属性所拥有的特性
 
 返回值：**传入函数的对象，即第一个参数obj**。
 

@@ -59,6 +59,7 @@ export default function ServerSide() {
                   </h2>
                   <ul>
                     <li>MySQL</li>
+                    <li>Redis</li>
                     <li>MongoDB</li>
                   </ul>
                 </div>
