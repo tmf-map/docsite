@@ -19,10 +19,7 @@ function TreeNode(val) {
 ```
 例如：下图中二叉树的深度为3
 
-<div align="center">
-    <Img width="360" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/C4rOow.png" />
-    <p>图：二叉树的最大深度</p>
-</div>
+<Img width="360" legend="图：二叉树的最大深度" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/C4rOow.png" />
 
 ## 思路
 1. 递归左右子树，树的深度为两者最大值 + 1（自底向上回溯）
