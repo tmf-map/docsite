@@ -2,12 +2,12 @@
 id: setTimeout-or-setInterval
 title: 为什么使用 setTimeout 模拟 setInterval功能
 author: Robbie Han
-authorTitle: Front End Engineer @ Tradeshift
-authorURL: https://github.com/USTC-Han
-authorImageURL: https://robbie-pic.oss-cn-beijing.aliyuncs.com/IMG_4175.JPG?x-oss-process=style/compress
-authorTwitter: 
+author_title: Front End Engineer @ Tradeshift
+author_url: https://github.com/USTC-Han
+author_image_url: https://robbie-pic.oss-cn-beijing.aliyuncs.com/IMG_4175.JPG?x-oss-process=style/compress
 tags: [setTimeout, setInterval]
 ---
+
 ## setTimeout 和 setInterval功能
 
 `setTimeout()`会在确定的时间调用回调函数，且回调函数只会执行一次。

@@ -2,10 +2,9 @@
 id: reverse-proxy
 title: 正向代理和反向代理
 author: Robbie Han
-authorTitle: Front End Engineer @ Tradeshift
-authorURL: https://github.com/USTC-Han
-authorImageURL: https://robbie-pic.oss-cn-beijing.aliyuncs.com/IMG_4175.JPG?x-oss-process=style/compress
-authorTwitter: 
+author_title: Front End Engineer @ Tradeshift
+author_url: https://github.com/USTC-Han
+author_image_url: https://robbie-pic.oss-cn-beijing.aliyuncs.com/IMG_4175.JPG?x-oss-process=style/compress
 tags: [正向代理, 反向代理]
 ---
 
