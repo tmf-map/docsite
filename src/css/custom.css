@@ -254,7 +254,7 @@ h2 {
   border-top: 2px solid var(--ifm-contents-border-color);
 }
 
-h2.blogPostTitle_node_modules-\@docusaurus-theme-classic-src-theme-BlogPostItem- {
+article > header > h2.margin-bottom--sm {
   font-size: 2rem !important;
   padding-top: var(--ifm-contents-padding-vertical);
   border-top: none;
