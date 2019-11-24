@@ -67,6 +67,7 @@ module.exports = {
     "9. 异步编程": [
       "javascript/9.async-programming/macro-micro-task",
       "javascript/9.async-programming/event-loop",
+      "javascript/9.async-programming/timer",
       "javascript/9.async-programming/callback",
       "javascript/9.async-programming/promise",
       "javascript/9.async-programming/async-await",
