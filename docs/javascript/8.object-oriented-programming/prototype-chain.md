@@ -3,6 +3,36 @@ title: 原型和原型链
 sidebar_label: 原型和原型链
 ---
 
+import Img from '../../../src/components/Img'
+
+<Img w="700" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/4iriid.jpg'/>
+
+- **__proto__**:
+  - 每个对象都有，但并非标准，Chrome外的其他浏览器不一定有，一些书中用 `[[prototype]]` 或 `[[proto]]` 替代。
+- **prototype**:
+  - 函数才有，注意不是构造函数才有。
+  - constructor 属性的对象，不是空对象。
+
+例：
+
+<Img w="250" align="left" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/C1PIOI.jpg'/>
+
+```js
+
+function Foo(name) {
+   this.name = name;
+}
+
+Foo.prototype.getName = function() {
+   return this.name;
+};
+
+// 通过new 关键字调用，那么Foo就是构造函数，而不是大写F决定的
+// new 关键字的内部设置实例的__proto__指向构造函数的prototype
+// 即foo.__proto__ === Foo.prototype
+let foo = new Foo('kimi')
+```
+
 实例对象的`__proto__`指向自己构造函数的`prototype`。`obj.__proto__.__proto__...`的原型链由此产生，包括我们的操作符 **`instanceof` 正是通过探测 `obj.__proto__.__proto__... ===构造函数.prototype` 来验证obj是否是该构造函数的实例**。
 
 随着一层层地上溯，所有对象的原型最终都可以上溯到`Object.prototype`，即`Object`构造函数的`prototype`属性。也就是说，所有对象都继承了`Object.prototype`的属性。这就是所有对象都有`valueOf`和`toString`方法的原因，因为这是从`Object.prototype`继承的。
