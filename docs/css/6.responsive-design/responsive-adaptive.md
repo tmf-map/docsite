@@ -56,7 +56,7 @@ According to the responsive design, websites must have the following components:
 <Img  w="550" legend="Responsive design vs Adaptive design" origin="https://www.cleveroad.com/blog/responsive-web-design-vs-adaptive-web-design-how-to-make-your-choice" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/mFfNOL.jpg'/>
 
 - Responsive Design
-  - Series of Liquid (use `rem`, `flex`, `grid` as usual)
+  - Series of Liquid (use `%`, `vw`, `rem`, `flex`, `grid` as usual)
   - All devices share same code
 - Adaptive Design
   - Series of Static (use `px` as usual)
