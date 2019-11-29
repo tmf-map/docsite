@@ -140,6 +140,7 @@ module.exports = {
     ],
     "6. 响应式设计": [
       "css/6.responsive-design/media-query",
+      "css/6.responsive-design/responsive-adaptive",
     ],
     "附录": [
       "css/appendix/related-websites"
