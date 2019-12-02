@@ -109,5 +109,5 @@ let threeSum = function(arr) {
 
 ## 复杂度
 
-- 时间复杂度：O(n^2)。
+- 时间复杂度：O(n<sup>2</sup>)。
 - 空间复杂度：O(n)
