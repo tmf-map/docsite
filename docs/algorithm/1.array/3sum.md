@@ -1,5 +1,4 @@
 ---
-id: 3sum
 title: 三数之和
 sidebar_label: 三数之和
 ---
@@ -109,5 +108,5 @@ let threeSum = function(arr) {
 
 ## 复杂度
 
-- 时间复杂度：O(n<sup>2</sup>)。
+- 时间复杂度：O(n<sup>2</sup>)
 - 空间复杂度：O(n)
