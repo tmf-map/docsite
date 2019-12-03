@@ -1,5 +1,4 @@
 ---
-id: setTimeout-or-setInterval
 title: 为什么使用 setTimeout 模拟 setInterval功能
 author: Robbie Han
 author_title: Front End Engineer @ Tradeshift
@@ -101,8 +100,9 @@ Interval执行周期：
 - 如果要保证回调函数执行间隔可以使用`setTimeout`代替`setInterval`。如果实现动画，在兼容性允许的情况下，使用requestAnimationFrame是更好的选择。
 
 ## 参考文章
-[setTimeout or setInterval?](https://stackoverflow.com/questions/729921/settimeout-or-setinterval)
 
-[为什么要用setTimeout模拟setInterval](https://juejin.im/post/5ca81370f265da308c199fe7)
+[setTimeout or setInterval? --- stackoverflow](https://stackoverflow.com/questions/729921/settimeout-or-setinterval)
 
-[你真的了解setTimeout和setInterVal吗](http://qingbob.com/difference-between-settimeout-setinterval/)
+[为什么要用setTimeout模拟setInterval --- 浪浪的拐子](https://juejin.im/post/5ca81370f265da308c199fe7)
+
+[你真的了解setTimeout和setInterVal吗 --- 李翌](http://qingbob.com/difference-between-settimeout-setinterval/)
