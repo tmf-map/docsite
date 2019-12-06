@@ -2,6 +2,9 @@
 title: ES6 Module
 sidebar_label: ES6 Module
 ---
+
+import Img from '../../../src/components/Img'
+
 ## 概述
 
 > 在 ES6 之前，社区制定了一些模块加载方案，最主要的有 CommonJS 和 AMD 两种。前者用于服务器，后者用于浏览器。ES6 在语言标准的层面上，实现了模块功能，而且实现得相当简单，完全可以取代 CommonJS 和 AMD 规范，成为浏览器和服务器通用的模块解决方案。
@@ -226,70 +229,77 @@ export default var a = 1;
 import _, { each, forEach } from 'lodash';
 ```
 ## ES6 Module与CommonJS差异
-
-### 整体加载VS静态加载
-`ES6` 模块的设计思想是尽量的静态化，使得**编译时就能确定模块的依赖关系**，以及输入和输出的变量。`CommonJS` 和 `AMD` 模块，**都只能在运行时确定这些东西**。比如，`CommonJS` 模块就是对象，输入时必须查找对象属性。
-```js
-// CommonJS模块
-let { stat, exists, readFile } = require('fs');
-
-// 等同于
-let _fs = require('fs');
-let stat = _fs.stat;
-let exists = _fs.exists;
-let readfile = _fs.readfile;
-```
-
-上面代码的实质是`整体加载fs`模块（即加载fs的所有方法），生成一个对象（_fs），然后再从这个对象上面读取 3 个方法。这种加载称为“运行时加载”，因为只有运行时才能得到这个对象，导致完全没办法在编译时做“静态优化”。
-
-`ES6` 模块不是对象，而是通过`export`命令显式指定输出的代码，再通过import命令输入。
-
-```js
-
-// ES6模块
-import { stat, exists, readFile } from 'fs';
-```
-
-上面代码的实质是从`fs`模块加载 3 个方法，其他方法不加载。**这种加载称为“编译时加载”或者静态加载**，即 `ES6` 可以在编译时就完成模块加载，效率要比 `CommonJS` 模块的加载方式高。当然，这也导致了没法引用 `ES6` 模块本身，因为它不是对象。
-
-由于 `ES6` 模块是编译时加载，使得静态分析成为可能。有了它，就能进一步拓宽 `JavaScript` 的语法，比如引入宏（macro）和类型检验（type system）这些只能靠静态分析实现的功能。
-
-除了静态加载带来的各种好处，`ES6` 模块还有以下好处。
-
-- 不再需要UMD模块格式了，将来服务器和浏览器都会支持 `ES6` 模块格式。目前，通过各种工具库，其实已经做到了这一点。
-- 将来浏览器新 API 就能用模块格式提供，不再必须做成全局变量或者`navigator`对象的属性。
-- 不再需要对象作为命名空间（比如`Math`对象），未来这些功能可以通过模块提供。
+> 1. **CommonJS 模块输出的是一个值的拷贝，ES6 模块输出的是值的引用**
+> 2. **全部加载和引用加载**
+> 3. **ES6 模块的运行环境是严格模式**
+> 4. **循环依赖**
 
 ### 拷贝VS引用
 
-`CommonJS` 模块输出的是值的拷贝，也就是说，一旦输出一个值，模块内部的变化就影响不到这个值。
+要想理解**CommonJS模块输出的是一个值的拷贝，ES6模块输出的是值的引用**需要了解JS中的getter。
 
-`ES6` 模块的运行机制与`CommonJS` 不一样。JS 引擎对脚本静态分析的时候，遇到模块加载命令`import`，就会生成一个只读引用。等到脚本真正执行时，再根据这个只读引用，到被加载的那个模块里面去取值。原始值变了，`import`加载的值也会跟着变。因此，`ES6` 模块是动态引用，并且不会缓存值，模块里面的变量绑定其所在的模块。
-
-`ES6` 模块不会缓存运行结果，而是动态地去被加载的模块取值，并且变量总是绑定其所在的模块。
+- **例1：** 
 ```js
-// lib.js
-export let obj = {};
+function counter() {
+    var count = 0;
 
-// a.js
-import { obj } from './lib';
+    function addCount() {
+        count++;
+    }
+    return {
+        count, addCount
+    }
+}
+var c = counter();
+console.log(c.count);
 
-obj.prop = 123; // OK
-console.log('a.js', obj)
-obj = {}; // TypeError
+console.log('--- count是值拷贝 ---');
 
-// b.js
-import { obj } from './lib';
-
-console.log('b.js', obj)
-
-// {props: 123}
-// {props: 123}
+c.addCount();
+console.log(c.count);
 ```
 
-### 严格模式
+- **例2：** 
+```js
+function counter() {
+    var count = 0;
 
-`ES6` 的模块自动采用严格模式，不管你有没有在模块头部加上"use strict";。尤其需要注意`this`的限制。`ES6` 模块之中，顶层的`this`指向`undefined`，即不应该在顶层代码使用`this`。
+    function addCount() {
+        count++;
+    }
+    return {
+        get count() {
+            return count
+        }, addCount
+    }
+}
+
+var c = counter();
+console.log(c.count);
+
+console.log('--- count值是值引用 ---');
+
+c.addCount();
+console.log(c.count);
+```
+
+通过上面的两个例子可以看出，例1中输出的是值的拷贝（commonJS模块），而例2中使用`getter`了，当外部获取`c.count`时，会去动态调取函数中最新的值（ES6模块）。
+
+如果上面的例子明白的话，那么**CommonJS 模块输出的是一个值的拷贝，ES6 模块输出的是值的引用**这句话也不难理解。在commonJS模块就是采用`{key: value}`的形式将导出对象拷贝到引用该模块的文件。而ES6模块中则是为每个要导出的变量都设置了`getter`，在引用该模块的文件内部都是执行这些变量所对应的`getter`函数，然后从`import`的模块中动态获取变量的值。
+
+### 整体加载 VS 部分加载
+
+<Img width="600" legend="图：commonJS 模块导出规范" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/XrOhPa.png" />
+
+通过上面的分析并结合上图，我们知道CommonJS模块导入的是值的拷贝，`require`语句执行完后便于`require`的模块无关了。所以在`require`语句未执行时，需要导入的值还没有拷贝过来，文件是不知道具体要导入的是什么。
+
+<Img width="780" legend="图：ES6 模块导出规范" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/CKPI9i.png" />
+
+而ES6模块输出的并不是对输出对象的拷贝，而是用getter函数对每个`export`的变量进行了封装。模块编译`import`的时候，会静态的分析要导入的变量，将`import {}`里的变量与ES6导出对象中变量对应的getter`链接`起来。那些`{}`中没有的变量将被省略。这块的思路和对象的解构一个道理。当文件中用到`{}`的变量时，再调用`getter`函数，读取导出变量的值。
+
+### ES6 模块的运行环境是严格模式
+
+这个差异很好理解，无论是通过babel还是webpack中编译的结果都可以看出，ES6模块的运行环境是严格模式。
 
 ### 循环依赖
 
@@ -305,9 +315,10 @@ var a = require('a');
 
 对于`CommonJS`而言循环引用的时候会去执行引用的模块，并输出引用模块已经执行部分`exports`的值，还未执行的部分不会输出。
 
-对于`ES6`的`import`而言，执行到`import`的时候，它不会去执行引入模块的代码，而只是返回模块的引用，只有在真正调用引用模块中的值的时候才会执行。也就是说`ES6`的本身不会关注代码是否在循环引用，这需要编写代码的人去保证在真正取值的时候能够取道值，不会出错。
+对于`ES6`的`import`而言，执行到`import`的时候，它不会去执行引入模块的代码，而只是返回模块的引用，只有在真正调用引用模块中的值的时候才会执行。也就是说`ES6`的本身不会关注代码是否在循环引用，这需要编写代码的人去保证在真正取值的时候能够取到值，不会出错。
 
 ## 参考链接
+
 《ECMAScript 6 入门》：http://es6.ruanyifeng.com/#docs/module
 
 JavaScript 模块的循环加载：http://www.ruanyifeng.com/blog/2015/11/circular-dependency.html
