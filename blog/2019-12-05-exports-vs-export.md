@@ -1,0 +1,170 @@
+---
+title: exports、export 和 export default
+author: Robbie Han
+author_title: Front End Engineer @ Tradeshift
+author_url: https://github.com/USTC-Han
+author_image_url: https://robbie-pic.oss-cn-beijing.aliyuncs.com/IMG_4175.JPG?x-oss-process=style/compress
+tags: [exports, export, export default]
+---
+
+import Img from '../src/components/Img'
+
+## 前言
+在[exports 和 module.exports](https://thinkbucket.cn/blog/2019/12/03/exports-vs-module.exports)这篇博客中，我们详细解释了在CommonJS规范中`exports`和`module.exports`的区别。本篇博客将讨论CommonJS规范和ES6规范模块导出之间的关系。
+
+## export 和 export default
+ES6导出模块一般会使用`export`或`export default`，使用两者的语法在javaScript文档中的[ES6 Module](https://thinkbucket.cn/docs/javascript/6.modules/es6-module)已经做了详细的讲解，此处不再赘述。那么为什么已经有了`export`还要整个`export default`呢？`export`和`export default`之间的关系是什么呢？下面的内容也将通过这两个问题进行展开。
+
+### 为什么已经有了export还要整个export default呢？
+在ES6模块中，如果模块导出中使用`export var name = 'Robbie'`,那么在导入改模块的时候，导入的变量必须与之相对应，即`import {name} form Info`。而`export default name`在模块导入时的导入变量的命名可是任意的`import myName form Info`。对比两者来看使用`export default`可能具有更高的灵活性，也更便于不熟悉该库的开发者进行开发。
+
+### export和export default之间的关系是什么呢？
+我们知道浏览器是不支持ES6模块语法的，所以对于代码中的ES6模块一般是采用Babel转成CommonJS规范的代码。此时的代码虽然浏览器仍然不能执行，但是Node可以，因为webpack是基于Node构建的，所以我们可以通过webpack将代码打包成浏览器支持的ES5代码。
+
+<!--truncate-->
+
+<Img width="480" legend="图：ES6模块转浏览器可执行代码示意图" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/y8Gvm6.png" />
+
+为了探索ES6模块中`export`和`export default`这两个之间的关系，我们可以看下面这个例子
+
+```js
+  export var info = {age: 22, name: 'han'}
+  var email = 'SA17225105@gmail.com'
+  export default email;
+```
+
+Babel转义后：
+
+```js
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = exports.info = void 0;
+var info = {
+    age: 22,
+    name: 'han'
+};
+exports.info = info;
+var email = 'SA17225105@gmail.com';
+var _default = email;
+exports.default = _default;
+```
+
+通过转义后的结果我们可以看出，模块导出会先定义一个`exports`对象，然后再将要导出的元素挂在这个对象上。
+
+看到例子中的这个exports我们不仅会想到两个问题：
+
+1. ES6在模块导入的时候会是个什么情况？
+2. 在项目中曾看到过`export`和`exports`混用的情况，它们两个一样吗？有什么联系？
+
+### ES6在模块导入的时候会是个什么情况？
+从ES6模块的导出结果可以看出，模块导出的时候是一个对象。对于`export`导出的变量，导入的时候通过需要用`{}`包裹，且导入和导出使用相同的变量名，这个很像ES6对象的解构，这个很好理解。而对于`export default`导出的变量的，导入的行为可能会令人费解，为什么可以不用`{}`包裹直接`import`，还可以任意的命名？
+
+下面我想通过一个例子来探究一下对于`export default`导入的具体细节。
+
+```js
+import email from 'myInfo';
+console.log(email)
+```
+
+Babel转义后：
+
+```js
+"use strict";
+
+var _myInfo = _interopRequireDefault(require("myInfo"));
+
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+        default: obj
+    };
+}
+
+console.log(_myInfo.default);
+```
+
+从模块导出中可以看出`__esModule`的值为true，所以模块导入的是一个“对象”。而从我们转义后的内容中也可以看出，转义后的内容和我们定义的`email`没有半毛钱关系，
+我们在使用`email`时，其实取到是`_myInfo.default`。这也解释了为什么我们导入的时候可以使用任何自定义的变量名。
+
+### 在项目中曾看到过`export`和`exports`混用的情况，它们两个一样吗？有什么联系？
+
+`export`和`exports`属于不同的规范，显然不是一回事。如果在项目中导出模块混用`export`和`exports`，模块在转义和打包的时候会将里面的代码统统打包成浏览器支持运行的ES5代码。
+
+但是还是不建议混写两者，一方面容易使人懵逼，另一方面两个规范的输出规则是完全不一样的。
+
+## ES6 模块与 CommonJS 模块的差异
+
+> 1. **CommonJS 模块输出的是一个值的拷贝，ES6 模块输出的是值的引用**
+> 2. **CommonJS 模块是运行时加载，ES6 模块是静态加载。**
+> 3. **ES6 模块的运行环境是严格模式**
+
+### 拷贝VS引用
+
+要想理解**CommonJS模块输出的是一个值的拷贝，ES6模块输出的是值的引用**需要了解JS中的getter。
+
+- **例1：** 
+```js
+function counter() {
+    var count = 0;
+
+    function addCount() {
+        count++;
+    }
+    return {
+        count, addCount
+    }
+}
+var c = counter();
+console.log(c.count);
+
+console.log('--- count是值拷贝 ---');
+
+c.addCount();
+console.log(c.count);
+```
+
+- **例2：** 
+```js
+function counter() {
+    var count = 0;
+
+    function addCount() {
+        count++;
+    }
+    return {
+        get count() {
+            return count
+        }, addCount
+    }
+}
+
+var c = counter();
+console.log(c.count);
+
+console.log('--- count值是值引用 ---');
+
+c.addCount();
+console.log(c.count);
+```
+
+通过上面的两个例子可以看出，例1中输出的是值的拷贝（commonJS模块），而例2中使用`getter`了，当外部获取`c.count`时，会去动态调取函数中最新的值（ES6模块）。
+
+如果上面的例子明白的话，那么**CommonJS 模块输出的是一个值的拷贝，ES6 模块输出的是值的引用**这句话也不难理解。在commonJS模块就是采用`{key: value}`的形式传给导入模块，传递的是本模块导出对象的拷贝。而ES6模块中则是对每个导出的变量都设置了`getter`，外部的导入模块取值时都是执行对应的`getter`函数，然后返回执行过的值。
+
+### 运行时加载 VS 静态加载
+
+通过上面的分析，我们知道CommonJS模块导入的时候，导入的是拷贝的一个对象，导入后便于该模块无关了。所以当执行到`require（）`的时候，会执行导入模块一遍（无缓存），然后将执行后的对象拷贝到当前文件，然后文件执行时才能取到导入对象里的元素。在导入语句未执行时，是不知道具体要导入的是什么的。
+
+而ES6模块导入的值并不是一个拷贝的对象，而是通过getter函数对导出对象元素的封装。模块编译`import`的时候，会静态的分析要导入的变量，将`import {}`里的变量与ES6导出对象中变量对应的getter`链接`起来。那些`{}`中没有的变量将被省略。这块的思路和对象的解构一个道理。当文件中用到`{}`的变量时，再调用`getter`函数，读取导出变量的值。
+
+### ES6 模块的运行环境是严格模式
+
+这个差异很好理解，无论是通过babel还是webpack中编译的结果都可以看出，ES6 模块的运行环境时严格模式。
+
+## 参考链接
+- [ECMAScript 6 入门 -- 阮一峰](http://es6.ruanyifeng.com/#docs/module-loader#ES6-%E6%A8%A1%E5%9D%97%E4%B8%8E-CommonJS-%E6%A8%A1%E5%9D%97%E7%9A%84%E5%B7%AE%E5%BC%82)
+
+- [import、require、export、module.exports 混合使用详解 --- lv_DaDa
+](https://segmentfault.com/a/1190000012386576)
