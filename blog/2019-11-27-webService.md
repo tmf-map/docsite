@@ -1,5 +1,4 @@
 ---
-id: webService
 title: 什么是Web Service
 author: Robbie Han
 author_title: Front End Engineer @ Tradeshift
@@ -78,7 +77,7 @@ SDK 就是 Software Development Kit 的缩写，翻译过来——软件开发�
 
 举例说明两者之间的关系：
 
-<Img width="360" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/iPjpHO.jpg" />
+<Img width="360" legend="图：奶茶示例图" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/iPjpHO.jpg" />
 
 有一杯奶茶，它的名字叫做“SDK”。
 

@@ -1,5 +1,4 @@
 ---
-id: for循环中的setTimeout
 title: for循环中的setTimeout
 author: Robbie Han
 author_title: Front End Engineer @ Tradeshift
@@ -7,6 +6,8 @@ author_url: https://github.com/USTC-Han
 author_image_url: https://robbie-pic.oss-cn-beijing.aliyuncs.com/IMG_4175.JPG?x-oss-process=style/compress
 tags: [setTimeout, for]
 ---
+
+import Img from '../src/components/Img'
 
 ## 前言：
 
@@ -53,7 +54,7 @@ for (var i=0; i<5; i++) {
 
 如下图所示，我们可以通过在Chrome中打断点查看闭包的值
 
-![](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/xTvjaK.png)
+<Img width="480" legend="图：Chrome控制台闭包" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/xTvjaK.png" />
 
 ## 使用let：
 

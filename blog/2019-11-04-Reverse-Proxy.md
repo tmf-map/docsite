@@ -1,5 +1,4 @@
 ---
-id: reverse-proxy
 title: 正向代理和反向代理
 author: Robbie Han
 author_title: Front End Engineer @ Tradeshift
@@ -8,6 +7,8 @@ author_image_url: https://robbie-pic.oss-cn-beijing.aliyuncs.com/IMG_4175.JPG?x-
 tags: [正向代理, 反向代理]
 ---
 
+import Img from '../src/components/Img'
+
 ## 正向代理
 
 A同学创业需要启动资金，于是他决定去找马云爸爸借钱，可想而知，最后碰一鼻子灰回来了。情急之下，他想到一个办法，找关系开后门，经过一番消息打探，原来A同学的大学老师王老师是马云的同学，于是A同学找到王老师，托王老师帮忙去马云那借500万过来。
@@ -15,18 +16,17 @@ A同学创业需要启动资金，于是他决定去找马云爸爸借钱，可�
 不过马云并不知道这钱是A同学借的，马云是借给王老师的，最后由王老师转交给A同学。这里的王老师在这个过程中扮演了一个非常关键的角色，就是**代理**，也可以说是**正向代理**。王老师代替A同学办这件事，这个过程中，真正借钱的人是谁，马云是不知道的，这点非常关键。
 
 正向代理的过程中，服务器并不知道真正的客户端是谁，客户端的请求都是依靠代理服务器来请求。在我们访问谷歌的时候，会被防火墙阻止，此时我们需要购买一款可以翻墙的服务器，这个翻墙的服务器就扮演者正向代理的角色。
-<div align="center">
-  <img src = 'https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/INXnEj.jpg' width = '540' height = '320'/>
-</div>
 
 <!--truncate-->
+
+<Img width="480" legend="图：正向代理示意图" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/INXnEj.jpg" />
 
 ## 反向代理
 
 反向代理隐藏了真实的服务端，当我们请求 www.baidu.com 的时候，就像拨打10086一样，背后可能有成千上万台服务员（服务器）为我们服务，但具体是哪一台，你不知道，也不需要知道，你只需要知道反向代理服务器是谁就好了，www.baidu.com 就是我们的反向代理服务器，反向代理服务器会帮我们把请求转发到真实的服务器那里去。
-<div align="center">
-  <img src = 'https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/z40S1x.png' width = '540' height = '320'/>
-</div>
+
+<Img width="480" legend="图：反向代理示意图" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/z40S1x.png" />
+
 使用反向代理的优点：
 - 保护了真实的web服务器，保证了web服务器的资源安全
 
@@ -44,6 +44,6 @@ A同学创业需要启动资金，于是他决定去找马云爸爸借钱，可�
 两者的区别在于代理的对象不一样：正向代理代理的对象是客户端，反向代理的对象是服务器。
 
 ## 参考链接
-参考链接一：https://www.zhihu.com/question/24723688
+[反向代理为何叫反向代理 --- 知乎](https://www.zhihu.com/question/24723688)
 
-参考链接二：https://www.jianshu.com/p/6215e5d24553
+[理解Nginx工作原理 --- Rick617](https://www.jianshu.com/p/6215e5d24553)
