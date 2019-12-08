@@ -4,6 +4,7 @@ sidebar_label: ES6 Module
 ---
 
 import Img from '../../../src/components/Img'
+import Hint from '../../../src/components/Hint'
 
 ## 概述
 
@@ -400,7 +401,7 @@ m.counter // 6
 ```
 上述代码在n为10的时候`m.counter`返回的值是6，虽然运行过程没有报错，但输入值和输出值之间的关联并不可知。而当n的值为一个特别大的数时，系统会直接爆栈。
 
-所以无论是在CommonJS规范中还是在ES6规范中，循环引用的情况都是非常难以控制的。因此在模块的定义和使用的过程中，都应该尽量的避免出现循环引用的情况。
+<Hint type="best">通过上面的分析，我们可以看出无论是在CommonJS规范中还是在ES6规范中，循环引用的情况都是非常难以控制的。因此在模块的定义和使用的过程中，都应该尽量的避免出现循环引用的情况。</Hint>
 
 ## 相关拓展
 
