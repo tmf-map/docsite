@@ -1,6 +1,6 @@
 ---
-title: Publish–Subscribe 模式
-sidebar_label: Publish–Subscribe 模式
+title: Publish–Subscribe
+sidebar_label: Publish–Subscribe
 ---
 
 import Hint from '../../../src/components/Hint'

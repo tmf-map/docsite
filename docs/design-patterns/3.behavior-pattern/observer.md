@@ -1,6 +1,6 @@
 ---
-title: Observer 模式
-sidebar_label: Observer 模式
+title: Observer
+sidebar_label: Observer
 ---
 
 import Hint from '../../../src/components/Hint'
