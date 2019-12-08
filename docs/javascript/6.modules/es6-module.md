@@ -364,13 +364,48 @@ export function bar() {
     }
 }
 ```
+
 执行a模块到位置1时，导入的变量`bar`和b模块的`bar()`函数已经建立了引用关系，所以执行到位置2的时候是会动态执行b模块中的`bar()`函数，当执行到位置4的时候，会动态执行a模块中的`foo()`函数，此时形成一个循环引用关系。
 
-虽然上面的例子是可以执行的，但是将上述代码直接执行会因为两个模块之间循环引用次数过多直接爆栈。如果想让上面的代码执行，可以加个限制条件，例如`Math.random()> 0.1`。这样可以限制循环引用次数，避免爆栈。
+虽然上面的例子是可以执行的，但是将上述代码直接执行会因为两个模块之间循环引用次数过多直接爆栈，这和下面的这个递归函数的例子的情况很像：
+```js
+function a() {
+    a()
+}
+a(); // RangeError: Maximum call stack size exceeded
+```
+
+虽然ES6中模块即使存在循环引用也有可能正常的运行，但是运行的结果可能和自己的预期值不符，比如下面这个例子：
+```js
+// even.js
+import { odd } from './odd'
+export var counter = 0;
+export function even(n) {
+  counter++;
+  return n == 0 || odd(n - 1);
+}
+
+// odd.js
+import { even } from './even';
+export function odd(n) {
+  return n != 0 && even(n - 1);
+}
+
+// index.js
+import * as m from './even.js';
+m.even(10); 
+m.counter // 6
+
+// m.even(1000000);
+```
+上述代码在n为10的时候`m.counter`返回的值是6，虽然运行过程没有报错，但输入值和输出值之间的关联并不可知。而当n的值为一个特别大的数时，系统会直接爆栈。
+
+所以无论是在CommonJS规范中还是在ES6规范中，循环引用的情况都是非常难以控制的。因此在模块的定义和使用的过程中，都应该尽量的避免出现循环引用的情况。
 
 ## 相关拓展
 
 [exports、export 和 export default的关系](/blog/2019/12/05/exports-vs-export)
+
 ## 参考链接
 
 [ECMAScript 6 入门 -- 阮一峰](http://es6.ruanyifeng.com/#docs/module)
