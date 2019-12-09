@@ -289,6 +289,10 @@ module.exports = {
     ]
   },
   "algorithm": {
+    "Preface": [
+      "algorithm/preface/complexity",
+      "algorithm/preface/note"
+    ],
     "1. 数组": [
       "algorithm/1.array/duplicated-number-in-array",
       "algorithm/1.array/inverse-pairs",

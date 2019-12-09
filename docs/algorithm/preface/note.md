@@ -1,6 +1,6 @@
 ---
-title: 说明
-sidebar_label: 说明
+title: Note
+sidebar_label: Note
 ---
 
 ## 注解说明
