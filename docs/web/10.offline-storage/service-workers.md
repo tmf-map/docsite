@@ -1,5 +1,4 @@
 ---
-id: service-workers
 title: Service Workers
 sidebar_label: Service Workers
 ---
@@ -17,19 +16,19 @@ Service Worker 就这样诞生了，它在 Web Worker 的基础上加上了持�
 
 因此，Service Worker 可以让缓存做到优雅和极致，使站点在离线情况下可以秒开，极大的提升了用户体验，使 Web App 相对于 Native App 的缺点更加弱化。
 
-# Service Worker 功能：
+## Service Worker 功能：
 1. 可编程拦截代理请求和返回，缓存文件，缓存的文件可以被网页进程取到（包括网络离线状态）
 2. 离线内容开发者可控
 3. 能向客户端推送消息
 
-# Service Worker 使用需注意：
+## Service Worker 使用需注意：
 1. 必须在 HTTPS 环境下才能工作（允许调试时为`localhost`）
 2. 同源限制：分配给worker线程运行的脚本文件，必须与主线程的脚本文件同源
 3. Dom限制：worker线程所在全局对象，与主线程不一样，无法读取主线程所在网页的dom对象，也无法使用document、window、parent这些对象。但是，可以使用navigator和location对象
 4. 通信联系：worker线程和主线程不在同一个上下文环境，它们不能直接通信，必须通过消息完成。worker 线程通过 postMessage 方法告诉主线程，而主线程通过 onMessage 方法得到结果反馈。
 5. 异步实现：内部大都是通过 Promise 实现 
 
-# Service Worker 生命周期
+## Service Worker 生命周期
 Service Worker 的生命周期完全独立于网页。
 
 1. 注册：在主线程中注册位于`/sw.js`的 Service Worker。浏览器会在后台下载所需文件，解析并执行 Service Worker。如果这期间出现任何错误，Service Worker 就不会被安装，下一次会进行重试。
@@ -90,10 +89,10 @@ self.addEventListener('activate', function(event) {
 
 4. 重新加载`redundant`：Service Worker 现在可以对其作用域内所有页面进行控制，但仅注册成功后的打开的页面。也就是说，页面起始于有没有 Service Worker，且在页面的接下来生命周期内维持这个状态。所以，页面不得不重新加载以让 Service Worker 获得完全的控制。
 
-# Service Worker 浏览器支持：
+## Service Worker 浏览器支持：
 [Can I use service worker?](https://caniuse.com/#search=service%20worker)
 
-# Notification API
+## Notification API
 Notifications API 是用来向用户展示通知消息的接口，需要获取用户同意，即使Web App并没有在浏览器打开。
 
 ## Service Worker 给用户推送通知
