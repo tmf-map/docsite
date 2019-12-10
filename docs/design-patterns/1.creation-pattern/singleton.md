@@ -36,7 +36,7 @@ So, it is no longer possible to use object literals to create singleton. Instead
 
 ### ES5
 
-Here's how to transform the above `foo` object by **IIFE** and constructor in ES5 syntax.
+Here's how to transform the above `foo` object by **IIFE (Immediately Invoked Function Expression)** and constructor in ES5 syntax.
 
 ```js
 let Singleton = (function(name) {
@@ -48,7 +48,7 @@ let Singleton = (function(name) {
   }
   
   return function() {
-    if(!instance) {
+    if(!instance) {  // (i)
       instance = new init();
     }
     return instance;
@@ -58,11 +58,11 @@ let Singleton = (function(name) {
 
 The above `Singleton` is actually a **IIFE**, `instance` as the instance is initially assigned to `null`, `init` is actually a constructor, used to instantiate the object, the immediate execution of the function returns an anonymous function to determine whether the instance is created, only when `Singleton()` is called to instantiate the instance.
 
-Because the return of the **IIFE** is a function, the instance is created only when called. This is called **lazy singleton**. Instead of creating instance when loaded, the instance will be created if needed. The first instantiated instance object is always returned if called again.
+Because the **IIFE** returns a function(actually, it's a **closure**, [see more](/docs/javascript/3.closure/closure-external)), the instance is created only when first call through `Singleton()`. This is the **lazy singleton**. Instead of creating instance when loading, the instance is created only when needed, then if `Singleton()` is called again, the first instance object will be returned.
 
 ```js
 let instanceA = Singleton();
-let instanceB = Singleton();
+let instanceB = Singleton(); // skip (i)
 console.log(instanceA === instanceB); //true
 ```
 
@@ -96,11 +96,17 @@ console.log(instanceA === instanceB); //true
 
 ## Singleton in React
 
-We should keep backdrop single when the aside is nested. See below example:
+The singleton in react is a bit different from that in JS. Classically, if an instance already exists, it will simply return a reference to that object. In react, however, it should not render(or create element) rather than returning a reference to the object because the `render()` method has encapsulated the creation method `React.createElement()`.
+
+Suppose that we create a component called Aside(a bit like Modal), it is important to keep the backdrop single when the asides are nested. Take below as an example:
 
 <Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/singleton-aside.gif'/>
 
-The aside can be nested in multiple layers. But the backdrop should only have one because it should be transparent with black, otherwise it will overlap and become darker. We can simply implement singleton by react as following:
+As asides can be nested in multiple layers and the backdrop is transparent grey, to prevent the color from getting darker, the backdrop must be single:
+
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/dS3v4u.png'/>
+
+We can simply implement singleton in react as following:
 
 ```jsx
 import React from 'react';
