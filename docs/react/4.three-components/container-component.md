@@ -24,7 +24,7 @@ connect(
   [mapStateToProps],
   [mapDispatchToProps],
   [mergeProps],
-  [options],
+  [options]
 )(Component);
 ```
 
@@ -50,16 +50,16 @@ connect 函数不会修改传入的 React 组件，返回的是一个新的已�
 
 ```jsx
 const mapStateToProps = state => ({
-  page: selector.getPage(state),
+  page: selector.getPage(state)
 });
 const mapDispatchToProps = dispatch => ({
   deleteDiscount(page, lineId) {
     dispatch(asyncAction.deleteDiscount(page, lineId));
-  },
+  }
 });
 const mergeProps = (stateProps, dispatchProps, ownProps) => {
   return Object.assign({}, ownProps, stateProps, dispatchProps, {
-    deleteDiscount: dispatchProps.deleteDiscount.bind(null, stateProps.page),
+    deleteDiscount: dispatchProps.deleteDiscount.bind(null, stateProps.page)
   });
 };
 export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(Table);

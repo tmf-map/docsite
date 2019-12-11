@@ -42,7 +42,7 @@ function createSubject() {
           ob.update(); // 所有的观察者必须要有这个函数
         }
       }
-    },
+    }
   };
 }
 ```
@@ -53,12 +53,12 @@ const Subject = createSubject();
 let subA = {
   update: () => {
     console.log('updateSubA');
-  },
+  }
 };
 let subB = {
   update: () => {
     console.log('updateSubB');
-  },
+  }
 };
 
 Subject.addObserver(subA); //添加观察者subA

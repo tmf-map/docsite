@@ -25,7 +25,7 @@ const colorMap = {
           <polyline points="23 3 12 14 9 11" />
         </g>
       </svg>
-    ),
+    )
   },
   must: {
     name: '强制',
@@ -44,7 +44,7 @@ const colorMap = {
           <path d="M512 992c-262.4 0-480-217.6-480-480 0-262.4 217.6-480 480-480s480 217.6 480 480C992 774.4 774.4 992 512 992zM512 108.8C288 108.8 108.8 288 108.8 512c0 224 179.2 403.2 403.2 403.2s403.2-179.2 403.2-403.2C915.2 288 736 108.8 512 108.8zM697.6 684.8l-12.8 12.8c-6.4 6.4-19.2 6.4-25.6 0L512 550.4l-140.8 140.8c-6.4 6.4-19.2 6.4-25.6 0l-12.8-12.8c-6.4-6.4-6.4-19.2 0-25.6L473.6 512 326.4 371.2C320 358.4 320 345.6 326.4 339.2l12.8-12.8C345.6 320 358.4 320 371.2 326.4L512 473.6l140.8-140.8c6.4-6.4 19.2-6.4 25.6 0l12.8 12.8c6.4 6.4 6.4 19.2 0 25.6L550.4 512l140.8 140.8C704 665.6 704 678.4 697.6 684.8z" />
         </g>
       </svg>
-    ),
+    )
   },
   tip: {
     name: '提示',
@@ -67,7 +67,7 @@ const colorMap = {
           />
         </g>
       </svg>
-    ),
+    )
   },
   warning: {
     name: '注意',
@@ -92,8 +92,8 @@ const colorMap = {
           <line x1="12" y1="16" x2="12" y2="16" />
         </g>
       </svg>
-    ),
-  },
+    )
+  }
 };
 
 function Hint({type, children}) {
@@ -104,7 +104,7 @@ function Hint({type, children}) {
       <div style={{float: 'left'}}>{colorMap[type].icon}</div>
       <div
         dangerouslySetInnerHTML={{
-          __html: marked(`<span>${colorMap[type].name}</span>：${children}`),
+          __html: marked(`<span>${colorMap[type].name}</span>：${children}`)
         }}
       />
     </div>

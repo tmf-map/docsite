@@ -89,7 +89,7 @@ wrap.addEventListener(
   function() {
     alert('wrap');
   },
-  false,
+  false
 );
 ```
 
@@ -103,21 +103,21 @@ wrap.addEventListener(
   function() {
     alert('wrap');
   },
-  false,
+  false
 );
 outer.addEventListener(
   'click',
   function() {
     alert('outer');
   },
-  false,
+  false
 );
 inner.addEventListener(
   'click',
   function() {
     alert('inner');
   },
-  false,
+  false
 );
 ```
 
@@ -131,42 +131,42 @@ wrap.addEventListener(
   function() {
     alert('wrap bubbling');
   },
-  false,
+  false
 );
 outer.addEventListener(
   'click',
   function() {
     alert('outer bubbling');
   },
-  false,
+  false
 );
 inner.addEventListener(
   'click',
   function() {
     alert('inner bubbling');
   },
-  false,
+  false
 );
 wrap.addEventListener(
   'click',
   function() {
     alert('wrap capture');
   },
-  true,
+  true
 );
 outer.addEventListener(
   'click',
   function() {
     alert('outer capture');
   },
-  true,
+  true
 );
 inner.addEventListener(
   'click',
   function() {
     alert('inner capture');
   },
-  true,
+  true
 );
 ```
 
@@ -183,7 +183,7 @@ p.addEventListener(
   function(event) {
     event.stopPropagation();
   },
-  true,
+  true
 );
 
 // 事件冒泡到 p 元素后，就不再向上冒泡了
@@ -192,7 +192,7 @@ p.addEventListener(
   function(event) {
     event.stopPropagation();
   },
-  false,
+  false
 );
 ```
 
@@ -395,7 +395,7 @@ DOM2 级事件监听函数的主要好处是可以添加多个事件监听函数
     function() {
       console.log('第二个注册事件执行了！');
     },
-    false,
+    false
   );
 
   //移除事件的参数与addEventListener时的参数相同 ，
@@ -406,7 +406,7 @@ DOM2 级事件监听函数的主要好处是可以添加多个事件监听函数
     function() {
       console.log('第二个注册事件执行了！');
     },
-    false,
+    false
   );
 
   function first() {
@@ -449,7 +449,7 @@ btn.addEventListener(
   function(e) {
     console.log(this.id);
   },
-  false,
+  false
 );
 ```
 

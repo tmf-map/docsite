@@ -232,7 +232,7 @@ function counter() {
   }
   return {
     count,
-    addCount,
+    addCount
   };
 }
 var c = counter();
@@ -257,7 +257,7 @@ function counter() {
     get count() {
       return count;
     },
-    addCount,
+    addCount
   };
 }
 

@@ -97,7 +97,7 @@ C(); // 3
     },
     removeChild: function(child) {
       viewport.removeChild(child);
-    },
+    }
   };
   window.jView = obj;
 })(document);
@@ -123,7 +123,7 @@ var f = function(document) {
     },
     removeChild: function(child) {
       viewport.removeChild(child);
-    },
+    }
   };
   window.jView = obj;
 };

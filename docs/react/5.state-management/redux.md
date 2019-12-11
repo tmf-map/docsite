@@ -65,12 +65,12 @@ function reducer(state, action) {
     case 'SET_NAME':
       return {
         ...state,
-        name: action.payload.name,
+        name: action.payload.name
       };
     case 'SET_AGE':
       return {
         ...state,
-        age: action.payload.age,
+        age: action.payload.age
       };
   }
 }
@@ -79,7 +79,7 @@ const initialState = {name: 'Kimi', age: 18};
 
 const eventStream = [
   {type: 'SET_NAME', payload: {name: 'Robbie'}},
-  {type: 'SET_AGE', payload: {age: 16}},
+  {type: 'SET_AGE', payload: {age: 16}}
 ];
 
 redux(reducer, initialState, eventStream); // {name: 'Robbie', age: 16}

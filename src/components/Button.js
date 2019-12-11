@@ -13,7 +13,7 @@ export default function Button({children, className, to, ...props}) {
         className={classNames(
           'button button--lg button--primary',
           styles['call-to-action'],
-          className,
+          className
         )}>
         {children}
       </button>

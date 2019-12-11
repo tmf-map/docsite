@@ -81,12 +81,12 @@ function postData(url, data) {
     credentials: 'same-origin', // include, same-origin, *omit
     headers: {
       'user-agent': 'Mozilla/4.0 MDN Example',
-      'content-type': 'application/json',
+      'content-type': 'application/json'
     },
     method: 'POST', // *GET, POST, PUT, DELETE, etc.
     mode: 'cors', // no-cors, cors, *same-origin
     redirect: 'follow', // manual, *follow, error
-    referrer: 'no-referrer', // *client, no-referrer
+    referrer: 'no-referrer' // *client, no-referrer
   }).then(response => response.json()); // parses response to JSON
 }
 ```
@@ -99,7 +99,7 @@ Headers 可用来表示 HTTP 的头部信息，使用 Headers 的接口，你可
 var headers = new Headers({
   'Content-Type': 'text/plain',
   'Content-Length': content.length.toString(),
-  'X-Custom-Header': 'ProcessThisImmediately',
+  'X-Custom-Header': 'ProcessThisImmediately'
 });
 headers.append('X-Custom-Header', 'AnotherValue');
 headers.has('Content-Type'); // true
@@ -130,7 +130,7 @@ var URL = '//api.some.com';
 var headers = new Headers({
   'Content-Type': 'text/plain',
   'Content-Length': content.length.toString(),
-  'X-Custom-Header': 'ProcessThisImmediately',
+  'X-Custom-Header': 'ProcessThisImmediately'
 });
 var getReq = new Request(URL, {method: 'GET', headers: headers});
 fetch(getReq)

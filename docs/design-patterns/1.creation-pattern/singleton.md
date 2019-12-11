@@ -18,7 +18,7 @@ Even if you don't know too much about singleton, I believe that you've used it. 
 ```js
 const foo = {
   doSomethingA: function() {},
-  doSomethingB: function() {},
+  doSomethingB: function() {}
 };
 ```
 
@@ -115,7 +115,7 @@ class Backdrop extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      hasExisted: !!document.getElementsByClassName('dialog__backdrop')[0],
+      hasExisted: !!document.getElementsByClassName('dialog__backdrop')[0]
     };
   }
   handleClick = () => {
@@ -125,7 +125,7 @@ class Backdrop extends React.Component {
     return !this.state.hasExisted
       ? ReactDOM.createPortal(
           <div className="dialog__backdrop" onClick={this.handleClick} />,
-          document.body,
+          document.body
         )
       : null;
   }

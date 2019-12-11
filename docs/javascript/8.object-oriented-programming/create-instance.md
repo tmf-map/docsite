@@ -151,7 +151,7 @@ var person1 = {
   age: 38,
   greeting: function() {
     console.log("Hi! I'm " + this.name + '.');
-  },
+  }
 };
 
 var person2 = Object.create(person1);

@@ -14,11 +14,11 @@ module.exports = {
     browser: true,
     commonjs: true,
     jest: true,
-    node: true,
+    node: true
   },
   parser: 'babel-eslint',
   parserOptions: {
-    allowImportExportEverywhere: true,
+    allowImportExportEverywhere: true
   },
   extends: ['airbnb', 'prettier', 'prettier/react'],
   plugins: ['react-hooks'],
@@ -28,7 +28,7 @@ module.exports = {
     // Ignore certain webpack alias because it can't be resolved
     'import/no-unresolved': [
       ERROR,
-      {ignore: ['^@theme', '^@docusaurus', '^@generated']},
+      {ignore: ['^@theme', '^@docusaurus', '^@generated']}
     ],
     'jsx-a11y/alt-text': OFF,
     'jsx-a11y/click-events-have-key-events': WARNING,
@@ -44,6 +44,6 @@ module.exports = {
     'react/destructuring-assignment': OFF, // Too many lines.
     'react/prefer-stateless-function': WARNING,
     'react/jsx-props-no-spreading': OFF,
-    'react-hooks/rules-of-hooks': ERROR,
-  },
+    'react-hooks/rules-of-hooks': ERROR
+  }
 };

@@ -130,7 +130,7 @@ class App extends React.Component {
 class App extends React.Component {
   constructor(props) {
     this.state = {
-      value: {something: 'something'},
+      value: {something: 'something'}
     };
   }
 
@@ -246,7 +246,7 @@ const ThemeContext = React.createContext('light');
 
 // Signed-in user context
 const UserContext = React.createContext({
-  name: 'Guest',
+  name: 'Guest'
 });
 
 class App extends React.Component {

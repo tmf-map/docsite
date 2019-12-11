@@ -227,7 +227,7 @@ URL 实例的属性与`Location`对象的属性基本一致，返回当前 URL �
 
 ```javascript
 var url = new URL(
-  'http://user:passwd@www.example.com:4097/path/a.html?x=111#part1',
+  'http://user:passwd@www.example.com:4097/path/a.html?x=111#part1'
 );
 
 url.href;
@@ -347,7 +347,7 @@ var params = new URLSearchParams(document.location.search);
 // 方法二：传入数组
 var params = new URLSearchParams([
   ['foo', 1],
-  ['bar', 2],
+  ['bar', 2]
 ]);
 
 // 方法三：传入对象

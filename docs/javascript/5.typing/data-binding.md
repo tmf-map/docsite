@@ -26,7 +26,7 @@ const proxy = new Proxy(data, {
   set(target, property, value) {
     target[property] = value;
     render(value);
-  },
+  }
 });
 
 render(proxy.count);

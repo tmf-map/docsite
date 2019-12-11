@@ -272,7 +272,7 @@ it('should pass a selected value to the onChange handler', () => {
   const wrapper = shallow(<Select items={ITEMS} onChange={onChange} />);
   expect(wrapper).toMatchSnapshot();
   wrapper.find('select').simulate('change', {
-    target: {value},
+    target: {value}
   });
   expect(onChange).toBeCalledWith(value);
 });

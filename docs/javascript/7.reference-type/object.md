@@ -52,7 +52,7 @@ Object.defineProperty(person, 'name', {
   configurable: false,
   enumerable: true,
   writable: true,
-  value: 'robbie',
+  value: 'robbie'
 });
 delete person.name;
 console.log(person); //{name: 'robbie'}
@@ -98,14 +98,14 @@ var obj = {log: ['a', 'b', 'c']};
 Object.defineProperty(obj, 'latest', {
   get: function() {
     return this.log[this.log.length - 1];
-  },
+  }
 });
 
 Object.defineProperty(obj, 'add', {
   set: function(v) {
     this.log.push(v);
     return this.log;
-  },
+  }
 });
 
 console.log(obj.latest); // 'c'
@@ -124,7 +124,7 @@ var obj = {
   set add(v) {
     this.log.push(v);
     return this.log;
-  },
+  }
 };
 
 console.log(obj.latest); // 'c'
@@ -142,8 +142,8 @@ Object.freeze: 不能增加和删除属性，不可以修改属性值(属性值�
 var app = {
   name: 'ts',
   test: {
-    name: 'kimi',
-  },
+    name: 'kimi'
+  }
 };
 
 Object.freeze(app);
@@ -159,7 +159,7 @@ Object.seal: 不能增加和删除，但可以修改属性
 
 ```js
 const App = {
-  name: 'ts',
+  name: 'ts'
 };
 
 Object.seal(App);
@@ -253,7 +253,7 @@ Object.getOwnPropertyDescriptor(
   class {
     foo() {}
   }.prototype,
-  'foo',
+  'foo'
 ).enumerable;
 // false
 ```
@@ -309,7 +309,7 @@ var obj = {
   [Symbol('b')]: '',
   [Symbol('a')]: '',
   '3': '',
-  a: '',
+  a: ''
 };
 
 Object.keys(obj); //  ["1", "2", "3", "m", "b", "a"]

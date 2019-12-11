@@ -24,7 +24,7 @@ export default function HomePage() {
   const context = useDocusaurusContext();
   const {
     customFields: {keywords},
-    tagline,
+    tagline
   } = context.siteConfig;
 
   return (

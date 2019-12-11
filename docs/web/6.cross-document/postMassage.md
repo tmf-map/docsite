@@ -38,7 +38,7 @@ window.addEventListener(
   function(e) {
     console.log(e.data);
   },
-  false,
+  false
 );
 ```
 

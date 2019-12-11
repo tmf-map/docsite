@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if ('IntersectionObserver' in window) {
     let lazyImageObserver = new IntersectionObserver(function(
       entries,
-      observer,
+      observer
     ) {
       entries.forEach(function(entry) {
         if (entry.isIntersecting) {
@@ -204,13 +204,13 @@ document.addEventListener('DOMContentLoaded', function() {
 ```js
 document.addEventListener('DOMContentLoaded', function() {
   var lazyBackgrounds = [].slice.call(
-    document.querySelectorAll('.lazy-background'),
+    document.querySelectorAll('.lazy-background')
   );
 
   if ('IntersectionObserver' in window) {
     let lazyBackgroundObserver = new IntersectionObserver(function(
       entries,
-      observer,
+      observer
     ) {
       entries.forEach(function(entry) {
         if (entry.isIntersecting) {

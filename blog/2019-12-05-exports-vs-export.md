@@ -43,12 +43,12 @@ Babel 转义后：
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
-  value: true,
+  value: true
 });
 exports.default = exports.info = void 0;
 var info = {
   age: 22,
-  name: 'han',
+  name: 'han'
 };
 exports.info = info;
 var email = 'SA17225105@gmail.com';
@@ -85,7 +85,7 @@ function _interopRequireDefault(obj) {
   return obj && obj.__esModule
     ? obj
     : {
-        default: obj,
+        default: obj
       };
 }
 

@@ -492,7 +492,7 @@ var obj = {
   foo: function() {
     'use strict';
     console.log(this.a);
-  },
+  }
 };
 var a = 1;
 setTimeout(obj.foo, 0); // 1

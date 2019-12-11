@@ -14,7 +14,7 @@ sidebar_label: 执行上下文
 windowEC = {
   VO: Window,
   scopeChain: {},
-  this: Window,
+  this: Window
 };
 ```
 
@@ -50,7 +50,7 @@ executionContextObj = {
   variableObject: {
     /* function arguments / parameters, inner variable and function declarations */
   },
-  this: {},
+  this: {}
 };
 ```
 

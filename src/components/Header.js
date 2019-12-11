@@ -10,23 +10,23 @@ const themes = [
   {
     alt: 'JavaScript',
     src: 'javascript.svg',
-    to: '/docs/javascript/1.basic/js-engine',
+    to: '/docs/javascript/1.basic/js-engine'
   },
   {
     alt: 'CSS',
     src: 'css3-logo.svg',
-    to: '/docs/css/1.visual-formatting-model/basic-concept',
+    to: '/docs/css/1.visual-formatting-model/basic-concept'
   },
   {
     alt: 'React',
     src: 'react.svg',
-    to: '/docs/react/1.basic/jsx',
+    to: '/docs/react/1.basic/jsx'
   },
   {
     alt: 'Redux',
     src: 'redux-logo.svg',
-    to: '/docs/react/5.state-management/redux',
-  },
+    to: '/docs/react/5.state-management/redux'
+  }
 ];
 
 export default function Header() {
@@ -42,7 +42,7 @@ export default function Header() {
               className={classNames(
                 styles.text,
                 styles['text-big'],
-                styles.title,
+                styles.title
               )}>
               {title}
             </span>
@@ -50,7 +50,7 @@ export default function Header() {
               className={classNames(
                 styles.description,
                 styles.text,
-                styles['text-huge'],
+                styles['text-huge']
               )}>
               {tagline}
             </span>

@@ -105,7 +105,7 @@ class Dialog extends React.Component {
   render() {
     return createPortal(
       <div class="dialog">{this.props.children}</div>, //塞进传送门的JSX
-      this.node, //传送门的另一端DOM node
+      this.node //传送门的另一端DOM node
     );
   }
 }

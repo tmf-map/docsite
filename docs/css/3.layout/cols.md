@@ -11,7 +11,9 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem'; import Hin
 
 <img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/NGgZLD.jpg'/>
 
-<Tabs defaultValue="html" values={[ { label: 'HTML', value: 'html', }, { label: 'CSS', value: 'css', }, ] }> <TabItem value="html">
+<Tabs defaultValue="html" values={[{label: 'HTML', value: 'html'}, {label: 'CSS', value: 'css'}] }>
+
+<TabItem value="html">
 
 ```html
 <main>
@@ -41,7 +43,9 @@ main {
 
 如果让 DOM 中的 AUTO 先渲染的话，在 `main` 上面加一句：`flex-direction: row-reverse;` 即可：
 
-<Tabs defaultValue="html" values={[ { label: 'HTML', value: 'html', }, { label: 'CSS', value: 'css', }, ] }> <TabItem value="html">
+<Tabs defaultValue="html" values={[{label: 'HTML', value: 'html'}, {label: 'CSS', value: 'css'}]}>
+
+<TabItem value="html">
 
 ```html
 <main>
@@ -82,7 +86,9 @@ main {
 
 <img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/ema3ul.jpg'/>
 
-<Tabs defaultValue="html" values={[ { label: 'HTML', value: 'html', }, { label: 'CSS', value: 'css', }, ] }> <TabItem value="html">
+<Tabs defaultValue="html" values={[{label: 'HTML', value: 'html' }, {label: 'CSS', value: 'css'}]}>
+
+<TabItem value="html">
 
 ```html
 <main>
@@ -114,7 +120,9 @@ main {
 
 如果让 DOM 中的 AUTO 先渲染的话，对子元素使用 `order` 属性即可，[在线 Demo](https://codepen.io/muwenzi/pen/BgVzyK) 。
 
-<Tabs defaultValue="html" values={[ { label: 'HTML', value: 'html', }, { label: 'CSS', value: 'css', }, ] }> <TabItem value="html">
+<Tabs defaultValue="html" values={[{label: 'HTML', value: 'html'}, { label: 'CSS', value: 'css'}]}>
+
+<TabItem value="html">
 
 ```html
 <main>

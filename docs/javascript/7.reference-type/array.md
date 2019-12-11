@@ -137,7 +137,7 @@ Array.prototype._flat = function(depth = 1) {
       item instanceof Array
         ? [...acc, ...item._flat(depth - 1)]
         : acc.concat(item),
-    [],
+    []
   );
 };
 ```

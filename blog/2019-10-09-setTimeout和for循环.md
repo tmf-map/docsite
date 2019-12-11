@@ -97,7 +97,7 @@ for (var i = 0; i < 5; i++) {
       console.log(new Date(), v);
     },
     i * 1000,
-    i,
+    i
   );
 }
 ```

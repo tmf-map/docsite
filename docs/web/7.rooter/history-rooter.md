@@ -200,7 +200,7 @@ function onLoad() {
       e.preventDefault();
       history.pushState(null, '', el.getAttribute('href'));
       onPopState();
-    }),
+    })
   );
 }
 

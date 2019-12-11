@@ -64,7 +64,7 @@ function Fubar(foo, bar) {
 
 Fubar(1, 2)._foo(
   // 1
-  new Fubar(1, 2),
+  new Fubar(1, 2)
 )._foo; // 1
 ```
 

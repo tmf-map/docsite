@@ -18,7 +18,7 @@ var replaceThing = function() {
     longStr: new Array(1000000).join('*'),
     someMethod: function() {
       console.log(someMessage);
-    },
+    }
   };
 };
 setInterval(replaceThing, 1000);

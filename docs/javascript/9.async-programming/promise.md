@@ -126,7 +126,7 @@ Promise.resolve('foo')
     console.log(
       "Last Then:  oops... didn't bother to instantiate and return " +
         'a promise in the prior then so the sequence may be a bit ' +
-        'surprising',
+        'surprising'
     );
 
     // 注意 `string` 这时不会存在 'baz'。
@@ -277,7 +277,7 @@ function promiseAll(promises) {
         },
         function(reason) {
           reject(reason);
-        },
+        }
       );
     }
   });
@@ -303,7 +303,7 @@ Promise.race([p3, p4]).then(
   },
   function(reason) {
     // 未被调用
-  },
+  }
 );
 ```
 
@@ -336,7 +336,7 @@ function promiseRace(promises) {
           },
           function(reason) {
             return reject(reason);
-          },
+          }
         );
       }
     }
@@ -362,7 +362,7 @@ Promise.resolve(thenable);
 var p1 = Promise.resolve({
   then: function(test, rej) {
     rej('rejected!');
-  },
+  }
 });
 console.log(p1 instanceof Promise); // true, 这是一个Promise对象
 
@@ -372,7 +372,7 @@ p1.then(
   },
   function(e) {
     console.log(e); //rejected
-  },
+  }
 );
 ```
 

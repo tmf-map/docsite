@@ -52,13 +52,13 @@ if ('serviceWorker' in navigator) {
         // Registration was successful
         console.log(
           'ServiceWorker registration successful with scope: ',
-          registration.scope,
+          registration.scope
         );
       },
       function(err) {
         // registration failed :(
         console.log('ServiceWorker registration failed: ', err);
-      },
+      }
     );
   });
 }
@@ -80,7 +80,7 @@ self.addEventListener('install', function(event) {
     caches.open(CACHE_NAME).then(function(cache) {
       console.log('Opened cache');
       return cache.addAll(urlsToCache);
-    }),
+    })
   );
 });
 ```
@@ -101,9 +101,9 @@ self.addEventListener('activate', function(event) {
           if (cacheWhitelist.indexOf(cacheName) === -1) {
             return caches.delete(cacheName);
           }
-        }),
+        })
       );
-    }),
+    })
   );
 });
 ```
@@ -129,7 +129,7 @@ self.addEventListener('fetch', function(event) {
       })
       .catch(function(error) {
         console.error('Error: ', error);
-      }),
+      })
   );
 });
 ```

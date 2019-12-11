@@ -20,12 +20,12 @@ export default function ServerSide() {
               className={classNames(
                 'col',
                 styles['section-content'],
-                styles['section-bgwhite'],
+                styles['section-bgwhite']
               )}>
               <span
                 className={classNames(
                   styles['section-bgwhite-block'],
-                  styles['section-bgwhite-block-left'],
+                  styles['section-bgwhite-block-left']
                 )}
               />
               <div className={classNames('row', styles.padding)}>

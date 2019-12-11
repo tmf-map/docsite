@@ -60,17 +60,17 @@ let subC = {type: 'event1'};
 
 // 订阅者 A 订阅 topic1
 PubSub.subscribe(subA.type, () =>
-  console.log(`update eventType: ${subA.type} subA`),
+  console.log(`update eventType: ${subA.type} subA`)
 );
 
 // 订阅者 B 订阅 topic2
 PubSub.subscribe(subB.type, () =>
-  console.log(`update eventType: ${subB.type} subB`),
+  console.log(`update eventType: ${subB.type} subB`)
 );
 
 // 订阅者 C 订阅 topic1
 PubSub.subscribe(subC.type, () =>
-  console.log(`update eventType: ${subC.type} subC`),
+  console.log(`update eventType: ${subC.type} subC`)
 );
 
 // 发布 topic 通知，通知订阅者 A、C

@@ -21,8 +21,8 @@ MyArray.prototype = Object.create(Array.prototype, {
     value: MyArray,
     writable: true,
     enumerable: false,
-    configurable: true,
-  },
+    configurable: true
+  }
 });
 ```
 
@@ -110,8 +110,8 @@ function _inherits(subClass, superClass) {
     constructor: {
       value: subClass, // 将constructor指向子类
       writable: true,
-      configurable: true, // babel 没有enumerable: false why?
-    },
+      configurable: true // babel 没有enumerable: false why?
+    }
   });
   subClass.__proto__ = superClass;
 }

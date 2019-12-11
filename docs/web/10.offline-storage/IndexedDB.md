@@ -61,7 +61,7 @@ request.addEventListener('upgradeneeded', e => {
   const db = e.target.result;
   const store = db.createObjectStore('Users', {
     keyPath: 'userId',
-    autoIncrement: false,
+    autoIncrement: false
   });
   console.log('创建对象仓库成功');
 });
@@ -111,7 +111,7 @@ request.addEventListener('success', e => {
   const reqAdd = store.add({
     userId: 1,
     userName: '李白',
-    age: 24,
+    age: 24
   });
   const reqGet = store.get(1);
   const reqDelete = store.delete(1);
@@ -206,10 +206,10 @@ request.addEventListener('upgradeneeded', e => {
   const db = e.target.result;
   const store = db.createObjectStore('Users', {
     keyPath: 'userId',
-    autoIncrement: false,
+    autoIncrement: false
   });
   const idx = store.createIndex('ageIndex', 'age', {
-    unique: false,
+    unique: false
   });
 });
 ```

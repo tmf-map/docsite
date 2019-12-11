@@ -129,14 +129,14 @@ require：  function () {
     var module = (installedModules[moduleId] = {
       i: moduleId,
       l: false,
-      exports: {},
+      exports: {}
     });
     // Execute the module function
     modules[moduleId].call(
       module.exports,
       module,
       module.exports,
-      __webpack_require__,
+      __webpack_require__
     );
     // Return the exports of the module
     return module.exports;
@@ -153,7 +153,7 @@ require：  function () {
   '/lib.js': function(module, exports) {
     exports.info = {
       name: 'Robbie',
-      age: 18,
+      age: 18
     };
 
     console.log('module.exports: ', module.exports);
@@ -165,7 +165,7 @@ require：  function () {
     console.log('---修改后---');
     console.log('module.exports: ', module.exports);
     console.log('exports: ', exports);
-  },
+  }
 });
 ```
 

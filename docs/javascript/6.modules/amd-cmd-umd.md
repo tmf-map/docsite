@@ -66,7 +66,7 @@ define(['b'], function(b) {
   return {
     a: function() {
       return require('b');
-    },
+    }
   };
 });
 ```

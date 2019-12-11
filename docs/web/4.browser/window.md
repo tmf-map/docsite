@@ -139,7 +139,7 @@ window.scrollTo(options);
 ```javascript
 window.scrollTo({
   top: 1000,
-  behavior: 'smooth',
+  behavior: 'smooth'
 });
 ```
 
@@ -191,7 +191,7 @@ window.open(url, windowName, [windowFeatures]);
 var popup = window.open(
   'somepage.html',
   'DefinitionsWindows',
-  'height=200,width=200,location=no,status=yes,resizable=yes,scrollbars=yes',
+  'height=200,width=200,location=no,status=yes,resizable=yes,scrollbars=yes'
 );
 ```
 

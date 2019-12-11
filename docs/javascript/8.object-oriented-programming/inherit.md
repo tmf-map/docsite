@@ -104,8 +104,8 @@ Sub.prototype = Object.create(Super.prototype, {
     writable: true,
 
     enumerable: false, // constructor不可枚举
-    configurable: true,
-  },
+    configurable: true
+  }
 });
 
 var sub = new Sub('Kimi', 18);

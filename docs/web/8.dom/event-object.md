@@ -21,7 +21,7 @@ Event 构造函数接受两个参数。第一个参数 type 是字符串，表�
 ```js
 var ev = new Event('look', {
   bubbles: true,
-  cancelable: false,
+  cancelable: false
 });
 document.dispatchEvent(ev);
 ```
@@ -199,7 +199,7 @@ cb.addEventListener(
   function(e) {
     e.preventDefault();
   },
-  false,
+  false
 );
 ```
 
@@ -274,7 +274,7 @@ div.addEventListener(
   function(e) {
     console.log(e.composedPath());
   },
-  false,
+  false
 );
 // [p, div, body, html, document, Window]
 ```
@@ -318,10 +318,10 @@ document.body.dispatchEvent(event);
 ```js
 var myEvent = new CustomEvent('myevent', {
   detail: {
-    foo: 'bar',
+    foo: 'bar'
   },
   bubbles: true,
-  cancelable: false,
+  cancelable: false
 });
 
 el.addEventListener('myevent', function(event) {

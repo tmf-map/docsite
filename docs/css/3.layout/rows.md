@@ -14,7 +14,9 @@ import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem'; import Hin
 
 <img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/PHcOwS.jpg'/>
 
-<Tabs defaultValue="html" values={[ { label: 'HTML', value: 'html', }, { label: 'LESS', value: 'less', }, ] }> <TabItem value="html">
+<Tabs defaultValue="html" values={[{label: 'HTML', value: 'html'}, {label: 'LESS', value: 'less'}]}>
+
+<TabItem value="html">
 
 ```html
 <main>

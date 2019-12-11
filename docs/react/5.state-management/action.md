@@ -64,7 +64,7 @@ action type 是对每一个 action 的一个标识，主要用来 reducer 中根
 export default {
   PROFORMA_SET_ISSUEDATE: 'PROFORMA_SET_ISSUEDATE',
   PROFORMA_SET_PAYEE: 'PROFORMA_SET_PAYEE',
-  PROFORMA_SET_CHECKER: 'PROFORMA_SET_CHECKER',
+  PROFORMA_SET_CHECKER: 'PROFORMA_SET_CHECKER'
 };
 ```
 
@@ -76,7 +76,7 @@ export default {
 export default {
   PROFORMA_LOAD_METADATA_REQUEST: 'PROFORMA_LOAD_METADATA_REQUEST',
   PROFORMA_LOAD_METADATA_SUCCESS: 'PROFORMA_LOAD_METADATA_SUCCESS',
-  PROFORMA_LOAD_METADATA_ERROR: 'PROFORMA_LOAD_METADATA_ERROR',
+  PROFORMA_LOAD_METADATA_ERROR: 'PROFORMA_LOAD_METADATA_ERROR'
 };
 ```
 
@@ -103,16 +103,16 @@ import actionTypes from '../../actionTypes';
 import {setTotalAmount} from '../proformaSync/setProforma.action';
 
 const getTotalAmountRequest = () => ({
-  type: actionTypes.PROFORMA_GET_TOTAL_AMOUNT_REQUEST,
+  type: actionTypes.PROFORMA_GET_TOTAL_AMOUNT_REQUEST
 });
 
 const getTotalAmountSuccess = () => ({
-  type: actionTypes.PROFORMA_GET_TOTAL_AMOUNT_SUCCESS,
+  type: actionTypes.PROFORMA_GET_TOTAL_AMOUNT_SUCCESS
 });
 
 const getTotalAmountError = e => ({
   type: actionTypes.PROFORMA_GET_TOTAL_AMOUNT_ERROR,
-  error: e,
+  error: e
 });
 
 export const getTotalAmount = () => (dispatch, getState, utils) => {

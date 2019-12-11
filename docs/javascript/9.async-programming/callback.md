@@ -78,7 +78,7 @@ loadScript(
   script => {
     alert(`Cool, the ${script.src} is loaded`);
     alert(_); // 在加载的脚本中声明的函数
-  },
+  }
 );
 ```
 

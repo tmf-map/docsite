@@ -36,7 +36,7 @@ const User2 = {
   setName(name) {
     this.name = name;
     return this;
-  },
+  }
 };
 
 console.log(User2.setId(1234).setName('Kimi'));

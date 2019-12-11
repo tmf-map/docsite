@@ -38,9 +38,9 @@ export const getTaxTotal = createSelector(
       taxSubtotal.map(item => ({
         taxableAmount: get(item, 'TaxableAmount.value'),
         taxScheme: get(item, 'TaxCategory.TaxScheme.Name.value'),
-        taxAmount: get(item, 'TaxAmount.value'),
-      })),
-  }),
+        taxAmount: get(item, 'TaxAmount.value')
+      }))
+  })
 );
 ```
 

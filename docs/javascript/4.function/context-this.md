@@ -57,13 +57,13 @@ var myBowl = {
   meat: 'meat in my bowl',
   eat: function() {
     console.log(this.meat);
-  },
+  }
 };
 var othersBowl = {
   meat: 'meat in others bowl',
   eat: function() {
     console.log(this.meat);
-  },
+  }
 };
 
 var meat = 'meat in pot';
@@ -164,12 +164,12 @@ function foo() {
 
 var obj2 = {
   a: 42,
-  foo: foo,
+  foo: foo
 };
 
 var obj1 = {
   a: 2,
-  obj2: obj2,
+  obj2: obj2
 };
 
 obj1.obj2.foo(); // 42
@@ -187,7 +187,7 @@ function foo() {
 }
 var obj = {
   a: 2,
-  foo: foo,
+  foo: foo
 };
 var a = 1;
 var bar = obj.foo; // 函数别名，请注意这可不是调用时候的隐式绑定！
@@ -217,7 +217,7 @@ function doFoo(cb) {
 }
 var obj = {
   a: 2,
-  foo: foo,
+  foo: foo
 };
 var a = 1;
 doFoo(obj.foo); // 1
@@ -247,7 +247,7 @@ var tim = {
   getName: function() {
     console.log(this.name);
     return this.name;
-  },
+  }
 };
 
 var jake = {name: 'jake', age: 20};
@@ -278,14 +278,14 @@ fn.call(obj, name, age, gender);
 
 ```js
 var obj = {
-  x: 81,
+  x: 81
 };
 
 var foo = {
   x: 99,
   getX: function() {
     return this.x;
-  },
+  }
 };
 
 foo.getX.bind(obj)(); //81

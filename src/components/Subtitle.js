@@ -10,7 +10,7 @@ export default function Subtitle({children, className, ...props}) {
       className={classNames(
         styles.text,
         styles['section-subtitle'],
-        className,
+        className
       )}>
       {children}
     </p>

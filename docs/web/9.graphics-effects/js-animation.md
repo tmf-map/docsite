@@ -72,7 +72,7 @@ class App extends React.Component {
     this.state = {
       width: 90,
       height: 90,
-      backgroundColor: 'red',
+      backgroundColor: 'red'
     };
   }
   linerMove() {
@@ -87,7 +87,7 @@ class App extends React.Component {
         clearInterval(timer);
       }
       this.setState({
-        marginLeft: begin,
+        marginLeft: begin
       });
     }, 100);
   }

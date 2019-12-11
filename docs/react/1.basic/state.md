@@ -50,7 +50,7 @@ class Example extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      count: 0,
+      count: 0
     };
   }
 
@@ -114,7 +114,7 @@ Object.assign(
   state,
   {count: state.count + 1},
   {count: state.count + 1},
-  {count: state.count + 1},
+  {count: state.count + 1}
 );
 // {count: 1}
 ```
@@ -129,13 +129,13 @@ setState(updater[, callback])
 
 ```js
 this.setState((prevState, props) => ({
-  count: prevState.count + 1,
+  count: prevState.count + 1
 }));
 this.setState((prevState, props) => ({
-  count: prevState.count + 1,
+  count: prevState.count + 1
 }));
 this.setState((prevState, props) => ({
-  count: prevState.count + 1,
+  count: prevState.count + 1
 }));
 // {count: 3}
 ```
@@ -148,7 +148,7 @@ function reducer(state, action) {
     case 'SET_NAME':
       return {
         ...state,
-        name: action.payload.name,
+        name: action.payload.name
       };
     // ...
   }

@@ -36,7 +36,7 @@ Promise.all([import('./a.js'), import('./b.js'), import('./c.js')]).then(
     console.log('a.js is loaded dynamically');
     console.log('b.js is loaded dynamically');
     console.log('c.js is loaded dynamically');
-  },
+  }
 );
 ```
 
@@ -47,7 +47,7 @@ async function main() {
   const [module1, module2, module3] = await Promise.all([
     import('./module1.js'),
     import('./module2.js'),
-    import('./module3.js'),
+    import('./module3.js')
   ]);
 }
 ```

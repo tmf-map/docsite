@@ -145,7 +145,7 @@ class App extends React.Component {
     // this will refer to window not undefined because there is no 'use strict'
     console.log(this);
     this.setState(state => ({
-      isToggleOn: !state.isToggleOn,
+      isToggleOn: !state.isToggleOn
     }));
   }
 

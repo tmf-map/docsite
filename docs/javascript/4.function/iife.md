@@ -55,7 +55,7 @@ const counter = (function() {
     },
     get: function() {
       console.log(count);
-    },
+    }
   };
 })();
 

@@ -11,7 +11,7 @@ export default function ClientSide() {
       className={classNames(
         'hero hero--primary',
         styles['overflow-hidden'],
-        styles.whyus,
+        styles.whyus
       )}>
       <div className="container">
         <div className="section">
@@ -41,12 +41,12 @@ export default function ClientSide() {
               className={classNames(
                 'col',
                 styles['section-content'],
-                styles['section-bgwhite'],
+                styles['section-bgwhite']
               )}>
               <span
                 className={classNames(
                   styles['section-bgwhite-block'],
-                  styles['section-bgwhite-block-right'],
+                  styles['section-bgwhite-block-right']
                 )}
               />
               <div className={classNames('row', styles.padding)}>

@@ -154,7 +154,7 @@ var obj =
     },
     toString: function() {
       return '2';
-    },
+    }
   } + obj; //2
 ```
 

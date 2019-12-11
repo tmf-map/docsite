@@ -259,7 +259,7 @@ export default function applyMiddleware(...middlewares) {
 
     var middlewareAPI = {
       getState: store.getState,
-      dispatch: action => dispatch(action),
+      dispatch: action => dispatch(action)
     };
 
     chain = middlewares.map(middleware => middleware(middlewareAPI));
@@ -267,7 +267,7 @@ export default function applyMiddleware(...middlewares) {
 
     return {
       ...store,
-      dispatch,
+      dispatch
     };
   };
 }

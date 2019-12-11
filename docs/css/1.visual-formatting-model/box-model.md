@@ -160,7 +160,7 @@ margin 合并（重叠） 3 种场景：
     style={{
       marginBottom: '20px',
       backgroundColor: '#ffa39e',
-      display: 'inline-block',
+      display: 'inline-block'
     }}>
     第一行
   </div>
