@@ -3,7 +3,7 @@ title: Service Workers
 sidebar_label: Service Workers
 ---
 
-import Img from '../src/components/Img'
+import Img from '../../../src/components/Img'
 
 W3C 组织早在2014年5月就提出过 Service Worker 这样的一个 HTML5 API，主要用来做持久的离线缓存。
 
@@ -19,7 +19,7 @@ Service Worker 就这样诞生了，它在 Web Worker 的基础上加上了持�
 
 因此，Service Worker 可以让缓存做到优雅和极致，使站点在离线情况下可以秒开，极大的提升了用户体验，使 Web App 相对于 Native App 的缺点更加弱化。
 
-## Service Worker 功能：
+## Service Worker 功能
 1. 缓存文件，缓存的文件可以被网页进程取到（包括网络离线状态）
 2. 可编程拦截代理请求和返回
 3. 离线内容开发者可控
