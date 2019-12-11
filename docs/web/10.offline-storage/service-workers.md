@@ -29,7 +29,9 @@ Service Worker 就这样诞生了，它在 Web Worker 的基础上加上了持�
 5. 异步实现：内部大都是通过 Promise 实现 
 
 ## Service Worker 生命周期
-Service Worker 的生命周期完全独立于网页。
+Service Worker 的生命周期完全独立于网页。以下是 Service Worker 简化生命周期。
+
+![service worker lifecycle](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/sw_lifecycle.png)
 
 1. 注册：在主线程中注册位于`/sw.js`的 Service Worker。浏览器会在后台下载所需文件，解析并执行 Service Worker。如果这期间出现任何错误，Service Worker 就不会被安装，下一次会进行重试。
 ```javascript
@@ -87,15 +89,37 @@ self.addEventListener('activate', function(event) {
 });
 ```
 
-4. 重新加载`redundant`：Service Worker 现在可以对其作用域内所有页面进行控制，但仅注册成功后的打开的页面。也就是说，页面起始于有没有 Service Worker，且在页面的接下来生命周期内维持这个状态。所以，页面不得不重新加载以让 Service Worker 获得完全的控制。
+4. 重新加载：Service Worker 现在可以对其作用域内所有页面进行控制，但仅注册成功后的打开的页面。也就是说，页面起始于有没有 Service Worker，且在页面的接下来生命周期内维持这个状态。所以，页面不得不重新加载以让 Service Worker 获得完全的控制。
+
+5. 在安装 Service Worker 且页面重新加载后，Service Worker 将开始接收 fetch 事件。任何在 Service Worker 作用域内的页面发起 http 请求时，Service Worker 可以通过 fetch 事件拦截请求，并且给出自己的响应。
+```javascript
+//After install, fetch event is triggered for every page request
+self.addEventListener("fetch", function (event) {
+	console.log("Request -->", event.request.url);
+
+	//To tell browser to evaluate the result of event
+	event.respondWith(
+		caches.match(event.request) //To match current request with cached request it
+		.then(function(response) {
+			//If response found return it, else fetch again.
+			return response || fetch(event.request);
+		})
+		.catch(function(error) {
+			console.error("Error: ", error);
+		})
+  );
+});
+```
+上述例子表示，当请求资源已经被缓存时，直接从缓存中读取，否则发送请求。
 
 ## Service Worker 浏览器支持：
 [Can I use service worker?](https://caniuse.com/#search=service%20worker)
+![Can I use service worker?](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/can_i_use_sw.png)
 
 ## Notification API
 Notifications API 是用来向用户展示通知消息的接口，需要获取用户同意，即使Web App并没有在浏览器打开。
 
-## Service Worker 给用户推送通知
+### Service Worker 给用户推送通知
 ```javascript
 window.addEventListener('load', () => {
     if (!('PushManager' in window)) {
@@ -146,12 +170,14 @@ function execute() {
 }
 ```
 
-## Notifications 浏览器支持：
+### Notifications 浏览器支持：
 [Can I use notifications?](https://caniuse.com/#search=notifications)
+![Can I use notifications?](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/can_i_use_notifications.png)
 
-1. [LAVAS PWA文档](https://lavas.baidu.com/pwa)
-2. [下一代 Web 应用模型 — Progressive Web App](https://zhuanlan.zhihu.com/p/25167289)
-3. [Service Workers: an Introduction](https://developers.google.com/web/fundamentals/primers/service-workers?hl=zh-CN)
-4. [使用 Service Workers](https://developer.mozilla.org/zh-CN/docs/Web/API/Service_Worker_API/Using_Service_Workers)
-5. [Notifications API](https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API)
-5. [Displaying a Notification](https://developers.google.com/web/fundamentals/push-notifications/display-a-notification)
+## 参考链接
+1. [PWA文档 -- LAVAS](https://lavas.baidu.com/pwa)
+2. [下一代 Web 应用模型 — Progressive Web App @黄玄](https://zhuanlan.zhihu.com/p/25167289)
+3. [Service Workers: an Introduction @Matt Gaunt](https://developers.google.com/web/fundamentals/primers/service-workers?hl=zh-CN)
+4. [使用 Service Workers -- MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/Service_Worker_API/Using_Service_Workers)
+5. [Notifications API -- MDN](https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API)
+5. [Displaying a Notification @Matt Gaunt](https://developers.google.com/web/fundamentals/push-notifications/display-a-notification)
