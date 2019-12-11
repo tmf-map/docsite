@@ -25,7 +25,7 @@ Service Worker 就这样诞生了，它在 Web Worker 的基础上加上了持�
 3. 离线内容开发者可控
 4. 能向客户端推送消息
 
-## Service Worker 使用需注意：
+## Service Worker 使用注意
 1. 必须在 HTTPS 环境下才能工作（允许调试时为`localhost`）
 2. 同源限制：分配给worker线程运行的脚本文件，必须与主线程的脚本文件同源
 3. Dom限制：worker线程所在全局对象，与主线程不一样，无法读取主线程所在网页的dom对象，也无法使用document、window、parent这些对象。但是，可以使用navigator和location对象
