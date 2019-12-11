@@ -35,7 +35,7 @@ Service Worker 就这样诞生了，它在 Web Worker 的基础上加上了持�
 ## Service Worker 生命周期
 Service Worker 的生命周期完全独立于网页。下图是 Service Worker 简化生命周期。
 
-<Img w="702" legend="图：Service Worker 生命周期" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/sw_lifecycle.png"/>
+<Img w="400" legend="图：Service Worker 生命周期" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/sw_lifecycle.png"/>
 
 ### 注册
 在主线程中注册位于`/sw.js`的 Service Worker。浏览器会在后台下载所需文件，解析并执行 Service Worker。如果这期间出现任何错误，Service Worker 就不会被安装，下一次会进行重试。
