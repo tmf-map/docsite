@@ -289,9 +289,9 @@ module.exports = {
     ]
   },
   "algorithm": {
-    "Preface": [
-      "algorithm/preface/complexity",
-      "algorithm/preface/note"
+    "Analysis of Algorithms": [
+      "algorithm/analysis-of-algorithms/asymptotic-notations",
+      "algorithm/analysis-of-algorithms/analysis-of-loops"
     ],
     "1. 数组": [
       "algorithm/1.array/duplicated-number-in-array",

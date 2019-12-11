@@ -29,7 +29,7 @@ module.exports = {
         {to: 'docs/web/1.http/http-connection', label: 'Web', position: 'left'},
         {to: 'docs/react/1.basic/jsx', label: 'React Stack', position: 'left'},
         {to: 'docs/design-patterns/1.creation-pattern/singleton', label: 'Design Patterns', position: 'left'},
-        {to: 'docs/algorithm/1.array/duplicated-number-in-array', label: 'Algorithm', position: 'left'},
+        {to: 'docs/algorithm/analysis-of-algorithms/asymptotic-notations', label: 'Algorithm', position: 'left'},
         {to: 'blog', label: 'Blog', position: 'right'},
         {
           href: `https://github.com/${githubOrg}/${githubRepo}`,
