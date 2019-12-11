@@ -2,6 +2,9 @@
 title: Service Workers
 sidebar_label: Service Workers
 ---
+
+import Img from '../src/components/Img'
+
 W3C 组织早在2014年5月就提出过 Service Worker 这样的一个 HTML5 API，主要用来做持久的离线缓存。
 
 当然这个 API 不是凭空而来，至于其中的由来我们可以简单的捋一捋：
@@ -17,9 +20,10 @@ Service Worker 就这样诞生了，它在 Web Worker 的基础上加上了持�
 因此，Service Worker 可以让缓存做到优雅和极致，使站点在离线情况下可以秒开，极大的提升了用户体验，使 Web App 相对于 Native App 的缺点更加弱化。
 
 ## Service Worker 功能：
-1. 可编程拦截代理请求和返回，缓存文件，缓存的文件可以被网页进程取到（包括网络离线状态）
-2. 离线内容开发者可控
-3. 能向客户端推送消息
+1. 缓存文件，缓存的文件可以被网页进程取到（包括网络离线状态）
+2. 可编程拦截代理请求和返回
+3. 离线内容开发者可控
+4. 能向客户端推送消息
 
 ## Service Worker 使用需注意：
 1. 必须在 HTTPS 环境下才能工作（允许调试时为`localhost`）
@@ -29,11 +33,12 @@ Service Worker 就这样诞生了，它在 Web Worker 的基础上加上了持�
 5. 异步实现：内部大都是通过 Promise 实现 
 
 ## Service Worker 生命周期
-Service Worker 的生命周期完全独立于网页。以下是 Service Worker 简化生命周期。
+Service Worker 的生命周期完全独立于网页。下图是 Service Worker 简化生命周期。
 
-![service worker lifecycle](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/sw_lifecycle.png)
+<Img w="702" legend="图：Service Worker 生命周期" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/sw_lifecycle.png"/>
 
-1. 注册：在主线程中注册位于`/sw.js`的 Service Worker。浏览器会在后台下载所需文件，解析并执行 Service Worker。如果这期间出现任何错误，Service Worker 就不会被安装，下一次会进行重试。
+### 注册
+在主线程中注册位于`/sw.js`的 Service Worker。浏览器会在后台下载所需文件，解析并执行 Service Worker。如果这期间出现任何错误，Service Worker 就不会被安装，下一次会进行重试。
 ```javascript
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', function() {
@@ -49,7 +54,8 @@ if ('serviceWorker' in navigator) {
 ```
 如果注册成功，Service Worker 就在`ServiceWorkerGlobalScope`环境中运行，这是一个特殊类型的worker上下文环境。自此，Service Worker 可以处理事件了。
 
-2. 安装：注册成功后，Service Worker 首先会收到安装事件。我们可以打开缓存，缓存文件，确认所需资源是否已经缓存。
+### 安装
+注册成功后，Service Worker 首先会收到`install`事件。我们可以打开缓存，缓存文件，确认所需资源是否已经缓存。
 ```javascript
 var CACHE_NAME = 'my-site-cache-v1';
 var urlsToCache = [
@@ -69,7 +75,8 @@ self.addEventListener('install', function(event) {
     );
 });
 ```
-3. 激活：安装成功后，Service Worker 会收到激活事件。一般在此对旧缓存进行清理。
+### 激活
+安装成功后，Service Worker 会收到`activate`事件。一般在此对旧缓存进行清理。
 ```javascript
 self.addEventListener('activate', function(event) {
     // New caches
@@ -88,10 +95,10 @@ self.addEventListener('activate', function(event) {
     );
 });
 ```
+Service Worker 现在可以对其作用域内所有页面进行控制，但仅注册成功后的打开的页面。也就是说，页面起始于有没有 Service Worker，且在页面的接下来生命周期内维持这个状态。所以，页面不得不重新加载以让 Service Worker 获得完全的控制。
 
-4. 重新加载：Service Worker 现在可以对其作用域内所有页面进行控制，但仅注册成功后的打开的页面。也就是说，页面起始于有没有 Service Worker，且在页面的接下来生命周期内维持这个状态。所以，页面不得不重新加载以让 Service Worker 获得完全的控制。
-
-5. 在安装 Service Worker 且页面重新加载后，Service Worker 将开始接收 fetch 事件。任何在 Service Worker 作用域内的页面发起 http 请求时，Service Worker 可以通过 fetch 事件拦截请求，并且给出自己的响应。
+### 激活后
+在安装 Service Worker 且页面重新加载后，Service Worker 将开始接收`fetch`事件。任何在 Service Worker 作用域内的页面发起 http 请求时，Service Worker 可以通过`fetch`事件拦截请求，并且给出自己的响应。
 ```javascript
 //After install, fetch event is triggered for every page request
 self.addEventListener("fetch", function (event) {
@@ -112,9 +119,9 @@ self.addEventListener("fetch", function (event) {
 ```
 上述例子表示，当请求资源已经被缓存时，直接从缓存中读取，否则发送请求。
 
-## Service Worker 浏览器支持：
+## Service Worker 浏览器支持
 [Can I use service worker?](https://caniuse.com/#search=service%20worker)
-![Can I use service worker?](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/can_i_use_sw.png)
+<Img  src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/can_i_use_sw.png"/>
 
 ## Notification API
 Notifications API 是用来向用户展示通知消息的接口，需要获取用户同意，即使Web App并没有在浏览器打开。
@@ -170,9 +177,9 @@ function execute() {
 }
 ```
 
-### Notifications 浏览器支持：
+### Notifications 浏览器支持
 [Can I use notifications?](https://caniuse.com/#search=notifications)
-![Can I use notifications?](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/can_i_use_notifications.png)
+<Img  src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/can_i_use_notifications.png"/>
 
 ## 参考链接
 1. [PWA文档 -- LAVAS](https://lavas.baidu.com/pwa)
@@ -180,4 +187,4 @@ function execute() {
 3. [Service Workers: an Introduction @Matt Gaunt](https://developers.google.com/web/fundamentals/primers/service-workers?hl=zh-CN)
 4. [使用 Service Workers -- MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/Service_Worker_API/Using_Service_Workers)
 5. [Notifications API -- MDN](https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API)
-5. [Displaying a Notification @Matt Gaunt](https://developers.google.com/web/fundamentals/push-notifications/display-a-notification)
+6. [Displaying a Notification @Matt Gaunt](https://developers.google.com/web/fundamentals/push-notifications/display-a-notification)
