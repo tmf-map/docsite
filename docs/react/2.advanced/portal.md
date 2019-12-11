@@ -4,7 +4,7 @@ title: Portal
 sidebar_label: Portal
 ---
 
-import Hint from '../../../src/components/Hint'
+import Hint from '../../../src/components/Hint';
 
 ## 什么是 Portal?
 
@@ -18,7 +18,7 @@ Portal 中文即“传送门”的意思，来看一张电影剧照，不用多�
 官方定义：Portals 提供了一种很好的将子节点渲染到父组件以外的 DOM 节点的方式。
 
 ```jsx
-ReactDOM.createPortal(child, container)
+ReactDOM.createPortal(child, container);
 ```
 
 第一个参数 `child` 是任何[可渲染的 React 子元素](https://reactjs.org/docs/react-component.html#render)，例如一个元素，字符串或 `fragment` 。第二个参数 `container` 则是一个真实的 DOM 元素。
@@ -33,8 +33,8 @@ React Portal 之所以叫 Portal，因为做的就是和“传送门”一样的
 
 ```jsx
 <div>
-   <p>this is p</p>
-   { needDialog ? <Dialog /> : null }
+  <p>this is p</p>
+  {needDialog ? <Dialog /> : null}
 </div>
 ```
 
@@ -42,8 +42,8 @@ React Portal 之所以叫 Portal，因为做的就是和“传送门”一样的
 
 ```jsx
 <div>
-   <p>this is p</p>
-   <div class="dialog">Dialog Content</div>
+  <p>this is p</p>
+  <div class="dialog">Dialog Content</div>
 </div>
 ```
 
@@ -62,12 +62,12 @@ React Portal 之所以叫 Portal，因为做的就是和“传送门”一样的
 ```jsx
 <div>
   <p>this is p</p>
-  { needDialog ?
+  {needDialog ? (
     <Dialog>
-       <header>Any Header</header>
-       <section>Any content</section>
+      <header>Any Header</header>
+      <section>Any content</section>
     </Dialog>
-    : null }
+  ) : null}
 </div>
 ```
 
@@ -83,11 +83,11 @@ Portal 就是建立一个“**传送门**”，让 Dialog 这样的组件在表�
    <img width="480" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/0F52fx.png'/>
 </div>
 
-在 v16 中，使用 Portal 创建 Dialog 组件简单多了，不需要牵扯到 `componentDidMount` 、 `componentDidUpdate` ，也不用调用 API 清理 Portal，关键代码在  `render` 中，像下面这样就行。
+在 v16 中，使用 Portal 创建 Dialog 组件简单多了，不需要牵扯到 `componentDidMount` 、 `componentDidUpdate` ，也不用调用 API 清理 Portal，关键代码在 `render` 中，像下面这样就行。
 
 ```jsx
 import React from 'react';
-import { createPortal } from 'react-dom';
+import {createPortal} from 'react-dom';
 
 class Dialog extends React.Component {
   constructor(props) {
@@ -104,10 +104,8 @@ class Dialog extends React.Component {
 
   render() {
     return createPortal(
-      <div class="dialog">
-        {this.props.children}
-      </div>, //塞进传送门的JSX
-      this.node //传送门的另一端DOM node
+      <div class="dialog">{this.props.children}</div>, //塞进传送门的JSX
+      this.node, //传送门的另一端DOM node
     );
   }
 }
@@ -142,9 +140,7 @@ v16 之前的 React Portal 实现方法，有一个小小的缺陷，就是 Port
 
 ```jsx
 <div onClick={handleDialogClick}>
-   <Dialog>
-     What ever shit
-   </Dialog>
+  <Dialog>What ever shit</Dialog>
 </div>
 ```
 
@@ -155,4 +151,4 @@ v16 之前的 React Portal 实现方法，有一个小小的缺陷，就是 Port
 ## 参考资料
 
 1. [React 官方文档（中文）：Portals](https://zh-hans.reactjs.org/docs/portals.html)
-2. [传送门：React Portal，作者：程墨Morgan](https://zhuanlan.zhihu.com/p/29880992)
+2. [传送门：React Portal，作者：程墨 Morgan](https://zhuanlan.zhihu.com/p/29880992)

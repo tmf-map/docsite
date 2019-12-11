@@ -4,7 +4,7 @@ title: 状态测试
 sidebar_label: 状态测试
 ---
 
-import Hint from '../../../src/components/Hint'
+import Hint from '../../../src/components/Hint';
 
 在 React App 的开发过程中，我们将状态测试主要分为 Action Test、Reducer Test 和 Selector Test。
 
@@ -29,7 +29,7 @@ describe('#action# setDiscountType', () => {
 
 ### 异步 action
 
-async action 的单元测试相对比较复杂，结合项目中的 redux-thunk 进行测试，主要测试异步 action 中的REQUEST、SUCCESS、ERROR 在不同情况下是否按照预期进行调用，示例代码：
+async action 的单元测试相对比较复杂，结合项目中的 redux-thunk 进行测试，主要测试异步 action 中的 REQUEST、SUCCESS、ERROR 在不同情况下是否按照预期进行调用，示例代码：
 
 ```javascript
 describe('#action# setLinesData', () => {
@@ -65,7 +65,6 @@ describe('#action# setLinesData', () => {
 
 <Hint type="must">异步 action 的测试一定要向其传入并执行 done 函数， Jest 会等 done 回调执行结束后，结束测试。否则 test 会显示通过，但有错误，也失去了测试的意义。</Hint>
 
-
 ## Reducer Test
 
 reducer 的测试一般是期望 `reducer(state, action) === newState`，其实这种方式和 `(input) => output` 的模式是一样的。
@@ -94,4 +93,3 @@ const expectedprops = {...};
 
 expect(selector.getLines(state)).toEqual(expectedprops);
 ```
-

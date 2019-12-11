@@ -4,7 +4,7 @@ title: 单元测试
 sidebar_label: 单元测试
 ---
 
-import Hint from '../../../src/components/Hint'
+import Hint from '../../../src/components/Hint';
 
 TDD（Test-driven development）和单元测试密不可分，但 TDD 并不是银弹，不必一味地追求，为写测试而写测试，这需要自己去把控和权衡。
 
@@ -30,14 +30,13 @@ TDD（Test-driven development）和单元测试密不可分，但 TDD 并不是�
 
 Jest 是 Facebook 开源的一个测试框架，相对其他测试框架，其特点有：
 
-* **开箱即用**：内置常用的测试工具，如自带断言、测试覆盖率等，减少了一些插件的配置。
-* **特有的快照测试功能：**通过比对 UI 代码生成的快照文件，确保组件呈现正确的样式。
-* **速度快**：测试用例是多进程并行的，而且只执行发生改变的文件所对应的测试，提升了测试速度。
-* **兼容性好**：兼容 Jasmine 框架语法，又新增了一些新的便捷功能。
-* **JSDOM**：不需要真实 DOM 环境执行，而是 JSDOM 模拟的 DOM。
+- **开箱即用**：内置常用的测试工具，如自带断言、测试覆盖率等，减少了一些插件的配置。
+- **特有的快照测试功能：**通过比对 UI 代码生成的快照文件，确保组件呈现正确的样式。
+- **速度快**：测试用例是多进程并行的，而且只执行发生改变的文件所对应的测试，提升了测试速度。
+- **兼容性好**：兼容 Jasmine 框架语法，又新增了一些新的便捷功能。
+- **JSDOM**：不需要真实 DOM 环境执行，而是 JSDOM 模拟的 DOM。
 
-<Hint type="best">将jest config 放在项目根目录下，可以省去一些配置上的麻烦和某些配置问题导致覆盖率为0%的问题。</Hint>
-
+<Hint type="best">将 jest config 放在项目根目录下，可以省去一些配置上的麻烦和某些配置问题导致覆盖率为 0%的问题。</Hint>
 
 ## 测试覆盖率
 
@@ -68,7 +67,7 @@ describe('Multiple branches test', () => {
     });
     // it('should get Hello World', () => {
     //       expect(branches('World')).toBe('Hello World')
-    // });  
+    // });
 })
 ```
 
@@ -76,6 +75,6 @@ describe('Multiple branches test', () => {
 
 ![test coverage1](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/QNgSXW.jpg)
 
-如果我们把 branches.test.js 中的注释去掉，跑遍测试对象中的所有分支，测试覆盖率就是100%了：
+如果我们把 branches.test.js 中的注释去掉，跑遍测试对象中的所有分支，测试覆盖率就是 100%了：
 
 ![test coverage2](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/CK0h2A.jpg)

@@ -3,8 +3,7 @@ title: 定时器
 sidebar_label: 定时器
 ---
 
-import Img from '../../../src/components/Img'
-import Hint from '../../../src/components/Hint'
+import Img from '../../../src/components/Img'; import Hint from '../../../src/components/Hint';
 
 有时我们并不想立即执行一个函数，而是等待特定一段时间之后再执行，目前有两种方式可以实现：
 
@@ -34,8 +33,8 @@ let timerId = setTimeout(func|code, delay[, arg1, arg2...])
   function showAlert() {
     alert('Hello');
   }
-  return <button onClick={() => setTimeout(showAlert, 1000)}>Click Me</button>
-}
+  return <button onClick={() => setTimeout(showAlert, 1000)}>Click Me</button>;
+};
 ```
 
 带参数的情况：
@@ -43,10 +42,14 @@ let timerId = setTimeout(func|code, delay[, arg1, arg2...])
 ```js live
 () => {
   function showAlert(phrase1, phrase2) {
-    alert( phrase1 + ', ' + phrase2 );
+    alert(phrase1 + ', ' + phrase2);
   }
-  return <button onClick={() => setTimeout(showAlert, 1000, "Hello", "World")}>Click Me</button>
-}
+  return (
+    <button onClick={() => setTimeout(showAlert, 1000, 'Hello', 'World')}>
+      Click Me
+    </button>
+  );
+};
 ```
 
 如果第一个参数位传入的是字符串，JavaScript 会自动为其创建一个函数。
@@ -75,7 +78,7 @@ clearTimeout(timerId);
 在下面代码中，我们设定了一个定时器，紧接着取消了该定时器（中途反悔了），所以最后什么也没发生：
 
 ```js run
-let timerId = setTimeout(() => alert("never happens"), 1000);
+let timerId = setTimeout(() => alert('never happens'), 1000);
 alert(timerId); // 定时器 id
 
 clearTimeout(timerId);
@@ -119,8 +122,8 @@ let timerId = setInterval(func|code, delay[, arg1, arg2...])
       alert('stop');
     }, 5000);
   }
-  return <button onClick={() => start()}>Start</button>
-}
+  return <button onClick={() => start()}>Start</button>;
+};
 ```
 
 Chrome 在显示 `alert/confirm/prompt` 时，内部的定时器仍旧会继续滴答。所以，在执行以上代码时，如果在一定时间内没有关掉 `alert` 弹窗，那么在你关闭弹窗后，Chrome 会立即显示下一个 `alert` 弹窗（前提是距离上一次执行超过了 2 秒）。
@@ -130,8 +133,8 @@ Chrome 在显示 `alert/confirm/prompt` 时，内部的定时器仍旧会继续�
 `clearInterval(timerId)` 清除了 timer 指向的定时器。`timerId = null` 是修改 `timerId` 的指向，使 `timerId` 这个变量不指向某个定时器，然而并没有终止这个定时器的执行，定时器依旧在运行。
 
 ```js
-let timerId = setInterval(function(){
-  alert()
+let timerId = setInterval(function() {
+  alert();
   timerId = null;
 }, 1000);
 ```
@@ -155,8 +158,8 @@ let timerId = setInterval(function(){
       <button onClick={() => start()}>Start</button>
       <div>{time}</div>
     </>
-  )
-}
+  );
+};
 ```
 
 ### 方式二：递归版 setTimeout
@@ -166,7 +169,8 @@ let timerId = setInterval(function(){
   const [time, setTime] = useState();
   function start() {
     let delay = 2000;
-    setTimeout(function tick () {  // (*)
+    setTimeout(function tick() {
+      // (*)
       setTime(new Date().getSeconds());
       setTimeout(tick, delay);
     }, delay);
@@ -176,8 +180,8 @@ let timerId = setInterval(function(){
       <button onClick={() => start()}>Start</button>
       <div>{time}</div>
     </>
-  )
-}
+  );
+};
 ```
 
 <Hint type="warning">如果 `(*)` 没有用 `setTimeout` 的话，那么会第一次将会同步执行。</Hint>
@@ -256,9 +260,9 @@ setTimeout(function run() {
 下面例子中，代码会先输出 "Hello"，然后紧接着输出 "World"：
 
 ```js run
-setTimeout(() => alert("World"), 0);
+setTimeout(() => alert('World'), 0);
 
-alert("Hello");
+alert('Hello');
 ```
 
 ### 给浏览器渲染的机会
@@ -299,7 +303,6 @@ alert("Hello");
   let progress = document.getElementById('progress');
 
   function count() {
-
     // 每次只完成一部分 (*)
     do {
       i++;
@@ -309,7 +312,6 @@ alert("Hello");
     if (i < 1e9) {
       setTimeout(count, 0);
     }
-
   }
 
   count();
@@ -345,7 +347,7 @@ function count() {
   for (let j = 0; j < 1e9; j++) {
     i++;
   }
-  alert("Done in " + (Date.now() - start) + 'ms');
+  alert('Done in ' + (Date.now() - start) + 'ms');
 }
 
 count();
@@ -366,7 +368,7 @@ function count() {
   } while (i % 1e6 != 0);
 
   if (i == 1e9) {
-    alert("Done in " + (Date.now() - start) + 'ms');
+    alert('Done in ' + (Date.now() - start) + 'ms');
   } else {
     setTimeout(count, 0); // 安排下一次任务 (**)
   }
@@ -406,7 +408,7 @@ function count() {
   } while (i % 1e6 != 0);
 
   if (i == 1e9) {
-    alert("Done in " + (Date.now() - start) + 'ms');
+    alert('Done in ' + (Date.now() - start) + 'ms');
   }
 }
 
@@ -437,10 +439,10 @@ count();
 () => {
   const [result, setResult] = useState();
   function start() {
-    let start = curr = prev = Date.now();
+    let start = (curr = prev = Date.now());
     let times = [];
     let delay = 0;
-    setTimeout(function tick () {
+    setTimeout(function tick() {
       curr = Date.now();
       times.push(curr - prev); // 保存调用时间间隔
       if (curr - start < 100) {
@@ -456,8 +458,8 @@ count();
       <button onClick={() => start()}>Start</button>
       <div>调用时间间隔(ms): {result && result.join(',')}</div>
     </>
-  )
-}
+  );
+};
 ```
 
 通过 Demo 我们会发现前面 4 次的间隔都是小于 4ms 的（代码运行本身也要占用一定的时间），从第 5 次开始后面的时间间隔都不会低于 4ms。这也是因为历史原因以及很多脚本都依赖于这个机制才得以存在至今。
@@ -473,7 +475,7 @@ count();
 ```js
 setTimeout(function() {
   // 在定时器调用这个函数之前，这个函数将一直存在于内存中
-},100);
+}, 100);
 ```
 
 对于 `setInterval`，传入的函数也是存在于内存中，直到 `clearInterval` 被调用。
@@ -488,12 +490,12 @@ setTimeout(function() {
 var obj = {
   a: 2,
   foo: function() {
-    'use strict'
-    console.log(this.a)
-  }
-}
-var a = 1
-setTimeout(obj.foo, 0) // 1
+    'use strict';
+    console.log(this.a);
+  },
+};
+var a = 1;
+setTimeout(obj.foo, 0); // 1
 ```
 
 <Hint type="warning">在严格模式下，`setTimeout` 的回调函数里面的 this 仍然默认指向 `window` 对象， 并不是 `undefined` 。</Hint>

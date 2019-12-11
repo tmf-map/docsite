@@ -3,8 +3,7 @@ title: 定位
 sidebar_label: 定位
 ---
 
-import Img from '../../../src/components/Img'
-import Hint from '../../../src/components/Hint'
+import Img from '../../../src/components/Img'; import Hint from '../../../src/components/Hint';
 
 ## 五种定位
 
@@ -12,17 +11,17 @@ import Hint from '../../../src/components/Hint'
 - **absolute**: 相对于 static 定位以外的第一个祖先元素进行定位。脱离文档流。
 - **fixed**: 相对于浏览器视窗进行定位。脱离文档流。
 - **relative**: 生成相对定位的元素，相对于其正常位置进行定位，不脱离文档流。
-- **sticky**: relative + fixed，但不脱离文档流，需要指明 top，表示滚动到相对于 static 定位以外的第一个祖先元素的位置，变成类似fixed效果。demo
+- **sticky**: relative + fixed，但不脱离文档流，需要指明 top，表示滚动到相对于 static 定位以外的第一个祖先元素的位置，变成类似 fixed 效果。demo
 
-<Hint type="tip">position 还可以是： `inherit`, `initial`, `unset`, 这是一般CSS属性都具有的。</Hint>
+<Hint type="tip">position 还可以是： `inherit`, `initial`, `unset`, 这是一般 CSS 属性都具有的。</Hint>
 
-注意sticky的兼容性：
+注意 sticky 的兼容性：
 
 <img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/rXLik9.jpg'/>
 
 ## 相对定位
 
-Demo DOM结构：
+Demo DOM 结构：
 
 <Img width="450" align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/5ACJIp.jpg'/>
 

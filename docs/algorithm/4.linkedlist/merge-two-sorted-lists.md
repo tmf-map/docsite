@@ -4,7 +4,7 @@ title: 合并两个有序链表
 sidebar_label: 合并两个有序链表
 ---
 
-- 题源：《剑指Offer: 面试题 25》P145
+- 题源：《剑指 Offer: 面试题 25》P145
 - 在线：[LeetCode: 21](https://leetcode-cn.com/problems/merge-two-sorted-lists/)
 
 ## 题目
@@ -13,8 +13,8 @@ sidebar_label: 合并两个有序链表
 
 ```js
 function ListNode(val) {
-    this.val = val;
-    this.next = null;
+  this.val = val;
+  this.next = null;
 }
 ```
 
@@ -43,7 +43,7 @@ function ListNode(val) {
 
 ### 方法一：递归
 
-当我们得到两个链表中值较小的头节点并把它链接到已经合并的链表之后，两个链表剩余的节点依然是有序的（如图2中间图所示），因此合并的步骤和之前是一样的，这就是典型的递归过程。
+当我们得到两个链表中值较小的头节点并把它链接到已经合并的链表之后，两个链表剩余的节点依然是有序的（如图 2 中间图所示），因此合并的步骤和之前是一样的，这就是典型的递归过程。
 
 ```js
 /**
@@ -51,18 +51,18 @@ function ListNode(val) {
  * @param {ListNode} l2
  * @return {ListNode}
  */
-function mergeTwoLists (l1, l2) {
-    if (l1 === null) return l2;
-    if (l2 === null) return l1;
-    let ans;
-    if (l1.val < l2.val) {
-        ans = l1;
-        ans.next = mergeTwoLists(l1.next, l2);
-    } else {
-        ans = l2;
-        ans.next = mergeTwoLists(l1, l2.next);
-    }
-    return ans;
+function mergeTwoLists(l1, l2) {
+  if (l1 === null) return l2;
+  if (l2 === null) return l1;
+  let ans;
+  if (l1.val < l2.val) {
+    ans = l1;
+    ans.next = mergeTwoLists(l1.next, l2);
+  } else {
+    ans = l2;
+    ans.next = mergeTwoLists(l1, l2.next);
+  }
+  return ans;
 }
 ```
 
@@ -74,23 +74,23 @@ function mergeTwoLists (l1, l2) {
  * @param {ListNode} l2
  * @return {ListNode}
  */
-function mergeTwoLists (l1, l2) {
-    if (l1 === null) return l2;
-    if (l2 === null) return l1;
-    let ans = new ListNode();
-    let p = ans;
-    while (l1 && l2) {
-        if (l1.val < l2.val) {
-            p.next = l1;
-            l1 = l1.next;
-        } else {
-            p.next = l2;
-            l2 = l2.next;
-        }
-        p = p.next;
+function mergeTwoLists(l1, l2) {
+  if (l1 === null) return l2;
+  if (l2 === null) return l1;
+  let ans = new ListNode();
+  let p = ans;
+  while (l1 && l2) {
+    if (l1.val < l2.val) {
+      p.next = l1;
+      l1 = l1.next;
+    } else {
+      p.next = l2;
+      l2 = l2.next;
     }
-    p.next = l1 || l2;
-    return ans.next;
+    p = p.next;
+  }
+  p.next = l1 || l2;
+  return ans.next;
 }
 ```
 
@@ -98,14 +98,14 @@ function mergeTwoLists (l1, l2) {
 
 ```js
 while (l1) {
-    p.next = l1;
-    p = p.next;
-    l1 = l1.next;
+  p.next = l1;
+  p = p.next;
+  l1 = l1.next;
 }
 while (l2) {
-    p.next = l2;
-    p = p.next;
-    l2 = l2.next;
+  p.next = l2;
+  p = p.next;
+  l2 = l2.next;
 }
 ```
 

@@ -33,29 +33,30 @@ async function() {
   }
 }
 ```
+
 fetch 方法有两种调用方式：
 
 ```js
 Promise fetch(String url, [, Object options]) // 常用
 Promise fetch(Request req, [, Object options])
 ```
-第一个参数是一个 url，第二个参数是配置信息，可选
-第一个参数是一个 Request 对象，第二个参数是配置信息，可选
+
+第一个参数是一个 url，第二个参数是配置信息，可选第一个参数是一个 Request 对象，第二个参数是配置信息，可选
 
 可选配置信息是一个 Object 对象，可以包含以下字段：
 
 - method: 请求的方法，例如：GET, POST。
 - headers: 请求头部信息，可以是一个简单的对象，也可以是 Headers 类实例化的一个对象。
-- body: 需要发送的信息内容，可以是 Blob, BufferSource, FormData, URLSearchParams 或者 USVString。注意，GET, HEAD方法不能包含body。
+- body: 需要发送的信息内容，可以是 Blob, BufferSource, FormData, URLSearchParams 或者 USVString。注意，GET, HEAD 方法不能包含 body。
 - mode: 请求模式，分别有 cors, no-cors, same-origin, navigate 这几个可选值。
   - cors: 允许跨域，要求响应中 Acess-Control-Allow-Origin 这样的头部表示允许跨域。
-  - no-cors: 只允许使用 HEAD, GET, POST方法。
+  - no-cors: 只允许使用 HEAD, GET, POST 方法。
   - same-origin: 只允许同源请求，否则直接报错。
   - navigate: 支持页面导航。
-- credentials: 表示是否发送cookie，有三个选项：
-  - omit: 不发送cookie（2017年8月25日以前默认）。
-  - same-origin: 仅在同源时发送cookie **（现在默认）**。
-  - **include**: 发送cookie。
+- credentials: 表示是否发送 cookie，有三个选项：
+  - omit: 不发送 cookie（2017 年 8 月 25 日以前默认）。
+  - same-origin: 仅在同源时发送 cookie **（现在默认）**。
+  - **include**: 发送 cookie。
 - cache: 表示处理缓存的策略。
 - redirect: 表示发生重定向时，有三个选项：
   - follow: 跟随。
@@ -66,12 +67,11 @@ Promise fetch(Request req, [, Object options])
 例子：
 
 ```js
-
 // Example POST method implementation:
 
 postData('http://example.com/answer', {answer: 42})
   .then(data => console.log(data)) // JSON from `response.json()` call
-  .catch(error => console.error(error))
+  .catch(error => console.error(error));
 
 function postData(url, data) {
   // Default options are marked with *
@@ -81,16 +81,14 @@ function postData(url, data) {
     credentials: 'same-origin', // include, same-origin, *omit
     headers: {
       'user-agent': 'Mozilla/4.0 MDN Example',
-      'content-type': 'application/json'
+      'content-type': 'application/json',
     },
     method: 'POST', // *GET, POST, PUT, DELETE, etc.
     mode: 'cors', // no-cors, cors, *same-origin
     redirect: 'follow', // manual, *follow, error
     referrer: 'no-referrer', // *client, no-referrer
-  })
-  .then(response => response.json()) // parses response to JSON
+  }).then(response => response.json()); // parses response to JSON
 }
-
 ```
 
 **Headers**
@@ -99,65 +97,73 @@ Headers 可用来表示 HTTP 的头部信息，使用 Headers 的接口，你可
 
 ```js
 var headers = new Headers({
-  "Content-Type": "text/plain",
-  "Content-Length": content.length.toString(),
-  "X-Custom-Header": "ProcessThisImmediately",
+  'Content-Type': 'text/plain',
+  'Content-Length': content.length.toString(),
+  'X-Custom-Header': 'ProcessThisImmediately',
 });
-headers.append("X-Custom-Header", "AnotherValue");
-headers.has("Content-Type") // true
-headers.getAll("X-Custom-Header"); // ["ProcessThisImmediately", "AnotherValue"]
+headers.append('X-Custom-Header', 'AnotherValue');
+headers.has('Content-Type'); // true
+headers.getAll('X-Custom-Header'); // ["ProcessThisImmediately", "AnotherValue"]
 ```
-Headers 提供 append, delete, get, getAll, has, set, forEach等这些实例方法，可供开发者更加灵活地配置请求中的 headers。
 
-Request
-Request 类用于描述请求内容。构造函数接受的参数与fetch方法一致，这里就不展开介绍了。我们可以这么理解，事实上**fetch方法在调用时，会将传入的参数构造出一个 Request 对象并执行**。
+Headers 提供 append, delete, get, getAll, has, set, forEach 等这些实例方法，可供开发者更加灵活地配置请求中的 headers。
+
+Request Request 类用于描述请求内容。构造函数接受的参数与 fetch 方法一致，这里就不展开介绍了。我们可以这么理解，事实上**fetch 方法在调用时，会将传入的参数构造出一个 Request 对象并执行**。
 
 ```js
 var URL = '//api.some.com';
 var getReq = new Request(URL, {method: 'GET', cache: 'reload'});
-fetch(getReq).then(function(response) {
-  return response.json();
-}).catch(function(error) {
-  console.log('Fetch Error: ', error);
-});
+fetch(getReq)
+  .then(function(response) {
+    return response.json();
+  })
+  .catch(function(error) {
+    console.log('Fetch Error: ', error);
+  });
 ```
+
 Request 接口中的配置项 headers 可以是实例化的 Headers 。
 
 ```js
 var URL = '//api.some.com';
 // 实例化 Headers
 var headers = new Headers({
-  "Content-Type": "text/plain",
-  "Content-Length": content.length.toString(),
-  "X-Custom-Header": "ProcessThisImmediately",
+  'Content-Type': 'text/plain',
+  'Content-Length': content.length.toString(),
+  'X-Custom-Header': 'ProcessThisImmediately',
 });
-var getReq = new Request(URL, {method: 'GET', headers: headers });
-fetch(getReq).then(function(response) {
-  return response.json();
-}).catch(function(error) {
-  console.log('Fetch Error: ', error);
-});
+var getReq = new Request(URL, {method: 'GET', headers: headers});
+fetch(getReq)
+  .then(function(response) {
+    return response.json();
+  })
+  .catch(function(error) {
+    console.log('Fetch Error: ', error);
+  });
 ```
+
 更便捷的是，Request 对象可以从已有的 Request 对象中继承，并拓展新的配置。
 
 ```js
 var URL = '//api.some.com';
-var getReq = new Request(URL, {method: 'GET', headers: headers });
+var getReq = new Request(URL, {method: 'GET', headers: headers});
 // 基于已存在的 Request 实例，拓展创建新的 Request 实例
 var postReq = new Request(getReq, {method: 'POST'});
 ```
-**Response**
-Response 实例是在fentch()处理完promises之后返回的。它的实例也可用通过JS来创建，但只有在ServiceWorkers中才真正有用。
+
+**Response** Response 实例是在 fentch()处理完 promises 之后返回的。它的实例也可用通过 JS 来创建，但只有在 ServiceWorkers 中才真正有用。
+
 ```
 var res = new Response(body, init);
 ```
+
 其中 body 可以是 Bolb, BufferSource, FormData, URLSearchParams, USVString 这些类型的值。
 
 init 是一个对象，可以包括以下这些字段：
 
 - status: 响应状态码
 - statusText: 状态信息
-- headers: 头部信息，可以是对象或者Headers实例
+- headers: 头部信息，可以是对象或者 Headers 实例
 
 - Response 实例提供了以下实例属性，均是只读属性：
 
@@ -186,12 +192,6 @@ Response 实例提供以下实例方法：
 
 虽然 Fecth API 使用方便符合语义化，但是现阶段它也有所限制。Fetch API 是基于 Promise，由于 Promise 没有处理 timeout 的机制，**所以无法通过原生方式处理请求超时后的中断，和读取进度的能力**。但是相信未来为了支持流，Fetch API 最终将会提供可以中断执行读取资源的能力，并且提供可以读取进度的 API。
 
-Fetch API 的一个应用：https://github.com/muwenzi/http-chain/blob/master/src/BrowserRequest.js#L97 
+Fetch API 的一个应用：https://github.com/muwenzi/http-chain/blob/master/src/BrowserRequest.js#L97
 
 Fetch MDN API: https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API/Using_Fetch
-
-
-
-
-
-

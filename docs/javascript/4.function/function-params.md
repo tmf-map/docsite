@@ -5,9 +5,9 @@ sidebar_label: 函数参数
 
 ## 传参方式
 
-JS 粗略的说是按值传递，准确的说，JS中的原始类型按值传递，引用类型按共享传递的(call by sharing，也叫按对象传递、按对象共享传递，本质上也是按值传递)。最早由Barbara Liskov. 在1974年的GLU语言中提出。该求值策略被用于Python、Java、Ruby、JS等多种语言。
+JS 粗略的说是按值传递，准确的说，JS 中的原始类型按值传递，引用类型按共享传递的(call by sharing，也叫按对象传递、按对象共享传递，本质上也是按值传递)。最早由 Barbara Liskov. 在 1974 年的 GLU 语言中提出。该求值策略被用于 Python、Java、Ruby、JS 等多种语言。
 
-归纳到一起可以说是按值传递，本质上传递的是变量的值的拷贝。请注意，这里所说的按值传递不是传统意义上的按值传递，在JS中一切都要区分是基础类型还是引用类型，JS基本上都在遵守这个原则（比如浅拷贝、深拷贝），当然函数传参也不例外，一定要区分变量类型，这是前提。
+归纳到一起可以说是按值传递，本质上传递的是变量的值的拷贝。请注意，这里所说的按值传递不是传统意义上的按值传递，在 JS 中一切都要区分是基础类型还是引用类型，JS 基本上都在遵守这个原则（比如浅拷贝、深拷贝），当然函数传参也不例外，一定要区分变量类型，这是前提。
 
 <div align="center">
     <img width="330" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/wVo2dl.jpg'/>
@@ -20,14 +20,14 @@ JS 粗略的说是按值传递，准确的说，JS中的原始类型按值传递
 
 ```js
 function changeStuff(a, b, c) {
- a = a * 10;
- b.item = "changed";
- c = { item: "changed" };
+  a = a * 10;
+  b.item = 'changed';
+  c = {item: 'changed'};
 }
 
 var num = 10;
-var obj1 = { item: "unchanged" };
-var obj2 = { item: "unchanged" };
+var obj1 = {item: 'unchanged'};
+var obj2 = {item: 'unchanged'};
 
 changeStuff(num, obj1, obj2);
 
@@ -46,8 +46,8 @@ console.log(obj2.item); //unchanged
 
 ```js
 var num = 10;
-var obj1 = { item: "unchanged" };
-var obj2 = { item: "unchanged" };
+var obj1 = {item: 'unchanged'};
+var obj2 = {item: 'unchanged'};
 ```
 
 <div align="center">
@@ -68,8 +68,8 @@ changeStuff(num, obj1, obj2);
 
 ```js
 a = a * 10;
-b.item = "changed";
-c = { item: "changed" };
+b.item = 'changed';
+c = {item: 'changed'};
 ```
 
 <div align="center">
@@ -78,4 +78,4 @@ c = { item: "changed" };
 
 ## 参数默认值
 
-ES6借鉴了python的语法，主要两点：1，对象嵌套多层结构，如何设置内层默认值。2，可不可以像python一样跨位置传参，不然，后面的位置还要补齐前面位置的值。
+ES6 借鉴了 python 的语法，主要两点：1，对象嵌套多层结构，如何设置内层默认值。2，可不可以像 python 一样跨位置传参，不然，后面的位置还要补齐前面位置的值。

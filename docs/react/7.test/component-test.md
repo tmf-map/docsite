@@ -4,7 +4,7 @@ title: 组件测试
 sidebar_label: 组件测试
 ---
 
-import Hint from '../../../src/components/Hint'
+import Hint from '../../../src/components/Hint';
 
 组件测试本身就是单元测试，但是其又包括快照测试（Snapshot Test）这种特有的测试。
 
@@ -24,10 +24,10 @@ import Link from '../Link.react';
 import renderer from 'react-test-renderer';
 
 it('should renders correctly', () => {
-    const tree = renderer.create(
-        <Link page="http://www.facebook.com">Facebook</Link>
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
+  const tree = renderer
+    .create(<Link page="http://www.facebook.com">Facebook</Link>)
+    .toJSON();
+  expect(tree).toMatchSnapshot();
 });
 ```
 
@@ -74,7 +74,7 @@ exports[`should renders correctly 2`] = `
 `;
 ```
 
-这个可读的快照文件以可读的形式展示了 React 渲染出的 DOM 结构。相比于肉眼观察效果的 UI 测试，快照测试直接由Jest进行比对、速度更快；而且由于直接展示了 DOM 结构，也能让我们在检查快照的时候，快速、准确地发现问题。
+这个可读的快照文件以可读的形式展示了 React 渲染出的 DOM 结构。相比于肉眼观察效果的 UI 测试，快照测试直接由 Jest 进行比对、速度更快；而且由于直接展示了 DOM 结构，也能让我们在检查快照的时候，快速、准确地发现问题。
 
 > 如何更新快照？
 
@@ -94,7 +94,10 @@ exports[`should renders correctly 2`] = `
 
 ```jsx
 const ButtonWithIcon = ({icon, children}) => (
-    <button><Icon icon={icon} />{children}</button>
+  <button>
+    <Icon icon={icon} />
+    {children}
+  </button>
 );
 ```
 
@@ -102,8 +105,8 @@ React 渲染后：
 
 ```html
 <button>
-    <i class="icon icon_coffee"></i>
-    Hello Jest!
+  <i class="icon icon_coffee"></i>
+  Hello Jest!
 </button>
 ```
 
@@ -111,8 +114,8 @@ React 渲染后：
 
 ```html
 <button>
-    <Icon icon="coffee" />
-    Hello Jest!
+  <Icon icon="coffee" />
+  Hello Jest!
 </button>
 ```
 
@@ -122,9 +125,9 @@ React 渲染后：
 
 全渲染（full rendering）就是完整渲染出当前组件及其所有子组件，就像在真实浏览器渲染那样，当组件内部直接改变了 DOM 时，就需要使用全渲染来测试。全渲染需要真实地模拟 DOM 环境，流行的做法有以下几种：
 
-* **使用 JSDOM**：使用 JS 模拟 DOM 环境，能满足90%的使用场景。这是 Jest 内部所使用的全渲染框架。
-* **使用 Cheerio**：类似 JSDOM，更轻的实现，类似 jQuery 的语法。这是 Enzyme 内部使用的全渲染框架。
-* **使用 Karma**：在真实的浏览器中执行测试，也支持在多个浏览器中依次执行测试，使用的是真实DOM 环境，但速度稍慢。
+- **使用 JSDOM**：使用 JS 模拟 DOM 环境，能满足 90%的使用场景。这是 Jest 内部所使用的全渲染框架。
+- **使用 Cheerio**：类似 JSDOM，更轻的实现，类似 jQuery 的语法。这是 Enzyme 内部使用的全渲染框架。
+- **使用 Karma**：在真实的浏览器中执行测试，也支持在多个浏览器中依次执行测试，使用的是真实 DOM 环境，但速度稍慢。
 
 ## 组件测试框架
 
@@ -132,8 +135,8 @@ React 渲染后：
 
 Jest 在组件测试方面特点有：
 
-* **特有的快照测试功能：**通过比对 UI 代码生成的快照文件，确保组件呈现正确的样式。
-* **JSDOM**：不需要真实 DOM 环境执行，而是 JSDOM 模拟的 DOM。
+- **特有的快照测试功能：**通过比对 UI 代码生成的快照文件，确保组件呈现正确的样式。
+- **JSDOM**：不需要真实 DOM 环境执行，而是 JSDOM 模拟的 DOM。
 
 以上的例子如果用 Jest 来写，如下：
 
@@ -158,20 +161,17 @@ it('should render ButtonWithIcon correctly', () => {
 
 Enzyme 提供 3 种不同的方式来测试组件：
 
-* [**shallow**](http://airbnb.io/enzyme/docs/api/shallow.html)：推荐的方式，浅渲染，只会渲染本地组件内容（只渲染不包含 children 的组件），引用的外部组件不会渲染，提供更好的隔离性。
-* [**render**](http://airbnb.io/enzyme/docs/api/render.html)：如果 shallow 不能满足，才会使用它，能够渲染所有的子组件。基于 Cheerio 来模拟 DOM 环境（Cheerio 是类似 JSDOM 的另一框架）。
-* [**mount**](http://airbnb.io/enzyme/docs/api/mount.html)：类似 render，会做全渲染，对测试生命周期非常有用，能够访问到组件的生命周期方法，比如 `componentDidUpdate` 等。一般用于集成测试。
+- [**shallow**](http://airbnb.io/enzyme/docs/api/shallow.html)：推荐的方式，浅渲染，只会渲染本地组件内容（只渲染不包含 children 的组件），引用的外部组件不会渲染，提供更好的隔离性。
+- [**render**](http://airbnb.io/enzyme/docs/api/render.html)：如果 shallow 不能满足，才会使用它，能够渲染所有的子组件。基于 Cheerio 来模拟 DOM 环境（Cheerio 是类似 JSDOM 的另一框架）。
+- [**mount**](http://airbnb.io/enzyme/docs/api/mount.html)：类似 render，会做全渲染，对测试生命周期非常有用，能够访问到组件的生命周期方法，比如 `componentDidUpdate` 等。一般用于集成测试。
 
 [Enzyme Selector](http://airbnb.io/enzyme/docs/api/selector.html)
 
 <Hint type="best">一般组件的快照测试使用 shallow 方法即可。</Hint>
 
-
 <Hint type="best">如果要测试子组件，并且对组件的生命周期等方法不怎么关注，使用 render 方法。</Hint>
 
-
 <Hint type="best">如果要测试组件生命周期方法、子组件，使用 mount 方法。</Hint>
-
 
 ## 编写组件测试
 
@@ -180,27 +180,21 @@ Enzyme 提供 3 种不同的方式来测试组件：
 对于大部分非交互组件使用 `toMatchSnapshot()` 即可：
 
 ```javascript
-import { shallow } from 'enzyme';
+import {shallow} from 'enzyme';
 
 it('should render a label', () => {
-    const wrapper = shallow(
-        <Label>Hello Jest!</Label>
-    );
-    expect(wrapper).toMatchSnapshot();
+  const wrapper = shallow(<Label>Hello Jest!</Label>);
+  expect(wrapper).toMatchSnapshot();
 });
 
 it('should render a small label', () => {
-    const wrapper = shallow(
-        <Label small>Hello Jest!</Label>
-    );
-    expect(wrapper).toMatchSnapshot();
+  const wrapper = shallow(<Label small>Hello Jest!</Label>);
+  expect(wrapper).toMatchSnapshot();
 });
 
 it('should render a grayish label', () => {
-    const wrapper = shallow(
-        <Label light>Hello Jest!</Label>
-    );
-    expect(wrapper).toMatchSnapshot();
+  const wrapper = shallow(<Label light>Hello Jest!</Label>);
+  expect(wrapper).toMatchSnapshot();
 });
 ```
 
@@ -208,15 +202,11 @@ it('should render a grayish label', () => {
 
 <Hint type="warning">这种直接使用 `toMatchSnapshot()` 方法的测试比较笼统、简单粗暴，且没有针对性，只是比较方便，权衡使用。</Hint>
 
-
 <Hint type="warning">每调一次 `toMatchSnapshot()` 方法就会生成一份快照，虽然还是一个快照文件，但里面可能会有不同状态的快照。</Hint>
-
 
 <Hint type="warning">快照测试抛错不过，不一定是写代码有问题，有可能组件加入了新属性等原因导致的，属于正常的，手动更新一下快照即可。</Hint>
 
-
-<Hint type="warning">使用snapshot test后组件的测试覆盖率将会大幅提高，部分会达到100%。</Hint>
-
+<Hint type="warning">使用 snapshot test 后组件的测试覆盖率将会大幅提高，部分会达到 100%。</Hint>
 
 ### 测试 **props**
 
@@ -224,15 +214,15 @@ it('should render a grayish label', () => {
 
 ```javascript
 it('should render a document title', () => {
-    const props = { title: 'Events' }
-    const wrapper = shallow(<DocumentTitle {...props} />);
-    expect(wrapper.prop('title')).toEqual('Events');
+  const props = {title: 'Events'};
+  const wrapper = shallow(<DocumentTitle {...props} />);
+  expect(wrapper.prop('title')).toEqual('Events');
 });
 
 it('should render a document title and a parent title', () => {
-    const props = { title: 'Events', parent: 'Event Radar' }
-    const wrapper = shallow(<DocumentTitle {...props} />);
-    expect(wrapper.prop('title')).toEqual('Events — Event Radar');
+  const props = {title: 'Events', parent: 'Event Radar'};
+  const wrapper = shallow(<DocumentTitle {...props} />);
+  expect(wrapper.prop('title')).toEqual('Events — Event Radar');
 });
 ```
 
@@ -240,10 +230,8 @@ it('should render a document title and a parent title', () => {
 
 ```javascript
 it('should render a popover with a random ID', () => {
-    const wrapper = shallow(
-        <Popover>Hello Jest!</Popover>
-    );
-    expect(wrapper.prop('id')).toMatch(/Popover\d+/);
+  const wrapper = shallow(<Popover>Hello Jest!</Popover>);
+  expect(wrapper.prop('id')).toMatch(/Popover\d+/);
 });
 ```
 
@@ -251,16 +239,14 @@ it('should render a popover with a random ID', () => {
 
 ### 测试 **events**
 
-Enzyme 可以模拟事件操作后（例如 click 或 change等）再和测试快照进行对比：
+Enzyme 可以模拟事件操作后（例如 click 或 change 等）再和测试快照进行对比：
 
 ```javascript
 it('should render Markdown in preview mode when click toggle-preview', () => {
-    const wrapper = shallow(
-        <MarkdownEditor value="**Hello** Jest!" />
-    );
-    expect(wrapper).toMatchSnapshot();
-    wrapper.find('[name="toggle-preview"]').simulate('click');
-    expect(wrapper).toMatchSnapshot();
+  const wrapper = shallow(<MarkdownEditor value="**Hello** Jest!" />);
+  expect(wrapper).toMatchSnapshot();
+  wrapper.find('[name="toggle-preview"]').simulate('click');
+  expect(wrapper).toMatchSnapshot();
 });
 ```
 
@@ -268,12 +254,10 @@ it('should render Markdown in preview mode when click toggle-preview', () => {
 
 ```javascript
 it('should open a code editor after clicked the button', () => {
-    const wrapper = render(
-        <Playground code={code} />
-    );
-    expect(wrapper.find('.ReactCodeMirror')).toHaveLength(0);
-    wrapper.find('button').simulate('click');
-    expect(wrapper.find('.ReactCodeMirror')).toHaveLength(1);
+  const wrapper = render(<Playground code={code} />);
+  expect(wrapper.find('.ReactCodeMirror')).toHaveLength(0);
+  wrapper.find('button').simulate('click');
+  expect(wrapper.find('.ReactCodeMirror')).toHaveLength(1);
 });
 ```
 
@@ -283,16 +267,13 @@ it('should open a code editor after clicked the button', () => {
 
 ```javascript
 it('should pass a selected value to the onChange handler', () => {
-    const value = '2';
-    const onChange = jest.fn();
-    const wrapper = shallow(
-        <Select items={ITEMS} onChange={onChange} />
-    );
-    expect(wrapper).toMatchSnapshot();
-    wrapper.find('select').simulate('change', {
-        target: { value },
-    });
-    expect(onChange).toBeCalledWith(value);
+  const value = '2';
+  const onChange = jest.fn();
+  const wrapper = shallow(<Select items={ITEMS} onChange={onChange} />);
+  expect(wrapper).toMatchSnapshot();
+  wrapper.find('select').simulate('change', {
+    target: {value},
+  });
+  expect(onChange).toBeCalledWith(value);
 });
 ```
-

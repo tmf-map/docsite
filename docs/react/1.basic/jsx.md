@@ -4,7 +4,7 @@ title: JSX
 sidebar_label: JSX
 ---
 
-import Hint from '../../../src/components/Hint'
+import Hint from '../../../src/components/Hint';
 
 ## JSX 基础概念
 
@@ -64,18 +64,14 @@ Babel 转译器会把 JSX 转换成一个名为 `React.createElement()` 的方�
 下面两种代码的作用是完全相同的：
 
 ```jsx
-const element = (
-  <h1 className="greeting">
-    Hello, world!
-  </h1>
-);
+const element = <h1 className="greeting">Hello, world!</h1>;
 ```
 
 ```jsx
 const element = React.createElement(
   'h1',
   {className: 'greeting'},
-  'Hello, world!'
+  'Hello, world!',
 );
 ```
 
@@ -87,8 +83,8 @@ const element = {
   type: 'h1',
   props: {
     className: 'greeting',
-    children: 'Hello, world'
-  }
+    children: 'Hello, world',
+  },
 };
 ```
 
@@ -110,10 +106,10 @@ const renderComponent = props => {
         This is homepage
         <span>Hello, World</span>
       </div>
-    )
+    );
   }
-  return <div>This is homepage</div>
-}
+  return <div>This is homepage</div>;
+};
 ```
 
 <Hint type="best">一般开发中建议不要使用该写法，除非不同条件下 return 的 v-dom 没有公共部分。</Hint>
@@ -127,8 +123,8 @@ const renderComponent = props => {
       This is homepage
       {!!props.isFirstTime && <span>Hello, World</span>}
     </div>
-  )
-}
+  );
+};
 ```
 
 <Hint type="best">逻辑与运算要使用 !! 进行显式强制转换，防止某些假值被渲染出来，[demo](https://codepen.io/muwenzi/pen/YjNYYp?editors=0010)。</Hint>
@@ -140,10 +136,14 @@ const renderComponent = props => {
   return (
     <div>
       This is homepage
-      {props.isFirstTime ? <span>Hello, World</span> : <span>See you again</span>}
+      {props.isFirstTime ? (
+        <span>Hello, World</span>
+      ) : (
+        <span>See you again</span>
+      )}
     </div>
-  )
-}
+  );
+};
 ```
 
 <Hint type="best">三目运算的判断可以不用加 !! ，因为其肯定会渲染后面二者之一。</Hint>
@@ -171,17 +171,16 @@ const renderListItems = props => {
 Warning: Each child in an array or iterator should have a unique "key" prop. Check the render method of 'renderListItems'. See [https://fb.me/react-warning-keys](https://fb.me/react-warning-keys) for more information.
 ```
 
-这个警告指的是，如果每一个组件是一个数组或迭代器的话，那么必须有一个唯一的 key prop。那么这个key prop 是做什么的？
+这个警告指的是，如果每一个组件是一个数组或迭代器的话，那么必须有一个唯一的 key prop。那么这个 key prop 是做什么的？
 
-* react 利用 key 来识别组件，它是一种身份标识。keys 是 react 用于追踪哪些列表中元素被修改、被添加或者被移除的辅助标识。
-* react 根据 key 来决定是销毁重新创建组件还是更新组件
+- react 利用 key 来识别组件，它是一种身份标识。keys 是 react 用于追踪哪些列表中元素被修改、被添加或者被移除的辅助标识。
+- react 根据 key 来决定是销毁重新创建组件还是更新组件
 
 直接用数组的 index 是非常低效的做法。我们在生产环境下常常犯这样的错，这个 key 是每次用来做 Virtual-Dom diff 的，如果使用 index 作为 key 就相当于用了一个随机键，那么不论有没有相同的项，更新都会重新渲染。
 
 在 React Diff 算法中 React 会借助元素的 Key 值来判断该元素是新近创建的还是被移动而来的元素，从而减少不必要的元素重渲染。此外，React 还需要借助 Key 值来判断元素与本地状态的关联关系，因此我们绝不可忽视转换函数中 Key 的重要性。
 
-* key 相同，若组件属性有所变化，则 react 只更新组件对应的属性，没有变化则不更新。
-* key 不同，则 react 先销毁该组件（有状态组件的componentWillUnmount会执行），然后重新创建该组件（constructor和componentWillUnmount都会执行）
+- key 相同，若组件属性有所变化，则 react 只更新组件对应的属性，没有变化则不更新。
+- key 不同，则 react 先销毁该组件（有状态组件的 componentWillUnmount 会执行），然后重新创建该组件（constructor 和 componentWillUnmount 都会执行）
 
 <Hint type="best">不要使用 index 作为 key prop。</Hint>
-

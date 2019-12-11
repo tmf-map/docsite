@@ -4,12 +4,12 @@ title: 有序数组中缺失的数字
 sidebar_label: 有序数组中缺失的数字
 ---
 
-- 题源：《剑指Offer: 面试题 53-2》P266
+- 题源：《剑指 Offer: 面试题 53-2》P266
 - 在线：[LeetCode: 268](https://leetcode-cn.com/problems/missing-number/)
 
 ## 题目
 
-给定一个包含 `0, 1, 2, ..., n` 中 n 个数的序列，找出 `0 .. n` 中没有出现在序列中的那个数。
+给定一个包含 `0, 1, 2, ..., n`  中  n  个数的序列，找出 `0 .. n`  中没有出现在序列中的那个数。
 
 示例 1:
 
@@ -18,7 +18,7 @@ sidebar_label: 有序数组中缺失的数字
 输出: 2
 ```
 
-示例 2:
+示例  2:
 
 ```text
 输入: [0,1,2,3,4,5,6,7,9]
@@ -47,21 +47,21 @@ sidebar_label: 有序数组中缺失的数字
  * @param {number[]} nums
  * @return {number}
  */
-function missingNumber (nums) {
-    let left = 0;
-    let right = nums.length - 1;
-    while (left <= right) {
-        let mid = left + (right - left >> 1);
-        if (nums[mid] === mid) {
-            left = mid + 1;
-            continue;
-        }
-        if (nums[mid - 1] === mid - 1) {
-            return mid;
-        }
-        return right = mid - 1;
+function missingNumber(nums) {
+  let left = 0;
+  let right = nums.length - 1;
+  while (left <= right) {
+    let mid = left + ((right - left) >> 1);
+    if (nums[mid] === mid) {
+      left = mid + 1;
+      continue;
     }
-    return -1;
+    if (nums[mid - 1] === mid - 1) {
+      return mid;
+    }
+    return (right = mid - 1);
+  }
+  return -1;
 }
 ```
 

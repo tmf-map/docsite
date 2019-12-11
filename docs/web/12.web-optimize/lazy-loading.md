@@ -3,8 +3,7 @@ title: 延迟加载
 sidebar_label: 延迟加载
 ---
 
-import Hint from '../../../src/components/Hint'
-import Img from '../../../src/components/Img'
+import Hint from '../../../src/components/Hint'; import Img from '../../../src/components/Img';
 
 延迟加载即懒加载，对于一些占用带宽的资源比如图片，使用延时加载首屏外资源，而不是加载所有资源。延迟加载图像和视频时，可以减少初始页面加载时间、初始页面负载以及系统资源使用量，优化页面的性能。
 
@@ -13,8 +12,7 @@ import Img from '../../../src/components/Img'
 因为直接加载可能会加载用户永远不会查看的内容， 进而导致一些问题：
 
 - **浪费数据流量**。 如果使用无限流量网络，这可能还不是最坏的情况（不过，这些宝贵的带宽原本可以用来下载用户确实会查看的其他资源）。 但如果流量有限，加载用户永远不会查看的内容实际上是在浪费用户的金钱。
-- **浪费处理时间、电池电量和其他系统资源**。 下载媒体资源后，浏览器必须将其解码，并在视窗中渲染其内容。
-延迟加载图像和视频时，可以减少初始页面加载时间、初始页面负载以及系统资源使用量，所有这一切都会对性能产生积极影响。
+- **浪费处理时间、电池电量和其他系统资源**。 下载媒体资源后，浏览器必须将其解码，并在视窗中渲染其内容。延迟加载图像和视频时，可以减少初始页面加载时间、初始页面负载以及系统资源使用量，所有这一切都会对性能产生积极影响。
 
 ## 延迟加载图像
 
@@ -29,7 +27,7 @@ import Img from '../../../src/components/Img'
 Chrome76 开始 `<img>` 和 `iframe` 支持原生懒加载特性，无需任何其他的 JS 代码，仅仅一个属性即可：
 
 ```html
-<img src="./example.jpg" width="600" loading="lazy" alt="image">
+<img src="./example.jpg" width="600" loading="lazy" alt="image" />
 ```
 
 兼容性如下：
@@ -86,17 +84,20 @@ Chrome76 开始 `<img>` 和 `iframe` 支持原生懒加载特性，无需任何�
 现在，我们来看看如何在 JavaScript 中使用 Intersection Observer，并通过以下标记模式延迟加载图像：
 
 ```js
-document.addEventListener("DOMContentLoaded", function() {
-  var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+document.addEventListener('DOMContentLoaded', function() {
+  var lazyImages = [].slice.call(document.querySelectorAll('img.lazy'));
 
-  if ("IntersectionObserver" in window) {
-    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+  if ('IntersectionObserver' in window) {
+    let lazyImageObserver = new IntersectionObserver(function(
+      entries,
+      observer,
+    ) {
       entries.forEach(function(entry) {
         if (entry.isIntersecting) {
           let lazyImage = entry.target;
           lazyImage.src = lazyImage.dataset.src;
           lazyImage.srcset = lazyImage.dataset.srcset;
-          lazyImage.classList.remove("lazy");
+          lazyImage.classList.remove('lazy');
           lazyImageObserver.unobserve(lazyImage);
         }
       });
@@ -120,8 +121,8 @@ document.addEventListener("DOMContentLoaded", function() {
 假定使用与上文相同的 HTML 结构，以下 JS 可提供延迟加载功能：
 
 ```js
-document.addEventListener("DOMContentLoaded", function() {
-  let lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+document.addEventListener('DOMContentLoaded', function() {
+  let lazyImages = [].slice.call(document.querySelectorAll('img.lazy'));
   let active = false;
 
   const lazyLoad = function() {
@@ -130,19 +131,23 @@ document.addEventListener("DOMContentLoaded", function() {
 
       setTimeout(function() {
         lazyImages.forEach(function(lazyImage) {
-          if ((lazyImage.getBoundingClientRect().top <= window.innerHeight && lazyImage.getBoundingClientRect().bottom >= 0) && getComputedStyle(lazyImage).display !== "none") {
+          if (
+            lazyImage.getBoundingClientRect().top <= window.innerHeight &&
+            lazyImage.getBoundingClientRect().bottom >= 0 &&
+            getComputedStyle(lazyImage).display !== 'none'
+          ) {
             lazyImage.src = lazyImage.dataset.src;
             lazyImage.srcset = lazyImage.dataset.srcset;
-            lazyImage.classList.remove("lazy");
+            lazyImage.classList.remove('lazy');
 
             lazyImages = lazyImages.filter(function(image) {
               return image !== lazyImage;
             });
 
             if (lazyImages.length === 0) {
-              document.removeEventListener("scroll", lazyLoad);
-              window.removeEventListener("resize", lazyLoad);
-              window.removeEventListener("orientationchange", lazyLoad);
+              document.removeEventListener('scroll', lazyLoad);
+              window.removeEventListener('resize', lazyLoad);
+              window.removeEventListener('orientationchange', lazyLoad);
             }
           }
         });
@@ -152,9 +157,9 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   };
 
-  document.addEventListener("scroll", lazyLoad);
-  window.addEventListener("resize", lazyLoad);
-  window.addEventListener("orientationchange", lazyLoad);
+  document.addEventListener('scroll', lazyLoad);
+  window.addEventListener('resize', lazyLoad);
+  window.addEventListener('orientationchange', lazyLoad);
 });
 ```
 
@@ -186,25 +191,30 @@ document.addEventListener("DOMContentLoaded", function() {
 
 ```css
 .lazy-background {
-  background-image: url("hero-placeholder.jpg"); /* Placeholder image */
+  background-image: url('hero-placeholder.jpg'); /* Placeholder image */
 }
 
 .lazy-background.visible {
-  background-image: url("hero.jpg"); /* The final image */
+  background-image: url('hero.jpg'); /* The final image */
 }
 ```
 
 我们将从这里使用 JavaScript 来检查该元素是否在视窗内（通过 Intersection Observer 进行检查），如果在视窗内，则对 `div.lazy-background` 元素添加 `visible` 类以加载该图像：
 
 ```js
-document.addEventListener("DOMContentLoaded", function() {
-  var lazyBackgrounds = [].slice.call(document.querySelectorAll(".lazy-background"));
+document.addEventListener('DOMContentLoaded', function() {
+  var lazyBackgrounds = [].slice.call(
+    document.querySelectorAll('.lazy-background'),
+  );
 
-  if ("IntersectionObserver" in window) {
-    let lazyBackgroundObserver = new IntersectionObserver(function(entries, observer) {
+  if ('IntersectionObserver' in window) {
+    let lazyBackgroundObserver = new IntersectionObserver(function(
+      entries,
+      observer,
+    ) {
       entries.forEach(function(entry) {
         if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
+          entry.target.classList.add('visible');
           lazyBackgroundObserver.unobserve(entry.target);
         }
       });
@@ -222,4 +232,4 @@ document.addEventListener("DOMContentLoaded", function() {
 ## 参考资料
 
 1. [延迟加载图像和视频，By Jeremy Wagner](https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video/?hl=zh-cn)
-2. [浏览器IMG图片原生懒加载loading=”lazy”实践指南，作者：张鑫旭](https://www.zhangxinxu.com/wordpress/2019/09/native-img-loading-lazy/)
+2. [浏览器 IMG 图片原生懒加载 loading=”lazy”实践指南，作者：张鑫旭](https://www.zhangxinxu.com/wordpress/2019/09/native-img-loading-lazy/)

@@ -3,7 +3,7 @@ title: 作用域
 sidebar_label: 作用域
 ---
 
-Scope指变量的**可见性**。
+Scope 指变量的**可见性**。
 
 ```js
 // Example #1
@@ -19,7 +19,7 @@ console.log(test()); // red
 function test() {
   var color = 'red';
 }
-test()
+test();
 console.log(color); // undefined
 ```
 
@@ -40,13 +40,12 @@ console.log(test()); // red
 
 ## 块级作用域
 
-变量声明：
-ES5 只有全局作用域和函数作用域，没有块级作用域，导致了以下的不合理场景出现：
+变量声明： ES5 只有全局作用域和函数作用域，没有块级作用域，导致了以下的不合理场景出现：
 
 - 由于变量提升，内层变量可能会覆盖外层变量
 - 用来计数的循环变量泄露为全局变量
 
-ES6中 let 的出现实际上为 JavaScript 新增了块级作用域，在语句块中声明的语句或变量只在当前语句块中起作用。
+ES6 中 let 的出现实际上为 JavaScript 新增了块级作用域，在语句块中声明的语句或变量只在当前语句块中起作用。
 
 ```js
 function f1() {
@@ -58,20 +57,19 @@ function f1() {
 }
 ```
 
-上面的函数有两个代码块，都声明了变量n，运行后输出 5。这表示外层代码块不受内层代码块的影响。如果两次都使用var定义变量n，最后输出的值才是 10。ES6 允许块级作用域的任意嵌套，每一层都是一个单独的作用域。外层作用域无法读取内层作用域的内部变量。
+上面的函数有两个代码块，都声明了变量 n，运行后输出 5。这表示外层代码块不受内层代码块的影响。如果两次都使用 var 定义变量 n，最后输出的值才是 10。ES6 允许块级作用域的任意嵌套，每一层都是一个单独的作用域。外层作用域无法读取内层作用域的内部变量。
 
-函数声明：
-ES5 规定，函数只能在顶层作用域和函数作用域之中声明，不能在块级作用域声明；
-ES6 引入了块级作用域，明确允许在块级作用域之中声明函数。ES6 规定，块级作用域之中，函数声明语句的行为类似于let，在块级作用域之外不可引用。
+函数声明： ES5 规定，函数只能在顶层作用域和函数作用域之中声明，不能在块级作用域声明； ES6 引入了块级作用域，明确允许在块级作用域之中声明函数。ES6 规定，块级作用域之中，函数声明语句的行为类似于 let，在块级作用域之外不可引用。
 
 > **注意**
-> 
-> 由于要兼容老的代码，ES6 在附录 B里面规定，浏览器的实现可以不遵守上面的规定，有自己的行为方式。
+>
+> 由于要兼容老的代码，ES6 在附录 B 里面规定，浏览器的实现可以不遵守上面的规定，有自己的行为方式。
+>
 > - 允许在块级作用域内声明函数。
-> - 函数声明类似于var，即会提升到全局作用域或函数作用域的头部。
+> - 函数声明类似于 var，即会提升到全局作用域或函数作用域的头部。
 > - 同时，函数声明还会提升到所在的块级作用域的头部。
 
-上面三条规则只对 ES6 的浏览器实现有效，其他环境的实现不用遵守，还是将块级作用域的函数声明当作let处理。根据这三条规则，浏览器的 ES6 环境中，块级作用域内声明的函数，行为类似于var声明的变量。
+上面三条规则只对 ES6 的浏览器实现有效，其他环境的实现不用遵守，还是将块级作用域的函数声明当作 let 处理。根据这三条规则，浏览器的 ES6 环境中，块级作用域内声明的函数，行为类似于 var 声明的变量。
 
 ES6 新增了 `let` 命令，用来声明变量。它的用法类似于 `var` ，但是所声明的变量，只在 `let` 命令所在的代码块内有效，如下图所示：
 
@@ -82,19 +80,19 @@ ES6 新增了 `let` 命令，用来声明变量。它的用法类似于 `var` �
 ```js
 var a = [];
 for (var i = 0; i < 10; i++) {
-  a[i] = function () {
+  a[i] = function() {
     console.log(i);
   };
 }
 a[6](); // 10
 ```
 
-上面代码中，变量 `i` 是 `var` 命令声明的，在**全局范围**内都有效，所以全局只有一个变量 `i` 。每一次循环，变量i的值都会发生改变，而数组 a 的函数内部的 `console.log(i)` ，里面的 `i` 指向的就是全局的 `i` 。也就是说，所有数组 a 的成员里面的 `i` ，指向的都是同一个 `i` ，导致运行时输出的是**最后一轮**的 `i` 的值，也就是 `10` 。
+上面代码中，变量 `i` 是 `var` 命令声明的，在**全局范围**内都有效，所以全局只有一个变量 `i` 。每一次循环，变量 i 的值都会发生改变，而数组 a 的函数内部的 `console.log(i)` ，里面的 `i` 指向的就是全局的 `i` 。也就是说，所有数组 a 的成员里面的 `i` ，指向的都是同一个 `i` ，导致运行时输出的是**最后一轮**的 `i` 的值，也就是 `10` 。
 
 ```js
 var a = [];
 for (let i = 0; i < 10; i++) {
-  a[i] = function () {
+  a[i] = function() {
     console.log(i);
   };
 }
@@ -108,22 +106,22 @@ a[6](); // 6
 变量提升（hoisting）：通常 JS 引擎会在正式执行之前先进行一次预编译，在这个过程中，首先将变量声明及函数声明提升至当前作用域的顶端，然后进行接下来的处理。这造成的结果，就是所有的变量的声明语句，都会被提升到代码的头部，这就叫做变量提升。
 
 ```js
-var liList = document.querySelectorAll('li') // 共5个li
+var liList = document.querySelectorAll('li'); // 共5个li
 for (var i = 0; i < liList.length; i++) {
   liList[i].onclick = function() {
-    console.log(i)
-  }
+    console.log(i);
+  };
 }
 ```
 
 根据以上代码可知，如果依次点击 `li` ，会打印出 5 个 5 。因为代码中只通过 `var` 声明了一个 `i` ，在循环之后 `i` 变为 5 。
 
 ```js
-var liList = document.querySelectorAll('li') // 共5个li
-for( let i=0; i<liList.length; i++) {
+var liList = document.querySelectorAll('li'); // 共5个li
+for (let i = 0; i < liList.length; i++) {
   liList[i].onclick = function() {
-    console.log(i)
-  }
+    console.log(i);
+  };
 }
 ```
 
@@ -132,12 +130,12 @@ for( let i=0; i<liList.length; i++) {
 此时，代码中也只声明了一个 `i` ，但是打印出了不同的值。这是为什么呢，我们可以把上面一段代码近似地理解为如下形式：
 
 ```js
-var liList = document.querySelectorAll('li') // 共5个li
+var liList = document.querySelectorAll('li'); // 共5个li
 for (let i = 0; i < liList.length; i++) {
-  let i = 隐藏作用域中的i // 敲黑板，此处很重要！
+  let i = 隐藏作用域中的i; // 敲黑板，此处很重要！
   liList[i].onclick = function() {
-    console.log(i)
-  }
+    console.log(i);
+  };
 }
 ```
 
@@ -146,11 +144,11 @@ for (let i = 0; i < liList.length; i++) {
 ### `var` 声明的「创建、初始化和赋值」过程
 
 ```js
-function fn(){
-  var x = 1
-  var y = 2
+function fn() {
+  var x = 1;
+  var y = 2;
 }
-fn()
+fn();
 ```
 
 在执行 `fn` 时，会有以下过程（不完全）：
@@ -162,16 +160,15 @@ fn()
 1. `x = 1` 将 `x` 变量「赋值」为 1
 1. `y = 2` 将 `y` 变量「赋值」为 2
 
-也就是说 `var` 声明会在代码执行之前就将创建变量，并将其初始化为 `undefined` 。
-这就解释了为什么在 `var x = 1` 之前 `console.log(x)` 会得到 `undefined` 。
+也就是说 `var` 声明会在代码执行之前就将创建变量，并将其初始化为 `undefined` 。这就解释了为什么在 `var x = 1` 之前 `console.log(x)` 会得到 `undefined` 。
 
 ### `function` 声明的「创建、初始化和赋值」过程
 
 ```js
-fn2()
+fn2();
 
-function fn2(){
-  console.log(2)
+function fn2() {
+  console.log(2);
 }
 ```
 
@@ -187,8 +184,8 @@ JS 引擎会有以下过程：
 
 ```js
 {
-  let x = 1
-  x = 2
+  let x = 1;
+  x = 2;
 }
 ```
 
@@ -202,10 +199,10 @@ JS 引擎会有以下过程：
 这就解释了为什么在 `let x` 之前使用 `x` 会报错：
 
 ```js
-let x = 'global'
+let x = 'global';
 {
-  console.log(x) // Uncaught ReferenceError: x is not defined
-  let x = 1
+  console.log(x); // Uncaught ReferenceError: x is not defined
+  let x = 1;
 }
 ```
 

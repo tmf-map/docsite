@@ -3,8 +3,7 @@ title: 防抖
 sidebar_label: 防抖
 ---
 
-import Hint from '../../../src/components/Hint'
-import Img from '../../../src/components/Img'
+import Hint from '../../../src/components/Hint'; import Img from '../../../src/components/Img';
 
 ## 什么是 debounce
 
@@ -21,7 +20,9 @@ function debounce(fn, wait) {
   let timer;
   return function(...args) {
     timer && clearTimeout(timer);
-    timer = setTimeout(() => { fn.apply(this, args) }, wait);
-  }
+    timer = setTimeout(() => {
+      fn.apply(this, args);
+    }, wait);
+  };
 }
 ```

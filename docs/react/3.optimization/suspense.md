@@ -22,8 +22,7 @@ const SomeComponent = React.lazy(() => import('./SomeComponent'));
 
 Note that rendering `lazy` components requires that there’s a `<React.Suspense>` component higher in the rendering tree. This is how you specify a loading indicator.
 
-> **Note**
-> Using React.lazywith dynamic import requires Promises to be available in the JS environment. This requires a polyfill on IE11 and below.
+> **Note** Using React.lazywith dynamic import requires Promises to be available in the JS environment. This requires a polyfill on IE11 and below.
 
 ## React.Suspense
 
@@ -49,5 +48,4 @@ It is documented in our [code splitting guide](). Note that `lazy` components ca
 
 While this is not supported today, in the future we plan to let `Suspense` handle more scenarios such as data fetching. You can read about this in [our roadmap](https://reactjs.org/blog/2018/11/27/react-16-roadmap.html).
 
-> **Note**
-> `React.lazy()` and `<React.Suspense>` are not yet supported by `ReactDOMServer`. This is a known limitation that will be resolved in the future.
+> **Note** > `React.lazy()` and `<React.Suspense>` are not yet supported by `ReactDOMServer`. This is a known limitation that will be resolved in the future.

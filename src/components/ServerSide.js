@@ -1,19 +1,18 @@
 import React from 'react';
 import classNames from 'classnames';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+// import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 import Oval from './Oval';
 import Heading from './Heading';
 import styles from '../pages/index.module.css';
 
 export default function ServerSide() {
-  const context = useDocusaurusContext();
+  // const context = useDocusaurusContext();
   // const {  } = context.siteConfig.customFields;
 
   return (
     <div
-      className={classNames('hero hero--primary', styles['overflow-hidden'])}
-    >
+      className={classNames('hero hero--primary', styles['overflow-hidden'])}>
       <div className="container">
         <div className="section">
           <div className="row">
@@ -22,12 +21,11 @@ export default function ServerSide() {
                 'col',
                 styles['section-content'],
                 styles['section-bgwhite'],
-              )}
-            >
+              )}>
               <span
                 className={classNames(
                   styles['section-bgwhite-block'],
-                  styles['section-bgwhite-block-left']
+                  styles['section-bgwhite-block-left'],
                 )}
               />
               <div className={classNames('row', styles.padding)}>
@@ -38,9 +36,7 @@ export default function ServerSide() {
                       className={styles['small-image']}
                     />
                   </Oval>
-                  <h2 className={styles['section-heading']}>
-                    Ops
-                  </h2>
+                  <h2 className={styles['section-heading']}>Ops</h2>
                   <ul>
                     <li>Linux</li>
                     <li>Docker</li>
@@ -54,9 +50,7 @@ export default function ServerSide() {
                       className={styles['small-image']}
                     />
                   </Oval>
-                  <h2 className={styles['section-heading']}>
-                    Database
-                  </h2>
+                  <h2 className={styles['section-heading']}>Database</h2>
                   <ul>
                     <li>MySQL</li>
                     <li>Redis</li>
@@ -70,9 +64,7 @@ export default function ServerSide() {
                       className={styles['small-image']}
                     />
                   </Oval>
-                  <h2 className={styles['section-heading']}>
-                    NodeJS
-                  </h2>
+                  <h2 className={styles['section-heading']}>NodeJS</h2>
                   <ul>
                     <li>Express</li>
                     <li>Nest</li>
@@ -81,8 +73,7 @@ export default function ServerSide() {
               </div>
             </div>
             <div
-              className={classNames('col col--5', styles['section-content'])}
-            >
+              className={classNames('col col--5', styles['section-content'])}>
               {/* <Subtitle>Why choose us</Subtitle> */}
               <Heading className={styles['heading-white']}>
                 Server Technology
@@ -90,13 +81,16 @@ export default function ServerSide() {
                 to implement solution */}
               </Heading>
               <p className={classNames(styles.text, styles.paragraph)}>
-                JS sometimes is not the best choice, but it indeed has opened the door to the full stack world.
+                JS sometimes is not the best choice, but it indeed has opened
+                the door to the full stack world.
               </p>
               <h2 className={classNames(styles.text, styles.emphasis)}>
                 More than Node and JavaScript.
               </h2>
               <p className={classNames(styles.text, styles.paragraph)}>
-                Node likes Swiss army knife, it's useful but you'd better learn other technologies to make your ability of server side development stronger.
+                Node likes Swiss army knife, it&apos;s useful but you&apos;d
+                better learn other technologies to make your ability of server
+                side development stronger.
               </p>
             </div>
           </div>

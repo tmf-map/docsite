@@ -3,8 +3,7 @@ title: Publish–Subscribe
 sidebar_label: Publish–Subscribe
 ---
 
-import Hint from '../../../src/components/Hint'
-import Img from '../../../src/components/Img'
+import Hint from '../../../src/components/Hint'; import Img from '../../../src/components/Img';
 
 ## 定义
 
@@ -60,21 +59,18 @@ let subB = {type: 'event2'};
 let subC = {type: 'event1'};
 
 // 订阅者 A 订阅 topic1
-PubSub.subscribe(
-  subA.type,
-  () => console.log(`update eventType: ${subA.type} subA`)
+PubSub.subscribe(subA.type, () =>
+  console.log(`update eventType: ${subA.type} subA`),
 );
 
 // 订阅者 B 订阅 topic2
-PubSub.subscribe(
-  subB.type,
-  () => console.log(`update eventType: ${subB.type} subB`)
+PubSub.subscribe(subB.type, () =>
+  console.log(`update eventType: ${subB.type} subB`),
 );
 
 // 订阅者 C 订阅 topic1
-PubSub.subscribe(
-  subC.type,
-  () => console.log(`update eventType: ${subC.type} subC`)
+PubSub.subscribe(subC.type, () =>
+  console.log(`update eventType: ${subC.type} subC`),
 );
 
 // 发布 topic 通知，通知订阅者 A、C
@@ -108,4 +104,4 @@ update eventType: topic1 subC
 ## 参考资料
 
 1. [观察者模式与发布订阅模式真的不同，作者：vianem](https://juejin.im/post/5cd81a20e51d453b4558d858)
-2. [Microsoft: Publish/Subscribe](https://docs.microsoft.com/en-us/previous-versions/msp-n-p/ff649664(v=pandp.10))
+2. [Microsoft: Publish/Subscribe](<https://docs.microsoft.com/en-us/previous-versions/msp-n-p/ff649664(v=pandp.10)>)

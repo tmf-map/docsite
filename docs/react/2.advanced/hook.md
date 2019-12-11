@@ -3,7 +3,7 @@ title: Hook
 sidebar_label: Hook
 ---
 
-import Hint from '../../../src/components/Hint'
+import Hint from '../../../src/components/Hint';
 
 > Hook 是 React 16.8 的新增特性。它可以让你在不编写 class 的情况下使用 state 以及其他的 React 特性。
 
@@ -11,15 +11,15 @@ import Hint from '../../../src/components/Hint'
 
 Hook 的出现，就代表了它要解决一些 class 组件的缺陷或者不足，那么我们先来看看 class 组件有什么不足或者问题存在：
 
-| 问题                 | 解决方案     | 缺点                                     | Hook                        |
-| -------------------- | ------------ | ---------------------------------------- | --------------------------- |
-| 1.`this` 指向问题    | 匿名函数     | 每次都创建新的函数，子组件重复不必要渲染 | 函数无 `this` 指向问题      |
-|                      | `bind`       | 需要写很多跟逻辑、状态无关的代码         |                             |
-| 2.生命周期繁琐       | 无           |                                          | `useEffect` 将三者合体简化  |
-| 3.生命周期内逻辑臃肿 | 无           |                                          | 多个 `useEffect` 来细分逻辑 |
-| 4.逻辑难以复用       | 通过继承解决 | 不支持多继承                             | 自定义 Effect Hook          |
-|                      | 通过HOC解决  | 会增加额外的组件嵌套，也会有一些性能影响 |                             |
-|                      | 渲染属性     | 同上、层级臃肿、性能影响                 |                             |
+| 问题 | 解决方案 | 缺点 | Hook |
+| --- | --- | --- | --- |
+| 1.`this` 指向问题 | 匿名函数 | 每次都创建新的函数，子组件重复不必要渲染 | 函数无 `this` 指向问题 |
+|  | `bind` | 需要写很多跟逻辑、状态无关的代码 |  |
+| 2.生命周期繁琐 | 无 |  | `useEffect` 将三者合体简化 |
+| 3.生命周期内逻辑臃肿 | 无 |  | 多个 `useEffect` 来细分逻辑 |
+| 4.逻辑难以复用 | 通过继承解决 | 不支持多继承 | 自定义 Effect Hook |
+|  | 通过 HOC 解决 | 会增加额外的组件嵌套，也会有一些性能影响 |  |
+|  | 渲染属性 | 同上、层级臃肿、性能影响 |  |
 
 当然，Hook 是一把双刃剑，用的好自己能够达到效果，用的不好反而会降低开发效率和质量，那么我们接下来看看如用更好地使用 Hook 。
 
@@ -30,7 +30,7 @@ Hook 的出现，就代表了它要解决一些 class 组件的缺陷或者不�
 看一个例子，我们分解来看到底 state hook 做了什么：
 
 ```jsx
-import { useState } from 'react';
+import {useState} from 'react';
 
 function Example() {
   const [count, setCount] = useState(0);
@@ -38,9 +38,7 @@ function Example() {
   return (
     <div>
       <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>
-        Click me
-      </button>
+      <button onClick={() => setCount(count + 1)}>Click me</button>
     </div>
   );
 }
@@ -49,7 +47,7 @@ function Example() {
 ### 声明状态
 
 ```jsx
-import { useState } from 'react';
+import {useState} from 'react';
 
 function Example() {
   const [count, setCount] = useState(0);
@@ -71,26 +69,24 @@ function Example() {
 ### 更新状态
 
 ```jsx
-<button onClick={() => setCount(count + 1)}>
-  Click me
-</button>
+<button onClick={() => setCount(count + 1)}>Click me</button>
 ```
 
 当用户点击按钮时，我们调用 `setCount` 函数，这个函数接收的参数是修改过的新状态值。接下来的事情就交给 React 了，React 将会重新渲染我们的 `Example` 组件，并且使用的是更新后的新的状态，即 `count=1` 。这里我们要停下来思考一下， `Example` 本质上也是一个普通的函数，为什么它可以记住之前的状态？
 
 ### 多个状态
 
-首先，useState是可以多次调用的，所以我们完全可以这样写：
+首先，useState 是可以多次调用的，所以我们完全可以这样写：
 
 ```js
 function ExampleWithManyStates() {
   const [age, setAge] = useState(42);
   const [fruit, setFruit] = useState('banana');
-  const [todos, setTodos] = useState([{ text: 'Learn Hook' }]);
+  const [todos, setTodos] = useState([{text: 'Learn Hook'}]);
 }
 ```
 
-其次， `useState` 接收的初始值没有规定一定要是 `string/number/boolean` 这种简单数据类型，它完全**可以接收对象或者数组作为参数**。最后，React也给我们提供了一个 `useReducer` 的 hook ，如果你更喜欢 Redux 式的状态管理方案的话。
+其次， `useState` 接收的初始值没有规定一定要是 `string/number/boolean` 这种简单数据类型，它完全**可以接收对象或者数组作为参数**。最后，React 也给我们提供了一个 `useReducer` 的 hook ，如果你更喜欢 Redux 式的状态管理方案的话。
 
 <Hint type="warning">之前我们的 `this.setState` 做的是**合并状态**后返回一个新状态，而 `useState` 是直接**替换**老状态后返回新状态。</Hint>
 
@@ -98,26 +94,26 @@ function ExampleWithManyStates() {
 
 其实我们看 Hook 的“形态”，有点类似之前被官方否定掉的 Mixins 这种方案，都是提供一种“插拔式的功能注入”的能力。而 Mixins 之所以被否定，是因为**Mixins 机制是让多个 Mixins 共享一个对象的数据空间**，这样就很难确保不同 Mixins 依赖的状态不发生冲突。
 
-<Hint type="tip">每一个 hook 都是相互独立的，**不同组件调用同一个hook也能保证各自状态的独立性。**这就是两者的本质区别了。</Hint>
+<Hint type="tip">每一个 hook 都是相互独立的，**不同组件调用同一个 hook 也能保证各自状态的独立性。**这就是两者的本质区别了。</Hint>
 
 ### 怎么保证多个 useState 的相互独立
 
-还是看上面给出的 `ExampleWithManyStates` 例子，我们调用了三次` useState` ，每次我们传的参数只是一个值（如42，'banana'），我们根本没有告诉 React 这些值对应的 key 是哪个，那 React是怎么保证这三个 `useState` 找到它对应的 state 呢？
+还是看上面给出的 `ExampleWithManyStates` 例子，我们调用了三次`useState` ，每次我们传的参数只是一个值（如 42，'banana'），我们根本没有告诉 React 这些值对应的 key 是哪个，那 React 是怎么保证这三个 `useState` 找到它对应的 state 呢？
 
-<Hint type="tip">React是根据 `useState` 出现的顺序来定的。</Hint>
+<Hint type="tip">React 是根据 `useState` 出现的顺序来定的。</Hint>
 
 我们具体来看一下：
 
 ```js
-  //第一次渲染
-  useState(42);  //将age初始化为42
-  useState('banana');  //将fruit初始化为banana
-  useState([{ text: 'Learn Hook' }]); //...
+//第一次渲染
+useState(42); //将age初始化为42
+useState('banana'); //将fruit初始化为banana
+useState([{text: 'Learn Hook'}]); //...
 
-  //第二次渲染
-  useState(42);  //读取状态变量age的值（这时候传的参数42直接被忽略）
-  useState('banana');  //读取状态变量fruit的值（这时候传的参数banana直接被忽略）
-  useState([{ text: 'Learn Hook' }]); //...
+//第二次渲染
+useState(42); //读取状态变量age的值（这时候传的参数42直接被忽略）
+useState('banana'); //读取状态变量fruit的值（这时候传的参数banana直接被忽略）
+useState([{text: 'Learn Hook'}]); //...
 ```
 
 假如我们改一下代码：
@@ -126,13 +122,13 @@ function ExampleWithManyStates() {
 let showFruit = true;
 function ExampleWithManyStates() {
   const [age, setAge] = useState(42);
-  
-  if(showFruit) {
+
+  if (showFruit) {
     const [fruit, setFruit] = useState('banana');
     showFruit = false;
   }
 
-  const [todos, setTodos] = useState([{ text: 'Learn Hook' }]);
+  const [todos, setTodos] = useState([{text: 'Learn Hook'}]);
 }
 ```
 
@@ -140,14 +136,14 @@ function ExampleWithManyStates() {
 
 ```js
 //第一次渲染
-useState(42);  //将age初始化为42
-useState('banana');  //将fruit初始化为banana
-useState([{ text: 'Learn Hook' }]); //...
+useState(42); //将age初始化为42
+useState('banana'); //将fruit初始化为banana
+useState([{text: 'Learn Hook'}]); //...
 
 //第二次渲染
-useState(42);  //读取状态变量age的值（这时候传的参数42直接被忽略）
-// useState('banana');  
-useState([{ text: 'Learn Hook' }]); //读取到的却是状态变量fruit的值，导致报错
+useState(42); //读取状态变量age的值（这时候传的参数42直接被忽略）
+// useState('banana');
+useState([{text: 'Learn Hook'}]); //读取到的却是状态变量fruit的值，导致报错
 ```
 
 <Hint type="must">React 规定我们必须把 hook 写在函数的最外层，不能写在 `ifelse` 等条件语句当中，来确保 hook 的执行顺序一致。</Hint>
@@ -167,7 +163,7 @@ class Example extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      count: 0
+      count: 0,
     };
   }
 
@@ -183,7 +179,7 @@ class Example extends React.Component {
     return (
       <div>
         <p>You clicked {this.state.count} times</p>
-        <button onClick={() => this.setState({ count: this.state.count + 1 })}>
+        <button onClick={() => this.setState({count: this.state.count + 1})}>
           Click me
         </button>
       </div>
@@ -195,7 +191,7 @@ class Example extends React.Component {
 我们写的有状态组件，通常会产生很多的副作用（Side Effect），比如发起 ajax 请求获取数据，添加一些监听的注册和取消注册，手动修改 DOM 等等。**我们之前都把这些副作用的函数写在生命周期函数钩子里**。现在使用 hook 改写以上代码：
 
 ```jsx
-import { useState, useEffect } from 'react';
+import {useState, useEffect} from 'react';
 
 function Example() {
   const [count, setCount] = useState(0);
@@ -209,9 +205,7 @@ function Example() {
   return (
     <div>
       <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>
-        Click me
-      </button>
+      <button onClick={() => setCount(count + 1)}>Click me</button>
     </div>
   );
 }
@@ -267,7 +261,7 @@ useEffect(() => {
 
 ```jsx
 useEffect(() => {
-  console.log(`You clicked times`)
+  console.log(`You clicked times`);
   document.title = `You clicked times`;
 }, [props.time]);
 ```
@@ -287,7 +281,7 @@ useEffect(() => {
 怎么清除呢？看下面的例子：
 
 ```jsx
-import { useState, useEffect } from 'react';
+import {useState, useEffect} from 'react';
 
 function FriendStatus(props) {
   const [isOnline, setIsOnline] = useState(null);
@@ -413,12 +407,12 @@ useEffect(() => {
 
 当我们想在两个函数之间共享逻辑时，我们会把它提取到第三个函数中。而组件和 Hook 都是函数，所以也同样适用这种方式。
 
-我们将公共的部门提取出来，新建一个 `useFriendStatus` 的 Hook 专门用来判断某个id 是否在线。
+我们将公共的部门提取出来，新建一个 `useFriendStatus` 的 Hook 专门用来判断某个 id 是否在线。
 
 <Hint type="must">自定义 Hook 必须以 “use” 开头，不遵循的话，由于无法判断某个函数是否包含对其内部 Hook 的调用，React 将无法自动检查你的 Hook 是否违反了 [Hook 的规则](https://zh-hans.reactjs.org/docs/hooks-rules.html)。</Hint>
 
 ```jsx
-import { useState, useEffect } from 'react';
+import {useState, useEffect} from 'react';
 
 function useFriendStatus(friendID) {
   const [isOnline, setIsOnline] = useState(null);
@@ -438,7 +432,7 @@ function useFriendStatus(friendID) {
 }
 ```
 
- React 组件不同的是，自定义 Hook 不需要具有特殊的标识。我们可以自由的决定它的参数是什么，以及它应该返回什么（如果需要的话）。换句话说，它就像一个正常的函数，函数内部可以调用其他的 Hook。
+React 组件不同的是，自定义 Hook 不需要具有特殊的标识。我们可以自由的决定它的参数是什么，以及它应该返回什么（如果需要的话）。换句话说，它就像一个正常的函数，函数内部可以调用其他的 Hook。
 
 ### 使用自定义 Hook
 
@@ -462,9 +456,7 @@ function FriendListItem(props) {
   const isOnline = useFriendStatus(props.friend.id);
 
   return (
-    <li style={{ color: isOnline ? 'green' : 'black' }}>
-      {props.friend.name}
-    </li>
+    <li style={{color: isOnline ? 'green' : 'black'}}>{props.friend.name}</li>
   );
 }
 ```
@@ -481,7 +473,7 @@ function FriendListItem(props) {
 
 1. [React Hook 官方文档](https://zh-hans.reactjs.org/docs/hooks-intro.html)
 2. [呕心沥血，一文看懂 react hooks，作者：landluck](https://juejin.im/post/5d985deae51d4577f9285c2f)
-3. [30分钟精通React今年最劲爆的新特性—React Hooks，作者：zach5078](https://segmentfault.com/a/1190000016950339)
-4. [2019年了，整理了N个实用案例帮你快速迁移到React Hooks(收藏慢慢看系列)，作者：_sx_](https://juejin.im/post/5d594ea5518825041301bbcb#heading-52)
+3. [30 分钟精通 React 今年最劲爆的新特性—React Hooks，作者：zach5078](https://segmentfault.com/a/1190000016950339)
+4. [2019 年了，整理了 N 个实用案例帮你快速迁移到 React Hooks(收藏慢慢看系列)，作者：_sx_](https://juejin.im/post/5d594ea5518825041301bbcb#heading-52)
 5. [精读《useEffect 完全指南》，作者：黄子毅](https://juejin.im/post/5c9827745188250ff85afe50)
 6. [useEffect 源码解析](https://react.jokcy.me/book/hooks/hooks-use-effect.html)

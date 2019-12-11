@@ -3,8 +3,7 @@ title: Singleton
 sidebar_label: Singleton
 ---
 
-import Hint from '../../../src/components/Hint'
-import Img from '../../../src/components/Img'
+import Hint from '../../../src/components/Hint'; import Img from '../../../src/components/Img';
 
 ## What is singleton
 
@@ -18,9 +17,9 @@ Even if you don't know too much about singleton, I believe that you've used it. 
 
 ```js
 const foo = {
-  doSomethingA: function () {},
-  doSomethingB: function () {}
-}
+  doSomethingA: function() {},
+  doSomethingB: function() {},
+};
 ```
 
 Creating objects with object literals is common in JS. The above object encapsulates two methods of doing something in the form of object literals. Only one object(`foo`) is exposed globally, and when needed, it is simply a `foo.doSomethingA()` call. The `foo` object is the simplest singleton pattern. The way you create objects in JS is very flexible, allowing you to instantiate an object directly through object literals, whereas other object-oriented languages must instantiate using classes. So, `foo` here is already an instance, and the `let` and `const` feature in ES6 that does not allow repeated declarations ensures that `foo` cannot be assigned.
@@ -41,19 +40,19 @@ Here's how to transform the above `foo` object by **IIFE (Immediately Invoked Fu
 ```js
 let Singleton = (function(name) {
   let instance = null;
-  
+
   function init() {
-    this.name = name,
-    this.doSomething = function() {} // method
+    (this.name = name), (this.doSomething = function() {}); // method
   }
-  
+
   return function() {
-    if(!instance) {  // (i)
+    if (!instance) {
+      // (i)
       instance = new init();
     }
     return instance;
-  }
-})()
+  };
+})();
 ```
 
 The above `Singleton` is actually a **IIFE**, `instance` as the instance is initially assigned to `null`, `init` is actually a constructor, used to instantiate the object, the immediate execution of the function returns an anonymous function to determine whether the instance is created, only when `Singleton()` is called to instantiate the instance.
@@ -76,10 +75,10 @@ class Singleton {
     this.name = name;
   }
   // method
-  doSomething () {}
+  doSomething() {}
   //static method
   static getInstance(name) {
-    if(!this.instance) {
+    if (!this.instance) {
       this.instance = new Singleton(name);
     }
     return this.instance;
@@ -89,7 +88,7 @@ class Singleton {
 
 ```js
 let instanceA = Singleton.getInstance('');
-let instanceB = Singleton.getInstance('')
+let instanceB = Singleton.getInstance('');
 
 console.log(instanceA === instanceB); //true
 ```
@@ -113,23 +112,22 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 class Backdrop extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props);
     this.state = {
-      hasExisted: !!document.getElementsByClassName('dialog__backdrop')[0]
-    }
+      hasExisted: !!document.getElementsByClassName('dialog__backdrop')[0],
+    };
   }
   handleClick = () => {
     this.props.onClick && this.props.onClick();
-  }
-  render () {
-    return !this.state.hasExisted ? ReactDOM.createPortal(
-      <div
-        className="dialog__backdrop"
-        onClick={this.handleClick}
-      />,
-      document.body
-    ) : null;
+  };
+  render() {
+    return !this.state.hasExisted
+      ? ReactDOM.createPortal(
+          <div className="dialog__backdrop" onClick={this.handleClick} />,
+          document.body,
+        )
+      : null;
   }
 }
 

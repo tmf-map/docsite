@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import Heading from './Heading';
 import styles from '../pages/index.module.css';
 
-function Section({ who, company, position, description, mirror }) {
+function Section({who, company, position, description, mirror}) {
   return (
     <div
       className={classNames(
@@ -12,9 +12,8 @@ function Section({ who, company, position, description, mirror }) {
         styles['border-dashed'],
         mirror
           ? styles['border-disable-top-right']
-          : styles['border-disable-bottom-left']
-      )}
-    >
+          : styles['border-disable-bottom-left'],
+      )}>
       <div
         className={classNames(
           'text--center',
@@ -22,9 +21,8 @@ function Section({ who, company, position, description, mirror }) {
           styles['border-gradient'],
           mirror
             ? styles['border-disable-bottom-left']
-            : styles['border-disable-top-right']
-        )}
-      >
+            : styles['border-disable-top-right'],
+        )}>
         <h2>{who}</h2>
         <p>
           <b>{company}</b>
@@ -32,8 +30,10 @@ function Section({ who, company, position, description, mirror }) {
           {position}
         </p>
         <p
-          className={classNames(styles.text, styles['testimonial-description'])}
-        >
+          className={classNames(
+            styles.text,
+            styles['testimonial-description'],
+          )}>
           {description}
         </p>
       </div>
@@ -48,9 +48,8 @@ export default function Overview() {
         className={classNames(
           styles.centered,
           styles.text,
-          styles['heading-helper']
-        )}
-      >
+          styles['heading-helper'],
+        )}>
         The technology we are exploring
       </p>
       <Heading>Overview</Heading>

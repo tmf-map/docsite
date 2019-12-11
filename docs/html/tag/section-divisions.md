@@ -20,9 +20,17 @@ sidebar_label: 内容切分
 ```jsx live
 <div>
   <h1>Ways to make your cat happy</h1>
-  <p>You have a <span>mini-lion</span> at home and you want to make it as happy as possible.</p>
-  <hr/>
+  <p>
+    You have a <span>mini-lion</span> at home and you want to make it as happy
+    as possible.
+  </p>
+  <hr />
   <h2>Feed your cat well</h2>
-  <p>The right diet is <span>extremely</span> important for the wellbeing of your cat.<br/>Obesity is a common source of problems among domesticated animals.</p>
+  <p>
+    The right diet is <span>extremely</span> important for the wellbeing of your
+    cat.
+    <br />
+    Obesity is a common source of problems among domesticated animals.
+  </p>
 </div>
 ```

@@ -4,15 +4,14 @@ title: 状态
 sidebar_label: 状态
 ---
 
-import Hint from '../../../src/components/Hint'
-import Img from '../../../src/components/Img'
+import Hint from '../../../src/components/Hint'; import Img from '../../../src/components/Img';
 
 React 的状态包括组件的外部状态（props）和组件的内部状态（state），二者发生改变的时候都会更新组件。
 
 ## state v.s. props
 
-* `state` 是组件自身的状态，组件自己维护，也可以从父组件传递而来。
-* `props` 是传递来的状态，可以是从父组件传递而来，也可以是组件自身绑定的属性。
+- `state` 是组件自身的状态，组件自己维护，也可以从父组件传递而来。
+- `props` 是传递来的状态，可以是从父组件传递而来，也可以是组件自身绑定的属性。
 
 可以通过 ES2018 的对象扩展运算符，将父组件的信息以更简洁的方式快速地传递给子组件：
 
@@ -24,10 +23,9 @@ React 的状态包括组件的外部状态（props）和组件的内部状态（
 
 <Hint type="best">请只传递 component 需要的 props，不要滥用。传得太多，或者层次传得太深，都会加重 `shouldComponentUpdate` 里面的数据比较负担，因此请慎用 spread attributes。</Hint>
 
-
 ## prop-types
 
-prop-types用来检查组件的属性，当你给属性传递了无效值时，JavsScript 控制台将会打印警告。出于性能原因，prop-types 只在**开发模式**下进行检查。
+prop-types 用来检查组件的属性，当你给属性传递了无效值时，JavsScript 控制台将会打印警告。出于性能原因，prop-types 只在**开发模式**下进行检查。
 
 ```text
 prop-types // 包名
@@ -35,8 +33,7 @@ propTypes // 组件属性名
 PropTypes // 类名
 ```
 
-<Hint type="warning">命名，尤其是后面两个p的大小写</Hint>
-
+<Hint type="warning">命名，尤其是后面两个 p 的大小写</Hint>
 
 ## defaultProps
 
@@ -53,30 +50,30 @@ class Example extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      count: 0
+      count: 0,
     };
   }
-  
+
   componentDidMount() {
     this.setState({count: this.state.count + 1});
-    console.log(this.state.count);    // 第 1 次 log
+    console.log(this.state.count); // 第 1 次 log
 
     this.setState({count: this.state.count + 1});
-    console.log(this.state.count);    // 第 2 次 log
+    console.log(this.state.count); // 第 2 次 log
 
     setTimeout(() => {
       this.setState({count: this.state.count + 1});
-      console.log(this.state.count);  // 第 3 次 log
+      console.log(this.state.count); // 第 3 次 log
 
       this.setState({count: this.state.count + 1});
-      console.log(this.state.count);  // 第 4 次 log
+      console.log(this.state.count); // 第 4 次 log
     }, 0);
   }
 
   render() {
     return null;
   }
-};
+}
 ```
 
 最后结果是 `0 0 2 3`
@@ -113,11 +110,12 @@ this.setState({count: state.count + 1});
 
 ```js
 // 假设 state.count === 0
-Object.assign(state,
+Object.assign(
+  state,
   {count: state.count + 1},
   {count: state.count + 1},
-  {count: state.count + 1}
-)
+  {count: state.count + 1},
+);
 // {count: 1}
 ```
 
@@ -131,14 +129,14 @@ setState(updater[, callback])
 
 ```js
 this.setState((prevState, props) => ({
-  count: prevState.count + 1
-}))
+  count: prevState.count + 1,
+}));
 this.setState((prevState, props) => ({
-  count: prevState.count + 1
-}))
+  count: prevState.count + 1,
+}));
 this.setState((prevState, props) => ({
-  count: prevState.count + 1
-}))
+  count: prevState.count + 1,
+}));
 // {count: 3}
 ```
 
@@ -150,8 +148,8 @@ function reducer(state, action) {
     case 'SET_NAME':
       return {
         ...state,
-        name: action.payload.name
-      }
+        name: action.payload.name,
+      };
     // ...
   }
 }
@@ -189,7 +187,7 @@ enqueueSetState: function(publicInstance, partialState) {
   if (!internalInstance) {
     return
   }
-  
+
   // 更新队列合并操作
   var queue = internalInstance._pendingStateQueue || (internalInstance._pendingStateQueue=[])
   queue.push(partialState)
@@ -201,7 +199,7 @@ performUpdateIfNecessary: function(transaction) {
   if (this._pendingElement != null) {
     ReactReconciler.receiveComponent(this, this._pendingElement, transaction, this._context)
   }
-  
+
   if (this._pendingStateQueue != null || this._pendingForceUpdate) {
     this.updateComponent(transaction, this._currentElement, this._currentElement,
       this._context, this._context)
@@ -243,4 +241,4 @@ function enqueueUpdate(component) {
 ## 参考资料
 
 1. [深入 setState 机制, by sisterAn](https://github.com/sisterAn/blog/issues/26)
-1. [揭密React setState, by 黄qiong](https://imweb.io/topic/5b189d04d4c96b9b1b4c4ed6)
+1. [揭密 React setState, by 黄 qiong](https://imweb.io/topic/5b189d04d4c96b9b1b4c4ed6)

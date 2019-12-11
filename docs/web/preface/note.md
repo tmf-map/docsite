@@ -5,7 +5,7 @@ sidebar_label: 说明
 
 ## 注解说明
 
-import Hint from '../../../src/components/Hint'
+import Hint from '../../../src/components/Hint';
 
 <Hint type="best">最好遵守，不遵守也不会出错</Hint>
 

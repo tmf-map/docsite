@@ -14,7 +14,7 @@ sidebar_label: 浏览器信息
 下面是 Chrome 浏览器的`userAgent`。
 
 ```javascript
-navigator.userAgent
+navigator.userAgent;
 // "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.57 Safari/537.36"
 ```
 
@@ -35,7 +35,7 @@ if (/mobi/i.test(ua)) {
 如果想要识别所有移动设备的浏览器，可以测试更多的特征字符串。
 
 ```javascript
-/mobi|android|touch|mini/i.test(ua)
+/mobi|android|touch|mini/i.test(ua);
 ```
 
 ### plugins
@@ -58,7 +58,7 @@ for (var i = 0; i < pluginsLength; i++) {
 `navigator.platform`属性返回用户的操作系统信息，比如`MacIntel`、`Win32`、`Linux x86_64`等 。
 
 ```javascript
-navigator.platform
+navigator.platform;
 // "Linux x86_64"
 ```
 
@@ -67,7 +67,7 @@ navigator.platform
 `navigator.onLine`属性返回一个布尔值，表示用户当前在线还是离线（浏览器断线）。
 
 ```javascript
-navigator.onLine // true
+navigator.onLine; // true
 ```
 
 有时，浏览器可以连接局域网，但是局域网不能连通外网。这时，有的浏览器的`onLine`属性会返回`true`，所以不能假定只要是`true`，用户就一定能访问互联网。不过，如果是`false`，可以断定用户一定离线。
@@ -75,8 +75,12 @@ navigator.onLine // true
 用户变成在线会触发`online`事件，变成离线会触发`offline`事件，可以通过`window.ononline`和`window.onoffline`指定这两个事件的回调函数。
 
 ```javascript
-window.addEventListener('offline', function(e) { console.log('offline'); });
-window.addEventListener('online', function(e) { console.log('online'); });
+window.addEventListener('offline', function(e) {
+  console.log('offline');
+});
+window.addEventListener('online', function(e) {
+  console.log('online');
+});
 ```
 
 ### language, languages
@@ -84,13 +88,13 @@ window.addEventListener('online', function(e) { console.log('online'); });
 `navigator.language`属性返回一个字符串，表示浏览器的首选语言。该属性只读。
 
 ```javascript
-navigator.language // "en"
+navigator.language; // "en"
 ```
 
 `navigator.languages`属性返回一个数组，表示用户可以接受的语言。`navigator.language`总是这个数组的第一个成员。HTTP 请求头信息的`Accept-Language`字段，就来自这个数组。
 
 ```javascript
-navigator.languages  // ["en-US", "en", "zh-CN", "zh", "zh-TW"]
+navigator.languages; // ["en-US", "en", "zh-CN", "zh", "zh-TW"]
 ```
 
 如果这个属性发生变化，就会在`window`对象上触发`languagechange`事件。
@@ -112,7 +116,7 @@ Geolocation 对象提供下面三个方法。
 `navigator.cookieEnabled`属性返回一个布尔值，表示浏览器的 Cookie 功能是否打开。
 
 ```javascript
-navigator.cookieEnabled // true
+navigator.cookieEnabled; // true
 ```
 
 注意，这个属性反映的是浏览器总的特性，与是否储存某个具体的网站的 Cookie 无关。用户可以设置某个网站不得储存 Cookie，这时`cookieEnabled`返回的还是`true`。
@@ -122,7 +126,7 @@ navigator.cookieEnabled // true
 `navigator.javaEnabled()`方法返回一个布尔值，表示浏览器是否能运行 Java Applet 小程序。
 
 ```javascript
-navigator.javaEnabled() // false
+navigator.javaEnabled(); // false
 ```
 
 ### sendBeacon()
@@ -131,4 +135,4 @@ navigator.javaEnabled() // false
 
 ## 参考资料
 
-1. [JavaScript 标准参考教程（alpha）：window对象，作者：阮一峰](http://javascript.ruanyifeng.com/bom/window.html)
+1. [JavaScript 标准参考教程（alpha）：window 对象，作者：阮一峰](http://javascript.ruanyifeng.com/bom/window.html)

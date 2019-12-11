@@ -4,7 +4,7 @@ title: Selector
 sidebar_label: Selector
 ---
 
-import Hint from '../../../src/components/Hint'
+import Hint from '../../../src/components/Hint';
 
 ## 什么是 selector？
 
@@ -12,9 +12,7 @@ mapStateToProps 中从状态树获取数据的方法也被叫做 selector，它�
 
 <Hint type="best">在`mapStateToProps`中尽量避免使用`_.get`去拿数据，从状态树推导数据的方法尽可能地封装到 selector 里。</Hint>
 
-
 <Hint type="best">在所有地方使用 selector，即使是在一个细小的位置。这样的好处是你很容易在多个 selector 中发现重复的逻辑，抽出共用的方法。即使是从状态树上直接获取的状态（非推导状态），如果有多个地方在使用，也应当放在 selector 中，避免重复逻辑。</Hint>
-
 
 ## reselect 计算缓存
 
@@ -25,28 +23,27 @@ reselect 提供 `createSelector` 函数来创建可记忆的 selector。`createS
 示例：
 
 ```javascript
-import { createSelector } from 'reselect';
-import { get } from 'lodash';
+import {createSelector} from 'reselect';
+import {get} from 'lodash';
 
 const getTaxSubtotal = proforma => get(proforma, 'ubl.TaxTotal[0].TaxSubtotal');
 const getTaxAmount = proforma => get(proforma, 'ubl.TaxTotal[0].TaxAmount');
 
 export const getTaxTotal = createSelector(
-    [getTaxSubtotal, getTaxAmount],
-    (taxSubtotal, taxAmount) => ({
-        taxAmount,
-        taxSubtotal:
-            taxSubtotal &&
-            taxSubtotal.map(item => ({
-                taxableAmount: get(item, 'TaxableAmount.value'),
-                taxScheme: get(item, 'TaxCategory.TaxScheme.Name.value'),
-                taxAmount: get(item, 'TaxAmount.value')
-            }))
-    })
+  [getTaxSubtotal, getTaxAmount],
+  (taxSubtotal, taxAmount) => ({
+    taxAmount,
+    taxSubtotal:
+      taxSubtotal &&
+      taxSubtotal.map(item => ({
+        taxableAmount: get(item, 'TaxableAmount.value'),
+        taxScheme: get(item, 'TaxCategory.TaxScheme.Name.value'),
+        taxAmount: get(item, 'TaxAmount.value'),
+      })),
+  }),
 );
 ```
 
 弊端：
 
-reselect带来计算性能提升的同时，也增加了一些 input-selectors 和缓存数据，使得 selector 的逻辑变得更为琐碎，嵌套的逻辑也相应增加，可维护性在某种程度上会受到影响，在实际使用中要在衍生数据的计算性能和可维护性上做一个权衡。
-
+reselect 带来计算性能提升的同时，也增加了一些 input-selectors 和缓存数据，使得 selector 的逻辑变得更为琐碎，嵌套的逻辑也相应增加，可维护性在某种程度上会受到影响，在实际使用中要在衍生数据的计算性能和可维护性上做一个权衡。

@@ -4,7 +4,7 @@ title: 数组中只出现一次的数字
 sidebar_label: 数组中只出现一次的数字
 ---
 
-- 题源：《剑指Offer: 面试题 56》P275
+- 题源：《剑指 Offer: 面试题 56》P275
 - 在线：[LeetCode: 136](https://leetcode-cn.com/problems/single-number)
 
 ## 题目
@@ -20,7 +20,7 @@ sidebar_label: 数组中只出现一次的数字
 输出: 1
 ```
 
-示例 2:
+示例  2:
 
 ```text
 输入: [4,1,2,1,2]

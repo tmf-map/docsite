@@ -3,7 +3,7 @@ title: History 路由
 sidebar_label: History 路由
 ---
 
-import Hint from '../../../src/components/Hint'
+import Hint from '../../../src/components/Hint';
 
 `window.history` 表示当前窗口的浏览历史。
 
@@ -15,7 +15,7 @@ import Hint from '../../../src/components/Hint'
 
 ```javascript
 // 当前窗口访问过多少个网页
-window.history.length // 1
+window.history.length; // 1
 ```
 
 ### history.state
@@ -25,7 +25,7 @@ history 堆栈最上层的状态值。
 ```javascript
 // history 对象的当前状态
 // 通常是 undefined，即未设置
-window.history.state // undefined
+window.history.state; // undefined
 ```
 
 ## 方法
@@ -59,7 +59,7 @@ history.go(0); // 刷新当前页面
 `history.pushState()`方法用于在历史中添加一条记录。
 
 ```javascript
-window.history.pushState(state, title, url)
+window.history.pushState(state, title, url);
 ```
 
 该方法接受三个参数，依次为：
@@ -71,7 +71,7 @@ window.history.pushState(state, title, url)
 假定当前网址是`example.com/1.html`，使用`pushState()`方法在浏览记录（history 对象）中添加一个新记录。
 
 ```javascript
-var stateObj = { foo: 'bar' };
+var stateObj = {foo: 'bar'};
 history.pushState(stateObj, 'page 2', '2.html');
 ```
 
@@ -82,9 +82,9 @@ history.pushState(stateObj, 'page 2', '2.html');
 使用该方法之后，就可以用`history.state`属性读出状态对象。
 
 ```javascript
-var stateObj = { foo: 'bar' };
+var stateObj = {foo: 'bar'};
 history.pushState(stateObj, 'page 2', '2.html');
-history.state // {foo: "bar"}
+history.state; // {foo: "bar"}
 ```
 
 如果`pushState`的 URL 参数设置了一个新的锚点值（即`hash`），并不会触发`hashchange`事件。反过来，如果 URL 的锚点值变了，则会在 history 对象创建一条浏览记录。
@@ -106,7 +106,7 @@ history.pushState(null, '', 'https://twitter.com/hello');
 假定当前网页是`example.com/example.html`。
 
 ```javascript
-history.pushState({page: 1}, 'title 1', '?page=1')
+history.pushState({page: 1}, 'title 1', '?page=1');
 // URL 显示为 http://example.com/example.html?page=1
 
 history.pushState({page: 2}, 'title 2', '?page=2');
@@ -115,13 +115,13 @@ history.pushState({page: 2}, 'title 2', '?page=2');
 history.replaceState({page: 3}, 'title 3', '?page=3');
 // URL 显示为 http://example.com/example.html?page=3
 
-history.back()
+history.back();
 // URL 显示为 http://example.com/example.html?page=1
 
-history.back()
+history.back();
 // URL 显示为 http://example.com/example.html
 
-history.go(2)
+history.go(2);
 // URL 显示为 http://example.com/example.html?page=3
 ```
 
@@ -136,7 +136,7 @@ history.go(2)
 使用的时候，可以为`popstate`事件指定回调函数。
 
 ```javascript
-window.onpopstate = function (event) {
+window.onpopstate = function(event) {
   console.log('location: ' + document.location);
   console.log('state: ' + JSON.stringify(event.state));
 };
@@ -172,8 +172,8 @@ var currentState = history.state;
 ```html
 <body>
   <ul>
-    <li><a href='/home'>home</a></li>
-    <li><a href='/about'>about</a></li>
+    <li><a href="/home">home</a></li>
+    <li><a href="/about">about</a></li>
 
     <div id="routeView"></div>
   </ul>
@@ -182,46 +182,48 @@ var currentState = history.state;
 
 ```js
 // 页面加载完不会触发 hashchange，这里主动触发一次 hashchange 事件
-window.addEventListener('DOMContentLoaded', onLoad)
+window.addEventListener('DOMContentLoaded', onLoad);
 // 监听路由变化
-window.addEventListener('popstate', onPopState)
+window.addEventListener('popstate', onPopState);
 
 // 路由视图
-var routerView = null
+var routerView = null;
 
-function onLoad () {
-  routerView = document.querySelector('#routeView')
-  onPopState()
+function onLoad() {
+  routerView = document.querySelector('#routeView');
+  onPopState();
 
   // 拦截 <a> 标签点击事件默认行为， 点击时使用 pushState 修改 URL并更新手动 UI，从而实现点击链接更新 URL 和 UI 的效果。
-  var linkList = document.querySelectorAll('a[href]')
-  linkList.forEach(el => el.addEventListener('click', function (e) {
-    e.preventDefault()
-    history.pushState(null, '', el.getAttribute('href'))
-    onPopState()
-  }))
+  var linkList = document.querySelectorAll('a[href]');
+  linkList.forEach(el =>
+    el.addEventListener('click', function(e) {
+      e.preventDefault();
+      history.pushState(null, '', el.getAttribute('href'));
+      onPopState();
+    }),
+  );
 }
 
 // 路由变化时，根据路由渲染对应 UI
-function onPopState () {
+function onPopState() {
   switch (window.location.pathname) {
     case '/home':
-      routerView.innerHTML = 'Home'
-      return
+      routerView.innerHTML = 'Home';
+      return;
     case '/about':
-      routerView.innerHTML = 'About'
-      return
+      routerView.innerHTML = 'About';
+      return;
     default:
-      return
+      return;
   }
 }
 ```
 
 演示：https://codepen.io/ustc-han/pen/ZgOaNj
 
-结合React框架的路由实现：https://github.com/whinc/web-router-principle/tree/master/react
+结合 React 框架的路由实现：https://github.com/whinc/web-router-principle/tree/master/react
 
 ## 参考资料
 
 1. [JavaScript 教程: History 对象，作者：阮一峰](https://wangdoc.com/javascript/bom/history.html)
-2. [面试官: 你了解前端路由吗?，作者：寻找海蓝96](https://juejin.im/post/5ac61da66fb9a028c71eae1b)
+2. [面试官: 你了解前端路由吗?，作者：寻找海蓝 96](https://juejin.im/post/5ac61da66fb9a028c71eae1b)

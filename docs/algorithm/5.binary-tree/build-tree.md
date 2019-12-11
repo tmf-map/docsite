@@ -4,7 +4,7 @@ title: 重建二叉树
 sidebar_label: 重建二叉树
 ---
 
-- 题源：《剑指Offer: 面试题 7》P62
+- 题源：《剑指 Offer: 面试题 7》P62
 - 在线：[LeetCode: 105](https://leetcode-cn.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/)
 
 ## 题目
@@ -47,14 +47,14 @@ sidebar_label: 重建二叉树
  * @return {TreeNode}
  */
 function buildTree(preorder, inorder) {
-    if (preorder.length !== inorder.length || inorder.length === 0) {
-        return null;
-    }
-    let root = new TreeNode(preorder[0]);
-    let i = inorder.indexOf(preorder[0]);
-    root.left = buildTree(preorder.slice(1, i + 1), inorder.slice(0, i));
-    root.right = buildTree(preorder.slice(i + 1), inorder.slice(i + 1));
-    return root;
+  if (preorder.length !== inorder.length || inorder.length === 0) {
+    return null;
+  }
+  let root = new TreeNode(preorder[0]);
+  let i = inorder.indexOf(preorder[0]);
+  root.left = buildTree(preorder.slice(1, i + 1), inorder.slice(0, i));
+  root.right = buildTree(preorder.slice(i + 1), inorder.slice(i + 1));
+  return root;
 }
 ```
 

@@ -3,8 +3,7 @@ title: Observer
 sidebar_label: Observer
 ---
 
-import Hint from '../../../src/components/Hint'
-import Img from '../../../src/components/Img'
+import Hint from '../../../src/components/Hint'; import Img from '../../../src/components/Img';
 
 ## 定义
 
@@ -16,7 +15,7 @@ import Img from '../../../src/components/Img'
 
 ## 场景
 
-我们去餐厅吃饭的时候，经常会遇到需要排队叫号的时候。我们可以把餐厅看作 Subject(被观察者)，把拿号排队的客人看作是 Observer。当餐厅有位置的时候，餐厅会出来通知所有客人，到100号桌吃饭啦。这时排队的客人们都会看看自己手上的号，确定是否到自己吃饭了。
+我们去餐厅吃饭的时候，经常会遇到需要排队叫号的时候。我们可以把餐厅看作 Subject(被观察者)，把拿号排队的客人看作是 Observer。当餐厅有位置的时候，餐厅会出来通知所有客人，到 100 号桌吃饭啦。这时排队的客人们都会看看自己手上的号，确定是否到自己吃饭了。
 
 <Hint type="tip">可以把餐厅看作 Subject ，拿号排队的客人看作是 Observer 。</Hint>
 
@@ -31,40 +30,40 @@ import Img from '../../../src/components/Img'
 ## 实现
 
 ```js
-function createSubject () {
+function createSubject() {
   const observers = [];
   return {
-    addObserver: function (ob) {
+    addObserver: function(ob) {
       observers.push(ob);
     },
-    notify: function () {
+    notify: function() {
       for (let ob of observers) {
         if (typeof ob.update === 'function') {
           ob.update(); // 所有的观察者必须要有这个函数
         }
       }
-    }
+    },
   };
-};
+}
 ```
 
 ```js
-const Subject = createSubject()
+const Subject = createSubject();
 
 let subA = {
   update: () => {
     console.log('updateSubA');
-  }
+  },
 };
 let subB = {
   update: () => {
     console.log('updateSubB');
-  }
+  },
 };
 
-Subject.addObserver(subA);    //添加观察者subA
-Subject.addObserver(subB);    //添加观察者subB
-Subject.notify();       //通知所有观察者
+Subject.addObserver(subA); //添加观察者subA
+Subject.addObserver(subB); //添加观察者subB
+Subject.notify(); //通知所有观察者
 ```
 
 ```text

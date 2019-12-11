@@ -3,7 +3,7 @@ title: 节点增删改查
 sidebar_label: 节点增删改查
 ---
 
-import Hint from '../../../src/components/Hint'
+import Hint from '../../../src/components/Hint';
 
 ## 查找节点
 
@@ -66,7 +66,7 @@ document.querySelectorAll('DIV, A, SCRIPT');
 
 ```js
 let paras = document.getElementsByTagName('p');
-paras instanceof HTMLCollection // true
+paras instanceof HTMLCollection; // true
 ```
 
 上面代码返回当前文档的所有 p 元素节点。
@@ -93,7 +93,7 @@ let allElements = document.getElementsByTagName('*');
 let elements = document.getElementsByClassName(names);
 ```
 
-由于 class 是保留字，所以 JavaScript 一律使用 `className` 表示 CSS 的class。
+由于 class 是保留字，所以 JavaScript 一律使用 `className` 表示 CSS 的 class。
 
 参数可以是多个 class，它们之间使用空格分隔。
 
@@ -103,16 +103,16 @@ let elements = document.getElementsByClassName('foo bar');
 
 上面代码返回同时具有 foo 和 bar 两个 class 的元素，foo 和 bar 的顺序不重要。
 
-<Hint type="warning">正常模式下，CSS 的 class 是大小写敏感的。（quirks mode下，大小写不敏感。）</Hint>
+<Hint type="warning">正常模式下，CSS 的 class 是大小写敏感的。（quirks mode 下，大小写不敏感。）</Hint>
 
 ### document.getElementsByName()
 
-`document.getElementsByName` 方法用于选择拥有 `name` 属性的 HTML 元素（比如 `<form>`、`<radio>`、`<img>`、`<frame>`、`<embed>`和 `<object>` 等），返回一个类似数组的的对象（NodeList实例），因为 name 属性相同的元素可能不止一个。
+`document.getElementsByName` 方法用于选择拥有 `name` 属性的 HTML 元素（比如 `<form>`、`<radio>`、`<img>`、`<frame>`、`<embed>`和 `<object>` 等），返回一个类似数组的的对象（NodeList 实例），因为 name 属性相同的元素可能不止一个。
 
 ```js
 // 表单为 <form name="x"></form>
 var forms = document.getElementsByName('x');
-forms[0].tagName // "FORM"
+forms[0].tagName; // "FORM"
 ```
 
 ### document.getElementById()
@@ -123,14 +123,13 @@ forms[0].tagName // "FORM"
 var elem = document.getElementById('para1');
 ```
 
-<Hint type="warning">该方法的参数是大小写敏感的。</Hint>
-<Hint type="warning">`Element` 后面没有 `s` 。</Hint>
+<Hint type="warning">该方法的参数是大小写敏感的。</Hint> <Hint type="warning">`Element` 后面没有 `s` 。</Hint>
 
 `document.getElementById` 方法与 `document.querySelector` 方法都能获取元素节点，不同之处是 `document.querySelector` 方法的参数使用 CSS 选择器语法，`document.getElementById` 方法的参数是元素的 id 属性值。
 
 ```js
-document.getElementById('myElement')
-document.querySelector('#myElement')
+document.getElementById('myElement');
+document.querySelector('#myElement');
 ```
 
 上面代码中，两个方法都能选中 id 为 myElement 的元素
@@ -170,7 +169,7 @@ var element = document
 var newDiv = document.createElement('div');
 ```
 
-`createElement` 方法的参数为元素的标签名，即元素节点的 `tagName` 属性，对于 HTML 网页大小写不敏感，即参数为div或DIV返回的是同一种节点。如果参数里面包含尖括号（即<和>）会报错。
+`createElement` 方法的参数为元素的标签名，即元素节点的 `tagName` 属性，对于 HTML 网页大小写不敏感，即参数为 div 或 DIV 返回的是同一种节点。如果参数里面包含尖括号（即<和>）会报错。
 
 ```js
 document.createElement('<div>');
@@ -185,7 +184,7 @@ document.createElement('foo');
 
 ### document.createTextNode()
 
-`document.createTextNode` 方法用来生成文本节点（Text实例），并返回该节点。它的参数是文本节点的内容。
+`document.createTextNode` 方法用来生成文本节点（Text 实例），并返回该节点。它的参数是文本节点的内容。
 
 ```js
 var newDiv = document.createElement('div');
@@ -193,14 +192,14 @@ var newContent = document.createTextNode('Hello');
 newDiv.appendChild(newContent);
 ```
 
-上面代码新建一个div节点和一个文本节点，然后将文本节点插入div节点。
+上面代码新建一个 div 节点和一个文本节点，然后将文本节点插入 div 节点。
 
 这个方法可以确保返回的节点，被浏览器当作文本渲染，而不是当作 HTML 代码渲染。因此，可以用来展示用户的输入，避免 XSS 攻击。
 
 ```js
 var div = document.createElement('div');
 div.appendChild(document.createTextNode('<span>Foo & bar</span>'));
-console.log(div.innerHTML)
+console.log(div.innerHTML);
 // &lt;span&gt;Foo &amp; bar&lt;/span&gt;
 ```
 
@@ -213,7 +212,7 @@ function escapeHtml(str) {
   var div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
-};
+}
 
 var userWebsite = '" onmouseover="alert(\'derp\')" "';
 var profileLink = '<a href="' + escapeHtml(userWebsite) + '">Bob</a>';
@@ -226,13 +225,13 @@ div.innerHTML = profileLink;
 
 ### document.createAttribute()
 
-`document.createAttribute` 方法生成一个新的属性节点（Attr实例），并返回它。
+`document.createAttribute` 方法生成一个新的属性节点（Attr 实例），并返回它。
 
 ```js
 var attribute = document.createAttribute(name);
 ```
 
-`document.createAttribute` 方法的参数name，是属性的名称。
+`document.createAttribute` 方法的参数 name，是属性的名称。
 
 ```js
 var node = document.getElementById('div1');
@@ -259,24 +258,24 @@ var CommentNode = document.createComment(data);
 
 ### document.createDocumentFragment()
 
-`document.createDocumentFragment` 方法生成一个空的文档片段对象（DocumentFragment实例）。
+`document.createDocumentFragment` 方法生成一个空的文档片段对象（DocumentFragment 实例）。
 
 ```js
 var docFragment = document.createDocumentFragment();
 ```
 
-DocumentFragment 是一个存在于内存的 DOM 片段，不属于当前文档，常常用来生成一段较复杂的 DOM 结构，然后再插入当前文档。这样做的好处在于，因为DocumentFragment不属于当前文档，对它的任何改动，都不会引发网页的重新渲染，比直接修改当前文档的 DOM 有更好的性能表现。
+DocumentFragment 是一个存在于内存的 DOM 片段，不属于当前文档，常常用来生成一段较复杂的 DOM 结构，然后再插入当前文档。这样做的好处在于，因为 DocumentFragment 不属于当前文档，对它的任何改动，都不会引发网页的重新渲染，比直接修改当前文档的 DOM 有更好的性能表现。
 
 ```js
 var docfrag = document.createDocumentFragment();
 
-[1, 2, 3, 4].forEach(function (e) {
+[1, 2, 3, 4].forEach(function(e) {
   var li = document.createElement('li');
   li.textContent = e;
   docfrag.appendChild(li);
 });
 
-var element  = document.getElementById('ul');
+var element = document.getElementById('ul');
 element.appendChild(docfrag);
 ```
 
@@ -348,7 +347,7 @@ el.remove();
 // HTML代码为
 // <div id="div1" align="left">
 var div = document.getElementById('div1');
-div.getAttribute('align') // "left"
+div.getAttribute('align'); // "left"
 ```
 
 ### Element.setAttribute()
@@ -399,26 +398,26 @@ document.getElementById('div1').removeAttribute('align');
 
 ### Element.className
 
-className属性用来读写当前元素节点的class属性。它的值是一个字符串，每个class之间用空格分割。
+className 属性用来读写当前元素节点的 class 属性。它的值是一个字符串，每个 class 之间用空格分割。
 
-classList属性返回一个类似数组的对象，当前元素节点的每个class就是这个对象的一个成员。
+classList 属性返回一个类似数组的对象，当前元素节点的每个 class 就是这个对象的一个成员。
 
 ```js
 // HTML 代码 <div class="one two three" id="myDiv"></div>
 var div = document.getElementById('myDiv');
 
-div.className
+div.className;
 // "one two three"
 ```
 
-上面代码中，className属性返回一个空格分隔的字符串。
+上面代码中，className 属性返回一个空格分隔的字符串。
 
 ### Element.classList
 
-classList 属性指向一个类似数组的对象，该对象的length属性（只读）返回当前元素的class数量。
+classList 属性指向一个类似数组的对象，该对象的 length 属性（只读）返回当前元素的 class 数量。
 
 ```js
-div.classList
+div.classList;
 // {
 //   0: "one"
 //   1: "two"
@@ -448,7 +447,7 @@ div.classList.item(0); // 返回第一个 Class
 div.classList.toString();
 ```
 
-下面比较一下，className和classList在添加和删除某个 class 时的写法。
+下面比较一下，className 和 classList 在添加和删除某个 class 时的写法。
 
 ```js
 var foo = document.getElementById('foo');
@@ -462,7 +461,7 @@ foo.classList.remove('bold');
 foo.className = foo.className.replace(/^bold$/, '');
 ```
 
-toggle 方法可以接受一个布尔值，作为第二个参数。如果为true，则添加该属性；如果为false，则去除该属性。
+toggle 方法可以接受一个布尔值，作为第二个参数。如果为 true，则添加该属性；如果为 false，则去除该属性。
 
 ```js
 el.classList.toggle('abc', boolValue);
@@ -485,13 +484,13 @@ Element.innerHTML 属性返回一个字符串，等同于该元素包含的所�
 el.innerHTML = '';
 ```
 
-上面代码等于将 el 节点变成了一个空节点，el原来包含的节点被全部删除。
+上面代码等于将 el 节点变成了一个空节点，el 原来包含的节点被全部删除。
 
-注意，读取属性值的时候，如果文本节点包含 `&`、`<` 和 `>` ，innerHTML属性会将它们转为实体形式 `&amp;`、`&lt;`、`&gt;`。如果想得到原文，建议使用 `element.textContent` 属性。
+注意，读取属性值的时候，如果文本节点包含 `&`、`<` 和 `>` ，innerHTML 属性会将它们转为实体形式 `&amp;`、`&lt;`、`&gt;`。如果想得到原文，建议使用 `element.textContent` 属性。
 
 ```js
 // HTML代码如下 <p id="para"> 5 > 3 </p>
-document.getElementById('para').innerHTML
+document.getElementById('para').innerHTML;
 // 5 &gt; 3
 ```
 
@@ -505,7 +504,7 @@ el.innerHTML = name;
 上面代码将脚本插入内容，脚本并不会执行。但是，innerHTML 还是有安全风险的。
 
 ```js
-var name = "<img src=x onerror=alert(1)>";
+var name = '<img src=x onerror=alert(1)>';
 el.innerHTML = name;
 ```
 
@@ -519,23 +518,23 @@ el.innerHTML = name;
 // HTML 代码如下
 // <div id="d"><p>Hello</p></div>
 var d = document.getElementById('d');
-d.outerHTML
+d.outerHTML;
 // '<div id="d"><p>Hello</p></div>'
 ```
 
-<Hint type="tip">outerHTML属性是可读写的，对它进行赋值，等于替换掉当前元素。</Hint>
+<Hint type="tip">outerHTML 属性是可读写的，对它进行赋值，等于替换掉当前元素。</Hint>
 
 ```js
 // HTML 代码如下
 // <div id="container"><div id="d">Hello</div></div>
 var container = document.getElementById('container');
 var d = document.getElementById('d');
-container.firstChild.nodeName // "DIV"
-d.nodeName // "DIV"
+container.firstChild.nodeName; // "DIV"
+d.nodeName; // "DIV"
 
 d.outerHTML = '<p>Hello</p>';
-container.firstChild.nodeName // "P"
-d.nodeName // "DIV"
+container.firstChild.nodeName; // "P"
+d.nodeName; // "DIV"
 ```
 
 上面代码中，变量 d 代表子节点，它的 outerHTML 属性重新赋值以后，内层的 div 元素就不存在了，被 p 元素替换了。但是，变量 d 依然指向原来的 div 元素，这表示被替换的 DIV 元素还存在于内存中。

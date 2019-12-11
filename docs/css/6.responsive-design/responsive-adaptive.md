@@ -3,17 +3,17 @@ title: Responsive & Adaptive
 sidebar_label: Responsive & Adaptive
 ---
 
-import Img from '../../../src/components/Img'
+import Img from '../../../src/components/Img';
 
 Online demo: http://www.liquidapsive.com
 
 ## Basic Concept
 
-Before introduction on responsive and adaptive design, let's  start by Static and Liquid which are basis of responsive and adaptive design.
+Before introduction on responsive and adaptive design, let's start by Static and Liquid which are basis of responsive and adaptive design.
 
 ### Static
 
-Static layouts are the traditional web: one design that sits in the center of the page and requires horizontal scrolling if the window is too small for it. [M dot sites](https://www.verticalrail.com/kb/mobile-website-design-what-is-an-m-dot-site/) *(m. site is a website that's specifically designed for mobile devices, and exists on a separate subdomain)* are the traditional answer to this, providing a wholly separate site for a lower resolution - and all the work of creating a separate site.
+Static layouts are the traditional web: one design that sits in the center of the page and requires horizontal scrolling if the window is too small for it. [M dot sites](https://www.verticalrail.com/kb/mobile-website-design-what-is-an-m-dot-site/) _(m. site is a website that's specifically designed for mobile devices, and exists on a separate subdomain)_ are the traditional answer to this, providing a wholly separate site for a lower resolution - and all the work of creating a separate site.
 
 <Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/Static-Design.gif'/>
 

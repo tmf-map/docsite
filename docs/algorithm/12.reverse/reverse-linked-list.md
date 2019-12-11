@@ -4,7 +4,7 @@ title: 反转链表
 sidebar_label: 反转链表
 ---
 
-- 题源：《剑指Offer: 面试题 24》P142
+- 题源：《剑指 Offer: 面试题 24》P142
 - 在线：[LeetCode: 206](https://leetcode-cn.com/problems/reverse-linked-list/)
 
 ## 题目
@@ -13,8 +13,8 @@ sidebar_label: 反转链表
 
 ```js
 function ListNode(val) {
-    this.val = val;
-    this.next = null;
+  this.val = val;
+  this.next = null;
 }
 ```
 
@@ -48,23 +48,23 @@ function ListNode(val) {
 ### 方法一：迭代
 
 ```js
-function reverseList (head) {
-    let reversedHead = null;
-    let prev = null;
-    let curr = head;
-    while (curr) {
-        // 先存储 next
-        let next = curr.next;
-        if (!next) {
-            reversedHead = curr;
-        }
-        // 反转
-        curr.next = prev;
-        // 指向下一个节点
-        prev = curr;
-        curr = next;
+function reverseList(head) {
+  let reversedHead = null;
+  let prev = null;
+  let curr = head;
+  while (curr) {
+    // 先存储 next
+    let next = curr.next;
+    if (!next) {
+      reversedHead = curr;
     }
-    return reversedHead;
+    // 反转
+    curr.next = prev;
+    // 指向下一个节点
+    prev = curr;
+    curr = next;
+  }
+  return reversedHead;
 }
 ```
 
@@ -73,16 +73,16 @@ function reverseList (head) {
 递归的方法，处理 prev 的时候是采用函数传参的方式，巧妙利用递归可以避免处理指向一下个节点的时候逻辑比较“绕”的问题，代码也相对更简洁。
 
 ```js
-function reverseList (head, prev = null) {
-    if (!head) return null;
-    let curr = head;
-    // 先存储 next
-    let next = curr.next;
-    // 反转
-    curr.next = prev;
-    if (!next) {
-        return curr;
-    }
-    return reverseList(next, curr);
+function reverseList(head, prev = null) {
+  if (!head) return null;
+  let curr = head;
+  // 先存储 next
+  let next = curr.next;
+  // 反转
+  curr.next = prev;
+  if (!next) {
+    return curr;
+  }
+  return reverseList(next, curr);
 }
 ```

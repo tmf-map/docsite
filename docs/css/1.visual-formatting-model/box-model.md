@@ -3,22 +3,21 @@ title: 盒模型
 sidebar_label: 盒模型
 ---
 
-import Hint from '../../../src/components/Hint'
-import Img from '../../../src/components/Img'
+import Hint from '../../../src/components/Hint'; import Img from '../../../src/components/Img';
 
 ## display
 
-| level                                                                                    | box                     | display                                                                                                                                                                                         | formatting context                            |
-| ---------------------------------------------------------------------------------------- | ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------- |
-| block-level                                                                              | block box               | block                                                                                                                                                                                           | BFC                                           |
-|                                                                                          | list-item box           | list-item                                                                                                                                                                                       |                                               |
-|                                                                                          | table box               | table                                                                                                                                                                                           |                                               |
-|                                                                                          | flex box                | flex                                                                                                                                                                                            |                                               |
-|                                                                                          | grid box                | grid                                                                                                                                                                                            |                                               |
-| inline-level                                                                             | atomic inline-level box | inline-block, inline-table, inline-flex, inline-grid                                                                                                                                            | BFC/IFC(透明)                                 |
-|                                                                                          | inline box              | inline                                                                                                                                                                                          | IFC                                           |
-| CSS对其归属说得比较模糊，毕竟在CSS诞生前table就存在了。可以简单理解为(特殊的)block-level |                         | table-row-group (tbody), table-header-group (thead), table-footer-group (tfoot), table-row (tr), table-column-group (colgroup), table-column (col), table-cell (td, th),table-caption (caption) | TFC(CSS2.2), 在CSS2.1中是BFC，还没有TFC的概念 |
-| others                                                                                   |                         | none, initial, inherit, unset                                                                                                                                                                   |                                               |
+| level | box | display | formatting context |
+| --- | --- | --- | --- |
+| block-level | block box | block | BFC |
+|  | list-item box | list-item |  |
+|  | table box | table |  |
+|  | flex box | flex |  |
+|  | grid box | grid |  |
+| inline-level | atomic inline-level box | inline-block, inline-table, inline-flex, inline-grid | BFC/IFC(透明) |
+|  | inline box | inline | IFC |
+| CSS 对其归属说得比较模糊，毕竟在 CSS 诞生前 table 就存在了。可以简单理解为(特殊的)block-level |  | table-row-group (tbody), table-header-group (thead), table-footer-group (tfoot), table-row (tr), table-column-group (colgroup), table-column (col), table-cell (td, th),table-caption (caption) | TFC(CSS2.2), 在 CSS2.1 中是 BFC，还没有 TFC 的概念 |
+| others |  | none, initial, inherit, unset |  |
 
 https://developer.mozilla.org/zh-CN/docs/Web/Guide/HTML/HTML5/HTML5_element_list
 
@@ -32,7 +31,7 @@ https://developer.mozilla.org/zh-CN/docs/Web/Guide/HTML/HTML5/HTML5_element_list
 
 inline-level box 包括 `inline`, `inline-table` 和 `inline-block` 。 `inline-level` 元素生成 inline-level box，inline-level box 参与 IFC。
 
-inline box 是一种特殊的，`display` 值为 `inline` 的非替换元素会生成一个inline box，不参与生成行内格式化上下文的行内级盒称为原子行内级盒。
+inline box 是一种特殊的，`display` 值为 `inline` 的非替换元素会生成一个 inline box，不参与生成行内格式化上下文的行内级盒称为原子行内级盒。
 
 ## margin
 
@@ -65,7 +64,7 @@ margin 合并（重叠） 3 种场景：
 <div style="margin-top:20px;"></div>
 ```
 
-请问: 现在要在上面这段 HTML 的外面再嵌套一层 `<div>` 元素，假如说现在没有父子 margin 合并，那这层新嵌套的  `<div>`  岂不阻断了原本的兄弟 margin 合并?很有可能间距就会变大， 妥妥地影响了原来的布局，这显然就违背了 `<div>` 的设计作用了。所以才有了父子 margin 合 并，外面再嵌套一层 `<div>` 元素就跟没嵌套一样，表现为 `margin-top:20px` 就好像是设置在 最外面的 `<div>` 元素上一样。
+请问: 现在要在上面这段 HTML 的外面再嵌套一层 `<div>` 元素，假如说现在没有父子 margin 合并，那这层新嵌套的 `<div>` 岂不阻断了原本的兄弟 margin 合并?很有可能间距就会变大， 妥妥地影响了原来的布局，这显然就违背了 `<div>` 的设计作用了。所以才有了父子 margin 合 并，外面再嵌套一层 `<div>` 元素就跟没嵌套一样，表现为 `margin-top:20px` 就好像是设置在 最外面的 `<div>` 元素上一样。
 
 <Img align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/svhvwA.jpg'/>
 
@@ -125,7 +124,7 @@ margin 合并（重叠） 3 种场景：
 
 #### 意义
 
-是为了让图文信息的排版更加舒服自然。设想，当我们上下排列一系列规则的块级元素（如段落P）时，那么块元素之间因为外边距重叠的存在，段落之间就不会产生双倍的距离。
+是为了让图文信息的排版更加舒服自然。设想，当我们上下排列一系列规则的块级元素（如段落 P）时，那么块元素之间因为外边距重叠的存在，段落之间就不会产生双倍的距离。
 
 <Img align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/oNyETU.jpg'/>
 
@@ -157,7 +156,14 @@ margin 合并（重叠） 3 种场景：
 
 ```jsx live
 <>
-  <div style={{marginBottom: '20px', backgroundColor: '#ffa39e', display: 'inline-block'}}>第一行</div>
+  <div
+    style={{
+      marginBottom: '20px',
+      backgroundColor: '#ffa39e',
+      display: 'inline-block',
+    }}>
+    第一行
+  </div>
   <div style={{marginTop: '20px', backgroundColor: '#91d5ff'}}>第二行</div>
 </>
 ```
@@ -231,7 +237,7 @@ margin 合并（重叠） 3 种场景：
 
 - 父子元素合并需要**保证父子没有被非空内容、padding、border 或 clear 分隔开**。
 - 兄弟元素合并不受 `padding`、`border`等的限制，即使含有也会产生合并。
-- 兄弟元素触发 BFC 并不一定保证解决兄弟合并，例如：为兄弟元素设置了 `overflow:hidden`，虽然触发了BFC，但是 `margin`还是会发生合并。
+- 兄弟元素触发 BFC 并不一定保证解决兄弟合并，例如：为兄弟元素设置了 `overflow:hidden`，虽然触发了 BFC，但是 `margin`还是会发生合并。
 
 ## width
 

@@ -87,10 +87,20 @@ sidebar_label: 表单
 <form action="action page.php" method="post">
   <fieldset>
     <legend>Personal information: </legend>
-    First name : <input type= " text" name= " first name" value="Mickey" placeholder="First Name"/>
-    <br/>
-    Last name: <input type="text" name=" lastname" value= "Mouse" placeholder="Last Name "/>
-    <br/>
+    First name : <input
+      type=" text"
+      name=" first name"
+      value="Mickey"
+      placeholder="First Name"
+    />
+    <br />
+    Last name: <input
+      type="text"
+      name=" lastname"
+      value="Mouse"
+      placeholder="Last Name "
+    />
+    <br />
     Favorite car brand:
     <select>
       <option value="volvo">Volvo</option>
@@ -98,10 +108,10 @@ sidebar_label: 表单
       <option value="mercedes">Mercedes</option>
       <option value="audi">Audi</option>
     </select>
-    <br/>
+    <br />
     <textarea name="description"></textarea>
-    <br/>
-    <input type="submit" value= "Submit"/>
+    <br />
+    <input type="submit" value="Submit" />
   </fieldset>
 </form>
 ```
