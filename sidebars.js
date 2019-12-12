@@ -271,18 +271,15 @@ module.exports = {
       'design-patterns/3.behavior-pattern/pub-sub'
     ]
   },
-  "algorithm": {
-    "Analysis of Algorithms": [
-      "algorithm/analysis-of-algorithms/asymptotic-notations",
-      "algorithm/analysis-of-algorithms/analysis-of-loops"
+  algorithm: {
+    'Analysis of Algorithms': [
+      'algorithm/analysis-of-algorithms/asymptotic-notations',
+      'algorithm/analysis-of-algorithms/analysis-of-loops'
     ],
-    "1. 数组": [
-      "algorithm/1.array/duplicated-number-in-array",
-      "algorithm/1.array/inverse-pairs",
-      "algorithm/1.array/3sum",
-    ],
-    "2. 栈与队列": [
-      "algorithm/3.stack-queue/min-stack",
+    '1. 数组': [
+      'algorithm/1.array/duplicated-number-in-array',
+      'algorithm/1.array/inverse-pairs',
+      'algorithm/1.array/3sum'
     ],
     '2. 栈与队列': ['algorithm/3.stack-queue/min-stack'],
     '4. 链表': ['algorithm/4.linkedlist/merge-two-sorted-lists'],
