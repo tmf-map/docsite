@@ -3,7 +3,7 @@ title: 节点基础概念
 sidebar_label: 节点基础概念
 ---
 
-import Hint from '../../../src/components/Hint'
+import Hint from '../../../src/components/Hint';
 
 > DOM 是 JavaScript 操作网页的接口，全称为“文档对象模型”（Document Object Model）。它的作用是将网页转为一个 JavaScript 对象，从而可以用脚本进行各种操作（比如增删内容）。
 
@@ -23,7 +23,7 @@ nodeName 属性返回节点的名称。
 // HTML 代码如下
 // <div id="d1">hello world</div>
 var div = document.getElementById('d1');
-div.nodeName // "DIV"
+div.nodeName; // "DIV"
 ```
 
 上面代码中，元素节点 `<div>` 的 `nodeName` 属性就是**大写**的标签名 `DIV`。
@@ -42,17 +42,17 @@ div.nodeName // "DIV"
 
 nodeValue 属性返回一个字符串，表示当前节点本身的文本值，该属性可读写。
 
-只有文本节点（text）和注释节点（comment）有文本值，因此这两类节点的nodeValue可以返回结果，其他类型的节点一律返回null。同样的，也只有这两类节点可以设置nodeValue属性的值，其他类型的节点设置无效。
+只有文本节点（text）和注释节点（comment）有文本值，因此这两类节点的 nodeValue 可以返回结果，其他类型的节点一律返回 null。同样的，也只有这两类节点可以设置 nodeValue 属性的值，其他类型的节点设置无效。
 
 ```js
 // HTML 代码如下
 // <div id="d1">hello world</div>
 var div = document.getElementById('d1');
-div.nodeValue // null
-div.firstChild.nodeValue // "hello world"
+div.nodeValue; // null
+div.firstChild.nodeValue; // "hello world"
 ```
 
-上面代码中，div是元素节点，nodeValue属性返回null。div.firstChild是文本节点，所以可以返回文本值。
+上面代码中，div 是元素节点，nodeValue 属性返回 null。div.firstChild 是文本节点，所以可以返回文本值。
 
 ### Node.textContent
 
@@ -62,11 +62,11 @@ textContent 属性返回当前节点和它的所有后代节点的文本内容�
 // HTML 代码为
 // <div id="divA">This is <span>some</span> text</div>
 
-document.getElementById('divA').textContent
+document.getElementById('divA').textContent;
 // This is some text
 ```
 
-textContent属性自动忽略当前节点内部的 HTML 标签，返回所有文本内容。
+textContent 属性自动忽略当前节点内部的 HTML 标签，返回所有文本内容。
 
 该属性是可读写的，设置该属性的值，会用一个新的文本节点，替换所有原来的子节点。它还有一个好处，就是自动对 HTML 标签转义。这很适合用于用户提供的内容。
 
@@ -76,17 +76,17 @@ document.getElementById('foo').textContent = '<p>GoodBye!</p>';
 
 上面代码在插入文本时，会将 `<p>` 标签解释为文本，而不会当作标签处理。
 
-对于文本节点（text）和注释节点（comment），textContent属性的值与nodeValue属性相同。对于其他类型的节点，该属性会将每个子节点的内容连接在一起返回，但是不包括注释节点。如果一个节点没有子节点，则返回空字符串。
+对于文本节点（text）和注释节点（comment），textContent 属性的值与 nodeValue 属性相同。对于其他类型的节点，该属性会将每个子节点的内容连接在一起返回，但是不包括注释节点。如果一个节点没有子节点，则返回空字符串。
 
-文档节点（document）和文档类型节点（doctype）的textContent属性为null。如果要读取整个文档的内容，可以使用document.documentElement.textContent。
+文档节点（document）和文档类型节点（doctype）的 textContent 属性为 null。如果要读取整个文档的内容，可以使用 document.documentElement.textContent。
 
 ## Node 类型
 
 节点的类型有七种：
 
 1. Document：整个文档树的顶层节点
-2. DocumentType：doctype标签（比如 `<!DOCTYPE html>`）
-3. Element：网页的各种HTML标签（比如 `<body>`、`<a>` 等）
+2. DocumentType：doctype 标签（比如 `<!DOCTYPE html>`）
+3. Element：网页的各种 HTML 标签（比如 `<body>`、`<a>` 等）
 4. Attribute：网页元素的属性（比如 `class="right"`）
 5. Text：标签之间或标签包含的文本
 6. Comment：注释
@@ -99,13 +99,13 @@ document.getElementById('foo').textContent = '<p>GoodBye!</p>';
 nodeType 属性返回一个整数值，表示节点的类型。
 
 ```js
-document.nodeType // 9
+document.nodeType; // 9
 ```
 
 Node 对象定义了几个常量，对应这些类型值。
 
 ```js
-document.nodeType === Node.DOCUMENT_NODE // true
+document.nodeType === Node.DOCUMENT_NODE; // true
 ```
 
 不同节点的 `nodeType` 属性值和对应的常量如下。
@@ -158,7 +158,7 @@ let children = document.querySelector('ul').childNodes;
 
 // <p id="p1"><span>First span</span></p>
 let p1 = document.getElementById('p1');
-p1.firstChild.nodeName // "SPAN"
+p1.firstChild.nodeName; // "SPAN"
 ```
 
 ## NodeList

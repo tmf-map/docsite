@@ -3,13 +3,12 @@ import classNames from 'classnames';
 
 import styles from '../pages/index.module.css';
 
-export default function Oval({ children, className, size, ...props }) {
+export default function Oval({children, className, size, ...props}) {
   return (
     <span
       {...props}
-      style={size && { width: `${size}`, height: `${size}` }}
-      className={classNames(styles.oval, className)}
-    >
+      style={size && {width: `${size}`, height: `${size}`}}
+      className={classNames(styles.oval, className)}>
       {children}
     </span>
   );

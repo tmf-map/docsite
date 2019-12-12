@@ -3,8 +3,7 @@ title: 字体
 sidebar_label: 字体
 ---
 
-import Img from '../../../src/components/Img'
-import Hint from '../../../src/components/Hint'
+import Img from '../../../src/components/Img'; import Hint from '../../../src/components/Hint';
 
 ## 字体类型
 
@@ -31,4 +30,3 @@ import Hint from '../../../src/components/Hint'
 抛开宋/明体长时间作为系统默认字体，所产生的审美疲劳，宋/明体相比黑体是更合适作为内文字体. 大多的宋/明体针对内文设计，横细直粗，造型方正，笔画在小字号的情况下，不会糊在一起，给人一种素雅的感觉. 而黑体笔画粗壮有力，引人注目，更适合作为标题使用。
 
 但大部分人已经习惯在网页上阅读黑体，以及宋/明体在字重过大的情况下，显示效果还是不太理想. 所以内文默认提供黑体，可选择性的切换宋/明体。
-

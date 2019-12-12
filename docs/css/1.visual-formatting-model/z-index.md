@@ -3,15 +3,14 @@ title: 层叠
 sidebar_label: 层叠
 ---
 
-import Img from '../../../src/components/Img'
-import Hint from '../../../src/components/Hint'
+import Img from '../../../src/components/Img'; import Hint from '../../../src/components/Hint';
 
 ## 层叠顺序
 
 <Img width="450" align="center" legend="图: 层叠顺序类型标注" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/page228image27822112.jpg'/>
 
 1. 位于最下面的 background/border 特指层叠上下文元素的边框和背景色。每一个 层叠顺序规则仅适用于当前层叠上下文元素的小世界。
-1. inline水平盒子指的是包括inline/inline-block/inline-table元素的“层 叠顺序”，它们都是同等级别的。
+1. inline 水平盒子指的是包括 inline/inline-block/inline-table 元素的“层 叠顺序”，它们都是同等级别的。
 1. 单纯从层叠水平上看，实际上 z-index:0 和 z-index:auto 是可以看成是一样的。注 意这里的措辞— “单纯从层叠水平上看”，实际上，两者在层叠上下文领域有着根本性的差异。
 
 <Hint type="warning">内联元素的层叠顺序要比浮动元素和块状元素都高。</Hint>
@@ -41,9 +40,7 @@ Demo：https://demo.cssworld.cn/7/5-1.php
 
 <Hint type="tip">z-index 只是产生层叠上下文的一种方式，但不是全部。</Hint>
 
-注：定位元素指position不为static的元素
-position: absolute/relative 的元素z-index不为auto的时候才会创建新的层叠上下文。
-在Chrome中，position: fixed是属于天生派中，auto也会创建层叠上下文。
+注：定位元素指 position 不为 static 的元素 position: absolute/relative 的元素 z-index 不为 auto 的时候才会创建新的层叠上下文。在 Chrome 中，position: fixed 是属于天生派中，auto 也会创建层叠上下文。
 
 #### 根层叠上下文
 
@@ -71,15 +68,13 @@ CSS3 新世界的出现除了带来了新属性，还对过去的很多规则发
 
 > 很多人(包括我)一开始的时候，以为一个定位元素设置 z-index 负值，就会跑到页面的背 后，隐藏掉，看不到了。结果实际上是有时候确实隐藏了，但有时候又隐藏不掉。为什么会这样?
 
-z-index 负值的最终表现并不是单一的，而是与“层叠上下文”和“层叠顺序”密 切相关。前面展示的层叠顺序规则 7 阶图，其中最下面的 2 阶是理解 z-index 负值表现的关
-键，如图所示。
+z-index 负值的最终表现并不是单一的，而是与“层叠上下文”和“层叠顺序”密 切相关。前面展示的层叠顺序规则 7 阶图，其中最下面的 2 阶是理解 z-index 负值表现的关键，如图所示。
 
 <Img width="250" align="center" legend="图: “层叠顺序”最底层 2 阶" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/page234image27324608.jpg'/>
 
 图中已经很明显地标明了，z-index 负值元素的层级是在层叠上下文元素上面、block 元素的下面。
 
 <Hint type="tip">z-index 虽然名为负数层级，但依然无法突破当前层叠上下文所包裹的小世界。</Hint>
-
 
 <Hint type="tip">z-index 负值渲染过程就是寻找第一个层叠上下文元素的过程，然后层叠顺序止步于这个层叠上下文元素。</Hint>
 

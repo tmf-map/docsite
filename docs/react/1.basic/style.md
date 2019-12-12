@@ -4,12 +4,11 @@ title: 样式
 sidebar_label: 样式
 ---
 
-import Hint from '../../../src/components/Hint'
+import Hint from '../../../src/components/Hint';
 
 ## 样式中的像素值
 
 <Hint type="tip">React 会自动对 width、height 等属性添加 px。</Hint>
-
 
 ```jsx
 // Result style: '10px'
@@ -24,7 +23,6 @@ import Hint from '../../../src/components/Hint'
 ```
 
 <Hint type="warning">有些属性除了支持 px 为单位的像素值，还支持数字直接作为值，此时 React 并不添加 px，如 lineHeight，[完整列表](https://github.com/facebook/react/blob/4131af3e4bf52f3a003537ec95a1655147c81270/src/renderers/dom/shared/CSSProperty.js#L15-L59)。</Hint>
-
 
 ## classnames 库的使用
 
@@ -43,7 +41,6 @@ import cx from 'classnames';
 <Hint type="best">不要使用类似 `clazz` 等方式传入父组件的类名，直接将 `className` 挂到 props 上往下传递，通过 cx 或 `className` 动态取都可以。</Hint>
 
 <Hint type="best">库名用 cx 来命名，防止与 `className` 发生歧义。</Hint>
-
 
 ## cssModules
 

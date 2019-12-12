@@ -5,33 +5,30 @@ sidebar_label: 事件对象
 
 ## Event 对象概述
 
-事件发生以后，会产生一个事件对象，作为参数传给监听函数。浏览器原生提供一个Event对象，所有的事件都是这个对象的实例，或者说继承了Event.prototype对象。
+事件发生以后，会产生一个事件对象，作为参数传给监听函数。浏览器原生提供一个 Event 对象，所有的事件都是这个对象的实例，或者说继承了 Event.prototype 对象。
 
-Event对象本身就是一个构造函数，可以用来生成新的实例。
+Event 对象本身就是一个构造函数，可以用来生成新的实例。
 
 ```js
 event = new Event(type, options);
 ```
 
-Event构造函数接受两个参数。第一个参数type是字符串，表示事件的名称；第二个参数options是一个对象，表示事件对象的配置。该对象主要有下面两个属性。
+Event 构造函数接受两个参数。第一个参数 type 是字符串，表示事件的名称；第二个参数 options 是一个对象，表示事件对象的配置。该对象主要有下面两个属性。
 
-- **bubbles**：布尔值，可选，默认为false，表示事件对象是否冒泡。
-- **cancelable**：布尔值，可选，默认为false，表示事件是否可以被取消，即能否用Event.preventDefault()取消这个事件。一旦事件被取消，就好像从来没有发生过，不会触发浏览器对该事件的默认行为。
+- **bubbles**：布尔值，可选，默认为 false，表示事件对象是否冒泡。
+- **cancelable**：布尔值，可选，默认为 false，表示事件是否可以被取消，即能否用 Event.preventDefault()取消这个事件。一旦事件被取消，就好像从来没有发生过，不会触发浏览器对该事件的默认行为。
 
 ```js
-var ev = new Event(
-  'look',
-  {
-    'bubbles': true,
-    'cancelable': false
-  }
-);
+var ev = new Event('look', {
+  bubbles: true,
+  cancelable: false
+});
 document.dispatchEvent(ev);
 ```
 
-上面代码新建一个look事件实例，然后使用dispatchEvent方法触发该事件。
+上面代码新建一个 look 事件实例，然后使用 dispatchEvent 方法触发该事件。
 
-注意，如果不是显式指定bubbles属性为true，生成的事件就只能在“捕获阶段”触发监听函数。
+注意，如果不是显式指定 bubbles 属性为 true，生成的事件就只能在“捕获阶段”触发监听函数。
 
 ```js
 // HTML 代码为
@@ -50,64 +47,64 @@ var click = new Event('click');
 p.dispatchEvent(click);
 ```
 
-上面代码中，p元素发出一个click事件，该事件默认不会冒泡。div.addEventListener方法指定在冒泡阶段监听，因此监听函数不会触发。如果写成div.addEventListener('click', callback, true)，那么在“捕获阶段”可以监听到这个事件。
+上面代码中，p 元素发出一个 click 事件，该事件默认不会冒泡。div.addEventListener 方法指定在冒泡阶段监听，因此监听函数不会触发。如果写成 div.addEventListener('click', callback, true)，那么在“捕获阶段”可以监听到这个事件。
 
-另一方面，如果这个事件在div元素上触发。
+另一方面，如果这个事件在 div 元素上触发。
 
 ```js
 div.dispatchEvent(click);
 ```
 
-那么，不管div元素是在冒泡阶段监听，还是在捕获阶段监听，都会触发监听函数。因为这时div元素是事件的目标，不存在是否冒泡的问题，div元素总是会接收到事件，因此导致监听函数生效。
+那么，不管 div 元素是在冒泡阶段监听，还是在捕获阶段监听，都会触发监听函数。因为这时 div 元素是事件的目标，不存在是否冒泡的问题，div 元素总是会接收到事件，因此导致监听函数生效。
 
 ## Event 对象的实例属性
 
 ### Event.bubbles, Event.eventPhase
 
-Event.bubbles属性返回一个布尔值，表示当前事件是否会冒泡。该属性为只读属性，一般用来了解 Event 实例是否可以冒泡。前面说过，除非显式声明，Event构造函数生成的事件，默认是不冒泡的。
+Event.bubbles 属性返回一个布尔值，表示当前事件是否会冒泡。该属性为只读属性，一般用来了解 Event 实例是否可以冒泡。前面说过，除非显式声明，Event 构造函数生成的事件，默认是不冒泡的。
 
-Event.eventPhase属性返回一个整数常量，表示事件目前所处的阶段。该属性只读。
+Event.eventPhase 属性返回一个整数常量，表示事件目前所处的阶段。该属性只读。
 
 ```js
 var phase = event.eventPhase;
 ```
 
-Event.eventPhase的返回值有四种可能：
+Event.eventPhase 的返回值有四种可能：
 
 1. 事件目前没有发生。
 2. 事件目前处于捕获阶段，即处于从祖先节点向目标节点的传播过程中。
-3. 事件到达目标节点，即Event.target属性指向的那个节点。
+3. 事件到达目标节点，即 Event.target 属性指向的那个节点。
 4. 事件处于冒泡阶段，即处于从目标节点向祖先节点的反向传播过程中。
 
 ### Event.cancelable, Event.cancelBubble, event.defaultPrevented
 
-Event.cancelable属性返回一个布尔值，表示事件是否可以取消。该属性为只读属性，一般用来了解 Event 实例的特性。
+Event.cancelable 属性返回一个布尔值，表示事件是否可以取消。该属性为只读属性，一般用来了解 Event 实例的特性。
 
-大多数浏览器的原生事件是可以取消的。比如，取消click事件，点击链接将无效。但是除非显式声明，Event构造函数生成的事件，默认是不可以取消的。
+大多数浏览器的原生事件是可以取消的。比如，取消 click 事件，点击链接将无效。但是除非显式声明，Event 构造函数生成的事件，默认是不可以取消的。
 
 ```js
 var evt = new Event('foo');
-evt.cancelable  // false
+evt.cancelable; // false
 ```
 
-当Event.cancelable属性为true时，调用Event.preventDefault()就可以取消这个事件，阻止浏览器对该事件的默认行为。
+当 Event.cancelable 属性为 true 时，调用 Event.preventDefault()就可以取消这个事件，阻止浏览器对该事件的默认行为。
 
-如果事件不能取消，调用Event.preventDefault()会没有任何效果。所以使用这个方法之前，最好用Event.cancelable属性判断一下是否可以取消。
+如果事件不能取消，调用 Event.preventDefault()会没有任何效果。所以使用这个方法之前，最好用 Event.cancelable 属性判断一下是否可以取消。
 
 ```js
 function preventEvent(event) {
   if (event.cancelable) {
     event.preventDefault();
   } else {
-    console.warn('This event couldn\'t be canceled.');
+    console.warn("This event couldn't be canceled.");
     console.dir(event);
   }
 }
 ```
 
-Event.cancelBubble属性是一个布尔值，如果设为true，相当于执行Event.stopPropagation()，可以阻止事件的传播。
+Event.cancelBubble 属性是一个布尔值，如果设为 true，相当于执行 Event.stopPropagation()，可以阻止事件的传播。
 
-Event.defaultPrevented属性返回一个布尔值，表示该事件是否调用过Event.preventDefault方法。该属性只读。
+Event.defaultPrevented 属性返回一个布尔值，表示该事件是否调用过 Event.preventDefault 方法。该属性只读。
 
 ```js
 if (event.defaultPrevented) {
@@ -117,62 +114,62 @@ if (event.defaultPrevented) {
 
 ### Event.currentTarget, Event.target
 
-Event.currentTarget属性返回事件当前所在的节点，即正在执行的监听函数所绑定的那个节点。
+Event.currentTarget 属性返回事件当前所在的节点，即正在执行的监听函数所绑定的那个节点。
 
-Event.target属性返回原始触发事件的那个节点，即事件最初发生的节点。事件传播过程中，不同节点的监听函数内部的Event.target与Event.currentTarget属性的值是不一样的，前者总是不变的，后者则是指向监听函数所在的那个节点对象。
+Event.target 属性返回原始触发事件的那个节点，即事件最初发生的节点。事件传播过程中，不同节点的监听函数内部的 Event.target 与 Event.currentTarget 属性的值是不一样的，前者总是不变的，后者则是指向监听函数所在的那个节点对象。
 
-Event.currentTarget属性返回事件当前所在的节点，即正在执行的监听函数所绑定的那个节点。
+Event.currentTarget 属性返回事件当前所在的节点，即正在执行的监听函数所绑定的那个节点。
 
-Event.target属性返回原始触发事件的那个节点，即事件最初发生的节点。事件传播过程中，不同节点的监听函数内部的Event.target与Event.currentTarget属性的值是不一样的，前者总是不变的，后者则是指向监听函数所在的那个节点对象。
+Event.target 属性返回原始触发事件的那个节点，即事件最初发生的节点。事件传播过程中，不同节点的监听函数内部的 Event.target 与 Event.currentTarget 属性的值是不一样的，前者总是不变的，后者则是指向监听函数所在的那个节点对象。
 
 ```js
 // HTML代码为
 // <p id="para">Hello <em>World</em></p>
 function hide(e) {
-  console.log(this === e.currentTarget);  // 总是 true
-  console.log(this === e.target);  // 有可能不是 true
+  console.log(this === e.currentTarget); // 总是 true
+  console.log(this === e.target); // 有可能不是 true
   e.target.style.visibility = 'hidden';
 }
 
 para.addEventListener('click', hide, false);
 ```
 
-上面代码中，如果在para节点的 `<em>` 子节点上面点击，则e.target指向 `<em>` 子节点，导致 `<em>` 子节点（即 World 部分）会不可见。如果点击 Hello 部分，则整个para都将不可见。
+上面代码中，如果在 para 节点的 `<em>` 子节点上面点击，则 e.target 指向 `<em>` 子节点，导致 `<em>` 子节点（即 World 部分）会不可见。如果点击 Hello 部分，则整个 para 都将不可见。
 
 ### Event.type
 
-Event.type属性返回一个字符串，表示事件类型。事件的类型是在生成事件的时候。该属性只读。
+Event.type 属性返回一个字符串，表示事件类型。事件的类型是在生成事件的时候。该属性只读。
 
 ```js
 var evt = new Event('foo');
-evt.type // "foo"
+evt.type; // "foo"
 ```
 
 ### Event.timeStamp
 
-Event.timeStamp属性返回一个毫秒时间戳，表示事件发生的时间。它是相对于网页加载成功开始计算的。
+Event.timeStamp 属性返回一个毫秒时间戳，表示事件发生的时间。它是相对于网页加载成功开始计算的。
 
 ```js
 var evt = new Event('foo');
-evt.timeStamp // 3683.6999999995896
+evt.timeStamp; // 3683.6999999995896
 ```
 
 它的返回值有可能是整数，也有可能是小数（高精度时间戳），取决于浏览器的设置。
 
 ### Event.isTrusted
 
-Event.isTrusted属性返回一个布尔值，表示该事件是否由真实的用户行为产生。比如，用户点击链接会产生一个click事件，该事件是用户产生的；Event构造函数生成的事件，则是脚本产生的。
+Event.isTrusted 属性返回一个布尔值，表示该事件是否由真实的用户行为产生。比如，用户点击链接会产生一个 click 事件，该事件是用户产生的；Event 构造函数生成的事件，则是脚本产生的。
 
 ```js
 var evt = new Event('foo');
-evt.isTrusted // false
+evt.isTrusted; // false
 ```
 
-上面代码中，evt对象是脚本产生的，所以isTrusted属性返回false。
+上面代码中，evt 对象是脚本产生的，所以 isTrusted 属性返回 false。
 
 ### Event.detail
 
-Event.detail属性只有浏览器的 UI （用户界面）事件才具有。该属性返回一个数值，表示事件的某种信息。具体含义与事件类型相关。比如，对于click和dbclick事件，Event.detail是鼠标按下的次数（1表示单击，2表示双击，3表示三击）；对于鼠标滚轮事件，Event.detail是滚轮正向滚动的距离，负值就是负向滚动的距离，返回值总是3的倍数。
+Event.detail 属性只有浏览器的 UI （用户界面）事件才具有。该属性返回一个数值，表示事件的某种信息。具体含义与事件类型相关。比如，对于 click 和 dbclick 事件，Event.detail 是鼠标按下的次数（1 表示单击，2 表示双击，3 表示三击）；对于鼠标滚轮事件，Event.detail 是滚轮正向滚动的距离，负值就是负向滚动的距离，返回值总是 3 的倍数。
 
 ```js
 // HTML 代码如下
@@ -188,9 +185,9 @@ document.querySelector('p').onclick = giveDetails;
 
 ### Event.preventDefault()
 
-Event.preventDefault方法取消浏览器对当前事件的默认行为。比如点击链接后，浏览器默认会跳转到另一个页面，使用这个方法以后，就不会跳转了；再比如，按一下空格键，页面向下滚动一段距离，使用这个方法以后也不会滚动了。该方法生效的前提是，事件对象的cancelable属性为true，如果为false，调用该方法没有任何效果。
+Event.preventDefault 方法取消浏览器对当前事件的默认行为。比如点击链接后，浏览器默认会跳转到另一个页面，使用这个方法以后，就不会跳转了；再比如，按一下空格键，页面向下滚动一段距离，使用这个方法以后也不会滚动了。该方法生效的前提是，事件对象的 cancelable 属性为 true，如果为 false，调用该方法没有任何效果。
 
-注意，该方法只是取消事件对当前元素的默认影响，不会阻止事件的传播。如果要阻止传播，可以使用stopPropagation()或stopImmediatePropagation()方法。
+注意，该方法只是取消事件对当前元素的默认影响，不会阻止事件的传播。如果要阻止传播，可以使用 stopPropagation()或 stopImmediatePropagation()方法。
 
 ```js
 // HTML 代码为
@@ -199,7 +196,9 @@ var cb = document.getElementById('my-checkbox');
 
 cb.addEventListener(
   'click',
-  function (e){ e.preventDefault(); },
+  function(e) {
+    e.preventDefault();
+  },
   false
 );
 ```
@@ -221,7 +220,7 @@ function checkName(e) {
 }
 ```
 
-上面代码为文本框的keypress事件设定监听函数后，将只能输入小写字母，否则输入事件的默认行为（写入文本框）将被取消，导致不能向文本框输入内容。
+上面代码为文本框的 keypress 事件设定监听函数后，将只能输入小写字母，否则输入事件的默认行为（写入文本框）将被取消，导致不能向文本框输入内容。
 
 ### Event.stopPropagation()
 
@@ -244,11 +243,11 @@ el.addEventListener('click', stopEvent, false);
 如果同一个节点对于同一个事件指定了多个监听函数，这些函数会根据添加的顺序依次调用。只要其中有一个监听函数调用了 `Event.stopImmediatePropagation` 方法，其他的监听函数就不会再执行了。
 
 ```js
-function l1(e){
+function l1(e) {
   e.stopImmediatePropagation();
 }
 
-function l2(e){
+function l2(e) {
   console.log('hello world');
 }
 
@@ -270,45 +269,49 @@ Event.composedPath()返回一个数组，成员是事件的最底层节点和依
 var div = document.querySelector('div');
 var p = document.querySelector('p');
 
-div.addEventListener('click', function (e) {
-  console.log(e.composedPath());
-}, false);
+div.addEventListener(
+  'click',
+  function(e) {
+    console.log(e.composedPath());
+  },
+  false
+);
 // [p, div, body, html, document, Window]
 ```
 
-上面代码中，click事件的最底层节点是p，向上依次是div、body、html、document、Window。
+上面代码中，click 事件的最底层节点是 p，向上依次是 div、body、html、document、Window。
 
 ## CustomEvent
 
 CustomEvent 接口用于生成自定义的事件实例。那些浏览器预定义的事件，虽然可以手动生成，但是往往不能在事件上绑定数据。如果需要在触发事件的同时，传入指定的数据，就可以使用 CustomEvent 接口生成的自定义事件对象。
 
-浏览器原生提供CustomEvent()构造函数，用来生成 CustomEvent 事件实例。
+浏览器原生提供 CustomEvent()构造函数，用来生成 CustomEvent 事件实例。
 
 ```js
-new CustomEvent(type, options)
+new CustomEvent(type, options);
 ```
 
-CustomEvent()构造函数接受两个参数。第一个参数是字符串，表示事件的名字，这是必须的。第二个参数是事件的配置对象，这个参数是可选的。CustomEvent的配置对象除了接受 Event 事件的配置属性，只有一个自己的属性。
+CustomEvent()构造函数接受两个参数。第一个参数是字符串，表示事件的名字，这是必须的。第二个参数是事件的配置对象，这个参数是可选的。CustomEvent 的配置对象除了接受 Event 事件的配置属性，只有一个自己的属性。
 
-> detail：表示事件的附带数据，默认为null。
+> detail：表示事件的附带数据，默认为 null。
 
 下面是一个例子。
 
 ```js
-var event = new CustomEvent('build', { 'detail': 'hello' });
+var event = new CustomEvent('build', {detail: 'hello'});
 
 function eventHandler(e) {
   console.log(e.detail);
 }
 
-document.body.addEventListener('build', function (e) {
+document.body.addEventListener('build', function(e) {
   console.log(e.detail);
 });
 
 document.body.dispatchEvent(event);
 ```
 
-上面代码中，我们手动定义了build事件。该事件触发后，会被监听到，从而输出该事件实例的detail属性（即字符串hello）。
+上面代码中，我们手动定义了 build 事件。该事件触发后，会被监听到，从而输出该事件实例的 detail 属性（即字符串 hello）。
 
 下面是另一个例子。
 
@@ -321,14 +324,14 @@ var myEvent = new CustomEvent('myevent', {
   cancelable: false
 });
 
-el.addEventListener('myevent', function (event) {
+el.addEventListener('myevent', function(event) {
   console.log('Hello ' + event.detail.foo);
 });
 
 el.dispatchEvent(myEvent);
 ```
 
-上面代码也说明，CustomEvent 的事件实例，除了具有 Event 接口的实例属性，还具有detail属性。
+上面代码也说明，CustomEvent 的事件实例，除了具有 Event 接口的实例属性，还具有 detail 属性。
 
 ## 参考资料
 

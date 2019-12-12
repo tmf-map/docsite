@@ -31,8 +31,8 @@ const themes = [
 
 export default function Header() {
   const context = useDocusaurusContext();
-  const { siteConfig = {} } = context;
-  const { title, tagline } = siteConfig;
+  const {siteConfig = {}} = context;
+  const {title, tagline} = siteConfig;
   return (
     <div className="hero hero--primary">
       <div className="container">
@@ -43,8 +43,7 @@ export default function Header() {
                 styles.text,
                 styles['text-big'],
                 styles.title
-              )}
-            >
+              )}>
               {title}
             </span>
             <span
@@ -52,28 +51,33 @@ export default function Header() {
                 styles.description,
                 styles.text,
                 styles['text-huge']
-              )}
-            >
+              )}>
               {tagline}
             </span>
             <div className={styles['center-if-sm']}>
               <p className={classNames(styles.text, styles.supported)}>
                 Here is a glimpse of updating docs:
               </p>
-              {themes.map(({ alt, src, to }) => (
+              {themes.map(({alt, src, to}) => (
                 <Link className={styles['theme-icon']} key={alt} to={to}>
-                  <img alt={alt} src={`https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/${src}`} />
+                  <img
+                    alt={alt}
+                    src={`https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/${src}`}
+                  />
                 </Link>
               ))}
             </div>
             <div className={styles['center-if-sm']}>
-              <Button to="/docs/react/1.basic/jsx">
-                Get Started
-              </Button>
+              <Button to="/docs/react/1.basic/jsx">Get Started</Button>
             </div>
           </div>
           <div className="col">
-            <img className={styles.imgRight} src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/home-right.png" draggable={false}  alt=""/>
+            <img
+              className={styles.imgRight}
+              src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/home-right.png"
+              draggable={false}
+              alt=""
+            />
           </div>
         </div>
       </div>

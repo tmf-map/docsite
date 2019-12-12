@@ -8,7 +8,7 @@ sidebar_label: 内存泄漏
 JS 中常见的内存泄漏有：
 
 - 意外的全局变量
-- 创建以及删除DOM
+- 创建以及删除 DOM
 - 循环引用
 
 ## 内存泄漏的识别方法
@@ -27,7 +27,7 @@ JS 中常见的内存泄漏有：
 
 筛选菜单选择 Summary，右侧选择 Objects allocated between Snapshot 1 and Snapshot 2，或者筛选菜单选择 Comparison ，然后可以看到一个对比列表。
 
-此例很容易找到内存泄漏，看下 (string) 的 Size Delta Constructor，8MB，58个新对象。新对象被分配，但是没有释放，占用了8MB。
+此例很容易找到内存泄漏，看下 (string) 的 Size Delta Constructor，8MB，58 个新对象。新对象被分配，但是没有释放，占用了 8MB。
 
 如果展开 (string) Constructor，会看到许多单独的内存分配。选择某一个单独的分配，下面的 retainers 会吸引我们的注意。
 
@@ -59,16 +59,16 @@ JS 中常见的内存泄漏有：
 
 ```html
 <body>
-    <button id="btn">Click</button>
+  <button id="btn">Click</button>
 </body>
 <script>
-    var happy; // global
-    var poop = function() {
-        for (var i = 0; i< 100000; i++) {
-            happy +=' a '
-        }
+  var happy; // global
+  var poop = function() {
+    for (var i = 0; i < 100000; i++) {
+      happy += ' a ';
     }
-    document.getElementById('btn').addEventListener( 'click', poop);
+  };
+  document.getElementById('btn').addEventListener('click', poop);
 </script>
 ```
 
@@ -80,16 +80,16 @@ JS 中常见的内存泄漏有：
 
 ```html
 <body>
-    <button id="btn">Click</button>
+  <button id="btn">Click</button>
 </body>
 <script>
-    var poop = function() {
-        var happy; // local
-        for (var i = 0; i< 100000; i++) {
-            happy +=' a '
-        }
+  var poop = function() {
+    var happy; // local
+    for (var i = 0; i < 100000; i++) {
+      happy += ' a ';
     }
-    document.getElementById('btn').addEventListener( 'click', poop);
+  };
+  document.getElementById('btn').addEventListener('click', poop);
 </script>
 ```
 
@@ -101,36 +101,35 @@ JS 中常见的内存泄漏有：
 
 > 缓存数据是为了重用，**缓存必须有一个大小上限才有用**。高内存消耗导致缓存突破上限，因为缓存内容无法被回收。
 
-## 创建以及删除DOM
+## 创建以及删除 DOM
 
-有一组很经典的情况就是游离状的DOM无法被回收。以下的代码， `node` 已经被删除了，那么 `node` 中的子元素是否可以被回收？
+有一组很经典的情况就是游离状的 DOM 无法被回收。以下的代码， `node` 已经被删除了，那么 `node` 中的子元素是否可以被回收？
 
 ```js
-let node = document.getElementById("node");
+let node = document.getElementById('node');
 for (let i = 0; i < 2000; i++) {
-    let div = document.createElement("div");
-    node.appendChild(div);
+  let div = document.createElement('div');
+  node.appendChild(div);
 }
 document.body.removeChild(node);
 ```
 
-答案是 `NO` ，因为 `node` 的引用还存在着，虽然在DOM中被删除了，但在 `window` 中引用还在，这个时候 node 的子元素就会以游离状态的DOM存在，而且无法被回收，如下图所示：
+答案是 `NO` ，因为 `node` 的引用还存在着，虽然在 DOM 中被删除了，但在 `window` 中引用还在，这个时候 node 的子元素就会以游离状态的 DOM 存在，而且无法被回收，如下图所示：
 
 <div align="center">
     <img width="300" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/fGBpmf.png'/>
 </div>
 
-
-解决方案就是 `node = null` ，手动清空引用，消除游离状态的DOM。
+解决方案就是 `node = null` ，手动清空引用，消除游离状态的 DOM。
 
 即使 `setInterval` 像下面这样写，其实也没发生内存泄漏：
 
 ```js
 setInterval(function() {
-    var happy;
-    for (var i = 0; i< 100000; i++) {
-        happy +=' a '
-    }
+  var happy;
+  for (var i = 0; i < 100000; i++) {
+    happy += ' a ';
+  }
 }, 1000);
 ```
 
@@ -147,7 +146,7 @@ setInterval(function() {
 ```js
 var element = document.getElementById('button');
 function onClick(event) {
-    element.innerHTML = 'text';
+  element.innerHTML = 'text';
 }
 element.addEventListener('click', onClick);
 ```
@@ -156,14 +155,13 @@ element.addEventListener('click', onClick);
 
 在 Chrome 中查看一下内存情况，发现其实并没有发生泄漏：
 
-
-
 ## WeakSet/WeakMap
+
 前面说过，及时清除引用非常重要。但是，你不可能记得那么多，有时候一疏忽就忘了，所以才有那么多内存泄漏。
 
 最好能有一种方法，在新建引用的时候就声明，哪些引用必须手动清除，哪些引用可以忽略不计，当其他引用消失以后，垃圾回收机制就可以释放内存。这样就能大大减轻程序员的负担，你只要清除主要引用就可以了。
 
-ES6 考虑到了这一点，推出了两种新的数据结构：WeakSet 和 WeakMap。它们对于值的引用都是不计入垃圾回收机制的（**其实就是对key或者value的引用计数不再增加，相当于WeakMap中这次引用计数是不算数的**），所以名字里面才会有一个"Weak"，表示这是弱引用。
+ES6 考虑到了这一点，推出了两种新的数据结构：WeakSet 和 WeakMap。它们对于值的引用都是不计入垃圾回收机制的（**其实就是对 key 或者 value 的引用计数不再增加，相当于 WeakMap 中这次引用计数是不算数的**），所以名字里面才会有一个"Weak"，表示这是弱引用。
 
 下面以 WeakMap 为例，看看它是怎么解决内存泄漏的。
 
@@ -172,12 +170,12 @@ const wm = new WeakMap();
 const element = document.getElementById('example');
 
 wm.set(element, 'some information');
-wm.get(element) // "some information"
+wm.get(element); // "some information"
 ```
 
 上面代码中，先新建一个 WeakMap 实例。然后，将一个 DOM 节点作为键名存入该实例，并将一些附加信息作为键值，一起存放在 WeakMap 里面。这时，WeakMap 里面对 `element` 的引用就是弱引用，不会被计入垃圾回收机制。
 
-也就是说，DOM 节点对象的引用计数是1，而不是2。这时，一旦消除对该节点的引用，它占用的内存就会被垃圾回收机制释放。 WeakMap 保存的这个键值对，也会自动消失。
+也就是说，DOM 节点对象的引用计数是 1，而不是 2。这时，一旦消除对该节点的引用，它占用的内存就会被垃圾回收机制释放。 WeakMap 保存的这个键值对，也会自动消失。
 
 基本上，如果你要往对象上添加数据，又不想干扰垃圾回收机制，就可以使用 WeakMap。只要外部的引用消失（比如 `element` 的引用被解除），WeakMap 内部的引用，就会自动被垃圾回收清除（`'some information'`的空间就会被回收）。
 
@@ -186,4 +184,4 @@ wm.get(element) // "some information"
 1. [YouTube Video: Find memory leaks with Chrome Dev Tools](https://youtu.be/nrPa0mEk4Pw)
 2. [YouTube Video: He's Dead Jim: Finding JS Memory Leaks with Chrome Dev Tools](https://youtu.be/RJRbZdtKmxU)
 3. [YouTube Video: How Javascript Causes Memory Leak](https://youtu.be/xrX_BtOUDls)
-4. [深度解密setTimeout和setInterval——为setInterval正名！作者：小美娜娜](https://juejin.im/post/5c4044e1f265da614f708f7d)
+4. [深度解密 setTimeout 和 setInterval——为 setInterval 正名！作者：小美娜娜](https://juejin.im/post/5c4044e1f265da614f708f7d)

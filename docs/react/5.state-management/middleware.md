@@ -4,8 +4,7 @@ title: Middleware
 sidebar_label: Middleware
 ---
 
-import Hint from '../../../src/components/Hint'
-import Img from '../../../src/components/Img'
+import Hint from '../../../src/components/Hint'; import Img from '../../../src/components/Img';
 
 ## 思想精华三：中间件思想与洋葱模型
 
@@ -20,29 +19,29 @@ import Img from '../../../src/components/Img'
 我们需要对 dispatch 做一个增强，让其每调用一次都穿过所有的 middleware，假设将这个增强的函数定义为:
 
 ```js
-enhanceDispatchByMiddleware(store, [middleware1, middleware2])
+enhanceDispatchByMiddleware(store, [middleware1, middleware2]);
 ```
 
-在我们之前的代码 `demo.js` 的基础上，创建了2个中间件，一个用来记录日志，一个用来捕获错误：
+在我们之前的代码 `demo.js` 的基础上，创建了 2 个中间件，一个用来记录日志，一个用来捕获错误：
 
 ```js
 const middleware1 = store => next => action => {
-  console.log('m1 left part')
-  next(action)
-  console.log('m1 right part')
-}
+  console.log('m1 left part');
+  next(action);
+  console.log('m1 right part');
+};
 const middleware2 = store => next => action => {
-  console.log('m2 left part')
-  next(action)
-  console.log('m2 right part')
-}
-enhanceDispatchByMiddleware(store, [middleware1, middleware2])
+  console.log('m2 left part');
+  next(action);
+  console.log('m2 right part');
+};
+enhanceDispatchByMiddleware(store, [middleware1, middleware2]);
 ```
 
 我们注意到中间件是一个柯里化的函数：
 
 ```js
-const middleware1 = store => next => action => {}
+const middleware1 = store => next => action => {};
 ```
 
 其实每个中间件调用后，本质目的是增强 `store.dispatch`, 而 `next` 是指上一个中间件穿越过后的`store.dispatch`, 可以简单这样理解：
@@ -72,7 +71,7 @@ export {
 我们在业务代码中 dispatch 一般是按照如下方式调用的：
 
 ```js
-dispatch(action) // {type: 'SOME_TYPE', payload: {...}}
+dispatch(action); // {type: 'SOME_TYPE', payload: {...}}
 ```
 
 <Hint type="tip">此时的 dispatch 并不是源码中最原始的 dispatch 而是经过了 middleware 等一系列的 enhancers 的增强。</Hint>
@@ -80,7 +79,7 @@ dispatch(action) // {type: 'SOME_TYPE', payload: {...}}
 再深入一点去想，最原始的每次穿过一层 middleware(柯里化的函数) 的时候其最内层的函数并没有执行，而是将 `store.dispatch` 进行了增强：
 
 ```js
-store.dispatch = middleware(store)(next)
+store.dispatch = middleware(store)(next);
 ```
 
 这段代码是核心思想，可以暂时先想象成一个栈，遵循先进后出的原则，而出栈的操作就巧妙地调用 `next(action)` 即可，因为 **next 此时指向上一个 middleware 包装后的 dispatch**。采用传参的方式将一个个增强后的 dispatch 进行有秩序的“环环相扣”，这也就形成了上图所示的**“洋葱”模型**。
@@ -109,15 +108,15 @@ Redux 在 middleware 的内部实现的源码中用的是 `compose` 函数，因
 
 ```js
 const middleware1 = store => next => action => {
-  console.log('m1 left part:', store.getState())
-  next(action)
-  console.log('m1 right part:', store.getState())
-}
+  console.log('m1 left part:', store.getState());
+  next(action);
+  console.log('m1 right part:', store.getState());
+};
 const middleware2 = store => next => action => {
-  console.log('m2 left part:', store.getState())
-  next(action)
-  console.log('m2 right part:', store.getState())
-}
+  console.log('m2 left part:', store.getState());
+  next(action);
+  console.log('m2 right part:', store.getState());
+};
 ```
 
 输出的结果：
@@ -132,15 +131,15 @@ const middleware2 = store => next => action => {
 
 ```js
 const middleware1 = store => next => action => {
-  console.log('m1 left part:', store.dispatch)
-  next(action)
-  console.log('m1 right part:', store.dispatch)
-}
+  console.log('m1 left part:', store.dispatch);
+  next(action);
+  console.log('m1 right part:', store.dispatch);
+};
 const middleware2 = store => next => action => {
-  console.log('m2 left part:', store.dispatch)
-  next(action)
-  console.log('m2 right part:', store.dispatch)
-}
+  console.log('m2 left part:', store.dispatch);
+  next(action);
+  console.log('m2 right part:', store.dispatch);
+};
 ```
 
 <img width="420" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/F0kIkM.png'/>
@@ -157,7 +156,9 @@ const middleware2 = store => next => action => {
 
 ```js
 const thunk = store => next => action =>
-  typeof action === 'function' ? action(store.dispatch, store.getState) : next(action)
+  typeof action === 'function'
+    ? action(store.dispatch, store.getState)
+    : next(action);
 ```
 
 这里加以判断避免了无限循环，另外可以将 `store.dispatch, store.getState` 传递给业务中的异步 action 相关代码。
@@ -168,15 +169,15 @@ const thunk = store => next => action =>
 
 ```js
 const middleware1 = store => next => action => {
-  console.log('m1 left part:', next)
-  next(action)
-  console.log('m1 right part:', next)
-}
+  console.log('m1 left part:', next);
+  next(action);
+  console.log('m1 right part:', next);
+};
 const middleware2 = store => next => action => {
-  console.log('m2 left part:', next)
-  next(action)
-  console.log('m2 right part:', next)
-}
+  console.log('m2 left part:', next);
+  next(action);
+  console.log('m2 right part:', next);
+};
 ```
 
 输出结果如下：
@@ -198,15 +199,15 @@ const middleware2 = store => next => action => {
 ### 实现 applyMiddleware
 
 ```js
-const store = createStore(reducer, initialState)
-enhanceDispatchByMiddleware(store, [middleware1, middleware2])
+const store = createStore(reducer, initialState);
+enhanceDispatchByMiddleware(store, [middleware1, middleware2]);
 ```
 
 这两行代码都是为生成 store 而服务，那我们对 `createStore` 作一个增强，让 store 调用该函数后拿到的就是一个加强版的 store：
 
 ```js
-const enhancers = applyMiddleware([middleware1, middleware2])
-const store = createStore(reducer, initialState, enhancers)
+const enhancers = applyMiddleware([middleware1, middleware2]);
+const store = createStore(reducer, initialState, enhancers);
 ```
 
 这里我们将 `enhanceDispatchByMiddleware` 进行柯里化，形成 `applyMiddleware` 函数 , 以下是模拟实现 `applyMiddleware` 和 `createStore` 加强的源码：
@@ -248,27 +249,27 @@ const store = createStore(reducer, initialState, enhancers)
 我们再看一下官方 `applyMiddleware` 的源码：
 
 ```js
-import compose from './compose'
+import compose from './compose';
 
 export default function applyMiddleware(...middlewares) {
-  return (createStore) => (reducer, preloadedState, enhancer) => {
-    var store = createStore(reducer, preloadedState, enhancer)
-    var dispatch = store.dispatch
-    var chain = []
+  return createStore => (reducer, preloadedState, enhancer) => {
+    var store = createStore(reducer, preloadedState, enhancer);
+    var dispatch = store.dispatch;
+    var chain = [];
 
     var middlewareAPI = {
       getState: store.getState,
-      dispatch: (action) => dispatch(action)
-    }
+      dispatch: action => dispatch(action)
+    };
 
-    chain = middlewares.map(middleware => middleware(middlewareAPI))
-    dispatch = compose(...chain)(store.dispatch)
+    chain = middlewares.map(middleware => middleware(middlewareAPI));
+    dispatch = compose(...chain)(store.dispatch);
 
     return {
       ...store,
       dispatch
-    }
-  }
+    };
+  };
 }
 ```
 

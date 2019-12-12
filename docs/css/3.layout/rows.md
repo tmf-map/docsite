@@ -3,9 +3,7 @@ title: 行布局
 sidebar_label: 行布局
 ---
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-import Hint from '../../../src/components/Hint'
+import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem'; import Hint from '../../../src/components/Hint';
 
 ## 两行布局
 
@@ -16,13 +14,8 @@ import Hint from '../../../src/components/Hint'
 
 <img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/PHcOwS.jpg'/>
 
-<Tabs
-  defaultValue="html"
-  values={[
-    { label: 'HTML', value: 'html', },
-    { label: 'LESS', value: 'less', },
-  ]
-}>
+<Tabs defaultValue="html" values={[{label: 'HTML', value: 'html'}, {label: 'LESS', value: 'less'}]}>
+
 <TabItem value="html">
 
 ```html

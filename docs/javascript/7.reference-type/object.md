@@ -3,7 +3,7 @@ title: 对象
 sidebar_label: 对象
 ---
 
-import Hint from '../../../src/components/Hint'
+import Hint from '../../../src/components/Hint';
 
 - 对象属性模型的相关方法
   - `Object.getOwnPropertyDescriptor()`: 获取某个属性的描述对象。
@@ -23,7 +23,7 @@ import Hint from '../../../src/components/Hint'
 ## Object.defineProperty
 
 ```js
-Object.defineProperty(obj, prop, descriptor)
+Object.defineProperty(obj, prop, descriptor);
 ```
 
 参数说明：
@@ -32,7 +32,7 @@ Object.defineProperty(obj, prop, descriptor)
 - prop：必须。定义或修改的属性的名字
 - descriptor：必须。目标属性所拥有的特性
 
-返回值：**传入函数的对象，即第一个参数obj**。
+返回值：**传入函数的对象，即第一个参数 obj**。
 
 针对属性，我们可以给这个属性设置一些特性，比如是否只读不可以写；是否可以被 `for…in` 或 `Object.keys()` 遍历。
 
@@ -47,40 +47,45 @@ Object.defineProperty(obj, prop, descriptor)
 `configurable` 字段配置对象属性是否可以删除属性：
 
 ```js
-var person = {}
-Object.defineProperty(person, 'name', { configurable: false, enumerable: true, writable: true, value: 'robbie'});
-delete person.name
-console.log(person) //{name: 'robbie'}
+var person = {};
+Object.defineProperty(person, 'name', {
+  configurable: false,
+  enumerable: true,
+  writable: true,
+  value: 'robbie'
+});
+delete person.name;
+console.log(person); //{name: 'robbie'}
 ```
 
 `enumerable` 配置属性是否是可枚举类型使用 `for…in` 或 `Object.keys()` ）：
 
 ```js
-var person = {}
-Object.defineProperty(person, 'name', { enumerable: false, value: 'robbie'});
-Object.keys(person) // []
+var person = {};
+Object.defineProperty(person, 'name', {enumerable: false, value: 'robbie'});
+Object.keys(person); // []
 ```
 
 `writable` 用来配置属性是否可修改：
 
 ```js
-var person = {}
+var person = {};
 Object.defineProperty(person, 'name', {writable: false, value: 'robbie'});
-person.name = 'sherry'
-console.log(person) //{name: 'robbie'}
+person.name = 'sherry';
+console.log(person); //{name: 'robbie'}
 ```
 
 `value` 配置属性值：
 
 ```js
-var person = {}
-Object.defineProperty(person, 'name', { value: 'robbie' });
-console.log(person) // {name: "robbie"}
+var person = {};
+Object.defineProperty(person, 'name', {value: 'robbie'});
+console.log(person); // {name: "robbie"}
 ```
 
 ### 存取器描述
 
-当设置或获取对象的某个属性的值的时候，可以提供getter/setter方法。
+当设置或获取对象的某个属性的值的时候，可以提供 getter/setter 方法。
 
 - getter 是一种获得属性值的方法
 - setter 是一种设置属性值的方法
@@ -90,41 +95,41 @@ console.log(person) // {name: "robbie"}
 ```js
 var obj = {log: ['a', 'b', 'c']};
 
-Object.defineProperty(obj, "latest", {
-    get: function (){
-        return this.log[this.log.length - 1];
-    }
+Object.defineProperty(obj, 'latest', {
+  get: function() {
+    return this.log[this.log.length - 1];
+  }
 });
 
-Object.defineProperty(obj, "add", {
-    set: function (v){
-        this.log.push(v);
-        return this.log;
-    }
+Object.defineProperty(obj, 'add', {
+  set: function(v) {
+    this.log.push(v);
+    return this.log;
+  }
 });
 
-console.log(obj.latest) // 'c'
-obj.add = 'd'
-console.log(obj.log) // ["a", "b", "c", "d"]
+console.log(obj.latest); // 'c'
+obj.add = 'd';
+console.log(obj.log); // ["a", "b", "c", "d"]
 ```
 
 或者直接在对象里面进行 `get` / `set` :
 
 ```js
 var obj = {
-    log: ['a', 'b', 'c'],
-    get latest() {
-        return this.log[this.log.length - 1];
-    },
-    set add(v) {
-        this.log.push(v);
-        return this.log;
-    }
-}
+  log: ['a', 'b', 'c'],
+  get latest() {
+    return this.log[this.log.length - 1];
+  },
+  set add(v) {
+    this.log.push(v);
+    return this.log;
+  }
+};
 
-console.log(obj.latest) // 'c'
-obj.add = 'd'
-console.log(obj.log) // ["a", "b", "c", "d"]
+console.log(obj.latest); // 'c'
+obj.add = 'd';
+console.log(obj.log); // ["a", "b", "c", "d"]
 ```
 
 <Hint type="warning">get 或 set 不是必须成对出现，任写其一就可以。如果不设置方法，则 get 和 set 的默认值为 `undefined` 。</Hint>
@@ -139,15 +144,15 @@ var app = {
   test: {
     name: 'kimi'
   }
-}
+};
 
-Object.freeze(app)
-app.test.name = 'robbie' 
-console.log(app.test) //{name: 'robbie'}
+Object.freeze(app);
+app.test.name = 'robbie';
+console.log(app.test); //{name: 'robbie'}
 
-Object.freeze(app.test)
-delete app.name  //false
-app // {name: "ts", test: {...}}
+Object.freeze(app.test);
+delete app.name; //false
+app; // {name: "ts", test: {...}}
 ```
 
 Object.seal: 不能增加和删除，但可以修改属性
@@ -155,13 +160,13 @@ Object.seal: 不能增加和删除，但可以修改属性
 ```js
 const App = {
   name: 'ts'
-}
+};
 
-Object.seal(App)
+Object.seal(App);
 
-App.name = 'asgh'
+App.name = 'asgh';
 
-console.log('name', App.name) // 'asgh'
+console.log('name', App.name); // 'asgh'
 ```
 
 ## rest v.s spread
@@ -172,17 +177,17 @@ console.log('name', App.name) // 'asgh'
 #### Rest Parameter [ …rest]
 
 ```js
-var myName = ["Marina" , "Magdy" , "Shafiq"] ;
-const [firstName , ...familyName] = myName ;
+var myName = ['Marina', 'Magdy', 'Shafiq'];
+const [firstName, ...familyName] = myName;
 console.log(firstName); // Marina ;
 console.log(familyName); // [ "Magdy" , "Shafiq"] ;
 ```
 
 ```js
-function myData(...args){
-  console.log(args) ; // ["Marina",24,"Front-End Developer"]
+function myData(...args) {
+  console.log(args); // ["Marina",24,"Front-End Developer"]
 }
-myData("Marina",24,"Front-End Developer") ;
+myData('Marina', 24, 'Front-End Developer');
 ```
 
 Rest 就像是把多个值压缩成一个值，好像大喊一声，“其余的人都给我过来！”。
@@ -190,25 +195,24 @@ Rest 就像是把多个值压缩成一个值，好像大喊一声，“其余的
 #### Spread Operator […spread]
 
 ```js
-var myName = ["Marina" , "Magdy" , "Shafiq"];
-var newArr = [...myName ,"FrontEnd" , 24];
-console.log(newArr) ; // ["Marina" , "Magdy" , "Shafiq" , "FrontEnd" , 24 ] ;
+var myName = ['Marina', 'Magdy', 'Shafiq'];
+var newArr = [...myName, 'FrontEnd', 24];
+console.log(newArr); // ["Marina" , "Magdy" , "Shafiq" , "FrontEnd" , 24 ] ;
 ```
+
 Spread 就像是把一个值解压成多个值，好像大喊一声，“原地解散！”。
 
 ## 变量作为对象的 key
 
-
 ## 对象中的 this
-
 
 ## 属性的可枚举性
 
 对象的每个属性都有一个描述对象（Descriptor），用来控制该属性的行为。`Object.getOwnPropertyDescriptor` 方法可以获取该属性的描述对象。
 
 ```js
-let obj = { foo: 123 };
-Object.getOwnPropertyDescriptor(obj, 'foo')
+let obj = {foo: 123};
+Object.getOwnPropertyDescriptor(obj, 'foo');
 //  {
 //    value: 123,
 //    writable: true,
@@ -233,19 +237,24 @@ Object.getOwnPropertyDescriptor(obj, 'foo')
 实际上，引入“可枚举”（enumerable）这个概念的最初目的，就是让某些属性可以规避掉 `for...in` 操作，不然所有内部属性和方法都会被遍历到。比如，对象原型的 `toString` 方法，以及数组的 `length` 属性，就通过“可枚举性”，从而避免被 `for...in` 遍历到。
 
 ```js
-Object.getOwnPropertyDescriptor(Object.prototype, 'toString').enumerable
+Object.getOwnPropertyDescriptor(Object.prototype, 'toString').enumerable;
 // false
 
-Object.getOwnPropertyDescriptor([], 'length').enumerable
+Object.getOwnPropertyDescriptor([], 'length').enumerable;
 // false
 ```
 
-上面代码中， `toString` 和 `length` 属性的 `enumerable` 都是false，因此 `for...in` 不会遍历到这两个继承自原型的属性。
+上面代码中， `toString` 和 `length` 属性的 `enumerable` 都是 false，因此 `for...in` 不会遍历到这两个继承自原型的属性。
 
 另外，ES6 规定，所有 Class 的原型的方法都是不可枚举的。
 
 ```js
-Object.getOwnPropertyDescriptor(class {foo() {}}.prototype, 'foo').enumerable
+Object.getOwnPropertyDescriptor(
+  class {
+    foo() {}
+  }.prototype,
+  'foo'
+).enumerable;
 // false
 ```
 
@@ -279,7 +288,7 @@ ES6 一共有 5 种方法可以遍历对象的属性。
 
 `Reflect.ownKeys` 返回一个数组，包含对象自身的所有键名，不管键名是 Symbol 或字符串，也不管是否可枚举。基本就是 `getOwnPropertyNames` 和 `Object.getOwnPropertySymbols` 的合体。
 
-<Hint type="warning">不管是否可枚举，不管是不是Symbol，只要是对象自身的，`Reflect.ownKeys()` 都会遍历。</Hint>
+<Hint type="warning">不管是否可枚举，不管是不是 Symbol，只要是对象自身的，`Reflect.ownKeys()` 都会遍历。</Hint>
 
 <Hint type="must">`Reflect.ownKeys()` 方法的第一个参数必须是对象，否则会报错。</Hint>
 
@@ -294,17 +303,17 @@ ES6 一共有 5 种方法可以遍历对象的属性。
 ```js
 var obj = {
   m: function() {},
-  "b": '',
+  b: '',
   2: '',
   '1': '',
   [Symbol('b')]: '',
   [Symbol('a')]: '',
-  "3": '',
-  "a": '',
-}
+  '3': '',
+  a: ''
+};
 
-Object.keys(obj) //  ["1", "2", "3", "m", "b", "a"]
-Reflect.ownKeys(obj) // ["1", "2", "3", "m", "b", "a", Symbol(b), Symbol(a)]
+Object.keys(obj); //  ["1", "2", "3", "m", "b", "a"]
+Reflect.ownKeys(obj); // ["1", "2", "3", "m", "b", "a", Symbol(b), Symbol(a)]
 ```
 
 前面说的 5 种方法遍历对象的键名，都遵守同样的属性遍历的次序规则：
@@ -324,5 +333,5 @@ Reflect.ownKeys(obj) // ["1", "2", "3", "m", "b", "a", Symbol(b), Symbol(a)]
 1. [属性的可枚举性和遍历，作者：阮一峰](http://es6.ruanyifeng.com/#docs/object#%E5%B1%9E%E6%80%A7%E7%9A%84%E5%8F%AF%E6%9E%9A%E4%B8%BE%E6%80%A7%E5%92%8C%E9%81%8D%E5%8E%86)
 2. [stackoverflow: Does JavaScript Guarantee Object Property Order? ](https://stackoverflow.com/a/38218582)
 3. [ES6: What is the difference between Rest and Spread? By Marina Shafiq](https://medium.com/javascript-in-plain-english/es6-spread-parameter-vs-rest-operator-5e3c924c4e1f)
-4. [【译】JS解构的五种有趣用法](https://juejin.im/post/5d673044f265da03d60f12f7)
-5. [理解Object.defineProperty的作用，作者：戎马](https://segmentfault.com/a/1190000007434923)
+4. [【译】JS 解构的五种有趣用法](https://juejin.im/post/5d673044f265da03d60f12f7)
+5. [理解 Object.defineProperty 的作用，作者：戎马](https://segmentfault.com/a/1190000007434923)

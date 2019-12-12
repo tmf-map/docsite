@@ -4,7 +4,7 @@ title: 通信
 sidebar_label: 通信
 ---
 
-import Hint from '../../../src/components/Hint'
+import Hint from '../../../src/components/Hint';
 
 ![组件之间的关系图谱](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/io9G0J.jpg)
 
@@ -32,17 +32,14 @@ import Hint from '../../../src/components/Hint'
 
 <Hint type="best">超过两个层级的通信，推荐使用 Redux 去管理这个状态。</Hint>
 
-
 ### 方式二：逐级传递
 
-* 多级嵌套组件通信：[demo](https://jsbin.com/yibazoh/6/edit?html,js,output)
-* 兄弟组件通信：[demo](https://jsbin.com/fopikor/3/edit?html,js,output)
+- 多级嵌套组件通信：[demo](https://jsbin.com/yibazoh/6/edit?html,js,output)
+- 兄弟组件通信：[demo](https://jsbin.com/fopikor/3/edit?html,js,output)
 
 ### 方式三：context
 
-* 多级嵌套组件通信：[demo](https://jsbin.com/yibazoh/6/edit?html,js,output)
-* 兄弟组件通信：原理同上demo
+- 多级嵌套组件通信：[demo](https://jsbin.com/yibazoh/6/edit?html,js,output)
+- 兄弟组件通信：原理同上 demo
 
 <Hint type="warning">React 官方并不建议大量使用 context，因为尽管它可以减少逐层传递，但当组件结构复杂的时候，我们并不知道 context 是从哪里传来的。context 就像一个全局变量，而全局变量正是导致应用走向混乱的罪魁祸首之一。</Hint>
-
-

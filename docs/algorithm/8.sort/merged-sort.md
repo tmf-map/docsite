@@ -8,7 +8,7 @@ sidebar_label: 归并排序
 
 ## 题目
 
-给定一个整数数组 nums，使用归并排序将该数组升序排列。
+给定一个整数数组  nums，使用归并排序将该数组升序排列。
 
 示例 1：
 
@@ -51,46 +51,46 @@ sidebar_label: 归并排序
  * @param {number[]} nums
  * @return {number[]}
  */
-function sortArray (nums) {
-    if (nums.length < 2) {
-        return nums;
-    }
-    let mid = nums.length >> 1;
-    let left = sortArray(nums.slice(0, mid));
-    let right = sortArray(nums.slice(mid));
-    return merge(left, right);
+function sortArray(nums) {
+  if (nums.length < 2) {
+    return nums;
+  }
+  let mid = nums.length >> 1;
+  let left = sortArray(nums.slice(0, mid));
+  let right = sortArray(nums.slice(mid));
+  return merge(left, right);
 }
 
-function merge (left, right) {
-    let ans = [];
-    let i = 0;
-    let j = 0;
-    while (i < left.length && j < right.length) {
-        left[i] > right[j] ? ans.push(right[j++]) : ans.push(left[i++]);
-    }
-    while (i < left.length) {
-        ans.push(left[i++]);
-    }
-    while (j < right.length) {
-        ans.push(right[j++]);
-    }
-    return ans;
+function merge(left, right) {
+  let ans = [];
+  let i = 0;
+  let j = 0;
+  while (i < left.length && j < right.length) {
+    left[i] > right[j] ? ans.push(right[j++]) : ans.push(left[i++]);
+  }
+  while (i < left.length) {
+    ans.push(left[i++]);
+  }
+  while (j < right.length) {
+    ans.push(right[j++]);
+  }
+  return ans;
 }
 ```
 
 递归版 `merge`，在数据量比较大的时候会内存溢出，[test case](https://leetcode-cn.com/submissions/detail/31434415/testcase/):
 
 ```js
-function merge (left, right) {
-    if (!left.length) return right;
-    if (!right.length) return left;
-    let ans = [];
-    if (left[0] > right[0]) {
-        ans.push(right[0], ...merge(left, right.slice(1)));
-    } else {
-        ans.push(left[0], ...merge(left.slice(1), right));
-    }
-    return ans;
+function merge(left, right) {
+  if (!left.length) return right;
+  if (!right.length) return left;
+  let ans = [];
+  if (left[0] > right[0]) {
+    ans.push(right[0], ...merge(left, right.slice(1)));
+  } else {
+    ans.push(left[0], ...merge(left.slice(1), right));
+  }
+  return ans;
 }
 ```
 
@@ -102,14 +102,14 @@ function merge (left, right) {
 - 缺点：`sortArray` 函数略显复杂
 
 ```js
-function sortArray (nums, from = 0, to = nums.length - 1) {
-    if (from === to) {
-        return [nums[from]];
-    }
-    let mid = from + (to - from >> 1);
-    let left = sortArray(nums, from, mid);
-    let right = sortArray(nums, mid + 1, to);
-    return merge(left, right);
+function sortArray(nums, from = 0, to = nums.length - 1) {
+  if (from === to) {
+    return [nums[from]];
+  }
+  let mid = from + ((to - from) >> 1);
+  let left = sortArray(nums, from, mid);
+  let right = sortArray(nums, mid + 1, to);
+  return merge(left, right);
 }
 ```
 

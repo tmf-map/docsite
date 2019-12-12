@@ -28,7 +28,7 @@ sidebar_label: 表格
 ```js live
 <table>
   <colgroup>
-    <col span="2"/>
+    <col span="2" />
     <col style={{backgroundColor: '#eee'}} />
   </colgroup>
   <tr>

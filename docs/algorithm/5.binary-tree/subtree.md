@@ -4,7 +4,7 @@ title: 二叉树的子结构
 sidebar_label: 二叉树的子结构
 ---
 
-- 题源：《剑指Offer: 面试题 26》P148
+- 题源：《剑指 Offer: 面试题 26》P148
 - 在线：[牛客网](https://www.nowcoder.com/practice/6e196c44c7004d15b1610b9afca8bd88)
 
 ## 题目
@@ -13,8 +13,8 @@ sidebar_label: 二叉树的子结构
 
 ```js
 function TreeNode(val) {
-    this.val = val;
-    this.left = this.right = null;
+  this.val = val;
+  this.left = this.right = null;
 }
 ```
 
@@ -47,40 +47,42 @@ function TreeNode(val) {
 ## 代码实现
 
 ```js
-function isSubtree (a, b) {
-    let ans = false;
-    if (a && b) {
-        if (a.val === b.val) {
-            ans = isSubtreeFromThisNode(a, b)
-        }
-        if (!ans) {
-            ans = isSubtree(a.left, b)
-        }
-        if (!ans) {
-            ans = isSubtree(a.right, b)
-        }
+function isSubtree(a, b) {
+  let ans = false;
+  if (a && b) {
+    if (a.val === b.val) {
+      ans = isSubtreeFromThisNode(a, b);
     }
-    return ans;
+    if (!ans) {
+      ans = isSubtree(a.left, b);
+    }
+    if (!ans) {
+      ans = isSubtree(a.right, b);
+    }
+  }
+  return ans;
 }
 
 function isSubtreeFromThisNode(a, b) {
-    // b 的叶节点已经遍历完
-    if (!b) {
-        return true;
-    }
-    // b 节点还存在，但 a 已经没有节点了
-    if (!a) {
-        return false;
-    }
-    if (a.val !== b.val) {
-        return false;
-    }
-    return isSubtreeFromThisNode(a.left, b.left) &&
-        isSubtreeFromThisNode(a.right, b.right)
+  // b 的叶节点已经遍历完
+  if (!b) {
+    return true;
+  }
+  // b 节点还存在，但 a 已经没有节点了
+  if (!a) {
+    return false;
+  }
+  if (a.val !== b.val) {
+    return false;
+  }
+  return (
+    isSubtreeFromThisNode(a.left, b.left) &&
+    isSubtreeFromThisNode(a.right, b.right)
+  );
 }
 ```
 
 ## 拓展
 
-- 如果 A 的一个子树包括 A 的一个节点和这个节点的**所有子孙**。那该怎么办呢？例如图2，`8-9-2` 在 A 中只是中间一块，不能算是 A 的子树，故此时返回 `false`。
+- 如果 A 的一个子树包括 A 的一个节点和这个节点的**所有子孙**。那该怎么办呢？例如图 2，`8-9-2` 在 A 中只是中间一块，不能算是 A 的子树，故此时返回 `false`。
 - 详情请参考：[LeetCode: 572](https://leetcode-cn.com/problems/subtree-of-another-tree/)

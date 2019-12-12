@@ -6,9 +6,8 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-
 import React from 'react';
-import cx from 'classnames'
+import cx from 'classnames';
 import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
@@ -24,7 +23,7 @@ import styles from './index.module.css';
 export default function HomePage() {
   const context = useDocusaurusContext();
   const {
-    customFields: { keywords },
+    customFields: {keywords},
     tagline
   } = context.siteConfig;
 

@@ -9,4 +9,3 @@ React App 的测试主要由单元测试（Unit Test），快照测试（Snapsho
 ![React App 测试金字塔](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/WzUhYH.jpg)
 
 如测试金字塔所示，你应该对每个组件进行多个单元测试，对每个组件进行一次或两次快照测试，以及测试链接在一起的多个组件的一次或两次端到端测试。
-
