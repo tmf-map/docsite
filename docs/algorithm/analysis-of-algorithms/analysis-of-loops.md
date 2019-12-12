@@ -125,12 +125,12 @@ Example: let `A[1, ..., n]` be an array storing a bit (1 or 0) at each location,
 ```c
 counter = 0;
 for (i = 1; i < = n; i++) {
-    if (A[i] == 1)
-        counter++;
-    else {
-        f(counter);
-        counter = 0;
-    }
+  if (A[i] == 1)
+    counter++;
+  else {
+    f(counter);
+    counter = 0;
+  }
 }
 ```
 
@@ -159,8 +159,8 @@ The time complexity of the following C function is (assume n > 0)
 
 ```c
 int recursive (int n) {
-    if (n == 1) return (1);
-    else return (recursive (n-1) + recursive (n-1));
+  if (n == 1) return (1);
+  else return (recursive (n-1) + recursive (n-1));
 }
 ```
 
@@ -214,8 +214,8 @@ What is time complexity of fun()?
 int fun(int n) {
   int count = 0;
   for (int i = 0; i < n; i++)
-     for (int j = i; j > 0; j--)
-        count = count + 1;
+    for (int j = i; j > 0; j--)
+      count = count + 1;
   return count;
 }
 ```
@@ -233,11 +233,11 @@ What is the time complexity of the below function?
 
 ```c
 void fun(int n, int arr[]) {
-    int i = 0, j = 0;
-    for(; i < n; ++i) {
-        while(j < n && arr[i] < arr[j])
-            j++;
-    }
+  int i = 0, j = 0;
+  for(; i < n; ++i) {
+    while(j < n && arr[i] < arr[j])
+      j++;
+  }
 }
 ```
 
@@ -250,12 +250,12 @@ void fun(int n, int arr[]) {
 
 ```c
 void fun(int n, int arr[]) {
-    int i = 0, j = 0;
-    for(; i < n; ++i) {
-        j = 0;
-        while(j < n && arr[i] < arr[j])
-            j++;
-    }
+  int i = 0, j = 0;
+  for(; i < n; ++i) {
+    j = 0;
+    while(j < n && arr[i] < arr[j])
+      j++;
+  }
 }
 ```
 
@@ -265,11 +265,11 @@ Consider the following function:
 
 ```c
 int unknown(int n) {
-    int i, j, k = 0;
-    for (i = n/2; i <= n; i++)
-        for (j = 2; j <= n; j = j * 2)
-            k = k + n/2;
-    return k;
+  int i, j, k = 0;
+  for (i = n/2; i <= n; i++)
+    for (j = 2; j <= n; j = j * 2)
+      k = k + n/2;
+  return k;
 }
 ```
 
