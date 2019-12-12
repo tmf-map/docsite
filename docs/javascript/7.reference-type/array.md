@@ -23,12 +23,10 @@ shift, 转移，移动，去除 https://github.com/muwenzi/Program-Blog/issues/2
 
 ```js
 '123'.split(''); //["1", "2", "3"]
-Array.from('123') // ["1", "2", "3"]
-  [(1, 2, 3)].toString() // "1,2,3"
-
-  [(1, 2, 3)].join() // "1,2,3"
-
-  [(1, 2, 3)].join(''); //"123"
+Array.from('123'); // ["1", "2", "3"]
+[(1, 2, 3)].toString(); // "1,2,3"
+[(1, 2, 3)].join(); // "1,2,3"
+[(1, 2, 3)].join(''); //"123"
 JSON.stringify(obj);
 ```
 
@@ -100,9 +98,8 @@ indexOf 方法有两个缺点：
 - 它内部使用严格相等运算符（===）进行判断，这会导致对 NaN 的误判。
 
 ```js
-[NaN]
-  .indexOf(NaN) // -1
-  [NaN].includes(NaN); // true
+[NaN].indexOf(NaN); // -1
+[NaN].includes(NaN); // true
 ```
 
 includes 使用的是不一样的判断算法，就没有这个问题。

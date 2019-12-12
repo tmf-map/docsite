@@ -28,7 +28,7 @@ let timerId = setTimeout(func|code, delay[, arg1, arg2...])
 
 在下面这个示例中，`showAlert()` 方法会在 1 秒后执行：
 
-```js live
+```jsx live
 () => {
   function showAlert() {
     alert('Hello');
@@ -39,7 +39,7 @@ let timerId = setTimeout(func|code, delay[, arg1, arg2...])
 
 带参数的情况：
 
-```js live
+```jsx live
 () => {
   function showAlert(phrase1, phrase2) {
     alert(phrase1 + ', ' + phrase2);
@@ -56,13 +56,13 @@ let timerId = setTimeout(func|code, delay[, arg1, arg2...])
 
 所以这么写也是可以的：
 
-```js run
+```js
 setTimeout("alert('Hello')", 1000);
 ```
 
 但是，毕竟这种方式并不推崇，所以建议还是用函数方式：
 
-```js run
+```js
 setTimeout(() => alert('Hello'), 1000);
 ```
 
@@ -77,7 +77,7 @@ clearTimeout(timerId);
 
 在下面代码中，我们设定了一个定时器，紧接着取消了该定时器（中途反悔了），所以最后什么也没发生：
 
-```js run
+```js
 let timerId = setTimeout(() => alert('never happens'), 1000);
 alert(timerId); // 定时器 id
 
@@ -111,7 +111,7 @@ let timerId = setInterval(func|code, delay[, arg1, arg2...])
 
 下面的例子中，每间隔 2 秒就会输出一条消息。5 秒之后，输出停止：
 
-```js live
+```jsx live
 () => {
   function start() {
     // 每 2 秒重复一次
@@ -147,7 +147,7 @@ let timerId = setInterval(function() {
 
 ### 方式一：setInterval
 
-```js live
+```jsx live
 () => {
   const [time, setTime] = useState();
   function start() {
@@ -164,7 +164,7 @@ let timerId = setInterval(function() {
 
 ### 方式二：递归版 setTimeout
 
-```js live
+```jsx live
 () => {
   const [time, setTime] = useState();
   function start() {
@@ -259,7 +259,7 @@ setTimeout(function run() {
 
 下面例子中，代码会先输出 "Hello"，然后紧接着输出 "World"：
 
-```js run
+```js
 setTimeout(() => alert('World'), 0);
 
 alert('Hello');
@@ -435,7 +435,7 @@ count();
 
 下面用具体示例来阐述。其中 `setTimeout` 每次都在 `0ms` 后就再安排一次递归，每次调用都会在 `times` 数组中记录上一次调用的实际时间。所以，最终延时如何？下面来揭晓：
 
-```js live
+```jsx live
 () => {
   const [result, setResult] = useState();
   function start() {

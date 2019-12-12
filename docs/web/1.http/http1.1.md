@@ -4,6 +4,8 @@ title: HTTP/1.1
 sidebar_label: HTTP/1.1
 ---
 
+import Img from '../../../src/components/Img';
+
 ## 长连接
 
 一个 HTTP 的通信生命周期通过 Request 来界定，也就是一个 Request 一个 Response ，那么在 HTTP1.0 中，这次 HTTP 请求就结束了。为了解决这个问题，有些浏览器在请求时，用了一个非标准的 Connection 字段：Connection: keep-alive，但这个并不是标准字段。即 TCP 连接默认不关闭，可以被多个请求复用，不用声明 Connection: keep-alive。
@@ -38,4 +40,4 @@ HTTP/1.1 版还引入了管道机制（pipelining），即在同一个 TCP 连�
 
 **由于浏览器供应商难以实现，现被禁用或删除**
 
-![](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/RUc1N2.png)
+<Img w="500" align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/RUc1N2.png'/>

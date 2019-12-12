@@ -89,18 +89,18 @@ foo(22);
 
 ```js
 fooExecutionContext = {
-   scopeChain: { ... },
-   variableObject: {
-       arguments: {
-           0: 22,
-           length: 1
-       },
-       i: 22,
-       c: pointer to function c()
-       a: undefined,
-       b: undefined
-   },
-   this: { ... }
+  scopeChain: { ... },
+  variableObject: {
+    arguments: {
+      0: 22,
+      length: 1
+    },
+    i: 22,
+    c: pointer to function c()
+    a: undefined,
+    b: undefined
+  },
+  this: { ... }
 }
 ```
 
@@ -108,18 +108,18 @@ fooExecutionContext = {
 
 ```js
 fooExecutionContext = {
-   scopeChain: { ... },
-   variableObject: {
-       arguments: {
-           0: 22,
-           length: 1
-       },
-       i: 22,
-       c: pointer to function c()
-       a: 'hello',
-       b: pointer to function privateB()
-   },
-   this: { ... }
+  scopeChain: { ... },
+  variableObject: {
+    arguments: {
+      0: 22,
+      length: 1
+    },
+    i: 22,
+    c: pointer to function c(),
+    a: 'hello',
+    b: pointer to function privateB()
+  },
+  this: { ... }
 }
 ```
 
@@ -129,15 +129,15 @@ fooExecutionContext = {
 
 ```js
 ​(function() {
-    console.log(typeof foo); // function pointer
-    console.log(typeof bar); // undefined
-    function foo() {
-       return 'hello';
-    }
-    var foo = 'hello';
-    var bar = function() {
-       return 'world';
-    };
+  console.log(typeof foo); // function pointer
+  console.log(typeof bar); // undefined
+  function foo() {
+    return 'hello';
+  }
+  var foo = 'hello';
+  var bar = function() {
+    return 'world';
+  };
 }());​
 ```
 

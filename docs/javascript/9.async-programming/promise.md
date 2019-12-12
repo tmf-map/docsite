@@ -188,9 +188,9 @@ Promise {<resolved>: undefined}
 var p1 = new Promise(function(resolve, reject) {
   throw 'Uh-oh!';
 }).catch();
-<=>
+// <=>
 var p1 = new Promise(function(resolve, reject) {
- return Promise.reject('Uh-oh!');
+  return Promise.reject('Uh-oh!');
 }).catch();
 ```
 

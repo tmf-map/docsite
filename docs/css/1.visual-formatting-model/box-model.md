@@ -21,11 +21,11 @@ import Hint from '../../../src/components/Hint'; import Img from '../../../src/c
 
 https://developer.mozilla.org/zh-CN/docs/Web/Guide/HTML/HTML5/HTML5_element_list
 
-<Img align="center" legend="图：CSS3 盒模型" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/vompaN.jpg'/>
+<Img w="400" align="center" legend="图：CSS3 盒模型" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/vompaN.jpg'/>
 
 ## block-level box
 
-<Img align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/w9XTln.jpg'/>
+<Img w="380" align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/w9XTln.jpg'/>
 
 ## inline-level box
 
@@ -66,7 +66,7 @@ margin 合并（重叠） 3 种场景：
 
 请问: 现在要在上面这段 HTML 的外面再嵌套一层 `<div>` 元素，假如说现在没有父子 margin 合并，那这层新嵌套的 `<div>` 岂不阻断了原本的兄弟 margin 合并?很有可能间距就会变大， 妥妥地影响了原来的布局，这显然就违背了 `<div>` 的设计作用了。所以才有了父子 margin 合 并，外面再嵌套一层 `<div>` 元素就跟没嵌套一样，表现为 `margin-top:20px` 就好像是设置在 最外面的 `<div>` 元素上一样。
 
-<Img align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/svhvwA.jpg'/>
+<Img w="500" align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/svhvwA.jpg'/>
 
 请看以下三种写法：
 
@@ -120,13 +120,13 @@ margin 合并（重叠） 3 种场景：
 
 ### 兄弟合并
 
-<Img align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/hAZ0jg.jpg'/>
+<Img w="500" align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/hAZ0jg.jpg'/>
 
 #### 意义
 
 是为了让图文信息的排版更加舒服自然。设想，当我们上下排列一系列规则的块级元素（如段落 P）时，那么块元素之间因为外边距重叠的存在，段落之间就不会产生双倍的距离。
 
-<Img align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/oNyETU.jpg'/>
+<Img w="400" align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/oNyETU.jpg'/>
 
 ```jsx live
 <>
