@@ -29,18 +29,18 @@ let timerId = setTimeout(func|code, delay[, arg1, arg2...])
 在下面这个示例中，`showAlert()` 方法会在 1 秒后执行：
 
 ```jsx live
-() => {
+function() {
   function showAlert() {
     alert('Hello');
   }
   return <button onClick={() => setTimeout(showAlert, 1000)}>Click Me</button>;
-};
+}
 ```
 
 带参数的情况：
 
 ```jsx live
-() => {
+function() {
   function showAlert(phrase1, phrase2) {
     alert(phrase1 + ', ' + phrase2);
   }
@@ -49,7 +49,7 @@ let timerId = setTimeout(func|code, delay[, arg1, arg2...])
       Click Me
     </button>
   );
-};
+}
 ```
 
 如果第一个参数位传入的是字符串，JavaScript 会自动为其创建一个函数。
@@ -112,7 +112,7 @@ let timerId = setInterval(func|code, delay[, arg1, arg2...])
 下面的例子中，每间隔 2 秒就会输出一条消息。5 秒之后，输出停止：
 
 ```jsx live
-() => {
+function() {
   function start() {
     // 每 2 秒重复一次
     let timerId = setInterval(() => alert('tick'), 2000);
@@ -123,7 +123,7 @@ let timerId = setInterval(func|code, delay[, arg1, arg2...])
     }, 5000);
   }
   return <button onClick={() => start()}>Start</button>;
-};
+}
 ```
 
 Chrome 在显示 `alert/confirm/prompt` 时，内部的定时器仍旧会继续滴答。所以，在执行以上代码时，如果在一定时间内没有关掉 `alert` 弹窗，那么在你关闭弹窗后，Chrome 会立即显示下一个 `alert` 弹窗（前提是距离上一次执行超过了 2 秒）。
@@ -148,7 +148,7 @@ let timerId = setInterval(function() {
 ### 方式一：setInterval
 
 ```jsx live
-() => {
+function() {
   const [time, setTime] = useState();
   function start() {
     setInterval(() => setTime(new Date().getSeconds()), 2000);
@@ -159,13 +159,13 @@ let timerId = setInterval(function() {
       <div>{time}</div>
     </>
   );
-};
+}
 ```
 
 ### 方式二：递归版 setTimeout
 
 ```jsx live
-() => {
+function() {
   const [time, setTime] = useState();
   function start() {
     let delay = 2000;
@@ -181,7 +181,7 @@ let timerId = setInterval(function() {
       <div>{time}</div>
     </>
   );
-};
+}
 ```
 
 <Hint type="warning">如果 `(*)` 没有用 `setTimeout` 的话，那么会第一次将会同步执行。</Hint>
@@ -436,7 +436,7 @@ count();
 下面用具体示例来阐述。其中 `setTimeout` 每次都在 `0ms` 后就再安排一次递归，每次调用都会在 `times` 数组中记录上一次调用的实际时间。所以，最终延时如何？下面来揭晓：
 
 ```jsx live
-() => {
+function() {
   const [result, setResult] = useState();
   function start() {
     let start = (curr = prev = Date.now());
@@ -459,7 +459,7 @@ count();
       <div>调用时间间隔(ms): {result && result.join(',')}</div>
     </>
   );
-};
+}
 ```
 
 通过 Demo 我们会发现前面 4 次的间隔都是小于 4ms 的（代码运行本身也要占用一定的时间），从第 5 次开始后面的时间间隔都不会低于 4ms。这也是因为历史原因以及很多脚本都依赖于这个机制才得以存在至今。
