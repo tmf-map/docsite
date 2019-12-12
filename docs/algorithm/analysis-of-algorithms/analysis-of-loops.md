@@ -3,7 +3,7 @@ title: Analysis of Loops
 sidebar_label: Analysis of Loops
 ---
 
-import Hint from '../../../src/components/Hint'
+import Hint from '../../../src/components/Hint';
 
 ## Frequent Loops Complexity
 
