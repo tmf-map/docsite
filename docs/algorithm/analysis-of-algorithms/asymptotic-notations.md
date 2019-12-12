@@ -3,8 +3,7 @@ title: Asymptotic Notations
 sidebar_label: Asymptotic Notations
 ---
 
-import Img from '../../../src/components/Img'
-import Hint from '../../../src/components/Hint'
+import Img from '../../../src/components/Img' import Hint from '../../../src/components/Hint'
 
 The main idea of asymptotic analysis is to have a measure of efficiency of algorithms that doesn’t depend on machine specific constants, and doesn’t require algorithms to be implemented and time taken by programs to be compared. Asymptotic notations are mathematical tools to represent time complexity of algorithms for asymptotic analysis. The following 3 asymptotic notations are mostly used to represent time complexity of algorithms.
 
@@ -23,11 +22,11 @@ Dropping lower order terms is always fine because there will always be a n0 afte
 For a given function `g(n)`, we denote `Θ(g(n))` is following set of functions.
 
 ```text
-Θ(g(n)) = {f(n): there exist positive constants c1, c2 and n0 such 
+Θ(g(n)) = {f(n): there exist positive constants c1, c2 and n0 such
                  that 0 <= c1*g(n) <= f(n) <= c2*g(n) for all n >= n0}
 ```
 
-The above definition means, if `f(n)` is theta of `g(n)`, then the value `f(n)` is always between `c1*g(n)` and `c2*g(n)` for large values of `n` *(n >= n0)*. The definition of theta also requires that `f(n)` must be non-negative for values of n greater than n0.
+The above definition means, if `f(n)` is theta of `g(n)`, then the value `f(n)` is always between `c1*g(n)` and `c2*g(n)` for large values of `n` _(n >= n0)_. The definition of theta also requires that `f(n)` must be non-negative for values of n greater than n0.
 
 ## Big O Notation
 
@@ -43,8 +42,8 @@ If we use Θ notation to represent time complexity of Insertion sort, we have to
 The Big O notation is useful when we only have upper bound on time complexity of an algorithm. Many times we easily find an upper bound by simply looking at the algorithm.
 
 ```text
-O(g(n)) = {f(n): there exist positive constants c and 
-                  n0 such that 0 <= f(n) <= c*g(n) for 
+O(g(n)) = {f(n): there exist positive constants c and
+                  n0 such that 0 <= f(n) <= c*g(n) for
                   all n >= n0}
 ```
 
@@ -63,26 +62,26 @@ On the chart below you may find most common orders of growth of algorithms speci
 
 Below is the list of some of the most used Big O notations and their performance comparisons against different sizes of the input data.
 
-| Big O Notation | Computations for 10 elements | Computations for 100 elements | Computations for 1000 elements  |
-| -------------- | ---------------------------- | ----------------------------- | ------------------------------- |
-| **O(1)**       | 1                            | 1                             | 1                               |
-| **O(logn)**   | 3                            | 6                             | 9                               |
-| **O(n)**       | 10                           | 100                           | 1000                            |
-| **O(nlogn)** | 30                           | 600                           | 9000                            |
-| **O(n^2)**     | 100                          | 10000                         | 1000000                         |
-| **O(2^n)**     | 1024                         | 1.26e+29                      | 1.07e+301                       |
-| **O(n!)**      | 3628800                      | 9.3e+157                      | 4.02e+2567                      |
+| Big O Notation | Computations for 10 elements | Computations for 100 elements | Computations for 1000 elements |
+| --- | --- | --- | --- |
+| **O(1)** | 1 | 1 | 1 |
+| **O(logn)** | 3 | 6 | 9 |
+| **O(n)** | 10 | 100 | 1000 |
+| **O(nlogn)** | 30 | 600 | 9000 |
+| **O(n^2)** | 100 | 10000 | 1000000 |
+| **O(2^n)** | 1024 | 1.26e+29 | 1.07e+301 |
+| **O(n!)** | 3628800 | 9.3e+157 | 4.02e+2567 |
 
 Some of the examples of all those types of algorithms (in worst-case scenarios) are mentioned below:
 
-| Data Structure          | Access    | Search    |
-| ----------------------- | ------- | ------- |
-| **Logarithmic algorithm**               | O(logn)          | Binary Search         |
-| **Linear algorithm**               | O(n)          | Linear Search         |
-| **Superlinear algorithm**               | O(nlogn)          | Heap Sort, Merge Sort         |
-| **Polynomial algorithm**         | O(n^c)          | Strassen’s Matrix Multiplication, Bubble Sort, Selection Sort, Insertion Sort, Bucket Sort         |
-| **Exponential algorithm**          | O(c^n)        | Tower of Hanoi         |
-| **Factorial algorithm**  | O(n!)          | Determinant Expansion by Minors, Brute force Search algorithm for Traveling Salesman Problem         |
+| Data Structure | Access | Search |
+| --- | --- | --- |
+| **Logarithmic algorithm** | O(logn) | Binary Search |
+| **Linear algorithm** | O(n) | Linear Search |
+| **Superlinear algorithm** | O(nlogn) | Heap Sort, Merge Sort |
+| **Polynomial algorithm** | O(n^c) | Strassen’s Matrix Multiplication, Bubble Sort, Selection Sort, Insertion Sort, Bucket Sort |
+| **Exponential algorithm** | O(c^n) | Tower of Hanoi |
+| **Factorial algorithm** | O(n!) | Determinant Expansion by Minors, Brute force Search algorithm for Traveling Salesman Problem |
 
 ## Ω Notation
 
