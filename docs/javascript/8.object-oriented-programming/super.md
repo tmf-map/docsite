@@ -3,7 +3,7 @@ title: super
 sidebar_label: super
 ---
 
-import Hint from '../../../src/components/Hint'
+import Hint from '../../../src/components/Hint';
 
 ## 为什么要使用 super
 
@@ -21,15 +21,14 @@ import Hint from '../../../src/components/Hint'
 
 ```js
 class A {
-   constructor () {
-   }
+  constructor() {}
 }
 
 class A extends B {
-   /*eslint no-useless-constructor: "error"*/
-   constructor (...args) {
-     super(...args);
-   }
+  /*eslint no-useless-constructor: "error"*/
+  constructor(...args) {
+    super(...args);
+  }
 }
 ```
 
@@ -46,8 +45,8 @@ class B extends A {
     super();
   }
 }
-new A() // A
-new B() // B
+new A(); // A
+new B(); // B
 ```
 
 上面代码中， `new.target` 指向当前正在执行的函数。可以看到，在 `super()` 执行时，它指向的是子类 B 的构造函数，而不是父类 A 的构造函数。也就是说， `super()` 内部的 `this` 指向的是 B 。
@@ -103,7 +102,7 @@ class B extends A {
 }
 
 let b = new B();
-b.m // undefined
+b.m; // undefined
 ```
 
 上面代码中，p 是父类 A 实例的属性， `super.p` 就引用不到它。
@@ -126,12 +125,12 @@ React 也必须遵循 JS ，强制在 `constructor` 中必须先调用 `super` �
 
 ```jsx
 class Button extends React.Component {
- constructor(props) {
-   super(); // 😬 我们忘了传入 props
-   console.log(props);      // ✅ {}
-   console.log(this.props); // 😬 undefined
- }
- // ...
+  constructor(props) {
+    super(); // 😬 我们忘了传入 props
+    console.log(props); // ✅ {}
+    console.log(this.props); // 😬 undefined
+  }
+  // ...
 }
 ```
 

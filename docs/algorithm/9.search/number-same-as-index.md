@@ -4,7 +4,7 @@ title: 有序数组中值和下标相等的元素
 sidebar_label: 有序数组中值和下标相等的元素
 ---
 
-- 题源：《剑指Offer: 面试题 53-3》P267
+- 题源：《剑指 Offer: 面试题 53-3》P267
 
 ## 题目
 
@@ -26,21 +26,21 @@ sidebar_label: 有序数组中值和下标相等的元素
 ### 迭代版
 
 ```js
-function getNumberSameAsIndex (nums) {
-    let left = 0;
-    let right = nums.length - 1;
-    while (left <= right) {
-        let mid = left + (right - left >> 1);
-        if (nums[mid] === mid) {
-            return mid;
-        }
-        if (nums[mid] > k) {
-            right = mid - 1;
-        } else {
-            left = mid + 1;
-        }
+function getNumberSameAsIndex(nums) {
+  let left = 0;
+  let right = nums.length - 1;
+  while (left <= right) {
+    let mid = left + ((right - left) >> 1);
+    if (nums[mid] === mid) {
+      return mid;
     }
-    return -1;
+    if (nums[mid] > k) {
+      right = mid - 1;
+    } else {
+      left = mid + 1;
+    }
+  }
+  return -1;
 }
 ```
 
@@ -49,16 +49,16 @@ function getNumberSameAsIndex (nums) {
 这个版本也是尾递归，一些浏览器也遵循 ES 标准对尾递归进行了优化，让其不会栈溢出。
 
 ```js
-function getNumberSameAsIndex (nums, left = 0, right = nums.length - 1) {
-    if (left > right) return -1;
-    let mid = left + (right - left >> 1);
-    if (nums[mid] === mid) {
-        return mid;
-    }
-    if (nums[mid] > k) {
-        return getNumberSameAsIndex(nums, left, mid - 1);
-    } else {
-        return getNumberSameAsIndex(nums, mid + 1, right);
-    }
+function getNumberSameAsIndex(nums, left = 0, right = nums.length - 1) {
+  if (left > right) return -1;
+  let mid = left + ((right - left) >> 1);
+  if (nums[mid] === mid) {
+    return mid;
+  }
+  if (nums[mid] > k) {
+    return getNumberSameAsIndex(nums, left, mid - 1);
+  } else {
+    return getNumberSameAsIndex(nums, mid + 1, right);
+  }
 }
 ```

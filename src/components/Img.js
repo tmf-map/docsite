@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 function Img (props) {
     const { align, w, width, src, legend, origin, float, ...other} = props
@@ -12,4 +12,4 @@ function Img (props) {
     )
 }
 
-export default Img
+export default Img;

@@ -3,8 +3,7 @@ title: 水平居中
 sidebar_label: 水平居中
 ---
 
-import Img from '../../../src/components/Img'
-import Hint from '../../../src/components/Hint'
+import Img from '../../../src/components/Img'; import Hint from '../../../src/components/Hint';
 
 ## 行级元素
 
@@ -56,8 +55,7 @@ import Hint from '../../../src/components/Hint'
 }
 ```
 
-<Hint type="warning">元素需要设定 `width` 属性，否则元素的宽度会自动充满父元素，无法看出居中效果，就不存在相对父元素水平居中一说了。</Hint>
-<Hint type="warning">如果元素设置 `float` 属性，会导致第一种方法失效，flex 虽然还有效，但文字也是居中的，某些场景下是有问题的。</Hint>
+<Hint type="warning">元素需要设定 `width` 属性，否则元素的宽度会自动充满父元素，无法看出居中效果，就不存在相对父元素水平居中一说了。</Hint> <Hint type="warning">如果元素设置 `float` 属性，会导致第一种方法失效，flex 虽然还有效，但文字也是居中的，某些场景下是有问题的。</Hint>
 
 ## 绝对定位元素
 
@@ -83,16 +81,17 @@ import Hint from '../../../src/components/Hint'
 我们可以通过使用浮动的伪元素占位符来实现。在左边中放置一个向右浮动的占位符，在右边中放置一个向左浮动的占位符。伪元素高度即图像的高度，每个宽度是图像宽度的一半。
 
 ```css
-#l:before, #r:before { 
-  content: ""; 
-  width: 125px; 
-  height: 250px; 
+#l:before,
+#r:before {
+  content: '';
+  width: 125px;
+  height: 250px;
 }
-#l:before { 
-  float: right; 
+#l:before {
+  float: right;
 }
-#r:before { 
-  float: left; 
+#r:before {
+  float: left;
 }
 ```
 

@@ -4,7 +4,7 @@ title: 数组中的逆序对
 sidebar_label: 数组中的逆序对
 ---
 
-- 题源：《剑指Offer: 面试题 51》P249
+- 题源：《剑指 Offer: 面试题 51》P249
 - 在线：[牛客网](https://www.nowcoder.com/practice/96bd6684e04a44eb80e6a68efc0ec6c5)
 
 ## 题目
@@ -30,7 +30,7 @@ sidebar_label: 数组中的逆序对
     <p>图1：先分后并进行归并排序，并统计逆序对</p>
 </div>
 
-如图2(a)中，7 > 6, 6 及其前面有 2 个数，所以算 2 个逆序对：
+如图 2(a)中，7 > 6, 6 及其前面有 2 个数，所以算 2 个逆序对：
 
 <div align="center">
     <img width="630" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/9GHK67.png" />
@@ -42,43 +42,43 @@ sidebar_label: 数组中的逆序对
 ```js
 let count = 0;
 
-function inversePairs (nums) {
-    sortArray(nums);
-    return count;
+function inversePairs(nums) {
+  sortArray(nums);
+  return count;
 }
 
-function sortArray (nums, from = 0, to = nums.length - 1) {
-    // 分割到一个元素的时候开始合并
-    if (from === to) {
-        return [nums[from]];
-    }
-    let mid = from + (to - from >> 1);
-    let left = sortArray(nums, from, mid);
-    let right = sortArray(nums, mid + 1, to);
-    return merge(left, right);
+function sortArray(nums, from = 0, to = nums.length - 1) {
+  // 分割到一个元素的时候开始合并
+  if (from === to) {
+    return [nums[from]];
+  }
+  let mid = from + ((to - from) >> 1);
+  let left = sortArray(nums, from, mid);
+  let right = sortArray(nums, mid + 1, to);
+  return merge(left, right);
 }
 
-function merge (left, right) {
-    let ans = [];
-    // 注意是从后开始
-    let i = left.length - 1;
-    let j = right.length - 1;
-    while (i >= 0 && j >= 0) {
-        if (left[i] > right[j]) {
-            // 从后往前插入比较大的值
-            ans.unshift(left[i--]);
-            // 表明 left[i] 比 right[j] 以及之前都大
-            count += j + 1;
-        } else {
-            ans.unshift(right[j--]);
-        }
+function merge(left, right) {
+  let ans = [];
+  // 注意是从后开始
+  let i = left.length - 1;
+  let j = right.length - 1;
+  while (i >= 0 && j >= 0) {
+    if (left[i] > right[j]) {
+      // 从后往前插入比较大的值
+      ans.unshift(left[i--]);
+      // 表明 left[i] 比 right[j] 以及之前都大
+      count += j + 1;
+    } else {
+      ans.unshift(right[j--]);
     }
-    while (i >= 0) {
-        ans.unshift(left[i--]);
-    }
-    while (j >= 0) {
-        ans.unshift(right[j--]);
-    }
-    return ans;
+  }
+  while (i >= 0) {
+    ans.unshift(left[i--]);
+  }
+  while (j >= 0) {
+    ans.unshift(right[j--]);
+  }
+  return ans;
 }
 ```

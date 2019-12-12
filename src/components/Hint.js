@@ -1,6 +1,6 @@
-import React from 'react'
-import marked from 'marked'
-import './Hint.css'
+import React from 'react';
+import marked from 'marked';
+import './Hint.css';
 
 const colorMap = {
     best: {
@@ -97,13 +97,19 @@ const colorMap = {
     }
 }
 
-function Hint ({type, children}) {
-    return (
-        <div className="custom-hint" style={{borderLeft: `0.25rem solid ${colorMap[type].color}`}}>
-            <div style={{float: 'left'}}>{colorMap[type].icon}</div>
-            <div dangerouslySetInnerHTML={{ __html: marked(`<span>${colorMap[type].name}</span>：${children}`) }} />
-        </div>
-    )
+function Hint({type, children}) {
+  return (
+    <div
+      className="custom-hint"
+      style={{borderLeft: `0.25rem solid ${colorMap[type].color}`}}>
+      <div style={{float: 'left'}}>{colorMap[type].icon}</div>
+      <div
+        dangerouslySetInnerHTML={{
+          __html: marked(`<span>${colorMap[type].name}</span>：${children}`)
+        }}
+      />
+    </div>
+  );
 }
 
-export default Hint
+export default Hint;

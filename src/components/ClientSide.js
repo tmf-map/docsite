@@ -12,27 +12,29 @@ export default function ClientSide() {
         'hero hero--primary',
         styles['overflow-hidden'],
         styles.whyus
-      )}
-    >
+      )}>
       <div className="container">
         <div className="section">
           <div className="row">
             <div
-              className={classNames('col col--5', styles['section-content'])}
-            >
+              className={classNames('col col--5', styles['section-content'])}>
               {/* <Subtitle>Why choose us</Subtitle> */}
               <Heading className={styles['heading-white']}>
                 Client Technology
               </Heading>
               <p className={classNames(styles.text, styles.paragraph)}>
-                <cite>"Any application that can be written in JavaScript, will eventually be written in JavaScript." - Atwood</cite>
+                <cite>
+                  &quot;Any application that can be written in JavaScript, will
+                  eventually be written in JavaScript.&quot; - Atwood
+                </cite>
                 {/* <cite style={{float: 'right'}}>- Jeff Atwood</cite> */}
               </p>
               <h2 className={classNames(styles.text, styles.emphasis)}>
                 Write in one language, run in more clients.
               </h2>
               <p className={classNames(styles.text, styles.paragraph)}>
-                As the web and JS develop rapidly, there are many frameworks available to build client applications for different ends.
+                As the web and JS develop rapidly, there are many frameworks
+                available to build client applications for different ends.
               </p>
             </div>
             <div
@@ -40,8 +42,7 @@ export default function ClientSide() {
                 'col',
                 styles['section-content'],
                 styles['section-bgwhite']
-              )}
-            >
+              )}>
               <span
                 className={classNames(
                   styles['section-bgwhite-block'],
@@ -56,9 +57,7 @@ export default function ClientSide() {
                       className={styles['small-image']}
                     />
                   </Oval>
-                  <h2 className={styles['section-heading']}>
-                    Web
-                  </h2>
+                  <h2 className={styles['section-heading']}>Web</h2>
                   <ul>
                     <li>JS/CSS/HTML</li>
                     <li>TypeScript</li>
@@ -73,9 +72,7 @@ export default function ClientSide() {
                       className={styles['small-image']}
                     />
                   </Oval>
-                  <h2 className={styles['section-heading']}>
-                    Mobile
-                  </h2>
+                  <h2 className={styles['section-heading']}>Mobile</h2>
                   <ul>
                     <li>H5</li>
                     <li>Mini Programs</li>
@@ -90,9 +87,7 @@ export default function ClientSide() {
                       className={styles['small-image']}
                     />
                   </Oval>
-                  <h2 className={styles['section-heading']}>
-                    Desktop
-                  </h2>
+                  <h2 className={styles['section-heading']}>Desktop</h2>
                   <ul>
                     <li>Electron</li>
                     <li>NodeGUI</li>

@@ -4,8 +4,7 @@ title: 生命周期
 sidebar_label: 生命周期
 ---
 
-import Hint from '../../../src/components/Hint'
-import Img from '../../../src/components/Img'
+import Hint from '../../../src/components/Hint'; import Img from '../../../src/components/Img';
 
 ## React < v16.3
 
@@ -23,10 +22,10 @@ import Img from '../../../src/components/Img'
 ```jsx
 class Child extends React.Component {
   componentWillMount() {
-    console.log("componentWillMount: Child");
+    console.log('componentWillMount: Child');
   }
   componentDidMount() {
-    console.log("componentDidMount: Child");
+    console.log('componentDidMount: Child');
   }
   render() {
     return <div>child</div>;
@@ -35,10 +34,10 @@ class Child extends React.Component {
 
 class Parent extends React.Component {
   componentWillMount() {
-    console.log("componentWillMount: Parent");
+    console.log('componentWillMount: Parent');
   }
   componentDidMount() {
-    console.log("componentDidMount: Parent");
+    console.log('componentDidMount: Parent');
   }
   render() {
     return (
@@ -62,9 +61,9 @@ componentDidMount: Parent
 其实源码实现类似以下的过程：
 
 ```js
-component.componentWillMount && component.componentWillMount()
-componentToRealDOM(component)
-component.componentDidMount && component.componentDidMount()
+component.componentWillMount && component.componentWillMount();
+componentToRealDOM(component);
+component.componentDidMount && component.componentDidMount();
 ```
 
 ## React > v16.3
@@ -79,8 +78,8 @@ component.componentDidMount && component.componentDidMount()
 
 React v16.3，引入了两个新的生命周期函数：
 
-* **static getDerivedStateFromProps**：取代 `componentWillMount` 和 `componentWillReceiveProps`
-* **getSnapshotBeforeUpdate**：取代 `componentWillUpdate`
+- **static getDerivedStateFromProps**：取代 `componentWillMount` 和 `componentWillReceiveProps`
+- **getSnapshotBeforeUpdate**：取代 `componentWillUpdate`
 
 这两个生命周期虽然是新加的，但并不太常用。它们偶尔会很方便，但是大部分情况下可能都不需要它们。
 
@@ -113,7 +112,7 @@ static getDerivedStateFromProps(props, state)
 ### getSnapshotBeforeUpdate
 
 ```js
-getSnapshotBeforeUpdate(prevProps, prevState)
+getSnapshotBeforeUpdate(prevProps, prevState);
 ```
 
 `getSnapshotBeforeUpdate()` 在最近一次渲染输出（提交到 DOM 节点）之前调用。它使得组件能在发生更改之前从 DOM 中捕获一些信息（例如，滚动位置）。
@@ -150,9 +149,7 @@ class ScrollingList extends React.Component {
   }
 
   render() {
-    return (
-      <div ref={this.listRef}>{/* ...contents... */}</div>
-    );
+    return <div ref={this.listRef}>{/* ...contents... */}</div>;
   }
 }
 ```

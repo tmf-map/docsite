@@ -3,8 +3,7 @@ title: 垂直居中
 sidebar_label: 垂直居中
 ---
 
-import Img from '../../../src/components/Img'
-import Hint from '../../../src/components/Hint'
+import Img from '../../../src/components/Img'; import Hint from '../../../src/components/Hint';
 
 <img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/qJ6qBL.png'/>
 
@@ -13,7 +12,6 @@ import Hint from '../../../src/components/Hint'
 [在线 Demo](https://codepen.io/muwenzi/pen/bGGBYaO)
 
 <Img width="500" align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/3oWPbs.png'/>
-
 
 ```css
 .container {
@@ -72,7 +70,7 @@ import Hint from '../../../src/components/Hint'
 
 > all elements, except elements with table `display` types other than `table-caption`, `table` and `inline-table`. It also applies to `::first-letter`. — [margin – CSS | MSDN](https://developer.mozilla.org/en-US/docs/Web/CSS/margin)
 
-最好在外面包裹一层 `table`: 
+最好在外面包裹一层 `table`:
 
 ```css
 .container-parent {
@@ -89,9 +87,9 @@ import Hint from '../../../src/components/Hint'
 行内元素
 
 ```css
-.container {   
+.container {
   height: 230px;
-  display: flex;   
+  display: flex;
   flex-wrap: wrap; /* must have */
   align-content: center; /* 多行副轴对齐方式 */
 }
@@ -100,9 +98,9 @@ import Hint from '../../../src/components/Hint'
 块级元素
 
 ```css
-.container {   
+.container {
   height: 230px;
-  display: flex;   
+  display: flex;
   flex-direction: column;
   justify-content: center;
 }

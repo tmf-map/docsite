@@ -90,13 +90,17 @@ sidebar_label: 文本格式
 ### `<sup>...</sup>`
 
 ```jsx live
-<div>x<sup>2</sup></div>
+<div>
+  x<sup>2</sup>
+</div>
 ```
 
 ### `<sub>...</sub>`
 
 ```jsx live
-<div>f<sub>1</sub></div>
+<div>
+  f<sub>1</sub>
+</div>
 ```
 
 ## `<pre>...</pre>`
