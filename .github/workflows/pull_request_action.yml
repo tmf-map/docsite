@@ -1,4 +1,4 @@
-name: Pull Request Action
+name: github-actions-pr
 
 on: pull_request
 
@@ -18,7 +18,7 @@ jobs:
   add-projects:
     runs-on: ubuntu-latest
     steps:
-      - uses: alex-page/github-project-automation-plus@v0.1.1
+      - uses: alex-page/github-project-automation-plus@v0.1.0
         with:
           project: Collaboration Board
           column: Code review
