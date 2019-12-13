@@ -1,0 +1,8 @@
+blog: blog/**/*
+"docs: algorithm": docs/algorithm/**/*
+"docs: css": docs/css/**/*
+"docs: design patterns": docs/design-patterns/**/*
+"docs: html": docs/html/**/*
+"docs: javascript": docs/javascript/**/*
+"docs: react": docs/react/**/*
+"docs: web": docs/web/**/*
