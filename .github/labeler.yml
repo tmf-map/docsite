@@ -1,3 +1,14 @@
+"dev experience":
+  - .github/**/*
+  - package.json
+  - yarn.lock
+  - .editorconfig
+  - .eslintignore
+  - .eslintrc.js
+  - .gitignore
+  - .prettierignore
+  - .prettierrc
+website: src/**/*
 blog: blog/**/*
 "docs: algorithm": docs/algorithm/**/*
 "docs: css": docs/css/**/*
