@@ -3,23 +3,23 @@ name: Pull Request Action
 on: pull_request
 
 jobs:
-  pr-labeler:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/labeler@v2
-        with:
-          repo-token: "${{ secrets.GITHUB_TOKEN }}"
-  add-reviews:
+  add-reviewers-assignees:
     runs-on: ubuntu-latest
     steps:
       - uses: kentaro-m/auto-assign-action@v1.0.1
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
-  automate-project-columns:
+  add-labels:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/labeler@v2
+        with:
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
+  add-projects:
     runs-on: ubuntu-latest
     steps:
       - uses: alex-page/github-project-automation-plus@v0.1.1
         with:
           project: Collaboration Board
           column: Code review
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
