@@ -6,11 +6,11 @@
   - .gitignore
   - .prettierignore
   - .prettierrc
+  - README.md
 dependencies:
   - package.json
   - yarn.lock
 website: src/**/*
-README: README.md
 blog: blog/**/*
 "docs: algorithm": docs/algorithm/**/*
 "docs: css": docs/css/**/*
