@@ -1,4 +1,4 @@
-name: github-actions-pr
+name: pr-triage
 
 on: pull_request
 
@@ -22,4 +22,4 @@ jobs:
         with:
           project: Collaboration Board
           column: Code review
-          repo-token: "${{ secrets.GITHUB_TOKEN_PLUS }}"
+          repo-token: "${{ secrets.BOT_TOKEN }}"
