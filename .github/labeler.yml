@@ -1,0 +1,21 @@
+"dev experience":
+  - .github/**/*
+  - .editorconfig
+  - .eslintignore
+  - .eslintrc.js
+  - .gitignore
+  - .prettierignore
+  - .prettierrc
+  - README.md
+dependencies:
+  - package.json
+  - yarn.lock
+website: src/**/*
+blog: blog/**/*
+"docs: algorithm": docs/algorithm/**/*
+"docs: css": docs/css/**/*
+"docs: design patterns": docs/design-patterns/**/*
+"docs: html": docs/html/**/*
+"docs: javascript": docs/javascript/**/*
+"docs: react": docs/react/**/*
+"docs: web": docs/web/**/*
