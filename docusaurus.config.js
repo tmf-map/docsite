@@ -4,7 +4,7 @@ const githubRepo = 'docsite';
 module.exports = {
   title: githubOrg,
   tagline: 'Explore and study full stack technology',
-  url: 'http://106.75.115.39',
+  url: 'https://thinkbucket.cn',
   baseUrl: '/',
   favicon:
     'https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/docsite-logo-white-mode.png',
@@ -67,12 +67,12 @@ module.exports = {
             },
             {
               html:
-                '<p class="footer-desc">致力于加强开发者对技术的学习和思考，专注于互联网技术发展，这里集聚了开发者的思考，总结和对未来互联网科技发展的畅想。</p>'
+                '<p class="footer-desc">Explore and study full stack technology. Here gathers developers\' thinking, summary and imagination on the future development of technology.</p>'
             }
           ]
         },
         {
-          title: '公众号',
+          title: 'Subscription',
           items: [
             {
               html:
@@ -81,24 +81,24 @@ module.exports = {
           ]
         },
         {
-          title: '帮助',
+          title: 'Help',
           items: [
             {
-              label: '更新日志',
+              label: 'Release Notes',
               href: `https://github.com/${githubOrg}/${githubRepo}/releases`
             },
             {
-              label: '讨论列表',
+              label: 'Issues',
               href: `https://github.com/${githubOrg}/${githubRepo}/issues`
             },
             {
-              label: '报告问题',
+              label: 'Bug Report',
               href: `https://github.com/${githubOrg}/${githubRepo}/issues/new`
             }
           ]
         },
         {
-          title: '社区',
+          title: 'Community',
           items: [
             {
               label: 'Blog',
@@ -118,7 +118,11 @@ module.exports = {
       //   alt: `${githubOrg} Logo`,
       //   src: '',
       // },
-      copyright: `Copyright © ${new Date().getFullYear()} ${githubOrg}`
+      copyright: `Copyright © ${new Date().getFullYear()} ${githubOrg}`,
+      icp: {
+        href: 'http://beian.miit.gov.cn/',
+        text: '冀ICP备19034211号'
+      }
     },
     prism: {
       theme: require('prism-react-renderer/themes/nightOwl')

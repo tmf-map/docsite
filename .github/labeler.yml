@@ -10,7 +10,9 @@
 dependencies:
   - package.json
   - yarn.lock
-website: src/**/*
+website:
+  - src/**/*
+  - docusaurus.config.js
 blog: blog/**/*
 "docs: algorithm": docs/algorithm/**/*
 "docs: css": docs/css/**/*
