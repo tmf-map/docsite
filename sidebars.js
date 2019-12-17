@@ -323,7 +323,9 @@ module.exports = {
   },
   "http": {
     "1. HTTP 基础": [
-      "http/1.basic/tcp-ip"
+      "http/1.basic/tcp-ip",
+      "http/1.basic/relevant-protocol",
+      "http/1.basic/http-connection"
     ]
   },
   docs: {
