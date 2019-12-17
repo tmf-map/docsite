@@ -44,7 +44,7 @@ TCP 协议是**Transmission Control Protocol**的缩写，意思是 **传输控�
 
 TCP/IP协议簇里的层次划分为链路层、传输层、网络层和应用层。TCP/IP协议的四层就像搭积木一样，每一层需要下层的支撑，同时又支撑着上层，任何一层被抽掉都可能会导致整个协议栈坍塌。同时分层也使得各层只考虑分配给自己的任务，而不需要关心其他层的具体实现。
 
-<Img width="360" legend="图：TCP/IP协议簇" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/jv7Caj.png" />
+<Img width="360" legend="图：TCP/IP协议分层" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/jv7Caj.png" />
 
 - 链路层（link layer）负责在**以太网、WiFi 这样的底层网络上发送原始数据包**，工作在网卡这个层次，使用**MAC地址**来标记网络上的设备，所以有时候也叫MAC层。
 
@@ -76,7 +76,7 @@ OSI一共分为7层，并为每层设计了编号，具体如下图所示：
 
 现在我们有了两个网络分层模型：TCP/IP 和 OSI，新的问题又出现了，一个是四层模型，一个是七层模型，这两者应该如何互相映射呢？
 
-<Img width="540" legend="图：OSI分层模型图" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/yfEQMV.png" />
+<Img width="540" legend="图：TCP/IP和OSI分层的映射关系" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/yfEQMV.png" />
 
 通过上图，我们可以得到如下结论：
 
@@ -87,7 +87,6 @@ OSI一共分为7层，并为每层设计了编号，具体如下图所示：
 - 第五、六、七层：统一对应到 TCP/IP 的应用层。
 
 通过两者的映射关系可以看出，TCP/IP 是一个**纯软件的栈**，没有网络应有的最根基的电缆、网卡等物理设备的位置。而 OSI 则补足了这个缺失，**在理论层面上**描述网络更加完整。
-
 
 ## TCP/IP 协议栈的工作方式
 
@@ -103,11 +102,11 @@ TCP/IP 协议栈的工作方式，可以用HTTP来举个例子：
 
 5. 接收端的服务器在链路层接收到数据，按序往上层发送，一直到应用层。当传输到应用层，才能算真正接收到由客户端发送过来的HTTP请求。
 
-<Img width="360" legend="图：TCP/IP协议簇" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/iAUBTu.png" />
+<Img width="360" legend="图：TCP/IP 协议栈的工作方式" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/iAUBTu.png" />
 
 发送端在层与层之间传输数据时，每经过一层时必定会被打上一个该层所属的首部信息。反之，接收端在层与层传输数据时，每经过一层时会把对应的首部消去。如下图所示：
 
-<Img width="360" legend="图：TCP/IP协议簇" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/w0KyOo.png" />
+<Img width="360" legend="图：TCP/IP各层数据封装和拆分流程" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/w0KyOo.png" />
 
 ## 小结
 
