@@ -18,7 +18,7 @@ sidebar_label: 数据绑定
 ```
 
 ```js
-const data = { count: 0 };
+const data = {count: 0};
 const proxy = new Proxy(data, {
   get(target, property) {
     return target[property];

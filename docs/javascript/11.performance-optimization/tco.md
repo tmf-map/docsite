@@ -3,12 +3,11 @@ title: 递归与尾调用优化
 sidebar_label: 递归与尾调用优化
 ---
 
-import Hint from '../../../src/components/Hint'
-import Img from '../../../src/components/Img'
+import Hint from '../../../src/components/Hint'; import Img from '../../../src/components/Img';
 
-> 对于你写的97%的代码，多上几毫秒并不会有什么区别，特别是相对代码的可维护性来说。 - Knuth
+> 对于你写的 97%的代码，多上几毫秒并不会有什么区别，特别是相对代码的可维护性来说。 - Knuth
 
-> 对于大多数的应用而言，牺牲效率以获得更高的可维护性是值得考虑的。应该让代码更容易阅读和调试，即使它不是最快的。——[《JavaScript函数式编程指南》](https://book.douban.com/subject/30283769/)P178
+> 对于大多数的应用而言，牺牲效率以获得更高的可维护性是值得考虑的。应该让代码更容易阅读和调试，即使它不是最快的。——[《JavaScript 函数式编程指南》](https://book.douban.com/subject/30283769/)P178
 
 ## 递归
 
@@ -29,9 +28,7 @@ import Img from '../../../src/components/Img'
 #### 阶乘
 
 ```js
-const factorial = n => (n === 1)
-  ? 1
-  : (n * factorial(n - 1)) // 最后一步不是只有递归
+const factorial = n => (n === 1 ? 1 : n * factorial(n - 1)); // 最后一步不是只有递归
 ```
 
 调用过程大致如下：
@@ -52,8 +49,8 @@ factorial(4)
 <img width="250" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/yg0yUa.png'/>
 
 ```js
-factorial(100) // 0.123ms
-factorial(100) // 0.126ms
+factorial(100); // 0.123ms
+factorial(100); // 0.126ms
 ```
 
 #### 斐波那契数列
@@ -85,18 +82,18 @@ function fibonacci(n) {
 #### 记忆化版阶乘
 
 ```js
-let factorial = memoize(factorial)
+let factorial = memoize(factorial);
 
-factorial(100) // 0.123ms
-factorial(101) // 0.004ms
+factorial(100); // 0.123ms
+factorial(101); // 0.004ms
 ```
 
 #### 记忆化版斐波那契数列
 
 ```js
-let fibonacci = memoize(fibonacci)
+let fibonacci = memoize(fibonacci);
 
-fibonacci(100)
+fibonacci(100);
 ```
 
 此时会发现别说是 `fibonacci(50)`, 就连 `fibonacci(100)` 也是小菜一碟。
@@ -111,15 +108,15 @@ fibonacci(100)
 
 ```js
 function foo(x) {
- return x;
+  return x;
 }
 
 function bar(y) {
-  return foo( y + 1 );  // 尾调用
+  return foo(y + 1); // 尾调用
 }
 
 function baz() {
-  return 1 + bar( 40 ); // 非尾调用
+  return 1 + bar(40); // 非尾调用
 }
 
 baz(); // 42
@@ -151,9 +148,8 @@ ES6 之所以要求引擎实现 TCO 而不是将其留给引擎自由决定，�
 #### 尾递归版阶乘
 
 ```js
-const factorial = (n, result = 1) => (n === 1)
-  ? result
-  : factorial(n - 1, n * result) // 最后一步只有递归
+const factorial = (n, result = 1) =>
+  n === 1 ? result : factorial(n - 1, n * result); // 最后一步只有递归
 ```
 
 ```py
@@ -166,6 +162,6 @@ factorial(4)
 
 ## 参考资料
 
-1. [JavaScript函数式编程指南 [美] Luis Atencio](https://book.douban.com/subject/30283769/)
-2. [你不知道的JavaScript（中卷）[美] Kyle Simpson](https://book.douban.com/subject/26854244/)
-3. [剑指Offer：名企面试官精讲典型编程题，作者：何海涛](https://book.douban.com/subject/27008702/)
+1. [JavaScript 函数式编程指南 [美] Luis Atencio](https://book.douban.com/subject/30283769/)
+2. [你不知道的 JavaScript（中卷）[美] Kyle Simpson](https://book.douban.com/subject/26854244/)
+3. [剑指 Offer：名企面试官精讲典型编程题，作者：何海涛](https://book.douban.com/subject/27008702/)

@@ -4,7 +4,7 @@ title: 有序数组中某数字出现的次数
 sidebar_label: 有序数组中某数字出现的次数
 ---
 
-- 题源：《剑指Offer: 面试题 53-1》P263
+- 题源：《剑指 Offer: 面试题 53-1》P263
 - 在线：[LeetCode: 34](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/)
 
 ## 题目
@@ -34,57 +34,57 @@ sidebar_label: 有序数组中某数字出现的次数
 ## 代码实现
 
 ```js
-function getNumberOfK (data, k) {
-    let firstK = getFirstK(data, k);
-    let lastK = getLastK(data, k);
-    if (firstK === -1 || lastK === -1) {
-        return 0;
-    }
-    return lastK - firstK + 1;
+function getNumberOfK(data, k) {
+  let firstK = getFirstK(data, k);
+  let lastK = getLastK(data, k);
+  if (firstK === -1 || lastK === -1) {
+    return 0;
+  }
+  return lastK - firstK + 1;
 }
 
-function getFirstK (data, k) {
-    let left = 0;
-    let right = data.length - 1;
-    while (left <= right) {
-        let mid = left + (right - left >> 1);
-        if (data[mid] === k) {
-            if (data[mid - 1] !== k) {
-                return mid;
-            } else {
-                right = mid - 1;
-                continue;
-            }
-        }
-        if (data[mid] > k) {
-            right = mid - 1;
-        } else {
-            left = mid + 1;
-        }
+function getFirstK(data, k) {
+  let left = 0;
+  let right = data.length - 1;
+  while (left <= right) {
+    let mid = left + ((right - left) >> 1);
+    if (data[mid] === k) {
+      if (data[mid - 1] !== k) {
+        return mid;
+      } else {
+        right = mid - 1;
+        continue;
+      }
     }
-    return -1;
+    if (data[mid] > k) {
+      right = mid - 1;
+    } else {
+      left = mid + 1;
+    }
+  }
+  return -1;
 }
 
-function getLastK (data, k) {
-    let left = 0;
-    let right = data.length - 1;
-    while (left <= right) {
-        let mid = left + (right - left >> 1);
-        if (data[mid] === k) {
-            if (data[mid + 1] !== k) {
-                return mid;
-            } else {
-                left = mid + 1;
-                continue;
-            }
-        }
-        if (data[mid] > k) {
-            right = mid - 1;
-        } else {
-            left = mid + 1;
-        }
+function getLastK(data, k) {
+  let left = 0;
+  let right = data.length - 1;
+  while (left <= right) {
+    let mid = left + ((right - left) >> 1);
+    if (data[mid] === k) {
+      if (data[mid + 1] !== k) {
+        return mid;
+      } else {
+        left = mid + 1;
+        continue;
+      }
     }
-    return -1;
+    if (data[mid] > k) {
+      right = mid - 1;
+    } else {
+      left = mid + 1;
+    }
+  }
+  return -1;
 }
 ```
 

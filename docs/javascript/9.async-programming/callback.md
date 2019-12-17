@@ -3,7 +3,7 @@ title: 回调
 sidebar_label: 回调
 ---
 
-import Img from '../../../src/components/Img'
+import Img from '../../../src/components/Img';
 
 ## 简介
 
@@ -73,10 +73,13 @@ function loadScript(src, callback) {
   document.head.append(script);
 }
 
-loadScript('https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.2.0/lodash.js', script => {
-  alert(`Cool, the ${script.src} is loaded`);
-  alert(_); // 在加载的脚本中声明的函数
-});
+loadScript(
+  'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.2.0/lodash.js',
+  script => {
+    alert(`Cool, the ${script.src} is loaded`);
+    alert(_); // 在加载的脚本中声明的函数
+  }
+);
 ```
 
 以上就是“基于回调”的异步编程风格。异步执行的函数，应该提供一个在函数完成时可以立即运行的 `callback` 参数。
@@ -105,7 +108,7 @@ loadScript('/my/script.js', function(script) {
     loadScript('/my/script3.js', function(script) {
       // ...在所有脚本被加载后继续操作
     });
-  })
+  });
 });
 ```
 
@@ -166,7 +169,7 @@ loadScript('1.js', function(error, script) {
           }
         });
       }
-    })
+    });
   }
 });
 ```
@@ -212,7 +215,7 @@ function step3(error, script) {
   } else {
     // ...在所有脚本被加载后继续 (*)
   }
-};
+}
 ```
 
 效果一样，但是没有深层的嵌套了，因为我们使每个动作都有一个独立的顶层函数。

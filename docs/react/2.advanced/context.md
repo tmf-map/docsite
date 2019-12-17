@@ -4,9 +4,9 @@ title: Context
 sidebar_label: Context
 ---
 
-import Hint from '../../../src/components/Hint'
+import Hint from '../../../src/components/Hint';
 
-Context 通过组件树提供了一个传递数据的方法，从而避免了在每一个层级手动的传递 props 属性。在一个典型的 React 应用中，数据是通过 props 属性由上向下（由父及子）的进行传递的，但这对于某些类型的属性而言是极其繁琐的（例如：地区偏好，UI主题），这是应用程序中许多组件都所需要的。 Context 提供了一种在组件之间共享此类值的方式，而不必通过组件树的每个层级显式地传递 props 。
+Context 通过组件树提供了一个传递数据的方法，从而避免了在每一个层级手动的传递 props 属性。在一个典型的 React 应用中，数据是通过 props 属性由上向下（由父及子）的进行传递的，但这对于某些类型的属性而言是极其繁琐的（例如：地区偏好，UI 主题），这是应用程序中许多组件都所需要的。 Context 提供了一种在组件之间共享此类值的方式，而不必通过组件树的每个层级显式地传递 props 。
 
 ## 何时使用 Context
 
@@ -80,7 +80,7 @@ class App extends React.Component {
 const MyContext = React.createContext(defaultValue);
 ```
 
-创建一对 `{ Provider, Consumer }`。当 React 渲染 context 组件 *Consumer* 时，它将从组件树的上层中最接近的匹配的 *Provider* 读取当前的 context 值。
+创建一对 `{ Provider, Consumer }`。当 React 渲染 context 组件 _Consumer_ 时，它将从组件树的上层中最接近的匹配的 _Provider_ 读取当前的 context 值。
 
 如果上层的组件树没有一个匹配的 Provider，而此时你需要渲染一个 Consumer 组件，那么你可以用到 `defaultValue` 。这有助于在不封装它们的情况下对组件进行测试。
 
@@ -104,11 +104,11 @@ React 组件允许 Consumers 订阅 context 的改变。
 
 一个可以订阅 context 变化的 React 组件。
 
-接收一个**函数作为子节点**（即Render Props）。 函数接收当前 context 的值并返回一个 React 节点。传递给函数的 value 将等于组件树中上层 context 的**最近的 Provider 的 `value` 属性**。如果 context 没有 Provider ，那么 value 参数将等于被传递给 `createContext()` 的 `defaultValue` 。
+接收一个**函数作为子节点**（即 Render Props）。 函数接收当前 context 的值并返回一个 React 节点。传递给函数的 value 将等于组件树中上层 context 的**最近的 Provider 的 `value` 属性**。如果 context 没有 Provider ，那么 value 参数将等于被传递给 `createContext()` 的 `defaultValue` 。
 
 每当 Provider 的值发生改变时, 作为 Provider 后代的所有 Consumers 都会重新渲染。 从 Provider 到其后代的 Consumers 传播不受 `shouldComponentUpdate` 方法的约束，因此即使祖先组件没有更新，后代 Consumer 也会被更新。
 
-<Hint type="best">因为内部通过使用与 `Object.is ` 相同的算法比较新值和旧值来确定变化。所以为了避免一些可能触发意外的渲染，可以将提升 `value` 到父节点的 state 里。</Hint>
+<Hint type="best">因为内部通过使用与 `Object.is` 相同的算法比较新值和旧值来确定变化。所以为了避免一些可能触发意外的渲染，可以将提升 `value` 到父节点的 state 里。</Hint>
 
 因为 context 使用 `reference identity` 确定何时重新渲染，在 Consumer 中，当一个 Provider 的父节点重新渲染的时候，有一些问题可能触发意外的渲染。例如下面的代码，所有的 Consumer 在 Provider 重新渲染之时，每次都将重新渲染，因为一个新的对象总是被创建对应 Provider 里的 `value：`
 
@@ -130,7 +130,7 @@ class App extends React.Component {
 class App extends React.Component {
   constructor(props) {
     this.state = {
-      value: {something: 'something'},
+      value: {something: 'something'}
     };
   }
 
@@ -162,7 +162,7 @@ MyContext.displayName = 'MyDisplayName';
 
 ### Class.contextType
 
-可以将由 `React.createContext()` 创建的 context 对象赋值给 class 的 `contextType` 属性。 然后使用 `this.context` 即可拿到该值，你可以在任何生命周期方法（包括render函数）中使用 `this.context`。如下例所示：
+可以将由 `React.createContext()` 创建的 context 对象赋值给 class 的 `contextType` 属性。 然后使用 `this.context` 即可拿到该值，你可以在任何生命周期方法（包括 render 函数）中使用 `this.context`。如下例所示：
 
 ```jsx
 class MyClass extends React.Component {
@@ -203,6 +203,7 @@ class MyClass extends React.Component {
 ### useContext
 
 `useContext` 是 react 中三大基础 [hooks](https://reactjs.org/docs/hooks-reference.html) 之一，使用方式如下：
+
 ```jsx
 const value = useContext(MyContext);
 ```
@@ -225,7 +226,7 @@ function Button() {
   return useMemo(() => {
     // The rest of your rendering logic
     return <ExpensiveTree className={theme} />;
-  }, [theme])
+  }, [theme]);
 }
 ```
 
@@ -245,7 +246,7 @@ const ThemeContext = React.createContext('light');
 
 // Signed-in user context
 const UserContext = React.createContext({
-  name: 'Guest',
+  name: 'Guest'
 });
 
 class App extends React.Component {
@@ -278,9 +279,7 @@ function Content() {
     <ThemeContext.Consumer>
       {theme => (
         <UserContext.Consumer>
-          {user => (
-            <ProfilePage user={user} theme={theme} />
-          )}
+          {user => <ProfilePage user={user} theme={theme} />}
         </UserContext.Consumer>
       )}
     </ThemeContext.Consumer>
@@ -297,16 +296,16 @@ function Content() {
 其实原理机制很普通，也是应用 `React.createContext` 方法：
 
 ```js
-ReactReduxContext = React.createContext(null)
+ReactReduxContext = React.createContext(null);
 ```
 
 封装了一下 Provider：
 
 ```jsx
-function Provider({ store, context, children }) {
+function Provider({store, context, children}) {
   // ...
-  const Context = context || ReactReduxContext
-  return <Context.Provider value={contextValue}>{children}</Context.Provider>
+  const Context = context || ReactReduxContext;
+  return <Context.Provider value={contextValue}>{children}</Context.Provider>;
 }
 ```
 

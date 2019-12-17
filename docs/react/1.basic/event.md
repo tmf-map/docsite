@@ -4,7 +4,7 @@ title: 事件
 sidebar_label: 事件
 ---
 
-import Hint from '../../../src/components/Hint'
+import Hint from '../../../src/components/Hint';
 
 ## 合成事件与原生事件
 
@@ -13,7 +13,9 @@ import Hint from '../../../src/components/Hint'
 在 JSX 中直接绑定的事件，如
 
 ```jsx
-<a ref="aTag" onClick={(e)=>this.handleClick(e)}>UPDATE</a>
+<a ref="aTag" onClick={e => this.handleClick(e)}>
+  UPDATE
+</a>
 ```
 
 这里的 `handleClick` 事件就是合成事件。
@@ -29,22 +31,22 @@ VirtualDOM 在内存中是以 **对象** 的形式存在，React 基于 VirtualD
 通过 JS 原生代码绑定的事件，如：
 
 ```javascript
-document.body.addEventListener('click',e => {
+document.body.addEventListener('click', e => {
   // 通过e.target判断阻止冒泡
-  if(e.target && e.target.matches('a')){
+  if (e.target && e.target.matches('a')) {
     return;
   }
   console.log('body');
-})
+});
 // 或
-this.refs.update.addEventListener('click',e => {
+this.refs.update.addEventListener('click', e => {
   console.log('update');
 });
 ```
 
 Q：为什么有时候还需要原生事件？
 
-A：react 的 app 一般是挂在 body 下面某个div 结点上，如果我想将事件绑定在 body 上（比如监听 body 的滚动事件，window 的 resize 事件）就需要用原生事件。实际上，react 合成事件只是原生 DOM 事件的一个子集，它仅仅实现了 [DOM Level 3](https://www.w3.org/TR/DOM-Level-3-Events/) 的事件接口，并且统一了浏览器的兼容问题，有些事件 React 并没有实现。
+A：react 的 app 一般是挂在 body 下面某个 div 结点上，如果我想将事件绑定在 body 上（比如监听 body 的滚动事件，window 的 resize 事件）就需要用原生事件。实际上，react 合成事件只是原生 DOM 事件的一个子集，它仅仅实现了 [DOM Level 3](https://www.w3.org/TR/DOM-Level-3-Events/) 的事件接口，并且统一了浏览器的兼容问题，有些事件 React 并没有实现。
 
 Q：在什么生命周期才可以绑定原生事件？
 
@@ -54,7 +56,7 @@ A：组件挂载完成之后，即 componentDidMount。
 
 <Hint type="warning">合成事件中阻止事件冒泡是没办法阻止原生事件的冒泡。即使是 reactEvent.nativeEvent.stopPropagation\(\)。</Hint>
 
-reactEvent 是封装好的事件，它是在 document 的回调里进行封装，并执行回调的。而原生的监听，在document 接收到冒泡时早就执行完了。`reactEvent.nativeEvent.stopPropagation()` 方法实际上是在最外层节点上调用了原生的 stopPropagation， 只阻止了 document 的冒泡。
+reactEvent 是封装好的事件，它是在 document 的回调里进行封装，并执行回调的。而原生的监听，在 document 接收到冒泡时早就执行完了。`reactEvent.nativeEvent.stopPropagation()` 方法实际上是在最外层节点上调用了原生的 stopPropagation， 只阻止了 document 的冒泡。
 
 <Hint type="warning">原生事件中阻止冒泡是可以阻止合成事件的冒泡。</Hint>
 
@@ -82,7 +84,7 @@ onChange = {this.handleChange.bind(this)}
 
 #### 箭头函数隐式绑定：
 
-这种方法其实和第一种类似，我们可以利用ES6 箭头函数 **隐式** 绑定 this：
+这种方法其实和第一种类似，我们可以利用 ES6 箭头函数 **隐式** 绑定 this：
 
 ```jsx
 onChange = {e => this.handleChange(e)}
@@ -90,7 +92,7 @@ onChange = {e => this.handleChange(e)}
 
 <Hint type="warning">这种方法与第一种方法一样，同样存在潜在的性能问题。</Hint>
 
-<Hint type="best">函数式组件优先使用箭头函数隐式绑定this。</Hint>
+<Hint type="best">函数式组件优先使用箭头函数隐式绑定 this。</Hint>
 
 #### 双冒号隐式绑定：
 
@@ -110,7 +112,7 @@ onChange = {::this.handleChange}
 
 #### constructor 内绑定：
 
-constructor 方法是类的默认方法，通过new命令生成对象实例时，自动调用该方法。 所以我们可以：
+constructor 方法是类的默认方法，通过 new 命令生成对象实例时，自动调用该方法。 所以我们可以：
 
 ```jsx
 constructor(props) {
@@ -121,7 +123,7 @@ constructor(props) {
 
 就个人习惯而言，与前两种方法相比，constructor 内绑定在可读性和可维护性上也许有些欠缺。 同时，我们知道在 constructor 声明的方法不会存在实例的原型上，而属于实例本身的方法。每个实例都有同样一个 handleChange，这本身也是一种重复和浪费。
 
-缺点：即使不用到state，也需要添加类构造函数来绑定this，代码量多； 添加参数要在构造函数中bind时指定，不在render中。
+缺点：即使不用到 state，也需要添加类构造函数来绑定 this，代码量多； 添加参数要在构造函数中 bind 时指定，不在 render 中。
 
 <Hint type="warning">组件实例会重复绑定该方法。</Hint>
 
@@ -133,7 +135,7 @@ constructor(props) {
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { isToggleOn: true };
+    this.state = {isToggleOn: true};
 
     // you can uncomment this line
     // this.handleClick = this.handleClick.bind(this);
@@ -145,12 +147,12 @@ class App extends React.Component {
     this.setState(state => ({
       isToggleOn: !state.isToggleOn
     }));
-  };
+  }
 
   render() {
     return (
       <button onClick={this.handleClick}>
-        {this.state.isToggleOn ? "ON" : "OFF"}
+        {this.state.isToggleOn ? 'ON' : 'OFF'}
       </button>
     );
   }
@@ -163,14 +165,13 @@ class App extends React.Component {
 
 ```jsx
 handleChange = () => {
-  // call this function from render 
+  // call this function from render
   // and this.whatever in here works fine.
 };
 ```
 
 总结一下这种方式的优点：
 
-* 使用箭头函数，有效绑定了 this； 
-* 没有方式一的潜在性能问题；
-* 避免了constructor 内绑定的组件实例重复问题；
-
+- 使用箭头函数，有效绑定了 this；
+- 没有方式一的潜在性能问题；
+- 避免了 constructor 内绑定的组件实例重复问题；

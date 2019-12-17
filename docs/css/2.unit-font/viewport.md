@@ -3,8 +3,7 @@ title: 'vh/vw'
 sidebar_label: 'vh/vw'
 ---
 
-import Img from '../../../src/components/Img'
-import Hint from '../../../src/components/Hint'
+import Img from '../../../src/components/Img'; import Hint from '../../../src/components/Hint';
 
 ## 视区 viewport
 
@@ -16,7 +15,7 @@ import Hint from '../../../src/components/Hint'
 
 <img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/kqJMh6.jpg'/>
 
-viewport的meta标签...
+viewport 的 meta 标签...
 
 ## vh/vw
 
@@ -27,10 +26,10 @@ vw ~ window.innerWidth
 vh ~ window.innerHeight
 ```
 
-- **vw**: 1vw = 视口宽度的1%
-- **vh**: 1vh = 视口高度的1%
-- **vmin**: 选取vw和vh中最小的那个
-- **vmax**: 选取vw和vh中最大的那个
+- **vw**: 1vw = 视口宽度的 1%
+- **vh**: 1vh = 视口高度的 1%
+- **vmin**: 选取 vw 和 vh 中最小的那个
+- **vmax**: 选取 vw 和 vh 中最大的那个
 
 <img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/4h4phi.jpg'/>
 

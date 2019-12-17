@@ -3,8 +3,7 @@ title: Flex
 sidebar_label: Flex
 ---
 
-import Img from '../../../src/components/Img'
-import Hint from '../../../src/components/Hint'
+import Img from '../../../src/components/Img'; import Hint from '../../../src/components/Hint';
 
 ## 概览
 
@@ -14,7 +13,7 @@ import Hint from '../../../src/components/Hint'
 
 ## 盒子大小：flex
 
-该部分是弹性盒子当中的精华所在，必须要掌握这几个概念，才能运用好flex。flex 是 `flex-grow`, `flex-shrink`, `flex-basis` 的缩写初始值是 `0 1 auto` 。
+该部分是弹性盒子当中的精华所在，必须要掌握这几个概念，才能运用好 flex。flex 是 `flex-grow`, `flex-shrink`, `flex-basis` 的缩写初始值是 `0 1 auto` 。
 
 <Hint type="best">flex 属性不要采用缩写的方式，最好明确定义是哪个属性的值。</Hint>
 
@@ -36,13 +35,12 @@ flex: none = flex: 0 0 auto; // 常用于固定尺寸 不伸缩
 
 <Hint type="warning">弹性盒子中元素的总长度肯定不能超过盒子的长度，但可以小于盒子的长度。</Hint>
 
-- 当元素的总长度过长时，所以shrink默认是1，按照该元素长度在总长度中的占比进行收缩大小，计算公式稍复杂。
-- 当弹性盒子空间过剩时，因为没有超过弹性盒子的长度，所以grow默认为0，即空间多余就多余，不在乎是否刚好塞满，但就是不能超。
-shrink和grow理论上>=0的number即可，但最好使用自然数(即零和正整数)。
+- 当元素的总长度过长时，所以 shrink 默认是 1，按照该元素长度在总长度中的占比进行收缩大小，计算公式稍复杂。
+- 当弹性盒子空间过剩时，因为没有超过弹性盒子的长度，所以 grow 默认为 0，即空间多余就多余，不在乎是否刚好塞满，但就是不能超。 shrink 和 grow 理论上>=0 的 number 即可，但最好使用自然数(即零和正整数)。
 
 ## 初始尺寸：flex-basis
 
-在进行弹性处理之余，其实有些场景我们更希望元素尺寸固定（这个固定指初始固定，并不代表完全不变，当其他盒子尺寸过大时候还会挤压该盒子，还需要 `flex-shrink` 进行配合），不需要进行弹性调整。设置元素尺寸除了 `width` 和  `height` 以外，flex 还提供了一个 `flex-basis` 属性。
+在进行弹性处理之余，其实有些场景我们更希望元素尺寸固定（这个固定指初始固定，并不代表完全不变，当其他盒子尺寸过大时候还会挤压该盒子，还需要 `flex-shrink` 进行配合），不需要进行弹性调整。设置元素尺寸除了 `width` 和 `height` 以外，flex 还提供了一个 `flex-basis` 属性。
 
 `flex-basis` 设置的是元素在主轴上的初始尺寸，所谓的初始尺寸就是元素在 `flex-grow` 和 `flex-shrink` 生效前的尺寸，定义该项目在分配主轴空间之前提前获得的空间。
 

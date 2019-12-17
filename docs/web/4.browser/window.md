@@ -3,8 +3,7 @@ title: 浏览器窗口
 sidebar_label: 浏览器窗口
 ---
 
-import Hint from '../../../src/components/Hint'
-import Img from '../../../src/components/Img'
+import Hint from '../../../src/components/Hint'; import Img from '../../../src/components/Img';
 
 ## window 的大小
 
@@ -14,13 +13,13 @@ import Img from '../../../src/components/Img'
 
 `window.innerHeight` 和 `window.innerWidth` 属性，返回网页在当前窗口中可见部分的高度和宽度，即“视窗”（viewport）的大小（单位像素）。这两个属性只读。
 
-用户放大网页的时候（比如将网页从100%的大小放大为200%），这两个属性会变小。因为这时网页的像素大小不变（比如宽度还是960像素），只是每个像素占据的屏幕空间变大了，因为可见部分（视口）就变小了。
+用户放大网页的时候（比如将网页从 100%的大小放大为 200%），这两个属性会变小。因为这时网页的像素大小不变（比如宽度还是 960 像素），只是每个像素占据的屏幕空间变大了，因为可见部分（视口）就变小了。
 
 <Hint type="warning">这两个属性值包括滚动条的高度和宽度。</Hint>
 
 ### outerWith/outerHeight
 
-`window.outerWidth`  和 `window.outerHeight`属性返回浏览器窗口的高度和宽度，包括浏览器菜单和边框（单位像素）。这两个属性只读。
+`window.outerWidth` 和 `window.outerHeight`属性返回浏览器窗口的高度和宽度，包括浏览器菜单和边框（单位像素）。这两个属性只读。
 
 <Hint type="tip">outerWith/outerHeight 即为浏览器窗口的宽高。</Hint>
 
@@ -55,7 +54,7 @@ import Img from '../../../src/components/Img'
 `window.moveTo()`方法用于移动浏览器窗口到指定位置。它接受两个参数，分别是窗口左上角距离屏幕左上角的水平距离和垂直距离，单位为像素。
 
 ```javascript
-window.moveTo(100, 200)
+window.moveTo(100, 200);
 ```
 
 上面代码将窗口移动到屏幕`(100, 200)`的位置。
@@ -65,10 +64,10 @@ window.moveTo(100, 200)
 `window.moveBy`方法将窗口移动到一个相对位置。它接受两个参数，分布是窗口左上角向右移动的水平距离和向下移动的垂直距离，单位为像素。
 
 ```javascript
-window.moveBy(25, 50)
+window.moveBy(25, 50);
 ```
 
-上面代码将窗口向右移动25像素、向下移动50像素。
+上面代码将窗口向右移动 25 像素、向下移动 50 像素。
 
 <Hint type="warning">为了防止有人滥用这两个方法，随意移动用户的窗口，目前只有一种情况，浏览器允许用脚本移动窗口：该窗口是用 `window.open` 方法新建的，并且它所在的 Tab 页是当前窗口里面唯一的。除此以外的情况，使用上面两个方法都是无效的。</Hint>
 
@@ -81,10 +80,7 @@ window.moveBy(25, 50)
 它接受两个参数，第一个是缩放后的窗口宽度（`outerWidth`属性，包含滚动条、标题栏等等），第二个是缩放后的窗口高度（`outerHeight`属性）。
 
 ```javascript
-window.resizeTo(
-  window.screen.availWidth / 2,
-  window.screen.availHeight / 2
-)
+window.resizeTo(window.screen.availWidth / 2, window.screen.availHeight / 2);
 ```
 
 上面代码将当前窗口缩放到，屏幕可用区域的一半宽度和高度。
@@ -97,10 +93,10 @@ window.resizeTo(
 它接受两个参数，第一个是水平缩放的量，第二个是垂直缩放的量，单位都是像素。
 
 ```javascript
-window.resizeBy(-200, -200)
+window.resizeBy(-200, -200);
 ```
 
-上面的代码将当前窗口的宽度和高度，都缩小200像素。
+上面的代码将当前窗口的宽度和高度，都缩小 200 像素。
 
 ## window 的滚动
 
@@ -108,9 +104,9 @@ window.resizeBy(-200, -200)
 
 `window.scrollX` 属性返回页面的水平滚动距离，`window.scrollY` 属性返回页面的垂直滚动距离，单位都为像素。这两个属性只读。
 
-<Hint type="warning">这两个属性的返回值不是整数，而是双精度浮点数。如果页面没有滚动，它们的值就是0。</Hint>
+<Hint type="warning">这两个属性的返回值不是整数，而是双精度浮点数。如果页面没有滚动，它们的值就是 0。</Hint>
 
-举例来说，如果用户向下拉动了垂直滚动条75像素，那么window.pageYOffset就是75左右。用户水平向右拉动水平滚动条200像素，window.pageXOffset就是200左右。
+举例来说，如果用户向下拉动了垂直滚动条 75 像素，那么 window.pageYOffset 就是 75 左右。用户水平向右拉动水平滚动条 200 像素，window.pageXOffset 就是 200 左右。
 
 ```js
 if (window.scrollY < 75) {
@@ -118,20 +114,20 @@ if (window.scrollY < 75) {
 }
 ```
 
-上面代码中，如果页面向下滚动的距离小于75像素，那么页面向下滚动75像素。
+上面代码中，如果页面向下滚动的距离小于 75 像素，那么页面向下滚动 75 像素。
 
 ### window.scrollTo()
 
 `window.scrollTo`方法用于将文档滚动到指定位置。它接受两个参数，表示滚动后位于窗口左上角的页面坐标。
 
 ```javascript
-window.scrollTo(x-coord, y-coord)
+window.scrollTo(x - coord, y - coord);
 ```
 
 它也可以接受一个配置对象作为参数。
 
 ```javascript
-window.scrollTo(options)
+window.scrollTo(options);
 ```
 
 配置对象`options`有三个属性。
@@ -156,7 +152,7 @@ window.scrollTo({
 `window.scrollBy()`方法用于将网页滚动指定距离（单位像素）。它接受两个参数：水平向右滚动的像素，垂直向下滚动的像素。
 
 ```javascript
-window.scrollBy(0, window.innerHeight)
+window.scrollBy(0, window.innerHeight);
 ```
 
 上面代码用于将网页向下滚动一屏。
@@ -182,7 +178,7 @@ var popup = window.open('somefile.html');
 `open`方法一共可以接受三个参数。
 
 ```javascript
-window.open(url, windowName, [windowFeatures])
+window.open(url, windowName, [windowFeatures]);
 ```
 
 - `url`：字符串，表示新窗口的网址。如果省略，默认网址就是`about:blank`。
@@ -199,16 +195,16 @@ var popup = window.open(
 );
 ```
 
-上面代码表示，打开的新窗口高度和宽度都为200像素，没有地址栏和滚动条，但有状态栏，允许用户调整大小。
+上面代码表示，打开的新窗口高度和宽度都为 200 像素，没有地址栏和滚动条，但有状态栏，允许用户调整大小。
 
 第三个参数可以设定如下属性。
 
 - left：新窗口距离屏幕最左边的距离（单位像素）。注意，新窗口必须是可见的，不能设置在屏幕以外的位置。
 - top：新窗口距离屏幕最顶部的距离（单位像素）。
-- height：新窗口内容区域的高度（单位像素），不得小于100。
-- width：新窗口内容区域的宽度（单位像素），不得小于100。
-- outerHeight：整个浏览器窗口的高度（单位像素），不得小于100。
-- outerWidth：整个浏览器窗口的宽度（单位像素），不得小于100。
+- height：新窗口内容区域的高度（单位像素），不得小于 100。
+- width：新窗口内容区域的宽度（单位像素），不得小于 100。
+- outerHeight：整个浏览器窗口的高度（单位像素），不得小于 100。
+- outerWidth：整个浏览器窗口的宽度（单位像素），不得小于 100。
 - menubar：是否显示菜单栏。
 - toolbar：是否显示工具栏。
 - location：是否显示地址栏。
@@ -233,7 +229,7 @@ var popup = window.open(
 
 ```javascript
 var windowB = window.open('windowB.html', 'WindowB');
-windowB.window.name // "WindowB"
+windowB.window.name; // "WindowB"
 ```
 
 注意，如果新窗口和父窗口不是同源的（即不在同一个域），它们彼此不能窗口对象获取对方的内部属性。
@@ -262,7 +258,7 @@ if (popup === null) {
 `window.close`方法用于关闭当前窗口，一般只用来关闭`window.open`方法新建的窗口。
 
 ```javascript
-popup.close()
+popup.close();
 ```
 
 该方法只对顶层窗口有效，`iframe`框架之中的窗口使用该方法无效。
@@ -272,7 +268,7 @@ popup.close()
 `window.stop()`方法完全等同于单击浏览器的停止按钮，会停止加载图像、视频等正在或等待加载的对象。
 
 ```javascript
-window.stop()
+window.stop();
 ```
 
 ## window.screen
@@ -285,14 +281,14 @@ screen 对象表示当前窗口所在的屏幕，提供显示设备的信息。`
 - `screen.width`：浏览器窗口所在的屏幕的宽度（单位像素）。
 - `screen.availHeight`：浏览器窗口可用的屏幕高度（单位像素）。因为部分空间可能不可用，比如系统的任务栏或者 Mac 系统屏幕底部的 Dock 区，这个属性等于`height`减去那些被系统组件的高度。
 - `screen.availWidth`：浏览器窗口可用的屏幕宽度（单位像素）。
-- `screen.pixelDepth`：整数，表示屏幕的色彩位数，比如`24`表示屏幕提供24位色彩。
+- `screen.pixelDepth`：整数，表示屏幕的色彩位数，比如`24`表示屏幕提供 24 位色彩。
 - `screen.colorDepth`：`screen.pixelDepth`的别名。严格地说，colorDepth 表示应用程序的颜色深度，pixelDepth 表示屏幕的颜色深度，绝大多数情况下，它们都是同一件事。
 - `screen.orientation`：返回一个对象，表示屏幕的方向。该对象的`type`属性是一个字符串，表示屏幕的具体方向，`landscape-primary`表示横放，`landscape-secondary`表示颠倒的横放，`portrait-primary`表示竖放，`portrait-secondary`。
 
 下面是`screen.orientation`的例子。
 
 ```js
-window.screen.orientation
+window.screen.orientation;
 // { angle: 0, type: "landscape-primary", onchange: null }
 ```
 
@@ -307,7 +303,7 @@ if (window.screen.width >= 1024 && window.screen.height >= 768) {
 下面是根据屏幕的宽度，将用户导向不同网页的代码。
 
 ```js
-if ((screen.width <= 800) && (screen.height <= 600)) {
+if (screen.width <= 800 && screen.height <= 600) {
   window.location.replace('small.html');
 } else {
   window.location.replace('wide.html');
@@ -316,5 +312,5 @@ if ((screen.width <= 800) && (screen.height <= 600)) {
 
 ## 参考资料
 
-1. [JavaScript 标准参考教程（alpha）：window对象，作者：阮一峰](http://javascript.ruanyifeng.com/bom/window.html)
-2. [JavaScript中的各种XY定位属性以及元素宽高属性，作者：zhangzhengyi12](https://blog.yinode.tech/articles/2019/01/21/1567739719667.html)
+1. [JavaScript 标准参考教程（alpha）：window 对象，作者：阮一峰](http://javascript.ruanyifeng.com/bom/window.html)
+2. [JavaScript 中的各种 XY 定位属性以及元素宽高属性，作者：zhangzhengyi12](https://blog.yinode.tech/articles/2019/01/21/1567739719667.html)

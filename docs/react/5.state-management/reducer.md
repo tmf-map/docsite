@@ -4,7 +4,7 @@ title: Reducer
 sidebar_label: Reducer
 ---
 
-import Hint from '../../../src/components/Hint'
+import Hint from '../../../src/components/Hint';
 
 ## 什么是 Reducer ?
 
@@ -26,7 +26,7 @@ import Hint from '../../../src/components/Hint'
 
 ```javascript
 import Immutable from 'immutable';
-const map1 = Immutable.Map({a:1, b:2, c:3});
+const map1 = Immutable.Map({a: 1, b: 2, c: 3});
 const map2 = map1.set('b', 50);
 map1.get('b'); // 2
 map2.get('b'); // 50
@@ -40,11 +40,9 @@ Immutable 通过**结构共享**来解决的数据拷贝时的性能问题，数
 
 Immutable 有两个库：
 
-* [immutable-js](https://github.com/facebook/immutable-js)：Facebook 的项目，比较重，取数据必须用函数，对数据有极高的性能要求时用。
-* [seamless-immutable](https://github.com/rtfeldman/seamless-immutable)：精简版的 Immutable，取数据可以直接点取，大部分情况使用该库即可。
+- [immutable-js](https://github.com/facebook/immutable-js)：Facebook 的项目，比较重，取数据必须用函数，对数据有极高的性能要求时用。
+- [seamless-immutable](https://github.com/rtfeldman/seamless-immutable)：精简版的 Immutable，取数据可以直接点取，大部分情况使用该库即可。
 
 <Hint type="must">Reducer 初始化 initialState 时必须使用 Immutable 的数据类型，防止在 Reducer 外的其他地方对 Store 发生修改操作。</Hint>
 
-
 <Hint type="best">Reducer 初始化 initialState 时使用 **immutable-js** 时建议用 Immutable.Map 方法而不是 fromJS 方法，效率更高。</Hint>
-

@@ -4,7 +4,7 @@ title: 二叉树的镜像
 sidebar_label: 二叉树的镜像
 ---
 
-- 题源：《剑指Offer: 面试题 27》P157
+- 题源：《剑指 Offer: 面试题 27》P157
 - 在线：[牛客网](https://www.nowcoder.com/practice/564f4c26aa584921bc75623e48ca3011)
 
 ## 题目
@@ -13,8 +13,8 @@ sidebar_label: 二叉树的镜像
 
 ```js
 function TreeNode(val) {
-    this.val = val;
-    this.left = this.right = null;
+  this.val = val;
+  this.left = this.right = null;
 }
 ```
 
@@ -36,18 +36,18 @@ function TreeNode(val) {
  * @return {TreeNode}
  */
 function mirror(root) {
-    if (!root) return null;
-    function preorder (node) {
-        if (node) {
-            let temp = node.left;
-            node.left = node.right;
-            node.right = temp;
-            preorder(node.left);
-            preorder(node.right);
-        }
+  if (!root) return null;
+  function preorder(node) {
+    if (node) {
+      let temp = node.left;
+      node.left = node.right;
+      node.right = temp;
+      preorder(node.left);
+      preorder(node.right);
     }
-    preorder(root);
-    return root;
+  }
+  preorder(root);
+  return root;
 }
 ```
 

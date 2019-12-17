@@ -20,8 +20,6 @@ sidebar_label: 根结构
   <head>
     <title>My Website Title</title>
   </head>
-  <body>
-
-  </body>
+  <body></body>
 </html>
 ```
