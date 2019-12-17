@@ -353,6 +353,11 @@ module.exports = {
       "algorithm/13.math/powx-n",
     ]
   },
+  "http": {
+    "1. HTTP 基础": [
+      "http/1.basic/tcp-ip"
+    ]
+  },
   docs: {
     Docusaurus: ['doc1', 'doc2', 'doc3'],
     Features: ['mdx'],
