@@ -1,6 +1,5 @@
 const githubOrg = 'ThinkBucket';
 const githubRepo = 'docsite';
-const ICP = '冀ICP备19034211号';
 
 module.exports = {
   title: githubOrg,
@@ -119,7 +118,11 @@ module.exports = {
       //   alt: `${githubOrg} Logo`,
       //   src: '',
       // },
-      copyright: `Copyright © ${new Date().getFullYear()} ${githubOrg} ${ICP}`
+      copyright: `Copyright © ${new Date().getFullYear()} ${githubOrg}`,
+      icp: {
+        href: 'http://beian.miit.gov.cn/',
+        text: '冀ICP备19034211号'
+      }
     },
     prism: {
       theme: require('prism-react-renderer/themes/nightOwl')
