@@ -84,7 +84,7 @@ module.exports = {
           title: 'Help',
           items: [
             {
-              label: 'Change Log',
+              label: 'Release Notes',
               href: `https://github.com/${githubOrg}/${githubRepo}/releases`
             },
             {
