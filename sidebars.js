@@ -326,7 +326,12 @@ module.exports = {
       "http/1.basic/tcp-ip",
       "http/1.basic/relevant-protocol",
       "http/1.basic/http-connection"
-    ]
+    ],
+    "2. HTTP的发展": [
+      "http/2.evolution/http-1.x",
+      "http/2.evolution/http-2",
+    ],
+
   },
   docs: {
     Docusaurus: ['doc1', 'doc2', 'doc3'],
