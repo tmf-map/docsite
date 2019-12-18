@@ -48,7 +48,7 @@ module.exports = {
           label: 'Algorithm',
           position: 'left'
         },
-        {to: 'docs/http/1.basic/tcp-ip', label: 'HTTP', position: 'left'},
+        {to: 'docs/http/1.web-basic/tcp-ip', label: 'HTTP', position: 'left'},
         {to: 'blog', label: 'Blog', position: 'right'},
         {
           href: `https://github.com/${githubOrg}/${githubRepo}`,
