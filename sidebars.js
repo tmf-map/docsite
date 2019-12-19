@@ -332,7 +332,7 @@ module.exports = {
       "http/2.evolution/http-2",
     ],
     "3. HTTP基础": [
-      "http/3.http-basic/url",
+      "http/3.http-basic/URI",
       "http/3.http-basic/message-structure",
       "http/3.http-basic/request-methods",
       "http/3.http-basic/status-code",
