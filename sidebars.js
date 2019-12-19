@@ -265,7 +265,7 @@ module.exports = {
         附录: ['react/appendix/references', 'react/appendix/related-websites']
     },
     java: {
-        '1. Java 基础': ['java/1.basic/abstract-class-interface.md'],
+        '1. Java 基础': ['java/1.basic/abstract-class-interface'],
     },
     'design-patterns': {
         '1. Creation Pattern': ['design-patterns/1.creation-pattern/singleton'],

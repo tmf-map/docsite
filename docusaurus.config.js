@@ -41,7 +41,7 @@ module.exports = {
                     position: 'left'
                 },
                 {
-                    to: 'docs/java/1.basic/abstract-class-interface.md',
+                    to: 'docs/java/1.basic/abstract-class-interface',
                     label: 'Java',
                     position: 'left'
                 },
