@@ -74,7 +74,7 @@ for (int i = n; i > 0; i /= c) {
 }
 ```
 
-For example **Binary Search**(refer iterative implementation) has O(logn) time complexity. Let us see mathematically how it is O(logn). The series that we get in first loop is 1, c, c<sup>2</sup>, c<sup>3</sup>, … c<sup>k</sup>. If we put _k_ equals to log<sub>c</sub>n, we get c<sup>log<sub>c</sub>n</sup> which is **n**.
+For example **Binary Search**(refer iterative implementation, c equals 2) has O(logn) time complexity. Let us see mathematically how it is O(logn). The series that we get in first for-loop is 1, 2, 2<sup>2</sup>, 2<sup>3</sup>, … 2<sup>k</sup>. If we put 2<sup>k</sup> equals to n, we get k which is log<sub>2</sub>n.
 
 ### O(loglogn)
 
