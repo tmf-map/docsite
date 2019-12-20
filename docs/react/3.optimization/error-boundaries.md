@@ -5,9 +5,9 @@ sidebar_label: Error Boundaries
 
 import Img from '../../../src/components/Img';import Hint from '../../../src/components/Hint';
 
-In the past, JavaScript errors inside components used to corrupt React’s internal state and cause it to emit cryptic errors on next renders. These errors were always caused by an earlier error in the application code, but React did not provide a way to handle them gracefully in components, and could not recover from them. Like this in your console: <Img w="700" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/UMQoLL.png'/>
+In the past, JavaScript errors inside components used to corrupt React’s internal state and cause it to emit cryptic errors on next renders. These errors were always caused by an earlier error in the application code, but React did not provide a way to handle them gracefully in components, and could not recover from them. When these errors occur, your app always displays an empty page like this: <Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/nVraRt.png'/>
 
-Typical symptoms include stack traces that thread through dark regions of the React internals.
+The error messages in your console are confusing and difficult to resolve. Typical symptoms include stack traces that thread through dark regions of the React internals.
 
 ## Introducing Error Boundaries
 
@@ -15,15 +15,14 @@ A JavaScript error in a part of the UI shouldn’t break the whole app. To solve
 
 Error boundaries are React components that **catch JavaScript errors anywhere in their child component tree, log those errors, and display a fallback UI** instead of the component tree that crashed. Error boundaries catch errors during rendering, **in lifecycle methods, and in constructors of the whole tree below them**.
 
-<Img w="400" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/1jJMQE.png'/>
-
-<Hint type="tip">
-Error boundaries do **not** catch errors for:
-- Event handlers ([learn more](https://reactjs.org/docs/error-boundaries.html#how-about-event-handlers))
-- Asynchronous code (e.g. `setTimeout` or `requestAnimationFrame` callbacks)
-- Server side rendering
-- Errors thrown in the error boundary itself (rather than its children)
-</Hint>
+> **Note**
+>
+> Error boundaries do **not** catch errors for:
+>
+> - Event handlers ([learn more](https://reactjs.org/docs/error-boundaries.html#how-about-event-handlers))
+> - Asynchronous code (e.g. `setTimeout` or `requestAnimationFrame` callbacks)
+> - Server side rendering
+> - Errors thrown in the error boundary itself (rather than its children)
 
 A class component becomes an error boundary if it defines either (or both) of the lifecycle methods static `getDerivedStateFromError()` or `componentDidCatch()`. Use static `getDerivedStateFromError()` to render a fallback UI after an error has been thrown. Use `componentDidCatch()` to log error information.
 
