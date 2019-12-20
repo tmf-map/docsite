@@ -2,6 +2,7 @@
 title: TCP 握手和挥手
 sidebar_label: TCP 握手和挥手
 ---
+
 import Img from '../../../src/components/Img'
 
 ## 三次握手和四次挥手
@@ -32,11 +33,11 @@ import Img from '../../../src/components/Img'
 
 ### 三次握手和四次挥手示意图
 
-TCP三次握手、HTTP数据传输和四次挥手的大致流程如下图所示：
+TCP 三次握手、HTTP 数据传输和四次挥手的大致流程如下图所示：
 
 <Img width="360" legend="图：三次握手和四次挥手图示" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/Znl1Ty.jpg" />
 
-## TCP链接过程中的相关问题
+## TCP 链接过程中的相关问题
 
 ### 为什么是三次握手，而不是两次握手？
 
@@ -49,6 +50,7 @@ TCP三次握手、HTTP数据传输和四次挥手的大致流程如下图所示�
 主动方发出确认信号 2 MSL(报文最大生存时间)后关闭的主要原因是确保确认信号被被动方接受，如果报文丢包就超时重传，这样避免主动方关闭后，被动方无法正常关闭。
 
 ## 相关拓展
+
 [Youtube: Wireshark 抓包分析实战](https://www.youtube.com/watch?v=QcapJPYUY58)
 
 [作为前端的你了解多少 tcp 的内容，作者：Guokai](https://juejin.im/post/5c078058f265da611c26c235)

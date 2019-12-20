@@ -3,8 +3,7 @@ title: HTTP/2
 sidebar_label: HTTP/2
 ---
 
-import Img from '../../../src/components/Img'
-import Hint from '../../../src/components/Hint'
+import Img from '../../../src/components/Img'; import Hint from '../../../src/components/Hint'
 
 ## 简介
 
@@ -32,7 +31,7 @@ HTTP/2 主要目的是提高网页性能，最近几年比较火，将其单独�
 
 <Img w="500" legend="图：HTTP/1.1与HTTP/2数据传输对比图" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/hTkV0T.jpg'/>
 
-由上图可以看出，HTTP/1.1 中**同一个 TCP 连接里面**，上一个响应发送完了，服务器才能发送下一个。而HTTP/2采用多路复用（后面介绍）**允许单一的 TCP 连接同时发起多重的请求响应**，比如 `GET style.css` 和 `GET script.js` 差不多就是同时发送的。
+由上图可以看出，HTTP/1.1 中**同一个 TCP 连接里面**，上一个响应发送完了，服务器才能发送下一个。而 HTTP/2 采用多路复用（后面介绍）**允许单一的 TCP 连接同时发起多重的请求响应**，比如 `GET style.css` 和 `GET script.js` 差不多就是同时发送的。
 
 <Hint type="tip">Chrome 在 HTTP/1.1 中会建立 6 个 TCP ，在 HTTP/2 中同域名下会建立 1 个 TCP 。</Hint>
 
@@ -166,20 +165,21 @@ HTTP/2 使用专门设计的 HPACK。它是在服务器和客户端各维护一�
 
 ## 总结
 
-综上，我们主要讨论了HTTP/2的三大特性:
+综上，我们主要讨论了 HTTP/2 的三大特性:
 
-(1) 头部压缩，通过规定头部字段的静态表格和实际传输过程中动态创建的表格，减少多个相似请求里面大量冗余的HTTP头部字段，并且引入了霍夫曼编码减少字符串常量的长度。
+(1) 头部压缩，通过规定头部字段的静态表格和实际传输过程中动态创建的表格，减少多个相似请求里面大量冗余的 HTTP 头部字段，并且引入了霍夫曼编码减少字符串常量的长度。
 
-(2) 多路复用，只使用一个TCP连接传输多个资源，减少TCP连接数，为了能够让高优先级的资源如CSS等更先处理，引入了优先级依赖的方法。由于并发数很高，同时传递的资源很多，如果网速很快的时候，可能会导致缓存空间溢出，所以又引入了流控制，双方通过window size控制对方的发送。
+(2) 多路复用，只使用一个 TCP 连接传输多个资源，减少 TCP 连接数，为了能够让高优先级的资源如 CSS 等更先处理，引入了优先级依赖的方法。由于并发数很高，同时传递的资源很多，如果网速很快的时候，可能会导致缓存空间溢出，所以又引入了流控制，双方通过 window size 控制对方的发送。
 
-(3) Server Push,解决传统HTTP传输中资源加载触发延迟的问题，浏览器在创建第一个 流的时候，服务告诉浏览器哪些资源可以先加载了，浏览器提前进行加载而不用等到解析到的时候再加载。
+(3) Server Push,解决传统 HTTP 传输中资源加载触发延迟的问题，浏览器在创建第一个 流的时候，服务告诉浏览器哪些资源可以先加载了，浏览器提前进行加载而不用等到解析到的时候再加载。
 
 ## 相关拓展
+
 想更深地了解 HTTP/2 是什么？建议你前往：
 
 [High Performance Browser Networking-HTTP/2 O'Reilly](https://hpbn.co/http2/)
 
-[从Chrome源码看HTTP/2 -- 会编程的银猪](https://www.rrfed.com/2018/03/18/chrome-http2/)
+[从 Chrome 源码看 HTTP/2 -- 会编程的银猪](https://www.rrfed.com/2018/03/18/chrome-http2/)
 
 ## 参考资料
 
