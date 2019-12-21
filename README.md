@@ -8,13 +8,15 @@ A learning website where you can explore full stack technology.
 
 - [Installation](#installation)
 - [Local Development](#local-development)
-- [Build](#build)
+  - [Get Started](#get-started)
+  - [Format Document](#format-document)
+  - [Commit and PR Title](#commit-and-pr-title)
 - [Deployment](#deployment)
 - [Thanks](#thanks)
 
 ## Installation
 
-Before getting started, please make sure you have the right developing environment:
+Before getting started, please make sure you have the right development environment:
 
 - Node.js version >= 11.10.1 (you can use [nvm](https://github.com/nvm-sh/nvm) to manage node.js)
 - Install [yarn](https://yarnpkg.com/en/docs/install#mac-stable) (dependency management for node.js modules)
@@ -27,23 +29,39 @@ yarn # or yarn install
 
 ## Local Development
 
+### Get Started
+
 ```sh
 yarn start
 ```
 
 This command starts a local development server and open up a browser window. Most changes are reflected live without having to restart the server.
 
-## Build
+### Format Document
 
-```sh
-yarn build
+All files (`.md`/`.js`) will be formatted automatically when commit changes. Please make sure you have installed all dependencies (`yarn`) otherwise the files won't be formatted automatically.
+
+### Commit and PR Title
+
+You can commit as following pattern which is not required:
+
+```text
+type(scope): description
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+But make sure the PR title follow above pattern and common types can be:
+
+- add
+- improve
+- fix
+- build
+- revert
+
+For real world examples, please see [commit logs](https://github.com/ThinkBucket/docsite/commits/master).
 
 ## Deployment
 
-This website can be deployed automatically when master branch has been updated.
+The website can be deployed automatically when master branch has been updated.
 
 ## Thanks
 
