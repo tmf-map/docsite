@@ -4,7 +4,7 @@ import './Hint.css';
 
 const colorMap = {
   best: {
-    name: '推荐',
+    name: 'Best',
     color: '#50c610',
     icon: (
       <svg
@@ -28,7 +28,7 @@ const colorMap = {
     )
   },
   must: {
-    name: '强制',
+    name: 'Must',
     color: '#ff4642',
     icon: (
       <svg
@@ -47,7 +47,7 @@ const colorMap = {
     )
   },
   tip: {
-    name: '提示',
+    name: 'Tip',
     color: '#3884ff',
     icon: (
       <svg
@@ -70,7 +70,7 @@ const colorMap = {
     )
   },
   warning: {
-    name: '注意',
+    name: 'Warning',
     color: '#fdbe12',
     icon: (
       <svg

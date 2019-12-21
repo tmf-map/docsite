@@ -44,7 +44,7 @@ module.exports = {
           position: 'left'
         },
         {
-          to: 'docs/algorithm/1.array/duplicated-number-in-array',
+          to: 'docs/algorithm/1.analysis-of-algorithms/asymptotic-notations',
           label: 'Algorithm',
           position: 'left'
         },
