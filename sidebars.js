@@ -76,7 +76,7 @@ module.exports = {
     '11. 性能优化': [
       'javascript/11.performance-optimization/debounce',
       'javascript/11.performance-optimization/throttle',
-      'javascript/11.performance-optimization/memoization',
+      'javascript/11.performance-optimization/memorization',
       'javascript/11.performance-optimization/tco'
     ],
     附录: [
@@ -333,7 +333,7 @@ module.exports = {
       'http/3.http-basic/message-structure',
       'http/3.http-basic/request-methods',
       'http/3.http-basic/status-code',
-      'http/3.http-basic/cookies'
+      'http/3.http-basic/cookie'
     ],
     '4. HTTP头信息': ['http/4.http-header/working'],
     '5. HTTP缓存': ['http/5.http-cache/working'],

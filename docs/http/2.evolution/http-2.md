@@ -3,7 +3,9 @@ title: HTTP/2
 sidebar_label: HTTP/2
 ---
 
-import Img from '../../../src/components/Img'; import Hint from '../../../src/components/Hint'
+import Img from '../../../src/components/Img';
+
+import Hint from '../../../src/components/Hint'
 
 ## 简介
 

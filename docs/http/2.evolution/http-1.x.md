@@ -3,7 +3,9 @@ title: HTTP/1.X
 sidebar_label: HTTP/1.X
 ---
 
-import Img from '../../../src/components/Img'; import Hint from '../../../src/components/Hint'
+import Img from '../../../src/components/Img';
+
+import Hint from '../../../src/components/Hint'
 
 ## 前言
 
