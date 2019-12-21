@@ -52,7 +52,7 @@ type(scope): description
 But make sure the PR title follow above pattern and common types can be:
 
 - add
-- improve
+- update
 - fix
 - build
 - revert
@@ -66,7 +66,7 @@ The website can be deployed automatically when master branch has been updated.
 ## Thanks
 
 - [Docusaurus 2](https://github.com/facebook/docusaurus): a modern static website generator.
-- [Netlify](https://www.netlify.com/): All-in-one platform for automating modern web projects.
+- [Netlify](https://www.netlify.com/): all-in-one platform for automating modern web projects.
 
 [netlify-image]: https://api.netlify.com/api/v1/badges/adf81997-fa00-404e-a542-24a510d41d82/deploy-status
 [dependencies-image]: https://badgen.net/david/dep/ThinkBucket/docsite
