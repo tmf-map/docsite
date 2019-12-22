@@ -1,4 +1,4 @@
-const html = {
+module.exports = {
   前言: ['html/preface/overview', 'html/preface/note'],
   标签: [
     'html/tag/html-structure',
@@ -14,5 +14,3 @@ const html = {
     'html/tag/html5-new-tags'
   ]
 };
-
-module.exports = html;

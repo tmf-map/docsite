@@ -1,4 +1,4 @@
-const web = {
+module.exports = {
   '1. HTTP 协议': [
     'web/1.http/http-connection',
     'web/1.http/http-status',
@@ -71,5 +71,3 @@ const web = {
     'web/12.web-optimize/webworker'
   ]
 };
-
-module.exports = web;

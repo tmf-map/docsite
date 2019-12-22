@@ -1,4 +1,4 @@
-const react = {
+module.exports = {
   '1. 组件基础': [
     'react/1.basic/jsx',
     'react/1.basic/lifecycle',
@@ -50,5 +50,3 @@ const react = {
   '8. 安全': ['react/8.security/security-guide'],
   附录: ['react/appendix/references', 'react/appendix/related-websites']
 };
-
-module.exports = react;

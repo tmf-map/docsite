@@ -1,4 +1,4 @@
-const http = {
+module.exports = {
   '1. 网络基础': [
     'http/1.web-basic/tcp-ip',
     'http/1.web-basic/relevant-protocol',
@@ -16,5 +16,3 @@ const http = {
   '5. HTTP缓存': ['http/5.http-cache/working'],
   '6. HTTP安全': ['http/6.http-security/working']
 };
-
-module.exports = http;

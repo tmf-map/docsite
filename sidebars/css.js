@@ -1,4 +1,4 @@
-const css = {
+module.exports = {
   '1. 视觉格式化模型': [
     'css/1.visual-formatting-model/basic-concept',
     'css/1.visual-formatting-model/box-model',
@@ -37,5 +37,3 @@ const css = {
   ],
   附录: ['css/appendix/related-websites']
 };
-
-module.exports = css;

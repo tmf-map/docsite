@@ -1,4 +1,4 @@
-const javascript = {
+module.exports = {
   '1. 基础概念': [
     'javascript/1.basic/js-engine',
     'javascript/1.basic/scope',
@@ -76,5 +76,3 @@ const javascript = {
     'javascript/appendix2-related-websites'
   ]
 };
-
-module.exports = javascript;

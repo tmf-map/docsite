@@ -1,4 +1,4 @@
-const algorithm = {
+module.exports = {
   '1. 数组': [
     'algorithm/1.array/duplicated-number-in-array',
     'algorithm/1.array/inverse-pairs',
@@ -48,5 +48,3 @@ const algorithm = {
   ],
   '13. 数学': ['algorithm/13.math/powx-n']
 };
-
-module.exports = algorithm;
