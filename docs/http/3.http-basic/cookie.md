@@ -92,9 +92,9 @@ Cookie 的安全性常用的有三个字段：`HttpOnly`、`Secure`和`SameSite`
 
 **可选前缀**
 
-- **Secure-：以**Secure-为前缀的 Cookie，必须与 secure 属性一同设置，同时必须应用于安全页面（即使用 HTTPS）
+- **Secure-**：以`Secure-`为前缀的 Cookie，必须与 secure 属性一同设置，同时必须应用于安全页面（即使用 HTTPS）
 
-- **Host-：以**Host-为前缀的 Cookie，必须与 secure 属性一同设置，同时必须应用于安全页面（即使用 HTTPS）。**必须不能设置 domian 属性（这样可以防止二级域名获取一级域名的 Cookie），path 属性的值必须为”/“**。
+- **Host-**：以`Host-`为前缀的 Cookie，必须与 secure 属性一同设置，同时必须应用于安全页面（即使用 HTTPS）。**必须不能设置 domian 属性（这样可以防止二级域名获取一级域名的 Cookie），path 属性的值必须为”/“**。
 
 前缀使用示例：
 
