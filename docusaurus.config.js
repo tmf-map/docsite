@@ -134,7 +134,7 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
+          sidebarPath: require.resolve('./sidebars/index.js'),
           editUrl: `https://github.com/${githubOrg}/${githubRepo}/edit/master/docs/`,
           // Equivalent to `enableUpdateBy`.
           showLastUpdateAuthor: true,
