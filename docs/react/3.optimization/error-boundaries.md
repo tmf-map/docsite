@@ -5,7 +5,9 @@ sidebar_label: Error Boundaries
 
 import Img from '../../../src/components/Img';import Hint from '../../../src/components/Hint';
 
-In the past, JavaScript errors inside components used to corrupt React’s internal state and cause it to emit cryptic errors on next renders. These errors were always caused by an earlier error in the application code, but React did not provide a way to handle them gracefully in components, and could not recover from them. When these errors occur, your app always displays an empty page like this: <Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/nVraRt.png'/>
+In the past, JavaScript errors inside components used to corrupt React’s internal state and cause it to emit cryptic errors on next renders. These errors were always caused by an earlier error in the application code, but React did not provide a way to handle them gracefully in components, and could not recover from them. When these errors occur, your app always displays an empty page like this:
+
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/nVraRt.png'/>
 
 The error messages in your console are confusing and difficult to resolve. Typical symptoms include stack traces that thread through dark regions of the React internals.
 
@@ -186,7 +188,9 @@ We also encourage you to use JS error reporting services (or build your own) so 
 
 ## Component Stack Traces
 
-React 16 prints all errors that occurred during rendering to the console in development, even if the application accidentally swallows them. In addition to the error message and the JavaScript stack, it also provides component stack traces. Now you can see where exactly in the component tree the failure has happened: <Img w="700" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/Mj6C0E.png'/>
+React 16 prints all errors that occurred during rendering to the console in development, even if the application accidentally swallows them. In addition to the error message and the JavaScript stack, it also provides component stack traces. Now you can see where exactly in the component tree the failure has happened:
+
+<Img w="700" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/Mj6C0E.png'/>
 
 You can also see the filenames and line numbers in the component stack trace. This works by default in Create React App projects.If you don’t use Create React App, you can add [this plugin](https://www.npmjs.com/package/babel-plugin-transform-react-jsx-source) manually to your Babel configuration. Note that it’s intended only for development and **must be disabled in production**.
 
