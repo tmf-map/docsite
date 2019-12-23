@@ -21,4 +21,4 @@ sidebar_label: Java 抽象类与接口
 
 ## 参考资料
 
-Effective Java
+1. [Effective Java, By Joshua Bloch](https://book.douban.com/subject/30412517/)
