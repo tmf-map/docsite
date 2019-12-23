@@ -21,4 +21,5 @@ blog: blog/**/*
 "docs: javascript": docs/javascript/**/*
 "docs: react": docs/react/**/*
 "docs: web": docs/web/**/*
+"docs: java": docs/java/**/*
 "docs: http": docs/http/**/*

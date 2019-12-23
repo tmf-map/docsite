@@ -39,6 +39,11 @@ module.exports = {
         {to: 'docs/web/1.http/http-connection', label: 'Web', position: 'left'},
         {to: 'docs/react/1.basic/jsx', label: 'React Stack', position: 'left'},
         {
+          to: 'docs/java/1.basic/abstract-class-interface',
+          label: 'Java',
+          position: 'left'
+        },
+        {
           to: 'docs/design-patterns/1.creation-pattern/singleton',
           label: 'Design Patterns',
           position: 'left'
