@@ -1,10 +1,14 @@
 module.exports = {
-  '1. 数组': [
-    'algorithm/1.array/duplicated-number-in-array',
-    'algorithm/1.array/inverse-pairs',
-    'algorithm/1.array/3sum'
+  '1. Analysis of Algorithms': [
+    'algorithm/1.analysis-of-algorithms/asymptotic-notations',
+    'algorithm/1.analysis-of-algorithms/analysis-of-loops'
   ],
-  '2. 栈与队列': ['algorithm/3.stack-queue/min-stack'],
+  '2. 数组': [
+    'algorithm/2.array/duplicated-number-in-array',
+    'algorithm/2.array/inverse-pairs',
+    'algorithm/2.array/3sum'
+  ],
+  '3. 栈与队列': ['algorithm/3.stack-queue/min-stack'],
   '4. 链表': ['algorithm/4.linkedlist/merge-two-sorted-lists'],
   '5. 二叉树': [
     'algorithm/5.binary-tree/build-tree',

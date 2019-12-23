@@ -3,7 +3,7 @@ const html = require('./html');
 const css = require('./css');
 const web = require('./web');
 const react = require('./react');
-const java = require('./java');
+// const java = require('./java');
 const designPatterns = require('./design-patterns');
 const algorithm = require('./algorithm');
 const http = require('./http');
@@ -15,7 +15,6 @@ module.exports = {
   css,
   web,
   react,
-  java,
   designPatterns,
   algorithm,
   http,
