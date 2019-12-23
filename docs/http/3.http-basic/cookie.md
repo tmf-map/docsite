@@ -33,7 +33,7 @@ Cookie 的工作需要依靠**请求头**中的`Cookie`字段和**响应头**中
 
 Cookie 的工作过程如下图所示：
 
-<Img w="235" legend="Cookie的工作过程" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/l4Y5bL.png" />
+<Img w="600" legend="Cookie的工作过程" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/l4Y5bL.png" />
 
 通过上图可以看出：
 
