@@ -234,7 +234,8 @@ module.exports = {
       'react/3.optimization/pure-component',
       'react/3.optimization/memo',
       'react/3.optimization/code-splitting',
-      'react/3.optimization/suspense'
+      'react/3.optimization/suspense',
+      'react/3.optimization/error-boundaries'
     ],
     '4. 三大组件': [
       'react/4.three-components/container-component',
@@ -275,12 +276,16 @@ module.exports = {
     ]
   },
   algorithm: {
-    '1. 数组': [
-      'algorithm/1.array/duplicated-number-in-array',
-      'algorithm/1.array/inverse-pairs',
-      'algorithm/1.array/3sum'
+    '1. Analysis of Algorithms': [
+      'algorithm/1.analysis-of-algorithms/asymptotic-notations',
+      'algorithm/1.analysis-of-algorithms/analysis-of-loops'
     ],
-    '2. 栈与队列': ['algorithm/3.stack-queue/min-stack'],
+    '2. 数组': [
+      'algorithm/2.array/duplicated-number-in-array',
+      'algorithm/2.array/inverse-pairs',
+      'algorithm/2.array/3sum'
+    ],
+    '3. 栈与队列': ['algorithm/3.stack-queue/min-stack'],
     '4. 链表': ['algorithm/4.linkedlist/merge-two-sorted-lists'],
     '5. 二叉树': [
       'algorithm/5.binary-tree/build-tree',
@@ -323,6 +328,24 @@ module.exports = {
       'algorithm/12.reverse/reverse-integer'
     ],
     '13. 数学': ['algorithm/13.math/powx-n']
+  },
+  http: {
+    '1. 网络基础': [
+      'http/1.web-basic/tcp-ip',
+      'http/1.web-basic/relevant-protocol',
+      'http/1.web-basic/http-connection'
+    ],
+    '2. HTTP的演变': ['http/2.evolution/http-1.x', 'http/2.evolution/http-2'],
+    '3. HTTP基础': [
+      'http/3.http-basic/uri',
+      'http/3.http-basic/message-structure',
+      'http/3.http-basic/request-methods',
+      'http/3.http-basic/status-code',
+      'http/3.http-basic/cookie'
+    ],
+    '4. HTTP头信息': ['http/4.http-header/working'],
+    '5. HTTP缓存': ['http/5.http-cache/working'],
+    '6. HTTP安全': ['http/6.http-security/working']
   },
   docs: {
     Docusaurus: ['doc1', 'doc2', 'doc3'],
