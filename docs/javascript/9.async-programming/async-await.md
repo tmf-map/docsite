@@ -11,15 +11,15 @@ import Hint from '../../../src/components/Hint';
 
 async/await 建立在 Promise 上，并且与所有现有的基于 Promise 的 API 兼容。
 
-### async—声明一个异步函数
+### async 声明一个异步函数
 
 - 自动将常规函数转换成 Promise，返回值也是一个 Promise 对象
 - 只有 async 函数内部的异步操作执行完，才会执行 then 方法指定的回调函数
 
-### await—暂停异步的功能执行
+### await 暂停函数的执行
 
+- await 强制其它代码等待，直到 Promise 完成并返回结果
 - 只能与 Promise 一起使用，放置在 Promise 调用之前，如果不是则会被转成 Promise 对象
-- await 强制其他代码等待，直到 Promise 完成并返回结果
 
 ## 语法
 
@@ -65,13 +65,12 @@ async function f() {
 f().then(v => console.log(v)); // 123
 ```
 
-**注意：**
+> 注意：
+>
+> - 容错：由于 await 后面的 promise 运行结果可能是 rejected，最好把 await 放入 try-catch 中。
+> - 性能：await 后的异步操作，如果彼此没有依赖关系最好同时触发，在下面会有介绍。
 
-- 容错：由于 await 后面的 promise 运行结果可能是 rejected，最好把 await 放入 try-catch 中。
-
-- 性能：await 后的异步操作，如果彼此没有依赖关系最好同时触发，在下面会有介绍。
-
-- **只能在 async 函数内部使用，如果在普通函数中，会报错**
+<Hint type = "must">只能在 async 函数内部使用，如果在普通函数中，会报错</Hint>
 
 async 函数完全可以看作多个异步操作，包装成的一个 Promise 对象，而 await 命令就是内部 then 命令的语法糖。
 
@@ -132,12 +131,20 @@ try {
 ### 方法二：使用.catch
 
 ```js
-let books = await fetchData().catch(error => {
-  console.log(error);
-}); // return undefined if error happens
+const result = asyncfunction () {
+  const content = await new Promise((resolve, reject) => {
+    setTimeout(() => {
+      reject(new Error('error'))
+    }, 200)
+  }).catch(error => {
+    console.log(error)
+  })
+}
+
+result()
 ```
 
-注意：在 catch 里面不要直接将 error 返回，如果 fetchData 返回 resolve 正确结果时，data 是我们要的结果，如果是 reject 了，发生错误了，那么 data 是 error，这不是我们想要的，可以返回 undefined。
+注意：在 catch 里面不要直接将 error 返回，如果异步函数返回 resolve 正确结果时，data 是我们要的结果，如果是 reject 了，发生错误了，那么 data 是 error，这不是我们想要的，可以返回 undefined。
 
 这种方法有两个小问题：
 
@@ -154,7 +161,20 @@ const awaitWrap = promise => {
   return promise.then(data => [null, data]).catch(err => [err, null]);
 };
 
-const [err, data] = await awaitWrap(fetchData);
+const result = async function() {
+  const content = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      reject(new Error('error'));
+    }, 200);
+  });
+
+  const [err, data] = await awaitWrap(content);
+
+  console.log(err);
+  console.log(data);
+};
+
+result();
 ```
 
 <Hint type="tip">await 关键字可以保证异步错误被调用栈外层捕获到而不是被抛到全局</Hint>
