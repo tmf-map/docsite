@@ -33,4 +33,4 @@ HTTP 协议规定了非常多的头部字段，实现各种各样的功能，但
 
 <Img legend="图：HTTP首部字段分类" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/7knXuW.png" />
 
-点击下载或编辑[思维导图](https://robbie-blog.oss-cn-shanghai.aliyuncs.com/Mind-Mapping/%E9%A6%96%E9%83%A8%E5%AD%97%E6%AE%B5.xmind)。
+点击下载或编辑[思维导图](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/首部字段.xmind)。

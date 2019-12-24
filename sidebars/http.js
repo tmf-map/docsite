@@ -12,7 +12,7 @@ module.exports = {
     'http/3.http-basic/status-code',
     'http/3.http-basic/cookie'
   ],
-  '4. HTTP头信息': [
+  '4. HTTP首部信息': [
     'http/4.http-headers/headers',
     'http/4.http-headers/general-headers',
     'http/4.http-headers/request-header',
