@@ -9,7 +9,7 @@ import Img from '../../../src/components/Img';
 
 **通用头字段**即在*请求头*和*响应头*里都可以出现的字段，常见的字段有：`Cache-Control`、`Date`、`Transfer-Encoding`、`Via`、`Warning`等，这些字段所代表的含义如下图所示：
 
-<Img w="400" legend="图：HTTP通用头字段" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/s5wnO8.png"/>
+<Img w="400" legend="图：HTTP通用头字段" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/mjnfUE.png"/>
 
 ## Cache-Control
 

@@ -33,6 +33,6 @@ HTTP 协议规定了非常多的头部字段，实现各种各样的功能，但
 
 ### 详细字段
 
-<Img legend="图：HTTP头字段分类" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/7knXuW.png" />
+<Img legend="图：HTTP头字段分类" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/JZTTTl.png" />
 
 点击下载或编辑[思维导图](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/头字段.xmind)。
