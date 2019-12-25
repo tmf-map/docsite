@@ -10,6 +10,6 @@ jobs:
     steps:
       - uses: seferov/pr-lint-action@master
         with:
-          regex: ^(add|update|fix|build|revert)+\(.+\):\s.+\S$
+          title-regex: ^(add|update|fix|build|revert)+\(.+\):\s.+\S$
           on-failed-regex-comment: "This PR title doesn't match the regex: `%regex%`! \n\n Please send empty commit: `git commit --allow-empty -m \"title corrected\"` after correcting title."
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
