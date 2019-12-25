@@ -1,4 +1,4 @@
 ---
-title: 响应首部字段
-sidebar_label: 响应首部字段
+title: 响应头字段
+sidebar_label: 响应头字段
 ---

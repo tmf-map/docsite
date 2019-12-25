@@ -1,4 +1,4 @@
 ---
-title: 实体首部字段
-sidebar_label: 实体首部字段
+title: 实体头字段
+sidebar_label: 实体头字段
 ---
