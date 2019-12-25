@@ -10,8 +10,8 @@ jobs:
     steps:
       - uses: deepakputhraya/action-pr-title@master
         with:
-          regex: '^[a-z]+\(.+\):\s.+\S$'
-          allowed_prefixes: 'add,update,fix,build,revert'
+          regex: ^[a-z]+\(.+\):\s.+\S$
+          allowed_prefixes: add,update,fix,build,revert
           prefix_case_sensitive: true
           min_length: 5
           max_length: 50
