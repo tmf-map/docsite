@@ -11,5 +11,5 @@ jobs:
       - uses: seferov/pr-lint-action@master
         with:
           title-regex: ^(add|update|fix|build|revert)+\(.+\):\s.+\S$
-          on-failed-regex-comment: "This PR title doesn't match the regex: `%regex%`! \n\n Please send empty commit: `git commit --allow-empty -m \"title corrected\"` after correcting title."
+          on-failed-regex-comment: "This PR title doesn't match the regex: `%regex%`!"
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
