@@ -8,8 +8,8 @@ jobs:
   check-title:
     runs-on: ubuntu-latest
     steps:
-      - uses: seferov/pr-lint-action@master
+      - uses: morrisoncole/pr-lint-action@v1.0.0
         with:
           title-regex: ^(add|update|fix|build|revert)+\(.+\):\s.+\S$
-          on-failed-regex-comment: "This PR title does not match the regex: `%regex%`! \n\n Please send empty commit: `git commit --allow-empty -m \"title corrected\"` after correcting title."
+          on-failed-regex-comment: "Please fix your PR title to match the regex: `%regex%`! \n\n Then re-trigger the check by pushing a new empty commit: `git commit --allow-empty -m \"title corrected\"`"
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
