@@ -30,8 +30,8 @@ Where common types can be:\n
 Note that if you have no other changes to commit, you can override the failed PR title check by pushing a new empty commit:\n
 \n
 ```bash\n
-git commit --allow-empty -m \"title corrected\"`
+git commit --allow-empty -m \"title corrected\"\n
 ```\n
 \n
-Above operation is required after correcting pr title otherwise the last failed check will always exist."
+Above operation is required after correcting PR title otherwise the last failed check will always exist."
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
