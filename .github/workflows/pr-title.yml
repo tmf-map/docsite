@@ -1,0 +1,38 @@
+name: pr-title
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, edited]
+
+jobs:
+  check-title:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: morrisoncole/pr-lint-action@v1.0.0
+        with:
+          title-regex: ^(add|update|fix|build|revert)+\(.+\):\s.+\S$
+          on-failed-regex-comment: |
+            :point_right: **Title check for pull request failed.**
+
+            Please fix your PR title to match the following pattern:
+            
+            ```text
+            type(scope): description
+            ```
+
+            Where common types can be:
+            
+            - add
+            - update
+            - fix
+            - build
+            - revert
+            
+            Note that if you have no other changes to commit, you can override the failed PR title check by pushing a new empty commit:
+            
+            ```bash
+            git commit --allow-empty -m "title corrected"
+            ```
+            
+            Above operation is required after correcting PR title otherwise the last failed check will always exist.
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
