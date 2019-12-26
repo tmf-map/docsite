@@ -894,10 +894,10 @@
     "@docusaurus/utils" "^2.0.0-alpha.39"
     globby "^10.0.1"
 
-"@docusaurus/plugin-google-analytics@2.0.0-alpha.39", "@docusaurus/plugin-google-analytics@^2.0.0-alpha.39":
-  version "2.0.0-alpha.39"
-  resolved "https://registry.npm.taobao.org/@docusaurus/plugin-google-analytics/download/@docusaurus/plugin-google-analytics-2.0.0-alpha.39.tgz#82be38d748f9886fcbdc9b9082cdcb77c2b79c5b"
-  integrity sha1-gr4410j5iG/L3JuQgs3Ld8K3nFs=
+"@docusaurus/plugin-google-analytics@2.0.0-alpha.40", "@docusaurus/plugin-google-analytics@^2.0.0-alpha.39":
+  version "2.0.0-alpha.40"
+  resolved "https://registry.yarnpkg.com/@docusaurus/plugin-google-analytics/-/plugin-google-analytics-2.0.0-alpha.40.tgz#1967ff433c1dfc3d0cf29e17bc078232f2344119"
+  integrity sha512-vWkx63QadZgxTi2J+nLRnAd4uuCJT/F1rhRB8wVoUR/Vkeo463oufNWQL5yDpC1FA2d54zAwaLbjSbTSyuD4TA==
 
 "@docusaurus/plugin-google-gtag@^2.0.0-alpha.39":
   version "2.0.0-alpha.39"
