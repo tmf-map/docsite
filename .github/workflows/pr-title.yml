@@ -11,5 +11,18 @@ jobs:
       - uses: morrisoncole/pr-lint-action@v1.0.0
         with:
           title-regex: ^(add|update|fix|build|revert)+\(.+\):\s.+\S$
-          on-failed-regex-comment: "Please fix your PR title to match the regex: `%regex%`! \n\n Then re-trigger the check by pushing a new empty commit: `git commit --allow-empty -m \"title corrected\"`"
+          on-failed-regex-comment: "Please fix your PR title to match the following pattern:\n
+```text\n
+type(scope): description\n
+```\n
+\n
+where common types can be:\n
+\n
+- add\n
+- update\n
+- fix\n
+- build\n
+- revert\n
+\n
+Note that you can override the last result of pr title check by pushing a new empty commit: `git commit --allow-empty -m \"title corrected\"` which is required after correcting pr title."
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
