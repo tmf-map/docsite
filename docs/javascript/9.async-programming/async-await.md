@@ -3,21 +3,25 @@ title: async/await
 sidebar_label: async/await
 ---
 
+import Img from '../../../src/components/Img';
+
+import Hint from '../../../src/components/Hint';
+
 ## 前言
 
-async/await 建立在 Promises 上，并且与所有现有的基于 Promise 的 API 兼容。
+async/await 建立在 Promise 上，并且与所有现有的基于 Promise 的 API 兼容。
 
-### async—声明一个异步函数
+### async 声明一个异步函数
 
 - 自动将常规函数转换成 Promise，返回值也是一个 Promise 对象
 - 只有 async 函数内部的异步操作执行完，才会执行 then 方法指定的回调函数
 
-### await—暂停异步的功能执行
+### await 暂停函数的执行
 
-- 放置在 Promise 调用之前，await 强制其他代码等待，直到 Promise 完成并返回结果
-- 只能与 Promise 一起使用，不适用于回调 async 函数的几种使用形式
+- await 强制其它代码等待，直到 Promise 完成并返回结果
+- 只能与 Promise 一起使用，放置在 Promise 调用之前，如果不是则会被转成 Promise 对象
 
-## 语法：
+## 语法
 
 1. async 函数的几种使用形式
 
@@ -51,7 +55,7 @@ storgae.getAvatar('jack').then(...)
 
 - await 后需要的是一个 Promise 对象，如果不是则会被转成 Promise 对象。
 - 如果存在一个 await 后的 Promise 转为 rejected 状态，那么整个 async 函数都会中断操作。
-- 如果状态是 resolve，那么他的返回值则会变成 then 里面的参数，如下：
+- 如果状态是 fulfilled，那么他的返回值则会变成 then 里面的参数，如下：
 
 ```js
 async function f() {
@@ -61,17 +65,16 @@ async function f() {
 f().then(v => console.log(v)); // 123
 ```
 
-**注意：**
+> 注意：
+>
+> - 容错：由于 await 后面的 promise 运行结果可能是 rejected，最好把 await 放入 try-catch 中。
+> - 性能：await 后的异步操作，如果彼此没有依赖关系最好同时触发，在下面会有介绍。
 
-_容错：_ 由于 await 后面的 promise 运行结果可能是 rejected，最好把 await 放入 try-catch 中
-
-_性能：_ await 后的异步操作，如果彼此没有依赖关系最好同时触发，在下面会有介绍
-
-- **只能在 async 函数内部使用，如果在普通函数中，会报错**
+<Hint type = "must">只能在 async 函数内部使用，如果在普通函数中，会报错</Hint>
 
 async 函数完全可以看作多个异步操作，包装成的一个 Promise 对象，而 await 命令就是内部 then 命令的语法糖。
 
-## 容错：
+## 容错
 
 之前也谈到了 Promise 对错误处理的一些局限性，这里主要看看 await/asyc 对错误处理要注意的一些问题。
 
@@ -80,27 +83,26 @@ async 函数完全可以看作多个异步操作，包装成的一个 Promise �
 最标准的方法是使用 try…catch 语句。在调用 await 函数时，如果出现非正常状况就会跑出异常。
 
 ```js
-class BookModel {
- fetchAll() {
-   return new Promise((resolve, reject) => {
-     window.setTimeout(() => { reject({'error': 400}) }, 1000);
-   });
- }
-}
-// async/await
-async getBooksByAuthorWithAwait(authorId) {
-try {
- const books = await bookModel.fetchAll();
-} catch (error) {
- console.log(error);    // { "error": 400 }
-}
+const result = async function() {
+  try {
+    const content = await new Promise((resolve, reject) => {
+      setTimeout(() => {
+        reject(new Error('error'));
+      }, 200);
+    });
+  } catch (e) {
+    // some codes
+  }
+};
+
+result();
 ```
 
 在捕捉到异常之后，在 catch 根据需要有几种方法来处理它：
 
 - **直接处理异常**，并返回一个正常值。（不在 catch 块中使用任何 return 语句相当于使用 return undefined，undefined 也是一个正常值。）
 - **抛出异常**，如果你想让调用者来处理它，就将它抛出。可以直接抛出错误对象
-  - **直接抛出**：比如 throw error，这样就可以在 promise 链中使用 await getBooksByAuthorWithAwait() 函数（也就是像 getBooksByAuthorWithAwait().then(...).catch(error => …) 这样调用它）。
+  - **直接抛出**：比如 throw error，这样`result()`的返回值就是一个 rejected 的 Promise，我们可以对它再继续做操作，比如`result().then().catch()`
   - **加工一下再抛出**：包装成 Error 对象，比如 throw new Error(error)，那么在控制台中显示这个错误时它将给出完整的堆栈跟踪信息。
 - **拒绝它**，比如 return Promise.reject(error)。这相当于 throw error，因此不推荐使用。
 
@@ -129,12 +131,20 @@ try {
 ### 方法二：使用.catch
 
 ```js
-let books = await fetchData().catch(error => {
-  console.log(error);
-}); // return undefined if error happens
+const result = asyncfunction () {
+  const content = await new Promise((resolve, reject) => {
+    setTimeout(() => {
+      reject(new Error('error'))
+    }, 200)
+  }).catch(error => {
+    console.log(error)
+  })
+}
+
+result()
 ```
 
-注意：在 catch 里面不要直接将 error 返回，如果 fetchData 返回 resolve 正确结果时，data 是我们要的结果，如果是 reject 了，发生错误了，那么 data 是 error，这不是我们想要的，可以返回 undefined。
+注意：在 catch 里面不要直接将 error 返回，如果异步函数返回 resolve 正确结果时，data 是我们要的结果，如果是 reject 了，发生错误了，那么 data 是 error，这不是我们想要的，可以返回 undefined。
 
 这种方法有两个小问题：
 
@@ -151,10 +161,25 @@ const awaitWrap = promise => {
   return promise.then(data => [null, data]).catch(err => [err, null]);
 };
 
-const [err, data] = await awaitWrap(fetchData);
+const result = async function() {
+  const content = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      reject(new Error('error'));
+    }, 200);
+  });
+
+  const [err, data] = await awaitWrap(content);
+
+  console.log(err);
+  console.log(data);
+};
+
+result();
 ```
 
-### 性能
+<Hint type="tip">await 关键字可以保证异步错误被调用栈外层捕获到而不是被抛到全局</Hint>
+
+## 性能
 
 await 语法糖明显的缺点，就是多个异步代码不经过特别优化会很容易“串行化”，想要避免这样低效的代码，又要写一些“恶心”的不太容易阅读的代码去优化它。
 
@@ -293,14 +318,13 @@ try {
 
 这样比较看上去代码差不多，但是要注意，`.then(resA => fetchB(resA))`，then 里面的回调函数的处理逻辑可能更为复杂，**而这些代码在 await/async 代码中将会显得很“同步”**，没有那么多回调函数，也没有一层层的 then，代码顺序执行即可。
 
-优点二：调试方便
+### 优点二：调试方便
 
 在函数入口设置断点并执行跳过 await 行之后，调试器会在 `bookModel.fetchAll()` 执行时暂停一会儿，然后移动到下一行（也就是.filter）！这比使用 promise 要容易调试得多，因为你必须在.filter 这一行设置另一个断点。
 
-<div align="center">
-    <img width="550" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/01SLkN.png" />
-</div>
-优点三：返回值统一
+<Img width="550" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/01SLkN.png" />
+
+### 优点三：返回值统一
 
 async 关键字，尽管看起来不是很明显。它声明 `getBooksByAuthorWithAwait()` 函数的返回值是一个 promise，因此调用者可以安全地调用 `getBooksByAuthorWithAwait().then(…)` 或 `await getBooksByAuthorWithAwait()`。比如像下面这段代码：
 
