@@ -20,7 +20,7 @@ HTTP 头字段允许客户端和服务器通过请求报文和响应报文传递
 > - 每个字段的 value 后都会有一个换行符；
 > - 字段的顺序是没有意义的，可以任意排列不影响语义；
 
-<Hint type="must">文档 [RFC7504](https://tools.ietf.org/html/rfc7540#section-8.1.2) 明确指出头字段的定义：在 HTTP/1.x 中头字段名不区分大小写，但是在 HTTP/2 中头字段必须是小写</Hint>
+<Hint type="must">文档 [RFC7504](https://tools.ietf.org/html/rfc7540#section-8.1.2) 明确指出头字段的定义：在 HTTP/1.x 中头字段名不区分大小写，但是在 HTTP/2 中头字段必须是小写。在 Node.js 中，如果使用的是 HTTP/1.x 协议，字段名对大小写字母不敏感，会原样输出。如果如果使用的是 HTTP/2 协议，非小写字母的字段名都会转为小写</Hint>
 
 ## 头字段分类
 
@@ -35,4 +35,6 @@ HTTP 协议规定了非常多的头部字段，实现各种各样的功能，但
 
 <Img legend="图：HTTP头字段分类" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/JZTTTl.png" />
 
-点击下载或编辑[思维导图](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/头字段.xmind)。
+## 小结
+
+本章 HTTP 头字段的讲解是按照请求报文和响应报文来划分的，在[HTTP headers -- MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers)这个文档中，是按照 HTTP 字段的功能来划分的，将两者结合来看效果会更好。

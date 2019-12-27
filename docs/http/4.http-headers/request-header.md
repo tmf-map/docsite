@@ -7,11 +7,11 @@ import Img from '../../../src/components/Img';
 
 import Hint from '../../../src/components/Hint';
 
-## 请求头字段
+## 概述
 
-**请求头字段**是从客户端往服务器端**发送请求报文中所使用的字段**，用于补充请求的**附加信息、客户端信息、对响应内容相关的优先级**等内容。如一些请求头`Accept`, `Accept-*`, `If-*`表示条件请求，还有一些请求头字段如：`User-Agent` 和 `Referer` 描述了请求本身以确保服务端能返回正确的响应。常见的请求头字段如下图所示：
+**请求头字段**是从客户端往服务器端**发送请求报文中所使用的字段**，用于补充请求的**附加信息、客户端信息、对响应内容相关的优先级**等内容。如一些请求头`Accept`, `Accept-*`表示内容协商, `If-*`表示条件请求，还有一些请求头字段如：`User-Agent` 和 `Referer` 描述了请求本身以确保服务端能返回正确的响应。常见的请求头字段如下图所示：
 
-<Img w="500" legend="图：HTTP请求头字段" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/LuCULR.png" />
+<Img w="625" legend="图：HTTP请求头字段" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/KJbtGw.png" />
 
 ## Accept\*
 
@@ -118,11 +118,11 @@ If-Modified-Since: Tue, 24 Dec 2019 12:29:40 GMT
 
 ### If-None-Match
 
-服务器通过获取请求头中`If-None-Match`的参数和标记资源的 Etag 的值做对比，如果值不相同时服务器处理请求，状态码为 200，返回新的资源给客户端。否则命中协商缓存，客户端读取本地资源。
+服务器通过获取请求头中`If-None-Match`的参数和标记资源的 `Etag` 的值做对比，如果值不相同时服务器处理请求，状态码为 200，返回新的资源给客户端。否则命中协商缓存，客户端读取本地资源。
 
 ### If-Range
 
-`If-Range`需要和`Range`字段一起使用，当`If-Range`的值和 Etag 的值匹配的时候，返回`Range`指定的部分资源，如果不匹配的时候，返回全部资源给客户端。
+`If-Range`需要和`Range`字段一起使用，当`If-Range`的值和 `Etag` 的值匹配的时候，返回`Range`指定的部分资源，如果不匹配的时候，返回全部资源给客户端。
 
 `If-Unmodified-Since`和`If-Modified-Since`的行为相反，`If-Match`的行为和`If-None-Match`的行为相反，两个字段了解即可。
 
@@ -182,8 +182,17 @@ Authorization: Basic dWVub3Nlbj pwYXNzd29yZA==
 
 这个行为是与客户端和服务器之间的 HTTP 访问认证相类似的，不同之处在于，**认证行为发生在客户端与代理之间**。客户端与服务器之间的认证，使用首部字段`Authorization`可起到相同作用。
 
-**Authorization 的格式**
+**Proxy-Authorization 的格式**
 
 ```
-Proxy一Author ization: Basic dGlw0jkpNLAGfFY5
+Proxy-Authorization: Basic dGlw0jkpNLAGfFY5
 ```
+
+## 其他字段
+
+除了上述字段外还有`Origin`、`Access-Control-Request-Methods`、`Access-Control-Request-Headers`等字段，这些`Access-Control-Request-*`用在`CORS`跨域的预检请求报文中。关于这部分的内容可以参考文档中关于[CORS](/docs/web/2.cross-domain/cors)。
+
+## 参考链接
+
+- [图解 HTTP -- [日]上野宣](https://book.douban.com/subject/25863515/)
+- [HTTP Headers -- MDN](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers)
