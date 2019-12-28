@@ -146,7 +146,7 @@ If-Modified-Since: Tue, 24 Dec 2019 12:29:40 GMT
 
 `Host` 字段告诉服务器这个请求应该由哪个主机来处理，当一台计算机上托管了多个虚拟主机的时候（多台主机使用同一个 IP 地址），服务器端就需要用 `Host` 字段来选择，有点像是一个简单的“路由重定向”。
 
-<Img w="450" legend="图：Host示意图" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/NlVuMM.png" />
+<Img w="450" legend="图：Host示意图" src="http://cosmos-x.oss-cn-hangzhou.aliyuncs.com/blog/20191228/120446678.png" />
 
 ## Referer
 
