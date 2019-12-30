@@ -5,8 +5,6 @@ sidebar_label: HTTP请求方法
 
 import Img from '../../../src/components/Img';
 
-import Hint from '../../../src/components/Hint';
-
 ## 前言
 
 上一节本文介绍了 HTTP 的报文结构，它是由 `header+body` 构成，请求头里有`请求方法`和`请求目标`，响应头里有`状态码`和`原因短语`，本节的主要内容就是`请求头里的请求方法`。
