@@ -12,7 +12,16 @@ module.exports = {
     'http/3.http-basic/status-code',
     'http/3.http-basic/cookie'
   ],
-  '4. HTTP头信息': ['http/4.http-header/working'],
-  '5. HTTP缓存': ['http/5.http-cache/working'],
-  '6. HTTP安全': ['http/6.http-security/working']
+  '4. HTTP首部信息': ['http/4.http-header/working'],
+  '5. HTTP缓存': [
+    'http/5.http-cache/browser-caches',
+    'http/5.http-cache/proxy-caches'
+  ],
+  '6. HTTP安全': [
+    'http/6.http-security/encryption',
+    'http/6.http-security/https'
+  ],
+  '7. HTTP大文件传输': ['http/7.large-file-transfer/large-file-transfer'],
+  '8. HTTP身份认证': ['http/8.http-authentication/authentication'],
+  '9. HTTP3': ['http/9.http3/http3']
 };
