@@ -27,7 +27,7 @@ HTTP 客户端缓存都是从第二次请求开始的。
 
 - 第一次请求时，服务器返回资源，并在 `response header` 中回传资源的缓存参数；
 
-- 第二次请求时，**浏览器**判断强缓存的这些请求参数，如果**没有过期**就击中强缓存就直接 200(from memory/disk cache)，否则就把请求参数加到 `request header` 头传给**服务器**，判断是否击中协商缓存，击中则返回 304，否则服务器会返回新的资源。
+- 第二次请求时，**浏览器**判断强缓存的这些请求参数，如果**没有过期**就命中强缓存就直接 200(from memory/disk cache)，否则就把请求参数加到 `request header` 头传给**服务器**，判断是否命中协商缓存，命中则返回 304，否则服务器会返回新的资源。
 
 详细请看下面的这张流程图：
 
@@ -50,7 +50,7 @@ HTTP 缓存分为强缓存和协议缓存，它们的区别如下：
 
 <Img width="800" legend="图：强缓存种类" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/tCzCsP.png"/>
 
-其中上图中的 1 和 2 分别代表了击中强缓存的两种情况：
+其中上图中的 1 和 2 分别代表了命中强缓存的两种情况：
 
 - 200 from memory 不访问服务器，直接读缓存，从内存中读取缓存。此时的数据时缓存到内存中的，当 kill 进程后，也就是浏览器关闭以后，数据将不存在。但是这种方式只能缓存派生资源
 
@@ -67,33 +67,45 @@ HTTP 缓存分为强缓存和协议缓存，它们的区别如下：
 
 <Img width="600" legend="图：Cache-Control常用参数" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/OAWzaU.png"/>
 
-#### 服务器的缓存控制：
+**服务器的缓存控制：**
 
-当服务器收到浏览器的请求时，会通过添加`Cache-Control`字段来控制资源的缓存。常用的参数有`max-age`、`no-cache`、`no_store`、`must-revalidate`。
+当服务器收到浏览器的请求时，会通过添加`Cache-Control`字段来控制资源的缓存。常用的参数有`max-age`、`no-cache`、`no-store`、`must-revalidate`。
 
 `max-age`代表的是**缓存的过期时间**，用的是相对时间，**时间从响应报文发出开始计算**。
 
-`no-cache`、`no_store`、`must-revalidate`这三个参数需要我们区别一下：
+`no-cache`、`no-store`、`must-revalidate`这三个参数需要我们区别一下：
 
-- no_store： **不允许缓存**，用于某些变化非常频繁的数据，例如秒杀页面；
+- no-store： **不允许缓存**，用于某些变化非常频繁的数据，例如秒杀页面；
 - no-cache： 可以缓存，但在**使用之前**必须要去服务器验证是否过期，是否有最新的版本；
-- must-revalidate：和 `no_cache` 非常相似，它的意思是如果**缓存不过期就可以继续使用**，但**过期了就必须去服务器验证**。
+- must-revalidate：和 `no-cache` 非常相似，它的意思是如果**缓存不过期就可以继续使用**，但**过期了就必须去服务器验证**。
 
 为了更好的理解这几个字段的意思，可以看下面这张流程图：
 
 <Img width="525" legend="图：服务器的缓存控制" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/oDMgW4.png"/>
 
-#### 客户端的缓存控制：
+**客户端的缓存控制：**
 
 `Cache-Control`在客户端的缓存控制中常用的参数为`max-age`和`no-cache`两个。
 
-当我们点击刷新按钮、使用`CMD + R`、`F5`“刷新”网页的时候，有的请求头中会添加`Cache-Control：max-age=0`字段。因为 `max-age` 是“生存时间”，而本地缓存里的数据至少保存了几秒钟，所以`max-age=0`就意味着**不直接读取浏览器缓存，必须向服务器发出请求**。服务器看到`Cache-Control: max-age=0`，此时服务器就会**判断协商缓存**的相关字段，如果命中协商缓存，返回 304 状态码，读取本地缓存。如果没有命中协商缓存，就返回新的资源给客户端。如下图：
+当我们点击刷新按钮、使用`CMD + R`、`F5或Ctrl + R`来**Normal Reload（正常刷新）**网页时，请求头中会添加`Cache-Control：max-age=0`字段。因为 `max-age` 是“生存时间”，而本地缓存里的数据至少保存了几秒钟，所以`max-age=0`就意味着**不直接读取浏览器缓存，必须向服务器发出请求**。
+
+当服务器收到`Cache-Control: max-age=0`，此时服务器就会**判断协商缓存**的相关字段，如果命中协商缓存，返回 304 状态码，读取本地缓存。如果没有命中协商缓存，就返回新的资源给客户端。如下图：
 
 <Img width="800" legend="图：非强制刷新" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/2coR6N.png"/>
 
-当我们使用`CMD + Shift + R`或`Cache + F5`“强制刷新”网页的时候，我们可以从请求头中看到`Cache-Control：no-cache`的字段。此时意味着不使用任何缓存数据，服务器必须返回新的资源给客户端。如下图：
+当我们使用`CMD + Shift + R`或`Ctrl + F5或 Ctrl + Shift + R`来**Hard Reload（强制刷新）**网页的时候，我们可以从请求头中看到`Cache-Control：no-cache`的字段。此时意味着不使用任何缓存数据，服务器必须返回新的资源给客户端。如下图：
 
 <Img width="800" legend="图：强制刷新" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/g37iuy.png"/>
+
+<Hint type='tip'>在强制刷新网页后，如果网页通过重定向加载了其他资源，则它可能会从缓存中加载。</Hint>
+
+除了上面两种刷新方式外，在浏览器中还有一种**Empty Cache and Hard Reload（清空缓存并强制加载）**的页面刷新方式，如下图所示：
+
+<Img width="560" legend="图：Chrome缓存" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20191231211624.png"/>
+
+当选择`Empty Cache and Hard Reload`时，**它将首先清空缓存**，然后重新下载所有内容，如果要完全重新加载网页，这是最好的选择。
+
+<Hint type = "tip">上面提到的三种页面刷新方式，其实都没有命中**强缓存**。只有在前进、后退、点击跳转链接、地址栏输入 url 回车的时候才能命中**强缓存**</Hint>
 
 ### Expires
 
@@ -110,7 +122,7 @@ HTTP 缓存分为强缓存和协议缓存，它们的区别如下：
 
 在上一章的**请求头字段**的条件请求中我们提到了协商缓存需要的两个字段`If-Modify-Since`、`If-None-Match`，在**响应头字段**那一节也详细讲解了强`Etag`和弱`Etag`和它们的作用。这些内容在这里将不再赘述，我们只将这些字段在协商缓存中是怎么应用的。
 
-由本文开始的`客户端流程图`可以看出，协商缓存是先判断`Etag`对应的`If-None-Match`字段，如果击中协商缓存，则返回 304 状态码，浏览器读取本地缓存。如果`If-None-Match`与`Etag`不匹配，需要查看`If-Modify-Since`的时间是否早于服务器资源设置的`Last-Modify`的时间，如果早于的话，服务器返回 200 状态码，并把最新的资源发送到客户端，客户端收到后更新本地资源。如果时间相同的话，则返回 304 状态码，浏览器读取本地缓存。
+由本文开始的`客户端流程图`可以看出，协商缓存是先判断`Etag`对应的`If-None-Match`字段，如果命中协商缓存，则返回 304 状态码，浏览器读取本地缓存。如果`If-None-Match`与`Etag`不匹配，需要查看`If-Modify-Since`的时间是否早于服务器资源设置的`Last-Modify`的时间，如果早于的话，服务器返回 200 状态码，并把最新的资源发送到客户端，客户端收到后更新本地资源。如果时间相同的话，则返回 304 状态码，浏览器读取本地缓存。
 
 如下图，协商缓存都是成对出现的（相同颜色是一对响应和请求头部，if 开头的都是请求头部）。
 
