@@ -6,7 +6,7 @@ sidebar_label: 生命周期
 
 import Hint from '../../../src/components/Hint'; import Img from '../../../src/components/Img';
 
-## React < v16.3
+## React v16.3 之前
 
 ### 生命周期图
 
@@ -66,7 +66,7 @@ componentToRealDOM(component);
 component.componentDidMount && component.componentDidMount();
 ```
 
-## React > v16.3
+## React v16.3 之后
 
 ### 生命周期图
 
