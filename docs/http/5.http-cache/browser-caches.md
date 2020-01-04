@@ -33,7 +33,7 @@ HTTP 客户端缓存都是从第二次请求开始的。
 
 <Img width="520" legend="图：客户端缓存流程图" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/cache.png" />
 
-<Hint type = "tip">上图中判断强缓存是否过期主要通过`Cache-Control：max-age`字段和`Expires`字段来判断，其中`Cache-Control`的优先级较高</Hint>
+<Hint type="tip">上图中判断强缓存是否过期主要通过`Cache-Control：max-age`字段和`Expires`字段来判断，其中`Cache-Control`的优先级较高</Hint>
 
 HTTP 缓存分为强缓存和协议缓存，它们的区别如下：
 
@@ -105,7 +105,7 @@ HTTP 缓存分为强缓存和协议缓存，它们的区别如下：
 
 当选择`Empty Cache and Hard Reload`时，**它将首先清空缓存**，然后重新下载所有内容，如果要完全重新加载网页，这是最好的选择。
 
-<Hint type = "tip">上面提到的三种页面刷新方式，其实都没有命中**强缓存**。只有在前进、后退、点击跳转链接、地址栏输入 url 回车的时候才能命中**强缓存**</Hint>
+<Hint type="tip">上面提到的三种页面刷新方式，其实都没有命中**强缓存**。只有在前进、后退、点击跳转链接、地址栏输入 url 回车的时候才能命中**强缓存**</Hint>
 
 ### Expires
 

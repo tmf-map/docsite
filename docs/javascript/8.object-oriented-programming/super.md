@@ -9,7 +9,7 @@ import Hint from '../../../src/components/Hint';
 
 `this` 是由调用者决定的。子类自己的 `this` 对象，必须先通过父类的构造函数完成构造，得到与父类同样的**实例属性和方法**，然后再对其进行加工，加上子类自己的实例属性和方法。如果不调用 `super` 方法，子类就得不到 `this` 对象，那么对子类的进行加工，加上子类自己的实例属性和方法就无法实现。
 
-<Hint type="bad">要想在子类中使用 `this` 得先调用 `super()` 将父类 `constructor` 定义的属性和方法挂到自己的 `this` 上后再进行扩展。</Hint>
+<Hint type="warn">要想在子类中使用 `this` 得先调用 `super()` 将父类 `constructor` 定义的属性和方法挂到自己的 `this` 上后再进行扩展。</Hint>
 
 ## super 的两种用法与含义
 

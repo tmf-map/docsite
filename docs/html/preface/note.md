@@ -7,7 +7,7 @@ sidebar_label: 说明
 
 import Hint from '../../../src/components/Hint';
 
-<Hint type="tip">说明，补充小结</Hint>
+<Hint type="tip">提示，补充说明</Hint>
 
 <Hint type="warn">提醒，容易忽视</Hint>
 
