@@ -22,7 +22,7 @@ import Hint from '../../../src/components/Hint';
 <Route exact path='/article' />
 ```
 
-<Hint type="warning">在匹配路由时，react-router 只关注 location 的**路径名**。</Hint>
+<Hint type="warn">在匹配路由时，react-router 只关注 location 的**路径名**。</Hint>
 
 例如当 URL 如下时：
 
@@ -149,7 +149,7 @@ const Article = () => (
 );
 ```
 
-<Hint type="warning">Switch 里面直接要嵌套 Route，否则在路由跳转的时候会出现一些意想不到的情况。</Hint>
+<Hint type="warn">Switch 里面直接要嵌套 Route，否则在路由跳转的时候会出现一些意想不到的情况。</Hint>
 
 ## 路径参数
 

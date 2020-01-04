@@ -12,7 +12,7 @@ React Router 被拆分成三个包：`react-router`,`react-router-dom`和`react-
 
 ## @reach/router
 
-<Hint type="best">路由管理推荐使用 [@reach/router](https://github.com/reach/router)，功能简洁而强大，没有 react-router 的繁琐，详情请参考官方文档：[https://reach.tech/router](https://reach.tech/router)</Hint>
+<Hint type="good">路由管理推荐使用 [@reach/router](https://github.com/reach/router)，功能简洁而强大，没有 react-router 的繁琐，详情请参考官方文档：[https://reach.tech/router](https://reach.tech/router)</Hint>
 
 <Hint type="tip">在 `@reach/router` 中，父路由组件有一个特殊的 props: **`*`** ，它作为一个特殊的 key，可以帮助父路由组件取到子路由组件的 path。</Hint>
 

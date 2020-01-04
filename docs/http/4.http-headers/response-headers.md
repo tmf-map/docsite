@@ -13,7 +13,7 @@ import Hint from '../../../src/components/Hint';
 
 <Img w="400" legend="图：HTTP响应头字段" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/kfSnMJ.png" />
 
-<Hint type='tip'>并非所有出现在响应头中的字段都是响应头字段，例如`Content-Length`就是一个代表响应体消息大小的实体头字段</Hint>
+<Hint type="tip">并非所有出现在响应头中的字段都是响应头字段，例如`Content-Length`就是一个代表响应体消息大小的实体头字段</Hint>
 
 ## Accept-Ranges
 
@@ -62,7 +62,7 @@ Location: /index.html
 Location: https://www.baidu.com/index.html
 ```
 
-<Hint type='tip'>Location 里的 URI 既可以使用绝对 URI，也可以使用相对 URI。但相对 URI 只能在站内跳转的时候使用</Hint>
+<Hint type="tip">Location 里的 URI 既可以使用绝对 URI，也可以使用相对 URI。但相对 URI 只能在站内跳转的时候使用</Hint>
 
 ## WWW-Authenticate
 

@@ -9,7 +9,7 @@ import Hint from '../../../src/components/Hint';
 
 `this` 是由调用者决定的。子类自己的 `this` 对象，必须先通过父类的构造函数完成构造，得到与父类同样的**实例属性和方法**，然后再对其进行加工，加上子类自己的实例属性和方法。如果不调用 `super` 方法，子类就得不到 `this` 对象，那么对子类的进行加工，加上子类自己的实例属性和方法就无法实现。
 
-<Hint type="must">要想在子类中使用 `this` 得先调用 `super()` 将父类 `constructor` 定义的属性和方法挂到自己的 `this` 上后再进行扩展。</Hint>
+<Hint type="bad">要想在子类中使用 `this` 得先调用 `super()` 将父类 `constructor` 定义的属性和方法挂到自己的 `this` 上后再进行扩展。</Hint>
 
 ## super 的两种用法与含义
 
@@ -32,7 +32,7 @@ class A extends B {
 }
 ```
 
-<Hint type="warning">`super` 虽然代表了父类 A 的构造函数，但是返回的是子类 B 的实例，即 `super` 内部的 `this` 指的是 B 的实例，因此 `super()` 在这里相当于 `A.prototype.constructor.call(this)` 。</Hint>
+<Hint type="warn">`super` 虽然代表了父类 A 的构造函数，但是返回的是子类 B 的实例，即 `super` 内部的 `this` 指的是 B 的实例，因此 `super()` 在这里相当于 `A.prototype.constructor.call(this)` 。</Hint>
 
 ```js
 class A {
@@ -86,7 +86,7 @@ let b = new B();
 
 上面代码中，子类 B 当中的 `super.p()` ，就是将 `super` 当作一个对象使用。这时， `super` 在普通方法之中，指向 `A.prototype` ，所以 `super.p()` 就相当于 `A.prototype.p()` 。
 
-<Hint type="warning">由于 `super` 指向父类的原型对象，所以定义在父类**实例上的方法或属性**，是无法通过 `super` 调用的。</Hint>
+<Hint type="warn">由于 `super` 指向父类的原型对象，所以定义在父类**实例上的方法或属性**，是无法通过 `super` 调用的。</Hint>
 
 ```js
 class A {
@@ -113,7 +113,7 @@ b.m; // undefined
 
 React 也必须遵循 JS ，强制在 `constructor` 中必须先调用 `super` 才能引用 `this` 。
 
-<Hint type="must">在 React class `constructor` 中使用 `this.props` 得先调用 `super(props)` 。</Hint>
+<Hint type="bad">在 React class `constructor` 中使用 `this.props` 得先调用 `super(props)` 。</Hint>
 
 ### 为什么要传递 props 参数
 
@@ -134,9 +134,9 @@ class Button extends React.Component {
 }
 ```
 
-<Hint type="warning">如果我们没有传递参数，React 会在我们的类组件 `constructor` **调用之后**，为我们的组件实例分配 `props` 。</Hint>
+<Hint type="warn">如果我们没有传递参数，React 会在我们的类组件 `constructor` **调用之后**，为我们的组件实例分配 `props` 。</Hint>
 
-<Hint type="best">React 官方文档里面有一句 [Class components should always call the base constructor with props](https://reactjs.org/docs/state-and-lifecycle.html#adding-local-state-to-a-class).</Hint>
+<Hint type="good">React 官方文档里面有一句 [Class components should always call the base constructor with props](https://reactjs.org/docs/state-and-lifecycle.html#adding-local-state-to-a-class).</Hint>
 
 ## 更多阅读
 

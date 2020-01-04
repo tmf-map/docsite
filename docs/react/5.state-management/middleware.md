@@ -150,7 +150,7 @@ const middleware2 = store => next => action => {
 
 <Img width="420" align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/c8qzUQ.png'/>
 
-<Hint type="must">middleware 内部不能简单粗暴地调用 `store.dispatch(action)`, 而要加以判断和限制，否则会形成无限循环。</Hint>
+<Hint type="bad">middleware 内部不能简单粗暴地调用 `store.dispatch(action)`, 而要加以判断和限制，否则会形成无限循环。</Hint>
 
 看看 middleware 中使用 `store.dispatch` 的正确姿势，以 redux-thunk 这个中间件为例：
 
@@ -192,7 +192,7 @@ const middleware2 = store => next => action => {
 
 <Hint type="tip">在代码里面，`next(action)` 之前处在洋葱的左边，之后处在洋葱的右边。</Hint>
 
-<Hint type="must">要想进入下一个 middleware 必须写成 `next(action);` 而不是 `next;` 。</Hint>
+<Hint type="bad">要想进入下一个 middleware 必须写成 `next(action);` 而不是 `next;` 。</Hint>
 
 ## applyMiddleware
 

@@ -15,13 +15,13 @@ import Hint from '../../../src/components/Hint';
 | 生命周期 | 有 | 无 |
 | 使用场景 | 需要用到生命周期，需要维护自身的状态，比如处理用户的输入 | 不需要生命周期，不需要维护自身的状态，所有的状态都通过 props 传入 |
 
-<Hint type="best">函数式组件必须使用箭头函数的形式定义。</Hint>
+<Hint type="good">函数式组件必须使用箭头函数的形式定义。</Hint>
 
-<Hint type="best">如果有多个函数式组件嵌套，里面的函数式组件 `props` 参数推荐使用 `_props` 替代。</Hint>
+<Hint type="good">如果有多个函数式组件嵌套，里面的函数式组件 `props` 参数推荐使用 `_props` 替代。</Hint>
 
-<Hint type="best">组件不需要生命周期且不需要维护自身状态的时候，优先使用函数式组件。</Hint>
+<Hint type="good">组件不需要生命周期且不需要维护自身状态的时候，优先使用函数式组件。</Hint>
 
-<Hint type="best">presentational 组件优先使用函数式组件。</Hint>
+<Hint type="good">presentational 组件优先使用函数式组件。</Hint>
 
 ## 受控组件与非受控组件
 
@@ -51,7 +51,7 @@ import Hint from '../../../src/components/Hint';
 | 获取组件的 value | this.state.value | this.refs.refName.value |
 | set value | this.setState\(\) | 不需要手动 set，ref 自动同步 |
 
-<Hint type="warning">react 判断一个组件是否是受控组件不是单纯地看是否有 value 属性，而是要进一步判断 value 属性的值 value != null，尤其要注意是 **!=** 。</Hint>
+<Hint type="warn">react 判断一个组件是否是受控组件不是单纯地看是否有 value 属性，而是要进一步判断 value 属性的值 value != null，尤其要注意是 **!=** 。</Hint>
 
 由于 `undefined == null` 是 true，如果 value 绑定的值初始状态是 null 或 undefined 的时候 react 会认为该组件是非受控组件，控制台会出现：
 
@@ -59,7 +59,7 @@ import Hint from '../../../src/components/Hint';
 Warning: MyForm is changing an uncontrolled input of type text to be controlled. Input elements should not switch from uncontrolled to controlled \(or vice versa\). Decide between using a controlled or uncontrolled input element for the lifetime of the component.
 ```
 
-<Hint type="must">受控组件的 value/checked 属性的初始值必须是空字符串（''）。</Hint>
+<Hint type="bad">受控组件的 value/checked 属性的初始值必须是空字符串（''）。</Hint>
 
 示例：
 

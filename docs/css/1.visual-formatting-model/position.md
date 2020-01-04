@@ -43,6 +43,6 @@ Demo DOM 结构：
 
 <Img width="300" align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/PEdJlr.jpg'/>
 
-<Hint type="warning">绝对定位可以让元素块状化。</Hint>
+<Hint type="warn">绝对定位可以让元素块状化。</Hint>
 
-<Hint type="warning">绝对定位的盒子， `float` 会被重置为 `none` </Hint>
+<Hint type="warn">绝对定位的盒子， `float` 会被重置为 `none` </Hint>

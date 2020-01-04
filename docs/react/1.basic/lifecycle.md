@@ -89,7 +89,7 @@ React 也为下面三个生命周期钩子加上了 `UNSAFE` 标记:
 - **UNSAFE_componentWillReceiveProps**
 - **UNSAFE_componentWillUpdate**
 
-<Hint type="warning">React 团队计划在 17.0 中彻底废弃掉这几个 API。</Hint>
+<Hint type="warn">React 团队计划在 17.0 中彻底废弃掉这几个 API。</Hint>
 
 ### getDerivedStateFromProps
 
@@ -160,7 +160,7 @@ class ScrollingList extends React.Component {
 
 ### 为何移除 componentWillMount
 
-<Hint type="warning">在 React 未来的版本中，[异步渲染机制(Concurrent Mode)](https://zh-hans.reactjs.org/docs/concurrent-mode-intro.html)可能会**导致单个组件实例可以多次调用该方法**。</Hint>
+<Hint type="warn">在 React 未来的版本中，[异步渲染机制(Concurrent Mode)](https://zh-hans.reactjs.org/docs/concurrent-mode-intro.html)可能会**导致单个组件实例可以多次调用该方法**。</Hint>
 
 很多开发者目前会将事件绑定、异步请求等写在 componentWillMount 中，一旦异步渲染时 componentWillMount 被多次调用，将会导致：
 
@@ -168,7 +168,7 @@ class ScrollingList extends React.Component {
 - 发出重复的异步网络请求，**导致 IO 资源被浪费**
 - 在服务端渲染时，componentWillMount 会被调用，但是会因忽略异步获取的数据而**浪费 IO 资源**
 
-<Hint type="best">React 推荐将原本在 componentWillMount 中的网络请求移到 componentDidMount 中。</Hint>
+<Hint type="good">React 推荐将原本在 componentWillMount 中的网络请求移到 componentDidMount 中。</Hint>
 
 至于这样会不会导致请求被延迟发出影响用户体验，[React 团队是这么解释](https://zh-hans.reactjs.org/blog/2018/03/27/update-on-async-rendering.html)的：
 

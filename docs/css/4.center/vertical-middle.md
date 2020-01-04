@@ -66,7 +66,7 @@ import Img from '../../../src/components/Img'; import Hint from '../../../src/co
 
 <Hint type="tip">只有元素属于 `inline` 或是 `inline-block` (`table-cell` 也可以理解为 `inline-block`)，其身上的 `vertical-align` 属性才会起作用。</Hint>
 
-<Hint type="warning">如果对 `table-cell` 元素设置 `margin`, 那么将会无效。</Hint>
+<Hint type="warn">如果对 `table-cell` 元素设置 `margin`, 那么将会无效。</Hint>
 
 > all elements, except elements with table `display` types other than `table-caption`, `table` and `inline-table`. It also applies to `::first-letter`. — [margin – CSS | MSDN](https://developer.mozilla.org/en-US/docs/Web/CSS/margin)
 
@@ -119,4 +119,4 @@ import Img from '../../../src/components/Img'; import Hint from '../../../src/co
 }
 ```
 
-<Hint type="warning">绝对定位可以让元素块状化。</Hint>
+<Hint type="warn">绝对定位可以让元素块状化。</Hint>

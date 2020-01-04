@@ -134,7 +134,7 @@ TCO 是编译器级别的优化，我们知道调用一个新的函数需要额�
 
 ES6 之所以要求引擎实现 TCO 而不是将其留给引擎自由决定，一个原因是缺乏 TCO 会导致一些 JavaScript 算法因为害怕调用栈限制而降低了通过递归实现的概率。
 
-<Hint type="warning">目前支持 TCO 只有 Safari 浏览器。</Hint>
+<Hint type="warn">目前支持 TCO 只有 Safari 浏览器。</Hint>
 
 ### 通过尾部调用优化递归
 

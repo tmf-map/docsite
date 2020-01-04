@@ -97,7 +97,7 @@ HTTP 缓存分为强缓存和协议缓存，它们的区别如下：
 
 <Img width="800" legend="图：强制刷新" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/g37iuy.png"/>
 
-<Hint type='tip'>在强制刷新网页后，如果网页通过重定向加载了其他资源，则它可能会从缓存中加载。</Hint>
+<Hint type="tip">在强制刷新网页后，如果网页通过重定向加载了其他资源，则它可能会从缓存中加载。</Hint>
 
 除了上面两种刷新方式外，在浏览器中还有一种**Empty Cache and Hard Reload（清空缓存并强制加载）**的页面刷新方式，如下图所示：
 

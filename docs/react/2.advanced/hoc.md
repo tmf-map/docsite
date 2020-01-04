@@ -27,4 +27,4 @@ export default withUser(UserPage);
 
 对比组件将 props 属性转变成 UI，高阶组件则是将一个组件转换成另一个新组件。高阶组件是通过将原组件 包裹（wrapping） 在容器组件（container component）里面的方式来 组合（composes） 使用原组件。高阶组件就是一个没有副作用的纯函数。高阶组件并不关心数据是如何以及为什么被使用。
 
-<Hint type="must">不要在高阶组件内部修改（或以其它方式修改）原组件的原型属性。</Hint>
+<Hint type="bad">不要在高阶组件内部修改（或以其它方式修改）原组件的原型属性。</Hint>

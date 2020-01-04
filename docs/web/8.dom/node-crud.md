@@ -52,9 +52,9 @@ document.querySelectorAll('DIV, A, SCRIPT');
 
 如果 `querySelectorAll` 方法的参数是字符串 `*` ，则会返回文档中的所有元素节点。
 
-<Hint type="warning">它们不支持 CSS 伪元素的选择器（比如 `:first-line` 和 `:first-letter` ）和伪类的选择器（比如 `:link` 和 `:visited` ），即无法选中伪元素和伪类。</Hint>
+<Hint type="warn">它们不支持 CSS 伪元素的选择器（比如 `:first-line` 和 `:first-letter` ）和伪类的选择器（比如 `:link` 和 `:visited` ），即无法选中伪元素和伪类。</Hint>
 
-<Hint type="warning">`querySelectorAll` 的返回结果不是动态集合，不会实时反映元素节点的变化。</Hint>
+<Hint type="warn">`querySelectorAll` 的返回结果不是动态集合，不会实时反映元素节点的变化。</Hint>
 
 ### getElementsByTagName()
 
@@ -62,7 +62,7 @@ document.querySelectorAll('DIV, A, SCRIPT');
 
 <Hint type="tip">它的返回值是一个类似数组对象（ HTMLCollection 实例）</Hint>
 
-<Hint type="warning">可以实时反映 HTML 文档的变化。</Hint>
+<Hint type="warn">可以实时反映 HTML 文档的变化。</Hint>
 
 ```js
 let paras = document.getElementsByTagName('p');
@@ -87,7 +87,7 @@ let allElements = document.getElementsByTagName('*');
 
 <Hint type="tip">它的返回值是一个类似数组对象（ HTMLCollection 实例）</Hint>
 
-<Hint type="warning">可以实时反映 HTML 文档的变化。</Hint>
+<Hint type="warn">可以实时反映 HTML 文档的变化。</Hint>
 
 ```js
 let elements = document.getElementsByClassName(names);
@@ -103,7 +103,7 @@ let elements = document.getElementsByClassName('foo bar');
 
 上面代码返回同时具有 foo 和 bar 两个 class 的元素，foo 和 bar 的顺序不重要。
 
-<Hint type="warning">正常模式下，CSS 的 class 是大小写敏感的。（quirks mode 下，大小写不敏感。）</Hint>
+<Hint type="warn">正常模式下，CSS 的 class 是大小写敏感的。（quirks mode 下，大小写不敏感。）</Hint>
 
 ### document.getElementsByName()
 
@@ -123,7 +123,7 @@ forms[0].tagName; // "FORM"
 var elem = document.getElementById('para1');
 ```
 
-<Hint type="warning">该方法的参数是大小写敏感的。</Hint> <Hint type="warning">`Element` 后面没有 `s` 。</Hint>
+<Hint type="warn">该方法的参数是大小写敏感的。</Hint> <Hint type="warn">`Element` 后面没有 `s` 。</Hint>
 
 `document.getElementById` 方法与 `document.querySelector` 方法都能获取元素节点，不同之处是 `document.querySelector` 方法的参数使用 CSS 选择器语法，`document.getElementById` 方法的参数是元素的 id 属性值。
 
@@ -539,7 +539,7 @@ d.nodeName; // "DIV"
 
 上面代码中，变量 d 代表子节点，它的 outerHTML 属性重新赋值以后，内层的 div 元素就不存在了，被 p 元素替换了。但是，变量 d 依然指向原来的 div 元素，这表示被替换的 DIV 元素还存在于内存中。
 
-<Hint type="warning">如果一个节点没有父节点，设置 outerHTML 属性会报错。</Hint>
+<Hint type="warn">如果一个节点没有父节点，设置 outerHTML 属性会报错。</Hint>
 
 ```js
 var div = document.createElement('div');

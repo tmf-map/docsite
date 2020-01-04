@@ -42,11 +42,11 @@ JavaScript 和 HTML 之间的交互是通过事件来实现的。事件，就是
 
 <Img width="500" align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/gZRPDL.png'/>
 
-<Hint type="warning">所有现代浏览器都支持事件冒泡，但在具体实现中略有差别。IE5.5 及更早版本中事件冒泡会跳过 `html` 元素(从 body 直接跳到 document)。IE9、Firefox、Chrome、和 Safari 则将事件一直冒泡到 window 对象。</Hint>
+<Hint type="warn">所有现代浏览器都支持事件冒泡，但在具体实现中略有差别。IE5.5 及更早版本中事件冒泡会跳过 `html` 元素(从 body 直接跳到 document)。IE9、Firefox、Chrome、和 Safari 则将事件一直冒泡到 window 对象。</Hint>
 
-<Hint type="warning">IE9、Firefox、Chrome、Opera、和 Safari 都支持事件捕获。尽管 DOM 标准要求事件应该从 document 对象开始传播，但这些浏览器都是从 window 对象开始捕获事件的。</Hint>
+<Hint type="warn">IE9、Firefox、Chrome、Opera、和 Safari 都支持事件捕获。尽管 DOM 标准要求事件应该从 document 对象开始传播，但这些浏览器都是从 window 对象开始捕获事件的。</Hint>
 
-<Hint type="best">由于老版本浏览器不支持，很少有人使用事件捕获。建议使用事件冒泡。有特殊情况再使用捕获。</Hint>
+<Hint type="good">由于老版本浏览器不支持，很少有人使用事件捕获。建议使用事件冒泡。有特殊情况再使用捕获。</Hint>
 
 ### DOM2 级事件流
 
@@ -198,7 +198,7 @@ p.addEventListener(
 
 上面代码中，`stopPropagation` 方法分别在捕获阶段和冒泡阶段，阻止了事件的传播。
 
-<Hint type="warning"> `stopPropagation` 方法只会阻止事件的传播，不会阻止该事件触发 `p` 节点的其他 click 事件的监听函数。也就是说，不是彻底取消 click 事件。</Hint>
+<Hint type="warn"> `stopPropagation` 方法只会阻止事件的传播，不会阻止该事件触发 `p` 节点的其他 click 事件的监听函数。也就是说，不是彻底取消 click 事件。</Hint>
 
 ```js
 p.addEventListener('click', function(event) {
@@ -258,7 +258,7 @@ ul.addEventListener('click', function(event) {
 
 <img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/uGyXlQ.jpg'/>
 
-<Hint type="warning">由于 HTML 事件监听函数中 HTML 和 JavaScript 紧密耦合，所以已被大多程序员摒弃。</Hint>
+<Hint type="warn">由于 HTML 事件监听函数中 HTML 和 JavaScript 紧密耦合，所以已被大多程序员摒弃。</Hint>
 
 所谓跨浏览器事件处理程序，就是把 HTML、DOM0、DOM2、IE 的事件处理程序进行封装。
 
@@ -336,7 +336,7 @@ HTML 事件监听函数的缺点：
 clicker.onclick = null;
 ```
 
-<Hint type="warning">使用 HTML 事件监听函数指定的程序，可以被 DOM0 级事件监听函数覆盖，也可以以同样方式删除。</Hint>
+<Hint type="warn">使用 HTML 事件监听函数指定的程序，可以被 DOM0 级事件监听函数覆盖，也可以以同样方式删除。</Hint>
 
 ### DOM2 级事件监听函数
 
@@ -415,9 +415,9 @@ DOM2 级事件监听函数的主要好处是可以添加多个事件监听函数
 </script>
 ```
 
-<Hint type="warning">如果同一个监听事件分别为“事件捕获”和“事件冒泡”注册了一次，一共两次，这两次事件需要分别移除。两者不会互相干扰。</Hint>
+<Hint type="warn">如果同一个监听事件分别为“事件捕获”和“事件冒泡”注册了一次，一共两次，这两次事件需要分别移除。两者不会互相干扰。</Hint>
 
-<Hint type="best">为最大限度的兼容各种浏览器，建议将事件监听函数添加到事件流的冒泡阶段，除非特殊需要才用捕获阶段。</Hint>
+<Hint type="good">为最大限度的兼容各种浏览器，建议将事件监听函数添加到事件流的冒泡阶段，除非特殊需要才用捕获阶段。</Hint>
 
 **Q**: 如果 HTML 事件监听函数、 DOM0 级事件监听函数和 DOM2 级事件监听函数同时存在？
 

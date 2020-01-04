@@ -14,7 +14,7 @@ em 特点：
 - em 的值并不是固定的；
 - em 会继承父级元素的字体大小。
 
-<Hint type="warning">任意浏览器的默认 `font-size: 16px` 。所有未经调整的浏览器都符合: `1em = 16px` 。那么 `12px = 0.75em`, `10px = 0.625em` 。</Hint>
+<Hint type="warn">任意浏览器的默认 `font-size: 16px` 。所有未经调整的浏览器都符合: `1em = 16px` 。那么 `12px = 0.75em`, `10px = 0.625em` 。</Hint>
 
 为了简化 font-size 的换算，需要在 CSS 中声明：
 

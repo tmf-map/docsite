@@ -3,7 +3,7 @@ import marked from 'marked';
 import './Hint.css';
 
 const colorMap = {
-  best: {
+  good: {
     name: 'Good',
     color: '#50c610',
     bgColor: 'rgba(246, 255, 237, 0.5)',
@@ -28,7 +28,7 @@ const colorMap = {
       </svg>
     )
   },
-  must: {
+  bad: {
     name: 'Bad',
     color: '#ff4642',
     bgColor: 'rgba(255, 241, 240, 0.6)',
@@ -72,7 +72,7 @@ const colorMap = {
       </svg>
     )
   },
-  warning: {
+  warn: {
     name: 'Warn',
     color: '#faad14',
     bgColor: 'rgba(255, 247, 230, 0.6)',
