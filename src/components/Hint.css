@@ -22,3 +22,7 @@
   font-weight: 500;
   text-transform: uppercase;
 }
+
+html[data-theme="dark"] .custom-hint {
+  background-color: rgba(185, 202, 218,.1) !important;
+}
