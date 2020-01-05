@@ -11,7 +11,7 @@ import Img from '../../../src/components/Img'; import Hint from '../../../src/co
 
 <Hint type="tip">只脱离常规流，不脱离文本流</Hint>
 
-<Hint type="warning">浮动可以让元素块状化。</Hint>
+<Hint type="warn">浮动可以让元素块状化。</Hint>
 
 [demo](https://codepen.io/muwenzi/pen/OeQWYa)
 
@@ -19,7 +19,7 @@ import Img from '../../../src/components/Img'; import Hint from '../../../src/co
 
 左边蓝色的 div 使用 `float:left` 脱离了文档流，跟在后面的 h2 和 p 的盒子都当做没看到这个 div 的样子去定位，所以他们都顶着浏览器左边和顶部的边框。但是有趣的是，h2 和 p 里面的文本（属于 content flow）却都看到了这个被 float 的 div，在自己的盒子里往右推，飘到了蓝色 div 的边上。这就是 float 的特性，其他盒子看不见被 float 的元素，但是其他盒子里的文本看得见。
 
-<Hint type="warning">跟在浮动后面的盒子要是 block box，如果是 inline box 则会遵循 IFC 规则，其左边会紧挨着蓝色 div 的右边。</Hint>
+<Hint type="warn">跟在浮动后面的盒子要是 block box，如果是 inline box 则会遵循 IFC 规则，其左边会紧挨着蓝色 div 的右边。</Hint>
 
 <Img width="300" align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/HKyIQz.jpg'/>
 

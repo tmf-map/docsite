@@ -7,10 +7,10 @@ sidebar_label: 说明
 
 import Hint from '../../../src/components/Hint';
 
-<Hint type="best">最好遵守，不遵守也不会出错</Hint>
+<Hint type="tip">提示，补充说明</Hint>
 
-<Hint type="must">必须遵守，不遵守很有可能出错</Hint>
+<Hint type="warn">注意，容易忽视</Hint>
 
-<Hint type="warning">特别强调，容易忽视等</Hint>
+<Hint type="good">推荐，最佳实践</Hint>
 
-<Hint type="tip">补充说明，小结等</Hint>
+<Hint type="bad">避免，容易出错</Hint>

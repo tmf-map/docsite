@@ -89,7 +89,7 @@ strObj = null;
 
 <Hint type="tip">包装对象实例会自动销毁。这意味着，下一次调用字符串的属性时，实际是调用一个新生成的对象，而不是上一次调用时生成的那个对象。</Hint>
 
-<Hint type="warning">数值类型要想自动转成包装对象需要加上括号，否则会当成小数点处理。</Hint>
+<Hint type="warn">数值类型要想自动转成包装对象需要加上括号，否则会当成小数点处理。</Hint>
 
 <Img width="250" align="left" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/aURQwt.jpg'/>
 
@@ -142,7 +142,7 @@ null + 1; // 1
 undefined + 1; // NaN
 ```
 
-<Hint type="warning"> `null` 转为数值时为 0，而 `undefined` 转为数值时为 `NaN` 。</Hint>
+<Hint type="warn"> `null` 转为数值时为 0，而 `undefined` 转为数值时为 `NaN` 。</Hint>
 
 一元运算符(! !!除外)也会把运算子转成数值。一元运算符的本质是调用 Number 方法,Number 方法的规则是：字符串如果全是数字组成转为数字，存在非数字子串转为 NaN。对于 Null 和 undefined 转为 0 和 NaN. 对于对象类型，调用对应的 valueOf 方法，如果 valueOf 的结果不是 number 类型，调用 toString,在转为数字类型。
 

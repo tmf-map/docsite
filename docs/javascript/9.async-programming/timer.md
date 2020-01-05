@@ -85,7 +85,7 @@ clearTimeout(timerId);
 alert(timerId); // 还是那个 id 没变（并没有因为调度被取消了而变成 null）
 ```
 
-<Hint type="warning">这并不是清除定时器，而是终止其执行，有点类似 for 循环里面的 break 的作用。clearTimeout 也是类似。</Hint>
+<Hint type="warn">这并不是清除定时器，而是终止其执行，有点类似 for 循环里面的 break 的作用。clearTimeout 也是类似。</Hint>
 
 从 `alert` 的输出来看，定时器 id 在浏览器中是一串数字，然而在其他运行环境下可能是别的东西。就比如 Node.js 返回的是一个定时器对象，这个对象包含一系列方法。
 
@@ -101,7 +101,7 @@ let timerId = setInterval(func|code, delay[, arg1, arg2...])
 
 所有参数的意义也是相同的，不过 `setTimeout` 只执行一次，`setInterval` 是每间隔一定时间周期性执行。
 
-<Hint type="warning">setTimeout 和 setInterval 共用一个编号池。</Hint>
+<Hint type="warn">setTimeout 和 setInterval 共用一个编号池。</Hint>
 
 在同一个对象上（一个 window 或者 worker），setTimeout 或者 setInterval 在后续的调用不会重用同一个定时器编号。但是不同的对象使用独立的编号池。
 
@@ -184,7 +184,7 @@ function() {
 }
 ```
 
-<Hint type="warning">如果 `(*)` 没有用 `setTimeout` 的话，那么会第一次将会同步执行。</Hint>
+<Hint type="warn">如果 `(*)` 没有用 `setTimeout` 的话，那么会第一次将会同步执行。</Hint>
 
 #### 优点一：更灵活
 
@@ -237,7 +237,7 @@ setTimeout(function run() {
 
 <Img w="470" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/setinterval-interval.svg'/>
 
-<Hint type="warning">使用 `setInterval` 时，`func` 函数的**实际调用间隔**要比代码给出的间隔时间要短。因为 `func` 的执行时间抵消掉了一部分间隔时间。</Hint>
+<Hint type="warn">使用 `setInterval` 时，`func` 函数的**实际调用间隔**要比代码给出的间隔时间要短。因为 `func` 的执行时间抵消掉了一部分间隔时间。</Hint>
 
 > 如果 `func` 的执行时间超出了 100 毫秒呢？
 
@@ -247,11 +247,11 @@ setTimeout(function run() {
 
 <Img w="470" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/settimeout-interval.svg'/>
 
-<Hint type="warning">递归的 `setTimeout` 能确保固定的时间间隔（定时器降速的情况除外）。</Hint>
+<Hint type="warn">递归的 `setTimeout` 能确保固定的时间间隔（定时器降速的情况除外）。</Hint>
 
 这是因为下一次调用是在前一次调用完成时再调度的。
 
-<Hint type="best">尽量递归版 `setTimeout` ，它比 `setInterval` 用起来更加灵活，同时也能保证每一轮执行的最小时间间隔。</Hint>
+<Hint type="good">尽量递归版 `setTimeout` ，它比 `setInterval` 用起来更加灵活，同时也能保证每一轮执行的最小时间间隔。</Hint>
 
 ## setTimeout(fn, 0)
 
@@ -389,7 +389,7 @@ count();
 
 `count` 函数调用的间隙足以让 JavaScript 引擎“缓口气了”，浏览器趁这段时间可以对用户的操作作出回应。
 
-<Hint type="warning">用 `setTimeout` 进行分割和没用这两种做法在速度方面平分秋色，总的计数过程所花的时间几乎没什么差别。</Hint>
+<Hint type="warn">用 `setTimeout` 进行分割和没用这两种做法在速度方面平分秋色，总的计数过程所花的时间几乎没什么差别。</Hint>
 
 为了进一步阐述，对上面做一下改进。将定时器挪到 `count()` 函数开头位置：
 
@@ -429,7 +429,7 @@ count();
 - 浏览器页签切换到了后台模式。
 - 笔记本电脑用的是电池供电。
 
-<Hint type="warning">在浏览器环境下，嵌套定时器的运行频率是受限制的。根据 [HTML5 标准](https://www.w3.org/TR/html5/webappapis.html#timers)：经过 5 重嵌套之后，定时器运行间隔强制要求至少达到 4ms。</Hint>
+<Hint type="warn">在浏览器环境下，嵌套定时器的运行频率是受限制的。根据 [HTML5 标准](https://www.w3.org/TR/html5/webappapis.html#timers)：经过 5 重嵌套之后，定时器运行间隔强制要求至少达到 4ms。</Hint>
 
 为了省电，对于那些不处于当前窗口的页面，浏览器会将时间间隔扩大到 1000ms。另外，如果笔记本电脑处于电池供电状态，Chrome 和 IE 9 以上的版本，会将时间间隔切换到系统定时器，大约是 15.6ms。
 
@@ -464,7 +464,7 @@ function() {
 
 通过 Demo 我们会发现前面 4 次的间隔都是小于 4ms 的（代码运行本身也要占用一定的时间），从第 5 次开始后面的时间间隔都不会低于 4ms。这也是因为历史原因以及很多脚本都依赖于这个机制才得以存在至今。
 
-<Hint type="warning">所有的调度方法都不能**保证**延时的准确性，所以万不可过于依赖它的延迟精度。</Hint>
+<Hint type="warn">所有的调度方法都不能**保证**延时的准确性，所以万不可过于依赖它的延迟精度。</Hint>
 
 服务端 JS 就没这个限制了，而且除此之外还有其他办法来调度这种即时异步任务，例如 Node.JS 的 [process.nextTick](https://nodejs.org/api/process.html) 和 [setImmediate](https://nodejs.org/api/timers.html)。所以这个提醒也只是针对浏览器环境。
 
@@ -498,7 +498,7 @@ var a = 1;
 setTimeout(obj.foo, 0); // 1
 ```
 
-<Hint type="warning">在严格模式下，`setTimeout` 的回调函数里面的 this 仍然默认指向 `window` 对象， 并不是 `undefined` 。</Hint>
+<Hint type="warn">在严格模式下，`setTimeout` 的回调函数里面的 this 仍然默认指向 `window` 对象， 并不是 `undefined` 。</Hint>
 
 ## 参考资料
 

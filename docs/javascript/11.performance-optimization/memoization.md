@@ -13,7 +13,7 @@ import Hint from '../../../src/components/Hint';
 记忆化 -> 内部函数级缓存 -> 避免重复计算
 ```
 
-<Hint type="warning">单词是 memoize 不是 memorize 。</Hint>
+<Hint type="warn">单词是 memoize 不是 memorize 。</Hint>
 
 ## 同步缓存
 

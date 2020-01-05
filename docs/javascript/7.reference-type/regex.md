@@ -108,7 +108,7 @@ console.log(RegExp.$2); //24
 
 ### 正向前瞻型 (?= )
 
-<Hint type="warning">前瞻型分组不会捕获值</Hint>
+<Hint type="warn">前瞻型分组不会捕获值</Hint>
 
 ```js
 let reg = /dot is a (?=doubi)/;

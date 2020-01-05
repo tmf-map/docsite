@@ -42,7 +42,7 @@ Object.defineProperty(obj, prop, descriptor);
 
 数据属性分为四种： `configurable` 、 `enumerable` 、 `writable` 和 `value` 。
 
-<Hint type="warning">在不使用 `Object.defineProperty` 来定义对象时，四种的默认值都是 true ，如果使用该方法时，默认值都是 false 。</Hint>
+<Hint type="warn">在不使用 `Object.defineProperty` 来定义对象时，四种的默认值都是 true ，如果使用该方法时，默认值都是 false 。</Hint>
 
 `configurable` 字段配置对象属性是否可以删除属性：
 
@@ -132,7 +132,7 @@ obj.add = 'd';
 console.log(obj.log); // ["a", "b", "c", "d"]
 ```
 
-<Hint type="warning">get 或 set 不是必须成对出现，任写其一就可以。如果不设置方法，则 get 和 set 的默认值为 `undefined` 。</Hint>
+<Hint type="warn">get 或 set 不是必须成对出现，任写其一就可以。如果不设置方法，则 get 和 set 的默认值为 `undefined` 。</Hint>
 
 ## freeze v.s seal
 
@@ -232,7 +232,7 @@ Object.getOwnPropertyDescriptor(obj, 'foo');
 
 这四个操作之中，前三个是 ES5 就有的，最后一个 `Object.assign()` 是 ES6 新增的。
 
-<Hint type="warning">只有 `for...in` 会遍历继承的属性，其他三个都会忽略继承的属性，只处理对象自身的属性。</Hint>
+<Hint type="warn">只有 `for...in` 会遍历继承的属性，其他三个都会忽略继承的属性，只处理对象自身的属性。</Hint>
 
 实际上，引入“可枚举”（enumerable）这个概念的最初目的，就是让某些属性可以规避掉 `for...in` 操作，不然所有内部属性和方法都会被遍历到。比如，对象原型的 `toString` 方法，以及数组的 `length` 属性，就通过“可枚举性”，从而避免被 `for...in` 遍历到。
 
@@ -260,7 +260,7 @@ Object.getOwnPropertyDescriptor(
 
 总的来说，操作中引入继承的属性会让问题复杂化，大多数时候，我们只关心对象自身的属性。
 
-<Hint type="best">尽量不要用 `for...in` 循环，而用 `Object.keys()`代替。</Hint>
+<Hint type="good">尽量不要用 `for...in` 循环，而用 `Object.keys()`代替。</Hint>
 
 ## 属性的遍历
 
@@ -288,9 +288,9 @@ ES6 一共有 5 种方法可以遍历对象的属性。
 
 `Reflect.ownKeys` 返回一个数组，包含对象自身的所有键名，不管键名是 Symbol 或字符串，也不管是否可枚举。基本就是 `getOwnPropertyNames` 和 `Object.getOwnPropertySymbols` 的合体。
 
-<Hint type="warning">不管是否可枚举，不管是不是 Symbol，只要是对象自身的，`Reflect.ownKeys()` 都会遍历。</Hint>
+<Hint type="warn">不管是否可枚举，不管是不是 Symbol，只要是对象自身的，`Reflect.ownKeys()` 都会遍历。</Hint>
 
-<Hint type="must">`Reflect.ownKeys()` 方法的第一个参数必须是对象，否则会报错。</Hint>
+<Hint type="bad">`Reflect.ownKeys()` 方法的第一个参数必须是对象，否则会报错。</Hint>
 
 ### key 的顺序
 
@@ -322,9 +322,9 @@ Reflect.ownKeys(obj); // ["1", "2", "3", "m", "b", "a", Symbol(b), Symbol(a)]
 - 其次遍历所有 normal keys (包括加 `''` 和不加 `''`)，按照定义的顺序排列。
 - 最后遍历所有 symbol keys，按照定义的顺序排列。
 
-<Hint type="must">如果对象的 key 为 integer-like ，千万不要依赖其定义的顺序。</Hint>
+<Hint type="bad">如果对象的 key 为 integer-like ，千万不要依赖其定义的顺序。</Hint>
 
-<Hint type="warning">如果在 Chrome 控制台上直接输入 `obj` 然后回车，打印出来的顺序还和 m 值的类型有关。这个顺序并不完全符合以上规则，但这只是控制台的表现，对实际的代码并无影响。</Hint>
+<Hint type="warn">如果在 Chrome 控制台上直接输入 `obj` 然后回车，打印出来的顺序还和 m 值的类型有关。这个顺序并不完全符合以上规则，但这只是控制台的表现，对实际的代码并无影响。</Hint>
 
 比如 m 为 函数的时候，打印出 `{1: "", 2: "", 3: "", b: "", a: "", Symbol(b): "", Symbol(a): "", m: ƒ}` ， 而 m 为字符串或数组的时候顺序却又在 3 和 b 之间。
 

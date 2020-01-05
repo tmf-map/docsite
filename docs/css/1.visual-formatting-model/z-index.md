@@ -13,7 +13,7 @@ import Img from '../../../src/components/Img'; import Hint from '../../../src/co
 1. inline 水平盒子指的是包括 inline/inline-block/inline-table 元素的“层 叠顺序”，它们都是同等级别的。
 1. 单纯从层叠水平上看，实际上 z-index:0 和 z-index:auto 是可以看成是一样的。注 意这里的措辞— “单纯从层叠水平上看”，实际上，两者在层叠上下文领域有着根本性的差异。
 
-<Hint type="warning">内联元素的层叠顺序要比浮动元素和块状元素都高。</Hint>
+<Hint type="warn">内联元素的层叠顺序要比浮动元素和块状元素都高。</Hint>
 
 `background`/`border` 为装饰属性，浮动和块状元素一般用作布局，而内联元素都是内容。 网页中最重要的是什么?当然是内容了!尤其是 CSS 世界是为 更好的图文展示而设计的，因此，一定要让内容的层叠顺序相当 高，这样当发生层叠时，重要的文字、图片内容才可以优先显示。例如，文字和浮动图片重叠的时候.
 

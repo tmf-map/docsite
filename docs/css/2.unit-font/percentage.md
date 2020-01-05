@@ -159,7 +159,7 @@ p {
 }
 ```
 
-<Hint type="best">`设置`line-height` 的推荐使用无单位，这样子元素继承的也是无单位的值，而不是计算后的特定值。</Hint>
+<Hint type="good">`设置`line-height` 的推荐使用无单位，这样子元素继承的也是无单位的值，而不是计算后的特定值。</Hint>
 
 ### vertical-align
 
@@ -167,7 +167,7 @@ p {
 
 例如，一个元素的 `line-height` 是 30px，则 `vertical-align: 10%` 的效果是 `vertical-align: 3px` 。
 
-<Hint type="warning">尽管 `vertical-align` 可以使用数字，百分比值，但浏览器兼容性差异较大，所以不推荐使用数字和百分比。</Hint>
+<Hint type="warn">尽管 `vertical-align` 可以使用数字，百分比值，但浏览器兼容性差异较大，所以不推荐使用数字和百分比。</Hint>
 
 ### bottom, left, right, top
 
@@ -185,7 +185,7 @@ p {
 
 ## 百分比值的继承
 
-<Hint type="warning">当百分比值用于可继承属性时，只有结合参照元素计算后的**绝对值会被继承**，而不是百分比值本身。</Hint>
+<Hint type="warn">当百分比值用于可继承属性时，只有结合参照元素计算后的**绝对值会被继承**，而不是百分比值本身。</Hint>
 
 例如，一个元素的 `font-size` 是 14px，并定义了 `line-height:150%` ，那么该元素的下一级子元素继承到的 `line-height` 就是 21px ，而不会再和子元素自己的 `font-size` 有关。
 

@@ -3,9 +3,10 @@ import marked from 'marked';
 import './Hint.css';
 
 const colorMap = {
-  best: {
-    name: 'Best',
+  good: {
+    name: 'Good',
     color: '#50c610',
+    bgColor: 'rgba(246, 255, 237, 0.5)',
     icon: (
       <svg
         preserveAspectRatio="xMidYMid meet"
@@ -27,9 +28,10 @@ const colorMap = {
       </svg>
     )
   },
-  must: {
-    name: 'Must',
+  bad: {
+    name: 'Bad',
     color: '#ff4642',
+    bgColor: 'rgba(255, 241, 240, 0.6)',
     icon: (
       <svg
         preserveAspectRatio="xMidYMid meet"
@@ -49,6 +51,7 @@ const colorMap = {
   tip: {
     name: 'Tip',
     color: '#3884ff',
+    bgColor: 'rgba(235, 247, 253, 0.6)',
     icon: (
       <svg
         preserveAspectRatio="xMidYMid meet"
@@ -69,9 +72,10 @@ const colorMap = {
       </svg>
     )
   },
-  warning: {
-    name: 'Warning',
-    color: '#fdbe12',
+  warn: {
+    name: 'Warn',
+    color: '#faad14',
+    bgColor: 'rgba(255, 247, 230, 0.6)',
     icon: (
       <svg
         preserveAspectRatio="xMidYMid meet"
@@ -85,11 +89,11 @@ const colorMap = {
         strokeLinejoin="round"
         stroke="currentColor"
         className="custom-hint__icon"
-        style={{color: '#fdbe12'}}>
+        style={{color: '#faad14'}}>
         <g>
-          <circle cx="12" cy="12" r="10" />
-          <line x1="12" y1="8" x2="12" y2="12" />
-          <line x1="12" y1="16" x2="12" y2="16" />
+          <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+          <line x1="12" y1="9" x2="12" y2="13" />
+          <line x1="12" y1="17" x2="12" y2="17" />
         </g>
       </svg>
     )
@@ -100,7 +104,10 @@ function Hint({type, children}) {
   return (
     <div
       className="custom-hint"
-      style={{borderLeft: `0.25rem solid ${colorMap[type].color}`}}>
+      style={{
+        border: `1px solid ${colorMap[type].color}`,
+        backgroundColor: colorMap[type].bgColor
+      }}>
       <div style={{float: 'left'}}>{colorMap[type].icon}</div>
       <div
         dangerouslySetInnerHTML={{

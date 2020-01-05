@@ -70,7 +70,7 @@ class App extends React.Component {
 }
 ```
 
-<Hint type="warning">不要仅仅为了避免在几个层级下的组件传递 props 而使用 context，它是被用于在多个层级的多个组件需要访问相同数据的情景，即 **组件复用** 的场景。</Hint>
+<Hint type="warn">不要仅仅为了避免在几个层级下的组件传递 props 而使用 context，它是被用于在多个层级的多个组件需要访问相同数据的情景，即 **组件复用** 的场景。</Hint>
 
 ## API
 
@@ -108,7 +108,7 @@ React 组件允许 Consumers 订阅 context 的改变。
 
 每当 Provider 的值发生改变时, 作为 Provider 后代的所有 Consumers 都会重新渲染。 从 Provider 到其后代的 Consumers 传播不受 `shouldComponentUpdate` 方法的约束，因此即使祖先组件没有更新，后代 Consumer 也会被更新。
 
-<Hint type="best">因为内部通过使用与 `Object.is` 相同的算法比较新值和旧值来确定变化。所以为了避免一些可能触发意外的渲染，可以将提升 `value` 到父节点的 state 里。</Hint>
+<Hint type="good">因为内部通过使用与 `Object.is` 相同的算法比较新值和旧值来确定变化。所以为了避免一些可能触发意外的渲染，可以将提升 `value` 到父节点的 state 里。</Hint>
 
 因为 context 使用 `reference identity` 确定何时重新渲染，在 Consumer 中，当一个 Provider 的父节点重新渲染的时候，有一些问题可能触发意外的渲染。例如下面的代码，所有的 Consumer 在 Provider 重新渲染之时，每次都将重新渲染，因为一个新的对象总是被创建对应 Provider 里的 `value：`
 
@@ -186,7 +186,7 @@ class MyClass extends React.Component {
 MyClass.contextType = MyContext;
 ```
 
-<Hint type="warning">使用这个 API，你只能订阅单个 context。 如果你想订阅多个 context，请参阅 [使用多个 Contexts](#使用多个-context)。</Hint>
+<Hint type="warn">使用这个 API，你只能订阅单个 context。 如果你想订阅多个 context，请参阅 [使用多个 Contexts](#使用多个-context)。</Hint>
 
 如果你在使用实验性的 `public class fields` 语法, 你可以使用 `static class field` 来初始化你的 `contextType`:
 
@@ -287,7 +287,7 @@ function Content() {
 }
 ```
 
-<Hint type="warning">如果经常将两个或多个 context 值一起使用，你可以考虑使用 render props 的方法。</Hint>
+<Hint type="warn">如果经常将两个或多个 context 值一起使用，你可以考虑使用 render props 的方法。</Hint>
 
 更加复杂的例子请参考：https://reactjs.org/docs/context.html#examples
 
