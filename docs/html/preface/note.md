@@ -9,7 +9,7 @@ import Hint from '../../../src/components/Hint';
 
 <Hint type="tip">提示，补充说明</Hint>
 
-<Hint type="warn">提醒，容易忽视</Hint>
+<Hint type="warn">注意，容易忽视</Hint>
 
 <Hint type="good">推荐，最佳实践</Hint>
 
