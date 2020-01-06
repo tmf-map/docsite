@@ -3,7 +3,7 @@ title: 抽象类与接口
 sidebar_label: 抽象类与接口
 ---
 
-import Hint from '../../../src/components/Hint';
+import Hint from '../../../src/components/Hint'; import Img from '../../../src/components/Img';
 
 抽象类和接口是 Java 面向对象中非常重要的元素，在面向接口的编程中两者更是经常用到。类是对象的模版，抽象类和接口可以看作是具体的类的模版。
 
@@ -57,29 +57,106 @@ class Driver extends People{
 }
 ```
 
-关于抽象类的几点说明：
-
-- 抽象类不能直接使用，必须用子类去实现抽象类，然后使用其子类的实例。
-- 然而可以创建一个变量，其类型是一个抽象类，并让它指向具体子类的一个实例，也就是可以使用**抽象类来充当形参，实际实现类作为实参**，也就是**多态**的应用。
-- 不能有抽象构造方法或抽象静态方法。
-
-在下列情况下，一个类将成为抽象类：
-
-- 类的一个或多个方法是抽象方法时。
-- 类是一个抽象类的子类，并且不能为任何抽象方法提供任何实现细节或方法主体时。
-- 类实现一个接口，并且不能为任何抽象方法提供实现细节或方法主体时。
-
-<Hint type="tip">这里说的是这些情况下，类将成为抽象类，并不是说抽象类一定会有这些情况。</Hint>
-
-抽象类一定包含抽象方法。 但是反过来说“包含抽象方法的类一定是抽象类”就是正确的。事实上，抽象类可以是一个完全正常实现的类。
-
 ## 接口
+
+### 和抽象类区别
+
+在抽象类中，可以包含一个或多个抽象方法，但在接口中，所有的方法必须都是抽象的，不能有方法体，连字段都不能有，它比抽象类更加“抽象”。
+
+例如：
+
+```java
+interface Person {
+    void run();
+    String getName();
+}
+```
+
+<Hint type="tip">因为接口定义的所有方法默认都是 `public abstract` 的，所以这两个修饰符不需要写出来（写不写效果都一样）。</Hint>
+
+接口可以看作是一种特殊的抽象类，它规定一个类必须做什么，而不是如何去做。
+
+当一个具体的 `class` 去实现一个 `interface` 时，需要使用 `implements` 关键字。举个例子：
+
+```java
+class Student implements Person {
+  private String name;
+
+  public Student(String name) {
+    this.name = name;
+  }
+
+  @Override
+  public void run() {
+    System.out.println(this.name + " run");
+  }
+
+  @Override
+  public String getName() {
+    return this.name;
+  }
+}
+```
+
+<Hint type="warn">实现类实现某个接口必须覆写其中的所有方法，当然也可以是一个空的实现（方法体为空），但抽象类实现某个接口，可以不实现所有接口的方法，可以由它的子类实现。</Hint>
+
+我们知道，在 Java 中，一个类只能继承自另一个类，不能从多个类继承。但是，一个类可以实现多个 `interface` ，例如：
+
+```java
+class Student implements Person, Hello { // 实现了两个interface
+  ...
+}
+```
+
+### 接口继承
+
+一个 `interface` 可以使用 `extends` 继承自另一个 `interface` 。例如：
+
+```java
+interface Hello {
+    void hello();
+}
+
+interface Person extends Hello {
+    void run();
+    String getName();
+}
+```
+
+此时， `Person` 接口继承自 `Hello` 接口，因此， `Person` 接口现在实际上有 3 个抽象方法签名，其中一个来自继承的 `Hello` 接口。
+
+### 类与接口的继承关系
+
+合理设计 interface 和 abstract class 的继承关系，可以充分复用代码。一般来说，公共逻辑适合放在 abstract class 中，具体逻辑放到各个子类，而接口层次代表抽象程度。可以参考 Java 的集合类定义的一组接口、抽象类以及具体子类的继承关系：
+
+<Img w="380" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/rt4hsL.png' />
+
+在使用的时候，实例化的对象永远只能是某个具体的子类，但总是通过接口去引用它，因为接口比抽象类更抽象：
+
+```java
+List list = new ArrayList(); // 用List接口引用具体子类的实例
+Collection coll = list; // 向上转型为Collection接口
+Iterable it = coll; // 向上转型为Iterable接口
+```
 
 ### 空接口
 
 我们常常看到 Java 程序里有定义的一些空接口，那么空接口是什么作用呢？
 
 空接口的主要是用来做判断的，也就是作为一个标记。为了判断某一个类是否满足其筛选条件时可以做一个空接口，然后利用 `instanceof` 方法来判断某一类是否使用了该接口，以达到你要筛选指定类型类的需求。
+
+### default 方法
+
+<Hint type="tip">JDK >= 1.8</Hint>
+
+https://ebnbin.com/2015/12/20/java-8-default-methods/
+
+### 小结
+
+- Java 的接口（interface）定义了纯抽象规范，一个类可以实现多个接口；
+- 接口也是数据类型，适用于向上转型和向下转型；
+- 接口的所有方法都是抽象方法，接口不能定义实例字段；
+- 接口可以定义 default 方法（JDK>=1.8）
 
 ## 相同点
 

@@ -39,7 +39,7 @@ module.exports = {
         {to: 'docs/web/1.http/http-connection', label: 'Web', position: 'left'},
         {to: 'docs/react/1.basic/jsx', label: 'React Stack', position: 'left'},
         {
-          to: 'docs/java/1.basic/abstract-class-interface',
+          to: 'docs/java/object-oriented-programming/abstract-class-interface',
           label: 'Java',
           position: 'left'
         },

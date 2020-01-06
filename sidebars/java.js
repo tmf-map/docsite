@@ -1,3 +1,3 @@
 module.exports = {
-  '1. Java 基础': ['java/1.basic/abstract-class-interface']
+  面向对象编程: ['java/object-oriented-programming/abstract-class-interface']
 };
