@@ -3,7 +3,9 @@ title: 抽象类与接口
 sidebar_label: 抽象类与接口
 ---
 
-import Hint from '../../../src/components/Hint'; import Img from '../../../src/components/Img';
+import Hint from '../../../src/components/Hint';
+
+import Img from '../../../src/components/Img';
 
 抽象类和接口是 Java 面向对象中非常重要的元素，在面向接口的编程中两者更是经常用到。类是对象的模版，抽象类和接口可以看作是具体的类的模版。
 
@@ -67,8 +69,8 @@ class Driver extends People{
 
 ```java
 interface Person {
-    void run();
-    String getName();
+  void run();
+  String getName();
 }
 ```
 
@@ -114,12 +116,12 @@ class Student implements Person, Hello { // 实现了两个interface
 
 ```java
 interface Hello {
-    void hello();
+  void hello();
 }
 
 interface Person extends Hello {
-    void run();
-    String getName();
+  void run();
+  String getName();
 }
 ```
 
