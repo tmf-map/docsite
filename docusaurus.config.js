@@ -36,7 +36,11 @@ module.exports = {
           label: 'CSS',
           position: 'left'
         },
-        {to: 'docs/web/1.http/http-connection', label: 'Web', position: 'left'},
+        {
+          to: 'docs/web/1.cross-domain/same-origin-policy',
+          label: 'Web',
+          position: 'left'
+        },
         {to: 'docs/react/1.basic/jsx', label: 'React Stack', position: 'left'},
         {
           to: 'docs/java/1.basic/abstract-class-interface',
