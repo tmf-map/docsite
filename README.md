@@ -1,4 +1,4 @@
-<img align="right" width="100" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/docsite-logo-radius.png" alt="ThinkBucket Logo"/>
+<img align="right" width="100" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/docsite-logo-github.png" alt="ThinkBucket Logo"/>
 
 <h1 align="left"><a href="https://thinkbucket.cn">ThinkBucket</a></h1>
 
