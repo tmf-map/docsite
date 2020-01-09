@@ -7,7 +7,7 @@ import Img from '../../../src/components/Img';
 
 ## HTTP/2 的缺点
 
-在 HTTP/2 中通过虚拟的“流”与多路复用等技术解决了应用层“队头阻塞”问题，性能方面比 HTTP/1 有了很大的提升。但 HTTP/2 依旧存在许多待解决的问题。
+在 HTTP/2 中通过虚拟的“流”与多路复用等技术解决了应用层“队头阻塞”问题，性能方面比 HTTP/1.1 有了很大的提升。但 HTTP/2 依旧存在许多待解决的问题。
 
 ### TCP 队头阻塞
 
@@ -19,7 +19,7 @@ import Img from '../../../src/components/Img';
 
 HTTP/2 是建立在 TLS1.2 之上的，在数据传输之前需要进行“三次握手”和“TLS 握手”。
 
-- 在建立 TCP 连接时，客户端和服务器需要进行“三次握手”来确认连接，此时需要 1.5 个 RTT。
+- 在建立 TCP 连接时，客户端和服务器需要进行“三次握手”来确认连接，此时需要 1.5 个 [RTT(Round-Trip Time）](https://www.zhihu.com/question/39244840)。
 - 在“TLS1.2 握手”中，客户端发送`Client Hello`请求，然后收到服务器`Server Hello`回应后，客户端会再发送一个`Client Key Exchange`(非对称加密算法公钥)消息给服务器，然后服务器发送`Finished`消息。也就是说“TLS1.2 握手”需要 2 个 RTT。
 
 所以在使用 HTTP/2 协议在传输数据之前，需要花掉至少 3 个 RTT。
@@ -47,6 +47,16 @@ QUIC 协议为了保证使用`UDP`协议数据的可靠性，在`UDP`之上上�
 - 更快、更安全的 TLS1.3
 
 QUIC 使用的是 TLS1.3，相较于早期的 TLS 版本，TLS1.3 更加的安全，并且对与新建连接“TLS 握手”时只需要 1 个 RTT，而恢复连接则是一个 0 RTT 事件。
+
+### QUIC 的现状
+
+Google 的 Chrome 于 2012 年开始开发 QUIC 协议，**QUIC 协议在当前 Chrome 版本中被默认开启**，活跃的会话列表在 chrome://net-internals/#quic 中可见。
+
+截至 2017 年，谷歌的服务器及谷歌发布的原型服务器使用 Go 语言编写的[quic-go](https://github.com/lucas-clemente/quic-go)及[Caddy](https://zh.wikipedia.org/wiki/Caddy)的试验性 QUIC 支持。
+
+在 2017 年 7 月 11 日，LiteSpeed 科技正式在他们的负载均衡（WebADC）及 LiteSpeed 服务器中支持 QUIC。截止 17 年 12 月，97.5%的使用 QUIC 协议的网站在 LiteSpeed 服务器中运行。
+
+2018 年 10 月，互联网工程任务组 HTTP 及 QUIC 工作小组正式将基于 QUIC 协议的 HTTP (英语：HTTP over QUIC) 重命名为 HTTP/3 以为确立下一代规范做准备。
 
 ## 握手时延
 
@@ -86,4 +96,8 @@ QUIC 使用的是 TLS1.3，相较于早期的 TLS 版本，TLS1.3 更加的安�
 
 ## 参考链接
 
-[解读 HTTP/2 与 HTTP/3 的新特 -- 前端工匠](https://mp.weixin.qq.com/s/zhYWDhsqrBO5MB4Hw2XkDA) [如何看待 HTTP/3 ？ -- 车小胖](https://www.zhihu.com/question/302412059/answer/533223530) [TLS 1.3 如何为 HTTPS 连接提速 -- wotrus](https://zhuanlan.zhihu.com/p/27524995) [ 未来之路：HTTP/3 展望 -- 罗剑锋](https://time.geekbang.org/column/intro/100029001)
+- [解读 HTTP/2 与 HTTP/3 的新特 -- 前端工匠](https://mp.weixin.qq.com/s/zhYWDhsqrBO5MB4Hw2XkDA)
+- [如何看待 HTTP/3 ？ -- 车小胖](https://www.zhihu.com/question/302412059/answer/533223530)
+- [TLS 1.3 如何为 HTTPS 连接提速 -- wotrus](https://zhuanlan.zhihu.com/p/27524995)
+- [未来之路：HTTP/3 展望 -- 罗剑锋](https://time.geekbang.org/column/intro/100029001)
+- [QUIC -- Wikipedia](https://en.wikipedia.org/wiki/QUIC)
