@@ -147,7 +147,15 @@ Iterable it = coll; // 向上转型为Iterable接口
 
 空接口的主要是用来做判断的，也就是作为一个标记。为了判断某一个类是否满足其筛选条件时可以做一个空接口，然后利用 `instanceof` 方法来判断某一类是否使用了该接口，以达到你要筛选指定类型类的需求。
 
-### default 方法
+### default method
+
+**Prior to Java 8**, it was impossible to add methods to interfaces without breaking existing implementations. If you added a new method to an interface, existing implementations would, in general, lack the method, resulting in **a compile-time error**. In Java 8, the default method construct was added, with the intent of **allowing the addition of methods to existing interfaces**. But adding new methods to existing interfaces is fraught with risk.
+
+<Hint type="warn">In the presence of default methods, existing implementations of an interface **may** compile without error or warning but fail at runtime.</Hint>
+
+<Hint type="good">Using default methods to add new methods to existing interfaces should be avoided unless the need is critical, in which case you should think long and hard about whether an existing interface implementation might be broken by your default method implementation.</Hint>
+
+Default methods are, however, extremely useful for providing standard method implementations when an interface is created, to ease the task of implementing the interface
 
 <Hint type="tip">JDK >= 1.8</Hint>
 
