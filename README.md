@@ -1,41 +1,46 @@
-# Docsite
+<img align="right" width="100" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/docsite-logo-ghrm.png" alt="ThinkBucket Logo"/>
 
-[![Netlify Status][netlify-image]][netlify-url] [![Dependencies][dependencies-image]][dependencies-url]
+<h1 align="left"><a href="https://thinkbucket.cn">ThinkBucket</a></h1>
 
 A learning website where you can explore full stack technology.
 
+[![Netlify Status][netlify-image]][netlify-url] [![Dependencies][dependencies-image]][dependencies-url]
+
 ## Table of Contents
 
+- [Prerequisites](#prerequisites)
 - [Installation](#installation)
-- [Local Development](#local-development)
-  - [Get Started](#get-started)
+- [Get Started](#get-started)
+- [Development](#development)
   - [Format Document](#format-document)
   - [Commit and PR Title](#commit-and-pr-title)
 - [Deployment](#deployment)
 - [Thanks](#thanks)
 
-## Installation
+## Prerequisites
 
-Before getting started, please make sure you have the right development environment:
+Before installation, please make sure you have the right development environment:
 
 - Node.js version >= 11.10.1 (you can use [nvm](https://github.com/nvm-sh/nvm) to manage node.js)
 - Install [yarn](https://yarnpkg.com/en/docs/install#mac-stable) (dependency management for node.js modules)
 
-Then run the below command to install dependencies:
+## Installation
+
+Run the below command to install dependencies:
 
 ```sh
 yarn # or yarn install
 ```
 
-## Local Development
-
-### Get Started
+## Get Started
 
 ```sh
 yarn start
 ```
 
 This command starts a local development server and open up a browser window. Most changes are reflected live without having to restart the server.
+
+## Development
 
 ### Format Document
 
