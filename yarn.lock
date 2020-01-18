@@ -948,10 +948,10 @@
     prism-react-renderer "^1.0.2"
     react-toggle "^4.1.1"
 
-"@docusaurus/theme-live-codeblock@2.0.0-alpha.39":
-  version "2.0.0-alpha.39"
-  resolved "https://registry.npm.taobao.org/@docusaurus/theme-live-codeblock/download/@docusaurus/theme-live-codeblock-2.0.0-alpha.39.tgz#4ffdd5fc8271840641a091dd2adcc9e2c2a423a1"
-  integrity sha1-T/3V/IJxhAZBoJHdKtzJ4sKkI6E=
+"@docusaurus/theme-live-codeblock@2.0.0-alpha.40":
+  version "2.0.0-alpha.40"
+  resolved "https://registry.yarnpkg.com/@docusaurus/theme-live-codeblock/-/theme-live-codeblock-2.0.0-alpha.40.tgz#8f6ba67d929ae7ca846f83ea28b7ca720c5831e6"
+  integrity sha512-9opW132F77iZiLoGtSK8DjYjquOZ0Yaunuw1U8SRtjVOZDpltJudht6GEBauEjAX6U+4wFF0feCoL9WqCU7ALQ==
   dependencies:
     "@philpl/buble" "^0.19.7"
     classnames "^2.2.6"
