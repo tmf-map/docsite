@@ -26,6 +26,7 @@ export default function SeqChart({
   className
 }) {
   const [uuid] = useState(genUuidV4());
+  console.log('uuid', uuid);
 
   useEffect(() => {
     const options = {inputType};
@@ -38,6 +39,7 @@ export default function SeqChart({
     if (includeSource) {
       options.includeSource = includeSource;
     }
+    console.log('useEffect', uuid);
 
     renderMsc(
       `${inputType} {
