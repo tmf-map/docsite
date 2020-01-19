@@ -26,6 +26,7 @@ module.exports = {
     'jsx-a11y/alt-text': OFF,
     'jsx-a11y/click-events-have-key-events': WARNING,
     'jsx-a11y/no-noninteractive-element-interactions': WARNING,
+    'no-bitwise': OFF,
     'no-console': OFF,
     'no-underscore-dangle': OFF,
     'react/no-danger': OFF,

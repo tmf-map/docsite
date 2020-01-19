@@ -1,6 +1,6 @@
 import React from 'react';
 import marked from 'marked';
-import './Hint.css';
+import './index.css';
 
 const colorMap = {
   good: {
