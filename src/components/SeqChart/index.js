@@ -1,34 +1,27 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import cx from 'classnames';
 import {renderMsc} from 'mscgenjs';
 import styles from './index.module.css';
 
-function genUuidV4() {
-  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-    const r = (Math.random() * 16) | 0;
-    const v = c === 'x' ? r : (r & 0x3) | 0x8;
-    return v.toString(16);
-  });
-}
-
-function handleRenderMscResult(parseError) {
-  if (parseError) {
-    console.error(parseError);
+export default class SeqChart extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      uuid: ''
+    };
   }
-}
 
-export default function SeqChart({
-  inputType = 'msc',
-  mirrorEntitiesOnBottom,
-  additionalTemplate,
-  includeSource,
-  children,
-  className
-}) {
-  const [uuid] = useState(genUuidV4());
-  console.log('uuid', uuid);
+  componentDidMount() {
+    this.setState({uuid: this.genUuidV4()});
+  }
 
-  useEffect(() => {
+  componentDidUpdate() {
+    const {
+      inputType = 'msc',
+      mirrorEntitiesOnBottom,
+      additionalTemplate,
+      includeSource
+    } = this.props;
     const options = {inputType};
     if (mirrorEntitiesOnBottom) {
       options.mirrorEntitiesOnBottom = mirrorEntitiesOnBottom;
@@ -39,19 +32,39 @@ export default function SeqChart({
     if (includeSource) {
       options.includeSource = includeSource;
     }
-    console.log('useEffect', uuid);
 
     renderMsc(
       `${inputType} {
-        ${children}
+        ${this.props.children}
       }`,
       {
-        elementId: uuid,
+        elementId: this.state.uuid,
         ...options
       },
-      handleRenderMscResult
+      this.handleRenderMscResult
     );
-  });
+  }
 
-  return <div id={uuid} className={cx(styles['seq-chart'], className)} />;
+  genUuidV4() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+      const r = (Math.random() * 16) | 0;
+      const v = c === 'x' ? r : (r & 0x3) | 0x8;
+      return v.toString(16);
+    });
+  }
+
+  handleRenderMscResult(parseError) {
+    if (parseError) {
+      console.error(parseError);
+    }
+  }
+
+  render() {
+    return (
+      <div
+        id={this.state.uuid}
+        className={cx(styles['seq-chart'], this.props.className)}
+      />
+    );
+  }
 }
