@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: morrisoncole/pr-lint-action@v1.0.0
         with:
-          title-regex: ^(add|update|fix|build|revert)+\(.+\):\s.+\S$
+          title-regex: ^(add|update|fix|build|revert|remove)+\(.+\):\s.+\S$
           on-failed-regex-comment: |
             :point_right: **Title check for pull request failed.**
 
@@ -27,6 +27,7 @@ jobs:
             - fix
             - build
             - revert
+            - remove
             
             Note that if you have no other changes to commit, you can override the failed PR title check by pushing a new empty commit:
             
