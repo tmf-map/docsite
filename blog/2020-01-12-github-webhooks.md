@@ -13,13 +13,13 @@ import Hint from '../src/components/Hint';
 
 ## 前言
 
-对于一些 GitHub 上的仓库，我们需要当代码进入 master 或者其它特定分支时网站能够自动部署。此时，Github Webhooks 功能将成为主角。本文将介绍如何配置 GitHub webhook、如何开启 server 端监听服务器以及如何写自动化脚本等。
+对于一些 GitHub 上的仓库，我们需要当代码进入 master 或者其它特定分支时网站能够自动部署。此时，Github Webhooks 功能将成为主角。本文以静态网站的自动化部署为例，介绍如何配置 GitHub webhook、如何开启 server 端监听服务器以及如何写自动化脚本等，非静态网站原理也是类似。
 
 ## 整体流程
 
-Happy Path:
+<Img width="800" legend="Happy Path" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/github-webhooks-sequence-chart.svg' alt='github-webhooks-sequence-chart'/>
 
-<Img width="800" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/github-webhooks-sequence-chart.svg' alt='github-webhooks-sequence-chart'/>
+<!--truncate-->
 
 ## Github Webhooks
 
@@ -42,8 +42,6 @@ Secret 字段，是我们自己定义的，最好稍微复杂一点。
 自动化当然离不开一些脚本的支持，在服务器上，自己选定一个合适的目录，创建 `auto_build.sh`，它主要是做 fetch 最新代码、build 等相关工作。
 
 以下是一个简单的 Demo 实现：
-
-<!--truncate-->
 
 ```sh
 #! /bin/bash
@@ -169,11 +167,11 @@ server {
 
 > 有时候 GitHub webhooks 调用并不会成功，需要 Redeliver 才行。
 
-<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/pmZ3qZ.png' alt='pmZ3qZ'/>
+<Img w="720" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/pmZ3qZ.png' alt='pmZ3qZ'/>
 
 不是很稳定，具体原因有待分析。
 
 ## 参考链接
 
 - [使用 Github 的 webhooks 进行网站自动化部署，by SkyCai](https://aotu.io/notes/2016/01/07/auto-deploy-website-by-webhooks-of-github/index.html)
-- [import、require、export、module.exports 混合使用详解 --- lv_DaDa](https://segmentfault.com/a/1190000012386576)
+- [使用 GitHub Webhook 实现静态网站自动化部署，by Jimmy Song](https://jimmysong.io/posts/github-webhook-website-auto-deploy/)
