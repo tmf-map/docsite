@@ -61,6 +61,7 @@ But make sure the PR title follow above pattern and common types can be:
 - fix
 - build
 - revert
+- remove
 
 For real world examples, please see [commit logs](https://github.com/ThinkBucket/docsite/commits/master).
 
