@@ -13,7 +13,7 @@ import Hint from '../src/components/Hint';
 
 ## 前言
 
-对于一些 GitHub 上的仓库，我们希望当代码进入 master 或者其它特定分支时网站能够自动部署。此时，Github Webhooks 功能将成为主角。本文以静态网站的自动化部署为例，介绍如何配置 GitHub webhook、如何写自动化脚本以及如何开启 server 端监听服务器等，非静态网站原理也是类似。
+对于一些 GitHub 上的仓库，我们希望当代码进入 master 或者其它特定分支时网站能够自动部署。此时，就需要用到 Github Webhooks 功能。本文以静态网站的自动化部署为例，介绍如何配置 GitHub webhook、如何写自动化脚本以及如何开启监听服务等，非静态网站原理也是类似。
 
 ## 整体流程
 
@@ -23,7 +23,7 @@ import Hint from '../src/components/Hint';
 
 ## Github Webhooks
 
-在启动 server 之前，我们先配置一下 GitHub webhooks 以了解一下有关概念。我们可以在 Github 仓库最右边有一个 Settings 的 Tab，找到 Webhooks & services，如下图：
+按照以上的序列图，在启动监听服务之前，我们先配置一下 GitHub webhooks。在对应项目的 Github 仓库最右边有一个 Settings 标签（需要管理员权限），找到 Webhooks -> Add webhook，如下图：
 
 <Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/XVpKDx.png' alt='XVpKDx'/>
 
@@ -31,7 +31,7 @@ Secret 字段，是我们自己定义的，最好稍微复杂一点。
 
 <Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/wrKx51.png' alt='wrKx51'/>
 
-最会发送一个带有`X-Hub-Signature` 的 `POST` 请求。通过它可以验证和我们服务器进行通信的合法性，为了方便我们直接用第三方的库 [github-webhook-handler](https://github.com/rvagg/github-webhook-handler) 来接收参数并且做监听事件的处理等工作。
+最会发送一个带有`X-Hub-Signature` 的 `POST` 请求。通过它可以验证和我们服务器进行通信的合法性，为了方便我们直接用第三方的库 [github-webhook-handler](https://github.com/rvagg/github-webhook-handler) 来接收参数并做监听事件的处理等工作。
 
 <Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/Jz7Nmw.png' alt='Jz7Nmw'/>
 
@@ -39,16 +39,21 @@ Secret 字段，是我们自己定义的，最好稍微复杂一点。
 
 ### 自动化 shell 脚本
 
-自动化当然离不开一些脚本的支持，在服务器上，自己选定一个合适的目录，创建 `auto_build.sh`，它主要是做 fetch 最新代码、build 等相关工作。
+自动化当然离不开一些脚本的支持，在服务器上选定一个合适的目录，创建 `auto_build.sh`，它主要是做 fetch 最新代码、build 等相关工作。
 
 以下是一个简单的 Demo 实现：
 
-```sh
+```bash
 #! /bin/bash
 
 SITE_PATH='/home/docsite'
 
-cd $SITE_PATH
+if [ ! -d ${SITE_PATH} ]; then
+  cd /home
+  git clone git@github.com:ThinkBucket/docsite.git
+fi
+
+cd ${SITE_PATH}
 
 git fetch --all
 git reset --hard origin/master
@@ -58,34 +63,34 @@ yarn build
 
 rm -rf /home/www/*
 
-cp -rf $SITE_PATH/build/* /home/www
+cp -rf ${SITE_PATH}/build/* /home/www
 ```
 
-<Hint type="tip">第一次执行上面 shell 脚本之前，我们需要手动先把项目 clone 下来。</Hint>
+这里也可以使用 `git pull`, 但不同的项目有可能 build 的时候会导致服务器端的仓库出现文件改动，保险起见建议使用 `fetch` + `reset` 的方式。
 
 <Hint type="bad">不要直接把网站的静态目录和项目 dist 或者 build 目录当作同一个目录。</Hint>
 
 否则在 build 的过程中，会删除之前打包好的文件，导致服务器短暂不能访问。当然以上脚本的内容只是一个示例，大家可以根据实际的需求灵活配置。
 
-### 启动 Server 监听
+### 启动监听服务器
 
-在之前的 GitHub webhook 部分，我们设置了服务器请求路径和 Secret，这些都是为了和 server 端相关配合使用的，此时我们需要创建一个 node server 监听服务器。
+在之前的 GitHub webhook 部分，我们设置了服务器请求路径和 Secret，这些都是为了和 server 端配合使用的，此时我们需要创建一个 node server 监听服务器。
 
-我们可以在 shell 脚本的同级目录下面执行下面命令初始化一个 `package.json`:
+我们可以在 `auto_build.sh` 脚本的同级目录下面执行下面命令初始化一个 `package.json`:
 
-```sh
+```bash
 npm init -f
 ```
 
 然后执行下面命令安装上面提到的第三方库：
 
-```sh
-npm i -S github-webhook-handler
+```bash
+npm i github-webhook-handler
 ```
 
-接下来创建我们的服务主入口文件 `index.js`：
+接下来创建服务的主入口文件 `index.js`：
 
-```sh
+```bash
 vi index.js
 ```
 
@@ -138,7 +143,7 @@ function runCommand(cmd, args, callback) {
 
 然后利用 pm2 将 node 服务跑起来：
 
-```sh
+```bash
 pm2 start index.js --name=github-webhook-handler
 ```
 
@@ -157,7 +162,7 @@ server {
 }
 ```
 
-到这里整个服务已经搭建完成，如下面截图所示的服务器端目录结构：
+到这里整个服务已经搭建完成，在服务器端会产生如下截图所示的目录结构：
 
 <Img w="500" align="left" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/wV1n0Z.png' alt='wV1n0Z'/>
 
