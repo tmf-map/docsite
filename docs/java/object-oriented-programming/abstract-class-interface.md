@@ -147,19 +147,76 @@ Iterable it = coll; // 向上转型为Iterable接口
 
 空接口的主要是用来做判断的，也就是作为一个标记。为了判断某一个类是否满足其筛选条件时可以做一个空接口，然后利用 `instanceof` 方法来判断某一类是否使用了该接口，以达到你要筛选指定类型类的需求。
 
-### default method
+### Default method
 
-**Prior to Java 8**, it was impossible to add methods to interfaces without breaking existing implementations. If you added a new method to an interface, existing implementations would, in general, lack the method, resulting in **a compile-time error**. In Java 8, the default method construct was added, with the intent of **allowing the addition of methods to existing interfaces**. But adding new methods to existing interfaces is fraught with risk.
+#### What's default method
 
-<Hint type="warn">In the presence of default methods, existing implementations of an interface **may** compile without error or warning but fail at runtime.</Hint>
+A simple example:
+
+```java
+interface InterfaceA {
+  default void foo() {
+    System.out.println("InterfaceA foo");
+  }
+}
+
+class ClassA implements InterfaceA {
+}
+
+public class Test {
+  public static void main(String[] args) {
+    new ClassA().foo(); // Will print "InterfaceA foo"
+  }
+}
+```
+
+`ClassA` doesn't implement the `foo` method of `InterfaceA` but `InterfaceA` provides the default method for `ClassA`, so we can directly call the `foo` method by `ClassA`.
+
+#### Why need default method
+
+**Prior to Java 8**, The coupling between interface and its implementation class is too high (**tightly coupled**), when need to add method to an interface, all the implementation class must be modified accordingly. it was impossible to add **new** methods to interfaces without breaking existing implementations. If you added a new method to an interface, existing implementations would, in general, lack the method, resulting in **a compile-time error**.
+
+<Hint type="tip">To use default method, JDK >= 1.8 is a must.</Hint>
+
+In Java 8, the default method construct was added, with the intent of **allowing the addition of methods to existing interfaces**. This provides a way to upgrade old interfaces and maintain backward compatibility at a time when lambda expressions are an important feature of the Java 8:
+
+```java
+String[] array = new String[] {
+  "hello",
+  ", ",
+  "world",
+};
+List<String> list = Arrays.asList(array);
+list.forEach(System.out::println); // additional method in JDK 1.8
+```
+
+This `forEach` method is a new default method which was added to JDK 1.8 for the interface, and because of the default method, it is not necessary to modify all the implementation classes of the Iterable interface just because a `forEach` method is added to the Iterable interface.
+
+The following code shows the `forEach` default method in the Iterable interface of JDK 1.8:
+
+```java
+package java.lang;
+
+import java.util.Objects;
+import java.util.function.Consumer;
+
+public interface Iterable<T> {
+  default void forEach(Consumer<? super T> action) {
+    Objects.requireNonNull(action);
+    for (T t : this) {
+      action.accept(t);
+    }
+  }
+}
+```
+
+For more details, please see this article: https://ebnbin.com/2015/12/20/java-8-default-methods/
+
+<Hint type="warn">Adding new methods to existing interfaces is fraught with risk. In the presence of default methods, existing implementations of an interface **may** compile without error or warning but fail at runtime.</Hint>
 
 <Hint type="good">Using default methods to add new methods to existing interfaces should be avoided unless the need is critical, in which case you should think long and hard about whether an existing interface implementation might be broken by your default method implementation.</Hint>
 
-Default methods are, however, extremely useful for providing standard method implementations when an interface is created, to ease the task of implementing the interface
-
-<Hint type="tip">JDK >= 1.8</Hint>
-
-https://ebnbin.com/2015/12/20/java-8-default-methods/
+Default methods are, however, extremely useful for providing standard method implementations when an interface is created, to ease the task of implementing the interface.
 
 ### 小结
 
@@ -285,6 +342,7 @@ B b = new C();
 - 接口是对行为的一种抽象，而抽象类是对类的抽象，包括属性、方法。继承抽象类的类往往是具有一些相似特点的类，而实现接口的类可以跨不同的域，仅仅实现了接口定义的契约。类继承抽象类像是一个 **”is-a”** 特点，类实现接口像是 **”like-a”** 特点。
 - 在设计时，对接口往往是自上而下的，先定义接口行为，然后再针对其做具体实现；抽象类往往是自下而上的，我们先知道子类后才对其进行抽象出父类。
 
-## 参考资料
+## References
 
 1. [Effective Java, By Joshua Bloch](https://book.douban.com/subject/30412517/)
+2. [Java 8 Default Methods, By Ebn Zhang](https://ebnbin.com/2015/12/20/java-8-default-methods/)
