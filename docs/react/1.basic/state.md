@@ -169,18 +169,18 @@ function reducer(state, action) {
 
 <Img width="300" align="center" legend="图：循环调用" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/gz0v4j.png'/>
 
-<Hint type="good">虽然也可以在 `componentDidUpdate` 中直接调用 `setState()`，但请注意它必须被包裹在一个条件语句里。</Hint>
+<Hint type="good">虽然也可以在 `componentDidUpdate` 中直接调用 `setState()`，但必须将其包裹在一个条件语句里。</Hint>
 
 ```js
 componentDidUpdate(prevProps) {
   // 不要忘记比较 props
   if (this.props.userID !== prevProps.userID) {
-    this.fetchData(this.props.userID);
+    this.setState({ userID: this.props.userID });
   }
 }
 ```
 
-否则会导致死循环。它还会导致额外的重新渲染，虽然用户不可见，但会影响组件性能。
+否则也会导致死循环。它还会导致额外的重新渲染，虽然用户不可见，但会影响组件性能。
 
 ### setState 源码
 
@@ -255,4 +255,4 @@ function enqueueUpdate(component) {
 
 1. [深入 setState 机制, by sisterAn](https://github.com/sisterAn/blog/issues/26)
 2. [揭密 React setState, by 黄 qiong](https://imweb.io/topic/5b189d04d4c96b9b1b4c4ed6)
-3. [React 中文文档：React.Component](https://zh-hans.reactjs.org/docs/react-component.html)
+3. [React 中文官方文档：React.Component](https://zh-hans.reactjs.org/docs/react-component.html#componentdidupdate)
