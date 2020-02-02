@@ -167,7 +167,7 @@ function reducer(state, action) {
 
 这是因为在 `shouldComponentUpdate` 或 `componentWillUpdate` 方法里调用 `this.setState` 时，`this._pendingStateQueue != null`，则 `performUpdateIfNecessary` 方法就会调用 `updateComponent` 方法进行组件更新，而 `updateComponent` 方法又会调用 `shouldComponentUpdate` 和 `componentWillUpdate` 方法，因此造成循环调用，使得浏览器内存占满后崩溃。
 
-<Img width="300" align="center" legend="图：循环调用" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/gz0v4j.png'/>
+<Img width="260" align="center" legend="图：循环调用" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/gz0v4j.png'/>
 
 <Hint type="good">虽然也可以在 `componentDidUpdate` 中直接调用 `setState()`，但必须将其包裹在一个条件语句里。</Hint>
 
@@ -180,7 +180,13 @@ componentDidUpdate(prevProps) {
 }
 ```
 
-否则也会导致死循环。它还会导致额外的重新渲染，虽然用户不可见，但会影响组件性能。
+否则也会导致死循环。它还会导致额外的重新渲染，虽然用户不可见，但会影响组件性能。综上，结合 React 16.3 之前的生命周期做一个小结：
+
+<Img width="680" legend="图：React < v16.3 setSate 调用风险图" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/react-v15-setState.svg'/>
+
+- 红色框是不能调用 setState。
+- 绿色框是可以调用 setState。
+- 虚线框是在 v17 版本后废弃的生命周期。
 
 ### setState 源码
 
