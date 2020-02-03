@@ -25,6 +25,7 @@ module.exports = {
   ],
   '6. HTTP安全': [
     'http/6.http-security/encryption',
+    'http/6.http-security/tls',
     'http/6.http-security/https'
   ],
   '7. HTTP大文件传输': ['http/7.large-file-transfer/large-file-transfer'],

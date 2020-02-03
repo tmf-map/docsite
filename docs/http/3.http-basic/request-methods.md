@@ -1,6 +1,6 @@
 ---
-title: HTTP请求方法
-sidebar_label: HTTP请求方法
+title: HTTP 请求方法
+sidebar_label: HTTP 请求方法
 ---
 
 import Img from '../../../src/components/Img';

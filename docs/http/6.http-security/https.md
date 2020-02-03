@@ -5,32 +5,15 @@ sidebar_label: HTTPS
 
 import Img from '../../../src/components/Img';
 
-## SSL/TLS 发展史
-
-为了解决 HTTP 协议的以上缺点，在上世纪 90 年代中期，由网景（NetScape）公司设计了 SSL 协议。SSL 是“Secure Sockets Layer”的缩写，中文叫做“安全套接层”。
-
-到了 1999 年，SSL 因为应用广泛，已经成为互联网上的事实标准。IETF 就在那年把 SSL 标准化。**标准化之后的名称改为 TLS（是“Transport Layer Security”的缩写），中文叫做“传输层安全协议”**。
-
-很多相关的文章都把这两者并列称呼（SSL/TLS），因为这两者可以视作同一个东西的不同阶段。
-
-互联网加密协议历史：
-
-- 1994 年，NetScape 公司设计了 SSL 协议的 1.0 版，但是未发布。
-- 1995 年，NetScape 公司发布 SSL 2.0 版，很快发现有严重漏洞。
-- 1996 年，SSL 3.0 版问世，得到大规模应用。
-- 1999 年，互联网标准化组织 ISOC 接替 NetScape 公司，发布了 SSL 的升级版 TLS 1.0 版。
-- 2006 年和 2008 年，TLS 进行了两次升级，分别为 TLS 1.1 版和 TLS 1.2 版。最新的变动是 2011 年 TLS 1.2 的修订版。
-- 2018 年， TLS 1.3 协议的最终版被发布，该协议在安全性、性能和隐私方面有重大改进，大大提升 HTTPS 连接的速度性能。
-
-目前，应用最广泛的是 TLS 1.2 协议，最新版的 Chrome 和 FireFox 浏览器已经实现了对 TLS1.3 协议的支持。
-
-## 什么是 HTTPS
+## 前言
 
 由于 HTTP **明文传输**的特点，使得整个传输过程完全透明，任何人都能够在链路中截获、修改或者伪造请求或响应报文，数据不具有可信性。所以我们需要使用一种安全的数据传输方式--HTTPS。
 
+## 什么是 HTTPS
+
 所谓的 HTTPS 其实是“HTTP over SSL”或“HTTP over TLS”，它是 HTTP 与 SSL/TSL 的结合使用而已。在 HTTPS 中默认端口号是**443**。
 
-<Img width="330" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/C4B4G3.png" />
+<Img width="600" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200202213917.png" />
 
 如上图所示，原先是应用层将数据直接给到 TCP 进行传输，现在改成应用层将数据给到 TLS/SSL，将数据加密后，再给到 TCP 进行传输。将数据加密后再传输，而不是任由数据在复杂而又充满危险的网络上明文裸奔，在很大程度上确保了数据的安全性。
 
@@ -38,7 +21,9 @@ import Img from '../../../src/components/Img';
 
 虽然目前应用最广泛的依旧是 TLS1.2 版本，但是去年 TLS1.3 版本已经发布正式版，所以此处将以 TLS1.3 版本的握手过程进行讲解。
 
-在 HTTP 协议里，建立 TCP 连接后，浏览器会立即发送请求报文。但现在是 HTTPS 协议，它需要再用另外一个“握手”过程，在 TCP 上建立安全连接，之后才是收发 HTTP 报文。 <Img width="600" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200106170015.png" />
+在 HTTP 协议里，建立 TCP 连接后，浏览器会立即发送请求报文。但现在是 HTTPS 协议，它需要再用另外一个“握手”过程，在 TCP 上建立安全连接，之后才是收发 HTTP 报文。
+
+<Img width="600" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200106170015.png" />
 
 如上图所示，在 HTTPS 中建立连接需要以下步骤：
 
@@ -52,18 +37,23 @@ import Img from '../../../src/components/Img';
 8. 客户端发送`Change Cipher Spec`消息通知服务器下次数据传输将使用对称加密，最后发送`Finished`信号给客户端。
 9. HTTPS 连接建立完成，客户端和服务器可以使用`master secret`对数据进行加密/解密。
 
-**密钥生成示意图：** <Img width="600" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200106181948.png" />
+**密钥生成示意图：**
 
-## HTTP/2、SPDY 和 HTTPS
+<Img width="600" legend="图：TLS 1.3密钥生成示意图" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200106181948.png" />
 
-2012 年 google 如一声惊雷提出了 SPDY 的方案，大家才开始从正面看待和解决老版本 HTTP 协议本身的问题，**SPDY 可以说是综合了 HTTPS 和 HTTP 两者有点于一体的传输协议**，缩短 Web 页面的加载时间（50%）。
+通过上面的示意图可以看出，客户端与服务器通过共享`Server Params`（服务器参数）和`Client Params`(客户端参数)生成`Pre-Master`,然后结合 Client Random（客户端随机数）和 Server Random（服务器随机数）生成对称加密的密钥`master secret`。
 
-<Img width="600" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/dWs8xx.png" />
+## HTTP VS HTTPS
 
-SPDY 协议位于会话层，这样可以轻松兼容老版本的 HTTP 协议(将 HTTP1.x 的内容封装成一种新的 frame 格式)，同时可以使用已有的 SSL 功能。
+### HTTP 和 HTTPS 的差异
 
-**HTTP2 可以说是 SPDY 的升级版**（其实原本也是基于 SPDY 设计的），但是，HTTP2 跟 SPDY 仍有不同的地方，主要是以下两点：
+- 报文格式：HTTP 使用超文本格式传输；HTTPS 使用加密格式进行传输。
+- 端口：HTTP 默认端口是 80；HTTPS 默认端口是 443。
+- 安全性：HTTP 使用明文传输，是不安全的；HTTPS 使用 SSL 安全技术。
 
-- HTTP2 理论上支持明文 HTTP 传输，而 SPDY 强制使用 HTTPS。
+### HTTPS 的优点
 
-- HTTP2 消息头的压缩算法采用 HPACK，而非 SPDY 采用的 DEFLATE。
+- 安全通信 HTTPS 在浏览器和服务器之间使用加密传输来确保安全。
+- 数据完整性。由于数据是加密的，即使黑客获取到数据，也没法对数据做修改。
+- 传输性能。通过对数据进行加密，HTTPS 能够减少数据的大小从而获得更高的传输性能。
+- SEO。使用 HTTPS 能优化 SEO 排名。使用 Google Chrome 浏览器时，如果采用 HTTP 协议，浏览器会显示 Not Secure。
