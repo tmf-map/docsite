@@ -10,10 +10,9 @@ import Hint from '../../../src/components/Hint'; import Img from '../../../src/c
 
 ### 生命周期图
 
-<Img width="700" legend="图：React < v16.3 生命周期图" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/WGGaWn.png'/>
+<Img width="650" legend="图：React < v16.3 生命周期图" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/react-v15-lifecycle.svg'/>
 
-- 红色是在 v17 版本后废弃的生命周期。
-- 细字体的声明周期是不常用的，加粗是常用的。
+- 虚线框是在 v17 版本后废弃的生命周期。
 
 ### 父子组件加载顺序
 
@@ -73,8 +72,6 @@ component.componentDidMount && component.componentDidMount();
 新的生命周期图如下图（[源自](https://github.com/wojtekmaj/react-lifecycle-methods-diagram)）所示：
 
 <Img legend="图：React > v16.3 生命周期图" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/n5LYwH.png'/>
-
-- 细字体的声明周期是不常用的，加粗是常用的。
 
 React v16.3，引入了两个新的生命周期函数：
 
