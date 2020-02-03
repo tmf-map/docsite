@@ -1,5 +1,4 @@
 ---
-id: portal
 title: Portal
 sidebar_label: Portal
 ---
@@ -77,13 +76,17 @@ React Portal 之所以叫 Portal，因为做的就是和“传送门”一样的
 
 ## React v16 中的 Portal
 
-Portal 就是建立一个“**传送门**”，让 Dialog 这样的组件在表示层和其他组件没有任何差异，但是渲染的东西却像经过传送门一样出现在另一个地方。
+Portal 就是建立一个“**传送门**”，让像 Dialog 这样的组件在 v-dom 和其他组件没有任何差异，但是渲染的真实 dom 却像经过传送门一样出现在另一个地方。
+
+### 直接挂在 body
+
+先看一种最简单的也是比较常用的场景，将 Dialog 直接挂在 body 下面，如下图所示：
 
 <div align="center">
    <img width="480" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/0F52fx.png'/>
 </div>
 
-在 v16 中，使用 Portal 创建 Dialog 组件简单多了，不需要牵扯到 `componentDidMount` 、 `componentDidUpdate` ，也不用调用 API 清理 Portal，关键代码在 `render` 中，像下面这样就行。
+Dialog 代码如下：
 
 ```jsx
 import React from 'react';
@@ -93,19 +96,18 @@ class Dialog extends React.Component {
   constructor(props) {
     super(props);
 
-    const doc = window.document;
-    this.node = doc.createElement('div');
-    doc.body.appendChild(this.node);
+    this.container = document.createElement('div');
+    document.body.appendChild(this.container);
   }
 
   componentWillUnmount() {
-    window.document.body.removeChild(this.node);
+    document.body.removeChild(this.container);
   }
 
   render() {
     return createPortal(
       <div class="dialog">{this.props.children}</div>, //塞进传送门的JSX
-      this.node //传送门的另一端DOM node
+      this.container //传送门的另一端真实 DOM container
     );
   }
 }
@@ -130,7 +132,44 @@ render() {
 
 那么实际渲染出来的 DOM 大概如下图所示，不难发现在 p 之后定义的 `Dialog` 实际被传送到了 body 下面：
 
-<img width="500" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/MIG83K.png'/>
+<img width="450" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/MIG83K.png'/>
+
+### 挂在其它节点
+
+有时候我们需要将 portal 创建的节点挂在其它节点，比如挂在父元素下面：
+
+```jsx
+<div>
+  <div><MyComponent /></div>
+  <div id="portal-container">
+</div>
+```
+
+MyComponent `render()` 实现：
+
+```jsx
+<div>
+  <div>...</div>
+  {this.props.show &&
+    createPortal(<div>{this.props.children}</div>, this.container)}
+</div>
+```
+
+这个时候就不能在 MyComponent 的 `constructor` 里面调用类似 `document.body.appendChild` 这样的代码，因为父节点的真实 dom 还没有挂载，是取不到 `<div id="portal-container">` 的，此时我们可以使用 `componentDidMount`：
+
+```jsx
+constructor (props) {
+  this.container = document.createElement('div');
+}
+componentDidMount () {
+  document.getElementById('portal-container').appendChild(this.container);
+}
+componentWillUnmount () {
+  document.getElementById('portal-container').removeChild(this.container);
+}
+```
+
+<Hint type="warn">`createPortal` 没有调用的话，那么 `this.container` 只是一个空 div。</Hint>
 
 ## 通过 Portal 进行事件冒泡
 
