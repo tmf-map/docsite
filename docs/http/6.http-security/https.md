@@ -28,14 +28,18 @@ import Img from '../../../src/components/Img';
 如上图所示，在 HTTPS 中建立连接需要以下步骤：
 
 1. “三次握手”建立 TCP 连接。
-2. 客户端发出**Client Hello**信号，并将客户端的`TLS版本号`、`Client Random`、`Client Params`（客户端公钥）、密码套件等传送给服务器。
-3. 服务器收到信号后，会发送**Server Hello**信号到客户端，将服务端的`Server Random`、`Server Params`（服务器公钥）、选定的密码套件等传送给客户端。
-4. 此时客户端和服务端共享了`Client Random`、`Client Params`、`Server Random`、`Server Params`四个参数，然后服务器端会使用`Server Params`、`Client Params`这两个参数使用算法生成相同的`Pre-Master`（一个随机数）。
-5. 服务器生成`Pre-Master`后结合`Client Random`和`Server Random`生成`master secret`(对称加密的密钥)。
-6. 然后服务器发送`Change Cipher Spec`消息通知客户端下次可以使用对称加密传输。发送被加密的扩展消息`Encrypted Extensions`，并将服务端的证书和证书签名发送给客户端，最后发送`Finished`信号给客户端。
-7. 客户端收到服务器证书和签名后，验证服务器身份，并生成与服务器相同的`master secret`(对称加密的密钥)。
-8. 客户端发送`Change Cipher Spec`消息通知服务器下次数据传输将使用对称加密，最后发送`Finished`信号给客户端。
-9. HTTPS 连接建立完成，客户端和服务器可以使用`master secret`对数据进行加密/解密。
+2. TLS 握手，发送 hello 信号
+   - 客户端发出**Client Hello**信号，并将客户端的`TLS版本号`、`Client Random`、`Client Params`（客户端公钥）、密码套件等传送给服务器。
+   - 服务器收到信号后，会发送**Server Hello**信号到客户端，将服务端的`Server Random`、`Server Params`（服务器公钥）、选定的密码套件等传送给客户端。
+3. TLS 握手，生成对称加密密钥`master secret`
+   - 此时客户端和服务端共享了`Client Random`、`Client Params`、`Server Random`、`Server Params`四个参数，然后服务器端会使用`Server Params`、`Client Params`这两个参数使用算法生成相同的`Pre-Master`（一个随机数）。
+   - 服务器生成`Pre-Master`后结合`Client Random`和`Server Random`生成`master secret`(对称加密的密钥)。
+   - 然后服务器发送`Change Cipher Spec`消息通知客户端下次可以使用对称加密传输。发送被加密的扩展消息`Encrypted Extensions`，并将服务端的证书和证书签名发送给客户端，最后发送`Finished`信号给客户端。
+   - 客户端收到服务器证书和签名后，验证服务器身份，并生成与服务器相同的`master secret`(对称加密的密钥)。
+4. TLS 握手结束
+   - 客户端发送`Change Cipher Spec`消息通知服务器下次数据传输将使用对称加密，最后发送`Finished`信号给客户端。
+5. HTTPS 连接建立完成
+   - HTTPS 连接建立完成后，客户端和服务器可以使用`master secret`对数据进行加密/解密。
 
 **密钥生成示意图：**
 
@@ -43,11 +47,21 @@ import Img from '../../../src/components/Img';
 
 通过上面的示意图可以看出，客户端与服务器通过共享`Server Params`（服务器参数）和`Client Params`(客户端参数)生成`Pre-Master`,然后结合 Client Random（客户端随机数）和 Server Random（服务器随机数）生成对称加密的密钥`master secret`。
 
+密钥`master secret`计算公式：
+
+```
+master_secret = PRF(pre_master_secret, "master secret", ClientHello.random + ServerHello.random)[0..47];
+```
+
+有关公式的详细内容可以查看[RFC5246](https://tools.ietf.org/html/rfc5246#section-8.1)文档。
+
 ## HTTP VS HTTPS
 
 ### HTTP 和 HTTPS 的差异
 
-- 报文格式：HTTP 使用超文本格式传输；HTTPS 使用加密格式进行传输。
+<Img width="600" legend="图：报文传输对比图" origin ="https://zhuanlan.zhihu.com/p/101058747" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200203145458.png" />
+
+- 数据传输：由上图所示，HTTP 使用明文传输；HTTPS 使用加密格式进行传输。
 - 端口：HTTP 默认端口是 80；HTTPS 默认端口是 443。
 - 安全性：HTTP 使用明文传输，是不安全的；HTTPS 使用 SSL 安全技术。
 
@@ -57,3 +71,7 @@ import Img from '../../../src/components/Img';
 - 数据完整性。由于数据是加密的，即使黑客获取到数据，也没法对数据做修改。
 - 传输性能。通过对数据进行加密，HTTPS 能够减少数据的大小从而获得更高的传输性能。
 - SEO。使用 HTTPS 能优化 SEO 排名。使用 Google Chrome 浏览器时，如果采用 HTTP 协议，浏览器会显示 Not Secure。
+
+## 参考链接
+
+1. [what is http, by tutorialsteacher](https://www.tutorialsteacher.com/https/what-is-https)

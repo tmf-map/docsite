@@ -31,7 +31,7 @@ RSA 算法基于“整数分解”的数学难题，使用两个超大素数的�
 
 与 HTTP 中数据传输不同，HTTPS 在非对称加密阶段需要完成 SSL/TLS 握手，确认对称加密数据的密钥`Pre-Master`。在非对称加密阶段使用不同的加密算法 SSL/TLS 的握手方式也会有所不同。此处简要介绍一下 RSA 的握手过程，ECDHE 的握手过程可以看下一节内容。
 
-<Img w="500" legend="图：RSA握手过程" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200203113327.png" />
+<Img w="500" legend="图：RSA握手过程" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200203151454.png" origin= "https://www.tutorialsteacher.com/https/how-ssl-works"/>
 
 由上图所示，RSA 的握手过程如下：
 
@@ -46,3 +46,4 @@ RSA 算法基于“整数分解”的数学难题，使用两个超大素数的�
 1. [HTTPS 系列二：SSL 如何工作？, by Just Tech](https://zhuanlan.zhihu.com/p/101058747)
 
 2. [SSL/TLS 详解，by 鱼の乐](https://blog.wangriyu.wang/2018/03-http-tls.html)
+3. [Https(SSLTLS)原理详解, by Mike](https://www.hi-linux.com/posts/17756.html)
