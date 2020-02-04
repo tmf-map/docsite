@@ -9,7 +9,7 @@ import Hint from '../../../src/components/Hint';
 
 正则表达式中用 `()` 来表示分组，例如：`/([0-9])/`，`()` 会把每个分组里匹配的值保存起来。
 
-### 捕获型 ( )
+### 捕获型 `()`
 
 #### 捕获与引用
 
@@ -92,7 +92,7 @@ console.log(reg.test('dot is \3')); //true
 console.log(reg.test('dolby is dolby')); //false
 ```
 
-### 非捕获型 (?: )
+### 非捕获型 `(?: )`
 
 有时我们只是想分个组，并没有捕获的需求，这种情况下可以使用非捕获性分组，语法为 `(?:)` 。
 
@@ -106,9 +106,15 @@ console.log(RegExp.$2); //24
 
 这个例子中，`(?:\d{4})` 分组不会捕获任何串，所以 `$1` 为 `(\d{2})` 捕获的串。
 
-### 正向前瞻型 (?= )
+## 断言 Assertion
 
-<Hint type="warn">前瞻型分组不会捕获值</Hint>
+<Hint type="tip">断言虽然包裹在 `()` ，但并不会捕获值。</Hint>
+
+以下所说的`前`和`后`指的要匹配的内容相对于断言的前后位置。
+
+### 正向前瞻型 `(?= )`
+
+Lookahead assertion `x(?=y)`: Matches "x" only if "x" is followed by "y". For example:
 
 ```js
 let reg = /dot is a (?=doubi)/;
@@ -116,9 +122,11 @@ console.log(reg.test('dot is a doubi')); //true
 console.log(reg.test('dot is a shadou')); //false
 ```
 
-这个正则要求 `dot is a` 后面要跟上 `doubi` 才匹配成功。
+这个正则要求 `dot is a` 后面要是 `doubi` 才匹配成功。
 
-### 反向前瞻型 (?! )
+### 反向前瞻型 `(?! )`
+
+Negative lookahead assertion `x(?!y)`: Matches "x" only if "x" is not followed by "y". For example:
 
 ```js
 let reg = /dot is a (?!doubi)/;
@@ -126,7 +134,31 @@ console.log(reg.test('dot is a doubi')); //false
 console.log(reg.test('dot is a shadou')); //true
 ```
 
-这个正则要求 `dot is a` 后面除了跟上 `doubi` ，都能匹配成功。
+这个正则要求 `dot is a` 后面除了 `doubi` ，都能匹配成功。
+
+### 正向后瞻型 `(?<= )`
+
+Lookbehind assertion `(?<=y)x`: Matches "x" only if "x" is preceded by "y". For example:
+
+```js
+let reg = /(?<=dot) is a doubi/;
+console.log(reg.test('dot is a doubi')); //true
+console.log(reg.test('pot is a doubi')); //false
+```
+
+这个正则要求 `is a doubi` 前面要是 `dot` 才匹配成功。
+
+### 反向后瞻型 `(?<! )`
+
+Negative lookbehind assertion `(?<!y)x`: Matches "x" only if "x" is not preceded by "y". For example:
+
+```js
+let reg = /(?<!dot) is a doubi/;
+console.log(reg.test('dot is a doubi')); //false
+console.log(reg.test('pot is a doubi')); //true
+```
+
+这个正则要求 `is a doubi` 前面除了 `dot` ，都能匹配成功。
 
 > Q：前瞻型分组与非捕获型都不会捕获值，那么它们的区别是什么？
 
@@ -134,14 +166,24 @@ A： 非捕获型分组匹配到的串仍会被外层的捕获型分组捕获到
 
 ```js
 let str = 'dot is a doubi';
-let reg = /dot is a (?:doubi)/;
+let reg;
+```
+
+相同点：
+
+```js
+reg = /dot is a (?:doubi)/;
 console.log(reg.test(str)); //true
 console.log(RegExp.$1); //无结果
 
 reg = /dot is a (?=doubi)/;
 console.log(reg.test(str)); //true
 console.log(RegExp.$1); //无结果
+```
 
+不同点：
+
+```js
 reg = /(dot is a (?:doubi))/;
 console.log(reg.test(str)); //true
 console.log(RegExp.$1); //dot is a doubi
@@ -150,3 +192,7 @@ reg = /(dot is a (?=doubi))/;
 console.log(reg.test(str)); //true
 console.log(RegExp.$1); //dot is a
 ```
+
+## Reference
+
+1. [MDN web docs: JS Regular expressions Assertions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions/Assertions)
