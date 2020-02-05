@@ -8,6 +8,7 @@ const designPatterns = require('./design-patterns');
 const algorithm = require('./algorithm');
 const http = require('./http');
 const docs = require('./docs');
+const typescript = require('./typescript');
 
 module.exports = {
   javascript,
@@ -19,5 +20,6 @@ module.exports = {
   designPatterns,
   algorithm,
   http,
-  docs
+  docs,
+  typescript
 };
