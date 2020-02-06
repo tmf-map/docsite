@@ -27,7 +27,7 @@ module.exports = {
       links: [
         {
           to: 'docs/javascript/1.basic/js-engine',
-          label: 'Javascript',
+          label: 'JavaScript',
           position: 'left'
         },
         {to: 'docs/html/preface/overview', label: 'HTML', position: 'left'},
@@ -58,6 +58,11 @@ module.exports = {
           position: 'left'
         },
         {to: 'docs/http/1.web-basic/tcp-ip', label: 'HTTP', position: 'left'},
+        {
+          to: 'docs/typescript/1.types/basic-types',
+          label: 'TypeScript',
+          position: 'left'
+        },
         {to: 'blog', label: 'Blog', position: 'right'},
         {
           href: `https://github.com/${githubOrg}/${githubRepo}`,
