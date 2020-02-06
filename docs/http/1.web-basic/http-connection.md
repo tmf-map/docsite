@@ -1,6 +1,6 @@
 ---
-title: TCP 握手和挥手
-sidebar_label: TCP 握手和挥手
+title: TCP握手和挥手
+sidebar_label: TCP握手和挥手
 ---
 
 import Img from '../../../src/components/Img'

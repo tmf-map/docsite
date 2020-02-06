@@ -21,7 +21,7 @@ import Hint from '../../../src/components/Hint';
 
 ### Accept
 
-`Accept`字段表示客户端客户端可处理的媒体类型，当服务器收到`Accept`字段后，会通过`Content-Type`将实体的真实类型返告诉客户端。
+`Accept`字段表示客户端可处理的媒体类型，当服务器收到`Accept`字段后，会通过`Content-Type`将实体的真实类型返告诉客户端。
 
 `Accept*`类型的参数可以用“,”做分隔符列出多个类型，通过`q=value`来设置参数的权重，让服务器有更多的选择余地，例如下面的这个头：
 
