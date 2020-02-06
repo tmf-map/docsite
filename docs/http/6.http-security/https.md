@@ -13,17 +13,17 @@ import Img from '../../../src/components/Img';
 
 所谓的 HTTPS 其实是“HTTP over SSL”或“HTTP over TLS”，它是 HTTP 与 SSL/TSL 的结合使用而已。在 HTTPS 中默认端口号是**443**。
 
-<Img width="600" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200202213917.png" />
+<Img width="500" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200202213917.png" />
 
 如上图所示，原先是应用层将数据直接给到 TCP 进行传输，现在改成应用层将数据给到 TLS/SSL，将数据加密后，再给到 TCP 进行传输。将数据加密后再传输，而不是任由数据在复杂而又充满危险的网络上明文裸奔，在很大程度上确保了数据的安全性。
 
 ## HTTPS 建立连接的过程
 
-虽然目前应用最广泛的依旧是 TLS1.2 版本，但是去年 TLS1.3 版本已经发布正式版，所以此处将以 TLS1.3 版本的握手过程进行讲解。
+虽然目前应用最广泛的依旧是 TLS1.2 版本，但是在 2018 年 8 月份 IETF 已经正式发布了 TLS 1.3 版本的正式版，所以此处将以 TLS1.3 版本的握手过程进行讲解。
 
 在 HTTP 协议里，建立 TCP 连接后，浏览器会立即发送请求报文。但现在是 HTTPS 协议，它需要再用另外一个“握手”过程，在 TCP 上建立安全连接，之后才是收发 HTTP 报文。
 
-<Img width="600" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200106170015.png" />
+<Img width="500" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200106170015.png" />
 
 如上图所示，在 HTTPS 中建立连接需要以下步骤：
 
@@ -43,7 +43,7 @@ import Img from '../../../src/components/Img';
 
 **密钥生成示意图：**
 
-<Img width="600" legend="图：TLS 1.3密钥生成示意图" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200106181948.png" />
+<Img width="500" legend="图：TLS 1.3密钥生成示意图" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200106181948.png" />
 
 通过上面的示意图可以看出，客户端与服务器通过共享`Server Params`（服务器参数）和`Client Params`(客户端参数)生成`Pre-Master`,然后结合 Client Random（客户端随机数）和 Server Random（服务器随机数）生成对称加密的密钥`master secret`。
 
@@ -59,7 +59,7 @@ master_secret = PRF(pre_master_secret, "master secret", ClientHello.random + Ser
 
 ### HTTP 和 HTTPS 的差异
 
-<Img width="600" legend="图：报文传输对比图" origin ="https://zhuanlan.zhihu.com/p/101058747" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200203145458.png" />
+<Img width="500" legend="图：报文传输对比图" origin ="https://zhuanlan.zhihu.com/p/101058747" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200203145458.png" />
 
 - 数据传输：由上图所示，HTTP 使用明文传输；HTTPS 使用加密格式进行传输。
 - 端口：HTTP 默认端口是 80；HTTPS 默认端口是 443。

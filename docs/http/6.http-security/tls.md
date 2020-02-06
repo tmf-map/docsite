@@ -15,7 +15,7 @@ import Img from '../../../src/components/Img';
 
 ## SSL/TLS 加密
 
-SSL/TLS 数据的加密通过**对称加密和非对称加密**来实现。其利用非对称加密**实现身份认证和密钥协商**，对称加密算法**使用协商后的密钥对数据加密**。
+SSL/TLS 数据的加密通过**对称加密和非对称加密**来实现。其利用非对称加密算法（RSA/ECDHE）**实现身份认证和密钥协商**，对称加密算法**[使用协商后的密钥对数据加密](/docs/http/6.http-security/https#https-建立连接的过程)**。
 
 <Img w="500" legend="图：TLS混合加密" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200202175232.png" />
 
@@ -29,7 +29,7 @@ RSA 算法基于“整数分解”的数学难题，使用两个超大素数的�
 
 ### SSL/TLS 数据传输
 
-与 HTTP 中数据传输不同，HTTPS 在非对称加密阶段需要完成 SSL/TLS 握手，确认对称加密数据的密钥`Pre-Master`。在非对称加密阶段使用不同的加密算法 SSL/TLS 的握手方式也会有所不同。此处简要介绍一下 RSA 的握手过程，ECDHE 的握手过程可以看下一节内容。
+与 HTTP 中数据传输不同，HTTPS 在非对称加密阶段需要完成 SSL/TLS 握手，确认对称加密数据的密钥`master secret`。在非对称加密阶段使用不同的加密算法 SSL/TLS 的握手方式也会有所不同。此处简要介绍一下 RSA 的握手过程，ECDHE 的握手过程可以看下一节内容。
 
 <Img w="500" legend="图：RSA握手过程" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200203151454.png" origin= "https://www.tutorialsteacher.com/https/how-ssl-works"/>
 
