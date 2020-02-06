@@ -88,7 +88,7 @@ let obj: object = {x: 1, y: 2}; // (I)
 obj.x = 3; // Error, Property 'x' does not exist on type 'object'.
 ```
 
-As we haven't define the specific types for obj, but why are there no errors in line `(I)`? It's so weird. At last, we can correct it by redefine the type like below:
+As we haven't define the specific types for obj, but why are there no errors in line `(I)`? It's so weird. At last, we can correct it by redefining the type like below:
 
 ```ts
 let obj: {x: number; y: number} = {x: 1, y: 2};
@@ -99,7 +99,7 @@ But it's weird when we use it as following:
 
 ```ts
 let obj: object = {x: 1, y: 2};
-obj['x'] = 2; //OK
+obj['x'] = 2; // OK if `--noImplicitAny` is not given
 ```
 
 ### object vs. Object vs. {}
@@ -131,25 +131,18 @@ interface Object {
   /** Returns the primitive value of the specified object. */
   valueOf(): Object;
 
-  /**
-   * Determines whether an object has a property with the specified name.
-   * @param v A property name.
-   */
-  hasOwnProperty(v: string): boolean;
-
-  /**
-   * Determines whether an object exists in another object's prototype chain.
-   * @param v Another object whose prototype chain is to be checked.
-   */
-  isPrototypeOf(v: Object): boolean;
-
-  /**
-   * Determines whether a specified property is enumerable.
-   * @param v A property name.
-   */
-  propertyIsEnumerable(v: string): boolean;
+  // ...
 }
 ```
+
+However, variables of type Object only allow you to assign **any value** (if `--strictNullChecks` is not given) to them. You can’t call arbitrary methods on them, even ones that actually exist:
+
+```ts
+let prettySure: Object = 4; // OK
+prettySure.toFixed(); // Error: Property 'toFixed' doesn't exist on type 'Object'.
+```
+
+<Hint type="good">Avoid using `Object` in favor of the non-primitive object type, please use the non-primitive `object` type ([added in TypeScript 2.2](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-2.html#object-type)).</Hint>
 
 #### The Empty Type {}
 
@@ -168,6 +161,8 @@ let obj = {}; // Type {}
 
 obj.toString(); // "[object Object]"
 ```
+
+Similar to `Object`, you can also assign **any value** (if `--strictNullChecks` is not given) to `{}` type, but please **don't do that** which will cause some potential issues.
 
 ### Array
 
@@ -213,11 +208,11 @@ let add2 = (x: number, y: number): number => x + y; // OK
 
 // OK
 function add3(x: number, y: number) {
-  return (x = y);
+  return x + y;
 }
 ```
 
-For `(I)`, TS can infer the response type automatically:
+For `(I)`, TS can infer the returned type automatically:
 
 <Img w="380" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/FXqca5.png' alt='FXqca5'/>
 
@@ -266,7 +261,7 @@ x = {};
 x = () => {};
 ```
 
-Similarly, you can create an array of type any[] if you are not sure about the types of values that can contain this array.
+Similarly, you can create an array of type `any[]` if you are not sure about the types of values that can contain this array.
 
 ```ts
 let arr = [123, 'abc'];
@@ -276,7 +271,7 @@ let arr: any[] = [123, 'abc'];
 
 With the intent of compatibility of JS, `any` may be useful in some scenarios, but we should not count on it.
 
-<Hint type="good">We should use `any` as little as possible.</Hint>
+<Hint type="good">We should use `any` as less as possible.</Hint>
 
 ### never
 
@@ -356,5 +351,6 @@ let tuple: [number, string] = aa; // OK
 
 1. [TypeScript Data Type - Tutorials Teacher](https://www.tutorialsteacher.com/typescript/typescript-void)
 2. [TypeScript official docs: Basic Types](http://www.typescriptlang.org/docs/handbook/basic-types.html)
-3. [TypeScript in action, By Liang Xiao](https://time.geekbang.org/course/detail/211-108545)
-4. [The object Type in TypeScript, By Marius Schulz](https://mariusschulz.com/blog/the-object-type-in-typescript)
+3. [TypeScript official docs: Do's and Don'ts](https://www.typescriptlang.org/docs/handbook/declaration-files/do-s-and-don-ts.html)
+4. [TypeScript in action, By Liang Xiao](https://time.geekbang.org/course/detail/211-108545)
+5. [The object Type in TypeScript, By Marius Schulz](https://mariusschulz.com/blog/the-object-type-in-typescript)
