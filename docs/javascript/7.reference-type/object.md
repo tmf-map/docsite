@@ -202,6 +202,51 @@ console.log(newArr); // ["Marina" , "Magdy" , "Shafiq" , "FrontEnd" , 24 ] ;
 
 Spread 就像是把一个值解压成多个值，好像大喊一声，“原地解散！”。
 
+## Destructuring Assignment
+
+Intuitive and flexible destructuring of Objects into individual variables during assignment.
+
+### Shallow Matching
+
+ES6:
+
+```js
+let {a, b} = obj;
+```
+
+ES5:
+
+```js
+var a = obj.a;
+var b = obj.b;
+```
+
+<Hint type="tip">You can also use it as a param in function, but please wrap the brace with `()`.</Hint>
+
+```js
+const getA = ({a}) => {};
+```
+
+### Deep Matching
+
+ES6:
+
+```js
+let {
+  a: {aa: aa1},
+  b: b1
+} = obj;
+```
+
+ES5:
+
+```js
+var aa1 = obj.a.aa;
+var b1 = obj.b;
+```
+
+<Hint type="tip">Note that the left part is the object's key, the right is new variable.</Hint>
+
 ## 变量作为对象的 key
 
 ## 对象中的 this
@@ -335,3 +380,4 @@ Reflect.ownKeys(obj); // ["1", "2", "3", "m", "b", "a", Symbol(b), Symbol(a)]
 3. [ES6: What is the difference between Rest and Spread? By Marina Shafiq](https://medium.com/javascript-in-plain-english/es6-spread-parameter-vs-rest-operator-5e3c924c4e1f)
 4. [【译】JS 解构的五种有趣用法](https://juejin.im/post/5d673044f265da03d60f12f7)
 5. [理解 Object.defineProperty 的作用，作者：戎马](https://segmentfault.com/a/1190000007434923)
+6. [ECMAScript 6 — New Features: Destructuring Assignment, By Dr. Ralf S. Engelschall](http://es6-features.org/#ObjectMatchingDeepMatching)
