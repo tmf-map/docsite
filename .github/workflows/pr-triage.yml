@@ -15,11 +15,3 @@ jobs:
       - uses: actions/labeler@v2
         with:
           repo-token: "${{ secrets.GITHUB_TOKEN }}"
-  add-projects:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: alex-page/github-project-automation-plus@v0.1.1
-        with:
-          project: Collaboration Board
-          column: Code review
-          repo-token: "${{ secrets.BOT_TOKEN }}"
