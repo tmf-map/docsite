@@ -5,7 +5,13 @@ sidebar_label: Enum
 
 import Hint from '../../../src/components/Hint';
 
-枚举（Enum）类型经常被用于取值在一定范围内的场景，比如一周只能有七天，颜色限定为红绿蓝等。枚举类型变量使用`enum`字段来定义。
+枚举（Enum）类型经常被用于取值在一定范围内的场景，比如一周只能有七天，[角色权限设计](https://www.cnblogs.com/bjxingch/articles/6561236.html)等。枚举类型变量使用`enum`字段来定义，枚举成员的值可以是数字或者字符串，并且枚举成员是只读的。
+
+枚举按照类型划分，主要分为以下三种：
+
+- [数字枚举（Numeric enum）](/docs/typescript/1.types/enum#数字枚举)
+- [字符串枚举（String enum）](/docs/typescript/1.types/enum#字符串枚举)
+- [异构枚举（Heterogeneous enum）](/docs/typescript/1.types/enum#异构枚举)
 
 ## 数字枚举
 
@@ -114,7 +120,7 @@ var Days;
 console.log(Days); // {0: "Sun", 1: "Mon", 2: "Tue", 3: "Wed", 4: "Thu", 5: "Fri", 6: "Sat", Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6}
 ```
 
-由上面编译的结果可知，对于枚举变量`Days`是由`JS`中的对象实现的。`Days`的枚举成员和对应的值分别作为 Days 的`key: value`，然后又作为`value: key`存到`Days`对象中，实现了反向映射功能。
+由上面编译的结果可知，对于枚举中的`Days`是由`JS`中的对象实现的。`Days`的枚举成员和对应的值分别作为 Days 的`key: value`，然后又作为`value: key`存到`Days`对象中，实现了反向映射功能。
 
 ## 字符串枚举
 
@@ -194,7 +200,7 @@ enum Color {
 } //error TS1061: Enum member must have initializer.
 ```
 
-<Hint type="tip">枚举变量中，计算所得项后面不可以定义未赋值的项</Hint>
+<Hint type="tip">在枚举中，计算所得项后面不可以定义未赋值的项</Hint>
 
 ## 常量枚举
 
@@ -235,8 +241,54 @@ const enum Color {
 
 <Hint type="tip">如果枚举成员都是常数项时，可以考虑使用`const enum`来定义枚举变量。</Hint>
 
+## 定义变量
+
+在`TS`中，枚举和枚举成员可以作为一种类型存在，即**已经定义好的枚举变量和枚举成员可以作为变量类型来定义变量**。例如在函数中，**枚举类型变量可以作为函数的返回类型**，如下例所示：
+
+```ts
+enum PrintMedia {
+  Newspaper = 1,
+  Newsletter,
+  Magazine,
+  Book
+}
+
+function getMedia(mediaName: string): PrintMedia {
+  if (mediaName === 'Forbes' || mediaName === 'Outlook') {
+    return PrintMedia.Magazine;
+  }
+}
+
+let mediaType: PrintMedia = getMedia('Forbes'); // returns Magazine
+```
+
+在上面的例子中，我们声明了一个枚举`PrintMedia`，然后我们定义了一个参数为`string`类型的函数`getMedia`，当函数中的`if`语句判断为真时，函数调用后的返回值为枚举类型`PrintMedia`。
+
+使用枚举定义变量时，**不同的枚举定义的变量是不可以比较的**，例如：
+
+```ts
+enum E {
+  a,
+  b
+}
+enum F {
+  a,
+  b
+}
+
+let e: E = 3;
+let f: F = 3;
+
+console.log(e === f); // This condition will always return 'false' since the types 'E' and 'F' have no overlap.
+```
+
+上例中，虽然变量`E`和变量`F`的成员相同，但是用两者定义变量时，可以看作两种不同的类型。当两者之间的比较时，编译器会报错。
+
+此外即使同一个枚举中不同枚举成员定义的变量也是不可以比较的。
+
 ## 参考链接
 
 1. [TypeScipt Document](https://www.tslang.cn/docs/handbook/enums.html)
 2. [TypeScript 入门教程，by xcatliu](https://ts.xcatliu.com/advanced/enum#wai-bu-mei-ju)
-3. [TypeScript in action, By Liang Xiao](https://time.geekbang.org/course/detail/211-108549)
+3. [TypeScript in action, by Liang Xiao](https://time.geekbang.org/course/detail/211-108549)
+4. [TypeScript Data Type - Enum, by Tutorials Teacher](https://www.tutorialsteacher.com/typescript/typescript-enum)
