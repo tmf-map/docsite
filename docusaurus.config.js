@@ -149,7 +149,7 @@ module.exports = {
       {
         docs: {
           sidebarPath: require.resolve('./sidebars/index.js'),
-          editUrl: `https://github.com/${githubOrg}/${githubRepo}/edit/master/docs/`,
+          editUrl: `https://github.com/${githubOrg}/${githubRepo}/edit/master/`,
           // Equivalent to `enableUpdateBy`.
           showLastUpdateAuthor: true,
           // Equivalent to `enableUpdateTime`.
