@@ -18,6 +18,31 @@ let el1 = document.querySelector('.myclass');
 let el2 = document.querySelector('#myParent > [ng-click]');
 ```
 
+Since HTML5 it’s been valid to start an HTML element ID with a number. For example `<div id="10">`. From an HTML perspective, that’s fine.
+
+However that doesn’t mean that CSS is happy to have an ID selector starting with a number. For example, this will not work:
+
+```css
+#10 {
+  color: red;
+} /* does not work */
+```
+
+That’s because even though HTML5 is quite happy for an ID to start with a number, CSS is not. CSS simply **doesn’t allow selectors to begin with a number**. See more at [W3C Specification](https://www.w3.org/TR/CSS21/syndata.html#characters).
+
+<Hint type="tip">Similarly, the `querySelector` doesn’t allow selectors to begin with a number.</Hint>
+
+```js
+document.querySelectorAll('#10');
+// Uncaught DOMException: Failed to execute 'querySelectorAll' on 'Document': '#10' is not a valid selector.
+```
+
+However, you can easily work around this by using an attribute selector:
+
+```js
+document.querySelector('[id="10"]');
+```
+
 ### querySelectorAll()
 
 `document.querySelectorAll` 方法与 `querySelector` 用法类似，区别是返回一个 `NodeList` 对象，包含所有匹配给定选择器的节点。
@@ -548,3 +573,7 @@ div.outerHTML = '<p>test</p>';
 ```
 
 上面代码中，div 元素没有父节点，设置 `outerHTML` 属性会报错。
+
+## References
+
+1. [Selecting HTML5 id and class names that start with a number in CSS, By Ben Frain](https://benfrain.com/when-and-where-you-can-use-numbers-in-id-and-class-names/)
