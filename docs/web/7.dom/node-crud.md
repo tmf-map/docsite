@@ -24,8 +24,8 @@ However that doesn’t mean that CSS is happy to have an ID selector starting wi
 
 ```css
 #10 {
-  color: red;
-} /* does not work */
+  color: red; /* does not work */
+}
 ```
 
 That’s because even though HTML5 is quite happy for an ID to start with a number, CSS is not. CSS simply **doesn’t allow selectors to begin with a number**. See more at [W3C Specification](https://www.w3.org/TR/CSS21/syndata.html#characters).
