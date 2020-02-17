@@ -11,7 +11,7 @@ import Hint from '../../../src/components/Hint';
 
 ### querySelector()
 
-`document.querySelector` 方法接受一个 CSS 选择器作为参数，返回匹配该选择器的元素节点。如果有多个节点满足匹配条件，则返回第一个匹配的节点。如果没有发现匹配的节点，则返回`null`。
+`document.querySelector` 方法接受一个 CSS 选择器作为参数，返回匹配该选择器的元素节点。如果有多个节点满足匹配条件，则返回**第一个匹配**的节点。如果没有发现匹配的节点，则返回`null`。
 
 ```js
 let el1 = document.querySelector('.myclass');
