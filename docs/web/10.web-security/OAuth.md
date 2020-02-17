@@ -21,21 +21,21 @@ import Hint from '../../../src/components/Hint';
 
 1. `Resource Owner`：资源所有者，本文中又称"用户"（user）。
 2. `Client`：客户端，既“第三方应用”。
-3. `Authorization server`：认证服务器，即服务提供商专门用来处理认证的服务器。
-4. `Resource server`：资源服务器，即服务提供商存放用户生成的资源的服务器，它与认证服务器，可以是同一台服务。
+3. `Authorization server`：授权服务器，即服务提供商专门用来处理授权的服务器。
+4. `Resource server`：资源服务器，即服务提供商存放用户生成的资源的服务器，它与授权服务器，可以是同一台服务。
 
 `OAuth`的作用就是让"客户端"安全可控地获取"用户"的授权，从“资源服务器”中获取用户的基本信息。
 
 ### OAuth 运行流程
 
-<Img w="400" legend="OAuth认证流程" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200216165331.png" />
+<Img w="400" legend="OAuth授权流程" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200216165331.png" />
 
 如上图所示：
 
 1. 客户端向用户请求权限。
 2. 用户点击**授权**后，客户端收到授权许可。
-3. 客户端使用获得的授权向认证服务器获取令牌。
-4. 认证服务器将令牌发送给客户端。
+3. 客户端使用上一步获得的授权向授权服务器获取令牌。
+4. 授权服务器将令牌发送给客户端。
 5. 客户端获得令牌后，使用令牌向资源服务器获取用户资源。
 6. 资源服务器返回受保护的资源。
 
@@ -132,7 +132,7 @@ https://github.com/login/oauth/authorize?
 
 **授权码模式**获取令牌的流程如下：
 
-<Img w="500" legend="授权码模式流程" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200216200312.png" />
+<Img w="500" legend="授权码模式流程" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/微信截图_20200216194354.png" />
 
 上文介绍的`GitHub`便是采用了**授权码模式**，**第三方应用`leetcode`先申请一个授权码`code`，然后再用该授权码获取令牌**。
 
@@ -161,13 +161,13 @@ https://github.com/login/oauth/authorize?
 
 其中`state`参数是个随机数，每次刷新页面`state`参数都会改变，`state`会保存在用户本地。
 
-当用户点击授权按钮后，页面会重定向到用户权限认证的`redirect_uri`(leetcode)页面，权限认证服务器(Github)返回的`code`和`state`会作为查询参数返回，如下所示：
+当用户点击授权按钮后，页面会重定向到用户权限认证的`redirect_uri`(leetcode)页面，授权服务器(Github)返回的`code`和`state`会作为查询参数返回，如下所示：
 
 ```
 https://leetcode.com/accounts/github/login/callback/?code=9275236b97affb3c6cc&state=dIqOqdw4WChR
 ```
 
-因为两次`state`都是`Github`给出，此时通过对比用户本地保存的`state`和权限认证服务器返回的`state`，来判断是否是异常请求。这样就可以避免`CSRF`攻击。
+因为两次`state`都是`Github`给出，此时通过对比用户本地保存的`state`和授权服务器返回的`state`，来判断是否是异常请求。这样就可以避免`CSRF`攻击。
 
 ## 参考链接
 
