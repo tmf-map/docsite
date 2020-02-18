@@ -109,7 +109,7 @@ https://github.com/login/oauth/authorize?
 - `access_token`：表示访问令牌，必选项。
 - `token_type`：表示令牌类型，不区分大小写，必选项，可以是 bearer 类型或 mac 类型。
 - `expires_in`：表示过期时间，单位为秒。如果省略该参数，必须其他方式设置过期时间。
-- `refresh_token`：表示更新令牌，用来获取下一次的访问令牌，可选项。
+- `refresh_token`：表示更新令牌，用来更新`access_token`，过期时间长于`access_token`，可选项。
 
 生成 `access_token` 的时候也会生成一个 `refresh_token`，`refresh_token` 过期时间长于`access_token`。当令牌过期时，客户端不用再重复上面的步骤，可以调用对应的`API`用 `refresh_token`更新 `access_token` 。
 
@@ -141,6 +141,22 @@ https://github.com/login/oauth/authorize?
 如果对其它三种授权模式感兴趣，可以通过参考连接中的`1`和`2`来学习。
 
 另外，阮一峰在他的博客--[GitHub OAuth 第三方登录示例教程](http://www.ruanyifeng.com/blog/2019/04/github-oauth.html)中对授权码模式进行了代码实践，建议实践一下。
+
+## refresh_token
+
+`refresh_token`即“更新令牌”，当授权服务器在返回`access_token`的同时会将`refresh_token`一起返回，并且`refresh_token`的过期时间晚于`access_token`。当用户使用的`access_token`过期时，可以使用`refresh_token`来重新获取令牌。
+
+### 为什么使用 refresh_token
+
+`access_token`是用户访问服务器资源进行身份认证的凭证，一般设置的过期时间都比较短。较短的过期时间主要是从安全方面考虑，一方面，较短的生命周期可以限制攻击者盗取`access_token`，另一方面，较短的生命周期可以在`access_token`改变时，及时的更新`access_token`。
+
+当`access_token`过期需要更新时，只需要向授权服务器发送一个携带`refresh_token`的`Post`请求就可以实现`access_token`的更新（`web`应用的更新还需要携带`client secret`）。
+
+### refresh_token 存储
+
+由于`refresh_token`设置的过期时间较长，所以存储`refresh_token`不被泄露至关重要。`refresh_token`应该和`client secret`一样保存在应用后端，只有在更新`access_token`的时候才需要离开后端。
+
+此外，将`token`和`refresh_token`存储在客户端，服务器就不用专门的维护令牌状态，这样无疑会很好的减轻服务器的压力。
 
 ## OAuth 安全
 
