@@ -173,8 +173,11 @@ Referer: https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status/412
 **Authorization 的格式：**
 
 ```
+// Authorization: <type> <credentials>
 Authorization: Basic dWVub3Nlbj pwYXNzd29yZA==
 ```
+
+其中`type`代表[认证类型](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Authentication_schemes)，`credentials`为认证凭证，在`OAuth`和`JWT`中代表对应的`token`。
 
 ## Proxy-Authorization
 

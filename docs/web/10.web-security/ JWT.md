@@ -14,6 +14,22 @@ import Img from '../../../src/components/Img';
 header.payload.signature;
 ```
 
+## session 认证的问题
+
+<Img w="430" legend="session认证模型" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200218233629.png" />
+
+如上图，传统使用`seesion`进行身份认证的流程如下：
+
+1. 客户端向服务器发送用户名和密码。
+2. 服务器验证通过后，在当前对话（`session`）里面保存相关数据，比如用户名、过期时间等。
+3. 服务器通过传送`Set-Cookie`将`session_id`写入用户的 `Cookie`。
+4. 用户随后的每一次请求，都会通过 `Cookie`将 `session_id`传回服务器。
+5. 服务器收到 `session_id`，通过与数据库保存的数据进行匹配，由此认证用户的身份。
+
+通过上述流程可以看出，服务器需要对用户的`session`信息进行存储，并通过匹配`session_id`来辨别用户身份，因此，**服务器需要维护大量的`session`信息**。而对于服务器集群来说，由于**不同的系统之间`session`是不共享**的，因此需要将所有系统的`session`做抽象处理，大大的加大了开发难度。
+
+除此之外，我们知道**`cookie`是不能够跨域的**，也就是上面的模型对于不同域名的应用并不适用。
+
 ## 为什么使用 JWT
 
 <Img w="430" legend="JWT-Token认证流程" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/qh2bq2.png" />
@@ -31,7 +47,11 @@ header.payload.signature;
 3. 用户通过携带`Token`的`API`请求访问应用服务器。
 4. 应用服务器通过 `JWT` 来判断用户身份，通过验证后将数据返回给用户。
 
-可以看到，**这是一套无状态的验证机制，用户访问时通过`Token`进行身份验证，服务器不用为了存储用户状态来维护`session`，服务器可以做到更多的解耦和扩展**。此外，`JWT` 可以保存用户的数据，减少数据库访问。
+`JWT`有如下几个优点：
+
+- **`JWT`一套无状态的验证机制，用户访问时通过`Token`进行身份验证，服务器不用为了存储用户状态来维护`session`，服务器可以做到更多的解耦和扩展**。
+- `JWT`中的`Token`可以通过`URL`和请求头字段`Authorization`进行传送，可以避免跨域问题。
+- `JWT` 可以通过`payload`保存用户的数据，减少数据库访问。
 
 ## JWT 创建 Token
 
@@ -96,13 +116,13 @@ Authorization: Basic <token>
 
 ## 验证 JWT token
 
-通过前面 4 步生成了 JWT token，认证服务器把它发送给用户，用户带着它访问应用服务器，应用服务器怎么验证 JWT token ？
-
-因为应用服务器知道验证服务器哈希计算 `signature` 的 `secret`，所以应用服务器可以用这个 `secret` 去重新计算 `signature` （用户发送过来的 `token` 里有 `header` 和 `payload`），并与用户发送过来的 `token` 中 `signature` 比较，最终验证是否合法。
+因为应用服务器知道验证服务器哈希计算 `signature` 的 `secret`，所以应用服务器可以用 `secret` 去重新计算 `signature` （用户发送过来的 `token` 里有 `header` 和 `payload`），并与用户发送过来的 `token` 中 `signature` 比较，最终验证是否合法。
 
 ## 安全性
 
-`JWT` 本身的内容只是 `Base64URL` 编码了，跟明文几乎没差别。`JWT` 并不比 `cookie` 更安全，所以最好配合使用 `https`。
+我们在前面提到的`header` 和 `payload`并没有进行加密，只是经过了`base64URL`的编码，所以“黑客”不需要`secret`就能将`header`和`payload`解码出来。此外，虽然在生成 `signature`时使用了哈希算法`HMACSHA256`和`secret`进行了数据签名，但这并不是数据加密。当“黑客”获取到`header`中的哈希算法后，依旧可以暴力的破解出用户的`secret`，从而实现篡改`Token`。
+
+因此，为了保证数据的安全性，`JWT`一般需要结合`https`一起使用。
 
 ## 参考连接
 
