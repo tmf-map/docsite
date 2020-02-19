@@ -29,37 +29,30 @@ module.exports = {
     'web/5.cross-document/postMassage'
   ],
   '6. 前端路由': ['web/6.rooter/hash-rooter', 'web/6.rooter/history-rooter'],
-  '7. DOM': [
-    'web/7.dom/node',
-    'web/7.dom/node-crud',
-    'web/7.dom/event-system',
-    'web/7.dom/event-object',
-    'web/7.dom/event-type'
+  '7. 动效 & 绘图': [
+    'web/7.graphics-effects/js-animation',
+    'web/7.graphics-effects/canvas',
+    'web/7.graphics-effects/webgl'
   ],
-  '8. 动效 & 绘图': [
-    'web/8.graphics-effects/js-animation',
-    'web/8.graphics-effects/canvas',
-    'web/8.graphics-effects/webgl'
+  '8. 离线 & 存储': [
+    'web/8.offline-storage/webstorage',
+    'web/8.offline-storage/IndexedDB',
+    'web/8.offline-storage/web-SQL',
+    'web/8.offline-storage/service-workers',
+    'web/8.offline-storage/summary'
   ],
-  '9. 离线 & 存储': [
-    'web/9.offline-storage/webstorage',
-    'web/9.offline-storage/IndexedDB',
-    'web/9.offline-storage/web-SQL',
-    'web/9.offline-storage/service-workers',
-    'web/9.offline-storage/summary'
+  '9. Web 安全机制': [
+    'web/9.web-security/cookie',
+    'web/9.web-security/session',
+    'web/9.web-security/OAuth',
+    'web/9.web-security/JWT',
+    'web/9.web-security/CSRF',
+    'web/9.web-security/XSS'
   ],
-  '10. Web 安全机制': [
-    'web/10.web-security/cookie',
-    'web/10.web-security/session',
-    'web/10.web-security/OAuth',
-    'web/10.web-security/JWT',
-    'web/10.web-security/CSRF',
-    'web/10.web-security/XSS'
-  ],
-  '11. Web 性能优化': [
-    'web/11.web-optimize/pic-optimize',
-    'web/11.web-optimize/lazy-loading',
-    'web/11.web-optimize/http-cache',
-    'web/11.web-optimize/webworker'
+  '10. Web 性能优化': [
+    'web/10.web-optimize/pic-optimize',
+    'web/10.web-optimize/lazy-loading',
+    'web/10.web-optimize/http-cache',
+    'web/10.web-optimize/webworker'
   ]
 };
