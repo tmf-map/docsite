@@ -128,3 +128,5 @@ Authorization: Basic <token>
 
 1. [JSON Web Token 入门教程，by 阮一峰](http://www.ruanyifeng.com/blog/2018/07/json_web_token-tutorial.html)
 2. [Token Authentication: The Secret to Scalable User Management，by Lindsay Brunner](https://stormpath.com/blog/token-authentication-scalable-user-mgmt)
+3. [JWT HANDBOOK, by Sebastián E. Peyrott](https://www.fomasgroup.com/Portals/0/MgmNewsDocuments/jwt-handbook.pdf)
+4. [使用 jwt 完成 sso 单点登录，by 秦梁的小站](https://bestqliang.com/2018/06/02/%E4%BD%BF%E7%94%A8jwt%E5%AE%8C%E6%88%90sso%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95/)
