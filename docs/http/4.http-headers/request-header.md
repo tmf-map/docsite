@@ -174,10 +174,16 @@ Referer: https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status/412
 
 ```
 // Authorization: <type> <credentials>
-Authorization: Basic dWVub3Nlbj pwYXNzd29yZA==
+Authorization: Bearer OiJKV1QiLCJhbGciOiJIUzI1NiJ9
 ```
 
-其中`type`代表[认证类型](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Authentication_schemes)，`credentials`为认证凭证，在`OAuth`和`JWT`中代表对应的`token`。
+其中`type`代表[认证类型](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Authentication_schemes)，`credentials`为认证凭证，在`OAuth 2.0`和`JWT`中代表对应的`token`。
+
+客户端会通过在请求头中添加`Authorization`字段来进行身份验证，如下图所示：
+
+<Img w="600" legend="图：Authorization字段" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200220165032.png" />
+
+上图使用[postwoman](https://postwoman.io/)工具，通过设置接口的`OAuth 2.0`的认证方法和`token`值，实现了用户的身份认证。
 
 ## Proxy-Authorization
 

@@ -109,7 +109,7 @@ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiJiMDhmODZhZi0zNWRhLTQ4ZjItOGZ
 当客户端访问应用服务器时，每次请求都需要带上`Token`。你可以把它放在 `Cookie` 里面自动发送，但是这样不能跨域，所以更好的做法是放在 `HTTP` 请求头的[Authorization](/docs/http/4.http-headers/request-header#authorization)字段里面，如下所示：
 
 ```
-Authorization: Basic <token>
+Authorization: Bearer <token>
 ```
 
 在跨域时，除了上述用法外，还可以把`Token`就放在 `POST` 请求的数据体里。
@@ -120,7 +120,9 @@ Authorization: Basic <token>
 
 ## 安全性
 
-我们在前面提到的`header` 和 `payload`并没有进行加密，只是经过了`base64URL`的编码，所以“黑客”不需要`secret`就能将`header`和`payload`解码出来。此外，虽然在生成 `signature`时使用了哈希算法`HMACSHA256`和`secret`进行了数据签名，但这并不是数据加密。当“黑客”获取到`header`中的哈希算法后，依旧可以暴力的破解出用户的`secret`，从而实现篡改`Token`。
+我们在前面提到的`header` 和 `payload`并没有进行加密，只是经过了`base64URL`的编码，所以“黑客”不需要`secret`就能将`header`和`payload`解码出来。此外，虽然在生成 `signature`时使用了哈希算法`HMACSHA256`和`secret`进行了数据签名。但当“黑客”获取到`header`中的哈希算法后，依旧可以暴力的破解出用户的`secret`（`secret`强度较低时），从而实现篡改`Token`。
+
+除了暴力破解外，“黑客”可以通过修改`header`中`alg`的参数值为`none`，对于那些支持`alg`字段为`none`的服务器，此时后端将不执行签名验证。除此之外还有很多其他的风险案例，如果感兴趣可以参考这篇文章：[JWT 介绍及其安全性分析](https://www.freebuf.com/vuls/219056.html)
 
 因此，为了保证数据的安全性，`JWT`一般需要结合`https`一起使用。
 
@@ -130,3 +132,4 @@ Authorization: Basic <token>
 2. [Token Authentication: The Secret to Scalable User Management，by Lindsay Brunner](https://stormpath.com/blog/token-authentication-scalable-user-mgmt)
 3. [JWT HANDBOOK, by Sebastián E. Peyrott](https://www.fomasgroup.com/Portals/0/MgmNewsDocuments/jwt-handbook.pdf)
 4. [使用 jwt 完成 sso 单点登录，by 秦梁的小站](https://bestqliang.com/2018/06/02/%E4%BD%BF%E7%94%A8jwt%E5%AE%8C%E6%88%90sso%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95/)
+5. [JWT 介绍及其安全性分析，by 不瘦二十斤不改名](https://www.freebuf.com/vuls/219056.html)
