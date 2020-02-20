@@ -5,17 +5,41 @@ sidebar_label: 说明
 
 ## 注解说明
 
-:::note You might read this, you might not. :::
+:::note
 
-:::important You should read this. :::
+You might read this, you might not.
 
-:::tip This is a `good practice`, you should obey it. :::
+:::
 
-:::caution You should pay more attention to this otherwise error `may` occur. :::
+:::important
 
-:::warning You should pay close attention to this otherwise error `must` occur. :::
+You should read this.
 
-:::kk test the bug of admonitions whether has been fixed. :::
+:::
+
+:::tip
+
+This is a `good practice`, you should obey it.
+
+:::
+
+:::caution
+
+You should pay more attention to this otherwise error `may` occur.
+
+:::
+
+:::warning
+
+You should pay close attention to this otherwise error `must` occur.
+
+:::
+
+:::kk
+
+test the bug of admonitions whether has been fixed.
+
+:::
 
 import Hint from '../../../src/components/Hint';
 
