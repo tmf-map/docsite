@@ -5,6 +5,10 @@ sidebar_label: 说明
 
 ## 注解说明
 
+:::note You might read this, you might not. ::: :::important You should read this. ::: :::tip This is a `good practice`, you should obey it. ::: :::caution You should pay more attention to this otherwise error `may` occur. ::: :::warning You should pay close attention to this otherwise error `must` occur. :::
+
+:::kk test the bug of admonitions whether has been fixed. :::
+
 import Hint from '../../../src/components/Hint';
 
 <Hint type="tip">提示，补充说明</Hint>

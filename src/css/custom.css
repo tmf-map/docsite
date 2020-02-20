@@ -169,6 +169,7 @@ table tbody {
 .navbar + .main-wrapper > div > div:not(.row):not(.main):not(.hero--primary) {
   background-color: var(--my-board--background);
   width: 310px;
+  top: 0;
 }
 
 .menu .menu__link {
@@ -420,9 +421,13 @@ html[data-theme="dark"] .menu .menu__link.menu__link--active:not(.menu__link--su
 
 @media (width > 996px) {
   .navbar + .main-wrapper > div > div:not(.row) > div:not(.container) {
-    padding-top: 1.8rem;
+    padding-top: 1.3rem;
     padding-bottom: 2rem;
-    padding-left: 1.2rem;
+    padding-left: 0.7rem;
+    top: var(--ifm-navbar-height);
+  }
+  .navbar + .main-wrapper > div > div:not(.row) > div:not(.container) > div:first-child {
+    display: none !important;
   }
   .container .col:first-child > div {
     max-width: 45.6vw !important;
