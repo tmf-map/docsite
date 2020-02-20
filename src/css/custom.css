@@ -1,39 +1,7 @@
 @import './fonts.css';
-
-:root {
-  --ifm-color-primary-lightest: #d6f2ff;
-  --ifm-color-primary-lighter: #ade5ff;
-  --ifm-color-primary-light: #5ccbff;
-  --ifm-color-primary: rgb(0, 122, 255);
-  --ifm-color-primary-dark: #0085cc;
-  --ifm-color-primary-darker: #0065a3;
-  --ifm-color-primary-darkest: #00508a;
-
-  --ifm-color-emphasis-alpha-60: #5C6975;
-  --ifm-contents-border-color: rgba(191, 191, 191, 0.2);
-  --ifm-contents-link-color: rgb(116, 129, 141);
-  --ifm-code-background: rgba(191, 191, 191, 0.25);
-  --ifm-hero-background-color: #24292e;
-  --ifm-table-border-color: rgba(191, 191, 191, 0.3);
-  --ifm-table-stripe-background: rgba(185, 202, 218, 0.15);
-  --ifm-table-cell-padding: 0.7rem;
-  --ifm-menu-color-background-active: rgb(255, 255, 255);
-  --ifm-navbar-shadow: 0 3px 8px 0 rgba(116, 129, 141, 0.1);
-  --ifm-navbar-height: 4.375rem;
-  --ifm-navbar-padding-horizontal: 2rem;
-  --ifm-spacing-horizontal: 1.5rem;
-  /* --ifm-heading-font-weight: 500; */
-  --ifm-list-item-margin: 0.18rem;
-  --ifm-leading: 1rem;
-  --ifm-container-width: 1200px;
-  /* --ifm-font-family-base: Helvetica, Arial, sans-serif; */
-  /* --ifm-font-base-color: rgb(74, 74, 74); */
-
-  --my-board--background: rgba(185, 202, 218, 0.15);
-  --my-logo-font-family: 'Eurofighter Expanded';
-
-  -webkit-font-smoothing: antialiased;
-}
+@import './dark-mode.css';
+@import './variables.css';
+@import './media-queries.css';
 
 /* homepage banner */
 /* .hero.hero--primary {
@@ -289,7 +257,6 @@ article > header > h2.margin-bottom--sm {
 }
 
 footer.footer {
-  display: none;
   -webkit-font-smoothing: initial;
   padding-top: 2.5rem;
   padding-bottom: 1.5rem;
@@ -347,92 +314,4 @@ footer.footer {
   flex-grow: 1.5;
   margin-right: 6rem;
   flex-shrink: 0;
-}
-
-/* dark theme */
-
-html[data-theme="dark"] {
-  --ifm-color-primary: rgb(10, 132, 255);
-  --ifm-navbar-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
-  /* --ifm-navbar-background-color: #000; */
-  /* --ifm-background-color: #1d1f21; */
-}
-
-html[data-theme="dark"] .navbar .navbar__logo + strong {
-  color: rgb(255, 255, 255);
-}
-
-html[data-theme="dark"] .footer.footer--dark {
-  --ifm-footer-background-color: var(--ifm-navbar-background-color);
-}
-
-html[data-theme="dark"] blockquote {
-  color: var(--ifm-code-color);
-}
-
-html[data-theme="dark"] .markdown ul.tabs .tab-item {
-  color: rgba(255, 255, 255, 0.5);
-}
-
-html[data-theme="dark"] .markdown ul.tabs .tab-item--active {
-  color: rgb(255, 255, 255);
-}
-
-html[data-theme="dark"] .menu .menu__link:hover {
-  --ifm-menu-color-background-active: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(167, 167, 167, 0.1);
-}
-
-html[data-theme="dark"] .menu .menu__link.menu__link--active:not(.menu__link--sublist) {
-  --ifm-menu-color-background-active: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(167, 167, 167, 0.1);
-}
-
-html[data-theme="dark"] .menu .menu__link.menu__link--active:not(.menu__link--sublist):hover {
-  --ifm-menu-color-background-active: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(167, 167, 167, 0.2);
-}
-
-/* Mobile */
-@media (width <= 996px) {
-  :root {
-    --ifm-font-size-base: 14px;
-  }
-  html {
-    font-size: 14px;
-  }
-}
-
-/* MacBook Pro 13.3 */
-@media (996px < width <= 1440px) {
-  :root {
-    --ifm-font-size-base: 14px;
-  }
-  html {
-    font-size: 14px;
-  }
-  .navbar + .main-wrapper > div > div:not(.row):not(.hero):not(.main) {
-    width: 290px;
-  }
-  .footer.footer--dark .container .text--center {
-    font-size: 12px;
-  }
-}
-
-@media (width > 996px) {
-  .navbar + .main-wrapper > div > div:not(.row) > div:not(.container) {
-    padding-top: 1.3rem;
-    padding-bottom: 2rem;
-    padding-left: 0.7rem;
-    top: var(--ifm-navbar-height);
-  }
-  .navbar + .main-wrapper > div > div:not(.row) > div:not(.container) > div:first-child {
-    display: none !important;
-  }
-  .container .col:first-child > div {
-    max-width: 45.6vw !important;
-  }
-  footer.footer {
-    display: block;
-  }
 }

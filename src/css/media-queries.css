@@ -1,0 +1,46 @@
+/* Mobile */
+@media (width <= 996px) {
+  :root {
+    --ifm-font-size-base: 14px;
+  }
+  html {
+    font-size: 14px;
+  }
+  footer.footer {
+    display: none;
+  }
+}
+
+/* MacBook Pro 13.3 */
+@media (996px < width <= 1440px) {
+  :root {
+    --ifm-font-size-base: 14px;
+  }
+  html {
+    font-size: 14px;
+  }
+  .navbar + .main-wrapper > div > div:not(.row):not(.hero):not(.main) {
+    width: 290px;
+  }
+  .footer.footer--dark .container .text--center {
+    font-size: 12px;
+  }
+}
+
+@media (width > 996px) {
+  .navbar + .main-wrapper > div > div:not(.row) > div:not(.container) {
+    padding-top: 1.3rem;
+    padding-bottom: 2rem;
+    padding-left: 0.7rem;
+    top: var(--ifm-navbar-height);
+  }
+  .navbar + .main-wrapper > div > div:not(.row) > div:not(.container) > div:first-child {
+    display: none !important;
+  }
+  .container .col:first-child > div {
+    max-width: 45.6vw !important;
+  }
+  footer.footer {
+    display: block;
+  }
+}
