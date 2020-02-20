@@ -1,6 +1,6 @@
 module.exports = {
   前言: ['html/preface/overview', 'html/preface/note'],
-  "1. 标签": [
+  '1. 标签': [
     'html/1.tag/html-structure',
     'html/1.tag/head-info',
     'html/1.tag/section-divisions',
@@ -19,5 +19,5 @@ module.exports = {
     'html/2.dom/event-system',
     'html/2.dom/event-object',
     'html/2.dom/event-type'
-  ],
+  ]
 };
