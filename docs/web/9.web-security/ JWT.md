@@ -4,36 +4,60 @@ title: JWT
 sidebar_label: JWT
 ---
 
-JSON Web Token，JWT 是一个基于 JSON 的开放标准（RFC 7519），用于创建访问 token。简单来说，**一个 JWT 就是一个字符串**，形式如下：
+import Img from '../../../src/components/Img';
+
+## JWT 定义
+
+`JWT`(JSON Web Token) 是一个基于 `JSON` 的开放标准（RFC 7519），用于创建`access token`，是目前最流行的**跨域认证解决方案**。简单来说，**一个 JWT 就是一个字符串**，形式如下：
 
 ```js
 header.payload.signature;
 ```
 
-## 为什么使用 JWT？
+## session 认证的问题
 
-<div align="center">
-    <img width="430" height="310" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/qh2bq2.png" />
-</div>
+<Img w="430" legend="session认证模型" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200218233629.png" />
+
+如上图，传统使用`seesion`进行身份认证的流程如下：
+
+1. 客户端向服务器发送用户名和密码。
+2. 服务器验证通过后，在当前对话（`session`）里面保存相关数据，比如用户名、过期时间等。
+3. 服务器通过传送`Set-Cookie`将`session_id`写入用户的 `Cookie`。
+4. 用户随后的每一次请求，都会通过 `Cookie`将 `session_id`传回服务器。
+5. 服务器收到 `session_id`，通过与数据库保存的数据进行匹配，由此认证用户的身份。
+
+通过上述流程可以看出，服务器需要对用户的`session`信息进行存储，并通过匹配`session_id`来辨别用户身份，因此，**服务器需要维护大量的`session`信息**。而对于服务器集群来说，由于**不同的系统之间`session`是不共享**的，因此需要将所有系统的`session`做抽象处理，大大的加大了开发难度。
+
+除此之外，我们知道**`cookie`是不能够跨域的**，也就是上面的模型对于不同域名的应用并不适用。
+
+## 为什么使用 JWT
+
+<Img w="430" legend="JWT-Token认证流程" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/qh2bq2.png" />
 
 如图所示，存在 3 个角色：
 
-- uthentication server （登录／授权服务器）
+- Authentication server （认证服务器）
 - user（用户）
 - app server （应用服务器）
 
 **步骤：**
 
-1. 用户通过授权服务器的登录系统登录，授权服务器把 JWT 传给用户。
-2. 用户访问应用服务器的 API 时，带上 JWT，应用服务器通过 JWT 来判断用户身份。
+1. 用户使用账号密码在登录页登录，并将账号和密码传给认证服务器。
+2. 认证服务器生成`Token`并将其传给用户。
+3. 用户通过携带`Token`的`API`请求访问应用服务器。
+4. 应用服务器通过 `JWT` 来判断用户身份，通过验证后将数据返回给用户。
 
-可以看到，这是一套无状态的验证机制，不必在内存中保存用户状态。用户访问时自带 JWT，无需像传统应用使用 session，应用可以做到更多的解耦和扩展。同时，JWT 可以保存用户的数据，减少数据库访问。
+`JWT`有如下几个优点：
 
-## 使用 JWT
+- **`JWT`一套无状态的验证机制，用户访问时通过`Token`进行身份验证，服务器不用为了存储用户状态来维护`session`，服务器可以做到更多的解耦和扩展**。
+- `JWT`中的`Token`可以通过`URL`和请求头字段`Authorization`进行传送，可以避免跨域问题。
+- `JWT` 可以通过`payload`保存用户的数据，减少数据库访问。
 
-## 创建 header
+## JWT 创建 Token
 
-JWT 的 header 部分包含怎么计算 signature 的信息。
+### 创建 header
+
+`header` 部分是一个 `JSON` 对象，用来描述 `JWT` 的元数据，如下所示：
 
 ```js
 {
@@ -42,9 +66,11 @@ JWT 的 header 部分包含怎么计算 signature 的信息。
 }
 ```
 
+生成`Token`时需要，将上面的 `JSON` 对象使用 `Base64URL` 算法转成字符串。
+
 ### 创建 payload
 
-JWT 的 payload 部分即 JWT 所带的数据。
+`JWT` 的 `payload` 部分用来存放实际需要传递的数据。
 
 比如我们这里存储了用户 ID：
 
@@ -54,35 +80,54 @@ JWT 的 payload 部分即 JWT 所带的数据。
 }
 ```
 
-你可以在 payload 里存储大量信息，但大量信息会降低性能，增加延迟。
+你可以在 `payload` 里存储大量信息，但大量信息会降低性能，增加延迟。
+
+与`header`相同，`payload`也需要使用`Base64URL` 算法转成字符串。
 
 ### 计算生成 signature
 
-把 header 和 payload 分别 base64 编码（两个对象已 JSON.stringify 转为字符串）后，通过 . 相加，然后用之前指定的哈希算法计算，即可得到 signature。
+`header` 和 `payload` 使用的是 `Base64URL` 编码，所以将两者分别传入`base64UrlEncode`中，并结合服务器生成的`secret`使用下面的公式计算出`signature`。其中`HMAC SHA256`是 `Header` 里面默认指定的签名算法。
 
 ```js
 // signature algorithm
-data = base64urlEncode(header) + '.' + base64urlEncode(payload);
-signature = Hash(data, secret);
+HMACSHA256(base64UrlEncode(header) + '.' + base64UrlEncode(payload), secret);
 ```
 
-组装 header，payload 和 signature。把 header，payload 和 signature 用 . 相连即最终的 JWT token。
+组装 `header`，`payload` 和 `signature`。把 `header`，`payload` 和 `signature` 用 `.` 相连即最终的 `JWT token`。
+
+例如：当`header`的值为`"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9"`，`payload`的值为`"eyJ1c2VySWQiOiJiMDhmODZhZi0zNWRhLTQ4ZjItOGZhYi1jZWYzOTA0NjYwYmQifQ"`，`signature`的值为`"-xN_h82PHVTCMA9vdoHrcZxH-x5mb11y1537t3rGzcM"`时，生成的`Token`如下所示：
 
 ```js
-header.payload.signature;
-
-// header 是 eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9
-// payload 是 eyJ1c2VySWQiOiJiMDhmODZhZi0zNWRhLTQ4ZjItOGZhYi1jZWYzOTA0NjYwYmQifQ
-// signature 是 -xN_h82PHVTCMA9vdoHrcZxH-x5mb11y1537t3rGzcM
-// 最终 jwt token 是 eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiJiMDhmODZhZi0zNWRhLTQ4ZjItOGZhYi1jZWYzOTA0NjYwYmQifQ.-xN_h82PHVTCMA9vdoHrcZxH-x5mb11y1537t3rGzcM
+// header.payload.signature;
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiJiMDhmODZhZi0zNWRhLTQ4ZjItOGZhYi1jZWYzOTA0NjYwYmQifQ.-xN_h82PHVTCMA9vdoHrcZxH-x5mb11y1537t3rGzcM
 ```
 
-## 怎么验证 JWT token？
+## JWT 使用方式
 
-通过前面 4 步生成了 JWT token，验证服务器把它发送给用户，用户带着它访问应用服务器，应用服务器怎么验证 JWT token ？
+客户端收到认证服务器返回的 `Token`，可以将其存在 `Cookie`或`localStorage/sessionStorage`中。
 
-因为应用服务器知道验证服务器哈希计算 signature 的 secret key，所以应用服务器可以用这个 secret key 去重新计算 signature （用户发送过来的 token 里有 header 和 payload），并与用户发送过来的 token 中 signature 比较，最终验证是否合法。
+当客户端访问应用服务器时，每次请求都需要带上`Token`。你可以把它放在 `Cookie` 里面自动发送，但是这样不能跨域，所以更好的做法是放在 `HTTP` 请求头的[Authorization](/docs/http/4.http-headers/request-header#authorization)字段里面，如下所示：
 
-## 安全性？
+```
+Authorization: Bearer <token>
+```
 
-JWT 本身的内容只是 base64 编码了，跟明文几乎没差别。JWT 并不比 cookie 更安全，所以最好配合使用 https。
+在跨域时，除了上述用法外，还可以把`Token`就放在 `POST` 请求的数据体里。
+
+## 验证 JWT token
+
+因为应用服务器知道验证服务器哈希计算 `signature` 的 `secret`，所以应用服务器可以用 `secret` 去重新计算 `signature` （用户发送过来的 `token` 里有 `header` 和 `payload`），并与用户发送过来的 `token` 中 `signature` 比较，最终验证是否合法。
+
+## 安全性
+
+我们在前面提到的`header` 和 `payload`并没有进行加密，只是经过了`base64URL`的编码，所以“黑客”不需要`secret`就能获取到`header`和`payload`中的敏感信息。此外，“黑客”还可以通过修改`header`中`alg`的参数值为`none`，对于那些支持`alg`字段为`none`的服务器，后端将不会进行签名验证。
+
+除了上述两种案例外，还有很多其他的风险案例，如果感兴趣可以参考这篇文章：[JWT 介绍及其安全性分析](https://www.freebuf.com/vuls/219056.html)。因此，为了保证数据的安全性，`JWT`一般需要结合`https`一起使用。
+
+## 参考连接
+
+1. [JSON Web Token 入门教程，by 阮一峰](http://www.ruanyifeng.com/blog/2018/07/json_web_token-tutorial.html)
+2. [Token Authentication: The Secret to Scalable User Management，by Lindsay Brunner](https://stormpath.com/blog/token-authentication-scalable-user-mgmt)
+3. [JWT HANDBOOK, by Sebastián E. Peyrott](https://www.fomasgroup.com/Portals/0/MgmNewsDocuments/jwt-handbook.pdf)
+4. [使用 jwt 完成 sso 单点登录，by 秦梁的小站](https://bestqliang.com/2018/06/02/%E4%BD%BF%E7%94%A8jwt%E5%AE%8C%E6%88%90sso%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95/)
+5. [JWT 介绍及其安全性分析，by 不瘦二十斤不改名](https://www.freebuf.com/vuls/219056.html)
