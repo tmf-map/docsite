@@ -120,11 +120,9 @@ Authorization: Bearer <token>
 
 ## 安全性
 
-我们在前面提到的`header` 和 `payload`并没有进行加密，只是经过了`base64URL`的编码，所以“黑客”不需要`secret`就能将`header`和`payload`解码出来。此外，虽然在生成 `signature`时使用了哈希算法`HMACSHA256`和`secret`进行了数据签名。但当“黑客”获取到`header`中的哈希算法后，依旧可以暴力的破解出用户的`secret`（`secret`强度较低时），从而实现篡改`Token`。
+我们在前面提到的`header` 和 `payload`并没有进行加密，只是经过了`base64URL`的编码，所以“黑客”不需要`secret`就能获取到`header`和`payload`中的敏感信息。此外，“黑客”还可以通过修改`header`中`alg`的参数值为`none`，对于那些支持`alg`字段为`none`的服务器，后端将不会进行签名验证。
 
-除了暴力破解外，“黑客”可以通过修改`header`中`alg`的参数值为`none`，对于那些支持`alg`字段为`none`的服务器，此时后端将不执行签名验证。除此之外还有很多其他的风险案例，如果感兴趣可以参考这篇文章：[JWT 介绍及其安全性分析](https://www.freebuf.com/vuls/219056.html)
-
-因此，为了保证数据的安全性，`JWT`一般需要结合`https`一起使用。
+除了上述两种案例外，还有很多其他的风险案例，如果感兴趣可以参考这篇文章：[JWT 介绍及其安全性分析](https://www.freebuf.com/vuls/219056.html)。因此，为了保证数据的安全性，`JWT`一般需要结合`https`一起使用。
 
 ## 参考连接
 
