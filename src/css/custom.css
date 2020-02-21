@@ -133,6 +133,10 @@ table tbody {
   flex-grow: 1;
 }
 
+.navbar__brand.active {
+  min-width: 185px;
+}
+
 /* Sidebar Nav */
 .navbar + .main-wrapper > div > div:not(.row):not(.main):not(.hero--primary) {
   background-color: var(--my-board--background);

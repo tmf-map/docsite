@@ -34,7 +34,7 @@
     padding-left: 0.7rem;
     top: var(--ifm-navbar-height);
   }
-  .navbar + .main-wrapper > div > div:not(.row) > div:not(.container) > div:first-child {
+  .navbar + .main-wrapper > div > div:not(.row) > div:not(.container) > div:not(.container):first-child {
     display: none !important;
   }
   .container .col:first-child > div {
