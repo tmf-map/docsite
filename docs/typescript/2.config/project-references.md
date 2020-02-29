@@ -105,7 +105,6 @@ tsc -b 文件路径
     "module": "commonjs",
     "strict": true,
     // "outDir": "./dist"  关闭 outDir 选项, 即不在根配置中指定输入目录
-
     "composite": true, // 使用 composite, 它意味着工程可以被引用, 可以帮助ts编译器快速定位工程文件的输出文件
     "declaration": true // 使用 composite 选项必须开启 declaration
   }
@@ -138,7 +137,7 @@ tsc -b 文件路径
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "outDir": "../../dist/common"
+  "outDir": "../../dist/common"
   }
 }
 ```
@@ -158,9 +157,9 @@ tsc -b 文件路径
 上面也提到，使用`tsc -b`可以对`ts`文件进行编译。
 
 ```
- > tsc -b                                # Build the tsconfig.json in the current directory
- > tsc -b src                            # Build src/tsconfig.json
- > tsc -b foo/release.tsconfig.json bar  # Build foo/release.tsconfig.json and bar/tsconfig.json
+> tsc -b                                # Build the tsconfig.json in the current directory
+> tsc -b src                            # Build src/tsconfig.json
+> tsc -b foo/release.tsconfig.json bar  # Build foo/release.tsconfig.json and bar/tsconfig.json
 ```
 
 tsc -b 还支持其它一些选项：

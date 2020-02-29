@@ -441,14 +441,14 @@ try {
 与严格类型检查相关的配置项一共有以下八项：
 
 ```
-    // "strict": true,                        // 开启所有严格的类型检查
-    // "noImplicitAny": false,                // 不允许隐式的 any 类型
-    // "strictNullChecks": false,             // 不允许把 null、undefined 赋值给其他类型变量
-    // "strictFunctionTypes": false           // 不允许函数参数双向协变
-    // "strictPropertyInitialization": false, // 类的实例属性必须初始化
-    // "strictBindCallApply": false,          // 严格的 bind/call/apply 检查（参数类型相同）
-    // "noImplicitThis": false,               // 不允许 this 有隐式的 any 类型，避免this指向全局
-    // "alwaysStrict": false,                 // 在代码中注入 "use strict";
+// "strict": true,                        // 开启所有严格的类型检查
+// "noImplicitAny": false,                // 不允许隐式的 any 类型
+// "strictNullChecks": false,             // 不允许把 null、undefined 赋值给其他类型变量
+// "strictFunctionTypes": false           // 不允许函数参数双向协变
+// "strictPropertyInitialization": false, // 类的实例属性必须初始化
+// "strictBindCallApply": false,          // 严格的 bind/call/apply 检查（参数类型相同）
+// "noImplicitThis": false,               // 不允许 this 有隐式的 any 类型，避免this指向全局
+// "alwaysStrict": false,                 // 在代码中注入 "use strict";
 ```
 
 ### strict
