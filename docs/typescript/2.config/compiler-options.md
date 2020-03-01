@@ -218,7 +218,7 @@ allowJs: true
 
 :::note
 
-将 `js` 工程升级为 `ts` 工程时，在将所有 `js` 结尾的文件改成 `ts` 结尾的同时要注意 `ts` 文件引用 `js` 文件的情形。此时引用的`js 文件也需要编译导出。
+将 `js` 工程升级为 `ts` 工程时，在将所有 `js` 结尾的文件改成 `ts` 结尾的同时要注意 `ts` 文件引用 `js` 文件的情形。此时引用的 `js` 文件也需要编译导出。
 
 :::
 
@@ -271,9 +271,15 @@ allowJs: true
     |-- index.ts
 ```
 
-声明文件默认会和编译后的`js`文件保存在同一目录，但是我们可以在`compilerOptions`中配置`declarationDir`属性指定文件的声明目录。
+声明文件默认会和编译后的`js`文件保存在同一目录，但是我们可以在`compilerOptions`中配置`declarationDir`属性指定声明文件的输出目录。
 
 当我们只想编译生成`.d.ts`文件而不想编译生成`js`文件时，可以在`compilerOptions`中配置 `emitDeclarationOnly`为`true`。
+
+:::tip
+
+在项目中使用工程引用时，必须在根 tsconfig.json 中配置`declaration`。
+
+:::
 
 ### sourceMap
 
@@ -578,7 +584,7 @@ function fn(a: number) {
 
 ### noFallthroughCasesInSwitch
 
-`noFallthroughCasesInSwitch`的值值为`true`时，可以防止`switch`语句贯穿（当没有`break`的时候会一直向下指向）。当`break`丢失时，会编译报错：**Fallthrough case in switch**。
+`noFallthroughCasesInSwitch`的值值为`true`时，可以防止`switch`语句贯穿（当没有`break`的时候会一直向下执行）。当`break`丢失时，会编译报错：**Fallthrough case in switch**。
 
 ## Module Resolution Options
 
@@ -594,19 +600,13 @@ function fn(a: number) {
 
 <Img w="500" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/微信截图_20200229145940.png' alt='D3twOQ'/>
 
-:::note
-
-使用 `npm` 安装的第三方包都放在 `node_modules` 目录下，使用 `classic` 模块解析规则是没有办法找到绝对路径导入的模块，所以最好使用`node`模块。
-
-:::
-
 ### baseUrl
 
 `baseUrl`解析非相对模块的基地址，默认为当前目录。
 
 ### paths
 
-`paths`是指相对于`baseUrl`的路径映射，`patH`依赖于`baseUrl`而存在。
+`paths`是指相对于`baseUrl`的路径映射，`paths`依赖于`baseUrl`而存在。
 
 比如，当`index.ts`想导入`Jquery`的精简版本，而不是默认版本。可以设置`path`为：
 
@@ -658,7 +658,7 @@ import {util} from './util';
 
 `typeRoots`指的是声明文件的目录，默认`node_modules/@types`。
 
-当我们使用`npm`安装了`node`包后，发现引用`fs`模块依旧出错，这是因为 `typescript` 不认识 `nodejs` 原生`api`，需要安装对应的声明文件 `@types/node`。与`node`相似，当我安装包后，引用依旧出错，可以看一下是否安装了它的声明文件。
+当我们使用`npm`安装了`node`包后，发现引用`fs`模块依旧出错，这是因为 `typescript` 不认识 `nodejs` 原生`api`，需要安装对应的声明文件 `@types/node`。与`node`相似，当我们安装包后，引用依旧出错，可以看一下是否安装了它的声明文件。
 
 ### types
 
@@ -682,7 +682,7 @@ import {util} from './util';
 
 ### allowUmdGlobalAccess
 
-`allowUmdGlobalAccess`的值为`true`时，允许以全局变量的形式访问、 `UMD` 模块
+`allowUmdGlobalAccess`的值为`true`时，允许以全局变量的形式访问 `UMD` 模块
 
 ## 参考目录
 

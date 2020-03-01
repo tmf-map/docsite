@@ -127,7 +127,20 @@ tsc -b 文件路径
 
 其中`extends`用来导入根配置文件。而`references`导入引用工程中的模块**实际加载的是它输出的声明文件**（`.d.ts`），这也是在根配置文件中必须配置`"composite": true`和`"declaration": true`的原因。
 
-在使用`tsc -b src/client`进行编译时，它所依赖的`common`也会被编译到`dist`文件。
+在使用`tsc -b src/client`进行编译时，它所依赖的`common`也会被编译到`dist`文件，其目录结构如下所示：
+
+```
+├─dist
+│  ├─client
+│  │      index.d.ts
+│  │      index.js
+│  │      tsconfig.tsbuildinfo
+│  │
+│  └─common
+│          index.d.ts
+│          index.js
+│          tsconfig.tsbuildinfo
+```
 
 `server/tsconfig.json`的配置与`client/tsconfig.json`类似，只需要将`outDir`改动以下即可。当`server`编译时，由于`common`文件已经被编译过了，所以此时不会对其再次编译，这样也节省了编译的时间。
 
@@ -162,7 +175,7 @@ tsc -b 文件路径
 > tsc -b foo/release.tsconfig.json bar  # Build foo/release.tsconfig.json and bar/tsconfig.json
 ```
 
-tsc -b 还支持其它一些选项：
+`tsc -b` 还支持其它一些选项：
 
 - --verbose：打印详细的日志（可以与其它标记一起使用）
 - --dry: 显示将要执行的操作但是并不真正进行这些操作
@@ -170,13 +183,116 @@ tsc -b 还支持其它一些选项：
 - --force: 把所有工程当作非最新版本对待
 - --watch: 观察模式（可以与--verbose 一起使用）
 
-对于前面提到的项目，在编译`client`和`server`时就可以添加`--verbose`参数，通过打印日志可以看出`common`只编译了一次，不会被重复编译。
+### --verbose
 
-当编译文件完成后，可以使用通过添加`--clean`，清除已经编译好的文件。
+对于前面提到的项目，在编译`client`和`server`时就可以添加`--verbose`参数，打印编译日志。具体过程如下所示：
+
+- `tsc -b ./src/client --verbose`
+
+build client 日志：
 
 ```
-tsc -b test --clean // 清除已经构建好的`test`文件
+[11:49:51] Project 'src/common/tsconfig.json' is out of date because output file 'dist/common/index.js' does not exist
+[11:49:51] Building project 'D:/Code/ts/src/new/src/common/tsconfig.json'...
+[11:49:56] Project 'src/client/tsconfig.json' is out of date because output file 'dist/client/index.js' does not exist
+[11:49:56] Building project 'D:/Code/ts/src/new/src/client/tsconfig.json'...
 ```
+
+- `tsc -b ./src/server --verbose`
+
+build server 日志：
+
+```
+[11:50:09] Project 'src/common/tsconfig.json' is up to date because newest input 'src/common/index.ts' is older than oldest output 'dist/common/index.js'
+[11:50:09] Project 'src/server/tsconfig.json' is out of date because output file 'dist/server/index.js' does not exist
+[11:50:09] Building project 'D:/Code/ts/src/new/src/server/tsconfig.json'...
+```
+
+通过打印的日志可以看出`common`只编译了一次，不会被重复编译。
+
+### --dry
+
+当`server`未编译时，执行 `tsc -b ./src/server --verbose --dry`时的输出日志如下所示：
+
+```
+[12:52:45] Project 'src/common/tsconfig.json' is up to date because newest input 'src/common/index.ts' is older than oldest output 'dist/common/index.js'
+[12:52:45] Project 'D:/Code/ts/src/new/src/common/tsconfig.json' is up to date
+[12:52:45] Project 'src/server/tsconfig.json' is out of date because output file 'dist/server/index.js' does not exist
+[12:52:45] A non-dry build would build project 'D:/Code/ts/src/new/src/server/tsconfig.json'
+```
+
+当`server`编译后，再次执行 `tsc -b ./src/server --verbose --dry`时的输出日志如下所示：
+
+```
+[12:55:24] Project 'src/common/tsconfig.json' is up to date because newest input 'src/common/index.ts' is older than oldest output 'dist/common/index.js'
+[12:55:24] Project 'D:/Code/ts/src/new/src/common/tsconfig.json' is up to date
+[12:55:24] Project 'src/server/tsconfig.json' is up to date because newest input 'src/server/index.ts' is older than oldest output 'dist/server/index.js'
+[12:55:24] Project 'D:/Code/ts/src/new/src/server/tsconfig.json' is up to date
+```
+
+通过上面的日志可以看出，当使用`--dry`参数时会**检测将要执行的操作**，但并不会真正的执行。
+
+### --clean
+
+使用`--clean`参数时会删除指定工程的输出。例如：
+
+- `tsc -b ./src/server --dry --clean`
+
+```
+A non-dry build would delete the following files:
+* D:/Code/ts/src/new/dist/common/index.js
+* D:/Code/ts/src/new/dist/common/index.d.ts
+* D:/Code/ts/src/new/dist/common/tsconfig.tsbuildinfo
+* D:/Code/ts/src/new/dist/server/index.js
+* D:/Code/ts/src/new/dist/server/index.d.ts
+* D:/Code/ts/src/new/dist/server/tsconfig.tsbuildinfo
+```
+
+由输出结果可以看出，通过添加`--clean`，清除已经编译好的文件，即`tsc -b ./src/server --clean`是`tsc -b ./src/server`的逆操作。
+
+### --force
+
+如果想刷新已经编译好的文件，可以使用 `--force`参数。下面对已编译过的`server`为例：
+
+- `tsc -b ./src/server --verbose`
+
+```
+[12:24:44] Project 'src/common/tsconfig.json' is up to date because newest input 'src/common/index.ts' is older than oldest output 'dist/common/index.js'
+[12:24:44] Project 'src/server/tsconfig.json' is up to date because newest input 'src/server/index.ts' is older than oldest output 'dist/server/index.js'
+```
+
+- `tsc -b ./src/server --verbose --force`
+
+```
+[12:19:51] Project 'src/common/tsconfig.json' is up to date because newest input 'src/common/index.ts' is older than oldest output 'dist/common/index.js'
+[12:19:51] Building project 'D:/Code/ts/src/new/src/common/tsconfig.json'...
+[12:19:57] Project 'src/server/tsconfig.json' is up to date with .d.ts files from its dependencies
+[12:19:57] Building project 'D:/Code/ts/src/new/src/server/tsconfig.json'...
+```
+
+### --watch
+
+当使用`--watch`参数时会开启观察编译模式，当检测到被观察的文件出现修改后，将启动增量编译。
+
+- `tsc -b ./src/server --verbose --watch`
+
+```
+[12:28:50] Starting compilation in watch mode...
+[12:28:50] Project 'src/common/tsconfig.json' is up to date because newest input 'src/common/index.ts' is older than oldest output 'dist/common/index.js'
+[12:28:50] Project 'src/server/tsconfig.json' is up to date because newest input 'src/server/index.ts' is older than oldest output 'dist/server/index.js'
+[12:28:50] Found 0 errors. Watching for file changes.
+```
+
+- 修改`server/index.ts`文件后：
+
+```
+[12:30:55] File change detected. Starting incremental compilation...
+[12:30:55] Project 'src/server/tsconfig.json' is out of date because oldest output 'dist/server/index.js' is older than newest input 'src/server/index.ts'
+[12:30:55] Building project 'D:/Code/ts/src/new/src/server/tsconfig.json'...
+[12:30:57] Found 0 errors. Watching for file changes.
+```
+
+由修改后打印的日志可以看出，文件修改后会对修改的文件进行增量编译，然后继续观察文件。
 
 ## 参考目录
 
