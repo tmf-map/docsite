@@ -3,11 +3,18 @@ title: 编译选项
 sidebar_label: 编译选项
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '../../../src/components/Img'; import Hint from '../../../src/components/Hint';
 
-## 编译选项
+## compilerOptions
 
-`ts`编译器通过`compilerOptions`对象指定的文件进行编译，通过设置`compilerOptions`属性实现定制化编译。当`tsconfig.json`文件中不包含`compilerOptions`对象时，编译器编译时会使用默认值。
+`compilerOptions`（编译选项）是`tsconfig.json`文件中的重要组成部分，通过配置`compilerOptions`中的属性可以实现项目的定制化编译。当`tsconfig.json`文件中不包含`compilerOptions`对象时，编译器编译时会使用默认值。
+
+本文将`compilerOptions`中的属性划分为以下四类进行讲解：
+
+- [Basic Options](/docs/typescript/2.config/compiler-options#basic-options)
+- [Strict Type-Checking Options](/docs/typescript/2.config/compiler-options#strict-type-checking-options)
+- [Additional Checks](/docs/typescript/2.config/compiler-options#additional-checks)
+- [Module Resolution Options](/docs/typescript/2.config/compiler-options#module-resolution-options)
 
 ## Basic Options
 
@@ -119,11 +126,11 @@ let myname: string | undefined = ['robbie', 'peter'].find(
 error TS2339: Property 'find' does not exist on type 'string[]'.
 ```
 
-此时如果使用`tsc index.js --target es5 --lib es6`运行，代码将编译成功。
+此时如果使用`tsc index.js --target es5 --lib es6`运行，代码将编译成功。 :::note
 
 原因：虽然`TS`是`JS`的超集，但是仅仅是相对于`JS`的语法来说。对于`JS`各类型的`API`需要引用类库（lib）来支持。所以当代码中使用了`JS`较高版本的`API`时，最好在`lib`字段上添加相应版本。
 
-建议配置：
+::: 建议配置：
 
 ```js
 {
@@ -224,7 +231,7 @@ allowJs: true
 
 ### checkJs
 
-`checkJs`默认值为`false`，当值为`true`时允许在`js`文件中进行类型检查和报错。但`checkJs`需要配合`allowJs`一起使用，当`allowJs`为`false`是，`checkJs`即使为`true`也不会起作用。
+`checkJs`默认值为`false`，当值为`true`时允许在`js`文件中进行类型检查和报错。但`checkJs`需要配合`allowJs`一起使用，当`allowJs`为`false`时，`checkJs`即使为`true`也不会起作用。
 
 例如当没有配置`outDir`时允许编译`js`文件时，编译后的 js 文件会覆盖源文件，此时如果`checkJs`的值为`true`时，编译时会报错。
 
@@ -240,7 +247,7 @@ allowJs: true
 
 ### jsx
 
-当想以`.tsx`作为文件的后缀时，需要对`jsx`属性进行配置。
+当使用`ts`开发时，通常都是以`.ts`为后缀。但是当我们开发`react`的时候，`react`组件一般会以`.tsx`作为文件的后缀，此时便需要对`jsx`属性进行配置。
 
 `jsx`属性有三个值：
 
@@ -275,11 +282,7 @@ allowJs: true
 
 当我们只想编译生成`.d.ts`文件而不想编译生成`js`文件时，可以在`compilerOptions`中配置 `emitDeclarationOnly`为`true`。
 
-:::tip
-
-在项目中使用工程引用时，必须在根 tsconfig.json 中配置`declaration`。
-
-:::
+<Hint type="good">在项目中使用工程引用时，必须在根 `tsconfig.json` 中配置`declaration`。</Hint>
 
 ### sourceMap
 
@@ -440,7 +443,17 @@ try {
 
 ### isolatedModules
 
-在`typescript`中，默认情况下却将所有的 `*.ts` 文件作用域放到了一起。所有即使不同文件有同名变量也会报错。此时可以将`isolatedModules`设为`true`，这样就可以隔绝各个文件的作用域。
+在`typescript`中，默认情况下却将所有的 `*.ts` 文件作用域放到了一起。所以即使不同文件有同名变量也会报错。此时可以将`isolatedModules`设为`true`，这样就可以隔离各个文件的作用域。
+
+```
+|-- src
+    |-- index.ts
+    |-- exp1.ts
+```
+
+例如在`src`目录下的`index.ts`和`exp1.ts`文件中都定义了一个变量`test`，此时编译器会提示错误：`Cannot redeclare block-scoped variable test`。
+
+除了使用`isolatedModules`字段外，还可以使用`export { test }` 或者`export defalut test`，让`ts`文件成为一个模块，这样也可以达到隔离作用域的效果。
 
 ## Strict Type-Checking Options
 
@@ -459,7 +472,7 @@ try {
 
 ### strict
 
-当`strict`配置为`true`时，其它七项默认为开启状态，当配置为`false`时，其它七项默认为关闭状态，也就是说其它七项是`strict`的子集。
+`strict`的默认值为`false`，当`strict`配置为`true`时，其它七项默认为开启状态，当配置为`false`时，其它七项默认为关闭状态，也就是说其它七项是`strict`的子集。
 
 当`strict`为`false`时，可以根据自己的需求，通过设置其它几项自定义类型检查。
 
@@ -580,11 +593,11 @@ function fn(a: number) {
 }
 ```
 
-由上例可知，`else`分支没有返回值，此时只要加上`return`语句便可报错。
+由上例可知，`else`分支没有返回值，此时只要加上`return`语句便可编译通过。
 
 ### noFallthroughCasesInSwitch
 
-`noFallthroughCasesInSwitch`的值值为`true`时，可以防止`switch`语句贯穿（当没有`break`的时候会一直向下执行）。当`break`丢失时，会编译报错：**Fallthrough case in switch**。
+`noFallthroughCasesInSwitch`的值为`true`时，可以防止`switch`语句贯穿（当没有`break`的时候会一直向下执行）。当`break`丢失时，会编译报错：**Fallthrough case in switch**。
 
 ## Module Resolution Options
 
@@ -602,7 +615,7 @@ function fn(a: number) {
 
 ### baseUrl
 
-`baseUrl`解析非相对模块的基地址，默认为当前目录。
+`baseUrl`解析非相对导入模块的基地址，默认为当前目录。
 
 ### paths
 
@@ -645,7 +658,7 @@ import {util} from '../dist/util';
 但当`src`被构建进输出目录后，之前导入类库的路径就会出错。此时可以使用 `rootDirs`将`dist`和`src`放在同一个虚拟目录，如下所示：
 
 ```
-"rootDir": ['src', 'dist']
+"rootDirs": ['src', 'dist']
 ```
 
 此时`util.*`和`index.ts`可以看作在同一目录下，所以将引用改为：
@@ -678,7 +691,9 @@ import {util} from './util';
 
 ### esModuleInterop
 
-`esModuleInterop`的值为`true`时，允许模块使用`export = 模块名`导出，由`import XX from "模块名"`导入。
+`esModuleInterop`的默认值为`false`，当`esModuleInterop`的值为`true`时，允许模块使用`export = 模块名`导出，由`import XX from "模块名"`导入。
+
+例如在`react`项目中，我们项目中会使用`import React from 'react';`，因此我们需要将`esModuleInterop`的值设为`true`。否则，只能使用`import * as React from 'react'`来引入`react`
 
 ### allowUmdGlobalAccess
 

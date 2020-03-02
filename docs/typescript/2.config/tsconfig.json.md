@@ -13,7 +13,7 @@ tsc
 
 当我们使用`tsc`命令对项目进行编译时，编译器会从当前目录开始去查找`tsconfig.json`文件，逐级向上搜索父目录。
 
-下面我们将通过以三个方面来讲述`tsconfig.json`配置：
+下面我们将通过以下三个方面来讲述`tsconfig.json`配置：
 
 - [**文件选项**](/docs/typescript/2.config/file-options)：`files`、`include`、`exclude`
 - [**编译选项**](/docs/typescript/2.config/compiler-options)：`compilerOptions`
