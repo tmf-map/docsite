@@ -29,5 +29,5 @@ module.exports = {
     'http/6.http-security/https'
   ],
   '7. HTTP大文件传输': ['http/7.large-file-transfer/large-file-transfer'],
-  '8. HTTP3': ['http/8.http3/http3']
+  '8. HTTP3': ['http/8.http3/HTTP3']
 };
