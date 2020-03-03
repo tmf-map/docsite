@@ -126,11 +126,15 @@ let myname: string | undefined = ['robbie', 'peter'].find(
 error TS2339: Property 'find' does not exist on type 'string[]'.
 ```
 
-此时如果使用`tsc index.js --target es5 --lib es6`运行，代码将编译成功。 :::note
+此时如果使用`tsc index.js --target es5 --lib es6`运行，代码将编译成功。
+
+:::note
 
 原因：虽然`TS`是`JS`的超集，但是仅仅是相对于`JS`的语法来说。对于`JS`各类型的`API`需要引用类库（lib）来支持。所以当代码中使用了`JS`较高版本的`API`时，最好在`lib`字段上添加相应版本。
 
-::: 建议配置：
+:::
+
+建议配置：
 
 ```js
 {
@@ -233,7 +237,7 @@ allowJs: true
 
 `checkJs`默认值为`false`，当值为`true`时允许在`js`文件中进行类型检查和报错。但`checkJs`需要配合`allowJs`一起使用，当`allowJs`为`false`时，`checkJs`即使为`true`也不会起作用。
 
-例如当没有配置`outDir`时允许编译`js`文件时，编译后的 js 文件会覆盖源文件，此时如果`checkJs`的值为`true`时，编译时会报错。
+例如当没有配置`outDir`且`allowJs`的值为`true`时，编译器会编译`js`文件，编译后的 `js` 文件会覆盖源文件，此时如果`checkJs`的值为`true`时，编译时会报错。
 
 ```js
  {
