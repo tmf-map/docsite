@@ -18,7 +18,11 @@ sidebar_label: 外观数列
 5.     111221
 ```
 
-1  被读作   `one 1`  (`一个一`) , 即  `11`。 11 被读作  `two 1s` (`两个一`）, 即  `21`。 21 被读作  `one 2`,  `one 1` （`一个二` ,  `一个一`) , 即  `1211`。
+1 被读作 `one 1` (`一个一`), 即  `11`。
+
+11 被读作  `two 1s` (`两个一`）, 即  `21`。
+
+21 被读作  `one 2`, `one 1`（`一个二`, `一个一`),即  `1211`。
 
 给定一个正整数 n（1 ≤ n ≤ 30），输出外观数列的第 n 项。
 
@@ -40,11 +44,13 @@ sidebar_label: 外观数列
 
 ## 思路
 
-1. 思路一：使用正则表达式的反向引用，相关知识可参考 [此处](https://thinkbucket.cn/docs/javascript/7.reference-type/regex#%E5%8F%8D%E5%90%91%E5%BC%95%E7%94%A8)
+1. 思路一：使用正则表达式的反向引用，相关知识可参考 [此处](/docs/javascript/7.reference-type/regex#%E5%8F%8D%E5%90%91%E5%BC%95%E7%94%A8)
 
-2) 思路二：想要获得数字 n 的外观数列，先获取 n-1 对应的外观数列 str，然后遍历 str，通过 startIndex 和 endIndex 获取连续相同数字的长度
+2. 思路二：想要获得数字 n 的外观数列，先获取 n-1 对应的外观数列 str，然后遍历 str，通过 startIndex 和 endIndex 获取连续相同数字的长度
 
 ## 代码实现
+
+#### 思路一：反向引用
 
 ```js
 /**
@@ -52,7 +58,6 @@ sidebar_label: 外观数列
  * @return {string}
  */
 
-// 采用思路一：反向引用
 let countAndSay = function(n) {
   let result = '1';
   for (let i = 1; i < n; i++) {
@@ -63,13 +68,14 @@ let countAndSay = function(n) {
 };
 ```
 
+#### 思路二：
+
 ```js
 /**
  * @param {number} n
  * @return {string}
  */
 
-// 采用思路二：
 let countAndSay = function(n) {
   let result = '1';
   let str;
