@@ -48,6 +48,8 @@ sidebar_label: 外观数列
 
 2. 思路二：想要获得数字 n 的外观数列，先获取 n-1 对应的外观数列 str，然后遍历 str，通过 startIndex 和 endIndex 获取连续相同数字的长度
 
+3. 思路三：递归 + 左右双指针，相同则移动右指针，不同则停止，左右指针差值则是相同元素个数。
+
 ## 代码实现
 
 #### 思路一：反向引用
@@ -97,6 +99,30 @@ let countAndSay = function(n) {
 
   return result;
 };
+```
+
+#### 思路三：
+
+```java
+class Solution {
+  public String countAndSay(int n) {
+    if (n == 1) {
+      return "1";
+    }
+    String pre = countAndSay(n - 1);
+    StringBuilder res = new StringBuilder();
+    int left = 0;
+    while (left < pre.length()) {
+      int right = left;
+      while(right < pre.length() && pre.charAt(left) == pre.charAt(right)){
+        right++;
+      }
+      res.append(right - left).append(pre.charAt(left));
+      left = right;
+    }
+    return res.toString();
+  }
+}
 ```
 
 ## 复杂度
