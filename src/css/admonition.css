@@ -1,0 +1,21 @@
+.admonition-warning {
+  background-color: rgba(255, 241, 240, 0.6);
+  border: 1px solid #ff4642;
+  color: var(--ifm-font-base-color)
+}
+
+.admonition-warning .admonition-icon svg {
+  fill: #ff4542d7;
+}
+
+html[data-theme="dark"] .admonition {
+  background-color: rgba(185, 202, 218, 0.068) !important;
+}
+
+html[data-theme="dark"] .admonition-note {
+  color: white !important;
+}
+
+html[data-theme="dark"] .admonition-note .admonition-icon svg {
+  fill: white !important;
+}
