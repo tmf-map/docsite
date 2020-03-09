@@ -4,6 +4,12 @@
   color: var(--ifm-font-base-color);
 }
 
+.admonition-important {
+  background-color: rgba(246, 255, 237, 0.5);
+  border: 1px solid #50c610;
+  color: var(--ifm-font-base-color);
+}
+
 .admonition-caution {
   background-color: rgba(255, 247, 230, 0.6);
   border: 1px solid #faad14;
@@ -18,6 +24,10 @@
 
 .admonition-tip .admonition-icon svg {
   fill: #3884ff;
+}
+
+.admonition-important .admonition-icon svg {
+  fill: #50c610;
 }
 
 .admonition-caution .admonition-icon svg {

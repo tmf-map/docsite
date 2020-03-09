@@ -57,9 +57,9 @@ let p2: Person = {name: 'kimi', age: 20, id: 888}; // OK
 
 There are two types of supported index signatures: `string` and `number`. It is possible to support both types of indexers.
 
-:::caution warning
+:::important good
 
-The type returned from a numeric indexer must be a subtype of the type returned from the string indexer. This is because when indexing with a number, JavaScript will actually convert that to a string before indexing into an object. That means that indexing with 100 (a number) is the same thing as indexing with "100" (a string), so the two need to be consistent.
+Recommend to use string indexer in object and numeric indexer in array.
 
 :::
 
@@ -159,7 +159,7 @@ strArr['0'] = 123; // Error: Type '123' is not assignable to type 'string'.
 
 :::tip
 
-Above, `strArr[0] = 123` also causes an error because TS will convert number index to string index automatically. In a way, `[index: string]: string` is equivalent to `[index: string | number]: string`(FYI, the syntax is incorrect).
+Above, `strArr[0] = 123` also causes an error because TS will convert numeric indexer to string indexer automatically. In a way, `[index: string]: string` is equivalent to `[index: string | number]: string`(FYI, the syntax is incorrect).
 
 :::
 
@@ -207,7 +207,7 @@ In other words, don’t check whether it IS-a duck, check whether it QUACKS-like
 
 Thus, in TypeScript we only need to pass in the object that meets the necessary conditions of the interface. It will pass the type checking even if the excess fields are passed in.
 
-:::warning BAD
+:::warning bad
 
 It will cause an error if we pass in object literal.
 
