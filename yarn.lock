@@ -1009,10 +1009,10 @@
     react-toggle "^4.1.1"
     remark-admonitions "^1.1.0"
 
-"@docusaurus/theme-live-codeblock@2.0.0-alpha.43":
-  version "2.0.0-alpha.43"
-  resolved "https://registry.yarnpkg.com/@docusaurus/theme-live-codeblock/-/theme-live-codeblock-2.0.0-alpha.43.tgz#0f273743c6488af2fada5124e77e5b70a09647d4"
-  integrity sha512-tJFL1c0EJZTQZMEAQY9r4vLQCeDTPtSH7tWLuaihGMnthJFMLBC4EHUNtvqIj5gxwIczVM+fUw/YRa/r2C6slw==
+"@docusaurus/theme-live-codeblock@2.0.0-alpha.48":
+  version "2.0.0-alpha.48"
+  resolved "https://registry.yarnpkg.com/@docusaurus/theme-live-codeblock/-/theme-live-codeblock-2.0.0-alpha.48.tgz#7611da208c4bd746f2fbee4fb3ad5ec9e5aa0530"
+  integrity sha512-WRSR2TMY1Ha4WO65QhN1Hf8YUgTlZ2fPNbURCdE6vcQv2v48pMlyVjWYmz0lgNDVkY3bPJ53crk6Ju4BYH4f2A==
   dependencies:
     "@philpl/buble" "^0.19.7"
     classnames "^2.2.6"
