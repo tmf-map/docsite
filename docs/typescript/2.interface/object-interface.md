@@ -5,8 +5,6 @@ sidebar_label: Object Interface
 
 import Img from '../../../src/components/Img';
 
-import Hint from '../../../src/components/Hint';
-
 Interface in TypeScript can be used to define a type and also to implement it in the class. The most scenarios can be summarized as following:
 
 - as object type definition
@@ -32,7 +30,7 @@ interface Person {
 }
 ```
 
-In the above example, an interface `Person` includes two properties `key` and `age`. Let's define some variables using this interface type:
+In the above example, an interface `Person` includes two properties `name` and `age`. Let's define some variables using this interface type:
 
 ```ts
 let p1: Person = {name: 'kimi', age: 20}; // OK
@@ -59,7 +57,7 @@ let p2: Person = {name: 'kimi', age: 20, id: 888}; // OK
 
 There are two types of supported index signatures: `string` and `number`. It is possible to support both types of indexers.
 
-:::note
+:::caution warning
 
 The type returned from a numeric indexer must be a subtype of the type returned from the string indexer. This is because when indexing with a number, JavaScript will actually convert that to a string before indexing into an object. That means that indexing with 100 (a number) is the same thing as indexing with "100" (a string), so the two need to be consistent.
 
@@ -83,6 +81,10 @@ interface Person {
 }
 ```
 
+You can imagine the `[index: string]: string` as the types' "**BOSS**" in interface, if others match the "**BOSS**" pattern, the returned type must be compatible with "**BOSS**" otherwise will cause an error.
+
+In addition, properties of different types are acceptable if the index signature is a union of the property types:
+
 ```ts
 interface Person {
   name: string; // OK
@@ -90,8 +92,6 @@ interface Person {
   [index: string]: string | number;
 }
 ```
-
-You can imagine the `[index: string]: string` as the types' "**BOSS**" in interface, if others match the "**BOSS**" pattern, the returned type must be compatible with "**BOSS**" otherwise will cause an error.
 
 ### Optional Properties
 
@@ -144,7 +144,7 @@ strArr[0] = 123; // Type '123' is not assignable to type 'string'.
 strArr['0'] = 123; // OK
 ```
 
-In the above example, we can find that if the type of `index` is `number`, we will only check the array literal and `numArr[0]`, not includes `numArr["1"]`.
+In the above example, we can find that if the type of `index` is `number`, we will only check the array literal and `strArr[0]`, not includes `strArr["1"]`.
 
 ```ts
 interface StringArray2 {
@@ -157,9 +157,9 @@ strArr[0] = 123; // Error: Type '123' is not assignable to type 'string'.
 strArr['0'] = 123; // Error: Type '123' is not assignable to type 'string'.
 ```
 
-:::note
+:::tip
 
-Above, `strArr[0] = 123` also causes an error because TS will convert number index to string index automatically.
+Above, `strArr[0] = 123` also causes an error because TS will convert number index to string index automatically. In a way, `[index: string]: string` is equivalent to `[index: string | number]: string`(FYI, the syntax is incorrect).
 
 :::
 
@@ -167,7 +167,7 @@ Above, `strArr[0] = 123` also causes an error because TS will convert number ind
 
 At this time, you may wonder what's the difference between the [array types in Basic Types](/docs/typescript/1.types/basic-types#array) and interface indexable types, they both can be used to define the type of array.
 
-Besides the difference mentioned above, we can also use `readonly` before index which would likes this:
+Besides the difference mentioned above, we can also use `readonly` before index which would like this:
 
 ```ts
 interface ReadonlyStringArray {
@@ -229,7 +229,7 @@ handleResult({name: 'Kimi', age: 20, gender: 'male'}); // Error: Object literal 
 Besides the above method which pass in object variable to avoid causing error, we can also use type assertion would look like:
 
 ```ts
-handleResult({name: 'Kimi', age: 20, gender: 'male'} as Result);
+handleResult({name: 'Kimi', age: 20, gender: 'male'} as Result); // OK
 ```
 
 We can also use the indexable types and it's more flexible. Let's take an example:
