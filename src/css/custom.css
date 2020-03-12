@@ -2,6 +2,7 @@
 @import './dark-mode.css';
 @import './variables.css';
 @import './media-queries.css';
+@import './admonition.css';
 
 /* homepage banner */
 /* .hero.hero--primary {
