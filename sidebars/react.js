@@ -34,7 +34,8 @@ module.exports = {
     'react/5.state-management/middleware',
     'react/5.state-management/reducer',
     'react/5.state-management/selector',
-    'react/5.state-management/model'
+    'react/5.state-management/model',
+    'react/5.state-management/mobx'
   ],
   '6. 路由管理': [
     'react/6.router-management/router',
