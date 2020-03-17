@@ -132,7 +132,13 @@ module.exports = {
 
 ### 内置函数
 
-设置 `mode` 可以使用 `webpack` 内置的函数，默认值为 `production`。 |选项|描述| |---|---| |development|设置 `process.env.NODE_ENV`的值为`development`，开启`NamedChunksPLugin`和`NamedModulesPlugin`| |production|设置 `process.env.NODE_ENV`的值为`production`, 开启`FlagDependencyUsagePlugin`, `FlagIncludedChunksPlugin`， `ModuleConcatenationPlugin`, `NoEmitonErrorsPlugin`，`OccurrenceOrderPlugin`, `SideEffectsFlagPlugin`和 `TerserPlugin`| |none|不开启任何优化选项|
+设置 `mode` 可以使用 `webpack` 内置的函数，默认值为 `production`。
+
+| 选项 | 描述 |
+| --- | --- |
+| development | 设置 `process.env.NODE_ENV`的值为`development`，开启`NamedChunksPLugin`和`NamedModulesPlugin` |
+| production | 设置 `process.env.NODE_ENV`的值为`production`, 开启`FlagDependencyUsagePlugin`, `FlagIncludedChunksPlugin`， `ModuleConcatenationPlugin`, `NoEmitonErrorsPlugin`，`OccurrenceOrderPlugin`, `SideEffectsFlagPlugin`和 `TerserPlugin` |
+| none | 不开启任何优化选项 |
 
 当`mode`设置为`development`时，一般时为了开启代码的热更新以及显示封信的文件和目录。当`mode`设置为`production`时，一般做一些代码压缩、副作用检查等优化。
 
