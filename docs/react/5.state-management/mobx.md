@@ -9,12 +9,12 @@ MobX 是一个简单的、可扩展的状态管理库。
 
 ## 设计理念
 
-**Anything that can be derived from the application state, should be derived. Automatically.**  
-任何源自应用状态的东西都应该自动地获得。
+> Anything that can be derived from the application state, should be derived. Automatically.  
+> 任何源自应用状态的东西都应该自动地获得。
 
 也就是说，只要是跟状态相关的东西，在状态发生变化时，就应该自动完成状态相关的事情，比如，自动更新 UI、缓存数据、请求 server 端等。
 
-相比于 Redux，它更加轻量，整体是一个观察者模式的架构，存储`state`的`store`是被观察对象，使用`state`的组件是观察者。
+相比于 Redux，它更加轻量，整体是一个[观察者模式](/docs/design-patterns/3.behavior-pattern/observer)的架构，存储`state`的`store`是被观察对象，使用`state`的组件是观察者。
 
 ## 核心概念
 
@@ -25,18 +25,18 @@ MobX 是一个简单的、可扩展的状态管理库。
 
   - **Computed values 计算值**
 
-    `Computed values`是使用纯函数，从`state`中推导出的值。计算范围可以从简单的字符串到复杂的对象，甚至 dom 操作上。计算值会懒惰地对状态变化作出反应。
+    `Computed values`是使用纯函数，从`state`中推导出的值。计算范围可以从简单的字符串到复杂的对象。计算值会懒惰地对状态变化作出反应。
 
   - **Reactions 反应**
 
-    `Reactions`类似于计算值，但它产生的不是新值而是副作用，比如更新 UI。
+    `Reactions`是当状态改变时，需要自动发生的副作用，比如更新 UI、打印日志等。
 
 - **Actions 动作**  
   `Actions`是唯一可以修改状态的东西，并可能有其他副作用。
 
 <Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/mobx_flow.png' alt='mobx_flow'/>
 
-这张图解释了 MobX 这个体系中的各个角色的作用和关系。MobX 和 Redux 一样，采用单向数据流。首先用户事件产生一个`Action`。`Action`会修改`State`，接着`State`的更新可能会引起重新计算`Computed Value`，也可能会引发一些副作用，触发`Reactions`。
+这张图解释了 MobX 这个体系中的各个角色的作用和关系。MobX 和 Redux 一样，采用单向数据流。首先用户事件产生一个`Action`。`Action`会修改`State`，接着`State`的更新可能会引起重新计算`Computed Value`，也可能会触发`Reactions`自动发生一些副作用，比如 UI 将自动重新渲染。
 
 其中，`State`的更新是同步的，在`Action`修改`State`后新的`State`可以立即被获取。而`Computed value`采取延迟更新，只有当它被使用的时候才会被重新计算值。当使用`Computed value`的组件被卸载时，它会被自动回收。
 
@@ -82,7 +82,7 @@ React.render(React.createElement(profileView, {person: michel}), document.body);
 
 <Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/例子的图.jpg' width='500' alt='例子的图'/>
 
-该图中蓝色的是`Observable state`，绿色是`Computed value`。注意该图中的`fullName`，它同时充当`observable`和`observer`两个角色，这正是`Computed value`的特殊性。`fullName`由可观察状态`firstName`和`lastName`自动衍生得出。同样，`profileView`由`fullName`和`nickName`衍生得出。状态变更使`profileView`产生副作用————更新 React 组件树。
+该图中蓝色的是`Observable state`，绿色是`Computed value`。注意该图中的`fullName`，它同时充当`observable`和`observer`两个角色，这正是`Computed value`的特殊性。`fullName`由可观察状态`firstName`和`lastName`自动衍生得出。同样，`profileView`由`fullName`和`nickName`衍生得出。`Action`修改了状态`nickName`，状态变更使`profileView`自动产生副作用————更新 React 组件树及打印日志。
 
 MobX 会将依赖关系树最低限度定义。一旦`profileView`有了`nickName`，且不再受`fullName`影响时，它们之间的观察者关系就会被清除，如下图：
 
@@ -96,7 +96,7 @@ MobX 会将依赖关系树最低限度定义。一旦`profileView`有了`nickNam
 
 ### /TodoListStore
 
-```typescript jsx
+```tsx
 import {observable, action, computed} from 'mobx';
 
 class Todo {
@@ -131,7 +131,7 @@ export default todoListStore;
 
 ### /TodoListView
 
-```typescript jsx
+```tsx
 import * as React from 'react';
 import {inject, observer} from 'mobx-react';
 
@@ -155,7 +155,7 @@ class TodoListView extends React.PureComponent {
     this.state = {
       item: ''
     };
-    this.setItem = this.setItem.bind(this);
+
     this.addNewTodo = this.addNewTodo.bind(this);
   }
 
@@ -184,7 +184,7 @@ class TodoListView extends React.PureComponent {
           value={this.state.item}
           onChange={e => this.setItem(e.target.value)}
         />
-        <button onClick={this.addNewTodo}>add</button>
+        <button onClick={() => this.addNewTodo()}>add</button>
         <ul>
           {todos.map(todo => (
             <TodoView todo={todo} key={todo.id} />
@@ -199,7 +199,7 @@ class TodoListView extends React.PureComponent {
 export default TodoListView;
 ```
 
-```typescript jsx
+```tsx
 import React from 'react';
 import {render} from 'react-dom';
 import TodoListView from './TodoListView';
