@@ -3,7 +3,7 @@ title: webpack核心概念
 sidebar_label: webpack核心概念
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '../../../src/components/Img'; import Hint from '../../../src/components/Hint';
 
 ## Entry
 
@@ -24,8 +24,8 @@ module.exports = {
 ```js
 module.exports = {
   entry: {
-  app: './src/app.js',
-  adminApp: './src/adminApp.js
+    app: './src/app.js',
+    adminApp: './src/adminApp.js
   }
 }
 ```
@@ -63,6 +63,10 @@ module.exports = {
 };
 ```
 
+代码中的`__dirname`表示当前文件所在目录，是一个字符串，因此上述`path: __dirname + '/dist'`的意思为“将打包输出的文件存放在与配置文件相同目录的 dist 目录中”。
+
+对于`path`除了使用上述方式外，还可以通过`const path = require('path')`调用`Node.js`的内置模块`path`，使用`path.resolve([...paths])`或者`path.join([...paths])`进行拼接。两者的区别可以通过[Node.js 文档](https://nodejs.org/docs/latest/api/path.html#path_path_join_paths)和[path.join()和 path.resolve()的区别](https://juejin.im/post/5cfc96c5f265da1b8333805a)学习。
+
 ## Loaders
 
 `webpack` 开箱即用只支持 `JS` 和 `JSON` 两种文件类型，通过 `Loaders` 去支持其它文件类型并且把它们转化成有效的模块，并且可以添加到依赖图中。本身是一个函数，接受源文件作为参数，返回转换的结果。
@@ -82,7 +86,6 @@ module.exports = {
 ### Loaders 的用法
 
 ```js
-const path = require('path');
 module.exports = {
   output: {
     filename: 'bundle.js'
@@ -95,25 +98,50 @@ module.exports = {
 };
 ```
 
+其中`use` 字段有以下三种写法：
+
+- 可以是一个字符串，例如上例中的 `use: 'raw-loader'`'。
+- `use` 字段可以是一个数组，例如打包`.css`文件`use: ['style-loader', 'css-loader']`。
+- `use` 数组的每一项既可以是**字符串**也可以是**对象**，当我们需要在`webpack` 的配置文件中对 `loader` 进行配置，就需要将其编写为一个对象，并且在此对象的 `options` 字段中进行配置，如：
+
+```js
+use: [
+  {
+    loader: 'file-loader',
+    options: {
+      name: `[name]_[hash:8].[ext]`
+    }
+  }
+];
+```
+
+<Hint type="tip">use 中 loader 的调用顺序从右向左。</Hint>
+
 ## Plugins
 
 插件用于 `bundle` 文件的优化，资源管理和环境变量注入，作于用整个构建过程。插件可以看作是`loaders`功能的补充，对于`loader`无法完成的打包需求，可以考虑使用插件来实现。
 
 ### 常用的 Plugins
 
-| 名称                     | 描述                                             |
-| ------------------------ | ------------------------------------------------ |
-| CleanWebpackPlugin       | 每次构建后清楚`./dist`目录                       |
-| ExtractTextWebpackPlugin | 将`CSS`从`bundle`文件里提取成一个独立的`css`文件 |
-| CopyWebpackPlugin        | 将文件或者文件夹拷贝到构建的输出目录             |
-| HtmlWebpackPlugin        | 创建`html`文件去承载输出的`bundle`               |
-| UglifyjsWebpackPlugin    | 压缩`js`                                         |
-| ZipWebpackPlugin         | 将打包后的资源生成一个`zip`包                    |
+| 名称 | 描述 |
+| --- | --- |
+| SplitChunksPlugin | 提取公共资源 |
+| CleanWebpackPlugin | 每次构建后清楚`./dist`目录 |
+| MiniCssExtractPlugin | 将`CSS`从`bundle`文件里提取成一个独立的`css`文件 |
+| CopyWebpackPlugin | 将文件或者文件夹拷贝到构建的输出目录 |
+| HtmlWebpackPlugin | 创建`html`文件去承载输出的`bundle` |
+| UglifyjsWebpackPlugin | 压缩`js` |
+| ZipWebpackPlugin | 将打包后的资源生成一个`zip`包 |
+| friendly-errors-webpack-plugin | 优化命令行的构建日志提示信息 |
+| webpack-livereload-plugin | 开启监听模式是，代码更改自动刷新页面 |
+
+<Hint type="warn">在`webpack 3`版本时，一般会使用`CommonsChunkPlugin`插件进行资源提取，但是在`webpack 4`版本中，推荐使用`SplitChunksPlugin`来代替`CommonsChunkPlugin`，而`CommonsChunkPlugin`已被删除。 </Hint>
+
+<Hint type="warn">在`webpack 3.x`的版本中提取`CSS`会使用`ExtractTextWebpackPlugin`，而在`webpack 4`该插件已经被`MiniCssExtractPlugin`替代。 </Hint>
 
 ### Plugins 用法
 
 ```js
-const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -128,11 +156,9 @@ module.exports = {
 
 ## Mode
 
-`Mode` ⽤用来指定当前的构建环境是： `production`、`developmen`t 还是 `none`。
+`Mode` 用来指定当前的构建环境是： `production`、`development` 还是 `none`。不设置`Mode`时，默认值为`production`。
 
 ### 内置函数
-
-设置 `mode` 可以使用 `webpack` 内置的函数，默认值为 `production`。
 
 | 选项 | 描述 |
 | --- | --- |
@@ -140,10 +166,22 @@ module.exports = {
 | production | 设置 `process.env.NODE_ENV`的值为`production`, 开启`FlagDependencyUsagePlugin`, `FlagIncludedChunksPlugin`， `ModuleConcatenationPlugin`, `NoEmitonErrorsPlugin`，`OccurrenceOrderPlugin`, `SideEffectsFlagPlugin`和 `TerserPlugin` |
 | none | 不开启任何优化选项 |
 
-当`mode`设置为`development`时，一般时为了开启代码的热更新以及显示封信的文件和目录。当`mode`设置为`production`时，一般做一些代码压缩、副作用检查等优化。
+当`mode`设置为`development`时，一般是为了开启代码的热更时显示更新的文件和目录。当`mode`设置为`production`时，一般做一些代码压缩、副作用检查等优化。
 
 对于其中的内置函数在后面讲到该内容时会详细讲解。
+
+### mode 用法
+
+```js
+module.exports = {
+  output: {
+    filename: 'bundle.js'
+  },
+  mode: 'production'
+};
+```
 
 ## 参考链接
 
 - [玩转 webpack，by 程柳锋](https://time.geekbang.org/course/intro/190)
+- [带你深度解锁 Webpack 系列, 刘小夕](https://juejin.im/post/5e5c65fc6fb9a07cd00d8838)
