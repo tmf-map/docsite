@@ -200,7 +200,7 @@ In the first, let's see the common usage in the function:
 let add = (x, y) => x + y; // Parameter 'x' implicitly has an 'any' type, but a better type may be inferred from usage.
 ```
 
-We'd better define the types for each params of the function:
+We'd better define the types for each param of the function:
 
 ```ts
 let add = (x: number, y: number) => x + y; // OK, (I)

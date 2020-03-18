@@ -1,6 +1,6 @@
 ---
-title: Object Interface
-sidebar_label: Object Interface
+title: Interface
+sidebar_label: Interface
 ---
 
 import Img from '../../../src/components/Img';
