@@ -38,7 +38,7 @@ MobX 是一个简单的、可扩展的状态管理库。
 
 这张图解释了 MobX 这个体系中的各个角色的作用和关系。MobX 和 Redux 一样，采用单向数据流。首先用户事件产生一个`Action`。`Action`会修改`State`，接着`State`的更新可能会引起重新计算`Computed Value`，也可能会触发`Reactions`自动发生一些副作用，比如 UI 将自动重新渲染。
 
-其中，`State`的更新是同步的，在`Action`修改`State`后新的`State`可以立即被获取。而`Computed value`采取延迟更新，只有当它被使用的时候才会被重新计算值。当使用`Computed value`的组件被卸载时，它会被自动回收。
+其中，`State`的更新是同步的，在`Action`修改`State`后新的`State`可以立即被获取。而`Computed value`采取延迟更新，只有当它被使用的时候才会被重新计算值。当使用`Computed value`的组件被卸载时，它会被自动回收。`Reactions`一般都会自动发生。
 
 :::tip
 
@@ -89,6 +89,68 @@ MobX 会将依赖关系树最低限度定义。一旦`profileView`有了`nickNam
 <Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/例子的图2.' width='500' alt='例子的图2.'/>
 
 此时`profileView`只观察`nickName`，而`fullName`处于 lazy mode 不再观察`firstName`和`lastName`。
+
+## MobX 会对什么作出反应
+
+在大部分场景下，MobX 都会按照你的期望自动作出反应。然而某些时候，它不再正常工作，我们需要理解 MobX 如何确定对什么有反应。
+
+> MobX reacts to any existing observable property that is read during the execution of a tracked function.  
+> MobX 会对在追踪函数执行过程中读取现存的可观察属性做出反应。
+
+- 追踪函数：computed 表达式、observer 组件的 render() 方法，以及 when、reaction 和 autorun 的第一个入参函数
+- 读取：对对象属性的间接引用，例如：`user.name`或者`user['name']`
+
+也就是说，追踪函数执行中读取的 observable 的状态发生改变时，MobX 才会作出反应。
+
+换句话说，MobX 对如下情况不会作出反应：
+
+- 在追踪函数之外，读取 observable 的状态
+- 在异步调用的代码块中读取的 observable
+
+```tsx
+let message = observable({
+  title: 'Foo',
+  author: {
+    name: 'Michel'
+  },
+  likes: ['John', 'Sara']
+});
+```
+
+如上例，其在内存中看起来如下图。绿色框表示**可观察属性**。请注意，**值**本身是不可观察的！
+
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/observed-refs.png'  width='960' alt='observed-refs'/>
+
+MobX 所做的是记录你在函数中使用的是哪个**箭头**。之后，只要这些箭头改变了(它们开始引用别的东西了)，MobX 就会作出反应。
+
+```tsx
+const Message = observer(({message}) => (
+  <div>
+    {message.title}
+    <Author author={message.author} />
+    <Likes likes={message.likes} />
+  </div>
+));
+
+const Author = observer(({author}) => <span>{author.name}</span>);
+
+const Likes = observer(({likes}) => (
+  <ul>
+    {likes.map(like => (
+      <li>{like}</li>
+    ))}
+  </ul>
+));
+```
+
+如上例中几个组件，当可观察状态发生一些改变时，哪些组件会重新渲染呢？
+
+| 变化 | 重新渲染组件 |
+| --- | --- |
+| message.title = "Bar" | Message |
+| message.author.name = "Susan" | Author (.author 在 Message 中进行间接引用, 但没有改变)\* |
+| message.author = { name: "Susan"} | Message, Author |
+| message.likes[0] = "Michel" | Likes |
 
 ## TodoList
 
