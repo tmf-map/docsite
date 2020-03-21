@@ -51,7 +51,7 @@
     "@docusaurus/theme-live-codeblock": "2.0.0-alpha.48",
     "classnames": "^2.2.6",
     "marked": "^0.8.0",
-    "react": "^16.13.0",
+    "react": "^16.13.1",
     "react-dom": "^16.13.0"
   },
   "devDependencies": {
