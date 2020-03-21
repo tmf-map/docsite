@@ -194,34 +194,7 @@ let arr3: Array<number | string> = [1, 2, 3, 'a'];
 
 ### Function
 
-In the first, let's see the common usage in the function:
-
-```ts
-let add = (x, y) => x + y; // Parameter 'x' implicitly has an 'any' type, but a better type may be inferred from usage.
-```
-
-We'd better define the types for each param of the function:
-
-```ts
-let add = (x: number, y: number) => x + y; // OK, (I)
-let add2 = (x: number, y: number): number => x + y; // OK
-
-// OK
-function add3(x: number, y: number) {
-  return x + y;
-}
-```
-
-For `(I)`, TS can infer the returned type automatically:
-
-<Img w="380" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/FXqca5.png' alt='FXqca5'/>
-
-Another way is to define the function type first:
-
-```ts
-let add: (x: number, y: number) => number;
-add = (a, b) => a + b;
-```
+See more at [Function -> Types](/docs/typescript/2.function/types) section.
 
 ## TS Special Types
 
@@ -295,7 +268,7 @@ function endless(): never {
 
 Tuple is a special type of array which allows you to express an array with **a fixed number** of elements whose **types are known**, but need not be the same.
 
-<Img w="300" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/typescript-tuple.svg" alt="typescript-tuple"/>
+<Img w="300" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/typescript-tuple.jpg" alt="typescript-tuple"/>
 
 ```ts
 let tuple1: [number, string] = [1, 'a']; // OK

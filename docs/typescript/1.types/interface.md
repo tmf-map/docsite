@@ -10,16 +10,14 @@ Interface in TypeScript can be used to define a type and also to implement it in
 - as object type definition
 - as array type definition
 - as function type definition
-- class implements interface
 - interface extends interface
-
-In this section, we mainly focus on the object and array type definition using interface.
+- class implements interface
 
 Interface likes contract which defines the structure of the object, array, function and also class. However, we need to note that the TypeScript compiler does not convert interface to JavaScript. It uses interface for type checking.
 
-## Interface as Object Type
+## Interface as object type
 
-### Normal Case
+### Normal case
 
 TypeScript uses an interface to ensure the proper structure of an object. The following interface `Person` defines a type of a variable:
 
@@ -38,7 +36,7 @@ let p2: Person = {name: 'kimi', a: 20}; // Error: 'a' does not exist in type 'Pe
 let p3: Person = {name: 'kimi', age: '100'}; // Error: Type 'string' is not assignable to type 'number'.
 ```
 
-### Indexable Types
+### Indexable types
 
 Indexable types have an _index signature_ that describes the types we can use to index into the object, along with the corresponding return types when indexing. Let’s take an example:
 
@@ -93,7 +91,7 @@ interface Person {
 }
 ```
 
-### Optional Properties
+### Optional properties
 
 Sometimes, we may declare an interface with excess properties but may not expect all objects to define all the given interface properties. We can have optional properties, marked with a `?`:
 
@@ -112,7 +110,7 @@ let p1: Person = {name: 'kimi', age: 20}; // OK
 let p2: Person = {name: 'kimi', age: 20, gender: 'male'}; // OK
 ```
 
-### Readonly Properties
+### Readonly properties
 
 TypeScript provides a way to mark a property as read only. This means that once a property is assigned a value, it cannot be changed!
 
@@ -127,11 +125,11 @@ let p1: Person = {name: 'kimi', age: 20};
 p1.age = 18; // Error: Cannot assign to 'age' because it is a read-only property.
 ```
 
-## Interface as Array Type
+## Interface as array type
 
 An interface can also define the type of an array where you can define the type of index as well as values.
 
-### Indexable Types
+### Indexable types
 
 ```ts
 interface StringArray1 {
@@ -163,7 +161,7 @@ Above, `strArr[0] = 123` also causes an error because TS will convert numeric in
 
 :::
 
-### Readonly Properties
+### Readonly properties
 
 At this time, you may wonder what's the difference between the [array types in Basic Types](/docs/typescript/1.types/basic-types#array) and interface indexable types, they both can be used to define the type of array.
 
@@ -178,7 +176,7 @@ let strArr: ReadonlyStringArray = ['abc'];
 strArr[1] = 'def'; // Error!
 ```
 
-## Duck Typing
+## Duck typing
 
 We sometimes get some excess fields besides the contract with backend API. How will TypeScript handle this?
 
@@ -245,6 +243,63 @@ interface Person {
 
 handleResult({name: 'Kimi', age: 20, gender: 'male'}); // OK
 ```
+
+## Interface extends interface
+
+Interfaces can extend one or more interfaces. This makes writing interfaces flexible and reusable.
+
+```ts
+interface Person {
+  name: string;
+  gender: string;
+}
+
+interface Employee extends Person {
+  department: string;
+}
+
+let empObj: Employee = {
+  name: 'Kimi',
+  gender: 'male',
+  department: 'Payment'
+};
+```
+
+In the above example, the `Employee` interface extends the `Person` interface. So, objects of `Employee` must include all the properties and methods of the `Person` interface otherwise, the compiler will show an error.
+
+## Class implements interface
+
+Similar to languages like Java and C#, interfaces in TypeScript can be implemented with a Class. The Class implementing the interface needs to strictly conform to the structure of the interface.
+
+```ts
+interface Employee {
+  name: string;
+  department: string;
+  getSalary: number => number;
+}
+
+class MyEmployee implements Employee {
+  name: string;
+  department: number;
+  constructor(name: string, department: string) {
+    this.name = name;
+    this.department = department;
+  }
+  getSalary(department: string): number {
+    return 9999;
+  }
+}
+
+let emp = new MyEmployee("Kimi", "Payment");
+```
+
+In the above example, the `Employee` interface is implemented in the `MyEmployee` class using the the `implements` keyword. The implementing class should strictly define the properties and the function with the same name and data type. If the implementing class does not follow the structure, then the compiler will show an error.
+
+:::tip
+
+Of course, the implementing class can define **extra** properties and methods, but at least it must define **all** the members of an interface.
+
+:::
 
 ## References
 

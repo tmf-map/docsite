@@ -3,62 +3,93 @@ title: Types
 sidebar_label: Types
 ---
 
-## How to define a type of function
+import Img from '../../../src/components/Img';
 
-TypeScript interface is also used to define a type of a function. This ensures the function signature. Generally, there are 4 types of define function:
-
-### Directly way
+In TypeScript, if we define function likes in JavaScript, there will be a hint that tell us we should define the type of parameter.
 
 ```ts
-function add(x: number, y: number) {
-  return x + y;
+let add = (a, b) => a + b; // Parameter 'a' implicitly has an 'any' type, but a better type may be inferred from usage.
+```
+
+Generally, there are 4 ways that we can define the type of function:
+
+1. Function definition
+2. Function expression
+3. Type aliases
+4. Interface
+
+## Type can be used only once
+
+### Function definition
+
+```ts
+function add(a: number, b: number) {
+  return a + b;
 }
 ```
 
-We need to declare the specific type of each parameter, but can overlook the returned type since typescript will do this.
+We need to declare the specific type of each parameter, but we can omit the returned type of function if the parameters are same type. TypeScript can infer the returned type automatically:
 
-### Use **variable** to define the type of function
+<Img w="435" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/L5TxGX.png' alt='FXqca5'/>
+
+### Function expression
+
+We can define the type of variable in function expression. There are 2 ways as the following example shows:
 
 ```ts
-let add: (x: number, y: number) => number = function(x, y) {
-  return x + y;
+let add: (a: number, b: number) => number = function(a, b) {
+  return a + b;
 };
+
 // or
-let add: (x: number, y: number) => number;
-add = function(x, y) {
-  return x + y;
+
+let add: (a: number, b: number) => number;
+add = function(a, b) {
+  return a + b;
 };
 ```
 
-We **cannot** overlook the returned type since.
+:::caution
 
-### Type Aliases
+We **cannot** omit the returned type as the type definition and function defintion are separated, so TS cannot infer the returned type from the type of parameter.
 
-Type aliases create a new name for a type. Aliasing doesn’t actually create a new type - it creates a new name to refer to that type. Look the following example:
+:::
+
+## Type can be used many times
+
+### Type aliases
+
+Type aliases create a new name for a type. Aliasing doesn’t actually create a new type - it creates a new **name** to refer to that type. Look the following example:
 
 ```ts
-type Add = (x: number, y: number) => number;
-let add: Add = function(x, y) {
-  return x + y;
+type Add = (a: number, b: number) => number;
+
+let add: Add = function(a, b) {
+  return a + b;
 };
 ```
 
-### interface as function type
+### Interface
 
-We needn't to add the function name and declare the parameter is all right.
-
-```ts
-interface add {
-  (x: number, y: number): number;
-}
-```
-
-## Heterogeneous interface
+TypeScript interface is also used to define a type of a function. This ensures the function signature. We needn't to add the function name and declare the parameter is enough.
 
 ```ts
-interface Lib {
-  (): void;
-  version: string;
-  doSomething(): void;
+interface Add {
+  (a: number, b: number): number; // note that `:` not `=>`
 }
+
+let add: Add = function(a, b) {
+  return a + b;
+};
 ```
+
+## Summary
+
+1. Function definition: the directest way
+2. Function expression: a little complicated
+3. Type aliases: likes function expression but add alias
+4. Interface: more powerful
+
+## References
+
+1. [TypeScript in action, By Liang Xiao](https://time.geekbang.org/course/detail/211-108568)

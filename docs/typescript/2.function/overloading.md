@@ -3,7 +3,7 @@ title: Overloading
 sidebar_label: Overloading
 ---
 
-## Basic Usage
+## Basic usage
 
 TypeScript provides the concept of function overloading. You can have multiple functions with the same name but different parameter types and return type.
 
@@ -58,6 +58,33 @@ function display(a: number): void {
 
 To summarize, in order to achieve function overloading, we must declare all the functions with possible signatures. Also, function implementation should have compatible types for all declarations.
 
+## Best practices
+
+Don’t put more general overloads before more specific overloads:
+
+:::warning bad
+
+```ts
+function fn(x: any): any;
+function fn(x: HTMLElement): number;
+function fn(x: HTMLDivElement): string;
+```
+
+:::
+
+Do sort overloads by putting the more general signatures after more specific signatures:
+
+:::important good
+
+```ts
+function fn(x: HTMLDivElement): string;
+function fn(x: HTMLElement): number;
+function fn(x: any): any;
+```
+
+:::
+
 ## References
 
 1. [Tutorials Teacher: TypeScript Function Overloading](https://www.tutorialsteacher.com/typescript/function-overloading)
+2. [TypeScript Official Docs: Do's and Don'ts - Function Overloads](https://www.typescriptlang.org/docs/handbook/declaration-files/do-s-and-don-ts.html#function-overloads)
