@@ -109,7 +109,7 @@ use: [
   {
     loader: 'file-loader',
     options: {
-      name: `[name]_[hash:8].[ext]`
+      name: '[name]_[hash:8].[ext]'
     }
   }
 ];
@@ -156,7 +156,7 @@ module.exports = {
 
 ## Mode
 
-`Mode` 用来指定当前的构建环境是： `production`、`development` 还是 `none`。不设置`Mode`时，默认值为`production`。
+`mode` 用来指定当前的构建环境是： `production`、`development` 还是 `none`。不设置`mode`时，即使配置`process.env.NODE_ENV`，其默认值依旧为`production`。
 
 ### 内置函数
 
@@ -180,6 +180,27 @@ module.exports = {
   mode: 'production'
 };
 ```
+
+除了直接为`mode`赋值外，还可以通过在`package.json`中配置`NODE_ENV`的值来间接赋值。例如：
+
+- package.json
+
+```js
+ "scripts": {
+    "dev": "set NODE_ENV=development &&  webpack-dev-server --open --hot",
+    "build": "set NODE_ENV=production &&   --progress --hide-modules"
+  }
+```
+
+- webpack.config.js
+
+```js
+module.exports = {
+  mode: process.env.NODE_ENV
+};
+```
+
+此时`mode`将会根据`process.env.NODE_ENV`判断运行环境。
 
 ## 参考链接
 
