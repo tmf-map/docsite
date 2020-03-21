@@ -40,13 +40,13 @@ Password: YOUR_PASSWORD
 Email: YOUR_EMAIL@domain.com
 ```
 
-也可以[NPM 官网注册](https://www.npmjs.com/signup) 成功之后，npm 会把认证信息存储在~/.npmrc 中，并且可以通过以下命令查看 npm 当前使用的用户：
+也可以[NPM 官网注册](https://www.npmjs.com/signup) 成功之后，npm 会把认证信息存储在 `~/.npmrc` 中，并且可以通过以下命令查看 npm 当前使用的用户：
 
 ```sh
 npm whoami
 ```
 
-**如果已经注册过，就使用下面的命令登录**
+如果已经注册过，就使用下面的命令登录：
 
 ```sh
 npm login
@@ -80,7 +80,11 @@ npm login
 
 ## 3. 更新包
 
-更新包的话，**coding 完了千万不直接发布**，这里我们需要修改 package 的 version 号，但这里不要直接修改，修改之前先说下 npm 维护 package 版本的规则 x.y.z. x: 主版本号,通常有重大改变或者达到里程碑才改变; y: 次要版本号,或二级版本号,在保证主体功能基本不变的情况下,如果适当增加了新功能可以更新此版本号; z: 尾版本号或者补丁号,一些小范围的修修补补就可以更新补丁号.
+更新包的话，**coding 完了千万不直接发布**，这里我们需要修改 package 的 version 号，但这里不要直接修改，修改之前先说下 npm 维护 package 版本的规则 `x.y.z`
+
+- x: 主版本号,通常有重大改变或者达到里程碑才改变
+- y: 次要版本号,或二级版本号,在保证主体功能基本不变的情况下,如果适当增加了新功能可以更新此版本号
+- z: 尾版本号或者补丁号,一些小范围的修修补补就可以更新补丁号
 
 ```sh
 npm version patch <=> z++
@@ -88,7 +92,13 @@ npm version minor <=> y++ && z=0
 npm version major <=> x+= && y=0 && z=0
 ```
 
-再执行`npm publish`就是重新发布新的 package 同时注意: 如果 npm 包同时又是一个 git 仓库，在运行了 npm version <update_type>和 npm publish 之后，npm 会自动给 git 仓库打上一个跟当前版本号一样的 tag，对于挂在 github 上的 npm 包很有用。
+再执行 `npm publish` 就是重新发布新的 package。
+
+:::tip
+
+如果 npm 包同时又是一个 git 仓库，在运行了 `npm version <update_type>` 和 `npm publish` 之后，npm 会自动给 git 仓库打上一个跟当前版本号一样的 tag，对于仓库在 github 上的 npm 包会比较有用。
+
+:::
 
 如果你希望项目发布的时候能够自动生成 `CHANGELOG.md` 文件，可以借助 [standard-version](https://github.com/conventional-changelog/standard-version) 这样的工具, 自动生成 CHANGELOG, 甚至是 语义化的版本号([Semantic Version](https://semver.org/lang/zh-CN/)).
 
@@ -98,7 +108,7 @@ npm version major <=> x+= && y=0 && z=0
 npm i standard-version
 ```
 
-package.json 配置:
+`package.json` 配置:
 
 ```json
 "script": {
@@ -141,7 +151,7 @@ npm ERR! wait-for-user-input cannot be republished until 24 hours have passed. :
 npm deprecate YOUR_PACKAGE@"< 0.2.3" "critical bug fixed in v0.2.3"
 ```
 
-运行上面的命令以后，小于 0.2.3 版本的模块的 package.json 都会写入一行警告，用户安装这些版本时，这行警告就会在命令行显示。
+运行上面的命令以后，用户安装小于 `0.2.3` 版本的包时，就会显示以上警告。
 
 ## 6. 重命名已经发布的包
 
@@ -167,7 +177,7 @@ $ npx pkg-rename old-package-name --publish
 
 :::tip
 
-如果包是放在`@org`下面，publish 时候需要带上`--access public`参数，否则 npm 默认 publish 的是付费的私有包。
+如果包是放在`@org`下面，publish 时候需要带上`--access public`参数，否则 npm 默认 publish 的是付费的私有包，如果你不是付费玩家将会发布失败。
 
 :::
 
@@ -185,7 +195,7 @@ npm deprecate old-package-name@"<=0.2.3" "WARNING: This project has been renamed
 npm owner ls PACKAGE_NAME
 ```
 
-一些国内大公司，出于“某些原因”，会把公司的包放在个人名下，如果担心员工离职后包的管理问题，可以在 npm 中增加新的维护者。不过尽量不要这么做，审视一下自己的内心，我必须把公司的包放在个人名下吗？
+一些国内的公司，出于“某些原因”，会把公司的包放在个人名下，如果担心员工离职后包的管理问题，可以在 npm 中增加新的维护者。不过尽量不要这么做，开发者可以先审视一下自己的内心，是否有必要把公司的包放在个人名下。
 
 **新增维护者**
 
@@ -201,7 +211,7 @@ npm owner rm USER_NAME PACKAGE_NAME
 
 ## 8. 其他命令
 
-npm home 命令可以打开一个模块的主页，npm repo 命令则是打开一个模块的代码仓库。
+`npm home` 命令可以打开一个模块的主页，`npm repo` 命令则是打开一个模块的代码仓库。
 
 ```sh
 npm home PACKAGE_NAME
@@ -210,7 +220,7 @@ npm repo PACKAGE_NAME
 
 这两个命令不需要模块先安装。
 
-npm outdated 命令检查当前项目所依赖的模块，是否已经有新版本。
+`npm outdated` 命令检查当前项目所依赖的模块，是否已经有新版本。
 
 ```sh
 npm outdated
