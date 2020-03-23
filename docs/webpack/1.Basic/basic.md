@@ -5,8 +5,6 @@ sidebar_label: webpack核心概念
 
 import Img from '../../../src/components/Img';
 
-import Hint from '../../../src/components/Hint';
-
 ## Entry
 
 `Entry` ⽤用来指定 `webpack` 的打包入⼝，入⼝文件只能是`.js`文件。对于非代码部分比如图片、字体等也会通过依赖加入到依赖图中。
@@ -117,7 +115,11 @@ use: [
 ];
 ```
 
-<Hint type="tip">use 中 loader 的调用顺序从右向左。</Hint>
+:::tip
+
+`use` 中 `loader` 的调用顺序从右向左。
+
+:::
 
 ## Plugins
 

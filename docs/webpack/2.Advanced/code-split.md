@@ -5,8 +5,6 @@ sidebar_label: 代码分割
 
 import Img from '../../../src/components/Img';
 
-import Hint from '../../../src/components/Hint';
-
 ## 概述
 
 对于一个大的项目来说，代码都被打包到同一个文件中是相当臃肿的。当其中的某些代码只有在特定场景中才会用到时，这种打包方式的缺点尤为明显。所以，在`webpack`中允许将代码分割成更小的`chunk`，只有当代码运行到需要他们的时候再进行加载。通过脚本懒加载，可以使得初始下载的代码更小，有利于减少首屏的渲染时间。
@@ -48,7 +46,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 class Split extends React.Component {
-  constructor() {
+  constructor(props) {
     super(props);
     this.state = {
       text: null
@@ -133,7 +131,11 @@ module.exports = {
 };
 ```
 
-<Hint type="tip">`babel`的配置以及`webpack`中`entry`和`output`的配置是实现代码分割的关键。</Hint>
+:::tip
+
+`babel`的配置以及`webpack`中`entry`和`output`的配置是实现代码分割的关键。
+
+:::
 
 ## 结果展示
 
@@ -241,7 +243,11 @@ src
 │      text_chunk.js
 ```
 
-<Hint type="warn">需要注意的时，不要将字符串模板提取成一个变量，例如：`import(code)`，`webpack`在编译前不会去推断这个变量名`code`到底代表什么。因此在 import()中必须至少包含导入模块位置的某些信息以方便调用。</Hint>
+:::caution
+
+需要注意的是，不要将字符串模板提取成一个变量，例如：`import(code)`，`webpack`在编译前不会去推断这个变量名`code`到底代表什么。因此在 import()中必须至少包含导入模块位置的某些信息以方便调用。
+
+:::
 
 ## 参考链接
 
