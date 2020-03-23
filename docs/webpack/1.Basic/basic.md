@@ -3,7 +3,9 @@ title: webpack核心概念
 sidebar_label: webpack核心概念
 ---
 
-import Img from '../../../src/components/Img'; import Hint from '../../../src/components/Hint';
+import Img from '../../../src/components/Img';
+
+import Hint from '../../../src/components/Hint';
 
 ## Entry
 

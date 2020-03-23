@@ -5,6 +5,8 @@ sidebar_label: 代码分割
 
 import Img from '../../../src/components/Img';
 
+import Hint from '../../../src/components/Hint';
+
 ## 概述
 
 对于一个大的项目来说，代码都被打包到同一个文件中是相当臃肿的。当其中的某些代码只有在特定场景中才会用到时，这种打包方式的缺点尤为明显。所以，在`webpack`中允许将代码分割成更小的`chunk`，只有当代码运行到需要他们的时候再进行加载。通过脚本懒加载，可以使得初始下载的代码更小，有利于减少首屏的渲染时间。
@@ -47,7 +49,7 @@ import ReactDOM from 'react-dom';
 
 class Split extends React.Component {
   constructor() {
-    super(...arguments);
+    super(props);
     this.state = {
       text: null
     };
@@ -109,7 +111,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: '[name]_bundle.js',
-    chunkFilename: '[name].chunk.js'
+    chunkFilename: '[name]_chunk.js'
   },
   mode: 'production',
   module: {
@@ -130,6 +132,8 @@ module.exports = {
   ]
 };
 ```
+
+<Hint type="tip">`babel`的配置以及`webpack`中`entry`和`output`的配置是实现代码分割的关键。</Hint>
 
 ## 结果展示
 
@@ -156,7 +160,93 @@ module.exports = {
 
 项目中所有的代码和配置已经上传到[webpack-demo](https://github.com/USTC-Han/webpack-demo/tree/master/code-split)中，可以下载运行一下。
 
+## 魔法注释
+
+通过在`import()`中添加[魔法注释](https://webpack.js.org/api/module-methods/#magic-comments)，可以对分割后的`chunk`进行命名等操作。本节我们将讲解两个常用的注释：`/* webpackChunkName: "my-chunk-name" */`和`/* webpackExclude: /\.json$/ */`。
+
+### webpackChunkName
+
+通过之前的运行结果可以看出，被分割的`chunk`的文件名都是数字，当分割的文件较多时用数字对文件命名显然是反人类的。为了解决这一问题，我们可以使用魔法注释中的`webpackChunkName`来自定义分割出的`chunk`名。
+
+- 动态导入 npm 包
+
+当动态导入的是`npm`包时，建议`webpackChunkName`的值设为**包名**。例如当我们动态导入`lodash`包时，我们不再需要使用`import _ from 'lodash'`，其配置如下：
+
+```js
+import(/* webpackChunkName: "lodash" */ 'lodash').then();
+```
+
+使用`webpack`打包后的文件名为：
+
+```
+vendors~lodash_chunk.js
+```
+
+- 动态导入文件：
+
+当动态导入的是文件时，建议`webpackChunkName`的值设为`[request]`。例如当我们导入`text.js`文件时，其配置如下：
+
+```js
+import(/* webpackChunkName: "[request]" */ `./text.js`).then();
+```
+
+使用`webpack`打包后的文件名为：
+
+```
+text_chunk.js
+```
+
+### webpackExclude
+
+`webpackExclude`注释的值是一个正则表达式，符合该正则表达式的所有文件在代码分割时将被排除在外。
+
+例如，demo 的目录如下所示：
+
+```
+src
+    ├─code
+    │      regexp.json
+    │      test.js
+    │      text.js
+    │
+    └─split
+            index.html
+            index.js
+```
+
+当我们在`spilt/index.js`文件中动态导入`code`目录下的`text.js`文件时，如果`spilt/index.js`代码设置如下：
+
+```js
+   loadComponent(fileName) {
+        const path =  `${fileName}.js`;
+        import(/* webpackChunkName: "[request]" */ /* webpackExclude: /\.json$/ */`../code/${path}`).then((result) => {
+            if(fileName === 'test') {
+                this.setState({ test: result[fileName] })
+            }else{
+                this.setState({ text: result[fileName] })
+            }
+        })
+    }
+
+```
+
+因为`webpack`编译前不会分析`${path}`，所以`/code`目录下的所有`.js`文件将分别打包成对应的`chunk`，而`.json`文件将会被忽略。此处可以通过传递不同的参数来懒加载不同的文件。
+
+打包后的结果为：
+
+```
+├─dist
+│      split_bundle.js
+│      test_chunk.js
+│      text_chunk.js
+```
+
+<Hint type="warn">需要注意的时，不要将字符串模板提取成一个变量，例如：`import(code)`，`webpack`在编译前不会去推断这个变量名`code`到底代表什么。因此在 import()中必须至少包含导入模块位置的某些信息以方便调用。</Hint>
+
 ## 参考链接
 
 - [代码分割和动态 import，by 程柳锋](https://time.geekbang.org/course/detail/190-102405)
 - [Webpack 的 Bundle Split 和 Code Split 区别和应用， by JS 菌](https://segmentfault.com/a/1190000017893334)
+- [webpack document -- Module Methods](https://webpack.js.org/api/module-methods/#magic-comments)
+- [使用 import()配合 webpack 动态导入模块时，如何指定 chunk name？，by mrdulin](https://github.com/mrdulin/blog/issues/43)
+- [Error: Cannot find module with dynamic import，by MrDarkSkil](https://github.com/webpack/webpack/issues/6680)
