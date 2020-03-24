@@ -3,8 +3,6 @@ title: Enum
 sidebar_label: Enum
 ---
 
-import Hint from '../../../src/components/Hint';
-
 枚举（Enum）类型经常被用于取值在一定范围内的场景，比如一周只能有七天，[角色权限设计](https://www.cnblogs.com/bjxingch/articles/6561236.html)等。枚举类型变量使用`enum`字段来定义，枚举成员的值可以是数字或者字符串，并且枚举成员是只读的。
 
 枚举按照类型划分，主要分为以下三种：
@@ -71,7 +69,11 @@ console.log(Days[3] === 'Wed'); // true
 
 通过上面的代码可以看出，当手动赋值的枚举成员数字较小时，可能会被后面成员值覆盖，此时通过值只能找到后面的枚举成员。
 
-<Hint type="warn">当枚举成员较多时，如果对枚举成员赋值较小，很可能会被后面的枚举成员值覆盖</Hint>
+:::caution
+
+当枚举成员较多时，如果对枚举成员赋值较小，很可能会被后面的枚举成员值覆盖。
+
+:::
 
 ### 反向映射
 
@@ -160,7 +162,11 @@ enum BooleanLikeHeterogeneousEnum {
 }
 ```
 
-<Hint type="warn">除非业务上真的需要这种枚举类型，否则不建议使用异构枚举。</Hint>
+:::caution
+
+除非业务上真的需要这种枚举类型，否则不建议使用异构枚举。
+
+:::
 
 ## 枚举成员
 
@@ -200,7 +206,11 @@ enum Color {
 } //error TS1061: Enum member must have initializer.
 ```
 
-<Hint type="tip">在枚举中，计算所得项后面不可以定义未赋值的项</Hint>
+:::tip
+
+在枚举中，计算所得项后面不可以定义未赋值的项
+
+:::
 
 ## 常量枚举
 
@@ -239,7 +249,11 @@ const enum Color {
 // index.ts(1,38): error TS2474: In 'const' enum declarations member initializer must be constant expression.
 ```
 
-<Hint type="tip">如果枚举成员都是常数项时，可以考虑使用`const enum`来定义枚举变量。</Hint>
+:::tip
+
+如果枚举成员都是常数项时，可以考虑使用`const enum`来定义枚举变量。
+
+:::
 
 ## 作为变量类型
 

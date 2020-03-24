@@ -1,6 +1,6 @@
 ---
-title: Interface
-sidebar_label: Interface
+title: As object or array type
+sidebar_label: As object or array type
 ---
 
 import Img from '../../../src/components/Img';
@@ -12,6 +12,8 @@ Interface in TypeScript can be used to define a type and also to implement it in
 - as function type definition
 - interface extends interface
 - class implements interface
+
+In this section, we mainly focus on the object and array type definition using interface. As function type definition will be introduced in [Function: Types](/docs/typescript/3.function/types#interface) section.
 
 Interface likes contract which defines the structure of the object, array, function and also class. However, we need to note that the TypeScript compiler does not convert interface to JavaScript. It uses interface for type checking.
 
@@ -55,7 +57,7 @@ let p2: Person = {name: 'kimi', age: 20, id: 888}; // OK
 
 There are two types of supported index signatures: `string` and `number`. It is possible to support both types of indexers.
 
-:::important good
+:::good
 
 Recommend to use string indexer in object and numeric indexer in array.
 
@@ -205,7 +207,7 @@ In other words, don’t check whether it IS-a duck, check whether it QUACKS-like
 
 Thus, in TypeScript we only need to pass in the object that meets the necessary conditions of the interface. It will pass the type checking even if the excess fields are passed in.
 
-:::warning bad
+:::bad
 
 It will cause an error if we pass in object literal.
 
@@ -243,63 +245,6 @@ interface Person {
 
 handleResult({name: 'Kimi', age: 20, gender: 'male'}); // OK
 ```
-
-## Interface extends interface
-
-Interfaces can extend one or more interfaces. This makes writing interfaces flexible and reusable.
-
-```ts
-interface Person {
-  name: string;
-  gender: string;
-}
-
-interface Employee extends Person {
-  department: string;
-}
-
-let empObj: Employee = {
-  name: 'Kimi',
-  gender: 'male',
-  department: 'Payment'
-};
-```
-
-In the above example, the `Employee` interface extends the `Person` interface. So, objects of `Employee` must include all the properties and methods of the `Person` interface otherwise, the compiler will show an error.
-
-## Class implements interface
-
-Similar to languages like Java and C#, interfaces in TypeScript can be implemented with a Class. The Class implementing the interface needs to strictly conform to the structure of the interface.
-
-```ts
-interface Employee {
-  name: string;
-  department: string;
-  getSalary: number => number;
-}
-
-class MyEmployee implements Employee {
-  name: string;
-  department: number;
-  constructor(name: string, department: string) {
-    this.name = name;
-    this.department = department;
-  }
-  getSalary(department: string): number {
-    return 9999;
-  }
-}
-
-let emp = new MyEmployee("Kimi", "Payment");
-```
-
-In the above example, the `Employee` interface is implemented in the `MyEmployee` class using the the `implements` keyword. The implementing class should strictly define the properties and the function with the same name and data type. If the implementing class does not follow the structure, then the compiler will show an error.
-
-:::tip
-
-Of course, the implementing class can define **extra** properties and methods, but at least it must define **all** the members of an interface.
-
-:::
 
 ## References
 
