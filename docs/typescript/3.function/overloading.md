@@ -62,7 +62,7 @@ To summarize, in order to achieve function overloading, we must declare all the 
 
 Don’t put more general overloads before more specific overloads:
 
-:::warning bad
+:::bad
 
 ```ts
 function fn(x: any): any;
@@ -74,7 +74,7 @@ function fn(x: HTMLDivElement): string;
 
 Do sort overloads by putting the more general signatures after more specific signatures:
 
-:::important good
+:::good
 
 ```ts
 function fn(x: HTMLDivElement): string;
