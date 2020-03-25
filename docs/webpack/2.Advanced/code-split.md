@@ -107,9 +107,9 @@ module.exports = {
     split: './src/split/index'
   },
   output: {
-    path: path.join(__dirname, 'dist'),
-    filename: '[name]_bundle.js',
-    chunkFilename: '[name]_chunk.js'
+    path: path.join(__dirname, 'dist'), // 输出目录
+    filename: '[name]_bundle.js', // 入口文件打包后的文件名
+    chunkFilename: '[name]_chunk.js' // 代码分离出块的文件名
   },
   mode: 'production',
   module: {
@@ -220,7 +220,7 @@ src
 
 ```js
    loadComponent(fileName) {
-        const path =  `${fileName}.js`;
+        const path = `${fileName}.js`;
         import(/* webpackChunkName: "[request]" */ /* webpackExclude: /\.json$/ */`../code/${path}`).then((result) => {
             if(fileName === 'test') {
                 this.setState({ test: result[fileName] })
@@ -248,6 +248,8 @@ src
 需要注意的是，不要将字符串模板提取成一个变量，例如：`import(code)`，`webpack`在编译前不会去推断这个变量名`code`到底代表什么。因此在 import()中必须至少包含导入模块位置的某些信息以方便调用。
 
 :::
+
+添加魔法注释后的代码可以点击[此处链接](https://github.com/USTC-Han/webpack-demo/tree/master/code-split-1)下载运行。
 
 ## 参考链接
 
