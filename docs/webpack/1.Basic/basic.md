@@ -139,9 +139,17 @@ use: [
 | friendly-errors-webpack-plugin | 优化命令行的构建日志提示信息 |
 | webpack-livereload-plugin | 开启监听模式是，代码更改自动刷新页面 |
 
-<Hint type="warn">在`webpack 3`版本时，一般会使用`CommonsChunkPlugin`插件进行资源提取，但是在`webpack 4`版本中，推荐使用`SplitChunksPlugin`来代替`CommonsChunkPlugin`，而`CommonsChunkPlugin`已被删除。 </Hint>
+:::caution
 
-<Hint type="warn">在`webpack 3.x`的版本中提取`CSS`会使用`ExtractTextWebpackPlugin`，而在`webpack 4`该插件已经被`MiniCssExtractPlugin`替代。 </Hint>
+在`webpack 3`版本时，一般会使用`CommonsChunkPlugin`插件进行资源提取，但是在`webpack 4`版本中，推荐使用`SplitChunksPlugin`来代替`CommonsChunkPlugin`，而`CommonsChunkPlugin`已被删除。
+
+:::
+
+:::caution
+
+在`webpack 3.x`的版本中提取`CSS`会使用`ExtractTextWebpackPlugin`，而在`webpack 4`该插件已经被`MiniCssExtractPlugin`替代。
+
+:::
 
 ### Plugins 用法
 
