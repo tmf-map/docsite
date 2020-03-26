@@ -1,6 +1,5 @@
 ---
 title: Generic Function
-sidebar_label: Generic Function
 ---
 
 ## 概述
@@ -15,7 +14,7 @@ sidebar_label: Generic Function
 
 如下例所示，`identity`函数返回传入的参数，但是这个函数的可重用性很差，只能支持`number`类型。
 
-```js
+```ts
 function identity(arg: number): number {
   return arg;
 }
@@ -23,7 +22,7 @@ function identity(arg: number): number {
 
 为了支持更多的类型，我们可以将参数设置为联合类型或者`any`类型。
 
-```js
+```ts
 function identity(arg: any): any {
   return arg;
 }
@@ -33,7 +32,7 @@ function identity(arg: any): any {
 
 为了解决该问题，我们可以使用泛型中的类型变量`T`，通过类型变量来捕捉函数的传入类型，同时控制函数的返回值类型。如下所示：
 
-```js
+```ts
 function identity<T>(arg: T): T {
   return arg;
 }
@@ -43,13 +42,13 @@ function identity<T>(arg: T): T {
 
 调用泛型函数有两种方式，第一种是指定`T`的具体类型：
 
-```js
+```ts
 let output = identity < string > 'myString'; // type of output will be 'string'
 ```
 
 第二种是利用类型推断：
 
-```js
+```ts
 let output = identity('myString'); // type of output will be 'string'
 ```
 
@@ -65,7 +64,7 @@ let output = identity('myString'); // type of output will be 'string'
 
 泛型函数和普通函数的定义一样，除了通过上面的方法定义外，还可以通过泛型函数表达式、类型别名以及接口的形式来定义泛型函数。例如使用泛型类型别名来定义：
 
-```js
+```ts
 type Id = <T>(arg: T) => T;
 
 let myID: Id = function(arg) {
@@ -77,29 +76,29 @@ let myID: Id = function(arg) {
 
 我们可以使用不同的名称指定多个类型变量，如下所示：
 
-```js
+```ts
 function displayType<T, U>(id: T, name: U): void {
   console.log(typeof id + ', ' + typeof name);
 }
 
-displayType < number, string > (1, 'Steve'); // number, string
+displayType<number, string>(1, 'Steve'); // number, string
 ```
 
 我们也可以只让部分参数使用类型变量：
 
-```js
+```ts
 function displayType<T>(id: T, name: string): void {
   console.log(typeof id + ', ' + typeof name);
 }
 
-displayType < number > (1, 'Steve'); // number, string
+displayType<number>(1, 'Steve'); // number, string
 ```
 
 ### 类型变量的属性和方法
 
 使用泛型时，类型变量`T`是一个通用类型，传入的参数有可能是`ts`类型中的任何类型。
 
-```js
+```ts
 function loggingIdentity<T>(arg: T): T {
   arg.toString(); // OK
   arg.length; //  Error: T doesn't have .length
@@ -111,7 +110,7 @@ function loggingIdentity<T>(arg: T): T {
 
 当我们参数类型`T`改为`T`类型的数组时，代码将可以编译成功。
 
-```js
+```ts
 function loggingIdentity<T>(arg: T[]): T[] {
   arg.toString(); // OK
   arg.length; //  Error: T doesn't have .length
@@ -119,7 +118,7 @@ function loggingIdentity<T>(arg: T[]): T[] {
 }
 ```
 
-:::warn
+:::caution
 
 通过上面的两个例子我们可以看出，在使用泛型类型并调用类型特定的方法或属性时要慎重使用。
 
@@ -129,24 +128,24 @@ function loggingIdentity<T>(arg: T[]): T[] {
 
 上面提到在使用泛型类型并调用类型特定的方法或属性时要慎重使用，因为函数参数调用的方法不一定适用于任何类型。而泛型约束的作用就是约束`T`的类型。如下例所示：
 
-```js
+```ts
 class Person {
-    firstName: string;
-    lastName: string;
+  firstName: string;
+  lastName: string;
 
-    constructor(fname:string,  lname:string) {
-        this.firstName = fname;
-        this.lastName = lname;
-    }
+  constructor(fname: string, lname: string) {
+    this.firstName = fname;
+    this.lastName = lname;
+  }
 }
 
 function display<T extends Person>(per: T): void {
-    console.log(`${ per.firstName} ${per.lastName}` );
+  console.log(`${per.firstName} ${per.lastName}`);
 }
-var per = new Person("Bill", "Gates");
+var per = new Person('Bill', 'Gates');
 display(per); //Output: Bill Gates
 
-display("Bill Gates");//Compiler Error
+display('Bill Gates'); //Compiler Error
 ```
 
 例子中`display`函数是一个泛型函数，类型变量`T`继承了`Person`类，因此函数参数类型必须时`Person`的实例或者继承自`Person`类，否则将会提示出错。
