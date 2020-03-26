@@ -3,7 +3,7 @@ title: 编译选项
 sidebar_label: 编译选项
 ---
 
-import Img from '../../../src/components/Img'; import Hint from '../../../src/components/Hint';
+import Img from '../../../src/components/Img';
 
 ## compilerOptions
 
@@ -286,7 +286,11 @@ allowJs: true
 
 当我们只想编译生成`.d.ts`文件而不想编译生成`js`文件时，可以在`compilerOptions`中配置 `emitDeclarationOnly`为`true`。
 
-<Hint type="good">在项目中使用工程引用时，必须在根 `tsconfig.json` 中配置`declaration`。</Hint>
+:::caution
+
+在项目中使用工程引用时，必须在根 `tsconfig.json` 中配置`declaration`。
+
+:::
 
 ### sourceMap
 

@@ -5,8 +5,6 @@ sidebar_label: Basic Types
 
 import Img from '../../../src/components/Img';
 
-import Hint from '../../../src/components/Hint';
-
 ## Type Annotations
 
 - **What**: Like type declaration in Java.
@@ -73,7 +71,11 @@ num = null; // OK
 
 However, when using the `--strictNullChecks` flag, `null` and `undefined` are only assignable to any and their respective types (the one exception being that `undefined` is also assignable to `void`). This helps avoid many common errors. In cases where you want to pass in either a `number` or `null` or `undefined`, you can use the union type `number | null | undefined`.
 
-<Hint type="good">We encourage the use of `--strictNullChecks` when possible.</Hint>
+:::good
+
+We encourage the use of `--strictNullChecks` when possible.
+
+:::
 
 But for the purposes of this handbook, we will assume it is turned off.
 
@@ -142,7 +144,11 @@ let prettySure: Object = 4; // OK
 prettySure.toFixed(); // Error: Property 'toFixed' doesn't exist on type 'Object'.
 ```
 
-<Hint type="good">Avoid using `Object` in favor of the non-primitive object type, please use the non-primitive `object` type ([added in TypeScript 2.2](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-2.html#object-type)).</Hint>
+:::good
+
+Avoid using `Object` in favor of the non-primitive object type, please use the non-primitive `object` type ([added in TypeScript 2.2](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-2.html#object-type)).
+
+:::
 
 #### The Empty Type {}
 
@@ -194,34 +200,7 @@ let arr3: Array<number | string> = [1, 2, 3, 'a'];
 
 ### Function
 
-In the first, let's see the common usage in the function:
-
-```ts
-let add = (x, y) => x + y; // Parameter 'x' implicitly has an 'any' type, but a better type may be inferred from usage.
-```
-
-We'd better define the types for each params of the function:
-
-```ts
-let add = (x: number, y: number) => x + y; // OK, (I)
-let add2 = (x: number, y: number): number => x + y; // OK
-
-// OK
-function add3(x: number, y: number) {
-  return x + y;
-}
-```
-
-For `(I)`, TS can infer the returned type automatically:
-
-<Img w="380" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/FXqca5.png' alt='FXqca5'/>
-
-Another way is to define the function type first:
-
-```ts
-let add: (x: number, y: number) => number;
-add = (a, b) => a + b;
-```
+See more at [Function -> Types](/docs/typescript/2.function/types) section.
 
 ## TS Special Types
 
@@ -271,7 +250,11 @@ let arr: any[] = [123, 'abc'];
 
 With the intent of compatibility of JS, `any` may be useful in some scenarios, but we should not count on it.
 
-<Hint type="good">We should use `any` as less as possible.</Hint>
+:::good
+
+We should use `any` as less as possible.
+
+:::
 
 ### never
 
@@ -295,7 +278,7 @@ function endless(): never {
 
 Tuple is a special type of array which allows you to express an array with **a fixed number** of elements whose **types are known**, but need not be the same.
 
-<Img w="300" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/typescript-tuple.svg" alt="typescript-tuple"/>
+<Img w="300" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/typescript-tuple.jpg" alt="typescript-tuple"/>
 
 ```ts
 let tuple1: [number, string] = [1, 'a']; // OK
@@ -327,7 +310,11 @@ console.log(tuple1); // [1, 'a', 2]
 tuple1[2]; // Error, Tuple type '[number, string]' of length '2' has no element at index '2'.
 ```
 
-<Hint type="bad">Use `push()` method in tuple is a bad idea.</Hint>
+:::bad
+
+Use `push()` method in tuple is a bad idea.
+
+:::
 
 In the following scenario, you should pay more attention on the middle variable:
 

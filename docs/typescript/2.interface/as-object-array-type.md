@@ -1,6 +1,6 @@
 ---
-title: Object Interface
-sidebar_label: Object Interface
+title: As object or array type
+sidebar_label: As object or array type
 ---
 
 import Img from '../../../src/components/Img';
@@ -10,16 +10,16 @@ Interface in TypeScript can be used to define a type and also to implement it in
 - as object type definition
 - as array type definition
 - as function type definition
-- class implements interface
 - interface extends interface
+- class implements interface
 
-In this section, we mainly focus on the object and array type definition using interface.
+In this section, we mainly focus on the object and array type definition using interface. As function type definition will be introduced in [Function: Types](/docs/typescript/3.function/types#interface) section.
 
 Interface likes contract which defines the structure of the object, array, function and also class. However, we need to note that the TypeScript compiler does not convert interface to JavaScript. It uses interface for type checking.
 
-## Interface as Object Type
+## Interface as object type
 
-### Normal Case
+### Normal case
 
 TypeScript uses an interface to ensure the proper structure of an object. The following interface `Person` defines a type of a variable:
 
@@ -38,7 +38,7 @@ let p2: Person = {name: 'kimi', a: 20}; // Error: 'a' does not exist in type 'Pe
 let p3: Person = {name: 'kimi', age: '100'}; // Error: Type 'string' is not assignable to type 'number'.
 ```
 
-### Indexable Types
+### Indexable types
 
 Indexable types have an _index signature_ that describes the types we can use to index into the object, along with the corresponding return types when indexing. Let’s take an example:
 
@@ -57,7 +57,7 @@ let p2: Person = {name: 'kimi', age: 20, id: 888}; // OK
 
 There are two types of supported index signatures: `string` and `number`. It is possible to support both types of indexers.
 
-:::important good
+:::good
 
 Recommend to use string indexer in object and numeric indexer in array.
 
@@ -93,7 +93,7 @@ interface Person {
 }
 ```
 
-### Optional Properties
+### Optional properties
 
 Sometimes, we may declare an interface with excess properties but may not expect all objects to define all the given interface properties. We can have optional properties, marked with a `?`:
 
@@ -112,7 +112,7 @@ let p1: Person = {name: 'kimi', age: 20}; // OK
 let p2: Person = {name: 'kimi', age: 20, gender: 'male'}; // OK
 ```
 
-### Readonly Properties
+### Readonly properties
 
 TypeScript provides a way to mark a property as read only. This means that once a property is assigned a value, it cannot be changed!
 
@@ -127,11 +127,11 @@ let p1: Person = {name: 'kimi', age: 20};
 p1.age = 18; // Error: Cannot assign to 'age' because it is a read-only property.
 ```
 
-## Interface as Array Type
+## Interface as array type
 
 An interface can also define the type of an array where you can define the type of index as well as values.
 
-### Indexable Types
+### Indexable types
 
 ```ts
 interface StringArray1 {
@@ -163,7 +163,7 @@ Above, `strArr[0] = 123` also causes an error because TS will convert numeric in
 
 :::
 
-### Readonly Properties
+### Readonly properties
 
 At this time, you may wonder what's the difference between the [array types in Basic Types](/docs/typescript/1.types/basic-types#array) and interface indexable types, they both can be used to define the type of array.
 
@@ -178,7 +178,7 @@ let strArr: ReadonlyStringArray = ['abc'];
 strArr[1] = 'def'; // Error!
 ```
 
-## Duck Typing
+## Duck typing
 
 We sometimes get some excess fields besides the contract with backend API. How will TypeScript handle this?
 
@@ -207,7 +207,7 @@ In other words, don’t check whether it IS-a duck, check whether it QUACKS-like
 
 Thus, in TypeScript we only need to pass in the object that meets the necessary conditions of the interface. It will pass the type checking even if the excess fields are passed in.
 
-:::warning bad
+:::bad
 
 It will cause an error if we pass in object literal.
 
