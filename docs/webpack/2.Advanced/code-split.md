@@ -1,6 +1,5 @@
 ---
-title: 代码分割
-sidebar_label: 代码分割
+title: 代码分割与懒加载
 ---
 
 import Img from '../../../src/components/Img';
@@ -143,7 +142,7 @@ module.exports = {
 
 ```
 ├─dist
-│      1.chunk.js
+│      1_chunk.js
 │      split.html
 │      split_bundle.js
 ```
