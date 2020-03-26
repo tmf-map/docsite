@@ -147,17 +147,17 @@ module.exports = {
 │      split_bundle.js
 ```
 
-其中`1.chunk.js`为懒加载代码，对应`split/text.js`，`split_bundle.js`为入口文件的输出文件，`split.html`为`split/index.html`打包后文件。
+其中`1_chunk.js`为懒加载代码，当`import`没加魔法注释时默认`name`为数字，对应`split/text.js`，`split_bundle.js`为入口文件的输出文件，`split.html`为`split/index.html`打包后文件。
 
 在浏览器中执行`split.html`文件，执行结果如下图：
 
 <Img width="400" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200316215036.png" />
 
-通过上图`Network`可以看出，执行时并没有引入`1.chunk.js`文件。
+通过上图`Network`可以看出，执行时并没有引入`1_chunk.js`文件。
 
-当我们点击页面中的文字时，`1.chunk.js`脚本被加载，文字'dynamic import'显示在网页中。如下图所示：
+当我们点击页面中的文字时，`1_chunk.js`脚本被加载，文字'dynamic import'显示在网页中。如下图所示：
 
-<Img width="400"  src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200316215322.png" />
+<Img width="400"  src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/微信截图_20200326190153.png" />
 
 项目中所有的代码和配置已经上传到[webpack-demo](https://github.com/USTC-Han/webpack-demo/tree/master/code-split)中，可以下载运行一下。
 
