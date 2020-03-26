@@ -1,17 +1,42 @@
 name-template: 'release-v$NEXT_PATCH_VERSION'
 tag-template: 'release-v$NEXT_PATCH_VERSION'
 categories:
-  - title: '🚀 Features'
+  - title: 'Blog'
+    labels:
+      - 'blog'
+  - title: 'Algorithm'
     labels:
       - 'docs: algorithm'
-  - title: '🐛 Bug Fixes'
+  - title: 'Design patterns'
     labels:
-      - 'bug'
-  - title: '🧰 Maintenance'
+        - 'docs: design patterns'
+  - title: 'HTML'
     labels:
-      - 'dev experience'
-      - 'enhancement'
-      - 'dependencies'
+        - 'docs: html'
+  - title: 'CSS'
+    labels:
+        - 'docs: css'
+  - title: 'Javascript'
+    labels:
+        - 'docs: javascript'
+  - title: 'React'
+    labels:
+        - 'docs: react'
+  - title: 'Web'
+    labels:
+        - 'docs: web'
+  - title: 'Java'
+    labels:
+        - 'docs: java'
+  - title: 'HTTP'
+    labels:
+        - 'docs: http'
+  - title: 'typescript'
+    labels:
+      - 'docs: typescript'
+  - title: 'Website'
+    labels:
+      - 'website'
 change-template: '- $TITLE (#$NUMBER) @$AUTHOR'
 template: |
   # What's Changed
