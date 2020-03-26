@@ -157,7 +157,7 @@ module.exports = {
 
 当我们点击页面中的文字时，`1_chunk.js`脚本被加载，文字'dynamic import'显示在网页中。如下图所示：
 
-<Img width="400"  src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/微信截图_20200326190153.png" />
+<Img width="400"  src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/lazy-import.gif" />
 
 项目中所有的代码和配置已经上传到[webpack-demo](https://github.com/USTC-Han/webpack-demo/tree/master/code-split)中，可以下载运行一下。
 
