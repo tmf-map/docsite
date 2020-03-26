@@ -9,6 +9,7 @@ const algorithm = require('./algorithm');
 const http = require('./http');
 const docs = require('./docs');
 const typescript = require('./typescript');
+const webpack = require('./webpack');
 
 module.exports = {
   javascript,
@@ -21,5 +22,6 @@ module.exports = {
   algorithm,
   http,
   docs,
-  typescript
+  typescript,
+  webpack
 };

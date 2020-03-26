@@ -63,6 +63,11 @@ module.exports = {
           label: 'TypeScript',
           position: 'left'
         },
+        {
+          to: 'docs/webpack/1.Basic/basic',
+          label: 'Webpack',
+          position: 'left'
+        },
         {to: 'blog', label: 'Blog', position: 'right'},
         {
           href: `https://github.com/${githubOrg}/${githubRepo}`,
