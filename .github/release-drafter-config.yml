@@ -1,5 +1,5 @@
-name-template: 'release-v$NEXT_PATCH_VERSION'
-tag-template: 'release-v$NEXT_PATCH_VERSION'
+name-template: '2020-Q?-M?'
+tag-template: '2020-Q?-M?'
 categories:
   - title: 'Blog'
     labels:
