@@ -1,13 +1,18 @@
 module.exports = {
-  '1.Types': ['typescript/1.types/basic-types', 'typescript/1.types/enum'],
-  '2.Interface': [
-    'typescript/2.interface/object-interface',
-    'typescript/2.interface/function-interface'
+  '1. Types': ['typescript/1.types/basic-types', 'typescript/1.types/enum'],
+  '2. Interface': [
+    'typescript/2.interface/as-object-array-type',
+    'typescript/2.interface/extend-implement'
   ],
-  '3.Generic': [
-    'typescript/3.generic/generic-function',
-    'typescript/3.generic/generic-interface',
-    'typescript/3.generic/generic-class'
+  '3. Function': [
+    'typescript/3.function/types',
+    'typescript/3.function/parameters',
+    'typescript/3.function/overloading'
+  ],
+  '4.Generic': [
+    'typescript/4.generic/generic-function',
+    'typescript/4.generic/generic-interface',
+    'typescript/4.generic/generic-class'
   ],
   Config: [
     'typescript/config/tsconfig.json',

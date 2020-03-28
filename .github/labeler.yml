@@ -24,3 +24,4 @@ blog: blog/**/*
 "docs: java": docs/java/**/*
 "docs: http": docs/http/**/*
 "docs: typescript": docs/typescript/**/*
+"docs: webpack": docs/webpack/**/*
