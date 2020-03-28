@@ -43,7 +43,7 @@ function identity<T>(arg: T): T {
 调用泛型函数有两种方式，第一种是指定`T`的具体类型：
 
 ```ts
-let output = identity < string > 'myString'; // type of output will be 'string'
+let output = identity<string>('myString'); // type of output will be 'string'
 ```
 
 第二种是利用类型推断：
