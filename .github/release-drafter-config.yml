@@ -37,6 +37,9 @@ categories:
   - title: 'Website'
     labels:
       - 'website'
+  - title: 'Webpack'
+    labels:
+      - 'docs: webpack'
 change-template: '- $TITLE (#$NUMBER) @$AUTHOR'
 template: |
   # What's Changed
