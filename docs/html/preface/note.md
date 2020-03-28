@@ -1,25 +1,13 @@
 ---
-title: 说明
-sidebar_label: 说明
+title: Note
+sidebar_label: Note
 ---
 
-## 注解说明
-
-:::note
-
-You might read this, you might not.
-
-:::
-
-:::important
-
-You should read this.
-
-:::
+## Hint
 
 :::tip
 
-This is a `good practice`, you should obey it.
+This is a tip.
 
 :::
 
@@ -29,24 +17,22 @@ You should pay more attention to this otherwise error `may` occur.
 
 :::
 
-:::warning
+:::danger
 
 You should pay close attention to this otherwise error `must` occur.
 
 :::
 
-:::kk
+## Do's and Don'ts
 
-test the bug of admonitions whether has been fixed.
+:::good
+
+This is a `good practice`, you should do it.
 
 :::
 
-import Hint from '../../../src/components/Hint';
+:::bad
 
-<Hint type="tip">提示，补充说明</Hint>
+This is a `bad practice`, you should not do it.
 
-<Hint type="warn">注意，容易忽视</Hint>
-
-<Hint type="good">推荐，最佳实践</Hint>
-
-<Hint type="bad">避免，容易出错</Hint>
+:::
