@@ -60,7 +60,7 @@ class TestClass {
 }
 ```
 
-is such a common pattern that TypeScript provides a shorthand where you can prefix the member with an **access modifier** and it is automatically declared on the class and copied from the constructor. So the previous example can be re-written as:
+TypeScript provides a shorthand where you can prefix the member **with an access modifier** and it is automatically declared on the class and copied from the constructor. So the previous example can be re-written as:
 
 ```typescript
 class TestClass {

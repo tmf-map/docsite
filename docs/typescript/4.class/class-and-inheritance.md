@@ -85,7 +85,7 @@ class Foo {
 }
 ```
 
-would be equivalent to a similar assignment within a constructor body.
+The previous example is equivalent to a similar assignment within a constructor body.
 
 ```typescript
 class Foo {
