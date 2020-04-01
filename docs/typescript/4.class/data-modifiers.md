@@ -14,6 +14,12 @@ TypeScript supports access modifiers `public`, `private` and `protected` which d
 
 If an access modifier is not specified it is implicitly public as that matches the convenient nature of JavaScript.
 
+:::tip
+
+In other object-oriented languages, the default modifier is more restrictive than Typescript. For example, in C++, the default modifier is `private`. In C#, the default modifier for fields is `private`. And in Java, the default is no keyword, which means package.
+
+:::
+
 Note that at runtime (in the generated JS) these have no significance but will give you compile time errors if you use them incorrectly. An example of each is shown below:
 
 ```typescript
@@ -42,7 +48,7 @@ class FooChild extends FooBase {
 
 ### constructor parameters with modifiers
 
-TypeScript includes a concise way to create and assign a class instance property from a constructor parameter. Rather than:
+Having a member in a class and initializing it like below:
 
 ```typescript
 class TestClass {
@@ -54,15 +60,13 @@ class TestClass {
 }
 ```
 
-One can use the `private` keyword instead:
+is such a common pattern that TypeScript provides a shorthand where you can prefix the member with an **access modifier** and it is automatically declared on the class and copied from the constructor. So the previous example can be re-written as:
 
 ```typescript
 class TestClass {
   constructor(private name: string) {}
 }
 ```
-
-The public keyword works in the same fashion, but also instructs the TypeScript compiler that it’s OK to access the property from outside the class.
 
 Here’s a more complete example including the public keyword, as well as the result of not including a keyword:
 
@@ -196,10 +200,11 @@ emp.display(); // Employee { _name: 'Ashlee', _age: 23, _salary: 3000 }
 ## References
 
 1. [TypeScript Official Docs](https://www.typescriptlang.org/docs/handbook/classes.html)
-2. [TypeScript Data Modifiers, by TutorialsTeacher](https://www.tutorialsteacher.com/typescript/data-modifiers)
-3. [TypeScript Deep Dive, by Basarat Ali Syed](https://basarat.gitbook.io/typescript/future-javascript/classes)
-4. [TypeScript ReadOnly, by TutorialsTeacher](https://www.tutorialsteacher.com/typescript/typescript-readonly)
-5. [TypeScript Constructor Assignment: public and private Keywords, by Ken Dale](https://kendaleiv.com/typescript-constructor-assignment-public-and-private-keywords/)
-6. [TypeScript Static, by TutorialsTeacher](https://www.tutorialsteacher.com/typescript/typescript-static)
-7. [What is the usage of Private and Protected Constructors in Typescript](https://stackoverflow.com/questions/51134172/what-is-the-usage-of-private-and-protected-constructors-in-typescript)
-8. [TypeScript in action, by Liang Xiao](https://time.geekbang.org/course/detail/211-108549)
+2. [AccessModifier, by martin Fowler](https://martinfowler.com/bliki/AccessModifier.html)
+3. [TypeScript Data Modifiers, by TutorialsTeacher](https://www.tutorialsteacher.com/typescript/data-modifiers)
+4. [TypeScript Deep Dive, by Basarat Ali Syed](https://basarat.gitbook.io/typescript/future-javascript/classes)
+5. [TypeScript ReadOnly, by TutorialsTeacher](https://www.tutorialsteacher.com/typescript/typescript-readonly)
+6. [TypeScript Constructor Assignment: public and private Keywords, by Ken Dale](https://kendaleiv.com/typescript-constructor-assignment-public-and-private-keywords/)
+7. [TypeScript Static, by TutorialsTeacher](https://www.tutorialsteacher.com/typescript/typescript-static)
+8. [What is the usage of Private and Protected Constructors in Typescript](https://stackoverflow.com/questions/51134172/what-is-the-usage-of-private-and-protected-constructors-in-typescript)
+9. [TypeScript in action, by Liang Xiao](https://time.geekbang.org/course/detail/211-108549)

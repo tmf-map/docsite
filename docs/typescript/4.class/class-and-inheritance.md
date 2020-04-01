@@ -85,6 +85,19 @@ class Foo {
 }
 ```
 
+would be equivalent to a similar assignment within a constructor body.
+
+```typescript
+class Foo {
+  constructor() {
+    this.members = [];
+  }
+  add(x) {
+    this.members.push(x);
+  }
+}
+```
+
 ## Creating an Object of Class
 
 An object of the class can be created using the `new` keyword.
@@ -103,7 +116,7 @@ class Employee {
 let emp = new Employee(100, 'Steve');
 ```
 
-Here, we create an object called `emp` of type `Employee` using `let emp = new Employee(100,"Steve");`. The above class include a parameterized constructor so we pass values while creating an object. When we instantiate a new object, the class constructor is called with the values passed and the member variables `empCode` and `empName` are initialized with these values. If the class does not include any parameterized constructor, then we cannot pass values while creating an object.
+Here, we create an object called `emp` of type `Employee` using `let emp = new Employee(100,"Steve");`. The above class include a parameterized constructor so we pass values while creating an object. When we instantiate a new object, the class constructor is called with the values passed and the member variables `empCode` and `empName` are initialized with these values. If the class does not include any parameterized constructor, then we cannot pass values while creating an object. Otherwise the compiler will show an error.
 
 ## Inheritance
 
@@ -139,7 +152,7 @@ In the above example, the `Employee` class extends the Person class using `exten
 
 The constructor of the `Employee` class initializes its own members as well as the parent class's properties using a special keyword `super`. The `super` keyword is used to call the parent constructor and passes the property values.
 
-:::tip
+:::caution
 
 We must call super() method first before assigning values to properties in the constructor of the derived class.
 
@@ -191,7 +204,7 @@ mercObj.run(); // A Mercedes started A Mercedes-Benz GLA is moving at 150 mph!
 hondaObj.run(); // A Honda started A Honda City is moving at 100 mph!
 ```
 
-In the above example, we have a class `Car` with the `name` property. The constructor for this class initializes the member variables. The class also has a method `display()` with an argument speed initialized to 0.
+In the above example, we have a class `Car` with the `name` property. The constructor for this class initializes the member variables. The class also has a method `run()` with an argument speed initialized to 0.
 
 We then create two classes, `Mercedes` and `Honda`, that extend from the parent class `Car`. Each child class extends the properties of the parent class. The constructor for each class calls the super constructor to initialize the parent class properties. Each class also defines a method `run()` that prints its own message in addition to calling the super class method for `run()`.
 

@@ -9,7 +9,7 @@ module.exports = {
     'typescript/3.function/parameters',
     'typescript/3.function/overloading',
   ],
-  '4.Class': [
+  '4. Class': [
     'typescript/4.class/class-and-inheritance',
     'typescript/4.class/data-modifiers',
     'typescript/4.class/abstract-class',
