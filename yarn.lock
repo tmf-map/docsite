@@ -1108,10 +1108,10 @@
     react-toggle "^4.1.1"
     remark-admonitions "^1.2.0"
 
-"@docusaurus/theme-live-codeblock@2.0.0-alpha.48":
-  version "2.0.0-alpha.48"
-  resolved "https://registry.yarnpkg.com/@docusaurus/theme-live-codeblock/-/theme-live-codeblock-2.0.0-alpha.48.tgz#7611da208c4bd746f2fbee4fb3ad5ec9e5aa0530"
-  integrity sha512-WRSR2TMY1Ha4WO65QhN1Hf8YUgTlZ2fPNbURCdE6vcQv2v48pMlyVjWYmz0lgNDVkY3bPJ53crk6Ju4BYH4f2A==
+"@docusaurus/theme-live-codeblock@2.0.0-alpha.49":
+  version "2.0.0-alpha.49"
+  resolved "https://registry.yarnpkg.com/@docusaurus/theme-live-codeblock/-/theme-live-codeblock-2.0.0-alpha.49.tgz#16ee6fbbb8fc2ba09dd85497568a423ea76a8f4d"
+  integrity sha512-QSUqrg32YBpsGYibjpsGyHk+Az+8251tx40ttPy12zxDrMX9VSnyW/G04VinXKkvFaYOM5M3rSObS7V9UyyFBg==
   dependencies:
     "@philpl/buble" "^0.19.7"
     classnames "^2.2.6"
@@ -2592,19 +2592,10 @@ cli-width@^2.0.0:
   resolved "https://registry.npm.taobao.org/cli-width/download/cli-width-2.2.0.tgz#ff19ede8a9a5e579324147b0c11f0fbcbabed639"
   integrity sha1-/xnt6Kml5XkyQUewwR8PvLq+1jk=
 
-clipboard@^2.0.0:
+clipboard@^2.0.0, clipboard@^2.0.4:
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/clipboard/-/clipboard-2.0.6.tgz#52921296eec0fdf77ead1749421b21c968647376"
   integrity sha512-g5zbiixBRk/wyKakSwCKd7vQXDjFnAMGHoEyBogG/bw9kTD9GvdAvaoRR1ALcEzt3pVKxZR0pViekPMIS0QyGg==
-  dependencies:
-    good-listener "^1.2.2"
-    select "^1.1.2"
-    tiny-emitter "^2.0.0"
-
-clipboard@^2.0.4:
-  version "2.0.4"
-  resolved "https://registry.npm.taobao.org/clipboard/download/clipboard-2.0.4.tgz#836dafd66cf0fea5d71ce5d5b0bf6e958009112d"
-  integrity sha1-g22v1mzw/qXXHOXVsL9ulYAJES0=
   dependencies:
     good-listener "^1.2.2"
     select "^1.1.2"
