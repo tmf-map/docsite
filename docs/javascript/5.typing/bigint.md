@@ -9,13 +9,13 @@ import Img from '../../../src/components/Img';
 In some special scenarios, the backend may return such a string:
 
 ```js
-'{"value":9223372036854775807}'; // 19-bit
+'{"value": 9223372036854775807}'; // 19-digits
 ```
 
 If you use `JSON.parse ()` to parse directly:
 
 ```js
-JSON.parse('{"value":9223372036854775807}');
+JSON.parse('{"value": 9223372036854775807}');
 // {value: 9223372036854776000}
 ```
 
@@ -67,7 +67,7 @@ There is no restriction on the number of digits, and any digit integer can be ac
 const a = 2172141653n;
 const b = 15346349309n;
 
-// Result maintains precision even with 20-bit
+// Result maintains precision even with 20-digits
 a * b; // 33334444555566667777n
 
 // Normal number cannot maintain precision
@@ -107,7 +107,8 @@ typeof 123n; // 'bigint'
 Also unsupported is the unary operator (+), [in order to not break asm.js](https://github.com/tc39/proposal-bigint/blob/master/ADVANCED.md#dont-break-asmjs).
 
 ```js
--42n + 42n; // OK // Uncaught TypeError: Cannot convert a BigInt value to a number
+-42n; // OK
++42n; // Uncaught TypeError: Cannot convert a BigInt value to a number
 ```
 
 You can use the `toString ()` method to convert to a `string`, and the suffix `n` will be removed automatically:
@@ -184,8 +185,8 @@ The `JSON.parse()` method supports an optional second parameter called `reviver`
 
 ```js
 function parseReviver(key, value) {
-  if (typeof value === 'string' && /^\d+n$/.test(value)) {
-    return BigInt(value.slice(0, -1));
+  if (typeof value === 'string' && /^\d+/.test(value)) {
+    return BigInt(value);
   }
   return value;
 }
@@ -194,7 +195,7 @@ function parseReviver(key, value) {
 Let's see what will be returned if we call `JSON.parse()` with `parseReviver`:
 
 ```js
-JSON.parse('{"value":"9223372036854775807"}', parseReviver);
+JSON.parse('{"value": "9223372036854775807"}', parseReviver);
 // {value: 9223372036854775807n}
 ```
 
