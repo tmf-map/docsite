@@ -45,7 +45,7 @@
     }
   },
   "dependencies": {
-    "@docusaurus/core": "2.0.0-alpha.48",
+    "@docusaurus/core": "2.0.0-alpha.49",
     "@docusaurus/plugin-google-analytics": "2.0.0-alpha.48",
     "@docusaurus/preset-classic": "2.0.0-alpha.48",
     "@docusaurus/theme-live-codeblock": "2.0.0-alpha.48",
