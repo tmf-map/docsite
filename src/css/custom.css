@@ -75,6 +75,11 @@ header .button--outline:hover {
   margin-bottom: 5px;
 }
 
+.markdown .prism-code {
+  border-radius: var(--ifm-pre-border-radius);
+  -webkit-font-smoothing: initial;
+}
+
 .inserted-sign.inserted {
   font-style: normal !important;
 }
@@ -319,4 +324,8 @@ footer.footer {
   flex-grow: 1.5;
   margin-right: 6rem;
   flex-shrink: 0;
+}
+
+.avatar .avatar__intro {
+  margin-left: 1rem;
 }
