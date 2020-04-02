@@ -9,10 +9,10 @@ module.exports = {
     'typescript/3.function/parameters',
     'typescript/3.function/overloading'
   ],
-  '4.Generic': [
-    'typescript/4.generic/generic-function',
-    'typescript/4.generic/generic-interface',
-    'typescript/4.generic/generic-class'
+  '5.Generic': [
+    'typescript/5.generic/generic-function',
+    'typescript/5.generic/generic-interface',
+    'typescript/5.generic/generic-class'
   ],
   Config: [
     'typescript/config/tsconfig.json',
