@@ -28,7 +28,7 @@ class Employee {
 }
 ```
 
-The TypeScript compiler will convert the above class to the following JavaScript code using closure:
+The TypeScript compiler will convert the above class to the following JavaScript code using IIFE:
 
 ```typescript
 var Employee = /** @class */ (function () {

@@ -94,7 +94,7 @@ console.log(testClass.city);
 
 TypeScript introduced the keyword `readonly`, which makes a property as read-only in the class, type or interface.
 
-Read-only members can be accessed outside the class, but their value cannot be changed. Since read-only members cannot be changed outside the class, they either **need to be initialized** at declaration or inside the class constructor.
+Read-only members can be accessed outside the class, but their value cannot be changed. Since read-only members cannot be changed outside the class, they either **must be initialized** at declaration or inside the class constructor.
 
 ```typescript
 class Employee {

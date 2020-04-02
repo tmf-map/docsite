@@ -47,7 +47,7 @@ In the above example, `Person` is an abstract class which includes one property 
 
 ## Polymorphism
 
-Polymorphism is the ability for specific classes or objects to be referenced in their more general sense, to then preform an action shared amongst multiple sub types.
+Polymorphism is the ability for specific classes or objects to be referenced in their more general sense, to then preform an action shared amongst multiple sub types. The primary reason to use abstract class to achieve polymorphism and provide developers to implement on their own way in future by implementing abstract methods.
 
 ```typescript
 abstract class Animal {
