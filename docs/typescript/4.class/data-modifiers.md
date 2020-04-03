@@ -120,7 +120,7 @@ const oops = new SingletonExample(); // oops, constructor is private
 
 ### protected constructor
 
-Constructors declared with protected modifier can be used in 'this' class and in subclasses only.
+Constructors declared with protected modifier can be used in 'this' class and in subclasses only. Which means objects can't be instantiated from the class with protected constructor but only use it to inherit from. So when a class is (intended as) an abstract class, a protected constructor is exactly right. But it doesn't necessarily have to be an abstract class.
 
 ```typescript
 class Person {
