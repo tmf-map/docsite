@@ -16,7 +16,7 @@ If an access modifier is not specified it is implicitly public as that matches t
 
 :::tip
 
-In other object-oriented languages, the default modifier is more restrictive than Typescript. For example, in C++, the default modifier is `private`. In C#, the default modifier for fields is `private`. And in Java, the default is no keyword, which means package.
+In other object-oriented languages, the default modifier is more restrictive than Typescript. For example, in C++ and C#, the default modifier is `private`. And in Java, the default is no keyword, which means package.
 
 :::
 
@@ -90,46 +90,7 @@ console.log(testClass.address); // Compiler error: 'address' is private and only
 console.log(testClass.city);
 ```
 
-## readonly
-
-TypeScript introduced the keyword `readonly`, which makes a property as read-only in the class, type or interface.
-
-Read-only members can be accessed outside the class, but their value cannot be changed. Since read-only members cannot be changed outside the class, they either **must be initialized** at declaration or inside the class constructor.
-
-```typescript
-class Employee {
-  readonly empCode: number;
-  empName: string;
-
-  constructor(code: number, name: string) {
-    this.empCode = code;
-    this.empName = name;
-  }
-}
-let emp = new Employee(10, 'John');
-emp.empCode = 20; //Compiler Error
-```
-
-## static
-
-TypeScript classes support static properties that are shared by all instances of the class. The static members of a class are accessed using the class name and dot notation, without creating an object.
-
-```typescript
-class Something {
-  static instances = 0;
-  constructor() {
-    Something.instances++;
-  }
-}
-
-var s1 = new Something();
-var s2 = new Something();
-console.log(Something.instances); // 2
-```
-
-You can have static members as well as static functions.
-
-## private constructor
+### private constructor
 
 If constructor of a class is private then its instance cannot be created outside. A famous use of private constructor is applying [singleton pattern](/docs/design-patterns/1.creation-pattern/singleton):
 
@@ -157,7 +118,7 @@ console.log(singleton.prop); // value
 const oops = new SingletonExample(); // oops, constructor is private
 ```
 
-## protected constructor
+### protected constructor
 
 Constructors declared with protected modifier can be used in 'this' class and in subclasses only.
 
@@ -196,6 +157,45 @@ let emp: Employee = new Employee('Ashlee', 23, 3000);
 // class 'Person' and its subclasses.
 emp.display(); // Employee { _name: 'Ashlee', _age: 23, _salary: 3000 }
 ```
+
+## readonly
+
+TypeScript introduced the keyword `readonly`, which makes a property as read-only in the class, type or interface.
+
+Read-only members can be accessed outside the class, but their value cannot be changed. Since read-only members cannot be changed outside the class, they either **must be initialized** at declaration or inside the class constructor.
+
+```typescript
+class Employee {
+  readonly empCode: number;
+  empName: string;
+
+  constructor(code: number, name: string) {
+    this.empCode = code;
+    this.empName = name;
+  }
+}
+let emp = new Employee(10, 'John');
+emp.empCode = 20; //Compiler Error
+```
+
+## static
+
+TypeScript classes support static properties that are shared by all instances of the class. The static members of a class are accessed using the class name and dot notation, without creating an object.
+
+```typescript
+class Something {
+  static instances = 0;
+  constructor() {
+    Something.instances++;
+  }
+}
+
+var s1 = new Something();
+var s2 = new Something();
+console.log(Something.instances); // 2
+```
+
+You can have static members as well as static functions.
 
 ## References
 
