@@ -13,6 +13,7 @@ module.exports = {
     'typescript/4.class/class-and-inheritance',
     'typescript/4.class/data-modifiers',
     'typescript/4.class/abstract-class',
+    'typescript/4.class/polymorphism',
     'typescript/4.class/class-and-interface',
   ],
   Config: [
