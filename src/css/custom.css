@@ -75,6 +75,11 @@ header .button--outline:hover {
   margin-bottom: 5px;
 }
 
+.markdown .prism-code {
+  border-radius: var(--ifm-pre-border-radius);
+  -webkit-font-smoothing: initial;
+}
+
 .inserted-sign.inserted {
   font-style: normal !important;
 }
