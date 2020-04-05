@@ -10,36 +10,42 @@ categories:
   - title: 'Design patterns'
     labels:
         - 'docs: design patterns'
-  - title: 'HTML'
-    labels:
-        - 'docs: html'
-  - title: 'CSS'
-    labels:
-        - 'docs: css'
-  - title: 'Javascript'
-    labels:
-        - 'docs: javascript'
-  - title: 'React'
-    labels:
-        - 'docs: react'
-  - title: 'Web'
-    labels:
-        - 'docs: web'
-  - title: 'Java'
-    labels:
-        - 'docs: java'
   - title: 'HTTP'
     labels:
         - 'docs: http'
+  - title: 'Javascript'
+    labels:
+        - 'docs: javascript'
   - title: 'Typescript'
     labels:
       - 'docs: typescript'
-  - title: 'Website'
+  - title: 'CSS'
     labels:
-      - 'website'
+        - 'docs: css'
+  - title: 'HTML'
+    labels:
+        - 'docs: html'
+  - title: 'Web'
+    labels:
+        - 'docs: web'
+  - title: 'React'
+    labels:
+        - 'docs: react'
   - title: 'Webpack'
     labels:
       - 'docs: webpack'
+  - title: 'Java'
+    labels:
+      - 'docs: java'
+  - title: 'Website'
+    labels:
+      - 'website'
+  - title: 'Dev experience'
+    labels:
+      - 'dev experience'
+  - title: 'Dependencies'
+    labels:
+      - 'dependencies'
 change-template: '- $TITLE (#$NUMBER) @$AUTHOR'
 template: |
   # What's Changed
