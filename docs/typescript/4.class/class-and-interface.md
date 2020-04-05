@@ -122,11 +122,7 @@ interface Point3d extends Point {
 let point3d: Point3d = {x: 1, y: 2, z: 3};
 ```
 
-When we declare `interface Point3d extends Point`, `Point3d` inherits the type of the instance of class `Point`.
-
-In other words, it can be understood that one interface `Point3d` inherits another interface `PointInstanceType`.
-
-So there is no essential difference between "interface extends class" and "interface extends interface".
+When we declare `interface Point3d extends Point`, `Point3d` inherits the type of the instance of class `Point`.In other words, it can be understood that one interface `Point3d` inherits another interface `PointInstanceType`.So there is no essential difference between "interface extends class" and "interface extends interface".
 
 It is worth noting that `PointInstanceType` lacks a constructor method compared to `Point` because the `Point` type created when the `Point` class is declared does not include a constructor. In addition, except that constructors are not included, static properties or static methods are also not included (of course, the type of the instance should not include constructors, static properties, or static methods).
 
@@ -165,7 +161,11 @@ let p2: PointInstanceType;
 
 In the above example, the last type `Point` and the type `PointInstanceType` are equivalent.
 
+:::tip
+
 Similarly, when an interface inherits a class, it only inherits its instance properties and instance methods.
+
+:::
 
 ## Interface vs Abstract Class
 
@@ -173,7 +173,7 @@ Similarly, when an interface inherits a class, it only inherits its instance pro
 | --- | --- |
 | All members are abstract. | Some members are abstract and some are fully implemented. |
 | Interfaces support multiple inheritances. | Abstract class does not support multiple inheritances. |
-| Interfaces are generic in nature. They can be implemented by any class for example IClone interface can be implemented by any class like business objects, database classes. | Abstract classes are related. For example ViewModelBase is an abstract, class then we know this class will only inherits by ViewModels. |
+| Interfaces are generic in nature. They can be implemented by any class. For example, IClose interface can be implemented by any class like Door and Computer. | Abstract classes are related. For example ViewModelBase is an abstract class, then we know this class will only inherits by ViewModels. |
 
 ## References
 
