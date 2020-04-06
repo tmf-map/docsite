@@ -11,12 +11,12 @@ import Hint from '../../../src/components/Hint';
 高阶组件（HOC）是 react 中对组件逻辑进行重用的高级技术。但高阶组件本身并不是 React API。它只是一种模式，这种模式是由 react 自身的组合性质必然产生的。
 
 ```jsx
-const withUser = (WrappedComponent) => {
+const withUser = WrappedComponent => {
   const user = sessionStorage.getItem('user');
-  return (props) => <WrappedComponent user={user} {...props} />;
+  return props => <WrappedComponent user={user} {...props} />;
 };
 
-const UserPage = (props) => (
+const UserPage = props => (
   <div class="user-container">
     <p>My name is {props.user}!</p>
   </div>

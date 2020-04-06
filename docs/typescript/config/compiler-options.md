@@ -116,7 +116,7 @@ module: umd
 
 ```js
 let myname: string | undefined = ['robbie', 'peter'].find(
-  (item) => item === 'robbie'
+  item => item === 'robbie'
 );
 ```
 

@@ -26,9 +26,8 @@ reselect 提供 `createSelector` 函数来创建可记忆的 selector。`createS
 import {createSelector} from 'reselect';
 import {get} from 'lodash';
 
-const getTaxSubtotal = (proforma) =>
-  get(proforma, 'ubl.TaxTotal[0].TaxSubtotal');
-const getTaxAmount = (proforma) => get(proforma, 'ubl.TaxTotal[0].TaxAmount');
+const getTaxSubtotal = proforma => get(proforma, 'ubl.TaxTotal[0].TaxSubtotal');
+const getTaxAmount = proforma => get(proforma, 'ubl.TaxTotal[0].TaxAmount');
 
 export const getTaxTotal = createSelector(
   [getTaxSubtotal, getTaxAmount],
@@ -36,7 +35,7 @@ export const getTaxTotal = createSelector(
     taxAmount,
     taxSubtotal:
       taxSubtotal &&
-      taxSubtotal.map((item) => ({
+      taxSubtotal.map(item => ({
         taxableAmount: get(item, 'TaxableAmount.value'),
         taxScheme: get(item, 'TaxCategory.TaxScheme.Name.value'),
         taxAmount: get(item, 'TaxAmount.value')

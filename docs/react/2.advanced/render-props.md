@@ -23,13 +23,13 @@ class DataProvider extends React.Component {
   }
 }
 
-<DataProvider render={(data) => <Cat target={data.target} />} />;
+<DataProvider render={data => <Cat target={data.target} />} />;
 ```
 
 虽然这个模式叫 Render Props，但不是说非用一个叫 render 的 props 不可，习惯上大家更常写成下面这种：
 
 ```jsx
-<DataProvider>{(data) => <Cat target={data.target} />}</DataProvider>
+<DataProvider>{data => <Cat target={data.target} />}</DataProvider>
 ```
 
 [React Router](https://reacttraining.com/react-router/web/api/Route/Route-render-methods) 是一个典型使用 render props 的库

@@ -35,7 +35,7 @@ JSON.stringify(obj);
 将类数组(包括可遍历，如 Set/Map/string)转化为真正的数组。
 
 ```js
-const isArrayLike = (obj) =>
+const isArrayLike = obj =>
   obj != null && typeof obj[Symbol.iterator] === 'function';
 ```
 
@@ -227,7 +227,7 @@ arr[0].hi = 'hi';
 生成 n\*n 二维数组：
 
 ```js
-new Array(3).fill().map((item) => new Array(3).fill(0));
+new Array(3).fill().map(item => new Array(3).fill(0));
 ```
 
 <img width="450" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/Quvv2f.jpg'/>

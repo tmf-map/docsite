@@ -195,7 +195,7 @@ function onLoad() {
 
   // 拦截 <a> 标签点击事件默认行为， 点击时使用 pushState 修改 URL并更新手动 UI，从而实现点击链接更新 URL 和 UI 的效果。
   var linkList = document.querySelectorAll('a[href]');
-  linkList.forEach((el) =>
+  linkList.forEach(el =>
     el.addEventListener('click', function (e) {
       e.preventDefault();
       history.pushState(null, '', el.getAttribute('href'));

@@ -23,7 +23,7 @@ require.ensure('./text', function (require) {
 - ES6: 动态 import（原生未支持，需要 babel 转换）
 
 ```js
-import('./text').then((result) => {});
+import('./text').then(result => {});
 ```
 
 上述两种方式都可以实现懒加载，但是`ES6`的动态`import`更符合我们开发时的编程习惯，所以本文将以动态`import`来实现代码分割功能。
@@ -53,7 +53,7 @@ class Split extends React.Component {
   }
   // 通过onClick事件触发懒加载
   loadComponent() {
-    import('./text').then((result) => {
+    import('./text').then(result => {
       this.setState({
         text: result.text
       });

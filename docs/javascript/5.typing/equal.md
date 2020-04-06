@@ -138,7 +138,7 @@ function shallowEqual(a, b) {
   if (aKeys.length !== bKeys.length) return false;
 
   // 对其属性再进行递归比较
-  return aKeys.every((k) => a[k] === b[k]);
+  return aKeys.every(k => a[k] === b[k]);
 }
 ```
 
@@ -176,6 +176,6 @@ function deepEqual(a, b) {
   if (keys.length === 0) return true;
 
   // 对其属性再进行递归比较
-  return keys.every((k) => deepEqual(a[k], b[k]));
+  return keys.every(k => deepEqual(a[k], b[k]));
 }
 ```

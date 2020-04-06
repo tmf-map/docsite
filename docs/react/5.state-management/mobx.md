@@ -65,7 +65,7 @@ const michel = new Person();
 autorun(() => console.log(person.nickName ? person.nickName : person.fullName));
 
 // Example React component that observes state
-const profileView = observer((props) => {
+const profileView = observer(props => {
   if (props.person.nickName) return <div>{props.person.nickName}</div>;
   else return <div>{props.person.fullName}</div>;
 });
@@ -136,7 +136,7 @@ const Author = observer(({author}) => <span>{author.name}</span>);
 
 const Likes = observer(({likes}) => (
   <ul>
-    {likes.map((like) => (
+    {likes.map(like => (
       <li>{like}</li>
     ))}
   </ul>
@@ -176,7 +176,7 @@ class TodoList {
   @observable todos = [];
 
   @computed get unfinishedTodoCount() {
-    return this.todos.filter((todo) => !todo.finished).length;
+    return this.todos.filter(todo => !todo.finished).length;
   }
 
   @action
@@ -244,11 +244,11 @@ class TodoListView extends React.PureComponent {
         <input
           type="text"
           value={this.state.item}
-          onChange={(e) => this.setItem(e.target.value)}
+          onChange={e => this.setItem(e.target.value)}
         />
         <button onClick={() => this.addNewTodo()}>add</button>
         <ul>
-          {todos.map((todo) => (
+          {todos.map(todo => (
             <TodoView todo={todo} key={todo.id} />
           ))}
         </ul>

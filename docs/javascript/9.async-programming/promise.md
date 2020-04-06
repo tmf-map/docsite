@@ -46,7 +46,7 @@ new Promise(function (resolve, reject) {
   console.log('hello');
   resolve(24);
   console.log('world');
-}).then((value) => console.log(value));
+}).then(value => console.log(value));
 console.log('number');
 /*
 hello
@@ -72,7 +72,7 @@ var p = new Promise((resolve, reject) => {
 });
 
 // 'bar' 不是函数，会在内部被替换为 (x) => x
-p.then('bar').then((value) => {
+p.then('bar').then(value => {
   console.log(value); // 'foo'
 });
 ```
@@ -88,7 +88,7 @@ Promise.resolve()
     // 使 .then() 返回一个 rejected promise
     throw 'Oh no!';
   })
-  .catch((reason) => {
+  .catch(reason => {
     console.error('onRejected function called: ', reason);
   })
   .then(() => {
@@ -237,18 +237,18 @@ p3.catch(function (e) {
 const p1 = new Promise((resolve, reject) => {
   resolve('hello');
 })
-  .then((result) => result)
-  .catch((e) => e);
+  .then(result => result)
+  .catch(e => e);
 
 const p2 = new Promise((resolve, reject) => {
   throw new Error('报错了');
 })
-  .then((result) => result)
-  .catch((e) => e);
+  .then(result => result)
+  .catch(e => e);
 
 Promise.all([p1, p2])
-  .then((result) => console.log(result))
-  .catch((e) => console.log(e));
+  .then(result => console.log(result))
+  .catch(e => console.log(e));
 // ["hello", Error: 报错了]
 ```
 

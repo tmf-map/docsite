@@ -18,7 +18,7 @@ function shallowClone(obj) {
   }
   if (obj instanceof Set) {
     let objClone = new Set();
-    obj.forEach((item) => objClone.add(item));
+    obj.forEach(item => objClone.add(item));
     return objClone;
   }
   if (obj instanceof Map) {
@@ -31,7 +31,7 @@ function shallowClone(obj) {
   if (keys.length < 1) {
     return objClone;
   }
-  keys.forEach((key) => (objClone[key] = obj[key]));
+  keys.forEach(key => (objClone[key] = obj[key]));
   return objClone;
 }
 ```
@@ -57,7 +57,7 @@ function deepClone(obj, hash = new WeakMap()) {
   // Set
   if (obj instanceof Set) {
     let objClone = new Set();
-    obj.forEach((item) => objClone.add(deepClone(item)));
+    obj.forEach(item => objClone.add(deepClone(item)));
     return objClone;
   }
   // Map
@@ -78,7 +78,7 @@ function deepClone(obj, hash = new WeakMap()) {
   // add key->value to hash
   hash.set(obj, objClone);
 
-  keys.forEach((key) => {
+  keys.forEach(key => {
     objClone[key] =
       typeof obj[key] === 'object'
         ? deepClone(obj[key], hash)

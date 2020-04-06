@@ -45,7 +45,7 @@ function ThemedButton(props) {
   // ThemedButton 组件从 context 接收 theme
   return (
     <ThemeContext.Consumer>
-      {(theme) => <Button {...props} theme={theme} />}
+      {theme => <Button {...props} theme={theme} />}
     </ThemeContext.Consumer>
   );
 }
@@ -277,9 +277,9 @@ function Layout() {
 function Content() {
   return (
     <ThemeContext.Consumer>
-      {(theme) => (
+      {theme => (
         <UserContext.Consumer>
-          {(user) => <ProfilePage user={user} theme={theme} />}
+          {user => <ProfilePage user={user} theme={theme} />}
         </UserContext.Consumer>
       )}
     </ThemeContext.Consumer>

@@ -6,7 +6,7 @@ sidebar_label: 类型判断
 ## isEmpty
 
 ```js
-const isEmpty = (val) => val == null || !(Object.keys(val) || val).length;
+const isEmpty = val => val == null || !(Object.keys(val) || val).length;
 ```
 
 如何判断一个对象是 `{}`

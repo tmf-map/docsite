@@ -423,7 +423,7 @@ bar(3); // a:2, b:3
 ```js
 function foo() {
   // 返回一个箭头函数
-  return (a) => {
+  return a => {
     //this 继承自 foo()
     console.log(this.a);
   };

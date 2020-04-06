@@ -155,14 +155,14 @@ window.addEventListener('load', () => {
 
   let promiseChain = new Promise((resolve, reject) => {
     // Requests permission from the user to display notifications.
-    const permissionPromise = Notification.requestPermission((result) => {
+    const permissionPromise = Notification.requestPermission(result => {
       resolve(result);
     });
 
     if (permissionPromise) {
       permissionPromise.then(resolve);
     }
-  }).then((result) => {
+  }).then(result => {
     if (result === 'granted') {
       execute();
     } else {
@@ -178,11 +178,11 @@ window.addEventListener('load', () => {
 function registerServiceWorker() {
   return navigator.serviceWorker
     .register('/sw.js')
-    .then((registration) => {
+    .then(registration => {
       console.log('Service worker successfully registered.');
       return registration;
     })
-    .catch((err) => {
+    .catch(err => {
       console.error('Unable to register service worker.', err);
     });
 }
@@ -192,7 +192,7 @@ function registerServiceWorker() {
 
 ```javascript
 function execute() {
-  registerServiceWorker().then((registration) => {
+  registerServiceWorker().then(registration => {
     registration.showNotification('Hello World!');
   });
 }

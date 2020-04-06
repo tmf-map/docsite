@@ -49,10 +49,10 @@ connect 函数不会修改传入的 React 组件，返回的是一个新的已�
 - **mergeProps\(stateProps, dispatchProps, ownProps\): props** 用来指定这三个 props 的合并规则，合并的结果作为组件的 props。如果要指定这个函数，建议不要太复杂。
 
 ```jsx
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   page: selector.getPage(state)
 });
-const mapDispatchToProps = (dispatch) => ({
+const mapDispatchToProps = dispatch => ({
   deleteDiscount(page, lineId) {
     dispatch(asyncAction.deleteDiscount(page, lineId));
   }

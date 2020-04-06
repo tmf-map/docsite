@@ -64,7 +64,7 @@ let countAndSay = function (n) {
   let result = '1';
   for (let i = 1; i < n; i++) {
     // (\d)\1*  匹配连续的、相同的数字
-    result = result.replace(/(\d)\1*/g, (item) => `${item.length}${item[0]}`);
+    result = result.replace(/(\d)\1*/g, item => `${item.length}${item[0]}`);
   }
   return result;
 };

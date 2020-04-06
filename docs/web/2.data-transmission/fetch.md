@@ -70,8 +70,8 @@ Promise fetch(Request req, [, Object options])
 // Example POST method implementation:
 
 postData('http://example.com/answer', {answer: 42})
-  .then((data) => console.log(data)) // JSON from `response.json()` call
-  .catch((error) => console.error(error));
+  .then(data => console.log(data)) // JSON from `response.json()` call
+  .catch(error => console.error(error));
 
 function postData(url, data) {
   // Default options are marked with *
@@ -87,7 +87,7 @@ function postData(url, data) {
     mode: 'cors', // no-cors, cors, *same-origin
     redirect: 'follow', // manual, *follow, error
     referrer: 'no-referrer' // *client, no-referrer
-  }).then((response) => response.json()); // parses response to JSON
+  }).then(response => response.json()); // parses response to JSON
 }
 ```
 

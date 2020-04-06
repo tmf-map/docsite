@@ -25,12 +25,12 @@ enhanceDispatchByMiddleware(store, [middleware1, middleware2]);
 在我们之前的代码 `demo.js` 的基础上，创建了 2 个中间件，一个用来记录日志，一个用来捕获错误：
 
 ```js
-const middleware1 = (store) => (next) => (action) => {
+const middleware1 = store => next => action => {
   console.log('m1 left part');
   next(action);
   console.log('m1 right part');
 };
-const middleware2 = (store) => (next) => (action) => {
+const middleware2 = store => next => action => {
   console.log('m2 left part');
   next(action);
   console.log('m2 right part');
@@ -41,7 +41,7 @@ enhanceDispatchByMiddleware(store, [middleware1, middleware2]);
 我们注意到中间件是一个柯里化的函数：
 
 ```js
-const middleware1 = (store) => (next) => (action) => {};
+const middleware1 = store => next => action => {};
 ```
 
 其实每个中间件调用后，本质目的是增强 `store.dispatch`, 而 `next` 是指上一个中间件穿越过后的`store.dispatch`, 可以简单这样理解：
@@ -107,12 +107,12 @@ Redux 在 middleware 的内部实现的源码中用的是 `compose` 函数，因
 ### store.getState
 
 ```js
-const middleware1 = (store) => (next) => (action) => {
+const middleware1 = store => next => action => {
   console.log('m1 left part:', store.getState());
   next(action);
   console.log('m1 right part:', store.getState());
 };
-const middleware2 = (store) => (next) => (action) => {
+const middleware2 = store => next => action => {
   console.log('m2 left part:', store.getState());
   next(action);
   console.log('m2 right part:', store.getState());
@@ -130,12 +130,12 @@ const middleware2 = (store) => (next) => (action) => {
 我们再看一下 dispatch 在各个中间件中的变化情况：
 
 ```js
-const middleware1 = (store) => (next) => (action) => {
+const middleware1 = store => next => action => {
   console.log('m1 left part:', store.dispatch);
   next(action);
   console.log('m1 right part:', store.dispatch);
 };
-const middleware2 = (store) => (next) => (action) => {
+const middleware2 = store => next => action => {
   console.log('m2 left part:', store.dispatch);
   next(action);
   console.log('m2 right part:', store.dispatch);
@@ -155,7 +155,7 @@ const middleware2 = (store) => (next) => (action) => {
 看看 middleware 中使用 `store.dispatch` 的正确姿势，以 redux-thunk 这个中间件为例：
 
 ```js
-const thunk = (store) => (next) => (action) =>
+const thunk = store => next => action =>
   typeof action === 'function'
     ? action(store.dispatch, store.getState)
     : next(action);
@@ -168,12 +168,12 @@ const thunk = (store) => (next) => (action) =>
 ### next
 
 ```js
-const middleware1 = (store) => (next) => (action) => {
+const middleware1 = store => next => action => {
   console.log('m1 left part:', next);
   next(action);
   console.log('m1 right part:', next);
 };
-const middleware2 = (store) => (next) => (action) => {
+const middleware2 = store => next => action => {
   console.log('m2 left part:', next);
   next(action);
   console.log('m2 right part:', next);
@@ -252,17 +252,17 @@ const store = createStore(reducer, initialState, enhancers);
 import compose from './compose';
 
 export default function applyMiddleware(...middlewares) {
-  return (createStore) => (reducer, preloadedState, enhancer) => {
+  return createStore => (reducer, preloadedState, enhancer) => {
     var store = createStore(reducer, preloadedState, enhancer);
     var dispatch = store.dispatch;
     var chain = [];
 
     var middlewareAPI = {
       getState: store.getState,
-      dispatch: (action) => dispatch(action)
+      dispatch: action => dispatch(action)
     };
 
-    chain = middlewares.map((middleware) => middleware(middlewareAPI));
+    chain = middlewares.map(middleware => middleware(middlewareAPI));
     dispatch = compose(...chain)(store.dispatch);
 
     return {

@@ -62,7 +62,7 @@ async function f() {
   return await 123;
 }
 
-f().then((v) => console.log(v)); // 123
+f().then(v => console.log(v)); // 123
 ```
 
 > 注意：
@@ -157,8 +157,8 @@ result()
 
 ```js
 // 抽离成公共方法
-const awaitWrap = (promise) => {
-  return promise.then((data) => [null, data]).catch((err) => [err, null]);
+const awaitWrap = promise => {
+  return promise.then(data => [null, data]).catch(err => [err, null]);
 };
 
 const result = async function () {

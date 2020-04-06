@@ -49,7 +49,7 @@ n 皇后问题研究的是如何将 n 个皇后放置在 n×n 的棋盘上，并
 var solveNQueens = function (n) {
   matrix = Array(n)
     .fill('.')
-    .map((v) => Array(n).fill(v));
+    .map(v => Array(n).fill(v));
   cols = Array(n).fill('.');
   diag1 = Array(2 * n - 1).fill('.');
   diag2 = Array(2 * n - 1).fill('.');
@@ -58,7 +58,7 @@ var solveNQueens = function (n) {
   function explore(r) {
     if (r === n) {
       // found one solution, add to the ans set
-      ans.push(matrix.map((v) => v.join('')));
+      ans.push(matrix.map(v => v.join('')));
       return;
     }
     // Try every column

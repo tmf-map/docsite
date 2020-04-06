@@ -28,7 +28,7 @@ import Hint from '../../../src/components/Hint'; import Img from '../../../src/c
 #### 阶乘
 
 ```js
-const factorial = (n) => (n === 1 ? 1 : n * factorial(n - 1)); // 最后一步不是只有递归
+const factorial = n => (n === 1 ? 1 : n * factorial(n - 1)); // 最后一步不是只有递归
 ```
 
 调用过程大致如下：
