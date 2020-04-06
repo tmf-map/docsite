@@ -62,7 +62,7 @@ async function f() {
   return await 123;
 }
 
-f().then(v => console.log(v)); // 123
+f().then((v) => console.log(v)); // 123
 ```
 
 > 注意：
@@ -83,7 +83,7 @@ async 函数完全可以看作多个异步操作，包装成的一个 Promise �
 最标准的方法是使用 try…catch 语句。在调用 await 函数时，如果出现非正常状况就会跑出异常。
 
 ```js
-const result = async function() {
+const result = async function () {
   try {
     const content = await new Promise((resolve, reject) => {
       setTimeout(() => {
@@ -157,11 +157,11 @@ result()
 
 ```js
 // 抽离成公共方法
-const awaitWrap = promise => {
-  return promise.then(data => [null, data]).catch(err => [err, null]);
+const awaitWrap = (promise) => {
+  return promise.then((data) => [null, data]).catch((err) => [err, null]);
 };
 
-const result = async function() {
+const result = async function () {
   const content = new Promise((resolve, reject) => {
     setTimeout(() => {
       reject(new Error('error'));

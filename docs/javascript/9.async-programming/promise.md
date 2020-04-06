@@ -42,11 +42,11 @@ function myAsyncFunction(url) {
 ### promise 在事件轮循的注意事项：
 
 ```js
-new Promise(function(resolve, reject) {
+new Promise(function (resolve, reject) {
   console.log('hello');
   resolve(24);
   console.log('world');
-}).then(value => console.log(value));
+}).then((value) => console.log(value));
 console.log('number');
 /*
 hello
@@ -72,7 +72,7 @@ var p = new Promise((resolve, reject) => {
 });
 
 // 'bar' 不是函数，会在内部被替换为 (x) => x
-p.then('bar').then(value => {
+p.then('bar').then((value) => {
   console.log(value); // 'foo'
 });
 ```
@@ -88,7 +88,7 @@ Promise.resolve()
     // 使 .then() 返回一个 rejected promise
     throw 'Oh no!';
   })
-  .catch(reason => {
+  .catch((reason) => {
     console.error('onRejected function called: ', reason);
   })
   .then(() => {
@@ -103,9 +103,9 @@ Promise.resolve()
 ```js
 Promise.resolve('foo')
   // 1. 接收 "foo" 并与 "bar" 拼接，并将其结果做为下一个resolve返回。
-  .then(function(string) {
-    return new Promise(function(resolve, reject) {
-      setTimeout(function() {
+  .then(function (string) {
+    return new Promise(function (resolve, reject) {
+      setTimeout(function () {
         string += 'bar';
         resolve(string);
       }, 1);
@@ -113,8 +113,8 @@ Promise.resolve('foo')
   })
   // 2. 接收 "foobar", 放入一个异步函数中处理该字符串
   // 并将其打印到控制台中, 但是不将处理后的字符串返回到下一个。
-  .then(function(string) {
-    setTimeout(function() {
+  .then(function (string) {
+    setTimeout(function () {
       string += 'baz';
       console.log(string);
     }, 1);
@@ -122,7 +122,7 @@ Promise.resolve('foo')
   })
   // 3. 打印本节中代码将如何运行的帮助消息，
   // 字符串实际上是由上一个回调函数之前的那块异步代码处理的。
-  .then(function(string) {
+  .then(function (string) {
     console.log(
       "Last Then:  oops... didn't bother to instantiate and return " +
         'a promise in the prior then so the sequence may be a bit ' +
@@ -185,11 +185,11 @@ Promise {<resolved>: undefined}
 当返回一个 rejected promise 的时候，或者 throw 出一个错，此时会被 catch()捕获
 
 ```js
-var p1 = new Promise(function(resolve, reject) {
+var p1 = new Promise(function (resolve, reject) {
   throw 'Uh-oh!';
 }).catch();
 // <=>
-var p1 = new Promise(function(resolve, reject) {
+var p1 = new Promise(function (resolve, reject) {
   return Promise.reject('Uh-oh!');
 }).catch();
 ```
@@ -198,23 +198,23 @@ var p1 = new Promise(function(resolve, reject) {
 
 ```js
 // 在异步函数中抛出的错误不会被catch捕获到
-var p2 = new Promise(function(resolve, reject) {
-  setTimeout(function() {
+var p2 = new Promise(function (resolve, reject) {
+  setTimeout(function () {
     throw 'Uncaught Exception!';
   }, 1000);
 });
 
-p2.catch(function(e) {
+p2.catch(function (e) {
   console.log(e); // 不会执行
 });
 
 // 在resolve()后面抛出的错误会被忽略
-var p3 = new Promise(function(resolve, reject) {
+var p3 = new Promise(function (resolve, reject) {
   resolve();
   throw 'Silenced Exception!';
 });
 
-p3.catch(function(e) {
+p3.catch(function (e) {
   console.log(e); // 不会执行
 });
 ```
@@ -237,18 +237,18 @@ p3.catch(function(e) {
 const p1 = new Promise((resolve, reject) => {
   resolve('hello');
 })
-  .then(result => result)
-  .catch(e => e);
+  .then((result) => result)
+  .catch((e) => e);
 
 const p2 = new Promise((resolve, reject) => {
   throw new Error('报错了');
 })
-  .then(result => result)
-  .catch(e => e);
+  .then((result) => result)
+  .catch((e) => e);
 
 Promise.all([p1, p2])
-  .then(result => console.log(result))
-  .catch(e => console.log(e));
+  .then((result) => console.log(result))
+  .catch((e) => console.log(e));
 // ["hello", Error: 报错了]
 ```
 
@@ -260,7 +260,7 @@ Promise.all([p1, p2])
 
 ```js
 function promiseAll(promises) {
-  return new Promise(function(resolve, reject) {
+  return new Promise(function (resolve, reject) {
     if (typeof promises[Symbol.iterator] !== 'function') {
       return reject(new TypeError('arguments must be iterator'));
     }
@@ -269,13 +269,13 @@ function promiseAll(promises) {
 
     for (let i = 0; i < length; i++) {
       Promise.resolve(promises[i]).then(
-        function(value) {
+        function (value) {
           promiseValue[i] = value;
           if (promiseValue.length === length) {
             resolve(promiseValue);
           }
         },
-        function(reason) {
+        function (reason) {
           reject(reason);
         }
       );
@@ -289,34 +289,34 @@ function promiseAll(promises) {
 Promise.race(iterable) 方法返回一个 promise，一旦迭代器中的某个 promise 解决或拒绝，就会返回一个解决状态或拒绝状态的 promise。简言之，以最先返回结果的 promise 的状态为准。
 
 ```js
-var p3 = new Promise(function(resolve, reject) {
+var p3 = new Promise(function (resolve, reject) {
   setTimeout(resolve, 100, 'three');
 });
-var p4 = new Promise(function(resolve, reject) {
+var p4 = new Promise(function (resolve, reject) {
   setTimeout(reject, 500, 'four');
 });
 
 Promise.race([p3, p4]).then(
-  function(value) {
+  function (value) {
     console.log(value); // "three"
     // p3 更快，所以它完成了
   },
-  function(reason) {
+  function (reason) {
     // 未被调用
   }
 );
 ```
 
 ```js
-var promise1 = new Promise(function(resolve, reject) {
+var promise1 = new Promise(function (resolve, reject) {
   setTimeout(resolve, 500, 'one');
 });
 
-var promise2 = new Promise(function(resolve, reject) {
+var promise2 = new Promise(function (resolve, reject) {
   setTimeout(resolve, 100, 'two');
 });
 
-Promise.race([promise1, promise2]).then(function(value) {
+Promise.race([promise1, promise2]).then(function (value) {
   console.log(value);
   // Both resolve, but promise2 is faster
 });
@@ -327,14 +327,14 @@ Promise.race([promise1, promise2]).then(function(value) {
 
 ```js
 function promiseRace(promises) {
-  return new Promise(function(resolve, reject) {
+  return new Promise(function (resolve, reject) {
     if (Arr.isArray(promise)) {
       for (let item of promises) {
         Promise.resolve(item).then(
-          function(value) {
+          function (value) {
             return resolve(value);
           },
-          function(reason) {
+          function (reason) {
             return reject(reason);
           }
         );
@@ -360,17 +360,17 @@ Promise.resolve(thenable);
 
 ```js
 var p1 = Promise.resolve({
-  then: function(test, rej) {
+  then: function (test, rej) {
     rej('rejected!');
   }
 });
 console.log(p1 instanceof Promise); // true, 这是一个Promise对象
 
 p1.then(
-  function(v) {
+  function (v) {
     console.log(v);
   },
-  function(e) {
+  function (e) {
     console.log(e); //rejected
   }
 );

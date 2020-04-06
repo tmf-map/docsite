@@ -134,7 +134,7 @@ b instanceof A; // true
 这使得在实例方法中，调用自身的构造函数成为可能。
 
 ```js
-Constructor.prototype.createCopy = function() {
+Constructor.prototype.createCopy = function () {
   return new this.constructor();
 };
 ```
@@ -149,7 +149,7 @@ Constructor.prototype.createCopy = function() {
 var person1 = {
   name: '张三',
   age: 38,
-  greeting: function() {
+  greeting: function () {
     console.log("Hi! I'm " + this.name + '.');
   }
 };

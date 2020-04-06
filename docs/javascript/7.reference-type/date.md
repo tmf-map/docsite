@@ -20,7 +20,7 @@ sidebar_label: 日期
 ```js
 function throttle(fn, wait) {
   let pre;
-  return function(...args) {
+  return function (...args) {
     const now = Date.now();
     if (!pre || now - pre >= wait) {
       pre = now;

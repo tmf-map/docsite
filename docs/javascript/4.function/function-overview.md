@@ -12,7 +12,7 @@ function f() {}
 // 表达式（非匿名）
 var f1 = function f() {};
 // 表达式（匿名）
-var f2 = function() {};
+var f2 = function () {};
 ```
 
 - 静态方法：直接挂载函数名下

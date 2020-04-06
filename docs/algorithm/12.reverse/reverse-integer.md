@@ -50,13 +50,13 @@ sidebar_label: 反转整数
  */
 
 // 采用思路二
-let reverse = function(num) {
+let reverse = function (num) {
   // [-9, 9]区间的数字不必reverse，直接返回即可
   if (num < 10 && num > -10) {
     return num;
   }
 
-  let isOutOfRange = function(num) {
+  let isOutOfRange = function (num) {
     // 判断是否超出范围
     return num >= 2147483647 || num <= -2147483648;
   };

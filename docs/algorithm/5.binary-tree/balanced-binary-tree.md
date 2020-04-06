@@ -33,8 +33,8 @@ function TreeNode(val) {
 ## 代码实现
 
 ```js
-var isBalanced = function(root) {
-  var depth = function(root) {
+var isBalanced = function (root) {
+  var depth = function (root) {
     if (root === null) return false;
     let left = depth(root.left);
     if (left === -1) return -1;

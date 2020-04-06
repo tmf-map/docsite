@@ -105,7 +105,7 @@ const element = {
 ### JS 写法
 
 ```jsx
-const renderComponent = props => {
+const renderComponent = (props) => {
   if (props.isFirstTime) {
     return (
       <div>
@@ -123,7 +123,7 @@ const renderComponent = props => {
 ### JSX 写法：与运算
 
 ```jsx
-const renderComponent = props => {
+const renderComponent = (props) => {
   return (
     <div>
       This is homepage
@@ -138,7 +138,7 @@ const renderComponent = props => {
 ### JSX 写法：三目运算
 
 ```jsx
-const renderComponent = props => {
+const renderComponent = (props) => {
   return (
     <div>
       This is homepage

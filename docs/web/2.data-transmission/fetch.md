@@ -70,8 +70,8 @@ Promise fetch(Request req, [, Object options])
 // Example POST method implementation:
 
 postData('http://example.com/answer', {answer: 42})
-  .then(data => console.log(data)) // JSON from `response.json()` call
-  .catch(error => console.error(error));
+  .then((data) => console.log(data)) // JSON from `response.json()` call
+  .catch((error) => console.error(error));
 
 function postData(url, data) {
   // Default options are marked with *
@@ -87,7 +87,7 @@ function postData(url, data) {
     mode: 'cors', // no-cors, cors, *same-origin
     redirect: 'follow', // manual, *follow, error
     referrer: 'no-referrer' // *client, no-referrer
-  }).then(response => response.json()); // parses response to JSON
+  }).then((response) => response.json()); // parses response to JSON
 }
 ```
 
@@ -114,10 +114,10 @@ Request Request 类用于描述请求内容。构造函数接受的参数与 fet
 var URL = '//api.some.com';
 var getReq = new Request(URL, {method: 'GET', cache: 'reload'});
 fetch(getReq)
-  .then(function(response) {
+  .then(function (response) {
     return response.json();
   })
-  .catch(function(error) {
+  .catch(function (error) {
     console.log('Fetch Error: ', error);
   });
 ```
@@ -134,10 +134,10 @@ var headers = new Headers({
 });
 var getReq = new Request(URL, {method: 'GET', headers: headers});
 fetch(getReq)
-  .then(function(response) {
+  .then(function (response) {
     return response.json();
   })
-  .catch(function(error) {
+  .catch(function (error) {
     console.log('Fetch Error: ', error);
   });
 ```

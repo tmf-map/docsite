@@ -67,7 +67,7 @@ console.log(add(16, 26));
 **After:**
 
 ```js
-import('./math').then(math => {
+import('./math').then((math) => {
   console.log(math.add(16, 26));
 });
 ```

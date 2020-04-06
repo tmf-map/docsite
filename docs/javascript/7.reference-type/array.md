@@ -35,7 +35,7 @@ JSON.stringify(obj);
 将类数组(包括可遍历，如 Set/Map/string)转化为真正的数组。
 
 ```js
-const isArrayLike = obj =>
+const isArrayLike = (obj) =>
   obj != null && typeof obj[Symbol.iterator] === 'function';
 ```
 
@@ -127,7 +127,7 @@ arr3.flat(Infinity); // [1, 2, 3, 4, 5, 6]
 flat 函数实现：
 
 ```js
-Array.prototype._flat = function(depth = 1) {
+Array.prototype._flat = function (depth = 1) {
   if (depth === 0) return this;
   return this.reduce(
     (acc, item) =>
@@ -180,7 +180,7 @@ for (let i = 0; i < nums.length; i++) {
 
 ```js
 var nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4];
-var removeDuplicates = function(nums) {
+var removeDuplicates = function (nums) {
   for (var i = nums.length - 1; i >= 0; i--) {
     if (nums[i] === nums[i - 1]) {
       nums.splice(i, 1);
@@ -227,7 +227,7 @@ arr[0].hi = 'hi';
 生成 n\*n 二维数组：
 
 ```js
-new Array(3).fill().map(item => new Array(3).fill(0));
+new Array(3).fill().map((item) => new Array(3).fill(0));
 ```
 
 <img width="450" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/Quvv2f.jpg'/>

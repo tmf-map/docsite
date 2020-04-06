@@ -86,7 +86,7 @@ let inner = document.getElementById('inner');
 ```js
 wrap.addEventListener(
   'click',
-  function() {
+  function () {
     alert('wrap');
   },
   false
@@ -100,21 +100,21 @@ wrap.addEventListener(
 ```js
 wrap.addEventListener(
   'click',
-  function() {
+  function () {
     alert('wrap');
   },
   false
 );
 outer.addEventListener(
   'click',
-  function() {
+  function () {
     alert('outer');
   },
   false
 );
 inner.addEventListener(
   'click',
-  function() {
+  function () {
     alert('inner');
   },
   false
@@ -128,42 +128,42 @@ inner.addEventListener(
 ```js
 wrap.addEventListener(
   'click',
-  function() {
+  function () {
     alert('wrap bubbling');
   },
   false
 );
 outer.addEventListener(
   'click',
-  function() {
+  function () {
     alert('outer bubbling');
   },
   false
 );
 inner.addEventListener(
   'click',
-  function() {
+  function () {
     alert('inner bubbling');
   },
   false
 );
 wrap.addEventListener(
   'click',
-  function() {
+  function () {
     alert('wrap capture');
   },
   true
 );
 outer.addEventListener(
   'click',
-  function() {
+  function () {
     alert('outer capture');
   },
   true
 );
 inner.addEventListener(
   'click',
-  function() {
+  function () {
     alert('inner capture');
   },
   true
@@ -180,7 +180,7 @@ inner.addEventListener(
 // 事件传播到 p 元素后，就不再向下传播了
 p.addEventListener(
   'click',
-  function(event) {
+  function (event) {
     event.stopPropagation();
   },
   true
@@ -189,7 +189,7 @@ p.addEventListener(
 // 事件冒泡到 p 元素后，就不再向上冒泡了
 p.addEventListener(
   'click',
-  function(event) {
+  function (event) {
     event.stopPropagation();
   },
   false
@@ -201,12 +201,12 @@ p.addEventListener(
 <Hint type="warn"> `stopPropagation` 方法只会阻止事件的传播，不会阻止该事件触发 `p` 节点的其他 click 事件的监听函数。也就是说，不是彻底取消 click 事件。</Hint>
 
 ```js
-p.addEventListener('click', function(event) {
+p.addEventListener('click', function (event) {
   event.stopPropagation();
   console.log(1);
 });
 
-p.addEventListener('click', function(event) {
+p.addEventListener('click', function (event) {
   // 会触发
   console.log(2);
 });
@@ -219,12 +219,12 @@ p.addEventListener('click', function(event) {
 如果想要彻底阻止这个事件的传播，不再触发后面所有 click 的监听函数，可以使用 `stopImmediatePropagation` 方法。
 
 ```js
-p.addEventListener('click', function(event) {
+p.addEventListener('click', function (event) {
   event.stopImmediatePropagation();
   console.log(1);
 });
 
-p.addEventListener('click', function(event) {
+p.addEventListener('click', function (event) {
   // 不会被触发
   console.log(2);
 });
@@ -239,7 +239,7 @@ p.addEventListener('click', function(event) {
 ```js
 var ul = document.querySelector('ul');
 
-ul.addEventListener('click', function(event) {
+ul.addEventListener('click', function (event) {
   if (event.target.tagName.toLowerCase() === 'li') {
     // some code
   }
@@ -306,7 +306,7 @@ HTML 事件监听函数的缺点：
 <input type="button" name="clicker" id="clicker" value="点击" />
 <script type="text/javascript">
   var clicker = document.getElementById('clicker');
-  clicker.onclick = function() {
+  clicker.onclick = function () {
     console.log('点击了！');
   };
 </script>
@@ -319,10 +319,10 @@ HTML 事件监听函数的缺点：
 <input type="button" name="clicker" id="clicker" value="点击" />
 <script type="text/javascript">
   var clicker = document.getElementById('clicker');
-  clicker.onclick = function() {
+  clicker.onclick = function () {
     aler('第一次点击！');
   };
-  clicker.onclick = function() {
+  clicker.onclick = function () {
     alert('第二次点击！');
   };
 </script>
@@ -372,10 +372,10 @@ DOM2 级事件监听函数的主要好处是可以添加多个事件监听函数
 <script type="text/javascript">
   var btn = document.getElementById('btn');
 
-  btn.addEventListener('click', function() {
+  btn.addEventListener('click', function () {
     console.log('第一个注册事件执行了！');
   });
-  btn.addEventListener('click', function() {
+  btn.addEventListener('click', function () {
     console.log('第二个注册事件执行了！');
   });
 </script>
@@ -392,7 +392,7 @@ DOM2 级事件监听函数的主要好处是可以添加多个事件监听函数
   btn.addEventListener('click', first, false);
   btn.addEventListener(
     'click',
-    function() {
+    function () {
       console.log('第二个注册事件执行了！');
     },
     false
@@ -403,7 +403,7 @@ DOM2 级事件监听函数的主要好处是可以添加多个事件监听函数
   //如果是匿名函数，将无法移除
   btn.removeEventListener(
     'click',
-    function() {
+    function () {
       console.log('第二个注册事件执行了！');
     },
     false
@@ -439,14 +439,14 @@ DOM2 级事件监听函数的主要好处是可以添加多个事件监听函数
 var btn = document.getElementById('btn');
 
 // DOM0 级事件监听函数
-btn.onclick = function() {
+btn.onclick = function () {
   console.log(this.id);
 };
 
 // DOM2 级事件监听函数
 btn.addEventListener(
   'click',
-  function(e) {
+  function (e) {
     console.log(this.id);
   },
   false

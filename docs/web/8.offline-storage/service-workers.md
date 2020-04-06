@@ -46,16 +46,16 @@ Service Worker 的生命周期完全独立于网页。下图是 Service Worker �
 
 ```javascript
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function() {
+  window.addEventListener('load', function () {
     navigator.serviceWorker.register('/sw.js', {scope: './'}).then(
-      function(registration) {
+      function (registration) {
         // Registration was successful
         console.log(
           'ServiceWorker registration successful with scope: ',
           registration.scope
         );
       },
-      function(err) {
+      function (err) {
         // registration failed :(
         console.log('ServiceWorker registration failed: ', err);
       }
@@ -74,10 +74,10 @@ if ('serviceWorker' in navigator) {
 var CACHE_NAME = 'my-site-cache-v1';
 var urlsToCache = ['/', '/styles/main.css', '/script/main.js'];
 
-self.addEventListener('install', function(event) {
+self.addEventListener('install', function (event) {
   // Perform install steps
   event.waitUntil(
-    caches.open(CACHE_NAME).then(function(cache) {
+    caches.open(CACHE_NAME).then(function (cache) {
       console.log('Opened cache');
       return cache.addAll(urlsToCache);
     })
@@ -90,14 +90,14 @@ self.addEventListener('install', function(event) {
 安装成功后，Service Worker 会收到`activate`事件。一般在此对旧缓存进行清理。
 
 ```javascript
-self.addEventListener('activate', function(event) {
+self.addEventListener('activate', function (event) {
   // New caches
   var cacheWhitelist = ['pages-cache-v1', 'blog-posts-cache-v1'];
   //Delete old caches
   event.waitUntil(
-    caches.keys().then(function(cacheNames) {
+    caches.keys().then(function (cacheNames) {
       return Promise.all(
-        cacheNames.map(function(cacheName) {
+        cacheNames.map(function (cacheName) {
           if (cacheWhitelist.indexOf(cacheName) === -1) {
             return caches.delete(cacheName);
           }
@@ -116,18 +116,18 @@ Service Worker 现在可以对其作用域内所有页面进行控制，但仅�
 
 ```javascript
 //After install, fetch event is triggered for every page request
-self.addEventListener('fetch', function(event) {
+self.addEventListener('fetch', function (event) {
   console.log('Request -->', event.request.url);
 
   //To tell browser to evaluate the result of event
   event.respondWith(
     caches
       .match(event.request) //To match current request with cached request it
-      .then(function(response) {
+      .then(function (response) {
         //If response found return it, else fetch again.
         return response || fetch(event.request);
       })
-      .catch(function(error) {
+      .catch(function (error) {
         console.error('Error: ', error);
       })
   );
@@ -155,14 +155,14 @@ window.addEventListener('load', () => {
 
   let promiseChain = new Promise((resolve, reject) => {
     // Requests permission from the user to display notifications.
-    const permissionPromise = Notification.requestPermission(result => {
+    const permissionPromise = Notification.requestPermission((result) => {
       resolve(result);
     });
 
     if (permissionPromise) {
       permissionPromise.then(resolve);
     }
-  }).then(result => {
+  }).then((result) => {
     if (result === 'granted') {
       execute();
     } else {
@@ -178,11 +178,11 @@ window.addEventListener('load', () => {
 function registerServiceWorker() {
   return navigator.serviceWorker
     .register('/sw.js')
-    .then(registration => {
+    .then((registration) => {
       console.log('Service worker successfully registered.');
       return registration;
     })
-    .catch(err => {
+    .catch((err) => {
       console.error('Unable to register service worker.', err);
     });
 }
@@ -192,7 +192,7 @@ function registerServiceWorker() {
 
 ```javascript
 function execute() {
-  registerServiceWorker().then(registration => {
+  registerServiceWorker().then((registration) => {
     registration.showNotification('Hello World!');
   });
 }

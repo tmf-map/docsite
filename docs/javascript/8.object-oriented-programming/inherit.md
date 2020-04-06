@@ -26,7 +26,7 @@ function Super(name) {
   this.name = name;
 }
 // 定义共享属性、方法
-Super.prototype.getName = function() {
+Super.prototype.getName = function () {
   return this.name;
 };
 
@@ -59,7 +59,7 @@ console.log(sub.age); // 18
 - ES5: [Object.create()](https://www.google.com/url?q=http://javascript.ruanyifeng.com/oop/object.html%23toc2&sa=D&ust=1570507768698000)，底层也是调用了 new，但是 new 的是一个空构造函数。
 
 ```js
-Object.create = function(proto) {
+Object.create = function (proto) {
   function F() {}
   F.prototype = proto;
   return new F();
@@ -69,7 +69,7 @@ Object.create = function(proto) {
 - ES6: Object.setPrototypeOf
 
 ```js
-Object.setPrototypeOf = function(Sub, Super) {
+Object.setPrototypeOf = function (Sub, Super) {
   Sub.__proto__ = Super;
   return Sub;
 };
@@ -87,7 +87,7 @@ function Super(name) {
   this.name = name;
 }
 // 定义共享属性、方法
-Super.prototype.getName = function() {
+Super.prototype.getName = function () {
   return this.name;
 };
 

@@ -13,7 +13,7 @@ import Hint from '../../../src/components/Hint';
 在 JSX 中直接绑定的事件，如
 
 ```jsx
-<a ref="aTag" onClick={e => this.handleClick(e)}>
+<a ref="aTag" onClick={(e) => this.handleClick(e)}>
   UPDATE
 </a>
 ```
@@ -31,7 +31,7 @@ VirtualDOM 在内存中是以 **对象** 的形式存在，React 基于 VirtualD
 通过 JS 原生代码绑定的事件，如：
 
 ```javascript
-document.body.addEventListener('click', e => {
+document.body.addEventListener('click', (e) => {
   // 通过e.target判断阻止冒泡
   if (e.target && e.target.matches('a')) {
     return;
@@ -39,7 +39,7 @@ document.body.addEventListener('click', e => {
   console.log('body');
 });
 // 或
-this.refs.update.addEventListener('click', e => {
+this.refs.update.addEventListener('click', (e) => {
   console.log('update');
 });
 ```
@@ -144,7 +144,7 @@ class App extends React.Component {
   handleClick() {
     // this will refer to window not undefined because there is no 'use strict'
     console.log(this);
-    this.setState(state => ({
+    this.setState((state) => ({
       isToggleOn: !state.isToggleOn
     }));
   }

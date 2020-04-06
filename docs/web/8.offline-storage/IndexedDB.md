@@ -32,10 +32,10 @@ IndexedDB 具有以下特点:
 
 ```js
 const request = indexedDB.open('myDatabase', 1);
-request.addEventListener('success', e => {
+request.addEventListener('success', (e) => {
   console.log('连接数据库成功');
 });
-request.addEventListener('error', e => {
+request.addEventListener('error', (e) => {
   console.log('连接数据库失败');
 });
 ```
@@ -57,7 +57,7 @@ request.addEventListener('error', e => {
 
 ```js
 const request = indexedDB.open('myDatabase', 2);
-request.addEventListener('upgradeneeded', e => {
+request.addEventListener('upgradeneeded', (e) => {
   const db = e.target.result;
   const store = db.createObjectStore('Users', {
     keyPath: 'userId',
@@ -80,7 +80,7 @@ request.addEventListener('upgradeneeded', e => {
 
 ```js
 const request = indexedDB.open('myDatabase', 3);
-request.addEventListener('success', e => {
+request.addEventListener('success', (e) => {
   const db = e.target.result;
   const tx = db.transaction('Users', 'readwrite');
 });
@@ -104,7 +104,7 @@ add 和 put 的作用类似，区别在于 put 保存数据时，如果该数据
 
 ```js
 const request = indexedDB.open('myDatabase', 3);
-request.addEventListener('success', e => {
+request.addEventListener('success', (e) => {
   const db = e.target.result;
   const tx = db.transaction('Users', 'readwrite');
   const store = tx.objectStore('Users');
@@ -115,10 +115,10 @@ request.addEventListener('success', e => {
   });
   const reqGet = store.get(1);
   const reqDelete = store.delete(1);
-  reqAdd.addEventListener('success', e => {
+  reqAdd.addEventListener('success', (e) => {
     console.log('操作成功'); // delete 同理
   });
-  reqGet.addEventListener('success', e => {
+  reqGet.addEventListener('success', (e) => {
     console.log(this.result.userName);
   });
 });
@@ -155,13 +155,13 @@ var upperRange = IDBKeyRange.upperBound(10, false);
 
 ```js
 const request = indexedDB.open('myDatabase', 4);
-request.addEventListener('success', e => {
+request.addEventListener('success', (e) => {
   const db = e.target.result;
   const tx = db.transaction('Users', 'readwrite');
   const store = tx.objectStore('Users');
   const range = IDBKeyRange.bound(1, 10);
   const req = store.openCursor(range, 'next');
-  req.addEventListener('success', e => {
+  req.addEventListener('success', (e) => {
     const cursor = this.result;
     if (cursor) {
       console.log(cursor.value.userName);
@@ -202,7 +202,7 @@ createIndex()方法接收三个参数:
 
 ```js
 const request = indexedDB.open('myDatabase', 5);
-request.addEventListener('upgradeneeded', e => {
+request.addEventListener('upgradeneeded', (e) => {
   const db = e.target.result;
   const store = db.createObjectStore('Users', {
     keyPath: 'userId',
@@ -228,13 +228,13 @@ const index = store.index('ageIndex');
 
 ```js
 const request = indexedDB.open('myDatabase', 4);
-request.addEventListener('success', e => {
+request.addEventListener('success', (e) => {
   const db = e.target.result;
   const tx = db.transaction('Users', 'readwrite');
   const store = tx.objectStore('Users');
   const index = store.index('ageIndex');
   const req = index.openCursor(IDBKeyRange.lowerBound(20), 'next');
-  req.addEventListener('success', e => {
+  req.addEventListener('success', (e) => {
     const cursor = e.target.result;
     if (cursor) {
       console.log(cursor.value.age);

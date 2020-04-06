@@ -36,7 +36,7 @@ function memoize(fn) {
 
 ```js
 // a simple pure function to get a value adding 10
-const add = n => n + 10;
+const add = (n) => n + 10;
 console.log('Simple call', add(3));
 
 const memorizedAdd = memoize(add);

@@ -110,7 +110,7 @@ const getTotalAmountSuccess = () => ({
   type: actionTypes.PROFORMA_GET_TOTAL_AMOUNT_SUCCESS
 });
 
-const getTotalAmountError = e => ({
+const getTotalAmountError = (e) => ({
   type: actionTypes.PROFORMA_GET_TOTAL_AMOUNT_ERROR,
   error: e
 });
@@ -119,11 +119,11 @@ export const getTotalAmount = () => (dispatch, getState, utils) => {
   const ubl = getState().proforma.ubl;
   dispatch(getTotalAmountRequest());
   utils.DocumentService.calculateTotals(ubl)
-    .then(newUbl => {
+    .then((newUbl) => {
       dispatch(getTotalAmountSuccess());
       dispatch(setTotalAmount(newUbl));
     })
-    .catch(e => {
+    .catch((e) => {
       dispatch(getTotalAmountError(e));
     });
 };

@@ -22,7 +22,7 @@ function Foo(name) {
   this.name = name;
 }
 
-Foo.prototype.getName = function() {
+Foo.prototype.getName = function () {
   return this.name;
 };
 

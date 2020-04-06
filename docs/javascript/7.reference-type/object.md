@@ -96,13 +96,13 @@ console.log(person); // {name: "robbie"}
 var obj = {log: ['a', 'b', 'c']};
 
 Object.defineProperty(obj, 'latest', {
-  get: function() {
+  get: function () {
     return this.log[this.log.length - 1];
   }
 });
 
 Object.defineProperty(obj, 'add', {
-  set: function(v) {
+  set: function (v) {
     this.log.push(v);
     return this.log;
   }
@@ -347,7 +347,7 @@ ES6 一共有 5 种方法可以遍历对象的属性。
 
 ```js
 var obj = {
-  m: function() {},
+  m: function () {},
   b: '',
   2: '',
   '1': '',

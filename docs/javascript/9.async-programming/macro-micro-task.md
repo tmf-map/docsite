@@ -19,16 +19,16 @@ async function async2() {
 
 console.log('script start');
 
-setTimeout(function() {
+setTimeout(function () {
   console.log('setTimeout');
 }, 0);
 
 async1();
 
-new Promise(function(resolve) {
+new Promise(function (resolve) {
   console.log('promise1');
   resolve();
-}).then(function() {
+}).then(function () {
   console.log('promise2');
 });
 console.log('script end');
@@ -77,7 +77,7 @@ console.log('script end');
 [点击查看](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/setTimeout)`setTimeout`语法
 
 ```js
-setTimeout(function() {
+setTimeout(function () {
   console.log('setTimeout');
 }, 0);
 ```

@@ -69,7 +69,7 @@ let output = identity('myString'); // type of output will be 'string'
 ```ts
 type Id = <T>(arg: T) => T;
 
-let myID: Id = function(arg) {
+let myID: Id = function (arg) {
   return arg;
 };
 ```

@@ -80,14 +80,14 @@ exports.default = sum;
 module: umd
 
 ```js
-(function(factory) {
+(function (factory) {
   if (typeof module === 'object' && typeof module.exports === 'object') {
     var v = factory(require, exports);
     if (v !== undefined) module.exports = v;
   } else if (typeof define === 'function' && define.amd) {
     define(['require', 'exports'], factory);
   }
-})(function(require, exports) {
+})(function (require, exports) {
   'use strict';
   Object.defineProperty(exports, '__esModule', {value: true});
   const sum = (a, b) => a + b;
@@ -116,7 +116,7 @@ module: umd
 
 ```js
 let myname: string | undefined = ['robbie', 'peter'].find(
-  item => item === 'robbie'
+  (item) => item === 'robbie'
 );
 ```
 
@@ -344,20 +344,20 @@ export = B
 ```js
 var __extends =
   (this && this.__extends) ||
-  (function() {
-    var extendStatics = function(d, b) {
+  (function () {
+    var extendStatics = function (d, b) {
       extendStatics =
         Object.setPrototypeOf ||
         ({__proto__: []} instanceof Array &&
-          function(d, b) {
+          function (d, b) {
             d.__proto__ = b;
           }) ||
-        function(d, b) {
+        function (d, b) {
           for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
         };
       return extendStatics(d, b);
     };
-    return function(d, b) {
+    return function (d, b) {
       extendStatics(d, b);
       function __() {
         this.constructor = d;
@@ -411,14 +411,14 @@ for (var _i = 0, a_1 = a; _i < a_1.length; _i++) {
 'use strict';
 var __values =
   (this && this.__values) ||
-  function(o) {
+  function (o) {
     var s = typeof Symbol === 'function' && Symbol.iterator,
       m = s && o[s],
       i = 0;
     if (m) return m.call(o);
     if (o && typeof o.length === 'number')
       return {
-        next: function() {
+        next: function () {
           if (o && i >= o.length) o = void 0;
           return {value: o && o[i++], done: !o};
         }
@@ -551,7 +551,7 @@ class C {
 class Age {
   age: number = 10;
   getAge() {
-    return function() {
+    return function () {
       console.log(this.age);
     };
   }
