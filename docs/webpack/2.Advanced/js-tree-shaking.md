@@ -1,12 +1,12 @@
 ---
-title: Js-Tree-Shaking
+title: Js Tree Shaking
 ---
 
 import Img from '../../../src/components/Img';
 
 ## 概述
 
-`js`文件中导入的模块一般会有多个方法，但只要其中的某个方法被引用，则该模块的所有内容都将被打到`bundle`中。`tree shaking`的功能 就是只把用到的方法打入`bundle`，没有用到的方法会在 `uglify` 阶段被擦除掉。
+`js`文件中导入的模块一般会有多个方法，但只要其中的某个方法被引用，则该模块的所有内容都将被打到`bundle`中。`tree shaking`的功能就是只把用到的方法打包到`bundle`，没有用到的方法会在 `uglify` 阶段被`shaking`掉。
 
 `tree shaking`从`webpack 2`开始就已经支持，但需要配合插件才能使用。而在`webpack 4`中只要设置`mode`为`production`，`tree shaking`便默认开启。
 
@@ -20,9 +20,7 @@ import Img from '../../../src/components/Img';
 
 ## 相关代码
 
-- src/math.js
-
-```js
+```js title="src/math.js"
 export function square(x) {
   console.log('square', x);
   return x * x;
@@ -34,9 +32,7 @@ export function cube(x) {
 }
 ```
 
-- src/index.js
-
-```js
+```js title="src/index.js"
 import {join} from 'lodash';
 import {cube} from './math.js';
 
@@ -48,9 +44,7 @@ console.log(cube(2));
 
 ## 相关配置
 
-- webpack.config.json
-
-```js
+```js title="webpack.config.json"
 const path = require('path');
 const webpack = require('webpack');
 
@@ -100,7 +94,7 @@ module.exports = {
 
 代码的构建过程如下图所示：
 
-<Img width="400" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/tree.gif" />
+<Img width="500" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/tree.gif" />
 
 通过构建的结果可以看出`math.js`中的`square`函数并没有被打包到`bundle`文件中，只将被引用的`cube`函数打包。这也证明我们`tree shaking`已经“成功了”。
 
@@ -110,13 +104,13 @@ module.exports = {
 
 上文中提到，导入`lodash`包并没有`tree shaking`成功。为了找寻原因，我们可以看一下`lodash`的[源码](https://github.com/lodash/lodash/blob/npm/lodash.js#L17105)，通过源码可以看出`lodash`打包遵循的是`commonJS`的规范，通过立即执行函数来注册各个工具函数。
 
-为了解决该问题，一般会有两种方案，下面我们将分别讲解这两种方案。
+为了减少打包后的体积，一般会有两种方案，下面我们将分别讲解这两种方案。
 
-- 方案一：只导入使用的文件
+### 方案一：只导入使用的文件
 
 目前业界流行的组件库多是**将每一个组件或者功能函数，都打包成单独的文件或目录**。如下图是`lodash`中的单独文件：
 
-<Img width="400" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200330172536.png" />
+<Img width="500" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200330172536.png" />
 
 然后可以像如下的方式引入：
 
@@ -126,9 +120,9 @@ import join from 'lodash/join';
 
 此时打包的结果（右上角）与之前打包的结果对比如下图所示：
 
-<Img width="400" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/微信截图_20200330173101.png" />
+<Img width="500" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/微信截图_20200330173101.png" />
 
-从图中可以看出，打包后的文件只有`1.11KB`，这说明`npm`包`tree shaking`。
+从图中可以看出，打包后的文件只有`1.11KB`，这说明我们成功的减少了打包后的体积。
 
 :::caution
 
@@ -136,7 +130,7 @@ import join from 'lodash/join';
 
 :::
 
-- 方案二：只导入`npm`包的`es`版本
+### 方案二：只导入`npm`包的`es`版本
 
 有些常用的包像`lodash`、`antd`等，一般会打包两个版本的`npm`包，一种是采用`umd`的导出方式，一种是采用`ES`的导出方式。
 
@@ -146,9 +140,7 @@ import join from 'lodash/join';
 
 对于我们项目中使用到的`lodash`，我们可以用`lodash-es`代替。如下所示：
 
-- src/index.js
-
-```js
+```js title="src/index.js"
 import {join} from 'lodash-es';
 import {cube} from './math.js';
 
@@ -158,7 +150,7 @@ console.log(cube(2));
 
 打包后的结果如下所示：
 
-<Img width="400" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200330221705.png" />
+<Img width="500" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200330221705.png" />
 
 由结果可以看出，使用`lodash-es`包时`tree shaking`会生效。
 
@@ -166,16 +158,26 @@ console.log(cube(2));
 
 在`webpack`做静态分析时，如果导入模块是包含“副作用”代码时，比如立即执行函数、调用了 `window` 上的属性等，此时`webpack`不能对导入的模块做`tree shaking`。
 
-为了帮助`webpack`更好的分析那些文件是具有“副作用”的，那些文件时“纯净”的。我们可以在`package.json`中增加一个`sideEffects`字段，将具有“副作用”的文件路径放到`sideEffects`的属性值中。`sideEffects`的值为`false`或者是一个数组，当`sideEffects`的值为`false`值是则代表导入的所有模块都没有“副作用”，`webpack`可以放心的使用`tree shaking`。
+为了帮助`webpack`更好的分析导入的那些包是具有“副作用”的，那些包是“纯净”的。我们可以在`npm`包发布前在`package.json`中增加一个`sideEffects`字段，将具有“副作用”的文件路径放到`sideEffects`的属性值中。`sideEffects`的值为`false`或者是一个数组，当`sideEffects`的值为`false`时，则代表该包的所有模块都没有“副作用”，`webpack`可以放心的使用`tree shaking`。
 
-我们导入`css`和`less`模块时，一般会使用`import "./index.less"`的方式导入，但由于样式文件没有导出任何文件，因此`webpack`在做静态分析时会将`import "./index.less"`移除，从而导致样式问题，因此我们将`sideEffects`配置如下：
+我们以 ant-design 的[package.json](https://github.com/ant-design/ant-design/blob/master/package.json#L37)文件为例，其设置如下：
 
 ```js
- "sideEffects": [
-    "**/*.css",
-    "**/*.scss"
+  "sideEffects": [
+    "dist/*",
+    "es/**/style/*",
+    "lib/**/style/*",
+    "*.less"
   ]
 ```
+
+通过上面的配置可以看出，ant-design 的`dist`目录以及所有样式文件都是“副作用”的，此时如果项目中引用了 ant-design 中的模块，`webpack`在打包时不会对`sideEffects`中的“副作用”文件进行`tree shaking`。
+
+:::caution
+
+之所以将`css`和`less`等样式文件添加到`sideEffects`中，是因为样式文件没有任何文件导出，因此`webpack`在做静态分析时会将`import "./index.less"`等样式导入文件移除，从而导致样式问题，因此我们将`sideEffects`配置如下：
+
+:::
 
 ## tree shaking 的原理
 
@@ -189,7 +191,7 @@ console.log(cube(2));
 
 修改后的`src/math.js`文件：
 
-```js
+```js title="src/math.js"
 export function square(x) {
   console.log('square', x);
   return x * x;
@@ -228,7 +230,7 @@ function (e, r, t) {
 
 修改后的`src/math.js`文件：
 
-```js
+```js title="src/math.js"
 let helloWorld = () => {
   return 'hello world';
 };
@@ -247,7 +249,7 @@ export function cube(x) {
 
 打包的结果如下图所示：
 
-<Img width="400" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/removefunction.gif" />
+<Img width="500" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/removefunction.gif" />
 
 通过打包后的结果可以看出，打包后的`bundle`中并没有包含`helloWorld`函数的返回结果。
 
@@ -261,7 +263,7 @@ export function cube(x) {
 
 例如只定义变量或通过代码改变某个变量，但是该变量不会被使用到时，该变量在`tree shaking`时会被消除。
 
-```js
+```js title="src/math.js"
 let helloWorld = () => {
   return 'hello world';
 };
@@ -280,7 +282,7 @@ export function cube(x) {
 
 打包的结果如下图所示：
 
-<Img width="400" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/remove-variate.gif" />
+<Img width="500" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/remove-variate.gif" />
 
 通过打包后的结果可以看出，打包后的`bundle`中即并没有包含`variate`变量，也没有`helloWorld`函数的返回结果。
 
