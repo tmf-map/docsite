@@ -223,6 +223,10 @@ module.exports = {
             }
           }
         },
+        blog: {
+          path: './blog',
+          editUrl: `https://github.com/${githubOrg}/${githubRepo}/edit/master/`
+        },
         theme: {
           customCss: require.resolve('./src/css/custom.css')
         }
