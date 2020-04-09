@@ -35,7 +35,7 @@ window.opener.postMessage('Nice to see you', 'http://aaa.com');
 ```js
 window.addEventListener(
   'message',
-  function(e) {
+  function (e) {
     console.log(e.data);
   },
   false

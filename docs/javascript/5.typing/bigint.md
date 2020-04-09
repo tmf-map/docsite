@@ -237,10 +237,10 @@ JSONbig.stringify({value: 9223372036854775807n});
 In addition, below is a simple implementation for `parse`, you can use as a reference:
 
 ```js
-let handleString = (stringData) =>
+let handleString = stringData =>
   stringData.replace(/:\s*([-+Ee0-9.]+)/g, ': "uniqueprefix$1"');
 
-let parse = (stringData) =>
+let parse = stringData =>
   JSON.parse(handleString(stringData), (key, value) => {
     // only changing strings
     if (typeof value !== 'string') return value;

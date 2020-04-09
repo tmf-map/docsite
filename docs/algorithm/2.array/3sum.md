@@ -52,7 +52,7 @@ sidebar_label: 三数之和
  * @param {array} arr
  * @return {array}
  */
-let threeSum = function(arr) {
+let threeSum = function (arr) {
   let res = [];
   if (arr.length < 3) {
     return [];

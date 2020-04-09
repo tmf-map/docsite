@@ -46,7 +46,7 @@ VM84:3 Wed Oct 09 2019 09:29:47 GMT+0800 (中国标准时间) 5
 
 ```js
 for (var i = 0; i < 5; i++) {
-  (function(i) {
+  (function (i) {
     setTimeout(function timer() {
       console.log(i);
     }, i * 1000);

@@ -29,7 +29,7 @@ sidebar_label: 最小栈
 /**
  * initialize your data structure here.
  */
-var MinStack = function() {
+var MinStack = function () {
   this.stack = [];
   this.helper = [];
 };
@@ -38,7 +38,7 @@ var MinStack = function() {
  * @param {number} x
  * @return {void}
  */
-MinStack.prototype.push = function(x) {
+MinStack.prototype.push = function (x) {
   this.stack.push(x);
   if (!this.helper.length) {
     this.helper.push(x);
@@ -51,7 +51,7 @@ MinStack.prototype.push = function(x) {
 /**
  * @return {void}
  */
-MinStack.prototype.pop = function() {
+MinStack.prototype.pop = function () {
   this.stack.pop();
   this.helper.pop();
 };
@@ -59,14 +59,14 @@ MinStack.prototype.pop = function() {
 /**
  * @return {number}
  */
-MinStack.prototype.top = function() {
+MinStack.prototype.top = function () {
   return this.stack[this.stack.length - 1];
 };
 
 /**
  * @return {number}
  */
-MinStack.prototype.getMin = function() {
+MinStack.prototype.getMin = function () {
   return this.helper[this.helper.length - 1];
 };
 

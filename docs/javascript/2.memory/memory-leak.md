@@ -63,7 +63,7 @@ JS 中常见的内存泄漏有：
 </body>
 <script>
   var happy; // global
-  var poop = function() {
+  var poop = function () {
     for (var i = 0; i < 100000; i++) {
       happy += ' a ';
     }
@@ -83,7 +83,7 @@ JS 中常见的内存泄漏有：
   <button id="btn">Click</button>
 </body>
 <script>
-  var poop = function() {
+  var poop = function () {
     var happy; // local
     for (var i = 0; i < 100000; i++) {
       happy += ' a ';
@@ -125,7 +125,7 @@ document.body.removeChild(node);
 即使 `setInterval` 像下面这样写，其实也没发生内存泄漏：
 
 ```js
-setInterval(function() {
+setInterval(function () {
   var happy;
   for (var i = 0; i < 100000; i++) {
     happy += ' a ';

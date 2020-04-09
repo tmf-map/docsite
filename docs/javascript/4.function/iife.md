@@ -6,28 +6,28 @@ sidebar_label: 立即执行函数IIFE
 立即执行函数表达式(Immediately-Invoked Function Expression)
 
 ```js
-!(function() {
+!(function () {
   /* code */
 })();
-~(function() {
+~(function () {
   /* code */
 })();
--(function() {
+-(function () {
   /* code */
 })();
-+(function() {
++(function () {
   /* code */
 })();
 
-void (function() {
+void (function () {
   /* code */
 })();
 
 // new关键字也能达到这个效果
-new (function() {
+new (function () {
   /* code */
 })();
-new (function() {
+new (function () {
   /* code */
 })();
 // 只有传递参数时，才需要最后那个圆括号
@@ -46,14 +46,14 @@ FE 常用的功能
 ```js
 // IIFEs（立即执行函数） can also be used to create variables that are inaccessible from the global
 // scope
-const counter = (function() {
+const counter = (function () {
   var count = 0; // count对象只能通过counter对象里面的方法去调用，与外界隔离
 
   return {
-    inc: function() {
+    inc: function () {
       count = count + 1;
     },
-    get: function() {
+    get: function () {
       console.log(count);
     }
   };
@@ -87,7 +87,7 @@ var num = 2;
 lib_a.js
 
 ```js
-(function() {
+(function () {
   var num = 1;
   // code....
 })();
@@ -96,7 +96,7 @@ lib_a.js
 lib_b.js
 
 ```js
-(function() {
+(function () {
   var num = 2;
   // code....
 })();
@@ -111,15 +111,15 @@ lib_b.js
 举个栗子，一个视频播放的方法需要对不同的浏览器采取不同的对策，在 IE 中采用 flash ，而其他浏览器中不使用。由于除非换浏览器，否则是否是 IE 这个条件的值不会被改变，这样采用惰性载入，就可以在多次调用时有明显的优势。
 
 ```js
-var showVideo = (function() {
+var showVideo = (function () {
   console.log('第一次调用 showVideo');
 
   if (isIE) {
-    return function() {
+    return function () {
       console.log('在 IE 中调用 showVideo');
     };
   } else {
-    return function() {
+    return function () {
       console.log('在 非IE 中国调用 showVideo');
     };
   }

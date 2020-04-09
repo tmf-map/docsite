@@ -18,7 +18,7 @@ import Hint from '../../../src/components/Hint'; import Img from '../../../src/c
 ```js
 function debounce(fn, wait) {
   let timer;
-  return function(...args) {
+  return function (...args) {
     timer && clearTimeout(timer);
     timer = setTimeout(() => {
       fn.apply(this, args);

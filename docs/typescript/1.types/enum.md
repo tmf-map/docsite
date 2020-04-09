@@ -109,7 +109,7 @@ Sun
 
 ```js
 var Days;
-(function(Days) {
+(function (Days) {
   Days[(Days['Sun'] = 0)] = 'Sun';
   Days[(Days['Mon'] = 1)] = 'Mon';
   Days[(Days['Tue'] = 2)] = 'Tue';
@@ -141,7 +141,7 @@ enum Direction {
 
 ```js
 var Direction;
-(function(Direction) {
+(function (Direction) {
   Direction['Up'] = 'UP';
   Direction['Down'] = 'DOWN';
   Direction['Left'] = 'LEFT';

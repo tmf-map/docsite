@@ -25,7 +25,7 @@ sidebar_label: 翻转字符串
  * @param {string} s
  * @return {string}
  */
-var reverseWords = function(s) {
+var reverseWords = function (s) {
   let arr = [];
   let ans = '';
   for (let i = 0; i < s.length; i++) {

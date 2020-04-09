@@ -24,7 +24,7 @@ function addScriptTag(src) {
   document.body.appendChild(script);
 }
 
-window.onload = function() {
+window.onload = function () {
   addScriptTag('http://example.com/ip?callback=myFunction');
 };
 
@@ -43,13 +43,13 @@ var app = express();
 
 var responsePort = 3001;
 
-app.get('/', function(req, res) {
+app.get('/', function (req, res) {
   var callbackName = req.query.callback; // myFunction
   res.send(callbackName + "({'ip': '8.8.8.8'});");
   // myFunction({'ip': '8.8.8.8'})
 });
 
-app.listen(responsePort, function() {
+app.listen(responsePort, function () {
   console.log('jsonp_responser server listening on port ' + responsePort);
 });
 ```

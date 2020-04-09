@@ -196,7 +196,7 @@ var cb = document.getElementById('my-checkbox');
 
 cb.addEventListener(
   'click',
-  function(e) {
+  function (e) {
     e.preventDefault();
   },
   false
@@ -271,7 +271,7 @@ var p = document.querySelector('p');
 
 div.addEventListener(
   'click',
-  function(e) {
+  function (e) {
     console.log(e.composedPath());
   },
   false
@@ -304,7 +304,7 @@ function eventHandler(e) {
   console.log(e.detail);
 }
 
-document.body.addEventListener('build', function(e) {
+document.body.addEventListener('build', function (e) {
   console.log(e.detail);
 });
 
@@ -324,7 +324,7 @@ var myEvent = new CustomEvent('myevent', {
   cancelable: false
 });
 
-el.addEventListener('myevent', function(event) {
+el.addEventListener('myevent', function (event) {
   console.log('Hello ' + event.detail.foo);
 });
 

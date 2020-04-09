@@ -36,7 +36,7 @@ function TreeNode(val) {
 ### 递归法（自底向上回溯）
 
 ```js
-var maxDepth = function(root) {
+var maxDepth = function (root) {
   if (root === null) return 0;
   let left = maxDepth(root.left);
   let right = maxDepth(root.right);
@@ -53,10 +53,10 @@ var maxDepth = function(root) {
 父结点将自己的深度传给子结点，当子结点没有孩子的时候，将此时的深度和 result 做比较，并将最大的那个值赋给 result。
 
 ```js
-var maxDepth = function(root) {
+var maxDepth = function (root) {
   if (root === null) return 0;
   let result = 1;
-  let max_depth = function(root, depth) {
+  let max_depth = function (root, depth) {
     if (root !== null) {
       if (root.left === null && root.right === null) {
         result = Math.max(result, depth);
@@ -76,7 +76,7 @@ var maxDepth = function(root) {
 ### 栈 + 深度优先遍历
 
 ```js
-var maxDepth = function(root) {
+var maxDepth = function (root) {
   let stack = [{node: root, dep: 1}];
   let depth = 0;
   while (stack.length) {
@@ -99,7 +99,7 @@ var maxDepth = function(root) {
 ### 队列 + 广度优先遍历
 
 ```js
-var maxDepth = function(root) {
+var maxDepth = function (root) {
   if (root === null) return 0;
   let queue = [root];
   let depth = 0;

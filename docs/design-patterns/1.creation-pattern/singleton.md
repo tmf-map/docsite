@@ -17,8 +17,8 @@ Even if you don't know too much about singleton, I believe that you've used it. 
 
 ```js
 const foo = {
-  doSomethingA: function() {},
-  doSomethingB: function() {}
+  doSomethingA: function () {},
+  doSomethingB: function () {}
 };
 ```
 
@@ -38,14 +38,14 @@ So, it is no longer possible to use object literals to create singleton. Instead
 Here's how to transform the above `foo` object by **IIFE (Immediately Invoked Function Expression)** and constructor in ES5 syntax.
 
 ```js
-let Singleton = (function(name) {
+let Singleton = (function (name) {
   let instance = null;
 
   function init() {
-    (this.name = name), (this.doSomething = function() {}); // method
+    (this.name = name), (this.doSomething = function () {}); // method
   }
 
-  return function() {
+  return function () {
     if (!instance) {
       // (i)
       instance = new init();
