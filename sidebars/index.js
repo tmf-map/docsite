@@ -7,9 +7,9 @@ const java = require('./java');
 const designPatterns = require('./design-patterns');
 const algorithm = require('./algorithm');
 const http = require('./http');
-const docs = require('./docs');
 const typescript = require('./typescript');
 const webpack = require('./webpack');
+const wiki = require('./wiki');
 
 module.exports = {
   javascript,
@@ -21,7 +21,7 @@ module.exports = {
   designPatterns,
   algorithm,
   http,
-  docs,
   typescript,
+  wiki,
   webpack
 };

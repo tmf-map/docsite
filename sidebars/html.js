@@ -1,5 +1,5 @@
 module.exports = {
-  前言: ['html/preface/overview', 'html/preface/note'],
+  前言: ['html/preface/overview'],
   '1. 标签': [
     'html/1.tag/html-structure',
     'html/1.tag/head-info',

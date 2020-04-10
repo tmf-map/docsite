@@ -69,6 +69,7 @@ module.exports = {
           position: 'left'
         },
         {to: 'blog', label: 'Blog', position: 'right'},
+        {to: 'docs/wiki/1.get-started', label: 'Wiki', position: 'right'},
         {
           href: `https://github.com/${githubOrg}/${githubRepo}`,
           label: 'GitHub',
@@ -160,6 +161,7 @@ module.exports = {
           showLastUpdateAuthor: true,
           // Equivalent to `enableUpdateTime`.
           showLastUpdateTime: true,
+          remarkPlugins: [require('./src/plugins/remark-npm2yarn')],
           // options for remark-admonitions, this does not work now.
           admonitions: {
             customTypes: {

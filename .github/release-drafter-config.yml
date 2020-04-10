@@ -37,6 +37,9 @@ categories:
   - title: 'Java'
     labels:
       - 'docs: java'
+  - title: 'Wiki'
+    labels:
+      - 'wiki'
   - title: 'Website'
     labels:
       - 'website'
