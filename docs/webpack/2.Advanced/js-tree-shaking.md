@@ -110,7 +110,7 @@ module.exports = {
 
 目前业界流行的组件库多是**将每一个组件或者功能函数，都打包成单独的文件或目录**。如下图是`lodash`中的单独文件：
 
-<Img width="500" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200330172536.png" />
+<Img width="400" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200330172536.png" />
 
 然后可以像如下的方式引入：
 
@@ -130,13 +130,37 @@ import join from 'lodash/join';
 
 :::
 
-### 方案二：只导入`npm`包的`es`版本
+### 方案二：只导入 npm 包的 es 版本
 
 有些常用的包像`lodash`、`antd`等，一般会打包两个版本的`npm`包，一种是采用`umd`的导出方式，一种是采用`ES`的导出方式。
 
 `webpack`的打包不支持打包成`ES`模块，当使用`webpack`打包文件时，我们通常会选用`umd`的导出方式。因此，如果我们把所有的资源文件通过`webpack`打包到一个`bundle`文件里的话，那这个库文件从此与`tree shaking`无缘。
 
-为了保留两种打包模块的方式，我们一般会使用`webpack`打包生成支持`CommonJS`规范的模块，使用`gulp`等工具打包生成`ES`模块。同时我们需要在`package.json`中增加一个`module`字段，当开发者以`es6`模块的方式去加载`npm`包时，会以`module`的值为入口文件，这样就能够同时兼容多种引入方式。
+为了保留多种打包模块的方式，我们一般会**使用`webpack`打包生成用于支持`CDN`载入的模块**（`CommonJS`规范），**使用`Babel`分别打包支持`CommonJS`规范的`ES5`模块和支持`ES6`规范的`ES6`模块**。
+
+同时我们还需要在`package.json`中添加`module`和`unpkg`这两个字段，当开发者以`ES6`模块的方式去加载`npm`包时，会以`module`的值为入口文件，当使用`url`加载`npm`包时，将会以`unpkg`的值为入口文件，这样就能够同时兼容多种引入方式。
+
+多种打包模块的方式可以参考[ant-tools](https://github.com/ant-design/antd-tools/blob/master/lib/gulpfile.js)和[core-react](https://github.com/webapps-ui/core-react)的打包配置，下面是[ant-design](https://github.com/ant-design/ant-design/blob/master/package.json#L43)中`package.json`的设置：
+
+```js
+/* package.json */
+{
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "unpkg": "dist/antd.min.js"
+}
+```
+
+:::caution
+
+因为`Babel`默认会将所有的模块转换为`ES5`，所以在打包生成`ES6`模块时需要关闭`Babel`的默认设置，例如：
+
+```js
+/* babel.rc */
+presets: [['env', {module: false}]];
+```
+
+:::
 
 对于我们项目中使用到的`lodash`，我们可以用`lodash-es`代替。如下所示：
 
