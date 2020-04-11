@@ -133,7 +133,7 @@ Chrome 在显示 `alert/confirm/prompt` 时，内部的定时器仍旧会继续�
 `clearInterval(timerId)` 清除了 timer 指向的定时器。`timerId = null` 是修改 `timerId` 的指向，使 `timerId` 这个变量不指向某个定时器，然而并没有终止这个定时器的执行，定时器依旧在运行。
 
 ```js
-let timerId = setInterval(function() {
+let timerId = setInterval(function () {
   alert();
   timerId = null;
 }, 1000);
@@ -218,7 +218,7 @@ let timerId = setTimeout(function request() {
 
 ```js
 let i = 1;
-setInterval(function() {
+setInterval(function () {
   func(i++);
 }, 100);
 ```
@@ -473,7 +473,7 @@ function() {
 当一个函数传入 `setInterval/setTimeout` 时，内部会为其创建一个引用，保存在定时器中。这样，即使这个函数没有被引用，也能防止垃圾回收器（GC）将其回收。
 
 ```js
-setTimeout(function() {
+setTimeout(function () {
   // 在定时器调用这个函数之前，这个函数将一直存在于内存中
 }, 100);
 ```
@@ -489,7 +489,7 @@ setTimeout(function() {
 ```js
 var obj = {
   a: 2,
-  foo: function() {
+  foo: function () {
     'use strict';
     console.log(this.a);
   }

@@ -33,10 +33,10 @@ import Hint from '../../../src/components/Hint'; import Img from '../../../src/c
 function createSubject() {
   const observers = [];
   return {
-    addObserver: function(ob) {
+    addObserver: function (ob) {
       observers.push(ob);
     },
-    notify: function() {
+    notify: function () {
       for (let ob of observers) {
         if (typeof ob.update === 'function') {
           ob.update(); // 所有的观察者必须要有这个函数

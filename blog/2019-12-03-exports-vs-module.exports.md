@@ -25,7 +25,7 @@ import Img from '../src/components/Img';
 
 ```js
 var myInfo = {name: 'Robbie'};
-var changeInfo = function(info) {
+var changeInfo = function (info) {
   info.age = '18';
   console.log('info: ', info);
 };
@@ -40,7 +40,7 @@ console.log('myInfo: ', myInfo);
 
 ```js
 var myInfo = {name: 'Robbie'};
-var changeInfo = function(info) {
+var changeInfo = function (info) {
   info = {name: 'Robbie', age: 18};
   console.log('info: ', info);
 };
@@ -76,7 +76,7 @@ exports.info = {name: 'Robbie', age: 18};
 console.log('module.exports: ', module.exports);
 console.log('exports: ', exports);
 
-module.exports = function() {
+module.exports = function () {
   console.log('robbie');
 };
 console.log('---修改后---');
@@ -124,7 +124,7 @@ require：  function () {
 其实上面通过案例已经说明白这两者之间的关系了，此处通过`webpack`对上面定义的`lib`模块进行了转义，截取了其中的一段代码，简单看一下`node`模块的封装。
 
 ```js
-(function(modules) {
+(function (modules) {
   function __webpack_require__(moduleId) {
     var module = (installedModules[moduleId] = {
       i: moduleId,
@@ -144,13 +144,13 @@ require：  function () {
 
   return __webpack_require__('/index.js');
 })({
-  '/index.js': function(module, exports, __webpack_require__) {
+  '/index.js': function (module, exports, __webpack_require__) {
     var info = __webpack_require__('/lib.js');
     console.log('-----');
     console.log('require： ', info);
   },
 
-  '/lib.js': function(module, exports) {
+  '/lib.js': function (module, exports) {
     exports.info = {
       name: 'Robbie',
       age: 18
@@ -159,7 +159,7 @@ require：  function () {
     console.log('module.exports: ', module.exports);
     console.log('exports: ', exports);
 
-    module.exports = function() {
+    module.exports = function () {
       console.log('robbie');
     };
     console.log('---修改后---');

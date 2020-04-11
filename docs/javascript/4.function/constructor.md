@@ -41,7 +41,7 @@ var v = new Vehicle();
 另外注意：如果忘记 new 则会导致 this 指向全局对象，这种情况下，构造函数就变成了普通函数，并不会生成实例对象。而且由于后面会说到的原因，this 这时代表全局对象，将造成一些意想不到的结果。
 
 ```js
-var Vehicle = function() {
+var Vehicle = function () {
   this.price = 1000;
 };
 

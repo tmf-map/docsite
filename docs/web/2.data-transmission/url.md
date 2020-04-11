@@ -321,7 +321,7 @@ function handleFiles(files) {
     var img = document.createElement('img');
     img.src = window.URL.createObjectURL(files[i]);
     div.appendChild(img);
-    img.onload = function() {
+    img.onload = function () {
       window.URL.revokeObjectURL(this.src);
     };
   }

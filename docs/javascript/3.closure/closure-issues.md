@@ -9,14 +9,14 @@ sidebar_label: 闭包注意事项
 
 ```js
 var theThing = null;
-var replaceThing = function() {
+var replaceThing = function () {
   var originalThing = theThing;
-  var unused = function() {
+  var unused = function () {
     if (originalThing) console.log('hi');
   };
   theThing = {
     longStr: new Array(1000000).join('*'),
-    someMethod: function() {
+    someMethod: function () {
       console.log(someMessage);
     }
   };

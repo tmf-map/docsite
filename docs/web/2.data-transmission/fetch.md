@@ -114,10 +114,10 @@ Request Request 类用于描述请求内容。构造函数接受的参数与 fet
 var URL = '//api.some.com';
 var getReq = new Request(URL, {method: 'GET', cache: 'reload'});
 fetch(getReq)
-  .then(function(response) {
+  .then(function (response) {
     return response.json();
   })
-  .catch(function(error) {
+  .catch(function (error) {
     console.log('Fetch Error: ', error);
   });
 ```
@@ -134,10 +134,10 @@ var headers = new Headers({
 });
 var getReq = new Request(URL, {method: 'GET', headers: headers});
 fetch(getReq)
-  .then(function(response) {
+  .then(function (response) {
     return response.json();
   })
-  .catch(function(error) {
+  .catch(function (error) {
     console.log('Fetch Error: ', error);
   });
 ```

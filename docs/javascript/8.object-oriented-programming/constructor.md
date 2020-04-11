@@ -27,7 +27,7 @@ var foo = Foo(); // foo: undefined
 function Cat(name, color) {
   this.name = name;
   this.color = color;
-  this.meow = function() {
+  this.meow = function () {
     console.log('喵喵');
   };
 }

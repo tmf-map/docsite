@@ -43,7 +43,7 @@ requestAnimationFrame(function step() {
   id = requestAnimationFrame(step);
 });
 
-btn.onclick = function() {
+btn.onclick = function () {
   cancelAnimationFrame(id);
 };
 ```

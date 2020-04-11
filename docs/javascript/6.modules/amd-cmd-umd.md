@@ -28,16 +28,16 @@ sidebar_label: AMD/CMD/UMD
 
 ```js
 // a.js
-define(['b', 'require', 'exports'], function(b, require, exports) {
+define(['b', 'require', 'exports'], function (b, require, exports) {
   console.log('a.js执行');
   console.log(b);
   // 暴露api可以使用exports、module.exports、return
-  exports.a = function() {
+  exports.a = function () {
     return require('b');
   };
 });
 // b.js
-define(function() {
+define(function () {
   console.log('b.js执行');
   console.log(require);
   console.log(exports);
@@ -46,13 +46,13 @@ define(function() {
 });
 // 定义index.js
 // 支持Modules/Wrappings写法，注意dependencies得是空的，且factory参数不可空
-define(function(require, exports, module) {
+define(function (require, exports, module) {
   console.log('index.js执行');
   var a = require('a');
   var b = require('b');
 });
 // 加载index.js
-require(['a', 'b'], function(a, b) {
+require(['a', 'b'], function (a, b) {
   console.log('index.js执行');
 });
 ```
@@ -60,11 +60,11 @@ require(['a', 'b'], function(a, b) {
 上例中的 a.js 模块的定义，如果使用 return 来暴露模块 API 的写法更简洁些：
 
 ```js
-define(['b'], function(b) {
+define(['b'], function (b) {
   console.log('a.js执行');
   console.log(b);
   return {
-    a: function() {
+    a: function () {
       return require('b');
     }
   };
@@ -99,21 +99,21 @@ CMD（Common Module Definition），即公共模块定义，它内部模块的�
 
 ```js
 // a.js
-define(function(require, exports, module) {
+define(function (require, exports, module) {
   console.log('a.js执行');
   console.log(require);
   console.log(exports);
   console.log(module);
 });
 // b.js
-define(function(require, module, exports) {
+define(function (require, module, exports) {
   console.log('b.js执行');
   console.log(require);
   console.log(exports);
   console.log(module);
 });
 // index.js
-define(function(require) {
+define(function (require) {
   var a = require('a');
   var b = require('b');
   console.log(a);
@@ -126,7 +126,7 @@ define(function(require) {
 在`seajs`中使用`seajs.use()`来完成模块的加载
 
 ```js
-seajs.use(['./main'], function(main) {
+seajs.use(['./main'], function (main) {
   main.hello();
 });
 ```
@@ -150,7 +150,7 @@ UMD（Universal Module Definition）是 AMD 和 CommonJS 的糅合，它希望�
 UMD 先判断是否支持 Node.js 的模块（exports）是否存在，存在则使用 Node.js 模块模式。再判断是否支持 AMD（define 是否存在），存在则使用 AMD 方式加载模块。
 
 ```js
-(function(window, factory) {
+(function (window, factory) {
   if (typeof exports === 'object') {
     module.exports = factory();
   } else if (typeof define === 'function' && define.amd) {
@@ -158,7 +158,7 @@ UMD 先判断是否支持 Node.js 的模块（exports）是否存在，存在则
   } else {
     window.eventUtil = factory();
   }
-})(this, function() {
+})(this, function () {
   //module ...
 });
 ```

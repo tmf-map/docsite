@@ -75,10 +75,10 @@ navigator.onLine; // true
 用户变成在线会触发`online`事件，变成离线会触发`offline`事件，可以通过`window.ononline`和`window.onoffline`指定这两个事件的回调函数。
 
 ```javascript
-window.addEventListener('offline', function(e) {
+window.addEventListener('offline', function (e) {
   console.log('offline');
 });
-window.addEventListener('online', function(e) {
+window.addEventListener('online', function (e) {
   console.log('online');
 });
 ```

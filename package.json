@@ -27,16 +27,13 @@
   "lint-staged": {
     "*.{js,jsx}": [
       "yarn lint --fix",
-      "yarn prettier",
-      "git add"
+      "yarn prettier"
     ],
     "*.{ts,tsx}": [
-      "yarn prettier",
-      "git add"
+      "yarn prettier"
     ],
     "*.md": [
-      "yarn prettier-docs",
-      "git add"
+      "yarn prettier-docs"
     ]
   },
   "husky": {
@@ -45,10 +42,10 @@
     }
   },
   "dependencies": {
-    "@docusaurus/core": "2.0.0-alpha.48",
-    "@docusaurus/plugin-google-analytics": "2.0.0-alpha.48",
-    "@docusaurus/preset-classic": "2.0.0-alpha.48",
-    "@docusaurus/theme-live-codeblock": "2.0.0-alpha.48",
+    "@docusaurus/core": "2.0.0-alpha.50",
+    "@docusaurus/plugin-google-analytics": "2.0.0-alpha.50",
+    "@docusaurus/preset-classic": "2.0.0-alpha.50",
+    "@docusaurus/theme-live-codeblock": "2.0.0-alpha.50",
     "classnames": "^2.2.6",
     "marked": "^0.8.2",
     "react": "^16.13.1",
@@ -59,12 +56,12 @@
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-config-prettier": "^6.10.1",
-    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-react-hooks": "^2.5.1",
     "husky": "^4.2.3",
-    "lint-staged": "^10.0.9",
-    "prettier": "^2.0.2"
+    "lint-staged": "^10.1.3",
+    "prettier": "^2.0.4"
   }
 }

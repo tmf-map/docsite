@@ -86,16 +86,16 @@ C(); // 3
 上面的写法其实是最原始的写法，而在实际应用中，会将闭包和匿名函数联系在一起使用。下面就是一个闭包常用的写法：
 
 ```js
-(function(document) {
+(function (document) {
   var viewport;
   var obj = {
-    init: function(id) {
+    init: function (id) {
       viewport = document.querySelector('#' + id);
     },
-    addChild: function(child) {
+    addChild: function (child) {
       viewport.appendChild(child);
     },
-    removeChild: function(child) {
+    removeChild: function (child) {
       viewport.removeChild(child);
     }
   };
@@ -112,16 +112,16 @@ C(); // 3
 因此这段代码执行执行过程可以分解如下：
 
 ```js
-var f = function(document) {
+var f = function (document) {
   var viewport;
   var obj = {
-    init: function(id) {
+    init: function (id) {
       viewport = document.querySelector('#' + id);
     },
-    addChild: function(child) {
+    addChild: function (child) {
       viewport.appendChild(child);
     },
-    removeChild: function(child) {
+    removeChild: function (child) {
       viewport.removeChild(child);
     }
   };

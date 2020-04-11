@@ -46,7 +46,7 @@ n 皇后问题研究的是如何将 n 个皇后放置在 n×n 的棋盘上，并
  * @param {number} n
  * @return {string[][]}
  */
-var solveNQueens = function(n) {
+var solveNQueens = function (n) {
   matrix = Array(n)
     .fill('.')
     .map(v => Array(n).fill(v));

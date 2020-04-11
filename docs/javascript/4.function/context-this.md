@@ -14,7 +14,7 @@ import Hint from '../../../src/components/Hint';
 JS 允许在函数体内部，引用当前作用域的其他变量，顺着作用域链去查找，以吃肉为例，我的碗里有肉的时候，就不会去锅(window)里拿肉：
 
 ```js
-var bowl = function() {
+var bowl = function () {
   var meat = 'meat in bowl';
   console.log(meat);
 };
@@ -27,7 +27,7 @@ bowl(); // 'meat in bowl'
 人总是吃着碗里的想着锅里的，此时我还不满足，在我的碗里(作用域/执行上下文)虽然有一块肉(meat)，但我偏偏就想吃锅的肉，那怎么办呢，this 这个中介来了说，别急我有办法：
 
 ```js
-var bowl = function() {
+var bowl = function () {
   var meat = 'meat in bowl';
   console.log(this.meat);
 };
@@ -40,7 +40,7 @@ bowl(); // 'meat in pot'
 这就是 this 绑定中的默认绑定，此时的 this 指向 window 对象，我们来看一下：
 
 ```js
-var bowl = function() {
+var bowl = function () {
   var meat = 'meat in bowl';
   console.log(this === window);
 };
@@ -55,13 +55,13 @@ bowl(); // true
 ```js
 var myBowl = {
   meat: 'meat in my bowl',
-  eat: function() {
+  eat: function () {
     console.log(this.meat);
   }
 };
 var othersBowl = {
   meat: 'meat in others bowl',
-  eat: function() {
+  eat: function () {
     console.log(this.meat);
   }
 };
@@ -147,7 +147,7 @@ function foo() {
 }
 
 var a = 2;
-(function() {
+(function () {
   'use strict';
   foo(); // 2
 })();
@@ -244,7 +244,7 @@ cb 写成箭头函数是一个办法。
 var tim = {
   name: 'tim',
   age: 20,
-  getName: function() {
+  getName: function () {
     console.log(this.name);
     return this.name;
   }
@@ -283,7 +283,7 @@ var obj = {
 
 var foo = {
   x: 99,
-  getX: function() {
+  getX: function () {
     return this.x;
   }
 };
@@ -310,7 +310,7 @@ call 和 apply 都是改变上下文中的 this 并立即执行这个函数，bi
 
 ```js
 function bind(fn, context) {
-  return function() {
+  return function () {
     return fn.apply(context, arguments);
   };
 }
@@ -454,7 +454,7 @@ foo.call(obj); // 2
 ```js
 function foo() {
   var self = this; // lexical capture of this
-  setTimeout(function() {
+  setTimeout(function () {
     console.log(self.a);
   }, 100);
 }

@@ -16,7 +16,7 @@ import Img from '../../../src/components/Img';
 ```js
 function throttle(fn, wait) {
   let pre;
-  return function(...args) {
+  return function (...args) {
     const now = Date.now();
     if (!pre || now - pre >= wait) {
       pre = now;
@@ -35,7 +35,7 @@ function throttle(fn, wait) {
 ```js
 function throttle(fn, wait) {
   let timer;
-  return function(...args) {
+  return function (...args) {
     if (!timer) {
       timer = setTimeout(() => {
         timer = null;

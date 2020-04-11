@@ -32,7 +32,8 @@ module.exports = {
     'javascript/5.typing/type-conversion',
     'javascript/5.typing/equal',
     'javascript/5.typing/clone',
-    'javascript/5.typing/data-binding'
+    'javascript/5.typing/data-binding',
+    'javascript/5.typing/bigint'
   ],
   '6. 模块机制': [
     'javascript/6.modules/amd-cmd-umd',

@@ -122,7 +122,7 @@ ES6 继承对应的原型链其实是这样的： ![](https://cosmos-x.oss-cn-ha
 3. class 不会“变量提升”，类似于 let、const 声明变量，但会进入暂时性死区。
 
 ```js
-var Foo = function() {
+var Foo = function () {
   this.foo = 21;
 };
 
@@ -176,7 +176,7 @@ const foo = new Foo();
 function Bar() {
   this.bar = 42;
 }
-Bar.prototype.print = function() {
+Bar.prototype.print = function () {
   console.log(this.bar);
 };
 

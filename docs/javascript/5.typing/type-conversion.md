@@ -98,7 +98,7 @@ strObj = null;
 比如，我们可以新增一个 `double` 方法，使得字符串和数字翻倍。
 
 ```js
-String.prototype.double = function() {
+String.prototype.double = function () {
   return this.valueOf() + this.valueOf();
 };
 
@@ -149,10 +149,10 @@ undefined + 1; // NaN
 ```js
 var obj =
   {
-    valueOf: function() {
+    valueOf: function () {
       return {};
     },
-    toString: function() {
+    toString: function () {
       return '2';
     }
   } + obj; //2
@@ -201,6 +201,6 @@ NaN;
 !!'false'; // true
 !![]; // true
 !!{}; // true
-!!function() {}; // true
+!!function () {}; // true
 !!/foo/; // true
 ```

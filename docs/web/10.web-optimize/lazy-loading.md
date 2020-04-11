@@ -84,15 +84,15 @@ Chrome76 开始 `<img>` 和 `iframe` 支持原生懒加载特性，无需任何�
 现在，我们来看看如何在 JavaScript 中使用 Intersection Observer，并通过以下标记模式延迟加载图像：
 
 ```js
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   var lazyImages = [].slice.call(document.querySelectorAll('img.lazy'));
 
   if ('IntersectionObserver' in window) {
-    let lazyImageObserver = new IntersectionObserver(function(
+    let lazyImageObserver = new IntersectionObserver(function (
       entries,
       observer
     ) {
-      entries.forEach(function(entry) {
+      entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           let lazyImage = entry.target;
           lazyImage.src = lazyImage.dataset.src;
@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
 
-    lazyImages.forEach(function(lazyImage) {
+    lazyImages.forEach(function (lazyImage) {
       lazyImageObserver.observe(lazyImage);
     });
   } else {
@@ -121,16 +121,16 @@ document.addEventListener('DOMContentLoaded', function() {
 假定使用与上文相同的 HTML 结构，以下 JS 可提供延迟加载功能：
 
 ```js
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   let lazyImages = [].slice.call(document.querySelectorAll('img.lazy'));
   let active = false;
 
-  const lazyLoad = function() {
+  const lazyLoad = function () {
     if (active === false) {
       active = true;
 
-      setTimeout(function() {
-        lazyImages.forEach(function(lazyImage) {
+      setTimeout(function () {
+        lazyImages.forEach(function (lazyImage) {
           if (
             lazyImage.getBoundingClientRect().top <= window.innerHeight &&
             lazyImage.getBoundingClientRect().bottom >= 0 &&
@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
             lazyImage.srcset = lazyImage.dataset.srcset;
             lazyImage.classList.remove('lazy');
 
-            lazyImages = lazyImages.filter(function(image) {
+            lazyImages = lazyImages.filter(function (image) {
               return image !== lazyImage;
             });
 
@@ -202,17 +202,17 @@ document.addEventListener('DOMContentLoaded', function() {
 我们将从这里使用 JavaScript 来检查该元素是否在视窗内（通过 Intersection Observer 进行检查），如果在视窗内，则对 `div.lazy-background` 元素添加 `visible` 类以加载该图像：
 
 ```js
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   var lazyBackgrounds = [].slice.call(
     document.querySelectorAll('.lazy-background')
   );
 
   if ('IntersectionObserver' in window) {
-    let lazyBackgroundObserver = new IntersectionObserver(function(
+    let lazyBackgroundObserver = new IntersectionObserver(function (
       entries,
       observer
     ) {
-      entries.forEach(function(entry) {
+      entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
           lazyBackgroundObserver.unobserve(entry.target);
@@ -220,7 +220,7 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
 
-    lazyBackgrounds.forEach(function(lazyBackground) {
+    lazyBackgrounds.forEach(function (lazyBackground) {
       lazyBackgroundObserver.observe(lazyBackground);
     });
   }

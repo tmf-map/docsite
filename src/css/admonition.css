@@ -1,3 +1,7 @@
+.admonition-icon {
+  margin-left: -0.1em;
+}
+
 .admonition.admonition-tip {
   background-color: rgba(235, 247, 253, 0.6);
   border: 1px solid #3884ff;

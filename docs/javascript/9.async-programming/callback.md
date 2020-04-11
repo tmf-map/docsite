@@ -91,8 +91,8 @@ loadScript(
 最明显的方法是将第二个 `loadScript` 调用放在回调中，就像这样：
 
 ```js
-loadScript('/my/script.js', function(script) {
-  loadScript('/my/script2.js', function(script) {
+loadScript('/my/script.js', function (script) {
+  loadScript('/my/script2.js', function (script) {
     alert(`Cool, the second script is loaded`);
   });
 });
@@ -103,9 +103,9 @@ loadScript('/my/script.js', function(script) {
 如果我们还想要一个脚本呢？
 
 ```js
-loadScript('/my/script.js', function(script) {
-  loadScript('/my/script2.js', function(script) {
-    loadScript('/my/script3.js', function(script) {
+loadScript('/my/script.js', function (script) {
+  loadScript('/my/script2.js', function (script) {
+    loadScript('/my/script3.js', function (script) {
       // ...在所有脚本被加载后继续操作
     });
   });
@@ -135,7 +135,7 @@ function loadScript(src, callback) {
 成功时，调用 `callback(null, script)`，否则调用 `callback(error)`。用法：
 
 ```js
-loadScript('/my/script.js', function(error, script) {
+loadScript('/my/script.js', function (error, script) {
   if (error) {
     // handle error
   } else {
@@ -151,17 +151,17 @@ loadScript('/my/script.js', function(error, script) {
 对于一两个的简单嵌套，这样的回调看起来非常好。但对于一个接一个的多个异步动作，代码就会变成这样：
 
 ```js
-loadScript('1.js', function(error, script) {
+loadScript('1.js', function (error, script) {
   if (error) {
     handleError(error);
   } else {
     // ... (*)
-    loadScript('2.js', function(error, script) {
+    loadScript('2.js', function (error, script) {
       if (error) {
         handleError(error);
       } else {
         // ... (**)
-        loadScript('3.js', function(error, script) {
+        loadScript('3.js', function (error, script) {
           if (error) {
             handleError(error);
           } else {

@@ -60,7 +60,7 @@ sidebar_label: 外观数列
  * @return {string}
  */
 
-let countAndSay = function(n) {
+let countAndSay = function (n) {
   let result = '1';
   for (let i = 1; i < n; i++) {
     // (\d)\1*  匹配连续的、相同的数字
@@ -78,7 +78,7 @@ let countAndSay = function(n) {
  * @return {string}
  */
 
-let countAndSay = function(n) {
+let countAndSay = function (n) {
   let result = '1';
   let str;
   for (let i = 1; i < n; i++) {

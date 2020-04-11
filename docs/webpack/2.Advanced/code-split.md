@@ -15,7 +15,7 @@ import Img from '../../../src/components/Img';
 - CommonJS: require.ensure()
 
 ```js
-require.ensure('./text', function(require) {
+require.ensure('./text', function (require) {
   const result = require('./text');
 });
 ```

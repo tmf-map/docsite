@@ -9,6 +9,18 @@ module.exports = {
     'typescript/3.function/parameters',
     'typescript/3.function/overloading'
   ],
+  '4. Class': [
+    'typescript/4.class/class-and-inheritance',
+    'typescript/4.class/data-modifiers',
+    'typescript/4.class/abstract-class',
+    'typescript/4.class/polymorphism',
+    'typescript/4.class/class-and-interface'
+  ],
+  '5. Generic': [
+    'typescript/5.generic/generic-function',
+    'typescript/5.generic/generic-interface',
+    'typescript/5.generic/generic-class'
+  ],
   Config: [
     'typescript/config/tsconfig.json',
     'typescript/config/file-options',

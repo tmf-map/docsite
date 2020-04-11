@@ -80,7 +80,7 @@ ES6 新增了 `let` 命令，用来声明变量。它的用法类似于 `var` �
 ```js
 var a = [];
 for (var i = 0; i < 10; i++) {
-  a[i] = function() {
+  a[i] = function () {
     console.log(i);
   };
 }
@@ -92,7 +92,7 @@ a[6](); // 10
 ```js
 var a = [];
 for (let i = 0; i < 10; i++) {
-  a[i] = function() {
+  a[i] = function () {
     console.log(i);
   };
 }
@@ -108,7 +108,7 @@ a[6](); // 6
 ```js
 var liList = document.querySelectorAll('li'); // 共5个li
 for (var i = 0; i < liList.length; i++) {
-  liList[i].onclick = function() {
+  liList[i].onclick = function () {
     console.log(i);
   };
 }
@@ -119,7 +119,7 @@ for (var i = 0; i < liList.length; i++) {
 ```js
 var liList = document.querySelectorAll('li'); // 共5个li
 for (let i = 0; i < liList.length; i++) {
-  liList[i].onclick = function() {
+  liList[i].onclick = function () {
     console.log(i);
   };
 }
@@ -133,7 +133,7 @@ for (let i = 0; i < liList.length; i++) {
 var liList = document.querySelectorAll('li'); // 共5个li
 for (let i = 0; i < liList.length; i++) {
   let i = 隐藏作用域中的i; // 敲黑板，此处很重要！
-  liList[i].onclick = function() {
+  liList[i].onclick = function () {
     console.log(i);
   };
 }

@@ -294,7 +294,7 @@ DocumentFragment 是一个存在于内存的 DOM 片段，不属于当前文档�
 ```js
 var docfrag = document.createDocumentFragment();
 
-[1, 2, 3, 4].forEach(function(e) {
+[1, 2, 3, 4].forEach(function (e) {
   var li = document.createElement('li');
   li.textContent = e;
   docfrag.appendChild(li);

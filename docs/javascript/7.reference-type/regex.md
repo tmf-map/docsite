@@ -291,7 +291,7 @@ str.replace(/^\s+|\s+$/g, ''); // "#id div.class"
 
 ```js
 '_x_x'.replace(/x/, 'y'); // _y_x
-'_x_x'.replace(/x/, function(match) {
+'_x_x'.replace(/x/, function (match) {
   return match.toUpperCase();
 }); // _X_x
 ```
@@ -299,7 +299,7 @@ str.replace(/^\s+|\s+$/g, ''); // "#id div.class"
 其中函数第二个参数是捕捉到的组匹配（有多少个组匹配，就有多少个对应的参数，通常用`$number`表示），此外，最后还可以添加两个参数，倒数第二个参数是捕捉到的内容在整个字符串中的位置，最后一个参数是原字符串:
 
 ```js
-'_x_y_z'.replace(/(x).*(y).*(z).*/g, function(match, $1, $2, $3, index, str) {
+'_x_y_z'.replace(/(x).*(y).*(z).*/g, function (match, $1, $2, $3, index, str) {
   console.log(match, $1, $2, $3); // x_y_z x y z
   console.log(index, str); // 1 _x_y_z
   return $1 + $2 + $3; // _xyz
@@ -313,7 +313,7 @@ str.replace(/^\s+|\s+$/g, ''); // "#id div.class"
 ```js
 const str = 'abc_abc_abc';
 
-str.replace(/a/g, function(match) {
+str.replace(/a/g, function (match) {
   console.log(match);
 });
 
@@ -384,7 +384,7 @@ console.log(data); //2017-10-24
 ```js
 let reg = /(dot|doubi)/g;
 let str = 'dot is a doubi';
-str = str.replace(reg, function(word) {
+str = str.replace(reg, function (word) {
   return word.replace(/./g, '*');
 });
 console.log(str); //*** is a *****
@@ -394,7 +394,7 @@ console.log(str); //*** is a *****
 
 ```js
 function commafy(num) {
-  return num.toString().replace(/(\d)(?=(\d{3})+\.)/g, function($2) {
+  return num.toString().replace(/(\d)(?=(\d{3})+\.)/g, function ($2) {
     return $2 + ',';
   });
 }

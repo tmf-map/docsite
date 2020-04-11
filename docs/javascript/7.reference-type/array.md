@@ -127,7 +127,7 @@ arr3.flat(Infinity); // [1, 2, 3, 4, 5, 6]
 flat 函数实现：
 
 ```js
-Array.prototype._flat = function(depth = 1) {
+Array.prototype._flat = function (depth = 1) {
   if (depth === 0) return this;
   return this.reduce(
     (acc, item) =>
@@ -180,7 +180,7 @@ for (let i = 0; i < nums.length; i++) {
 
 ```js
 var nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4];
-var removeDuplicates = function(nums) {
+var removeDuplicates = function (nums) {
   for (var i = nums.length - 1; i >= 0; i--) {
     if (nums[i] === nums[i - 1]) {
       nums.splice(i, 1);

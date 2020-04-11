@@ -34,15 +34,15 @@ WebSocket 协议在 2008 年诞生，2011 年成为国际标准。所有浏览�
 
 ```js
 var ws = new WebSocket('wss://echo.websocket.org');
-ws.onopen = function(evt) {
+ws.onopen = function (evt) {
   console.log('Connection open ...');
   ws.send('Hello WebSockets!');
 };
-ws.onmessage = function(evt) {
+ws.onmessage = function (evt) {
   console.log('Received Message: ' + evt.data);
   ws.close();
 };
-ws.onclose = function(evt) {
+ws.onclose = function (evt) {
   console.log('Connection closed.');
 };
 ```
@@ -58,7 +58,7 @@ ws.onclose = function(evt) {
 ```js
 var p = document.getElementsByTagName('p')[0];
 var io = io.connect('http://127.0.0.1:3001'); // 建立链接
-io.on('data', function(data) {
+io.on('data', function (data) {
   //监听服务器返回的数据
   alert('2s后改变数据👻');
   p.innerHTML = data;
@@ -71,12 +71,12 @@ io.on('data', function(data) {
 var server = require('http').createServer(); // 创建服务器
 var io = require('socket.io')(server); // 调用socket.io
 
-io.on('connection', function(client) {
+io.on('connection', function (client) {
   // 监听客户端请求链接
   client.emit('data', 'Hello WebSocket from 3001.'); // 发送数据给客户端
 });
 
-server.listen(3001, function() {
+server.listen(3001, function () {
   console.log('Responser is listening on port 3001');
 }); //监听3001端口
 ```

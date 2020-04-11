@@ -37,14 +37,14 @@ We need to declare the specific type of each parameter, but we can omit the retu
 We can define the type of variable in function expression. There are 2 ways as the following example shows:
 
 ```ts
-let add: (a: number, b: number) => number = function(a, b) {
+let add: (a: number, b: number) => number = function (a, b) {
   return a + b;
 };
 
 // or
 
 let add: (a: number, b: number) => number;
-add = function(a, b) {
+add = function (a, b) {
   return a + b;
 };
 ```
@@ -64,7 +64,7 @@ Type aliases create a new name for a type. Aliasing doesn’t actually create a 
 ```ts
 type Add = (a: number, b: number) => number;
 
-let add: Add = function(a, b) {
+let add: Add = function (a, b) {
   return a + b;
 };
 ```
@@ -78,7 +78,7 @@ interface Add {
   (a: number, b: number): number; // note that `:` not `=>`
 }
 
-let add: Add = function(a, b) {
+let add: Add = function (a, b) {
   return a + b;
 };
 ```

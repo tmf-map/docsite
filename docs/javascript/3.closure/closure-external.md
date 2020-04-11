@@ -20,7 +20,7 @@ Chrome 中观察下面闭包：
 ```js
 function init() {
   var foo = 'bar';
-  document.addEventListener('click', function() {
+  document.addEventListener('click', function () {
     foo = 'baz';
   });
 }
