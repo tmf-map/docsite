@@ -6,6 +6,7 @@ To show tabbed content within Markdown files, you can fall back on MDX. Docusaur
 
 ```jsx
 import Tabs from '@theme/Tabs'; // ';' is a must cuz prettier
+
 import TabItem from '@theme/TabItem';
 
 <Tabs
@@ -16,14 +17,24 @@ import TabItem from '@theme/TabItem';
     {label: 'Banana', value: 'banana'}
   ]}>
   <TabItem value="apple">This is an apple 🍎</TabItem>
+
   <TabItem value="orange">This is an orange 🍊</TabItem>
+
   <TabItem value="banana">This is a banana 🍌</TabItem>
 </Tabs>;
 ```
 
 will result in
 
-<Tabs defaultValue="apple" values={[ { label: 'Apple', value: 'apple', }, { label: 'Orange', value: 'orange', }, { label: 'Banana', value: 'banana', }, ] }> <TabItem value="apple">This is an apple 🍎</TabItem> <TabItem value="orange">This is an orange 🍊</TabItem> <TabItem value="banana">This is a banana 🍌</TabItem> </Tabs>
+<Tabs defaultValue="apple" values={[ {label: 'Apple', value: 'apple'}, {label: 'Orange', value: 'orange'}, {label: 'Banana', value: 'banana'} ]}>
+
+<TabItem value="apple">This is an apple 🍎</TabItem>
+
+<TabItem value="orange">This is an orange 🍊</TabItem>
+
+<TabItem value="banana">This is a banana 🍌</TabItem>
+
+</Tabs>
 
 When you want to write `npm i packageName`, you can use:
 
