@@ -44,11 +44,15 @@ function HighlightSomeText(highlight) {
 }
 ```
 
+:::tip
+
+If you would like to highlight multiple lines, you can use `{3,4,5}` or shorthand: `{3-5}`.
+
+:::
+
 ### Interactive code editor
 
-(Powered by [React Live](https://github.com/FormidableLabs/react-live))
-
-You can create an interactive coding editor with with `live` attached to the language meta string.
+This is powered by [React Live](https://github.com/FormidableLabs/react-live). You can create an interactive coding editor with with `live` attached to the language meta string.
 
     ```jsx live
     function Clock(props) {

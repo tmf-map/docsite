@@ -5,7 +5,7 @@ title: Tabs
 To show tabbed content within Markdown files, you can fall back on MDX. Docusaurus provides `<Tabs>` components out-of-the-box.
 
 ```jsx
-import Tabs from '@theme/Tabs'; // ';' is a must cuz prettier
+import Tabs from '@theme/Tabs';
 
 import TabItem from '@theme/TabItem';
 
