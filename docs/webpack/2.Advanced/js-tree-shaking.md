@@ -46,7 +46,7 @@ console.log(cube(2));
 
 ## 相关配置
 
-```js title="webpack.config.json"
+```diff js title="webpack.config.json"
 const path = require('path');
 const webpack = require('webpack');
 
@@ -58,11 +58,11 @@ module.exports = {
     path: path.join(__dirname, 'dist'),
     filename: '[name]_bundle.js'
   },
-  mode: 'production'
-  // mode: 'development'
-  // optimization: {
-  //     usedExports: true
-  // }
++ mode: 'production'
+- mode: 'development'
+- optimization: {
+-    usedExports: true
+- }
 };
 ```
 
@@ -195,12 +195,12 @@ console.log(cube(2));
 我们以 ant-design 的[package.json](https://github.com/ant-design/ant-design/blob/master/package.json#L37)文件为例，其设置如下：
 
 ```js
-  "sideEffects": [
-    "dist/*",
-    "es/**/style/*",
-    "lib/**/style/*",
-    "*.less"
-  ]
+"sideEffects": [
+  "dist/*",
+  "es/**/style/*",
+  "lib/**/style/*",
+  "*.less"
+]
 ```
 
 通过上面的配置可以看出，ant-design 的`dist`目录以及所有样式文件都是有“副作用”的，此时如果项目中引用了 ant-design 中的模块，`webpack`在打包时不会对`sideEffects`中的“副作用”文件进行 tree shaking。
@@ -243,15 +243,15 @@ export function cube(x) {
 
 ```js
 function (e, r, t) {
-        "use strict";
-        t.r(r);
-        var n = Array.prototype.join;
-        var o, u = function (e, r) {
-            return null == e ? "" : n.call(e, r)
-        };
-        console.log(u(["a", "b", "c"], "~")),
-        console.log((o=2,console.log("cube",o),o*o*o))
-    }
+  "use strict";
+  t.r(r);
+  var n = Array.prototype.join;
+  var o, u = function (e, r) {
+    return null == e ? "" : n.call(e, r)
+  };
+  console.log(u(["a", "b", "c"], "~")),
+  console.log((o = 2, console.log("cube", o), o * o * o))
+}
 ```
 
 通过打包后的结果可以看出，打包后新添加的语句已经被删除，没有添加到`bundle`中。
