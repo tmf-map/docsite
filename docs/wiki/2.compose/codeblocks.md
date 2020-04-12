@@ -50,6 +50,44 @@ If you would like to highlight multiple lines, you can use `{3,4,5}` or shorthan
 
 :::
 
+### Code diff
+
+This will help you to find out which line is added or deleted, using likes following:
+
+    ```diff
+    module.exports = {
+      entry: {
+        index: './src/index'
+      },
+      output: {
+        path: path.join(__dirname, 'dist'),
+        filename: '[name]_bundle.js'
+      },
+    + mode: 'production'
+    - mode: 'development'
+    - optimization: {
+    -    usedExports: true
+    - }
+    };
+    ```
+
+```diff
+module.exports = {
+  entry: {
+    index: './src/index'
+  },
+  output: {
+    path: path.join(__dirname, 'dist'),
+    filename: '[name]_bundle.js'
+  },
++ mode: 'production'
+- mode: 'development'
+- optimization: {
+-    usedExports: true
+- }
+};
+```
+
 ### Interactive code editor
 
 This is powered by [React Live](https://github.com/FormidableLabs/react-live). You can create an interactive coding editor with with `live` attached to the language meta string.
