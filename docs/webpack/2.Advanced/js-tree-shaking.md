@@ -1,22 +1,24 @@
 ---
-title: Js Tree Shaking
+title: JS Tree Shaking
 ---
 
 import Img from '../../../src/components/Img';
 
 ## 概述
 
-`js`文件中导入的模块一般会有多个方法，但只要其中的某个方法被引用，则该模块的所有内容都将被打到`bundle`中。`tree shaking`的功能就是只把用到的方法打包到`bundle`，没有用到的方法会在 `uglify` 阶段被`shaking`掉。
+前端项目就像是一棵树，树上绿色的叶子代表实际用到的代码或者依赖的库，而黄色枯萎的叶子代表未用到代码。为了除去树上枯萎的叶子，我们必须**摇动这棵树(Tree Shaking)**，使它们落下，从而减轻负担，即减少代码最终的体积。
 
-`tree shaking`从`webpack 2`开始就已经支持，但需要配合插件才能使用。而在`webpack 4`中只要设置`mode`为`production`，`tree shaking`便默认开启。
+<Img w="450" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/tree-shaking.jpg' legend="Figure: Tree shaking - green and yellow leaves" origin="https://m.redocn.com/ziranfengjing_6554002.html" alt='tree-shaking'/>
+
+tree shaking 从`webpack 2`开始就已经支持，但需要配合插件才能使用。而在`webpack 4`中只要设置`mode`为`production`，tree shaking 便默认开启。
 
 :::caution
 
-`tree shaking`要求必须是`ES6`模块，不支持`commonJS`模块，如果引用的模块使用`commonJS`规范，则`tree shaking`无效。
+tree shaking 要求必须是`ES6`模块，不支持`commonJS`模块，如果引用的模块使用`commonJS`规范，则 tree shaking 无效。
 
 :::
 
-下面我们将通过一个来讲述`tree shaking`的相关内容，demo 中的相关代码已经上传到`github`仓库[js-tree-shaking](https://github.com/ThinkBucket/webpack-demo/tree/master/js-tree-shaking)中，可以下载下来执行一下。
+下面我们将通过一个 demo 来讲述 tree shaking 的相关内容，demo 中的相关代码已经上传到`github`仓库[js-tree-shaking](https://github.com/ThinkBucket/webpack-demo/tree/master/js-tree-shaking)中，可以下载下来执行一下。
 
 ## 相关代码
 
@@ -64,11 +66,11 @@ module.exports = {
 };
 ```
 
-在 webpack 的[官方文档](https://webpack.js.org/guides/tree-shaking/#add-a-utility)中列举了当配置`mode：'development'`时，构建后`tree shaking`结果:
+在 webpack 的[官方文档](https://webpack.js.org/guides/tree-shaking/#add-a-utility)中列举了当配置`mode：'development'`时，构建后 tree shaking 结果:
 
 ```js
 /* 1 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function (module, __webpack_exports__, __webpack_require__) {
   'use strict';
   /* unused harmony export square */
   /* harmony export (immutable) */ __webpack_exports__['a'] = cube;
@@ -94,23 +96,23 @@ module.exports = {
 
 代码的构建过程如下图所示：
 
-<Img width="500" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/tree.gif" />
+<Img width="700" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/tree.gif" />
 
-通过构建的结果可以看出`math.js`中的`square`函数并没有被打包到`bundle`文件中，只将被引用的`cube`函数打包。这也证明我们`tree shaking`已经“成功了”。
+通过构建的结果可以看出`math.js`中的`square`函数并没有被打包到`bundle`文件中，只将被引用的`cube`函数打包。这也证明我们 tree shaking 已经“成功了”。
 
-对于文件模块的`tree shaking`虽然成功了，但是对`node`包`lodash`的`tree shaking`并没有成功。在代码中只使用了`lodash`中的一个`join`函数，打包后的体积却有`72.1KB`。
+对于文件模块的 tree shaking 虽然成功了，但是对`node`包`lodash`的 tree shaking 并没有成功。在代码中只使用了`lodash`中的一个`join`函数，打包后的体积却有`72.1KB`。
 
 ## npm 包的 tree shaking
 
-上文中提到，导入`lodash`包并没有`tree shaking`成功。为了找寻原因，我们可以看一下`lodash`的[源码](https://github.com/lodash/lodash/blob/npm/lodash.js#L17105)，通过源码可以看出`lodash`打包遵循的是`commonJS`的规范，通过立即执行函数来注册各个工具函数。
+上文中提到，导入`lodash`包并没有 tree shaking 成功。为了找寻原因，我们可以看一下`lodash`的[源码](https://github.com/lodash/lodash/blob/npm/lodash.js#L17105)，通过源码可以看出`lodash`打包遵循的是`commonJS`的规范，通过立即执行函数来注册各个工具函数。
 
-为了减少打包后的体积，一般会有两种方案，下面我们将分别讲解这两种方案。
+为了减少打包后的体积，一般会有以下两种方案：
 
 ### 方案一：只导入使用的文件
 
 目前业界流行的组件库多是**将每一个组件或者功能函数，都打包成单独的文件或目录**。如下图是`lodash`中的单独文件：
 
-<Img width="400" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200330172536.png" />
+<Img width="300" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200330172536.png" />
 
 然后可以像如下的方式引入：
 
@@ -120,7 +122,7 @@ import join from 'lodash/join';
 
 此时打包的结果（右上角）与之前打包的结果对比如下图所示：
 
-<Img width="500" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/微信截图_20200330173101.png" />
+<Img width="500" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200330173101.png" />
 
 从图中可以看出，打包后的文件只有`1.11KB`，这说明我们成功的减少了打包后的体积。
 
@@ -134,7 +136,7 @@ import join from 'lodash/join';
 
 有些常用的包像`lodash`、`antd`等，一般会打包两个版本的`npm`包，一种是采用`umd`的导出方式，一种是采用`ES`的导出方式。
 
-`webpack`的打包不支持打包成`ES`模块，当使用`webpack`打包文件时，我们通常会选用`umd`的导出方式。因此，如果我们把所有的资源文件通过`webpack`打包到一个`bundle`文件里的话，那这个库文件从此与`tree shaking`无缘。
+`webpack`的打包不支持打包成`ES`模块，当使用`webpack`打包文件时，我们通常会选用`umd`的导出方式。因此，如果我们把所有的资源文件通过`webpack`打包到一个`bundle`文件里的话，那这个库文件从此与 tree shaking 无缘。
 
 为了保留多种打包模块的方式，我们一般会**使用`webpack`打包生成用于支持`CDN`载入的模块**（`CommonJS`规范），**使用`Babel`分别打包支持`CommonJS`规范的`ES5`模块和支持`ES6`规范的`ES6`模块**。
 
@@ -176,13 +178,19 @@ console.log(cube(2));
 
 <Img width="500" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200330221705.png" />
 
-由结果可以看出，使用`lodash-es`包时`tree shaking`会生效。
+由结果可以看出，使用`lodash-es`包时 tree shaking 会生效。
 
 ## sideEffects
 
-在`webpack`做静态分析时，如果导入模块是包含“副作用”代码时，比如立即执行函数、调用了 `window` 上的属性等，此时`webpack`不能对导入的模块做`tree shaking`。
+在`webpack`做静态分析时，如果导入模块包含“副作用”代码，比如立即执行函数、调用了 `window` 上的属性等，此时`webpack`不能对导入的模块做 tree shaking。
 
-为了帮助`webpack`更好的分析导入的那些包是具有“副作用”的，那些包是“纯净”的。我们可以在`npm`包发布前在`package.json`中增加一个`sideEffects`字段，将具有“副作用”的文件路径放到`sideEffects`的属性值中。`sideEffects`的值为`false`或者是一个数组，当`sideEffects`的值为`false`时，则代表该包的所有模块都没有“副作用”，`webpack`可以放心的使用`tree shaking`。
+为了帮助`webpack`更好的分析导入的哪些包是具有“副作用”的，哪些包是“纯净”的。我们可以在`npm`包发布前在`package.json`中增加一个`sideEffects`字段，将具有“副作用”的文件路径放到`sideEffects`的属性值中。`sideEffects`的值为`false`或者是一个数组，当`sideEffects`的值为`false`时，则代表该包的所有模块都没有“副作用”，`webpack`可以放心的使用 tree shaking。
+
+:::caution
+
+初学者一般会对`sideEffects`字段的作用存在误解，认为自己项目中不添加`sideEffects`字段会影响到项目的`tree shaking`功能。其实只有我们的项目发布到 npm 仓库并被其他人引用，添加`sideEffects`字段才是必要的（方便引用者仓库的 tree shaking），否则项目不需要添加`sideEffects`字段。
+
+:::
 
 我们以 ant-design 的[package.json](https://github.com/ant-design/ant-design/blob/master/package.json#L37)文件为例，其设置如下：
 
@@ -195,23 +203,23 @@ console.log(cube(2));
   ]
 ```
 
-通过上面的配置可以看出，ant-design 的`dist`目录以及所有样式文件都是“副作用”的，此时如果项目中引用了 ant-design 中的模块，`webpack`在打包时不会对`sideEffects`中的“副作用”文件进行`tree shaking`。
+通过上面的配置可以看出，ant-design 的`dist`目录以及所有样式文件都是有“副作用”的，此时如果项目中引用了 ant-design 中的模块，`webpack`在打包时不会对`sideEffects`中的“副作用”文件进行 tree shaking。
 
 :::caution
 
-之所以将`css`和`less`等样式文件添加到`sideEffects`中，是因为样式文件没有任何文件导出，因此`webpack`在做静态分析时会将`import "./index.less"`等样式导入文件移除，从而导致样式问题，因此我们将`sideEffects`配置如下：
+之所以将`css`和`less`等样式文件添加到`sideEffects`中，是因为样式文件没有任何文件导出，因此`webpack`在做静态分析时会将`import "./index.less"`等样式导入文件移除，从而导致样式问题。
 
 :::
 
 ## tree shaking 的原理
 
-因为`ES6`模块可以进行可靠的静态分析，和代码运行时的状态无关，且模块间的依赖关系是确定的，所以可以消除无用的`JS`代码，支持`tree shaking`。
+因为`ES6`模块可以进行可靠的静态分析，和代码运行时的状态无关，且模块间的依赖关系是确定的，所以可以消除无用的`JS`代码，支持 tree shaking。
 
 **被消除的代码主要分为以下几类**：
 
 ### 不会执行的代码
 
-当代码不会被执行到时，`tree shaking`会消除这部分代码。例如当条件判断为 `false`时，条件判断的代码会被删除，如下例所示：
+当代码不会被执行到时，tree shaking 会消除这部分代码。例如当条件判断为 `false`时，条件判断的代码会被删除，如下例所示：
 
 修改后的`src/math.js`文件：
 
@@ -250,7 +258,7 @@ function (e, r, t) {
 
 ### 代码的执行结果不会被用到
 
-例如调用函数，但是函数结果并没有赋值给任何变量时，这块代码的执行结果不会被用到，此时`tree shaking`时会消除这部分代码。
+例如调用函数，但是函数结果并没有赋值给任何变量时，这块代码的执行结果不会被用到，此时 tree shaking 时会消除这部分代码。
 
 修改后的`src/math.js`文件：
 
@@ -273,7 +281,7 @@ export function cube(x) {
 
 打包的结果如下图所示：
 
-<Img width="500" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/removefunction.gif" />
+<Img width="700" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/removefunction.gif" />
 
 通过打包后的结果可以看出，打包后的`bundle`中并没有包含`helloWorld`函数的返回结果。
 
@@ -285,7 +293,7 @@ export function cube(x) {
 
 ### 定义的变量未被使用
 
-例如只定义变量或通过代码改变某个变量，但是该变量不会被使用到时，该变量在`tree shaking`时会被消除。
+例如只定义变量或通过代码改变某个变量，但是该变量不会被使用到时，该变量在 tree shaking 时会被消除。
 
 ```js title="src/math.js"
 let helloWorld = () => {
@@ -306,7 +314,7 @@ export function cube(x) {
 
 打包的结果如下图所示：
 
-<Img width="500" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/remove-variate.gif" />
+<Img width="700" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/remove-variate.gif" />
 
 通过打包后的结果可以看出，打包后的`bundle`中即并没有包含`variate`变量，也没有`helloWorld`函数的返回结果。
 
