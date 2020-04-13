@@ -159,7 +159,7 @@ module.exports = {
 
 <Img width="400"  src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/lazy-import.gif" />
 
-项目中所有的代码和配置已经上传到[webpack-demo](https://github.com/USTC-Han/webpack-demo/tree/master/code-split)中，可以下载运行一下。
+项目中所有的代码和配置已经上传到`github`仓库的[code-split](https://github.com/ThinkBucket/webpack-demo/tree/master/code-split)中，可以下载运行一下。
 
 ## 魔法注释
 
@@ -248,7 +248,7 @@ src
 
 :::
 
-添加魔法注释后的代码可以点击[此处链接](https://github.com/USTC-Han/webpack-demo/tree/master/code-split-1)下载运行。
+添加魔法注释后的代码可以点击`github`仓库的[code-split-1](https://github.com/ThinkBucket/webpack-demo/tree/master/code-split-1)下载运行。
 
 ## 参考链接
 
@@ -257,3 +257,5 @@ src
 - [webpack document -- Module Methods](https://webpack.js.org/api/module-methods/#magic-comments)
 - [使用 import()配合 webpack 动态导入模块时，如何指定 chunk name？，by mrdulin](https://github.com/mrdulin/blog/issues/43)
 - [Error: Cannot find module with dynamic import，by MrDarkSkil](https://github.com/webpack/webpack/issues/6680)
+- [Tree Shaking 的使用和原理分析，by 程柳锋](https://time.geekbang.org/course/detail/100028901-100679)
+- [Tree Shaking 概念详解](https://b23.tv/BV1ME411T77n/p20)
