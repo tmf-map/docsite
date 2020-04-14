@@ -27,6 +27,23 @@
   color: var(--ifm-font-base-color);
 }
 
+.admonition.admonition-tip a,
+.admonition.admonition-caution a,
+.admonition.admonition-danger a,
+.admonition.admonition-good a,
+.admonition.admonition-bad a {
+  color: var(--ifm-link-hover-color);
+  text-decoration: none;
+}
+
+.admonition.admonition-tip a:hover,
+.admonition.admonition-caution a:hover,
+.admonition.admonition-danger a:hover,
+.admonition.admonition-good a:hover,
+.admonition.admonition-bad a:hover {
+  text-decoration: underline;
+}
+
 .admonition-tip .admonition-icon svg {
   fill: #3884ff;
 }

@@ -28,13 +28,13 @@ Before installation, please make sure you have the right development environment
 
 Run the below command to install dependencies:
 
-```sh
+```bash
 yarn # or yarn install
 ```
 
 ## Get Started
 
-```sh
+```bash
 yarn start
 ```
 
