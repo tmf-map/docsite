@@ -72,15 +72,16 @@ module.exports = {
 
 ### 常用的 loaders
 
-| 名称          | 描述                          |
-| ------------- | ----------------------------- |
-| babel-loader  | 转换`ES6`以上新版本的`JS`代码 |
-| css-loader    | 支持`.css`文件的加载和解析    |
-| less-loader   | 将`less`文件转换成`css`       |
-| ts-loader     | 将`ts`转换成`js`              |
-| file-loader   | 进行图片、字体等打包          |
-| raw-loader    | 将文件以字符串的形式导入      |
-| thread-loader | 多进程打包`js`和`css`         |
+| 名称           | 描述                                        |
+| -------------- | ------------------------------------------- |
+| babel-loader   | 转换`ES6`以上新版本的`JS`代码               |
+| css-loader     | 支持`.css`文件的加载和解析                  |
+| less-loader    | 将`.less`文件转换成`.css`                   |
+| postcss-loader | 为 CSS 属性补齐前缀                         |
+| file-loader    | 进行图片、字体等打包                        |
+| url-loader     | 将体积小于设定值的图片、字体等转化为 base64 |
+| ts-loader      | 将`.ts`转换成`.js`                          |
+| thread-loader  | 多进程打包`js`和`css`                       |
 
 ### Loaders 的用法
 
