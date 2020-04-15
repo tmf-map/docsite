@@ -27,49 +27,77 @@ module.exports = {
       links: [
         {
           to: 'docs/javascript/1.basic/js-engine',
+          activeBasePath: 'docs/javascript/',
           label: 'JavaScript',
           position: 'left'
         },
-        {to: 'docs/html/preface/overview', label: 'HTML', position: 'left'},
+        {
+          to: 'docs/html/preface/overview',
+          activeBasePath: 'docs/html/',
+          label: 'HTML',
+          position: 'left'
+        },
         {
           to: 'docs/css/1.visual-formatting-model/basic-concept',
+          activeBasePath: 'docs/css/',
           label: 'CSS',
           position: 'left'
         },
         {
           to: 'docs/web/1.cross-domain/same-origin-policy',
+          activeBasePath: 'docs/web/',
           label: 'Web',
           position: 'left'
         },
-        {to: 'docs/react/1.basic/jsx', label: 'React Stack', position: 'left'},
+        {
+          to: 'docs/react/1.basic/jsx',
+          activeBasePath: 'docs/react/',
+          label: 'React Stack',
+          position: 'left'
+        },
         {
           to: 'docs/java/object-oriented-programming/abstract-class-interface',
+          activeBasePath: 'docs/java/',
           label: 'Java',
           position: 'left'
         },
         {
           to: 'docs/design-patterns/1.creation-pattern/singleton',
+          activeBasePath: 'docs/design-patterns/',
           label: 'Design Patterns',
           position: 'left'
         },
         {
           to: 'docs/algorithm/1.analysis-of-algorithms/asymptotic-notations',
+          activeBasePath: 'docs/algorithm/',
           label: 'Algorithm',
           position: 'left'
         },
-        {to: 'docs/http/1.web-basic/tcp-ip', label: 'HTTP', position: 'left'},
+        {
+          to: 'docs/http/1.web-basic/tcp-ip',
+          activeBasePath: 'docs/http/',
+          label: 'HTTP',
+          position: 'left'
+        },
         {
           to: 'docs/typescript/1.types/basic-types',
+          activeBasePath: 'docs/typescript/',
           label: 'TypeScript',
           position: 'left'
         },
         {
           to: 'docs/webpack/1.Basic/basic',
+          activeBasePath: 'docs/webpack/',
           label: 'Webpack',
           position: 'left'
         },
         {to: 'blog', label: 'Blog', position: 'right'},
-        {to: 'docs/wiki/1.get-started', label: 'Wiki', position: 'right'},
+        {
+          to: 'docs/wiki/1.get-started',
+          activeBasePath: 'docs/wiki/',
+          label: 'Wiki',
+          position: 'right'
+        },
         {
           href: `https://github.com/${githubOrg}/${githubRepo}`,
           label: 'GitHub',
