@@ -27,7 +27,7 @@ babel-loader 的作用主要是配合`babel`解析和打包 ES6 语法文件。�
 
 - 安装`babel` 和 `babel-loader`
 
-```bash
+```bash npm2yarn
 npm install -D @babel/core @babel/preset-env babel-loader
 ```
 
@@ -49,7 +49,7 @@ npm install -D @babel/core @babel/preset-env babel-loader
 
 - webpak.config.js 配置
 
-```js {8-13} title="webpak.config.js"
+```js {10-13} title="webpak.config.js"
 const path = require('path');
 module.exports = {
   entry: './src/index.js',
@@ -68,11 +68,15 @@ module.exports = {
 };
 ```
 
-为了更好的理解`babel-loader`，可以下载我所编写的小[demo](https://github.com/ThinkBucket/webpack-demo/tree/master/loaders/babel-loader)执行一下。
+为了更好的理解`babel-loader`，可以下载我所编写的小[demo](https://github.com/ThinkBucket/webpack-demo/tree/master/loaders/babel-loader)执行一下。demo 打包的结果如下所示：
+
+<Img width="600" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200416145533.png" />
+
+通过打包结果可以看出，ES6 语法的`babel.js`可以通过`babel`转换成 ES5 语法，同时代码还会被自动压缩在一起。
 
 ## css-loader
 
-`css-loader`用于加载解析`.css`文件，并且将其转换成 commonJS 对象。
+`css-loader`用于加载解析`.css`文件。
 
 与`css-loader`经常一起使用的还有`style-loader`、`less-loader`和`postcss-loader`，其中`style-loader`可以将样式通过`<style>`标签插入到`<head>`标签中，`less-loader`用来转换`less`为`css`，`postcss-loader`结合`autoprefixer`插件可以为 CSS3 属性自动补齐前缀。
 
@@ -82,7 +86,7 @@ module.exports = {
 
 - `loader`安装：
 
-```bash
+```bash npm2yarn
 npm install -D css-loader style-loader less-loader postcss-loader
 ```
 
@@ -143,7 +147,11 @@ module.exports = {
 
 如果项目中还存在`less`文件，还可以在`css-loader`后面加上`less-loader`;
 
-为了更好的理解`css-loader`，可以下载我所编写的小[demo](https://github.com/ThinkBucket/webpack-demo/tree/master/loaders/css-loader)执行一下。
+为了更好的理解`css-loader`，可以下载我所编写的小[demo](https://github.com/ThinkBucket/webpack-demo/tree/master/loaders/css-loader)执行一下。demo 打包后的结果如下图所示：
+
+<Img width="600" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200416145040.png" />
+
+同过打包结果可以看出，使用了`style-loader`后，demo 中的`.less`和`.css`文件都会被打包到`.js`文件中，并插入到`.html`的`<head>`标签中。
 
 ## file-loader
 
@@ -151,7 +159,7 @@ module.exports = {
 
 - `loader`安装
 
-```bash
+```bash npm2yarn
 npm install -D file-loader
 ```
 
@@ -172,7 +180,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /.(png|jpg|gif|jpeg)$/, // 匹配常用图片文件类型
+        test: /.(png|jpg|gif|jpeg|svg)$/, // 匹配常用图片文件类型
         use: [
           {
             loader: 'file-loader',
@@ -198,20 +206,22 @@ module.exports = {
 };
 ```
 
-为了更好的理解`file-loader`，可以下载我所编写的小[demo](https://github.com/ThinkBucket/webpack-demo/tree/master/loaders/file-loader)执行一下。
+为了更好的理解`file-loader`，可以下载我所编写的小[demo](https://github.com/ThinkBucket/webpack-demo/tree/master/loaders/file-loader)执行一下。该 demo 的打包结果如下图所示：
 
-在该 demo 中，我们在`src/images`目录下创建了`logo.png`文件，在`src/font`文件下导入了字体库`SourceHanSerifSC-Heavy`。需要注意的是在样式文件中使用外部字体库时，需要用`@font-face`对其进行配置:
+<Img width="600" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200416145950.png" />
+
+在该 demo 中，我们在`src/images`目录下创建了`logo.png`文件，在`src/font`文件下导入了字体库`LiuJianMaoCao-Regular`。需要注意的是在样式文件中使用外部字体库时，需要用`@font-face`对其进行配置:
 
 ```less {3}
 @font-face {
-  font-family: 'SourceHanSerifSC-Heavy';
-  src: url('./font/SourceHanSerifSC-Heavy.otf') format('opentype');
+  font-family: 'LiuJianMaoCao-Regular';
+  src: url('./font/LiuJianMaoCao-Regular.ttf') format('truetype');
 }
 
 .search-text {
   font-size: 20px;
   color: #f00;
-  font-family: 'SourceHanSerifSC-Heavy';
+  font-family: 'LiuJianMaoCao-Regular';
 }
 ```
 
@@ -221,13 +231,13 @@ module.exports = {
 
 - 安装`url-loader`
 
-```bash
+```bash npm2yarn
 npm install -D url-loader file-loader
 ```
 
 - `webpack.config.js`配置
 
-```js {15-35} title="webpak.config.js"
+```js {15-37} title="webpak.config.js"
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -243,7 +253,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /.(png|jpg|gif|jpeg)$/,
+        test: /.(png|jpg|gif|jpeg|svg)$/,
         use: [
           {
             loader: 'url-loader',
@@ -279,7 +289,7 @@ module.exports = {
 
 为了更好的理解`url-loader`，可以下载我所编写的小[demo](https://github.com/ThinkBucket/webpack-demo/tree/master/loaders/url-loader)执行一下。
 
-在该 demo 中，`src/images`目录下创建的图片`logo.png`的体积小于`10240kb`，在`src/font`文件下导入的字体库`SourceHanSerifSC-Heavy`的体积大于`10240kb`。
+在该 demo 中，`src/images`目录下创建的图片`logo.png`的体积小于`10kb`，在`src/font`文件下导入的字体库`LiuJianMaoCao-Regular`的体积大于`10kb`。
 
 执行 demo 的打包过程如下图所示：
 
@@ -287,15 +297,19 @@ module.exports = {
 
 通过打包过程可以看出，图片文件没有以`boundle`的形式输出，查看打包后的`js`文件，可以看到图片被转成了`base64`，如下图所示：
 
-<Img width="500" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200414133858.png" />
+<Img width="600" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200414133858.png" />
 
-`url-loader`内部的实现也使用了`file-loader`。在 demo 中由于字体库`SourceHanSerifSC-Heavy`的体积有 20 多兆，远远超过了设置 limit 的值，所以打包的时候会使用`file-loader`将文件以`boundle`的形式输出。
+`url-loader`内部的实现也使用了`file-loader`。在 demo 中由于字体库`LiuJianMaoCao-Regular`的体积有`4.7mb`，远远超过了设置 limit 的值，所以打包的时候会使用`file-loader`将文件以`boundle`的形式输出。
 
 :::caution
 
-安装`url-loader`时也必须安装`file-loader`，这样当文件超过设定的`limit`的值时，可以使用`file-loader`编译
+安装`url-loader`时也必须同时安装`file-loader`模块，但不需要在`webpack.config.js`添加`file-loader`。否则当文件超过设定的`limit`的值时，会提示**'Cannot find module 'file-loader'**。
 
 :::
+
+我们使用`npm uninstall file-loader`卸载`file-loader`模块，然后重新打包后的结果如下所示：
+
+<Img width="700" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/url-loader-error.gif" />
 
 ## ts-loader
 
@@ -303,7 +317,7 @@ module.exports = {
 
 - 安装 TypeScript 编译器和`ts-loader`
 
-```bash
+```bash npm2yarn
 npm install -D typescript ts-loader
 ```
 
@@ -330,7 +344,9 @@ module.exports = {
 };
 ```
 
-为了更好的理解`ts-loader`，可以下载我编写的小[demo](https://github.com/ThinkBucket/webpack-demo/tree/master/loaders/ts-loader)执行一下。
+为了更好的理解`ts-loader`，可以下载我编写的小[demo](https://github.com/ThinkBucket/webpack-demo/tree/master/loaders/ts-loader)执行一下。打包后的结果如下图所示
+
+<Img width="600" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200416143400.png" />
 
 ## thread-loader
 
@@ -340,7 +356,7 @@ module.exports = {
 
 - `thread-loader`的安装
 
-```bash
+```bash npm2yarn
 npm install -D thread-loader
 ```
 
