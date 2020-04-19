@@ -2,8 +2,6 @@
 title: webpack核心概念
 ---
 
-import Img from '../../../src/components/Img';
-
 ## Entry
 
 `Entry` ⽤用来指定 `webpack` 的打包入⼝，入⼝文件只能是`.js`文件。对于非代码部分比如图片、字体等也会通过依赖加入到依赖图中。
@@ -129,15 +127,16 @@ use: [
 
 | 名称 | 描述 |
 | --- | --- |
-| SplitChunksPlugin | 提取公共资源 |
-| CleanWebpackPlugin | 每次构建后清楚`./dist`目录 |
-| MiniCssExtractPlugin | 将`CSS`从`bundle`文件里提取成一个独立的`css`文件 |
-| CopyWebpackPlugin | 将文件或者文件夹拷贝到构建的输出目录 |
-| HtmlWebpackPlugin | 创建`html`文件去承载输出的`bundle` |
-| UglifyjsWebpackPlugin | 压缩`js` |
-| ZipWebpackPlugin | 将打包后的资源生成一个`zip`包 |
+| html-webpack-plugin | 创建`html`文件去承载输出的`bundle` |
+| mini-css-extract-plugin | 将`CSS`从`bundle`文件里提取成一个独立的`css`文件 |
+| optimize-css-assets-webpack-plugin | 压缩 CSS 代码 |
+| uglifyjs-webpack-plugin | 压缩`js`(Webpack4 已经默认支持) |
+| clean-webpack-plugin | 每次构建后清除`./dist`目录 |
 | friendly-errors-webpack-plugin | 优化命令行的构建日志提示信息 |
-| webpack-livereload-plugin | 开启监听模式是，代码更改自动刷新页面 |
+| speed-measure-webpack-plugin | 查看打包耗时、以及每个 Plugin 和 Loader 耗时 |
+| webpack-bundle-analyzer | 可视化 Webpack 输出文件的体积 (业务组件、依赖第三方模块) |
+| webpack-livereload-plugin | 开启监听模式时，代码更改自动刷新页面 |
+| copy-webpack-plugin | 将文件或者文件夹拷贝到构建的输出目录 |
 
 :::caution
 
