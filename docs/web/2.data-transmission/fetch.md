@@ -46,7 +46,7 @@ Promise fetch(String url, [, Object options]) // 常用
 Promise fetch(Request req, [, Object options])
 ```
 
-第一个参数是一个 url，第二个参数是配置信息，可选第一个参数是一个 Request 对象，第二个参数是配置信息，可选
+第一个参数是一个 url，或一个 Request 对象，第二个参数（可选）是配置信息
 
 可选配置信息是一个 Object 对象，可以包含以下字段：
 
@@ -103,7 +103,7 @@ Fetch API 的一个应用：https://github.com/muwenzi/http-chain/blob/master/sr
 Headers 可用来表示 HTTP 的头部信息，使用 Headers 的接口，你可以通过 Headers() 构造函数来创建一个你自己的 headers 对象。
 
 ```js
-var headers = new Headers({
+let headers = new Headers({
   'Content-Type': 'text/plain',
   'Content-Length': content.length.toString(),
   'X-Custom-Header': 'ProcessThisImmediately'
@@ -129,6 +129,30 @@ fetch(getReq)
   .catch(function (error) {
     console.log('Fetch Error: ', error);
   });
+```
+
+需要注意的是，此时 fetch 方法仍然可以添加第二个参数，即配置信息对象。如果添加，这个参数将会覆盖掉 Request 对象的配置信息中相同的字段：
+
+```js
+let URL = '//api.some.com';
+let getReq = new Request(URL, {
+    method: 'GET',
+    headers: {'X-Custom-Header': 'ProcessThisImmediately'}
+  });
+fetch(getReq, {method: 'POST'})
+  ...
+```
+
+相当于：
+
+```js
+let URL = '//api.some.com';
+let postReq = new Request(URL, {
+    method: 'POST',
+    headers: {'X-Custom-Header': 'ProcessThisImmediately'}
+  });
+fetch(postReq)
+  ...
 ```
 
 Request 接口中的配置项 headers 可以是实例化的 Headers 。
@@ -199,11 +223,13 @@ Response 实例提供以下实例方法：
 - `json`: 把响应内容解析为对象后 resolve
 - `text`: 把响应数据当做字符串后 resolve
 
-现在浏览器基本上都支持，github 官方推出了一个 Fetch API 的 polyfill 库，可以让更多浏览器提前感受到 Fetch API 的便捷的开发体验。
+现在浏览器基本上都支持，github 官方推出了一个 Fetch API 的 [polyfill 库](https://github.com/github/fetch)，可以让更多浏览器提前感受到 Fetch API 的便捷的开发体验。
 
 ## 处理 error
 
-即使是 HTTP404 或者 500，fetch 方法返回的 promise 也不是 reject 的，而是 resolve 的，只将`ok`字段设置为 `false`。只有当网络错误发生时才会 reject，比如网络掉线或者 DNS 查找失败等。可以通过如下方式，处理错误：
+即使是 HTTP 错误（如状态码 404、500），fetch 方法返回的 promise 也不是 reject 的，而是 resolve 的，只将`ok`字段设置为 `false`。只有当网络错误发生时才会 reject。这其中的区别在于，能够获得 HTTP 错误状态，则表明服务器正常工作且在处理请求，而“网络错误”表示根本无法到达服务器(例如网络掉线或者 DNS 查找失败)。
+
+对大部分开发者来说，HTTP 错误返回一个 reject 的 promise 是非常有用的。为此，我们仅仅需要验证`ok`的值 ，如果为`false`，则 reject：
 
 ```js
 function handleErrors(response) {
@@ -237,7 +263,18 @@ withTimeout(1000, fetch('https://foo.com/bar/'))
   .catch(handleError);
 ```
 
-这种外部方法适用于所有 HTTP 客户端和整个请求和响应的超时，但它不会终止基础 HTTP 请求。如果希望中止 HTTP 请求，可以使用低级的超时机制，如`socket.setTimeout()`，来节省一些资源。
+这种外部方法适用于所有 HTTP 客户端和整个请求和响应的超时，但它不会终止基础 HTTP 请求。如果希望中止 HTTP 请求，可以使用低级的超时机制，如`socket.setTimeout()`，来节省一些资源。一般主流的浏览器都有默认 timeout：
+
+| 浏览器  | timeout |
+| ------- | ------- |
+| Chrome  | 300s    |
+| IE      | 120s    |
+| Firefox | 300s    |
+| Safari  | 60s     |
+
+## 处理 bigint
+
+请参考 BigInt [Use text() in fetch](https://thinkbucket.cn/docs/javascript/5.typing/bigint#use-text-in-fetch)
 
 ## 参考链接
 
@@ -245,3 +282,4 @@ withTimeout(1000, fetch('https://foo.com/bar/'))
 2. [How to use the Fetch API in JavaScript, by Atta](https://attacomsian.com/blog/javascript-fetch-api)
 3. [Handling Failed HTTP Responses With fetch(), by TJ VanToll](https://www.tjvantoll.com/2015/09/13/fetch-and-errors/)
 4. [HTTP request timeouts in JavaScript, by Shuhei Kagawa](https://shuheikagawa.com/blog/2017/05/13/http-request-timeouts-in-javascript/)
+5. [Increase timeout limit in Google Chrome, by mojoaxel](https://stackoverflow.com/questions/39751124/increase-timeout-limit-in-google-chrome)
