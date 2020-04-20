@@ -1,5 +1,5 @@
 ---
-title: 常用的loaders
+title: 常用的Loaders
 ---
 
 import Img from '../../../src/components/Img';
@@ -147,11 +147,19 @@ module.exports = {
 
 如果项目中还存在`less`文件，还可以在`css-loader`后面加上`less-loader`;
 
+:::caution
+
+需要注意的是，因为 webpack 中 loader 的解析采用了函数式编程中的`compose`，所以 loader 的加载顺序是从右向左。当 loader 的位置放反时，构建会报错。
+
+:::
+
+通过上例可以看出我们可以先为匹配的`.less`文件中的 CSS3 属性添加前缀，再将 Less 编译为 CSS 代码，然后再使用 css-loader 加载和解析 CSS 代码，最后将其交给 style-loader 插入到网页中去。
+
 为了更好的理解`css-loader`，可以下载我所编写的小[demo](https://github.com/ThinkBucket/webpack-demo/tree/master/loaders/css-loader)执行一下。demo 打包后的结果如下图所示：
 
 <Img width="600" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200416145040.png" />
 
-同过打包结果可以看出，使用了`style-loader`后，demo 中的`.less`和`.css`文件都会被打包到`.js`文件中，并插入到`.html`的`<head>`标签中。
+通过打包结果可以看出，使用了`style-loader`后，demo 中的`.less`和`.css`文件都会被打包到`.js`文件中，并通过 DOM 操作将它们插入到`.html`的`<head>`标签中。
 
 ## file-loader
 
@@ -180,7 +188,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /.(png|jpg|gif|jpeg|svg)$/, // 匹配常用图片文件类型
+        test: /.(png|jpe?g|gif|svg)$/i, // 匹配常用图片文件类型
         use: [
           {
             loader: 'file-loader',
@@ -253,7 +261,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /.(png|jpg|gif|jpeg|svg)$/,
+        test: /.(png|jpe?g|gif|svg)$/i,
         use: [
           {
             loader: 'url-loader',

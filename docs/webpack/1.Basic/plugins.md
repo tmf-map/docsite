@@ -15,7 +15,8 @@ import Img from '../../../src/components/Img';
 | html-webpack-plugin | 创建`html`文件去承载输出的`bundle` |
 | mini-css-extract-plugin | 将`CSS`从`bundle`文件里提取成一个独立的`css`文件 |
 | optimize-css-assets-webpack-plugin | 压缩 CSS 代码 |
-| uglifyjs-webpack-plugin | 压缩`js`(Webpack4 已经默认支持) |
+| uglifyjs-webpack-plugin | 压缩`js`(Webpack4 已经默认支持，不支持 ES6 代码) |
+| terser-webpack-plugin | 压缩`js`(Webpack4 已经默认支持，支持压缩 ES6 代码) |
 | clean-webpack-plugin | 每次构建后清除`./dist`目录 |
 | friendly-errors-webpack-plugin | 优化命令行的构建日志提示信息 |
 | speed-measure-webpack-plugin | 查看打包耗时、以及每个 Plugin 和 Loader 耗时 |
@@ -60,7 +61,11 @@ module.exports = {
 
 ## mini-css-extract-plugin
 
-`mini-css-extract-plugin`可以将样式代码从`bundle`文件里提取成一个独立的`css`文件。需要注意的是`mini-css-extract-plugin`只可以用于未使用`style-loader`的`production`环境中。
+`mini-css-extract-plugin`可以将样式代码从`bundle`文件里提取成一个独立的`css`文件。 :::caution
+
+需要注意的是`mini-css-extract-plugin`只可以用于未使用`style-loader`的`production`环境中。
+
+:::
 
 - 安装
 
@@ -90,31 +95,11 @@ module.exports = {
 };
 ```
 
-在使用该插件前同样也需要先引用`mini-css-extract-plugin`包，同时在`css-loader`前添加`MiniCssExtractPlugin.loader`，并且在`plugins`中实例化该插件。
-
-:::caution
-
-默认情况下，`mini-css-extract-plugin`生成使用 CommonJS 模块语法的 JS 模块。如果要对 CSS 进行`tree-sharking`，需要设置`use`属性如下：
-
-```js {4-6}
-use: [
-  {
-    loader: MiniCssExtractPlugin.loader,
-    options: {
-      esModule: true,
-    },
-  },
-  'css-loader',
-],
-```
-
-:::
-
-当`CSS`代码被打包成单独的文件后，会以 link 标签的形式插入到对应的`.html`文件中。
+在使用该插件前同样也需要先引用`mini-css-extract-plugin`包，同时在`css-loader`前添加`MiniCssExtractPlugin.loader`，并且在`plugins`中实例化该插件。当`CSS`代码被打包成单独的文件后，会以 link 标签的形式插入到对应的`.html`文件中。
 
 ## optimize-css-assets-webpack-plugin
 
-`optimize-css-assets-webpack-plugin`用于优化压缩打包后的 CSS 文件，压缩代码一般默认要使用使用 npm 包`cssnano`。
+`optimize-css-assets-webpack-plugin`用于优化压缩打包后的 CSS 文件，压缩代码默认会使用`cssnano`。
 
 - `optimize-css-assets-webpack-plugin`安装
 
@@ -136,16 +121,19 @@ module.exports = {
     new OptimizeCSSAssetsPlugin({
       assetNameRegExp: /\.css$/g, // 匹配css文件
       cssProcessor: require('cssnano') // 导入压缩工具
+      cssProcessorOptions: {
+        preset: ['default', { discardComments: { removeAll: true } }], // 去除注释
+      },
     })
   ]
 };
 ```
 
-使用该配置打包后，`.css`文件代码会被压缩为一行
+配置中的`cssProcessor: require('cssnano')`也可以删去，cssnano 包也可以不安装。在不设置`cssnano`时，插件默认会使用。使用该配置打包后，`.css`文件代码会被压缩为一行。
 
 ## clean-webpack-plugin
 
-使用`clean-webpack-plugin`插件后，每次构建都会清除`./dist`目录。
+使用`clean-webpack-plugin`插件后，每次构建都会清除配置的输出目录。
 
 - `clean-webpack-plugin`安装
 
@@ -165,13 +153,19 @@ module.exports = {
 };
 ```
 
-使用`clean-webpack-plugin`后，每次打包前都不需要再手动删除`./dist`目录。
+使用`clean-webpack-plugin`后，可以在构建前删除输出目录，相比于使用`rm -rf dist && npm run build`更灵活方便。
 
 ## friendly-errors-webpack-plugin
 
 `friendly-errors-webpack-plugin`可以更直观的定位`webpack`错误，为开发人员提供更好的体验。
 
-使用`friendly-errors-webpack-plugin`后，每次打包都会有一个标签提示，标签提示一共分为三种：`DONE`、`WARNING`、`ERROR`，其中`DONE`表示打包成功，并会返回打包用时。`WARNING` 也代表打包成功，但是打包文件的依赖可能存在不合理的地方，例如当导入自定义的字体过大时，会`WARNING`预警。`ERROR`则代表打包失败，打包失败后会在控制台指出错误的位置，这一点在不安装该插件时是没有的。使用该插件这三种情况可以通过 npm 仓库中[friendly-errors-webpack-plugin](https://www.npmjs.com/package/friendly-errors-webpack-plugin)的 demo 进行查看。
+使用`friendly-errors-webpack-plugin`后，每次打包都会有一个标签提示，标签提示一共分为以下三种：
+
+- `DONE`表示打包成功，并会返回打包用时。
+- `WARNING` 也代表打包成功，但是打包文件的依赖可能存在不合理的地方，例如当导入自定义的字体过大时，会`WARNING`预警。
+- `ERROR`则代表打包失败，打包失败后会在控制台指出错误的位置，这一点在不安装该插件时是没有的。
+
+使用该插件这三种情况可以通过 npm 仓库中[friendly-errors-webpack-plugin](https://www.npmjs.com/package/friendly-errors-webpack-plugin)的 demo 进行查看。
 
 - `friendly-errors-webpack-plugin`安装
 
@@ -188,6 +182,10 @@ const webpackConfig = {
   plugins: [new FriendlyErrorsWebpackPlugin()]
 };
 ```
+
+为了更好的理解该插件可以下载[webpack-demo/plugins](https://github.com/ThinkBucket/webpack-demo/tree/master/plugins)执行以下，运行效果如下所示：
+
+<Img width="700" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200419120449.gif" />
 
 ## speed-measure-webpack-plugin
 
@@ -285,7 +283,7 @@ module.exports = {
 
 options 为用户自定义字段，可以根据自己的需求配置相应字段，各字段含义详见 npm 仓库[webpack-livereload-plugin](https://www.npmjs.com/package/webpack-livereload-plugin#options)
 
-热加载打包的效果如下图所示：
+在控制台使用`npm run watch`命令监听文件的变化，热加载打包的效果如下图所示：
 
 <Img width="700" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200419112504.gif" />
 
