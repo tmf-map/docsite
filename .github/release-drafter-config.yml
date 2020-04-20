@@ -4,37 +4,21 @@ categories:
   - title: 'Blog'
     labels:
       - 'blog'
-  - title: 'Algorithm'
+  - title: 'Basis'
     labels:
       - 'docs: algorithm'
-  - title: 'Design patterns'
+      - 'docs: design patterns'
+      - 'docs: http'
+  - title: 'Frontend'
     labels:
-        - 'docs: design patterns'
-  - title: 'HTTP'
-    labels:
-        - 'docs: http'
-  - title: 'Javascript'
-    labels:
-        - 'docs: javascript'
-  - title: 'Typescript'
-    labels:
-      - 'docs: typescript'
-  - title: 'CSS'
-    labels:
-        - 'docs: css'
-  - title: 'HTML'
-    labels:
-        - 'docs: html'
-  - title: 'Web'
-    labels:
-        - 'docs: web'
-  - title: 'React'
-    labels:
-        - 'docs: react'
-  - title: 'Webpack'
-    labels:
+      - 'docs: javascript'
+      - 'docs: html'
+      - 'docs: css'
+      - 'docs: web'
+      - 'docs: react'
       - 'docs: webpack'
-  - title: 'Java'
+      - 'docs: typescript'
+  - title: 'Backend'
     labels:
       - 'docs: java'
   - title: 'Wiki'
