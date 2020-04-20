@@ -24,6 +24,8 @@ import Img from '../../../src/components/Img';
 | webpack-livereload-plugin | 开启监听模式时，代码更改自动刷新页面 |
 | copy-webpack-plugin | 将文件或者文件夹拷贝到构建的输出目录 |
 
+为了更好的理解这些插件，可以点击下载我写的这个[demo](https://github.com/ThinkBucket/webpack-demo/tree/master/plugins)，本文中所有插件在 demo 中都有涉及，可以运行学习一下。
+
 ## html-webpack-plugin
 
 `html-webpack-plugin`的主要功能是打包和压缩 HTML 文件。
@@ -61,7 +63,9 @@ module.exports = {
 
 ## mini-css-extract-plugin
 
-`mini-css-extract-plugin`可以将样式代码从`bundle`文件里提取成一个独立的`css`文件。 :::caution
+`mini-css-extract-plugin`可以将样式代码从`bundle`文件里提取成一个独立的`css`文件。
+
+:::caution
 
 需要注意的是`mini-css-extract-plugin`只可以用于未使用`style-loader`的`production`环境中。
 
@@ -129,7 +133,7 @@ module.exports = {
 };
 ```
 
-配置中的`cssProcessor: require('cssnano')`也可以删去，cssnano 包也可以不安装。在不设置`cssnano`时，插件默认会使用。使用该配置打包后，`.css`文件代码会被压缩为一行。
+当没有安装`cssnano`且`cssProcessor: require('cssnano')`没有设置时，插件会默认的引用`cssnano`。使用该配置打包后，`.css`文件代码会被压缩为一行。
 
 ## clean-webpack-plugin
 
@@ -281,7 +285,7 @@ module.exports = {
 };
 ```
 
-options 为用户自定义字段，可以根据自己的需求配置相应字段，各字段含义详见 npm 仓库[webpack-livereload-plugin](https://www.npmjs.com/package/webpack-livereload-plugin#options)
+options 为用户自定义字段，可以根据自己的需求配置相应字段，各字段含义可以通过[webpack-livereload-plugin](https://www.npmjs.com/package/webpack-livereload-plugin#options)文档查看。
 
 在控制台使用`npm run watch`命令监听文件的变化，热加载打包的效果如下图所示：
 
