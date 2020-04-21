@@ -113,7 +113,11 @@ create-react-app my-app
 
 `yarn global` 是一个命令前缀，可用于 `add`、`bin`、`list` 和 `remove` 等命令，在原有行为基础上用一个全局目录来存储包
 
-:::tip 与 npm 不同，在 yarn 中`global`参数必须紧跟在 yarn 后才能将依赖全局添加，即必须为`yarn global add package-name`的形式。如果写为`yarn add global package-name`的形式，会把名为 `global` 和 `package-name` 的包添加到本地，而非全局添加 `package-name`。 :::
+:::tip
+
+与 npm 不同，在 yarn 中`global`参数必须紧跟在 yarn 后才能将依赖全局添加，即必须为`yarn global add package-name`的形式。如果写为`yarn add global package-name`的形式，会把名为 `global` 和 `package-name` 的包添加到本地，而非全局添加 `package-name`。
+
+:::
 
 `yarn global bin` 查看 yarn 全局安装的根目录
 
@@ -135,9 +139,13 @@ Displays help information.
 
 ## yarn import
 
-依据原 npm 安装后的`node_modules`目录生成一份`yarn.lock`文件 :::note 背景介绍：许多使用 `npm shrinkwrap` 或 `node_modules` 的项目无法轻易迁移到 Yarn，因为 `yarn install` 可能产生有很大差异的逻辑依赖关系树。不是所有树都可以用 Yarn 的 `yarn.lock` 表示，并且部分有效的树会在安装后自动按重复剔除。
+依据原 npm 安装后的`node_modules`目录生成一份`yarn.lock`文件
 
-yarn import 旨在使用在 `node_modules` 内找到的版本， 根据普通的 `require.resolve()` 决议规则生成一个 `yarn.lock` 文件以缓解这一重大问题
+:::note
+
+背景介绍：许多使用 `npm shrinkwrap` 或 `node_modules` 的项目无法轻易迁移到 Yarn，因为 `yarn install` 可能产生有很大差异的逻辑依赖关系树。不是所有树都可以用 Yarn 的 `yarn.lock` 表示，并且部分有效的树会在安装后自动按重复剔除。
+
+yarn import 旨在使用在 `node_modules` 内找到的版本， 根据普通的 `require.resolve()` 决议规则生成一个 `yarn.lock` 文件以缓解这一重大问题。
 
 :::
 
