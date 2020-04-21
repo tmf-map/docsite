@@ -91,6 +91,11 @@ module.exports = {
           label: 'Webpack',
           position: 'left'
         },
+        {
+          to: 'docs/nodejs/1.Yarn/yarn',
+          label: 'Node.js',
+          position: 'left'
+        },
         {to: 'blog', label: 'Blog', position: 'right'},
         {
           to: 'docs/wiki/1.get-started',
