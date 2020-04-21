@@ -1,5 +1,8 @@
 name-template: '2020-Q?-M?'
 tag-template: '2020-Q?-M?'
+sort-by: 'title'
+exclude-labels:
+  - 'dependencies'
 categories:
   - title: 'Blog'
     labels:
@@ -30,9 +33,6 @@ categories:
   - title: 'Dev experience'
     labels:
       - 'dev experience'
-  - title: 'Dependencies'
-    labels:
-      - 'dependencies'
 change-template: '- $TITLE (#$NUMBER) @$AUTHOR'
 template: |
   # What's Changed
