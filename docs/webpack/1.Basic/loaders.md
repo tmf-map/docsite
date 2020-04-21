@@ -153,7 +153,7 @@ module.exports = {
 
 :::
 
-通过上例可以看出我们可以先为匹配的`.less`文件中的 CSS3 属性添加前缀，再将 Less 编译为 CSS 代码，然后再使用 css-loader 加载和解析 CSS 代码，最后将其交给 style-loader 插入到网页中去。
+通过上例可以看出，先`postcss-loader`为匹配的`.less`文件中的 CSS3 属性添加前缀，再用`less-loader`将 Less 代码编译为 CSS 代码，然后再使用 `css-loader` 加载和解析 CSS 代码，最后将其交给 `style-loader` 插入到网页中去。
 
 为了更好的理解`css-loader`，可以下载我所编写的小[demo](https://github.com/ThinkBucket/webpack-demo/tree/master/loaders/css-loader)执行一下。demo 打包后的结果如下图所示：
 
@@ -199,7 +199,7 @@ module.exports = {
         ]
       },
       {
-        test: /.(woff|woff2|eot|ttf|otf)$/,
+        test: /.(woff|woff2|eot|ttf|otf|svg)$/, // svg代表svg fonts
         use: [
           {
             loader: 'file-loader',
@@ -272,7 +272,7 @@ module.exports = {
         ]
       },
       {
-        test: /.(woff|woff2|eot|ttf|otf)$/,
+        test: /.(woff|woff2|eot|ttf|otf|svg)$/,
         use: [
           {
             loader: 'url-loader',

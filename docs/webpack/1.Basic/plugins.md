@@ -124,16 +124,15 @@ module.exports = {
     }),
     new OptimizeCSSAssetsPlugin({
       assetNameRegExp: /\.css$/g, // 匹配css文件
-      cssProcessor: require('cssnano') // 导入压缩工具
       cssProcessorOptions: {
-        preset: ['default', { discardComments: { removeAll: true } }], // 去除注释
-      },
+        preset: ['default', {discardComments: {removeAll: true}}] // 去除注释
+      }
     })
   ]
 };
 ```
 
-当没有安装`cssnano`且`cssProcessor: require('cssnano')`没有设置时，插件会默认的引用`cssnano`。使用该配置打包后，`.css`文件代码会被压缩为一行。
+当没有安装`cssnano`且`cssProcessor: require('cssnano')`没有设置时，插件会默认的引用`cssnano`，因此可以不在`OptimizeCSSAssetsPlugin`中配置`cssProcessor`。使用该配置打包后，`.css`文件代码会被压缩为一行。
 
 ## clean-webpack-plugin
 

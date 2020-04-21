@@ -130,7 +130,8 @@ use: [
 | html-webpack-plugin | 创建`html`文件去承载输出的`bundle` |
 | mini-css-extract-plugin | 将`CSS`从`bundle`文件里提取成一个独立的`css`文件 |
 | optimize-css-assets-webpack-plugin | 压缩 CSS 代码 |
-| uglifyjs-webpack-plugin | 压缩`js`(Webpack4 已经默认支持) |
+| uglifyjs-webpack-plugin | 压缩`js`(Webpack4 已经默认支持，不支持 ES6 代码) |
+| terser-webpack-plugin | 压缩`js`(Webpack4 已经默认支持，支持压缩 ES6 代码) |
 | clean-webpack-plugin | 每次构建后清除`./dist`目录 |
 | friendly-errors-webpack-plugin | 优化命令行的构建日志提示信息 |
 | speed-measure-webpack-plugin | 查看打包耗时、以及每个 Plugin 和 Loader 耗时 |
