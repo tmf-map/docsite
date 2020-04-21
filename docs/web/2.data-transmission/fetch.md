@@ -274,7 +274,7 @@ withTimeout(1000, fetch('https://foo.com/bar/'))
 
 ## 处理 bigint
 
-请参考 BigInt [Use text() in fetch](https://thinkbucket.cn/docs/javascript/5.typing/bigint#use-text-in-fetch)
+请参考 BigInt [Use text() in fetch](/docs/javascript/5.typing/bigint#use-text-in-fetch)
 
 ## 参考链接
 
