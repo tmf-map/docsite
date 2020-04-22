@@ -5,10 +5,6 @@ html[data-theme="dark"] {
   /* --ifm-background-color: #1d1f21; */
 }
 
-html[data-theme="dark"] .navbar .navbar__logo + strong {
-  color: rgb(255, 255, 255);
-}
-
 html[data-theme="dark"] .footer.footer--dark {
   --ifm-footer-background-color: var(--ifm-navbar-background-color);
 }
@@ -27,23 +23,4 @@ html[data-theme="dark"] .markdown ul.tabs .tab-item--active {
 
 html[data-theme="dark"] .markdown .admonition.admonition-note {
   color: #1c1e21;
-}
-
-html[data-theme="dark"] .menu .menu__link:hover {
-  --ifm-menu-color-background-active: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(167, 167, 167, 0.1);
-}
-
-html[data-theme="dark"] .menu .menu__link.menu__link--active:not(.menu__link--sublist) {
-  --ifm-menu-color-background-active: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(167, 167, 167, 0.1);
-}
-
-html[data-theme="dark"] .menu .menu__link.menu__link--active:not(.menu__link--sublist):hover {
-  --ifm-menu-color-background-active: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(167, 167, 167, 0.2);
-}
-
-html[data-theme="dark"] .dropdown .dropdown__menu {
-  background-color:  #2d3c43
 }

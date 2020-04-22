@@ -29,6 +29,19 @@
 
   --my-board--background: rgba(185, 202, 218, 0.15);
   --my-logo-font-family: 'Eurofighter Expanded';
+  --my-color-gray-1: #ffffff;
+  --my-color-gray-2: #fafafa;
+  --my-color-gray-3: #f5f5f5;
+  --my-color-gray-4: #f0f0f0;
+  --my-color-gray-5: #d9d9d9;
+  --my-color-gray-6: #bfbfbf;
+  --my-color-gray-7: #8c8c8c;
+  --my-color-gray-8: #595959;
+  --my-color-gray-9: #434343;
+  --my-color-gray-10: #262626;
+  --my-color-gray-11: #1f1f1f;
+  --my-color-gray-12: #141414;
+  --my-color-gray-13: #000000;
 
   -webkit-font-smoothing: antialiased;
 }
