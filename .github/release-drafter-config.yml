@@ -4,9 +4,6 @@ sort-by: 'title'
 exclude-labels:
   - 'dependencies'
 categories:
-  - title: 'Blog'
-    labels:
-      - 'blog'
   - title: 'Basis'
     labels:
       - 'docs: algorithm'
@@ -24,6 +21,9 @@ categories:
   - title: 'Backend'
     labels:
       - 'docs: java'
+  - title: 'Blog'
+    labels:
+      - 'blog'
   - title: 'Wiki'
     labels:
       - 'wiki'
@@ -35,6 +35,6 @@ categories:
       - 'dev experience'
 change-template: '- $TITLE (#$NUMBER) @$AUTHOR'
 template: |
-  # What's Changed
+  # Changes
 
   $CHANGES
