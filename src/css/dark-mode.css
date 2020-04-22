@@ -44,5 +44,6 @@ html[data-theme="dark"] .menu .menu__link.menu__link--active:not(.menu__link--su
   border: 1px solid rgba(167, 167, 167, 0.2);
 }
 
+html[data-theme="dark"] .dropdown .dropdown__menu {
   background-color:  #2d3c43
 }
