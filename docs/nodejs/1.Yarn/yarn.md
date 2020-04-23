@@ -10,7 +10,7 @@ title: yarn基本使用
 
 新增一个依赖，添加到 package.json 文件的`dependencies`属性中
 
-```
+```bash
 yarn add [package]
 yarn add [package]@[version]
 yarn add [package]@[tag]
@@ -18,19 +18,19 @@ yarn add [package]@[tag]
 
 添加到 `devDependencies`属性中
 
-```
+```bash
 yarn add [package] --dev
 ```
 
 添加到`peerDependencies`属性中
 
-```
+```bash
 yarn add [package] --peer
 ```
 
 添加到`optionalDependencies`属性中
 
-```
+```bash
 yarn add [package] --optional
 ```
 
@@ -38,7 +38,7 @@ yarn add [package] --optional
 
 升级依赖包，可以指定版本或者 tag
 
-```
+```bash
 yarn upgrade [package]
 yarn upgrade [package]@[version]
 yarn upgrade [package]@[tag]
@@ -48,7 +48,7 @@ yarn upgrade [package]@[tag]
 
 移除依赖包
 
-```
+```bash
 yarn remove [package]
 ```
 
@@ -56,13 +56,13 @@ yarn remove [package]
 
 安装 package.json 文件里定义的所有依赖包
 
-```
+```bash
 yarn
 ```
 
 或者
 
-```
+```bash
 yarn install
 ```
 
@@ -70,19 +70,19 @@ yarn install
 
 列出匹配指定模式的已缓存的包
 
-```
+```bash
 yarn cache list [--pattern]
 ```
 
 打印出当前的 yarn 全局缓存在哪里
 
-```
+```bash
 yarn cache dir
 ```
 
 清除全局缓存，下次运行 yarn 或者 yarn install 时会重新填充
 
-```
+```bash
 yarn cache clean
 ```
 
@@ -90,7 +90,7 @@ yarn cache clean
 
 yarn 设置镜像源为淘宝镜像
 
-```
+```bash
 yarn config set registry http://registry.npm.taobao.org
 ```
 
@@ -98,13 +98,19 @@ yarn config set registry http://registry.npm.taobao.org
 
 从任何 `create-*` 初学者工具包创建新项目
 
-```
+```bash
 yarn create <starter-kit-package> [<args>]
 ```
 
-这个命令包含两个功能: 1. 安装工具包，或者更新包到最新版本 2. 执行新手工具包`package.json`中`bin`字段指向的程序，并向他转发所有的`<args>` 以`yarn create react-app my-app`命令为例，它等价于：
+这个命令包含两个功能：
 
-```
+1. 安装工具包，或者更新包到最新版本
+
+2. 执行新手工具包`package.json`中`bin`字段指向的程序，并向他转发所有的`<args>`
+
+以`yarn create react-app my-app`命令为例，它等价于：
+
+```bash
 yarn global add create-react-app
 create-react-app my-app
 ```
@@ -125,7 +131,7 @@ create-react-app my-app
 
 显示帮助信息，效果如下：
 
-```
+```bash
 Displays help information.
 
   Options:
@@ -151,13 +157,9 @@ yarn import 旨在使用在 `node_modules` 内找到的版本， 根据普通的
 
 ## yarn info
 
-`yarn info <package> [<field>]`拉取包的信息，显示效果如下：
+`yarn info <package> [<field>]`拉取包的信息。以`yarn info react`命令为例，显示效果如下：
 
-```
-yarn info react
-```
-
-```
+```bash
 yarn info v1.19.2
 warning package.json: No license field
 { name:
@@ -182,9 +184,9 @@ warning package.json: No license field
 
 ## yarn list
 
-yarn list 命令模仿 Unix 列目录命令的预期行为。 `Yarn list`命令列出当前工作文件夹所有的依赖，通过参考所有包管理器的元信息文件，包括项目的依赖。实现效果如下：
+yarn list 命令模仿 Unix 列目录命令的预期行为。 `yarn list`命令列出当前工作文件夹所有的依赖，通过参考所有包管理器的元信息文件，包括项目的依赖。实现效果如下：
 
-```
+```bash
 yarn list vx.x.x
 ├─ package-1@1.3.3
 ├─ package-2@5.0.9
@@ -194,13 +196,13 @@ yarn list vx.x.x
 
 默认情况下，所有包和它们的依赖会被显示。 如果要限制依赖的深度，可以给 `list` 命令添加一个标志 `--depth`以控制所需的深度。注意：深度层级是从零索引的。
 
-```
+```bash
 yarn list --depth=0
 ```
 
 还可以根据 pattern 参数筛选出依赖列表：
 
-```
+```bash
 yarn list --pattern gulp
 yarn list --pattern "gulp|grunt"
 yarn list --pattern "gulp|grunt" --depth=1
@@ -212,37 +214,37 @@ yarn list --pattern "gulp|grunt" --depth=1
 
 ## yarn logout
 
-移除用 `yarn login` 保存给 `npm registry` 的用户名和 email
+移除通过 `yarn login` 保存给 `npm registry` 的用户名和 email，以解除认证。
 
 ## yarn publish
 
 发布一个包到 npm 库
 
-```
+```bash
 yarn publish
 ```
 
 发布当前目录里 `package.json` 定义的包
 
-```
+```bash
 yarn publish [tarball]
 ```
 
 发布一个 `.tgz` gzip 压缩文件定义的包
 
-```
+```bash
 yarn publish [folder]
 ```
 
 发布包含在指定目录里的包。 `<folder>` package.json 应该指定包的细节
 
-```
+```bash
 yarn publish --new-version <version>
 ```
 
 使用`version`的值，跳过对新版本的询问
 
-```
+```bash
 yarn publish --tag <tag>
 ```
 
@@ -252,19 +254,19 @@ yarn publish --tag <tag>
 
 如果你已经在你的包里定义了 scripts，这个命令会运行指定的 `script`。例如：
 
-```
+```bash
 yarn run test
 ```
 
 还可以在脚本名称后放置要传递给脚本的额外参数：
 
-```
+```bash
 yarn run test -o --watch
 ```
 
 也可以在该命令中忽略 run，每个脚本都可以用其名字执行，效果与`yarn run test`一样：
 
-```
+```bash
 yarn test -o --watch
 ```
 
@@ -276,13 +278,17 @@ yarn test -o --watch
 
 该命令会根据在 package.json 文件中所指定的版本范围将依赖更新到其最新版本。也会重新生成 yarn.lock 文件
 
-```
+```bash
 yarn upgrade [package | package@tag | package@version | @scope/]... [--ignore-engines] [--pattern]
 ```
 
-`[package]`：如果只写包的名字不指定版本，会自动升级到最新版本. `[package@tag]`: 指定包包含标签时，将升级到该标签的版本。 `[package@version]`: 当指定包包含版本时，将升级到该版本。 package.json 中指明的依赖也将同时更改为指定的版本。 你可以使用任何语义版本的版本号或版本范围。 `--ignore-engines`: 此标志可用于跳过引擎检查。
+- `[package]`：如果只写包的名字不指定版本，会自动升级到最新版本
+- `[package@tag]`: 指定包包含标签时，将升级到该标签的版本
+- `[package@version]`: 当指定包包含版本时，将升级到该版本
+- `package.json` 中指明的依赖也将同时更改为指定的版本。 你可以使用任何语义版本的版本号或版本范围
+- `--ignore-engines`: 此标志可用于跳过引擎检查。
 
-```
+```bash
 yarn upgrade
 yarn upgrade left-pad
 yarn upgrade left-pad@^1.0.0
@@ -292,7 +298,7 @@ yarn upgrade @angular
 
 `yarn upgrade --pattern <pattern>` 将升级所有匹配此模式的包
 
-```
+```bash
 yarn upgrade --pattern gulp
 yarn upgrade left-pad --pattern "gulp|grunt"
 yarn upgrade --latest --pattern "gulp-(match|newer)"
@@ -328,7 +334,7 @@ yarn upgrade --latest --pattern "gulp-(match|newer)"
 
 ## .yarnrc 文件
 
-可以通过`.yarnrc`文件配置更多的 Yarn 功能。 也可以用 `yarn config` 命令来配置这些选项。 Yarn 会把 `.yarnrc`文件 merge 进文件树里。
+可以通过`.yarnrc`文件配置更多的 yarn 功能。 也可以用 `yarn config` 命令来配置这些选项。 yarn 会把 `.yarnrc`文件 merge 进文件树里。
 
 ## References
 
