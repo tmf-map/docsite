@@ -12,7 +12,18 @@ import Img from '../../../src/components/Img';
 - `publicPath`在生产环境一般用来**为`CDN`资源添加前缀**，在开启 webpackDevServer 的开发环境中则**代表资源打包后的资源路径**。
 - `contentBase`是 devServer 对象中的一个字段，决定了 webpackDevServer 启动时**服务器资源的根目录**，默认是**项目的根目录**。
 
-下面我们将结合一个[demo](https://github.com/ThinkBucket/webpack-demo/tree/master/path-publicPath)来分别阐述三者的具体含义。
+下面我们将结合一个[demo](https://github.com/ThinkBucket/webpack-demo/tree/master/path-publicPath)来分别阐述三者的具体含义。在该 demo 中可以执行`npm run build`进入生产环境，执行`npm run dev`后进入开发环境。demo 中的`package.json`配置如下所示：
+
+```js {3,4} title="./package.json"
+{
+  //...
+  "scripts": {
+    "build": "webpack --config webpack.prod.js",
+    "dev": "webpack-dev-server --config webpack.dev.js --open"
+  }
+  //...
+}
+```
 
 ## path
 
@@ -24,13 +35,20 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: '[name].js'
-    publicPath: "/dist/",
   }
   //...
-}
+};
 ```
 
-`path`字段的配置在`生产环境`下是必须的，因为我们需要为`webpack`指明打包路径，但是在`开发环境`下不是必须的，因为当使用 `webpackDevServer`时打包出来的**文件都在内存中而没有打包到磁盘**，即使指定了输出目录，执行打包命令行后，输出目录也是空的。
+`path`字段的配置在`生产环境`下是必须的，因为我们需要为`webpack`指明打包路径，但是在`开发环境`下不是必须的，因为当使用 `webpackDevServer`时打包出来的**文件都在内存中而没有打包到磁盘**，即使指定了输出目录，输出目录也是空的。
+
+- 在生产环境中配置`./dist`为输出目录, 执行`npm run build`后文件都被打包到了指定的`./dist`目录，打包过程如下所示：
+
+<Img src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200424154842.gif"/>
+
+- 在开发环境中配置`./dist`为输出目录, 执行`npm run dev`启动`webpackDevServer`后发现`./dist`目录一直为空，打包过程如下所示：
+
+<Img src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200424154744.gif"/>
 
 ## publicPath
 
@@ -75,13 +93,15 @@ module.exports = {
 }
 ```
 
-当我们执行`npm run dev`后，将启动 webpackDevServer，运行过程如下图所示： first <Img width="700" id = "first-demo" legend="演示1：output.publicPath默认值" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200423180630.gif"/>
+当我们执行`npm run dev`后，将启动 webpackDevServer，运行过程如下图所示：
+
+<Img width="700" id = "first-demo" legend="演示1：output.publicPath默认值" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200423180630.gif"/>
 
 由演示的结果可以看出，打包后的静态资源`search.html`、`index.js`和图片都是以`/`为前缀，这证明了**在默认的情况下，`output.publicPath`代表着项目根目录**。
 
 - 为了进一步的证明，我们还可以将`output.publicPath`改为`/dist/`，我们期望所有的静态资源都会添加/dist/前缀。运行过程如下图：
 
-<Img width="700" legend="演示2：output.publicPath为特定值" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200423181421.gif" id = "测试"/>
+<Img width="700"  id = "second-demo" legend="演示2：output.publicPath为特定值" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200423181421.gif"/>
 
 通过图中可以看出，所有的静态资源都是以`/dist/`为前缀。
 
