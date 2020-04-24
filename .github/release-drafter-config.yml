@@ -3,6 +3,7 @@ tag-template: '2020-Q?-M?'
 sort-by: 'title'
 exclude-labels:
   - 'dependencies'
+  - 'security'
 categories:
   - title: 'Basis'
     labels:
@@ -24,15 +25,11 @@ categories:
   - title: 'Blog'
     labels:
       - 'blog'
-  - title: 'Wiki'
-    labels:
-      - 'wiki'
-  - title: 'Website'
-    labels:
-      - 'website'
-  - title: 'Dev experience'
+  - title: 'Others'
     labels:
       - 'dev experience'
+      - 'wiki'
+      - 'website'
 change-template: '- $TITLE (#$NUMBER) @$AUTHOR'
 template: |
   # Changes
