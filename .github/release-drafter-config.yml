@@ -1,6 +1,7 @@
 name-template: '2020-Q?-M?'
 tag-template: '2020-Q?-M?'
 sort-by: 'title'
+sort-direction: 'ascending'
 exclude-labels:
   - 'dependencies'
   - 'security'
@@ -32,6 +33,6 @@ categories:
       - 'website'
 change-template: '- $TITLE (#$NUMBER) @$AUTHOR'
 template: |
-  # Changes
+  # Release Note
 
   $CHANGES
