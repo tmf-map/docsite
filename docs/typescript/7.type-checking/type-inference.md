@@ -178,7 +178,7 @@ let foo: Foo = {}; // Error: Property 'bar' is missing in type '{}' but required
 
 :::
 
-### 2. `<>` syntax
+### 2. `<Type>`
 
 ```ts
 interface Foo {
