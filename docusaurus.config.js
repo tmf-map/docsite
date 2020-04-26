@@ -87,6 +87,11 @@ module.exports = {
               to: 'docs/webpack/1.Basic/basic',
               activeBasePath: 'docs/webpack/',
               label: 'Webpack'
+            },
+            {
+              to: 'docs/nodejs/1.Yarn/yarn',
+              activeBasePath: 'docs/nodejs/',
+              label: 'Node.js'
             }
           ]
         },
@@ -107,18 +112,6 @@ module.exports = {
           label: 'AI',
           position: 'right',
           items: []
-        },
-        {
-          to: 'docs/nodejs/1.Yarn/yarn',
-          label: 'Node.js',
-          position: 'right',
-          items: [
-            {
-              to: 'docs/nodejs/1.Yarn/yarn',
-              activeBasePath: 'docs/nodejs/',
-              label: 'Yarn'
-            }
-          ]
         },
         {to: 'blog', label: 'Blog', position: 'right'},
         {

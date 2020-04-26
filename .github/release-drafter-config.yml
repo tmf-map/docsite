@@ -19,9 +19,7 @@ categories:
       - 'docs: react'
       - 'docs: webpack'
       - 'docs: typescript'
-  - title: 'NodeJs'
-      labels:
-        - 'docs: nodejs'
+      - 'docs: nodejs'
   - title: 'Backend'
     labels:
       - 'docs: java'

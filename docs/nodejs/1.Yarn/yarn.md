@@ -356,7 +356,7 @@ yarn run test
 yarn run test -o --watch
 ```
 
-也可以在该命令中忽略 run，每个脚本都可以用其名字执行，效果与`yarn run test`一样：
+也可以在该命令中忽略 run，效果与`yarn run test`一样：
 
 ```bash
 yarn test -o --watch
@@ -445,8 +445,8 @@ yarn upgrade --latest --pattern "gulp-(match|newer)"
 | npm config set registry 仓库地址 | yarn config set registry 仓库地址 | 更换仓库地址 |
 | npm init | yarn init | 互动式创建/更新 package.json 文件 |
 | npm list | yarn list | 查看当前目录下已安装的所有依赖 |
-| npm login | yarn login | 保存你的用户名、邮箱 |
-| npm logout | yarn logout | 删除你的用户名、邮箱 |
+| npm login | yarn login | 登录你的用户名、邮箱 |
+| npm logout | yarn logout | 退出你的用户名、邮箱 |
 | npm publish | yarn publish | 将包发布到 npm |
 | npm test | yarn test(yarn run test) | 测试 |
 | npm bin | yarn bin | 显示 bin 文件所在的安装目录 |
@@ -457,8 +457,8 @@ yarn upgrade --latest --pattern "gulp-(match|newer)"
 | npm | yarn | 功能描述 |
 | --- | --- | --- |
 | npm install(npm i) | yarn install(yarn) | 根据 `package.json` 安装所有依赖 |
-| npm i –save [package] | yarn add [package] | 添加依赖包 |
-| npm i –save-dev [package] | yarn add [package] –dev | 添加依赖包至 `devDependencies` |
+| npm i [package] | yarn add [package] | 添加依赖包 |
+| npm i -dev [package] | yarn add [package] –dev | 添加依赖包至 `devDependencies` |
 | npm i -g [package] | yarn global add [package] | 全局安装依赖包 |
 | npm update –save | yarn upgrade [package] | 升级依赖包 |
 | npm uninstall [package] | yarn remove [package] | 移除依赖包 |
