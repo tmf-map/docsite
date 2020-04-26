@@ -117,7 +117,7 @@ Q2: Object.seal 和 Object.freeze 有什么区别？
 
 > 闭包是一种能够在函数声明过程中讲环境信息与所属函数绑定在一起的数据结构。它是基于函数声明的文本位置的，因此也被称为围绕函数定义的**静态作用域**或**词法作用域**
 
-闭包和作用域密不可分。。。。===
+闭包和作用域密不可分。
 
 P42-图 2.4 解释闭包的图画得非常棒，函数闭包包括以下内容：
 
@@ -426,10 +426,10 @@ functor 就是一个签了合约的接口。我们本来可以简单地把它称
 一旦容器里有了值，不管这个值是什么，我们就需要一种方法来让别的函数能够操作它。而容器 map 函数和数组里面的 map 函数使用方式也几乎一致，只不过是专门为容器操作值而服务。
 
 ```js
-Container.of(2).map((two) => two + 2);
+Container.of(2).map(two => two + 2);
 //=> Container(4)
 
-Container.of('flamethrowers').map((s) => s.toUpperCase());
+Container.of('flamethrowers').map(s => s.toUpperCase());
 //=> Container("FLAMETHROWERS")
 
 Container.of('bombs').map(concat(' away')).map(_.prop('length'));
@@ -491,7 +491,7 @@ mod((1 + 3) * 2, 1); // 0
 const arr = _.range(100);
 
 const a = _.chain(arr)
-  .map((x) => {
+  .map(x => {
     console.log(1);
     return x + 1;
   })
@@ -503,7 +503,7 @@ const a = _.chain(arr)
 const arr = _.range(200);
 
 const a = _.chain(arr)
-  .map((x) => {
+  .map(x => {
     console.log(1);
     return x + 1;
   })
@@ -544,7 +544,7 @@ Lodash 在**数组超过 200 个**才会启动惰性求值。因为惰性求值�
 书中给出的记忆化的算法是去扩展 Function 对象，这里给出更通用一点的方法（注意单词是 memoize 不是 memorize）：
 
 ```js
-const memoize = (fn) => {
+const memoize = fn => {
   let cache = {};
   return (...args) => {
     let n = args[0]; // just taking one argument here
@@ -560,7 +560,7 @@ const memoize = (fn) => {
 };
 
 // a simple pure function to get a value adding 10
-const add = (n) => n + 10;
+const add = n => n + 10;
 console.log('Simple call', add(3));
 
 const memorizedAdd = memoize(add);
@@ -575,7 +575,7 @@ console.log(memorizedAdd(4)); // Fetching from cache
 **记忆化递归版 factorial**
 
 ```js
-const factorial = memoize((n) => (n === 1 ? 1 : n * factorial(n - 1)));
+const factorial = memoize(n => (n === 1 ? 1 : n * factorial(n - 1)));
 
 factorial(100); // 0.123ms
 factorial(101); // 0.004ms
@@ -613,7 +613,7 @@ TCO 将函数的上下文状态作为参数传递给下一个函数调用，使�
 **原始递归版 factorial**
 
 ```js
-const factorial = (n) => (n === 1 ? 1 : n * factorial(n - 1)); // 最后一步不是只有递归
+const factorial = n => (n === 1 ? 1 : n * factorial(n - 1)); // 最后一步不是只有递归
 ```
 
 ```js

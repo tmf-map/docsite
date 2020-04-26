@@ -9,15 +9,13 @@ tags: [webhooks, github, Kimi]
 
 import Img from '../src/components/Img';
 
-import Hint from '../src/components/Hint';
-
 ## 前言
 
 对于一些 GitHub 上的仓库，我们希望当代码进入 master 或者其它特定分支时网站能够自动部署。此时，就需要用到 Github Webhooks 功能。本文以静态网站的自动化部署为例，介绍如何配置 GitHub webhook、如何写自动化脚本以及如何开启监听服务等，非静态网站原理也是类似。
 
 ## 整体流程
 
-<Img width="800" legend="Happy Path" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/github-webhooks-sequence-chart.svg' alt='github-webhooks-sequence-chart'/>
+<Img width="800" legend="Happy Path" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/github-webhooks-sequence-chart.jpeg' alt='github-webhooks-sequence-chart'/>
 
 <!--truncate-->
 
@@ -68,7 +66,11 @@ cp -rf ${SITE_PATH}/build/* /home/www
 
 这里也可以使用 `git pull`, 但不同的项目有可能 build 的时候会导致服务器端的仓库出现文件改动，保险起见建议使用 `fetch` + `reset` 的方式。
 
-<Hint type="bad">不要直接把网站的静态目录和项目 dist 或者 build 目录当作同一个目录。</Hint>
+:::tip
+
+不要直接把网站的静态目录和项目 dist 或者 build 目录当作同一个目录。
+
+:::
 
 否则在 build 的过程中，会删除之前打包好的文件，导致服务器短暂不能访问。当然以上脚本的内容只是一个示例，大家可以根据实际的需求灵活配置。
 
@@ -170,7 +172,11 @@ server {
 
 ## Issues
 
-> 有时候 GitHub webhooks 调用并不会成功，需要 Redeliver 才行。
+:::caution
+
+有时候 GitHub webhooks 调用并不会成功，需要 Redeliver 才行。
+
+:::
 
 <Img w="720" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/pmZ3qZ.png' alt='pmZ3qZ'/>
 
