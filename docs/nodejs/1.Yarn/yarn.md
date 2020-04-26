@@ -2,6 +2,86 @@
 title: yarn基本使用
 ---
 
+## yarn 安装、升级
+
+### macOS
+
+1. 使用脚本安装，每次安装的都是最新版：
+
+```bash
+curl -o- -L https://yarnpkg.com/install.sh | bash
+```
+
+2. 通过`npm`安装/升级最新版本：
+
+```bash
+npm install -g yarn@latest
+```
+
+可以查看 yarn 历史版本：
+
+```bash
+npm view yarn versions --json
+```
+
+安装指定版本的 yarn：
+
+```bash
+npm install -g yarn@1.19.2
+```
+
+### windows
+
+1. 下载最新的.msi 文件，[点击这里下载](yarnpkg.com/latest.msi)，跟随指引安装即可。
+
+2. 通过`Chocolatey`安装。`Chocolatey` 是一个 Windows 专用的软件包管理工具，请按照此[说明](https://chocolatey.org/install)安装`Chocolatey`。安装成功后，在控制台执行如下命令安装 yarn：
+
+```bash
+choco install yarn
+```
+
+更新 yarn:
+
+```bash
+choco update yarn
+```
+
+3. 通过`Scoop`安装。`Scoop`是一个用于 Windows 的基于命令行的安装工具。 请按照此[说明](https://github.com/lukesampson/scoop/wiki/Quick-Start)安装`Scoop`。安装`Scoop`后，在控制台执行如下命令安装`yarn`：
+
+```bash
+scoop install yarn
+```
+
+更新 yarn：
+
+```bash
+scoop update yarn
+```
+
+### 查看是否安装成功
+
+```bash
+yarn --version
+```
+
+安装成功会显示对应的版本号：
+
+```bash
+1.19.2
+```
+
+## 卸载 yarn
+
+1. 如果是 npm 安装的，则可通过命令`npm uninstall yarn -g`卸载 yarn
+2. 可通过`yarn global bin`命令找到 yarn 全局安装的根目录，然后删除 yarn 文件夹即可
+
+```bash
+rm -rf /usr/local/bin/yarn
+```
+
+3. 如果是通过`Chocolatey`安装的，可以通过`choco uninstall yarn`命令卸载 yarn
+4. 如果是通过`Scoop`安装的，可以通过`scoop uninstall yarn`命令卸载 yarn
+
 ## yarn init
 
 初始化一个新项目
@@ -16,22 +96,25 @@ yarn add [package]@[version]
 yarn add [package]@[tag]
 ```
 
-添加到 `devDependencies`属性中
+加上参数`--dev`或者`-D`，添加`package`依赖到`devDependencies`属性中
 
 ```bash
 yarn add [package] --dev
+yarn add [package] -D
 ```
 
-添加到`peerDependencies`属性中
+加上参数`--peer`或者`-P`，添加`package`依赖到`peerDependencies`属性中
 
 ```bash
 yarn add [package] --peer
+yarn add [package] -P
 ```
 
-添加到`optionalDependencies`属性中
+加上参数`--optional`或者`-O`，添加`package`依赖到`optionalDependencies`属性中
 
 ```bash
 yarn add [package] --optional
+yarn add [package] -O
 ```
 
 ## yarn upgrade
@@ -151,13 +234,19 @@ Displays help information.
 
 背景介绍：许多使用 `npm shrinkwrap` 或 `node_modules` 的项目无法轻易迁移到 Yarn，因为 `yarn install` 可能产生有很大差异的逻辑依赖关系树。不是所有树都可以用 Yarn 的 `yarn.lock` 表示，并且部分有效的树会在安装后自动按重复剔除。
 
-yarn import 旨在使用在 `node_modules` 内找到的版本， 根据普通的 `require.resolve()` 决议规则生成一个 `yarn.lock` 文件以缓解这一重大问题。
+yarn import 旨在使用在 `node_modules` 内找到的版本， 根据普通的 `require.resolve()` 解决规则生成一个 `yarn.lock` 文件以缓解这一重大问题。
 
 :::
 
 ## yarn info
 
-`yarn info <package> [<field>]`拉取包的信息。以`yarn info react`命令为例，显示效果如下：
+`yarn info <package> [<field>]`拉取包的信息。以`yarn info react`命令为例，在命令行输入：
+
+```bash
+yarn info react
+```
+
+打印的信息如下：
 
 ```bash
 yarn info v1.19.2
@@ -187,11 +276,14 @@ warning package.json: No license field
 yarn list 命令模仿 Unix 列目录命令的预期行为。 `yarn list`命令列出当前工作文件夹所有的依赖，通过参考所有包管理器的元信息文件，包括项目的依赖。实现效果如下：
 
 ```bash
-yarn list vx.x.x
-├─ package-1@1.3.3
-├─ package-2@5.0.9
-│  └─ package-3@^2.1.0
-└─ package-3@2.7.0
+yarn list v1.19.2
+├─ @babel/code-frame@7.8.3
+│  └─ @babel/highlight@^7.8.3
+├─ @babel/compat-data@7.9.0
+│  ├─ browserslist@^4.9.1
+│  ├─ invariant@^2.2.4
+│  └─ semver@^5.5.0
+......
 ```
 
 默认情况下，所有包和它们的依赖会被显示。 如果要限制依赖的深度，可以给 `list` 命令添加一个标志 `--depth`以控制所需的深度。注意：深度层级是从零索引的。
@@ -335,6 +427,41 @@ yarn upgrade --latest --pattern "gulp-(match|newer)"
 ## .yarnrc 文件
 
 可以通过`.yarnrc`文件配置更多的 yarn 功能。 也可以用 `yarn config` 命令来配置这些选项。 yarn 会把 `.yarnrc`文件 merge 进文件树里。
+
+:::note
+
+优先级：`.npmrc` > `yarn config` > `.yarnrc`
+
+:::
+
+## npm 与 yarn 常用命令对比
+
+### 同操作同名的命令
+
+| npm | yarn | 功能描述 |
+| --- | --- | --- |
+| npm run | yarn run | 运行 `package.json` 中预定义的脚本 |
+| npm config list | yarn config list | 查看配置信息 |
+| npm config set registry 仓库地址 | yarn config set registry 仓库地址 | 更换仓库地址 |
+| npm init | yarn init | 互动式创建/更新 package.json 文件 |
+| npm list | yarn list | 查看当前目录下已安装的所有依赖 |
+| npm login | yarn login | 保存你的用户名、邮箱 |
+| npm logout | yarn logout | 删除你的用户名、邮箱 |
+| npm publish | yarn publish | 将包发布到 npm |
+| npm test | yarn test(yarn run test) | 测试 |
+| npm bin | yarn bin | 显示 bin 文件所在的安装目录 |
+| yarn info | yarn info | 显示一个包的信息 |
+
+### 同操作不同名的命令
+
+| npm | yarn | 功能描述 |
+| --- | --- | --- |
+| npm install(npm i) | yarn install(yarn) | 根据 `package.json` 安装所有依赖 |
+| npm i –save [package] | yarn add [package] | 添加依赖包 |
+| npm i –save-dev [package] | yarn add [package] –dev | 添加依赖包至 `devDependencies` |
+| npm i -g [package] | yarn global add [package] | 全局安装依赖包 |
+| npm update –save | yarn upgrade [package] | 升级依赖包 |
+| npm uninstall [package] | yarn remove [package] | 移除依赖包 |
 
 ## References
 

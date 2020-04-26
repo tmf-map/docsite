@@ -26,4 +26,4 @@ wiki: docs/wiki/**/*
 "docs: http": docs/http/**/*
 "docs: typescript": docs/typescript/**/*
 "docs: webpack": docs/webpack/**/*
-"docs: nodejs": docs/webpack/**/*
+"docs: nodejs": docs/nodejs/**/*

@@ -111,7 +111,14 @@ module.exports = {
         {
           to: 'docs/nodejs/1.Yarn/yarn',
           label: 'Node.js',
-          position: 'left'
+          position: 'right',
+          items: [
+            {
+              to: 'docs/nodejs/1.Yarn/yarn',
+              activeBasePath: 'docs/nodejs/',
+              label: 'Yarn'
+            }
+          ]
         },
         {to: 'blog', label: 'Blog', position: 'right'},
         {
