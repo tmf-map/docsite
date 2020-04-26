@@ -1,0 +1,54 @@
+.markdown > h2 {
+  --ifm-heading-vertical-rhythm-bottom: 1;
+  --ifm-h2-vertical-rhythm-top: 1.8;
+}
+
+.markdown > h3 {
+  margin-bottom: var(--ifm-leading);
+}
+
+.markdown pre {
+  -webkit-font-smoothing: initial;
+}
+
+.markdown > pre, .markdown > ul, .markdown > ol, .markdown > p, blockquote p {
+  line-height: 1.8;
+}
+
+.markdown ul.tabs {
+  border-top-left-radius: var(--ifm-global-radius);
+  border-top-right-radius: var(--ifm-global-radius);
+  /* border: 1px solid var(--ifm-contents-border-color);
+  border-bottom: none; */
+  background-color: var(--my-board--background);
+  line-height: 16px;
+  font-size: 14px;
+}
+
+.markdown ul.tabs .tab-item {
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.5);
+  user-select: none;
+}
+
+.markdown ul.tabs .tab-item--active {
+  color: rgba(0, 0, 0, 1);
+}
+
+.markdown ul.tabs + .margin-vert--md {
+  margin-top: 0 !important;
+}
+
+.markdown ul.tabs + .margin-vert--md div pre {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.markdown img {
+  margin-bottom: 5px;
+}
+
+.markdown .prism-code {
+  /* border-radius: var(--ifm-pre-border-radius); */
+  -webkit-font-smoothing: initial;
+}

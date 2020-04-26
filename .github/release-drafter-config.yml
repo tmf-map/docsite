@@ -1,59 +1,41 @@
 name-template: '2020-Q?-M?'
 tag-template: '2020-Q?-M?'
+sort-by: 'title'
+exclude-labels:
+  - 'dependencies'
+  - 'security'
 categories:
+  - title: 'Basis'
+    labels:
+      - 'docs: algorithm'
+      - 'docs: design patterns'
+      - 'docs: http'
+  - title: 'Frontend'
+    labels:
+      - 'docs: javascript'
+      - 'docs: html'
+      - 'docs: css'
+      - 'docs: web'
+      - 'docs: react'
+      - 'docs: webpack'
+      - 'docs: typescript'
+  - title: 'NodeJs'
+      labels:
+        - 'docs: nodejs'
+  - title: 'Backend'
+    labels:
+      - 'docs: java'
   - title: 'Blog'
     labels:
       - 'blog'
-  - title: 'Algorithm'
-    labels:
-      - 'docs: algorithm'
-  - title: 'Design patterns'
-    labels:
-        - 'docs: design patterns'
-  - title: 'HTTP'
-    labels:
-        - 'docs: http'
-  - title: 'Javascript'
-    labels:
-        - 'docs: javascript'
-  - title: 'Typescript'
-    labels:
-      - 'docs: typescript'
-  - title: 'CSS'
-    labels:
-        - 'docs: css'
-  - title: 'HTML'
-    labels:
-        - 'docs: html'
-  - title: 'Web'
-    labels:
-        - 'docs: web'
-  - title: 'React'
-    labels:
-        - 'docs: react'
-  - title: 'Webpack'
-    labels:
-      - 'docs: webpack'
-  - title: 'NodeJs'
-    labels:
-      - 'docs: nodejs'
-  - title: 'Java'
-    labels:
-      - 'docs: java'
-  - title: 'Wiki'
-    labels:
-      - 'wiki'
-  - title: 'Website'
-    labels:
-      - 'website'
-  - title: 'Dev experience'
+  - title: 'Others'
     labels:
       - 'dev experience'
-  - title: 'Dependencies'
-    labels:
-      - 'dependencies'
+      - 'wiki'
+      - 'website'
+
 change-template: '- $TITLE (#$NUMBER) @$AUTHOR'
 template: |
-  # What's Changed
+  # Changes
 
   $CHANGES
