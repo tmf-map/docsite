@@ -12,6 +12,15 @@ title: yarn基本使用
 curl -o- -L https://yarnpkg.com/install.sh | bash
 ```
 
+如需升级，再次运行此命令，然后会出现以下信息：
+
+```bash
+/Users/xxx/.yarn already exists, possibly from a past Yarn install.
+> Remove it (rm -rf /Users/xxx/.yarn) and run this script again.
+```
+
+根据提示，由于已经安装了 yarn，所以需要先删除`.yarn`文件，然后再重新执行该命令，即可安装最新版 yarn。
+
 2. 通过`npm`安装/升级最新版本：
 
 ```bash
@@ -29,6 +38,12 @@ npm view yarn versions --json
 ```bash
 npm install -g yarn@1.19.2
 ```
+
+:::note
+
+如果你使用`nvm`管理`node`的版本，那么每次对`node`进行版本升级之后，都需要重新安装`yarn`。不过，通过 npm 安装依赖包的速度非常快，所以即使需要重新安装，花费的时间也非常少。
+
+:::
 
 ### windows
 
