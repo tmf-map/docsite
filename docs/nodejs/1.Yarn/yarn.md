@@ -415,6 +415,37 @@ yarn upgrade --latest --pattern "gulp-(match|newer)"
 
 详细日志模式，运行 yarn 命令时，增加参数`--verbose`，这在排查错误时很有帮助
 
+## --cwd
+
+- `cwd`是`current working directory`的缩写，中文是`当前工作目录`
+- 使用方式：`yarn --cwd [path] [command]`，这个命令的含义是：通过`--cwd`和`path`参数，使得命令在`path`这个文件路径下执行
+- 注意：参数的顺序非常重要，不能改变，否则会出错
+- 适用于多层嵌套的项目
+
+假设当前有一个多层嵌套的项目，结构如下：
+
+```bash
+/project
+  /layer1
+  /layer2
+```
+
+如果想在`project/`中指定`yarn run`命令在`/layer1`路径下执行，则该命令需要写为：
+
+```bash
+yarn --cwd layer1 run
+```
+
+如果`--cwd [path]`参数的使用顺序不对，则会报错，无法识别`--cwd`参数：
+
+```bash
+yarn run --cwd layer1
+```
+
+```bash
+error: unknown option '--cwd'
+```
+
 ## yarn.lock 文件
 
 `yarn.lock`文件是在安装期间，由`Yarn`自动生成的，其中准确地存储着每个依赖的具体版本信息。当我们通过 yarn 增加、升级或者删除依赖时，它会自动更新 yarn.lock 文件。yarn.lock 文件应该由 yarn 来管理，不应该手动去更改，更不应该删除，且要提交到版本控制系统中，以免因为不同机器安装的包版本不一致引发问题。
