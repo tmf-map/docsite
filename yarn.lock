@@ -1075,16 +1075,16 @@
     react-router-dom "^5.1.2"
     react-toggle "^4.1.1"
 
-"@docusaurus/theme-live-codeblock@2.0.0-alpha.50":
-  version "2.0.0-alpha.50"
-  resolved "https://registry.yarnpkg.com/@docusaurus/theme-live-codeblock/-/theme-live-codeblock-2.0.0-alpha.50.tgz#2f96e13e7c6ec18606967db01b6de54d692c7997"
-  integrity sha512-sl0f7/8Ved87ndRvS9WQl/UbFXHVUJyOAYM5T9iZQVhOdJtEbK/mebYr1bnJ73ugUUFso/7CyWk5LtHjx6bDIg==
+"@docusaurus/theme-live-codeblock@2.0.0-alpha.54":
+  version "2.0.0-alpha.54"
+  resolved "https://registry.yarnpkg.com/@docusaurus/theme-live-codeblock/-/theme-live-codeblock-2.0.0-alpha.54.tgz#6e086fc0a2cba374753d323c1fe74e1e13dc4f31"
+  integrity sha512-Qy4AgJtTJvyaW8NqW0Blx72l+JuyCZzH1HDvj09gvwi7oft5TAph2x5hhqmhlpiSKZzCrgHT3Fe0oUxZBmztXw==
   dependencies:
     "@philpl/buble" "^0.19.7"
     classnames "^2.2.6"
     clipboard "^2.0.6"
     parse-numeric-range "^0.0.2"
-    prism-react-renderer "^1.0.2"
+    prism-react-renderer "^1.1.0"
     react-live "^2.2.1"
 
 "@docusaurus/theme-search-algolia@^2.0.0-alpha.50":
@@ -8021,10 +8021,10 @@ pretty-time@^1.1.0:
   resolved "https://registry.yarnpkg.com/pretty-time/-/pretty-time-1.1.0.tgz#ffb7429afabb8535c346a34e41873adf3d74dd0e"
   integrity sha512-28iF6xPQrP8Oa6uxE6a1biz+lWeTOAPKggvjB8HAs6nVMKZwf5bG++632Dx614hIWgUPkgivRfG+a8uAXGTIbA==
 
-prism-react-renderer@^1.0.1, prism-react-renderer@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/prism-react-renderer/-/prism-react-renderer-1.0.2.tgz#3bb9a6a42f76fc049b03266298c7068fdd4b7ea9"
-  integrity sha512-0++pJyRfu4v2OxI/Us/5RLui9ESDkTiLkVCtKuPZYdpB8UQWJpnJQhPrWab053XtsKW3oM0sD69uJ6N9exm1Ag==
+prism-react-renderer@^1.0.1, prism-react-renderer@^1.0.2, prism-react-renderer@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/prism-react-renderer/-/prism-react-renderer-1.1.0.tgz#6fe1b33f1de1b23afbdb07663d135f9026eef4ad"
+  integrity sha512-WZAw+mBoxk1qZDD1h1WOg0BVHgyk9zqbuIBFNgP+Z71i515jGL0WZIN1FIF8EgOyh06x8Rr7HAUXxsRsoUZKyg==
 
 prismjs@^1.19.0:
   version "1.20.0"
