@@ -2,7 +2,7 @@
 title: exports 和 module.exports
 author: Robbie Han
 author_title: Front End Engineer @ Tradeshift
-author_url: https://github.com/USTC-Han
+author_url: https://github.com/Robbie-Han
 author_image_url: https://robbie-pic.oss-cn-beijing.aliyuncs.com/IMG_4175.JPG?x-oss-process=style/compress
 tags: [exports, module.exports, node.js]
 ---

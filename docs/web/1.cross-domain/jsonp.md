@@ -64,4 +64,4 @@ myFunction({ip: '8.8.8.8'});
 
 ## JSONP 跨域 demo
 
-可以通过`git clone git@github.com:USTC-Han/cross-domain.git`将 demo 拷贝到本地，然后参考 Readme 中的步骤，运行其中的`2-JSONP`项目。
+可以通过`git clone git@github.com:Robbie-Han/cross-domain.git`将 demo 拷贝到本地，然后参考 Readme 中的步骤，运行其中的`2-JSONP`项目。

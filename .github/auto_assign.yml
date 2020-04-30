@@ -8,7 +8,7 @@ addAssignees: author
 # A list of reviewers to be added to pull requests (GitHub user name)
 reviewers:
   - Kimi-Gao
-  - USTC-Han
+  - Robbie-Han
   - Mylittlegirl
   - KanonWang
   - goroyal
