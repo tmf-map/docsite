@@ -161,6 +161,12 @@ module.exports = {
 
 通过打包结果可以看出，使用了`style-loader`后，demo 中的`.less`和`.css`文件都会被打包到`.js`文件中，并通过 DOM 操作将它们插入到`.html`的`<head>`标签中。
 
+:::tip
+
+我们知道`CSS`样式分为内联、外联和行内样式，使用`style-loader`打包后样式文件将会内联到`html`文件中，如果想要样式文件外联，可以使用插件[mini-css-extract-plugin](/docs/webpack/1.Basic/plugins#mini-css-extract-plugin)
+
+:::
+
 ## file-loader
 
 `file-loader`可以帮助`webpack`打包和解析图片、字体等文件。
