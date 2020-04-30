@@ -1,9 +1,11 @@
 .markdown > h2 {
   --ifm-heading-vertical-rhythm-bottom: 1;
   --ifm-h2-vertical-rhythm-top: 1.8;
+  --ifm-h2-font-size: 1.5rem;
 }
 
 .markdown > h3 {
+  --ifm-h3-font-size: 1.25rem;
   margin-bottom: var(--ifm-leading);
 }
 
@@ -51,4 +53,32 @@
 .markdown .prism-code {
   /* border-radius: var(--ifm-pre-border-radius); */
   -webkit-font-smoothing: initial;
+}
+
+.markdown .prism-code .token.keyword {
+  font-style: normal !important;
+}
+
+.markdown div[style="color: rgb(214, 222, 235); background-color: rgb(1, 22, 39);"] {
+  border-bottom-color: #444950;
+}
+
+.markdown ul.tabs + div div.prism-code {
+  border-radius: 0 0 var(--ifm-global-radius) var(--ifm-global-radius);
+}
+
+.markdown .tab-item:hover {
+  background-color: transparent;
+  border-bottom-color: var(--ifm-color-primary-light);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.markdown .tab-item:focus {
+  outline: none;
+  background-color: transparent;
+}
+
+.markdown ul.tabs {
+  background-color: rgba(185, 202, 218, 0.2);
 }

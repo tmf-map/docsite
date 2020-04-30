@@ -39,10 +39,10 @@
 
 :root[data-theme='dark'] {
   --uni-background-color: var(--ifm-background-color);
-  --uni-heading-color: var(--ifm-font-base-color);
-  --uni-heading-helper-color: var(--ifm-font-base-color);
+  --uni-heading-color: var(--ifm-font-color-base);
+  --uni-heading-helper-color: var(--ifm-font-color-base);
   --uni-oval-shadow-color: var(--black);
-  --uni-testimonial-text-color: var(--ifm-font-base-color);
+  --uni-testimonial-text-color: var(--ifm-font-color-base);
 }
 
 html[data-theme="dark"] .section-bgwhite-block-right {
@@ -125,7 +125,7 @@ html[data-theme="dark"] .section-bgwhite-block-left {
   left: 0;
   width: 4px;
   height: 4px;
-  background-color: var(--ifm-font-base-color);
+  background-color: var(--ifm-font-color-base);
 }
 
 .landing :global .hero.hero--primary {
@@ -429,7 +429,7 @@ html[data-theme="dark"] .section-bgwhite-block-left {
 }
 
 .section-bgwhite {
-  color: var(--ifm-font-base-color);
+  color: var(--ifm-font-color-base);
 }
 
 .section-bgwhite-block {
@@ -582,7 +582,7 @@ html[data-theme="dark"] .section-bgwhite-block-left {
   font-style: normal;
   letter-spacing: normal;
   line-height: normal;
-  color: var(--ifm-font-base-color);
+  color: var(--ifm-font-color-base);
 }
 
 .text-big {

@@ -1,7 +1,7 @@
 :root {
   --ifm-color-primary-lightest: #d6f2ff;
-  --ifm-color-primary-lighter: #ade5ff;
-  --ifm-color-primary-light: #5ccbff;
+  --ifm-color-primary-lighter: #69c0ff;
+  --ifm-color-primary-light: #1890ff;
   --ifm-color-primary: rgb(0, 122, 255);
   --ifm-color-primary-dark: #0085cc;
   --ifm-color-primary-darker: #0065a3;
@@ -24,8 +24,11 @@
   --ifm-list-item-margin: 0.18rem;
   --ifm-leading: 1rem;
   --ifm-container-width: 1200px;
+
   /* --ifm-font-family-base: Helvetica, Arial, sans-serif; */
-  /* --ifm-font-base-color: rgb(74, 74, 74); */
+  /* --ifm-font-color-base: rgb(74, 74, 74); */
+  --ifm-font-size-base: 15px;
+  --ifm-code-font-size: 85%;
 
   --my-board--background: rgba(185, 202, 218, 0.15);
   --my-logo-font-family: 'Eurofighter Expanded';

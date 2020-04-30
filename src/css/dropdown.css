@@ -3,9 +3,33 @@
   box-shadow: var(--ifm-navbar-shadow);
   border: 1px solid var(--my-color-gray-5);
   border-top: 0px;
+  margin-top: 1px;
+}
+
+.dropdown .dropdown__menu > li {
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+}
+
+.dropdown > .navbar__link:after {
+  display: none;
+}
+
+.dropdown .dropdown__menu .dropdown__link:hover,
+.dropdown .dropdown__menu .dropdown__link.dropdown__link--active {
+  border-radius: 0.25rem;
+}
+
+.dropdown .dropdown__menu .dropdown__link.dropdown__link--active {
+  color: var(--ifm-color-primary);
 }
 
 html[data-theme="dark"] .dropdown__menu {
   background-color: var(--my-color-gray-10);
   border-color: var(--my-color-gray-9);
+}
+
+html[data-theme="dark"] .dropdown .dropdown__menu .dropdown__link:hover,
+html[data-theme="dark"] .dropdown .dropdown__menu .dropdown__link.dropdown__link--active {
+  --ifm-dropdown-hover-background-color: rgba(255, 255, 255, 0.1);
 }
