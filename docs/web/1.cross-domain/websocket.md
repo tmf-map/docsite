@@ -81,7 +81,7 @@ server.listen(3001, function () {
 }); //监听3001端口
 ```
 
-可以通过`git clone git@github.com:USTC-Han/cross-domain.git`将 demo 拷贝到本地，然后参考 Readme 中的步骤，运行其中的`8-WebSocket`项目。
+可以通过`git clone git@github.com:Robbie-Han/cross-domain.git`将 demo 拷贝到本地，然后参考 Readme 中的步骤，运行其中的`8-WebSocket`项目。
 
 ## webSocket 跨域字段（待考证）
 
