@@ -8,13 +8,13 @@ import Img from '../../../src/components/Img';
 
 在`webapck`的打包配置中，一般会使用到`path`、 `publicPath` 和 `contentBase`来配置资源路径，那么三者分别代表什么含义呢？三者的含义简要概述如下：
 
-- `path`在生产环境（production）中代表**打包在本地磁盘上的物理位置**，在**开发环境（development）中可以省略**。
-- `publicPath`在生产环境一般用来**为`CDN`资源添加前缀**，在开启 webpackDevServer 的开发环境中则**代表资源打包后的资源路径**。
+- `path`在生产环境（production）中代表**打包后资源在项目中的存放目录**，在**开发环境（development）中可以省略**。
+- `publicPath`在生产环境一般用来**为`CDN`资源添加前缀**，在开启 webpackDevServer 的开发环境中代表**打包后资源在内存中存放的相对路径**，默认为**项目根目录**。
 - `contentBase`是 devServer 对象中的一个字段，决定了 webpackDevServer 启动时**服务器资源的根目录**，默认是**项目的根目录**。
 
 下面我们将结合一个[demo](https://github.com/ThinkBucket/webpack-demo/tree/master/path-publicPath)来分别阐述三者的具体含义。在该 demo 中可以执行`npm run build`进入生产环境，执行`npm run dev`后进入开发环境。demo 中的`package.json`配置如下所示：
 
-```js {3,4} title="./package.json"
+```js {4,5} title="./package.json"
 {
   //...
   "scripts": {
@@ -56,7 +56,7 @@ module.exports = {
 
 `output`中的`publicPath`可以分为两种情况：
 
-1. 在生产环境中，通过设置`publicPath`添加 <abbr title="Content Delivery Network">CDN</abbr> 前缀，将我们的静态资源进行 <abbr title="Content Delivery Network">CDN</abbr> 托管。
+1. 在生产环境中，通过设置`publicPath`添加 <abbr title="Content Delivery Network">CDN</abbr> 前缀，将我们的静态资源进行 CDN 托管。
 
 2. 在开发环境中，通过设置`publicPath`添加相对路径前缀，在开启`webpackDevServer`时，指明打包后的资源路径，默认路径为项目的根目录。
 
@@ -65,6 +65,45 @@ module.exports = {
 需要注意的是，publicPath 都是以‘/’结尾。
 
 :::
+
+- 生产环境
+
+在生产环境下，如果我们不设置`publicPath`，资源的引用会采用相对路径引用。但有时候我们可能会利用 CDN 来托管这些资源，此时我们就需要为引用的资源添加 CDN 的 url 前缀。例如在生产环境中我们可以配置如下：
+
+```js {7} title="webpack.prod.js"
+module.exports = {
+  //...
+  module: 'development',
+  output: {
+    path: path.join(__dirname, 'dist'),
+    filename: '[name].js'
+    publicPath: "http://localhost:8080/", // 假设其为CDN前缀
+  }
+  //...
+  new HtmlWebpackPlugin({
+    template: path.join(__dirname, 'src/index.html'),
+    filename: 'index.html',
+    chunks: ['index'],
+  })
+}
+  //...
+```
+
+在 demo 中的`index.less`中我们引入了`./images/logo.png`，当我们不设置`output.publicPath`时，打包结果如下：
+
+<Img width="700" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200502173152.png"/>
+
+当我们设置`output.publicPath`为"http://localhost:8080/"时，打包结果如下：
+
+<Img width="700" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200502173001.png"/>
+
+打包后的`index.html`文件如下：
+
+<Img width="700" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200502173116.png"/>
+
+通过打包结果可以看出，在生产环境中，我们可以利用`publicPath`来为系统引用资源设置公共的 CDN`url`前缀。
+
+- 生产环境
 
 下面我们结合 demo，着重讲解在开发环境中`output.publicPath`的表现。
 
@@ -167,7 +206,7 @@ module.exports = {
 
 <Img width="700" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200423223125.png" />
 
-为了`contentBase`在有值时的作用，我们可以将`devServer.contentBase`设置如下
+为了验证`contentBase`可以设置服务器资源目录，我们可以将`devServer.contentBase`设置如下
 
 ```js {17} title="webpack.dev.js"
 module.exports = {
