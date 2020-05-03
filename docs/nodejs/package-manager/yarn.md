@@ -1,8 +1,8 @@
 ---
-title: yarn基本使用
+title: yarn
 ---
 
-## yarn 安装、升级
+## Get started
 
 ### macOS
 
@@ -45,7 +45,7 @@ npm install -g yarn@1.19.2
 
 :::
 
-### windows
+### Windows
 
 1. 下载最新的.msi 文件，[点击这里下载](yarnpkg.com/latest.msi)，跟随指引安装即可。
 
@@ -73,7 +73,7 @@ scoop install yarn
 scoop update yarn
 ```
 
-### 查看是否安装成功
+### Check installation
 
 ```bash
 yarn --version
@@ -81,11 +81,11 @@ yarn --version
 
 安装成功会显示对应的版本号：
 
-```bash
+```text
 1.19.2
 ```
 
-## 卸载 yarn
+### Uninstall yarn
 
 1. 如果是 npm 安装的，则可通过命令`npm uninstall yarn -g`卸载 yarn
 2. 可通过`yarn global bin`命令找到 yarn 全局安装的根目录，然后删除 yarn 文件夹即可
@@ -111,6 +111,12 @@ yarn add [package]@[version]
 yarn add [package]@[tag]
 ```
 
+:::tip
+
+`yarn add [package]` 默认添加的是 `^` 符号，详情见 [Package Version](/docs/nodejs/package-manager/package-version)。
+
+:::
+
 加上参数`--dev`或者`-D`，添加`package`依赖到`devDependencies`属性中
 
 ```bash
@@ -132,15 +138,7 @@ yarn add [package] --optional
 yarn add [package] -O
 ```
 
-## yarn upgrade
-
-升级依赖包，可以指定版本或者 tag
-
-```bash
-yarn upgrade [package]
-yarn upgrade [package]@[version]
-yarn upgrade [package]@[tag]
-```
+See more: https://yarnpkg.com/cli/add
 
 ## yarn remove
 
@@ -377,22 +375,27 @@ yarn run test -o --watch
 yarn test -o --watch
 ```
 
+:::tip
+
+npm 中除了`start`, `install`, `test`等官方命令外，自定义的命令前面都需要加 `run`，而 yarn 中自定义命令前的 `run` 可以省略。
+
+:::
+
 ## yarn test
 
 运行指定的`test`脚本，是 `yarn run test` 的快捷命令
 
 ## yarn upgrade
 
-该命令会根据在 package.json 文件中所指定的版本范围将依赖更新到其最新版本。也会重新生成 yarn.lock 文件
+该命令会根据在 `package.json` 文件中所指定的版本范围将依赖更新到其最新版本。也会重新生成 `yarn.lock` 文件
 
 ```bash
-yarn upgrade [package | package@tag | package@version | @scope/]... [--ignore-engines] [--pattern]
+yarn upgrade [package | package@tag | package@version | @scope/] [--ignore-engines] [--pattern]
 ```
 
 - `[package]`：如果只写包的名字不指定版本，会自动升级到最新版本
 - `[package@tag]`: 指定包包含标签时，将升级到该标签的版本
 - `[package@version]`: 当指定包包含版本时，将升级到该版本
-- `package.json` 中指明的依赖也将同时更改为指定的版本。 你可以使用任何语义版本的版本号或版本范围
 - `--ignore-engines`: 此标志可用于跳过引擎检查。
 
 ```bash
@@ -411,59 +414,20 @@ yarn upgrade left-pad --pattern "gulp|grunt"
 yarn upgrade --latest --pattern "gulp-(match|newer)"
 ```
 
-### 版本详解
+:::tip
 
-一般来说，版本号主要分为三部分：`主版本号(major)`、`次版本号(minor)`和`修补版本号(patch)`。以`2.6.6`为例，major 为 2，minor 为 6，patch 为 6。
+当 major 为零的阶段（0.y.z），不会更 minor，只会更新 patch，因为该阶段相对不稳定。
 
-- patch：修复 bug，兼容老版本
-- minor：新增功能，兼容老版本
-- major：新的架构调整，不兼容老版本
+- 如：`^0.6.6`，表示更新版本范围 `>=0.6.6 <0.7.0`，可以是`0.6.x`。
+- 如：`^0.6`，表示更新版本范围`>=0.6.0 <0.7.0`，可以是`0.6.x`。
 
-版本号的主要符号：
-
-1. \>
-
-大于某个版本，表示只要大于这个版本的安装包都行，如`>2.0.0`。
-
-2. \>=
-
-大于某个版本，表示只要大于或等于这个版本的安装包都行，如`>=2.0.0`。
-
-3. <
-
-小于某个版本，表示只要小于这个版本的安装包都行，如`<2.0.0`。
-
-4. <=
-
-小于或等于某个版本，表示更新版本范围只要小于或等于这个版本的安装包都行，如`<=2.0.0`。
-
-5. ~
-
-如：`~2.6.6`，表示更新版本范围`>=2.6.6 <2.7.0`，可以是`2.6.x`，兼容 patch。
-
-如：`~2.6`，表示更新版本范围`>=2.6.0 <2.7.0`，可以是`2.6.x`，兼容 patch。
-
-如：`~2`，表示更新版本范围`>=2.0.0 <3.0.0`，可以是`2.x.x`，兼容 minor 和 patch。
-
-6. ^
-
-如果 major 是非零数字，则兼容 minor 和 patch，如果是 0，则兼容 patch。
-
-如：`^2.6.6` ，表示更新版本范围`>=2.6.6 <3.0.0`，可以是`2.x.x`，兼容 minor 和 patch。
-
-如：`^0.6.6`，表示更新版本范围>=0.6.6 <0.7.0，可以是`0.6.x`，兼容 patch。
-
-如：`^0.6`，表示更新版本范围`>=0.6.0 <0.7.0`，可以是`0.6.x`，兼容 patch。
-
-7.  \*
-
-表示任意版本。如：\*，表示更新版本范围为`>=0.0.0`的任意版本。
+:::
 
 ## yarn [command] --verbose
 
 详细日志模式，运行 yarn 命令时，增加参数`--verbose`，这在排查错误时很有帮助
 
-## --cwd
+## yarn [command] --cwd
 
 - `cwd`是`current working directory`的缩写，中文是`当前工作目录`
 - 使用方式：`yarn --cwd [path] [command]`，这个命令的含义是：通过`--cwd`和`path`参数，使得命令在`path`这个文件路径下执行
@@ -494,7 +458,7 @@ yarn run --cwd layer1
 error: unknown option '--cwd'
 ```
 
-## yarn.lock 文件
+## `yarn.lock`
 
 `yarn.lock`文件是在安装期间，由`Yarn`自动生成的，其中准确地存储着每个依赖的具体版本信息。当我们通过 yarn 增加、升级或者删除依赖时，它会自动更新 yarn.lock 文件。yarn.lock 文件应该由 yarn 来管理，不应该手动去更改，更不应该删除，且要提交到版本控制系统中，以免因为不同机器安装的包版本不一致引发问题。
 
@@ -518,7 +482,7 @@ error: unknown option '--cwd'
 - `resolved`字段记录的是包的 URL 地址
 - `dependencies`字段记录的是当前包的依赖，即当前包在`package.json`的`dependencies`字段中的所有依赖
 
-## .yarnrc 文件
+## `.yarnrc`
 
 可以通过`.yarnrc`文件配置更多的 yarn 功能。 也可以用 `yarn config` 命令来配置这些选项。 yarn 会把 `.yarnrc`文件 merge 进文件树里。
 
@@ -528,35 +492,6 @@ error: unknown option '--cwd'
 
 :::
 
-## npm 与 yarn 常用命令对比
-
-### 同操作同名的命令
-
-| npm | yarn | 功能描述 |
-| --- | --- | --- |
-| npm run | yarn run | 运行 `package.json` 中预定义的脚本 |
-| npm config list | yarn config list | 查看配置信息 |
-| npm config set registry 仓库地址 | yarn config set registry 仓库地址 | 更换仓库地址 |
-| npm init | yarn init | 互动式创建/更新 package.json 文件 |
-| npm list | yarn list | 查看当前目录下已安装的所有依赖 |
-| npm login | yarn login | 登录你的用户名、邮箱 |
-| npm logout | yarn logout | 退出你的用户名、邮箱 |
-| npm publish | yarn publish | 将包发布到 npm |
-| npm test | yarn test(yarn run test) | 测试 |
-| npm bin | yarn bin | 显示 bin 文件所在的安装目录 |
-| yarn info | yarn info | 显示一个包的信息 |
-
-### 同操作不同名的命令
-
-| npm | yarn | 功能描述 |
-| --- | --- | --- |
-| npm install(npm i) | yarn install(yarn) | 根据 `package.json` 安装所有依赖 |
-| npm i [package] | yarn add [package] | 添加依赖包 |
-| npm i -dev [package] | yarn add [package] –dev | 添加依赖包至 `devDependencies` |
-| npm i -g [package] | yarn global add [package] | 全局安装依赖包 |
-| npm update –save | yarn upgrade [package] | 升级依赖包 |
-| npm uninstall [package] | yarn remove [package] | 移除依赖包 |
-
 ## References
 
-[Yarn 中文网](http://yarnpkg.top/index.html)
+[Yarn 中文网](http://yarnpkg.top/index.html) [Yarn official site](https://yarnpkg.com/cli/add)

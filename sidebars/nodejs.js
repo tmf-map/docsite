@@ -1,3 +1,9 @@
-module.exports = {
-  '1. yarn': ['nodejs/1.Yarn/yarn']
-};
+module.exports = [
+  {
+    'Package Manager': [
+      'nodejs/package-manager/package-version',
+      'nodejs/package-manager/yarn',
+      'nodejs/package-manager/npm-vs-yarn'
+    ]
+  }
+];

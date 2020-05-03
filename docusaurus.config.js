@@ -89,7 +89,7 @@ module.exports = {
               label: 'Webpack'
             },
             {
-              to: 'docs/nodejs/1.Yarn/yarn',
+              to: 'docs/nodejs/package-manager/yarn',
               activeBasePath: 'docs/nodejs/',
               label: 'Node.js'
             }
