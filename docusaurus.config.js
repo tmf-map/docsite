@@ -87,6 +87,11 @@ module.exports = {
               to: 'docs/webpack/1.Basic/basic',
               activeBasePath: 'docs/webpack/',
               label: 'Webpack'
+            },
+            {
+              to: 'docs/nodejs/package-manager/yarn',
+              activeBasePath: 'docs/nodejs/',
+              label: 'Node.js'
             }
           ]
         },

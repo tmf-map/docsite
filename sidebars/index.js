@@ -10,6 +10,7 @@ const http = require('./http');
 const typescript = require('./typescript');
 const webpack = require('./webpack');
 const wiki = require('./wiki');
+const nodejs = require('./nodejs');
 
 module.exports = {
   javascript,
@@ -23,5 +24,6 @@ module.exports = {
   http,
   typescript,
   wiki,
-  webpack
+  webpack,
+  nodejs
 };

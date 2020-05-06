@@ -19,6 +19,7 @@ categories:
       - 'docs: react'
       - 'docs: webpack'
       - 'docs: typescript'
+      - 'docs: nodejs'
   - title: 'Backend'
     labels:
       - 'docs: java'
@@ -30,6 +31,7 @@ categories:
       - 'dev experience'
       - 'wiki'
       - 'website'
+
 change-template: '- $TITLE (#$NUMBER) @$AUTHOR'
 template: |
   # Changes
