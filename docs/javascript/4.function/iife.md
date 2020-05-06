@@ -1,6 +1,5 @@
 ---
 title: 立即执行函数IIFE
-sidebar_label: 立即执行函数IIFE
 ---
 
 立即执行函数表达式(Immediately-Invoked Function Expression)

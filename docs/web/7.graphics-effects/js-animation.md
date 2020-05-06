@@ -1,6 +1,5 @@
 ---
 title: JS 动画
-sidebar_label: JS 动画
 ---
 
 ## JS 动画原理

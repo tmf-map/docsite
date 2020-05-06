@@ -1,6 +1,5 @@
 ---
 title: async/await
-sidebar_label: async/await
 ---
 
 import Img from '../../../src/components/Img';

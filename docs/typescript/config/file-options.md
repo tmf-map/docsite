@@ -1,6 +1,5 @@
 ---
 title: 文件配置
-sidebar_label: 文件配置
 ---
 
 ## 文件选项

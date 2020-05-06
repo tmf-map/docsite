@@ -1,7 +1,6 @@
 ---
 id: presentational-component
 title: 展示型组件
-sidebar_label: 展示型组件
 ---
 
 ## presentational 组件

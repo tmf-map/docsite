@@ -1,7 +1,6 @@
 ---
 id: memo
 title: 记忆化组件
-sidebar_label: 记忆化组件
 ---
 
 ## `React.memo`

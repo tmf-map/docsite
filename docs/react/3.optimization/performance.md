@@ -1,7 +1,6 @@
 ---
 id: performance
 title: 性能分析
-sidebar_label: 性能分析
 ---
 
 ## React 16 性能分析

@@ -1,6 +1,5 @@
 ---
 title: tsconfig.json 配置
-sidebar_label: tsconfig.json 配置
 ---
 
 ## 概述

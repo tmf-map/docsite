@@ -1,6 +1,5 @@
 ---
 title: OAuth
-sidebar_label: OAuth
 ---
 
 import Img from '../../../src/components/Img';

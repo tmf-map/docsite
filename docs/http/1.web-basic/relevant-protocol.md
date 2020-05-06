@@ -1,6 +1,5 @@
 ---
 title: HTTP相关协议
-sidebar_label: HTTP相关协议
 ---
 
 import Img from '../../../src/components/Img'

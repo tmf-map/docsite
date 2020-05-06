@@ -1,7 +1,6 @@
 ---
 id: component-test
 title: 组件测试
-sidebar_label: 组件测试
 ---
 
 组件测试本身就是单元测试，但是其又包括快照测试（Snapshot Test）这种特有的测试。

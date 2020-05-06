@@ -1,6 +1,5 @@
 ---
 title: 延迟加载
-sidebar_label: 延迟加载
 ---
 
 import Img from '../../../src/components/Img';

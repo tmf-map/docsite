@@ -1,7 +1,6 @@
 ---
 id: JWT
 title: JWT
-sidebar_label: JWT
 ---
 
 import Img from '../../../src/components/Img';

@@ -1,7 +1,6 @@
 ---
 id: action
 title: Action
-sidebar_label: Action
 ---
 
 ## 思想精华二：将所有事件抽象为 action

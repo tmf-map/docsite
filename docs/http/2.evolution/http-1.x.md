@@ -1,6 +1,5 @@
 ---
 title: HTTP/1.X
-sidebar_label: HTTP/1.X
 ---
 
 import Img from '../../../src/components/Img';

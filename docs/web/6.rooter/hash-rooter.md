@@ -1,7 +1,6 @@
 ---
 id: hash-rooter
 title: Hash 路由
-sidebar_label: Hash 路由
 ---
 
 ## 路由要解决的问题

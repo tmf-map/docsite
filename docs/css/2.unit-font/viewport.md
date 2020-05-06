@@ -1,6 +1,5 @@
 ---
 title: 'vh/vw'
-sidebar_label: 'vh/vw'
 ---
 
 import Img from '../../../src/components/Img';

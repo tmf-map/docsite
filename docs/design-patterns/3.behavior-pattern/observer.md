@@ -1,6 +1,5 @@
 ---
 title: Observer
-sidebar_label: Observer
 ---
 
 import Img from '../../../src/components/Img';

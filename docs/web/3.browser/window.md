@@ -1,6 +1,5 @@
 ---
 title: 浏览器窗口
-sidebar_label: 浏览器窗口
 ---
 
 import Img from '../../../src/components/Img';

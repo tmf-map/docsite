@@ -1,6 +1,5 @@
 ---
 title: Web Sockets
-sidebar_label: Web Sockets
 ---
 
 ## Websocket 简介

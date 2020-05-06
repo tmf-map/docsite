@@ -1,7 +1,6 @@
 ---
 id: render-props
 title: Render Props
-sidebar_label: Render Props
 ---
 
 Render Props 是指一种在 React 组件之间使用一个值为函数的 prop 在 React 组件间共享代码的简单技术。

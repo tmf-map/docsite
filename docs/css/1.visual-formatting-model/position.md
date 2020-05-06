@@ -1,6 +1,5 @@
 ---
 title: 定位
-sidebar_label: 定位
 ---
 
 import Img from '../../../src/components/Img';

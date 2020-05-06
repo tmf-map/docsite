@@ -1,6 +1,5 @@
 ---
 title: 回调
-sidebar_label: 回调
 ---
 
 import Img from '../../../src/components/Img';

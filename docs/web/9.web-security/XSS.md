@@ -1,7 +1,6 @@
 ---
 id: XSS
 title: XSS
-sidebar_label: XSS
 ---
 
 XSS（Cross Site Script）跨站脚本攻击；其原本缩写是 CSS，但为了和层叠样式表(Cascading Style Sheet)有所区分，因而在安全领域叫做 XSS。

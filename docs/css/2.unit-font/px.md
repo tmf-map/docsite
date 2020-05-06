@@ -1,6 +1,5 @@
 ---
 title: px
-sidebar_label: px
 ---
 
 import Img from '../../../src/components/Img';

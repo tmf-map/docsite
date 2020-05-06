@@ -1,6 +1,5 @@
 ---
 title: Analysis of Loops
-sidebar_label: Analysis of Loops
 ---
 
 ## Frequent Loops Complexity

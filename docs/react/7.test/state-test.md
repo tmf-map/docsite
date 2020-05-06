@@ -1,7 +1,6 @@
 ---
 id: state-test
 title: 状态测试
-sidebar_label: 状态测试
 ---
 
 在 React App 的开发过程中，我们将状态测试主要分为 Action Test、Reducer Test 和 Selector Test。

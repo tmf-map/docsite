@@ -1,6 +1,5 @@
 ---
 title: Extend or implement
-sidebar_label: Extend or implement
 ---
 
 ## Interface extends interface

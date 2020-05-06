@@ -1,7 +1,6 @@
 ---
 id: container-component
 title: 容器型组件
-sidebar_label: 容器型组件
 ---
 
 Redux 的一个重要思想是将组件主要分为 **container（容器型） 组件**和 **presentational（展示型） 组件**。

@@ -1,7 +1,6 @@
 ---
 id: number-same-as-index
 title: 有序数组中值和下标相等的元素
-sidebar_label: 有序数组中值和下标相等的元素
 ---
 
 - 题源：《剑指 Offer: 面试题 53-3》P267

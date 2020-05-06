@@ -1,6 +1,5 @@
 ---
 title: Cookie
-sidebar_label: Cookie
 ---
 
 import Img from '../../../src/components/Img';

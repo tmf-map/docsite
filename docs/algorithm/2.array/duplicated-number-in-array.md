@@ -1,7 +1,6 @@
 ---
 id: duplicated-number-in-array
 title: 数组中重复的数字
-sidebar_label: 数组中重复的数字
 ---
 
 - 题源：《剑指 Offer: 面试题 3》P39

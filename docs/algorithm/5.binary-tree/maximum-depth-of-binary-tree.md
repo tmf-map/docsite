@@ -1,7 +1,6 @@
 ---
 id: maximum-depth-of-binary-tree
 title: 二叉树的最大深度
-sidebar_label: 二叉树的最大深度
 ---
 
 import Img from '../../../src/components/Img';

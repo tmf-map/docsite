@@ -1,7 +1,6 @@
 ---
 id: communication
 title: 通信
-sidebar_label: 通信
 ---
 
 ![组件之间的关系图谱](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/io9G0J.jpg)

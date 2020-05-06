@@ -1,6 +1,5 @@
 ---
 title: rem
-sidebar_label: rem
 ---
 
 import Img from '../../../src/components/Img';

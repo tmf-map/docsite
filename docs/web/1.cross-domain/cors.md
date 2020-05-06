@@ -1,6 +1,5 @@
 ---
 title: CORS
-sidebar_label: CORS
 ---
 
 ## CORS 简介

@@ -1,6 +1,5 @@
 ---
 title: 节点基础概念
-sidebar_label: 节点基础概念
 ---
 
 > DOM 是 JavaScript 操作网页的接口，全称为“文档对象模型”（Document Object Model）。它的作用是将网页转为一个 JavaScript 对象，从而可以用脚本进行各种操作（比如增删内容）。

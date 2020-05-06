@@ -1,7 +1,6 @@
 ---
 id: jsonp
 title: JSONP
-sidebar_label: JSONP
 ---
 
 ## JSONP 简介

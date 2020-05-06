@@ -1,6 +1,5 @@
 ---
 title: '%'
-sidebar_label: '%'
 ---
 
 import Img from '../../../src/components/Img';

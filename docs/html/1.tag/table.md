@@ -1,6 +1,5 @@
 ---
 title: 表格
-sidebar_label: 表格
 ---
 
 ## `<table>...</table>`

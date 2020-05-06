@@ -1,6 +1,5 @@
 ---
 title: 分代回收
-sidebar_label: 分代回收
 ---
 
 import Img from '../../../src/components/Img';

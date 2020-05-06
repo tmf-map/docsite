@@ -1,7 +1,6 @@
 ---
 id: router
 title: Router
-sidebar_label: Router
 ---
 
 Router 翻译过来即“`路由器`“，对于 Web 项目，存在 `<BrowserRouter>`与`<HashRouter>`两种组件。当存在服务器来管理动态请求时，使用 `<BrowserRouter>` 组件，而 `<HashRouter>` 被用于静态网站。

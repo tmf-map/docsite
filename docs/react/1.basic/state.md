@@ -1,7 +1,6 @@
 ---
 id: state
 title: 状态
-sidebar_label: 状态
 ---
 
 import Img from '../../../src/components/Img';

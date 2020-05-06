@@ -1,7 +1,6 @@
 ---
 id: event
 title: 事件
-sidebar_label: 事件
 ---
 
 ## 合成事件与原生事件

@@ -1,6 +1,5 @@
 ---
 title: 实体头字段
-sidebar_label: 实体头字段
 ---
 
 import Img from '../../../src/components/Img';

@@ -1,6 +1,5 @@
 ---
 title: 拷贝
-sidebar_label: 拷贝
 ---
 
 ## 浅拷贝 shallowClone

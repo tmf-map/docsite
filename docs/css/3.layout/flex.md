@@ -1,6 +1,5 @@
 ---
 title: Flex
-sidebar_label: Flex
 ---
 
 import Img from '../../../src/components/Img';

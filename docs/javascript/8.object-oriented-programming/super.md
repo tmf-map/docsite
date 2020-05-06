@@ -1,6 +1,5 @@
 ---
 title: super
-sidebar_label: super
 ---
 
 ## 为什么要使用 super

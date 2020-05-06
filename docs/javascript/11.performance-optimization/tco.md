@@ -1,6 +1,5 @@
 ---
 title: 递归与尾调用优化
-sidebar_label: 递归与尾调用优化
 ---
 
 import Img from '../../../src/components/Img';

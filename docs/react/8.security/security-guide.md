@@ -1,6 +1,5 @@
 ---
 title: 安全规约
-sidebar_label: 安全规约
 ---
 
 ## JSX 防注入攻击

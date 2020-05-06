@@ -1,7 +1,6 @@
 ---
 id: n-queens
 title: N皇后问题
-sidebar_label: N皇后问题
 ---
 
 - 题源/在线：[LeetCode: 51](https://leetcode-cn.com/problems/n-queens/)

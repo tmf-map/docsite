@@ -1,7 +1,6 @@
 ---
 id: IndexedDB
 title: indexedDB
-sidebar_label: indexedDB
 ---
 
 ## indexedDB

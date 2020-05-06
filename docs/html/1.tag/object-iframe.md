@@ -1,6 +1,5 @@
 ---
 title: Object & IFrame
-sidebar_label: Object & IFrame
 ---
 
 ## `<object>...</object>`

@@ -1,6 +1,5 @@
 ---
 title: 定时器
-sidebar_label: 定时器
 ---
 
 import Img from '../../../src/components/Img';

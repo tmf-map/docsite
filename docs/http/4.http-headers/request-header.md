@@ -1,6 +1,5 @@
 ---
 title: 请求头字段
-sidebar_label: 请求头字段
 ---
 
 import Img from '../../../src/components/Img';

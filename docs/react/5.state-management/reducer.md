@@ -1,7 +1,6 @@
 ---
 id: reducer
 title: Reducer
-sidebar_label: Reducer
 ---
 
 ## 什么是 Reducer ?

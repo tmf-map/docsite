@@ -1,7 +1,6 @@
 ---
 id: hoc
 title: HOC
-sidebar_label: HOC
 ---
 
 [高阶组件](https://www.reactjscn.com/docs/higher-order-components.html)类似于函数式编程中的高阶函数，就是一个函数式组件接受一个组件作为参数，经过一系列加工后，最后返回一个新的组件。看下面的代码示例，withUser 函数就是一个高阶组件，它返回了一个新的组件，这个组件具有了它提供的获取用户信息的功能。

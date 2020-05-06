@@ -1,6 +1,5 @@
 ---
 title: 头信息
-sidebar_label: 头信息
 ---
 
 ## `<meta/>`

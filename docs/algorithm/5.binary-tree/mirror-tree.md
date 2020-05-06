@@ -1,7 +1,6 @@
 ---
 id: mirror-tree
 title: 二叉树的镜像
-sidebar_label: 二叉树的镜像
 ---
 
 - 题源：《剑指 Offer: 面试题 27》P157

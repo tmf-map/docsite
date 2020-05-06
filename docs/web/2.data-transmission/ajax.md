@@ -1,6 +1,5 @@
 ---
 title: Ajax
-sidebar_label: Ajax
 ---
 
 ## Ajax

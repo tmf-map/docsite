@@ -1,7 +1,6 @@
 ---
 id: store
 title: Store
-sidebar_label: Store
 ---
 
 ## createStore 实现过程

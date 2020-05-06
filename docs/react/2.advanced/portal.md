@@ -1,6 +1,5 @@
 ---
 title: Portal
-sidebar_label: Portal
 ---
 
 ## 什么是 Portal?

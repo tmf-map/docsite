@@ -1,6 +1,5 @@
 ---
 title: 外观数列
-sidebar_label: 外观数列
 ---
 
 - 题源/在线：[LeetCode: 38](https://leetcode-cn.com/problems/count-and-say/)

@@ -1,6 +1,5 @@
 ---
 title: TCP/IP协议
-sidebar_label: TCP/IP协议
 ---
 
 import Img from '../../../src/components/Img';

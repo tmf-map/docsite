@@ -1,6 +1,5 @@
 ---
 title: Singleton
-sidebar_label: Singleton
 ---
 
 import Img from '../../../src/components/Img';

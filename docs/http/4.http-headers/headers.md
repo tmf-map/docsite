@@ -1,6 +1,5 @@
 ---
 title: HTTP头字段
-sidebar_label: HTTP头字段
 ---
 
 import Img from '../../../src/components/Img';

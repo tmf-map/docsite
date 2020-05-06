@@ -1,6 +1,5 @@
 ---
 title: History 路由
-sidebar_label: History 路由
 ---
 
 `window.history` 表示当前窗口的浏览历史。

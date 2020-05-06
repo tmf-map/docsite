@@ -1,7 +1,6 @@
 ---
 id: session
 title: session
-sidebar_label: session
 ---
 
 ![](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/v09UXT.png)

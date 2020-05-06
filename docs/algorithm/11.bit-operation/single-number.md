@@ -1,7 +1,6 @@
 ---
 id: single-number
 title: 数组中只出现一次的数字
-sidebar_label: 数组中只出现一次的数字
 ---
 
 - 题源：《剑指 Offer: 面试题 56》P275

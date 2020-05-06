@@ -1,7 +1,6 @@
 ---
 id: inverse-pairs
 title: 数组中的逆序对
-sidebar_label: 数组中的逆序对
 ---
 
 - 题源：《剑指 Offer: 面试题 51》P249

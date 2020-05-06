@@ -1,7 +1,6 @@
 ---
 id: build-tree
 title: 重建二叉树
-sidebar_label: 重建二叉树
 ---
 
 - 题源：《剑指 Offer: 面试题 7》P62

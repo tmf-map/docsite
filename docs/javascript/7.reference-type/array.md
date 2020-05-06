@@ -1,6 +1,5 @@
 ---
 title: 数组
-sidebar_label: 数组
 ---
 
 import Img from '../../../src/components/Img';

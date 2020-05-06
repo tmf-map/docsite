@@ -1,6 +1,5 @@
 ---
 title: 对象
-sidebar_label: 对象
 ---
 
 - 对象属性模型的相关方法

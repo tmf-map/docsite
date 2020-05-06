@@ -1,6 +1,5 @@
 ---
 title: 列布局
-sidebar_label: 列布局
 ---
 
 import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';

@@ -1,6 +1,5 @@
 ---
 title: JS 引擎
-sidebar_label: JS 引擎
 ---
 
 import Img from '../../../src/components/Img';

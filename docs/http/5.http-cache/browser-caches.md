@@ -1,6 +1,5 @@
 ---
 title: 客户端缓存
-sidebar_label: 客户端缓存
 ---
 
 import Img from '../../../src/components/Img';

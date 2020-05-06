@@ -1,6 +1,5 @@
 ---
 title: em
-sidebar_label: em
 ---
 
 import Img from '../../../src/components/Img';

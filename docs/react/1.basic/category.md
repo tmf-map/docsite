@@ -1,7 +1,6 @@
 ---
 id: category
 title: 种类
-sidebar_label: 种类
 ---
 
 ## 类与函数式组件

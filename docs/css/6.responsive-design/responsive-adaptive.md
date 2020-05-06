@@ -1,6 +1,5 @@
 ---
 title: Responsive & Adaptive
-sidebar_label: Responsive & Adaptive
 ---
 
 import Img from '../../../src/components/Img';

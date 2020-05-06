@@ -1,7 +1,6 @@
 ---
 id: route
 title: Route
-sidebar_label: Route
 ---
 
 &lt;Route&gt; 组件是 react-router 中主要的结构单元。在任意位置只要匹配了 URL 的路径名 \(pathname\) 你就可以创建 &lt;Route&gt; 元素进行渲染。

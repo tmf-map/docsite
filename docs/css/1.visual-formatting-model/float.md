@@ -1,6 +1,5 @@
 ---
 title: 浮动
-sidebar_label: 浮动
 ---
 
 import Img from '../../../src/components/Img';

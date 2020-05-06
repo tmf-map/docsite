@@ -1,6 +1,5 @@
 ---
 title: Publish–Subscribe
-sidebar_label: Publish–Subscribe
 ---
 
 import Img from '../../../src/components/Img';

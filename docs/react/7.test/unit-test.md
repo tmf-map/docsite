@@ -1,7 +1,6 @@
 ---
 id: unit-test
 title: 单元测试
-sidebar_label: 单元测试
 ---
 
 TDD（Test-driven development）和单元测试密不可分，但 TDD 并不是银弹，不必一味地追求，为写测试而写测试，这需要自己去把控和权衡。

@@ -1,6 +1,5 @@
 ---
 title: HTTP/3
-sidebar_label: HTTP/3
 ---
 
 import Img from '../../../src/components/Img';

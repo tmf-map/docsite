@@ -1,6 +1,5 @@
 ---
 title: 抽象类与接口
-sidebar_label: 抽象类与接口
 ---
 
 import Img from '../../../src/components/Img';

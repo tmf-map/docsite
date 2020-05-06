@@ -1,7 +1,6 @@
 ---
 id: selector
 title: Selector
-sidebar_label: Selector
 ---
 
 ## 什么是 selector？

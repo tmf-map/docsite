@@ -1,6 +1,5 @@
 ---
 title: Error Boundaries
-sidebar_label: Error Boundaries
 ---
 
 import Img from '../../../src/components/Img';

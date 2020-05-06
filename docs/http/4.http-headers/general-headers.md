@@ -1,6 +1,5 @@
 ---
 title: 通用头字段
-sidebar_label: 通用头字段
 ---
 
 import Img from '../../../src/components/Img';

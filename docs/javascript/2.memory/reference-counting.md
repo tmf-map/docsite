@@ -1,6 +1,5 @@
 ---
 title: 引用计数
-sidebar_label: 引用计数
 ---
 
 引用计数 reference counting（第一个版本 js 的， 90 年代初 的事情，最简单的 GC 算法），缺点，**循环引用会有可能内存泄漏**，不能做并行 GC，效率是最高，移动端 native 还在用

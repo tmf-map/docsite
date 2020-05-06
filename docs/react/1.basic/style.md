@@ -1,7 +1,6 @@
 ---
 id: style
 title: 样式
-sidebar_label: 样式
 ---
 
 ## 样式中的像素值

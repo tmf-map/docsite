@@ -1,7 +1,6 @@
 ---
 id: test-category
 title: 测试种类
-sidebar_label: 测试种类
 ---
 
 React App 的测试主要由单元测试（Unit Test），快照测试（Snapshot Test）和端到端测试（E2E Tets）组成。

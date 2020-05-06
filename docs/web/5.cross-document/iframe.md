@@ -1,7 +1,6 @@
 ---
 id: iframe
 title: iframe
-sidebar_label: iframe
 ---
 
 ![](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/hXoekG.png)

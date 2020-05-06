@@ -1,7 +1,6 @@
 ---
 id: DOMContentLoaded
 title: DOMContentLoaded & load
-sidebar_label: DOMContentLoaded & load
 ---
 
 ## DOMContentLoaded 和 load

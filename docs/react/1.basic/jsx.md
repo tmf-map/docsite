@@ -1,7 +1,6 @@
 ---
 id: jsx
 title: JSX
-sidebar_label: JSX
 ---
 
 ## JSX 基础概念

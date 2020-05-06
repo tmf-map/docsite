@@ -1,7 +1,6 @@
 ---
 id: summary
 title: 浏览器存储方式对比
-sidebar_label: 浏览器存储方式对比
 ---
 
 <div align="left">

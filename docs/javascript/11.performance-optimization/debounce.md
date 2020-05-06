@@ -1,6 +1,5 @@
 ---
 title: 防抖
-sidebar_label: 防抖
 ---
 
 import Img from '../../../src/components/Img';

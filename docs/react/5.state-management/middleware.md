@@ -1,7 +1,6 @@
 ---
 id: middleware
 title: Middleware
-sidebar_label: Middleware
 ---
 
 import Img from '../../../src/components/Img';

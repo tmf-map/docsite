@@ -1,6 +1,5 @@
 ---
 title: 层叠
-sidebar_label: 层叠
 ---
 
 import Img from '../../../src/components/Img';

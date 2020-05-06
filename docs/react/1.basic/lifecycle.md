@@ -1,7 +1,6 @@
 ---
 id: lifecycle
 title: 生命周期
-sidebar_label: 生命周期
 ---
 
 import Img from '../../../src/components/Img';

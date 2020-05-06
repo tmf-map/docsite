@@ -1,6 +1,5 @@
 ---
 title: Asymptotic Notations
-sidebar_label: Asymptotic Notations
 ---
 
 import Img from '../../../src/components/Img';

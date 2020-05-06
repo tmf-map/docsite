@@ -1,6 +1,5 @@
 ---
 title: II 常用网站
-sidebar_label: II 常用网站
 ---
 
 1. [React 官方文档（中文）](https://zh-hans.reactjs.org)
