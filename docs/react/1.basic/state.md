@@ -4,7 +4,7 @@ title: 状态
 sidebar_label: 状态
 ---
 
-import Hint from '../../../src/components/Hint'; import Img from '../../../src/components/Img';
+import Img from '../../../src/components/Img';
 
 React 的状态包括组件的外部状态（props）和组件的内部状态（state），二者发生改变的时候都会更新组件。
 
@@ -21,7 +21,11 @@ React 的状态包括组件的外部状态（props）和组件的内部状态（
 
 通过这种方式，不用考虑性能的问题，通过 babel 转义后的 `... 运算符` 性能和原生的一致。
 
-<Hint type="good">请只传递 component 需要的 props，不要滥用。传得太多，或者层次传得太深，都会加重 `shouldComponentUpdate` 里面的数据比较负担，因此请慎用 spread attributes。</Hint>
+:::good
+
+请只传递 component 需要的 props，不要滥用。传得太多，或者层次传得太深，都会加重 `shouldComponentUpdate` 里面的数据比较负担，因此请慎用 spread attributes。
+
+:::
 
 ## prop-types
 
@@ -33,7 +37,11 @@ propTypes // 组件属性名
 PropTypes // 类名
 ```
 
-<Hint type="warn">命名，尤其是后面两个 p 的大小写</Hint>
+:::caution
+
+命名，尤其是后面两个 p 的大小写。
+
+:::
 
 ## defaultProps
 
@@ -88,13 +96,29 @@ class Example extends React.Component {
 setState(nextState[, callback])
 ```
 
-<Hint type="good">`setState()` 的第二个参数为可选的回调函数，它将在 setState 完成合并并重新渲染组件后执行。通常，我们建议使用 `componentDidUpdate` 来代替此方式。</Hint>
+:::good
 
-<Hint type="warn">出于性能考虑，React 可能会把多个 `setState()` 调用合并成一个调用。因为 `this.props` 和 `this.state` 可能会异步更新，所以你不要依赖他们的值来更新下一个状态。</Hint>
+`setState()` 的第二个参数为可选的回调函数，它将在 setState 完成合并并重新渲染组件后执行。通常，我们建议使用 `componentDidUpdate` 来代替此方式。
 
-<Hint type="warn">setState 方法只适用于 class 类型的组件，函数式组件一般无法调用该方法。</Hint>
+:::
 
-<Hint type="bad">不要直接修改 `this.state` 的值，否则不会放入状态队列，当下一次调用 `setState` 对状态队列进行合并时，之前对 `this.state` 的修改将会被忽略，造成无法预知的错误。</Hint>
+:::caution
+
+出于性能考虑，React 可能会把多个 `setState()` 调用合并成一个调用。因为 `this.props` 和 `this.state` 可能会异步更新，所以你不要依赖他们的值来更新下一个状态。
+
+:::
+
+:::caution
+
+setState 方法只适用于 class 类型的组件，函数式组件一般无法调用该方法。
+
+:::
+
+:::bad
+
+不要直接修改 `this.state` 的值，否则不会放入状态队列，当下一次调用 `setState` 对状态队列进行合并时，之前对 `this.state` 的修改将会被忽略，造成无法预知的错误。
+
+:::
 
 举个例子：
 
@@ -155,7 +179,11 @@ function reducer(state, action) {
 }
 ```
 
-<Hint type="good">如果是下一个 state 依赖前一个 state 的话，推荐给 setState 传 function 。</Hint>
+:::good
+
+如果是下一个 state 依赖前一个 state 的话，推荐给 setState 传 function 。
+
+:::
 
 ### 循环调用风险
 
@@ -163,13 +191,21 @@ function reducer(state, action) {
 
 而 `performUpdateIfNecessary` 获取 `_pendingElement` 、 `_pendingStateQueue` `、_pendingForceUpdate` ，并调用 `reaciveComponent` 和 `updateComponent` 来进行组件更新。
 
-<Hint type="bad">`did` 的生命周期都可以。但不能在 `shouldComponentUpdate` 或 `componentWillUpdate` 里调用 `this.setState` 方法。</Hint>
+:::bad
+
+`did` 的生命周期都可以。但不能在 `shouldComponentUpdate` 或 `componentWillUpdate` 里调用 `this.setState` 方法。
+
+:::
 
 这是因为在 `shouldComponentUpdate` 或 `componentWillUpdate` 方法里调用 `this.setState` 时，`this._pendingStateQueue != null`，则 `performUpdateIfNecessary` 方法就会调用 `updateComponent` 方法进行组件更新，而 `updateComponent` 方法又会调用 `shouldComponentUpdate` 和 `componentWillUpdate` 方法，因此造成循环调用，使得浏览器内存占满后崩溃。
 
 <Img width="260" align="center" legend="图：循环调用" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/gz0v4j.png'/>
 
-<Hint type="good">虽然也可以在 `componentDidUpdate` 中直接调用 `setState()`，但必须将其包裹在一个条件语句里。</Hint>
+:::good
+
+虽然也可以在 `componentDidUpdate` 中直接调用 `setState()`，但必须将其包裹在一个条件语句里。
+
+:::
 
 ```js
 componentDidUpdate(prevProps) {

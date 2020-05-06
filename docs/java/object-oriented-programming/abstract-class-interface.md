@@ -3,8 +3,6 @@ title: 抽象类与接口
 sidebar_label: 抽象类与接口
 ---
 
-import Hint from '../../../src/components/Hint';
-
 import Img from '../../../src/components/Img';
 
 抽象类和接口是 Java 面向对象中非常重要的元素，在面向接口的编程中两者更是经常用到。类是对象的模版，抽象类和接口可以看作是具体的类的模版。
@@ -74,7 +72,11 @@ interface Person {
 }
 ```
 
-<Hint type="tip">因为接口定义的所有方法默认都是 `public abstract` 的，所以这两个修饰符不需要写出来（写不写效果都一样）。</Hint>
+:::tip
+
+因为接口定义的所有方法默认都是 `public abstract` 的，所以这两个修饰符不需要写出来（写不写效果都一样）。
+
+:::
 
 接口可以看作是一种特殊的抽象类，它规定一个类必须做什么，而不是如何去做。
 
@@ -100,7 +102,11 @@ class Student implements Person {
 }
 ```
 
-<Hint type="warn">实现类实现某个接口必须覆写其中的所有方法，当然也可以是一个空的实现（方法体为空），但抽象类实现某个接口，可以不实现所有接口的方法，可以由它的子类实现。</Hint>
+:::caution
+
+实现类实现某个接口必须覆写其中的所有方法，当然也可以是一个空的实现（方法体为空），但抽象类实现某个接口，可以不实现所有接口的方法，可以由它的子类实现。
+
+:::
 
 我们知道，在 Java 中，一个类只能继承自另一个类，不能从多个类继承。但是，一个类可以实现多个 `interface` ，例如：
 
@@ -176,7 +182,11 @@ public class Test {
 
 **Prior to Java 8**, The coupling between interface and its implementation class is too high (**tightly coupled**), when need to add method to an interface, all the implementation class must be modified accordingly. it was impossible to add **new** methods to interfaces without breaking existing implementations. If you added a new method to an interface, existing implementations would, in general, lack the method, resulting in **a compile-time error**.
 
-<Hint type="tip">To use default method, JDK >= 1.8 is a must.</Hint>
+:::tip
+
+To use default method, JDK >= 1.8 is a must.
+
+:::
 
 In Java 8, the default method construct was added, with the intent of **allowing the addition of methods to existing interfaces**. This provides a way to upgrade old interfaces and maintain backward compatibility at a time when lambda expressions are an important feature of the Java 8:
 
@@ -212,9 +222,17 @@ public interface Iterable<T> {
 
 For more details, please see this article: https://ebnbin.com/2015/12/20/java-8-default-methods/
 
-<Hint type="warn">Adding new methods to existing interfaces is fraught with risk. In the presence of default methods, existing implementations of an interface **may** compile without error or warning but fail at runtime.</Hint>
+:::caution
 
-<Hint type="good">Using default methods to add new methods to existing interfaces should be avoided unless the need is critical, in which case you should think long and hard about whether an existing interface implementation might be broken by your default method implementation.</Hint>
+Adding new methods to existing interfaces is fraught with risk. In the presence of default methods, existing implementations of an interface **may** compile without error or warning but fail at runtime.
+
+:::
+
+:::good
+
+Using default methods to add new methods to existing interfaces should be avoided unless the need is critical, in which case you should think long and hard about whether an existing interface implementation might be broken by your default method implementation.
+
+:::
 
 Default methods are, however, extremely useful for providing standard method implementations when an interface is created, to ease the task of implementing the interface.
 
@@ -288,7 +306,11 @@ class C implements A {
 
 接口 A 虽然也有松散耦合的特性，但无法为类 B、C 提供公共的功能，即代码缺乏可重用性。从另外一个角度看，也就是说 A 无法详细约束 B、C 的行为，B、C 可以自由地根据自己的特点来实现`method1`和`method2`方法，接口 A 对此没有较强的掌控能力。
 
-<Hint type="tip">选择抽象类的时候通常情况是：需要定义子类的抽象行为，又要为子类提供通用功能。</Hint>
+:::tip
+
+选择抽象类的时候通常情况是：需要定义子类的抽象行为，又要为子类提供通用功能。
+
+:::
 
 ### 接口的优势
 

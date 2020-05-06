@@ -3,7 +3,7 @@ title: Observer
 sidebar_label: Observer
 ---
 
-import Hint from '../../../src/components/Hint'; import Img from '../../../src/components/Img';
+import Img from '../../../src/components/Img';
 
 ## 定义
 
@@ -17,7 +17,11 @@ import Hint from '../../../src/components/Hint'; import Img from '../../../src/c
 
 我们去餐厅吃饭的时候，经常会遇到需要排队叫号的时候。我们可以把餐厅看作 Subject(被观察者)，把拿号排队的客人看作是 Observer。当餐厅有位置的时候，餐厅会出来通知所有客人，到 100 号桌吃饭啦。这时排队的客人们都会看看自己手上的号，确定是否到自己吃饭了。
 
-<Hint type="tip">可以把餐厅看作 Subject ，拿号排队的客人看作是 Observer 。</Hint>
+:::tip
+
+可以把餐厅看作 Subject ，拿号排队的客人看作是 Observer 。
+
+:::
 
 另外，我们在使用 GitHub 的时候对某一个仓库比较感兴趣的时候可以去 watching 这个仓库，这在本质上也算是 Observer 模式的一种应用：
 

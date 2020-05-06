@@ -3,13 +3,17 @@ title: Publish–Subscribe
 sidebar_label: Publish–Subscribe
 ---
 
-import Hint from '../../../src/components/Hint'; import Img from '../../../src/components/Img';
+import Img from '../../../src/components/Img';
 
 ## 定义
 
 发布-订阅模式是一种消息范式，消息的发送者（发布者）不会将消息直接发送给特定的接收者（订阅者）。而是将发布的消息分为不同的类别，无需了解哪些订阅者可能存在。同样的，订阅者可以表达对一个或多个类别的兴趣，只接收感兴趣的消息，无需了解哪些发布者存在。
 
-<Hint type="tip">发布者状态更新时，发布某些类型的通知，只通知订阅了相关类型的订阅者。发布者和订阅者之间是没有直接关联的。</Hint>
+:::tip
+
+发布者状态更新时，发布某些类型的通知，只通知订阅了相关类型的订阅者。发布者和订阅者之间是没有直接关联的。
+
+:::
 
 <Img width="430" align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/1E02E35C.jpg'/>
 

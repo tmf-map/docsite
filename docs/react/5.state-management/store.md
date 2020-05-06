@@ -4,8 +4,6 @@ title: Store
 sidebar_label: Store
 ---
 
-import Hint from '../../../src/components/Hint';
-
 ## createStore 实现过程
 
 ### 抽象出 dispatch 和 getState
@@ -89,13 +87,25 @@ Store 在创建的时候内部会执行 `dispatch({ type: ActionTypes.INIT })`�
 
 之所以能拿到全部的数据结构，是因为在 `dispatch({ type: ActionTypes.INIT })` 的时候，所有的 Reducer 都会执行，并根据 Reducer 的 combine 结构生成数据。
 
-<Hint type="warn">在 Redux 内，每执行一次 dispatch，所有的 Reducer 都会执行。</Hint>
+:::caution
+
+在 Redux 内，每执行一次 dispatch，所有的 Reducer 都会执行。
+
+:::
 
 ## Store 的数据设计
 
-<Hint type="good">应用状态应该尽可能扁平化，或者使用 [normalizr](https://github.com/paularmstrong/normalizr) 工具，依据定义的 schema 设计应用的数据结构。</Hint>
+:::good
 
-<Hint type="good">Store 应该只存储不可以被计算出的数据，储存尽可能少的 state，而让 Selector 去计算推导的数据和需要缓存的数据。</Hint>
+应用状态应该尽可能扁平化，或者使用 [normalizr](https://github.com/paularmstrong/normalizr) 工具，依据定义的 schema 设计应用的数据结构。
+
+:::
+
+:::good
+
+Store 应该只存储不可以被计算出的数据，储存尽可能少的 state，而让 Selector 去计算推导的数据和需要缓存的数据。
+
+:::
 
 对于可以从其他数据中计算出来的，就不要在 Store 中重复存储一份了，直接在 Selector 中计算出来就可以了。因为冗余数据的同步维护，是非常费力并且容易出错的。
 

@@ -3,7 +3,7 @@ title: 基础概念
 sidebar_label: 基础概念
 ---
 
-import Hint from '../../../src/components/Hint'; import Img from '../../../src/components/Img';
+import Img from '../../../src/components/Img';
 
 ## 可替换元素
 
@@ -42,7 +42,11 @@ CSS 能对可替换元素产生的唯一影响在于，部分属性支持控制�
 
 包含块（containing block）对非绝对定位元素就是 HTML **嵌套元素中的父元素**，当然它也是相对而言的，它影响着内部盒子的位置、大小等，但内部盒子也不完全受其包含块所限制。
 
-<Hint type="tip">我们常说“一个盒的包含块”表示“盒所在的包含块”，而不是它生成的包含块。如下图， `em` box 的包含块指的是 `div.main1` 。</Hint>
+:::tip
+
+我们常说“一个盒的包含块”表示“盒所在的包含块”，而不是它生成的包含块。如下图， `em` box 的包含块指的是 `div.main1` 。
+
+:::
 
 <Img width="550" align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/lTrogl.jpg'/>
 

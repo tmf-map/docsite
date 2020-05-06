@@ -3,7 +3,7 @@ title: '%'
 sidebar_label: '%'
 ---
 
-import Img from '../../../src/components/Img'; import Hint from '../../../src/components/Hint';
+import Img from '../../../src/components/Img';
 
 百分比是一定有其对应的参照值的。也就是说，百分比值是一种相对值，任何时候要分析它的效果，都需要正确找到它的参照。
 
@@ -42,7 +42,11 @@ import Img from '../../../src/components/Img'; import Hint from '../../../src/co
 
 可以看到，直接父元素（包含块）是否有明确的高度定义，会影响 height 为百分比值时的结果。
 
-<Hint type="tip">如果直接父元素 `height` 为 `auto` ，只要子元素在文档流中（即 `position` 不等于 `fixed` 或者 `absolute` ），那子元素 `height:100%` 会完全就被忽略了，等同于 `auto` 初始默认值。</Hint>
+:::tip
+
+如果直接父元素 `height` 为 `auto` ，只要子元素在文档流中（即 `position` 不等于 `fixed` 或者 `absolute` ），那子元素 `height:100%` 会完全就被忽略了，等同于 `auto` 初始默认值。
+
+:::
 
 如果元素是根元素（`<html>`），它的高度等于视窗高度。所以，`<html>` 标签的高度定义百分比总是有效的，而如果你希望在 `<body>` 里也用高度百分比，就一定要先为 `<html>` 定义明确的高度。这就是为什么在之前的固定页脚一文中，有以下这样写法：
 
@@ -67,7 +71,11 @@ body {
 
 <Img width="530" align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/hLkljH.png'/>
 
-<Hint type="tip">对于 `margin` 和 `padding` ，其任意方向的百分比值，参照都是**包含块的宽度**。</Hint>
+:::tip
+
+对于 `margin` 和 `padding` ，其任意方向的百分比值，参照都是**包含块的宽度**。
+
+:::
 
 为什么会多个方向都取包含块的宽度作为参照呢？在我看来，包含块的宽度在块布局的排版中是最有用的（想象一下 word 里输入文字，到宽度边缘后换行的场景），对应的，水平方向的内外边距一定要参照包含块的宽度。再考虑垂直方向的内外边距，它们如果不和水平方向取相同的参照物，就会因为不一致而很难使用。所以，总体来说，统一以包含块的宽度作为参考，会具有相对最好的可用性。
 
@@ -83,7 +91,11 @@ body {
 }
 ```
 
-<Hint type="tip">如果一个元素的 `border-radius` 为百分比值，其参照物是这个元素自身的尺寸。</Hint>
+:::tip
+
+如果一个元素的 `border-radius` 为百分比值，其参照物是这个元素自身的尺寸。
+
+:::
 
 也就是说，假如这个元素宽是 60px，高是 40px（border-box 的尺寸），那么 `border-radius:50%` 的结果等同于 `border-radius: 30px / 20px` 。
 
@@ -95,7 +107,11 @@ body {
 
 <Img width="530" align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/ydDH2X.png'/>
 
-<Hint type="tip">`background-position` 的百分比值，取的参照是一个减法计算值，由放置背景图的区域尺寸，减去背景图的尺寸得到，可以为负值。</Hint>
+:::tip
+
+`background-position` 的百分比值，取的参照是一个减法计算值，由放置背景图的区域尺寸，减去背景图的尺寸得到，可以为负值。
+
+:::
 
 对照上面的示例，思考一下，应该可以感受到，以这个减法计算值为参照的话，正好可以符合我们感官上对背景图位置的理解。
 
@@ -105,17 +121,29 @@ body {
 
 ### font-size
 
-<Hint type="tip">`font-size` 参照是直接父元素的 `font-size`。</Hint>
+:::tip
+
+`font-size` 参照是直接父元素的 `font-size`。
+
+:::
 
 例如，一个元素的直接父元素的 `font-size` 是 14px，无论这个是直接定义的，还是继承得到的，当该元素定义 `font-size: 100%` ，获得的效果就是 `font-size: 14px` 。
 
 ### line-height
 
-<Hint type="tip">`line-height` 为百分比其参照是元素自身的 `font-size` 。</Hint>
+:::tip
+
+`line-height` 为百分比其参照是元素自身的 `font-size` 。
+
+:::
 
 例如，一个元素的 `font-size` 是 12px ，那么 `line-height: 150%` 的效果是 `line-height: 18px` 。
 
-<Hint type="tip">`line-height: 1.5` 和 `line-height: 150%` 对于当前元素效果是一样的。</Hint>
+:::tip
+
+`line-height: 1.5` 和 `line-height: 150%` 对于当前元素效果是一样的。
+
+:::
 
 #### 百分比与无单位值之间的区别
 
@@ -159,23 +187,43 @@ p {
 }
 ```
 
-<Hint type="good">`设置`line-height` 的推荐使用无单位，这样子元素继承的也是无单位的值，而不是计算后的特定值。</Hint>
+:::good
+
+`设置`line-height` 的推荐使用无单位，这样子元素继承的也是无单位的值，而不是计算后的特定值。
+
+:::
 
 ### vertical-align
 
-<Hint type="tip">`vertical-align` 为百分比其参照是元素自身的 `line-height` 。</Hint>
+:::tip
+
+`vertical-align` 为百分比其参照是元素自身的 `line-height` 。
+
+:::
 
 例如，一个元素的 `line-height` 是 30px，则 `vertical-align: 10%` 的效果是 `vertical-align: 3px` 。
 
-<Hint type="warn">尽管 `vertical-align` 可以使用数字，百分比值，但浏览器兼容性差异较大，所以不推荐使用数字和百分比。</Hint>
+:::caution
+
+尽管 `vertical-align` 可以使用数字，百分比值，但浏览器兼容性差异较大，所以不推荐使用数字和百分比。
+
+:::
 
 ### bottom, left, right, top
 
-<Hint type="tip">这四个定位用的值是百分比时其参照是元素的包含块。left 和 right 是参照包含块的宽度，bottom 和 top 是参照包含块的高度。</Hint>
+:::tip
+
+这四个定位用的值是百分比时其参照是元素的包含块。left 和 right 是参照包含块的宽度，bottom 和 top 是参照包含块的高度。
+
+:::
 
 ### transform: translate
 
-<Hint type="tip">平移变换，在水平方向和垂直方向上也可以使用百分比，其参照是变换的边界框的尺寸（等于这个元素自己的 border-box 尺寸）。</Hint>
+:::tip
+
+平移变换，在水平方向和垂直方向上也可以使用百分比，其参照是变换的边界框的尺寸（等于这个元素自己的 border-box 尺寸）。
+
+:::
 
 例如，一个宽度为 150px，高度为 100px 的元素，定义 transform:translate(50%, 50%)的效果是 transform:translate(75px, 50px);。
 
@@ -185,7 +233,11 @@ p {
 
 ## 百分比值的继承
 
-<Hint type="warn">当百分比值用于可继承属性时，只有结合参照元素计算后的**绝对值会被继承**，而不是百分比值本身。</Hint>
+:::caution
+
+当百分比值用于可继承属性时，只有结合参照元素计算后的**绝对值会被继承**，而不是百分比值本身。
+
+:::
 
 例如，一个元素的 `font-size` 是 14px，并定义了 `line-height:150%` ，那么该元素的下一级子元素继承到的 `line-height` 就是 21px ，而不会再和子元素自己的 `font-size` 有关。
 

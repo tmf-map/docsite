@@ -3,8 +3,6 @@ title: 比较
 sidebar_label: 比较
 ---
 
-import Hint from '../../../src/components/Hint';
-
 ## == 和 ===
 
 ```js
@@ -73,7 +71,11 @@ null >= 0 && null <= 0 //true
 undefined >= 0 || undefined <= 0 // false
 ```
 
-<Hint type="warn">引用类型都是地址的比较，而非真实值的比较</Hint>
+:::caution
+
+引用类型都是地址的比较，而非真实值的比较
+
+:::
 
 其实我们自己可以重写 `shouldComponentUpdate` 这个函数，使得其能够对任何事物进行比较，也就是深比较（通过一层一层的递归进行比较），深比较是很耗时的，一般不推荐这么干，因为要保证比较所花的时间少于重新渲染的整个组件所花的时间 `shouldComponentUpdate`, redux 状态树的比较是什么比较？
 

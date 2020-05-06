@@ -4,7 +4,7 @@ title: 生命周期
 sidebar_label: 生命周期
 ---
 
-import Hint from '../../../src/components/Hint'; import Img from '../../../src/components/Img';
+import Img from '../../../src/components/Img';
 
 ## React v16.3 之前
 
@@ -86,7 +86,11 @@ React 也为下面三个生命周期钩子加上了 `UNSAFE` 标记:
 - **UNSAFE_componentWillReceiveProps**
 - **UNSAFE_componentWillUpdate**
 
-<Hint type="warn">React 团队计划在 17.0 中彻底废弃掉这几个 API。</Hint>
+:::caution
+
+React 团队计划在 17.0 中彻底废弃掉这几个 API。
+
+:::
 
 ### getDerivedStateFromProps
 
@@ -94,7 +98,11 @@ React 也为下面三个生命周期钩子加上了 `UNSAFE` 标记:
 static getDerivedStateFromProps(props, state)
 ```
 
-<Hint type="tip">`getDerivedStateFromProps` 的存在只有一个目的：让组件在 props 变化时更新 state。</Hint>
+:::tip
+
+`getDerivedStateFromProps` 的存在只有一个目的：让组件在 props 变化时更新 state。
+
+:::
 
 `getDerivedStateFromProps` 会在调用 render 方法之前调用，并且在初始挂载及后续更新时都会被调用。它应返回一个对象来更新 state，如果返回 null 则不更新任何内容。
 
@@ -114,7 +122,11 @@ getSnapshotBeforeUpdate(prevProps, prevState);
 
 `getSnapshotBeforeUpdate()` 在最近一次渲染输出（提交到 DOM 节点）之前调用。它使得组件能在发生更改之前从 DOM 中捕获一些信息（例如，滚动位置）。
 
-<Hint type="tip">此生命周期的任何返回值将作为参数传递给 `componentDidUpdate()`。</Hint>
+:::tip
+
+此生命周期的任何返回值将作为参数传递给 `componentDidUpdate()`。
+
+:::
 
 此用法并不常见，但它可能出现在 UI 处理中，如需要以特殊方式处理滚动位置的聊天线程等。应返回 snapshot 的值（或 `null`）。例如：
 
@@ -157,7 +169,11 @@ class ScrollingList extends React.Component {
 
 ### 为何移除 componentWillMount
 
-<Hint type="warn">在 React 未来的版本中，[异步渲染机制(Concurrent Mode)](https://zh-hans.reactjs.org/docs/concurrent-mode-intro.html)可能会**导致单个组件实例可以多次调用该方法**。</Hint>
+:::caution
+
+在 React 未来的版本中，[异步渲染机制(Concurrent Mode)](https://zh-hans.reactjs.org/docs/concurrent-mode-intro.html)可能会**导致单个组件实例可以多次调用该方法**。
+
+:::
 
 很多开发者目前会将事件绑定、异步请求等写在 componentWillMount 中，一旦异步渲染时 componentWillMount 被多次调用，将会导致：
 
@@ -165,7 +181,11 @@ class ScrollingList extends React.Component {
 - 发出重复的异步网络请求，**导致 IO 资源被浪费**
 - 在服务端渲染时，componentWillMount 会被调用，但是会因忽略异步获取的数据而**浪费 IO 资源**
 
-<Hint type="good">React 推荐将原本在 componentWillMount 中的网络请求移到 componentDidMount 中。</Hint>
+:::good
+
+React 推荐将原本在 componentWillMount 中的网络请求移到 componentDidMount 中。
+
+:::
 
 至于这样会不会导致请求被延迟发出影响用户体验，[React 团队是这么解释](https://zh-hans.reactjs.org/blog/2018/03/27/update-on-async-rendering.html)的：
 

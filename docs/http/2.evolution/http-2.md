@@ -5,8 +5,6 @@ sidebar_label: HTTP/2
 
 import Img from '../../../src/components/Img';
 
-import Hint from '../../../src/components/Hint'
-
 ## 简介
 
 HTTP/2 主要目的是提高网页性能，最近几年比较火，将其单独抽成一块讲。2015 年，HTTP/2 发布。它不叫 HTTP/2.0，是因为标准委员会不打算再发布子版本了，下一个新版本将是 HTTP/3。
@@ -19,7 +17,11 @@ HTTP/2 主要目的是提高网页性能，最近几年比较火，将其单独�
 
 <Img w="600" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/yRkSCa.png" />
 
-<Hint type="tip">HTTPS 是 HTTP/2 的必要条件。</Hint>
+:::tip
+
+HTTPS 是 HTTP/2 的必要条件。
+
+:::
 
 可以用 Chrome 插件可以用来检测 HTTP/2：HTTP/2 and SPDY indicator。它会给浏览器添加了一个闪电标记：
 
@@ -35,7 +37,11 @@ HTTP/2 主要目的是提高网页性能，最近几年比较火，将其单独�
 
 由上图可以看出，HTTP/1.1 中**同一个 TCP 连接里面**，上一个响应发送完了，服务器才能发送下一个。而 HTTP/2 采用多路复用（后面介绍）**允许单一的 TCP 连接同时发起多重的请求响应**，比如 `GET style.css` 和 `GET script.js` 差不多就是同时发送的。
 
-<Hint type="tip">Chrome 在 HTTP/1.1 中会建立 6 个 TCP ，在 HTTP/2 中同域名下会建立 1 个 TCP 。</Hint>
+:::tip
+
+Chrome 在 HTTP/1.1 中会建立 6 个 TCP ，在 HTTP/2 中同域名下会建立 1 个 TCP 。
+
+:::
 
 ## 二进制传输
 

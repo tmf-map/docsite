@@ -3,8 +3,6 @@ title: JS 动画
 sidebar_label: JS 动画
 ---
 
-import Hint from '../../../src/components/Hint';
-
 ## JS 动画原理
 
 动画效果可以通过两种方式来实现：一种是通过 JS 间接的操作 CSS，每隔几秒执行一次，另外一种是利用纯 CSS 实现，该方法在 CSS3 成熟后广泛应用。这里主要讲 JS 里面的动画:
@@ -102,4 +100,8 @@ class App extends React.Component {
 }
 ```
 
-<Hint type="warn">定时器在某些情况下也会出现降速的情况，具体参见[《定时器降速》](/docs/javascript/9.async-programming/timer#定时器降速)。因此不要指望一点误差也没有。</Hint>
+:::caution
+
+定时器在某些情况下也会出现降速的情况，具体参见[《定时器降速》](/docs/javascript/9.async-programming/timer#定时器降速)。因此不要指望一点误差也没有。
+
+:::

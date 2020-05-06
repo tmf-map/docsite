@@ -3,7 +3,7 @@ title: Flex
 sidebar_label: Flex
 ---
 
-import Img from '../../../src/components/Img'; import Hint from '../../../src/components/Hint';
+import Img from '../../../src/components/Img';
 
 ## 概览
 
@@ -15,7 +15,11 @@ import Img from '../../../src/components/Img'; import Hint from '../../../src/co
 
 该部分是弹性盒子当中的精华所在，必须要掌握这几个概念，才能运用好 flex。flex 是 `flex-grow`, `flex-shrink`, `flex-basis` 的缩写初始值是 `0 1 auto` 。
 
-<Hint type="good">flex 属性不要采用缩写的方式，最好明确定义是哪个属性的值。</Hint>
+:::good
+
+flex 属性不要采用缩写的方式，最好明确定义是哪个属性的值。
+
+:::
 
 看下面这些[缺省的规则](https://www.w3.org/TR/css-flexbox-1/#flex-initial)，你能记得住吗。
 
@@ -33,7 +37,11 @@ flex: none = flex: 0 0 auto; // 常用于固定尺寸 不伸缩
 
 <img width="510" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/DsKEvq.jpg'/>
 
-<Hint type="warn">弹性盒子中元素的总长度肯定不能超过盒子的长度，但可以小于盒子的长度。</Hint>
+:::caution
+
+弹性盒子中元素的总长度肯定不能超过盒子的长度，但可以小于盒子的长度。
+
+:::
 
 - 当元素的总长度过长时，所以 shrink 默认是 1，按照该元素长度在总长度中的占比进行收缩大小，计算公式稍复杂。
 - 当弹性盒子空间过剩时，因为没有超过弹性盒子的长度，所以 grow 默认为 0，即空间多余就多余，不在乎是否刚好塞满，但就是不能超。 shrink 和 grow 理论上>=0 的 number 即可，但最好使用自然数(即零和正整数)。

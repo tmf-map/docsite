@@ -3,7 +3,7 @@ title: 事件系统
 sidebar_label: 事件系统
 ---
 
-import Hint from '../../../src/components/Hint'; import Img from '../../../src/components/Img';
+import Img from '../../../src/components/Img';
 
 ## 事件系统概述
 
@@ -23,7 +23,11 @@ JavaScript 和 HTML 之间的交互是通过事件来实现的。事件，就是
 
 事件最早是在 IE3 和 Netscape Navigator2 中出现的，当时是作为分担服务器运算负载的一种手段。到 IE4 和 Navigator4 发布时，这两种浏览器都提供了相似但不相同的 API ，而且这些 API 并存且经历了好几个版本更新。再后来，DOM2 级规范开始尝试以一种符合逻辑的方式来标准化 DOM 事件。
 
-<Hint type="tip">IE9、Firefox、Opera、Safari 和 Chrome 全都已经实现了”DOM2 级事件“模块的核心部分。IE8 是最后一个仍然使用其专有事件系统的主要浏览器。</Hint>
+:::tip
+
+IE9、Firefox、Opera、Safari 和 Chrome 全都已经实现了”DOM2 级事件“模块的核心部分。IE8 是最后一个仍然使用其专有事件系统的主要浏览器。
+
+:::
 
 浏览器的事件系统相对比较复杂。尽管所有主要浏览器已经实现了”DOM2 级事件“，但这个规范本身并没有涵盖所有的事件类型。浏览器对象模型（BOM）也支持一些事件，这些事件与文档对象模型（DOM）事件之间的关系并不十分清晰，因为 BOM 事件长期没有规范可以遵循（HMTL5 后来给了详细说明）。随着 DOM3 级的出现，增强后的 DOM 事件 API 变的更加繁琐。使用事件有时相对简单，有时则非常复杂，难易程度会因为你的需求而不同。不过，有关事件的一些核心概念是一定要理解的。
 
@@ -42,11 +46,23 @@ JavaScript 和 HTML 之间的交互是通过事件来实现的。事件，就是
 
 <Img width="500" align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/gZRPDL.png'/>
 
-<Hint type="warn">所有现代浏览器都支持事件冒泡，但在具体实现中略有差别。IE5.5 及更早版本中事件冒泡会跳过 `html` 元素(从 body 直接跳到 document)。IE9、Firefox、Chrome、和 Safari 则将事件一直冒泡到 window 对象。</Hint>
+:::caution
 
-<Hint type="warn">IE9、Firefox、Chrome、Opera、和 Safari 都支持事件捕获。尽管 DOM 标准要求事件应该从 document 对象开始传播，但这些浏览器都是从 window 对象开始捕获事件的。</Hint>
+所有现代浏览器都支持事件冒泡，但在具体实现中略有差别。IE5.5 及更早版本中事件冒泡会跳过 `html` 元素(从 body 直接跳到 document)。IE9、Firefox、Chrome、和 Safari 则将事件一直冒泡到 window 对象。
 
-<Hint type="good">由于老版本浏览器不支持，很少有人使用事件捕获。建议使用事件冒泡。有特殊情况再使用捕获。</Hint>
+:::
+
+:::caution
+
+IE9、Firefox、Chrome、Opera、和 Safari 都支持事件捕获。尽管 DOM 标准要求事件应该从 document 对象开始传播，但这些浏览器都是从 window 对象开始捕获事件的。
+
+:::
+
+:::good
+
+由于老版本浏览器不支持，很少有人使用事件捕获。建议使用事件冒泡。有特殊情况再使用捕获。
+
+:::
 
 ### DOM2 级事件流
 
@@ -198,7 +214,11 @@ p.addEventListener(
 
 上面代码中，`stopPropagation` 方法分别在捕获阶段和冒泡阶段，阻止了事件的传播。
 
-<Hint type="warn"> `stopPropagation` 方法只会阻止事件的传播，不会阻止该事件触发 `p` 节点的其他 click 事件的监听函数。也就是说，不是彻底取消 click 事件。</Hint>
+:::caution
+
+`stopPropagation` 方法只会阻止事件的传播，不会阻止该事件触发 `p` 节点的其他 click 事件的监听函数。也就是说，不是彻底取消 click 事件。
+
+:::
 
 ```js
 p.addEventListener('click', function (event) {
@@ -258,7 +278,11 @@ ul.addEventListener('click', function (event) {
 
 <img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/uGyXlQ.jpg'/>
 
-<Hint type="warn">由于 HTML 事件监听函数中 HTML 和 JavaScript 紧密耦合，所以已被大多程序员摒弃。</Hint>
+:::caution
+
+由于 HTML 事件监听函数中 HTML 和 JavaScript 紧密耦合，所以已被大多程序员摒弃。
+
+:::
 
 所谓跨浏览器事件处理程序，就是把 HTML、DOM0、DOM2、IE 的事件处理程序进行封装。
 
@@ -300,7 +324,11 @@ HTML 事件监听函数的缺点：
 
 通过 JavaScript 指定事件监听函数，就是将一个函数赋值为一个事件监听函数属性（eg: 赋值给 onclick ）。
 
-<Hint type="tip">以这种方式添加的事件，会在事件流的冒泡阶段被处理。</Hint>
+:::tip
+
+以这种方式添加的事件，会在事件流的冒泡阶段被处理。
+
+:::
 
 ```html
 <input type="button" name="clicker" id="clicker" value="点击" />
@@ -336,7 +364,11 @@ HTML 事件监听函数的缺点：
 clicker.onclick = null;
 ```
 
-<Hint type="warn">使用 HTML 事件监听函数指定的程序，可以被 DOM0 级事件监听函数覆盖，也可以以同样方式删除。</Hint>
+:::caution
+
+使用 HTML 事件监听函数指定的程序，可以被 DOM0 级事件监听函数覆盖，也可以以同样方式删除。
+
+:::
 
 ### DOM2 级事件监听函数
 
@@ -415,9 +447,17 @@ DOM2 级事件监听函数的主要好处是可以添加多个事件监听函数
 </script>
 ```
 
-<Hint type="warn">如果同一个监听事件分别为“事件捕获”和“事件冒泡”注册了一次，一共两次，这两次事件需要分别移除。两者不会互相干扰。</Hint>
+:::caution
 
-<Hint type="good">为最大限度的兼容各种浏览器，建议将事件监听函数添加到事件流的冒泡阶段，除非特殊需要才用捕获阶段。</Hint>
+如果同一个监听事件分别为“事件捕获”和“事件冒泡”注册了一次，一共两次，这两次事件需要分别移除。两者不会互相干扰。
+
+:::
+
+:::good
+
+为最大限度的兼容各种浏览器，建议将事件监听函数添加到事件流的冒泡阶段，除非特殊需要才用捕获阶段。
+
+:::
 
 **Q**: 如果 HTML 事件监听函数、 DOM0 级事件监听函数和 DOM2 级事件监听函数同时存在？
 
@@ -425,7 +465,11 @@ DOM2 级事件监听函数的主要好处是可以添加多个事件监听函数
 
 ### this 指向
 
-<Hint type="tip">监听函数 **内部** 的 this 指向触发事件的那个元素节点。</Hint>
+:::tip
+
+监听函数 **内部** 的 this 指向触发事件的那个元素节点。
+
+:::
 
 ```html
 <button id="btn" onclick="console.log(this.id)">点击</button>

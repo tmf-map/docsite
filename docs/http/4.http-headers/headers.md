@@ -5,8 +5,6 @@ sidebar_label: HTTP头字段
 
 import Img from '../../../src/components/Img';
 
-import Hint from '../../../src/components/Hint';
-
 ## 头字段
 
 HTTP 头字段允许客户端和服务器通过请求报文和响应报文传递附加信息。头字段由字段的名称、一个冒号“：”和对应的值组成组成。如下图所示：
@@ -20,7 +18,11 @@ HTTP 头字段允许客户端和服务器通过请求报文和响应报文传递
 > - 每个字段的 value 后都会有一个换行符；
 > - 字段的顺序是没有意义的，可以任意排列不影响语义；
 
-<Hint type="bad">文档 [RFC7504](https://tools.ietf.org/html/rfc7540#section-8.1.2) 明确指出头字段的定义：在 HTTP/1.x 中头字段名不区分大小写，但是在 HTTP/2 中头字段必须是小写。在 Node.js 中，如果使用的是 HTTP/1.x 协议，字段名对大小写字母不敏感，会原样输出。如果如果使用的是 HTTP/2 协议，非小写字母的字段名都会转为小写</Hint>
+:::bad
+
+文档 [RFC7504](https://tools.ietf.org/html/rfc7540#section-8.1.2) 明确指出头字段的定义：在 HTTP/1.x 中头字段名不区分大小写，但是在 HTTP/2 中头字段必须是小写。在 Node.js 中，如果使用的是 HTTP/1.x 协议，字段名对大小写字母不敏感，会原样输出。如果如果使用的是 HTTP/2 协议，非小写字母的字段名都会转为小写
+
+:::
 
 ## 头字段分类
 

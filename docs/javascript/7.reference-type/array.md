@@ -3,7 +3,7 @@ title: 数组
 sidebar_label: 数组
 ---
 
-import Img from '../../../src/components/Img'; import Hint from '../../../src/components/Hint';
+import Img from '../../../src/components/Img';
 
 <Img width="300" align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/AD9JzZ.jpg'/>
 
@@ -65,7 +65,11 @@ Array(3, 11, 8); // [3, 11, 8]
 
 上面代码中，Array 方法没有参数、一个参数、三个参数时，返回结果都不一样。只有当参数个数不少于 2 个时，Array()才会返回由参数组成的新数组。参数个数只有一个时，实际上是指定数组的长度。
 
-<Hint type="warn">Array.of 基本上可以用来替代 Array()或 new Array()，并且不存在由于参数不同而导致的重载。它的行为非常统一。</Hint>
+:::caution
+
+Array.of 基本上可以用来替代 Array()或 new Array()，并且不存在由于参数不同而导致的重载。它的行为非常统一。
+
+:::
 
 ```js
 Array.of(); // []
@@ -84,7 +88,11 @@ function ArrayOf() {
 
 slice 没有参数，实际上等于返回一个原数组的(浅)拷贝。和 splice 相比这是一个纯函数，更推荐使用，详细用法http://javascript.ruanyifeng.com/stdlib/array.html#toc10
 
-<Hint type="warn">标准中 `for (let elem of [‘a’, ‘b’].values())` 在 node8 某些版本中由于兼容性问题被关闭</Hint>
+:::caution
+
+标准中 `for (let elem of [‘a’, ‘b’].values())` 在 node8 某些版本中由于兼容性问题被关闭
+
+:::
 
 <Img width="550" align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/JgDuiW.jpg'/>
 
@@ -151,7 +159,11 @@ splice 的返回值是是一个数组，数组中是被被删除的原数组的�
 
 <img width="350" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/FqTxj6.jpg'/>
 
-<Hint type="tip">splice 的特点是会删除原数组。</Hint>
+:::tip
+
+splice 的特点是会删除原数组。
+
+:::
 
 当存在的参数是多于 2 个的时候，即从 index 处删除一个元素，然后将多的参数插入到数组。
 
@@ -165,7 +177,11 @@ splice 的返回值是是一个数组，数组中是被被删除的原数组的�
 
 <img width="400" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/yMqp8Q.jpg'/>
 
-<Hint type="warn">在 for 循环使用 splice 删除函数时。length 会改变。后面的元素因为前移被跳过。如下例最好使用 i--，将数组的 index 向前再推一个。</Hint>
+:::caution
+
+在 for 循环使用 splice 删除函数时。length 会改变。后面的元素因为前移被跳过。如下例最好使用 i--，将数组的 index 向前再推一个。
+
+:::
 
 ```js
 for (let i = 0; i < nums.length; i++) {

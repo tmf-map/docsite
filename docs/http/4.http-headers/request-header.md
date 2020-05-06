@@ -5,8 +5,6 @@ sidebar_label: 请求头字段
 
 import Img from '../../../src/components/Img';
 
-import Hint from '../../../src/components/Hint';
-
 ## 概述
 
 **请求头字段**是从客户端往服务器端**发送请求报文中所使用的字段**，用于补充请求的**附加信息、客户端信息、对响应内容相关的优先级**等内容。如一些请求头`Accept`, `Accept-*`表示内容协商, `If-*`表示条件请求，还有一些请求头字段如：`User-Agent` 和 `Referer` 描述了请求本身以确保服务端能返回正确的响应。常见的请求头字段如下图所示：
@@ -66,7 +64,11 @@ Content-Encoding: gzip
 - deflate：zlib（deflate）压缩格式，流行程度仅次于 gzip；
 - br：一种专门为 HTTP 优化的新压缩算法（Brotli）。
 
-<Hint type="tip">`Accept-Encoding` 和 `Content-Encoding` 这两个字段是可以省略的，如果请求报文里没有 `Accept-Encoding` 字段，就表示客户端不支持压缩数据；如果响应报文里没有 `Content-Encoding` 字段，就表示响应数据没有被压缩。</Hint>
+:::tip
+
+`Accept-Encoding` 和 `Content-Encoding` 这两个字段是可以省略的，如果请求报文里没有 `Accept-Encoding` 字段，就表示客户端不支持压缩数据；如果响应报文里没有 `Content-Encoding` 字段，就表示响应数据没有被压缩。
+
+:::
 
 ### Accept-Language
 
@@ -100,7 +102,11 @@ Accept-Language: zh-CN, zh, en
 Content-Type: text/html; charset=utf-8
 ```
 
-<Hint type="tip">请求头里一般不会包含`Accept-Charset`字段，只会有 `Accept-Language` 字段。而响应头里不会返回`Content-Language`字段，只会有 `Content-Type` 字段。</Hint>
+:::tip
+
+请求头里一般不会包含`Accept-Charset`字段，只会有 `Accept-Language` 字段。而响应头里不会返回`Content-Language`字段，只会有 `Content-Type` 字段。
+
+:::
 
 ## If-\*
 

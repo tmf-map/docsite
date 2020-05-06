@@ -5,8 +5,6 @@ sidebar_label: HTTP/1.X
 
 import Img from '../../../src/components/Img';
 
-import Hint from '../../../src/components/Hint'
-
 ## 前言
 
 在 HTTP 发布正式版之前，HTTP 的版本号被定位在 0.9 以区分后来的版本。HTTP/0.9 极其简单：请求由单行指令构成，以唯一可用方法 GET 开头，其后跟目标资源的路径。
@@ -71,7 +69,11 @@ HTTP/1.1 版的最大变化，就是引入了**持久连接（persistent connect
 
 <Img width="500" legend="图：长短链接对比图" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/FKLcnQ.jpg" />
 
-通过上图可以看出，在客户端和服务器需要多次传输时，长链接相比与短链接的效率要高很多。 <Hint type="tip">目前，对于同一个域名，大多数浏览器允许同时建立 6 个持久连接。</Hint>
+通过上图可以看出，在客户端和服务器需要多次传输时，长链接相比与短链接的效率要高很多。 :::tip
+
+目前，对于同一个域名，大多数浏览器允许同时建立 6 个持久连接。
+
+:::
 
 <Img w="750" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/aomjQ8.png'/>
 
@@ -96,7 +98,11 @@ Keep-Alive，他解决了多次连接的问题，但是依然有两个效率上�
 
 由上图可以看出域名分片前（图右）的网络显然比域名分片后（图左）更加拥挤，适当的域名分片可以提高页面的响应速率。
 
-<Hint type="warn">除非你有紧急而迫切的需求，不要使用这一过时的技术，升级到 HTTP/2 就好了。在 HTTP/2 里，做域名分片就没必要了，HTTP/2 的连接可以很好的处理并发的无优先级的请求，在 HTTP/2 中使用域名分片甚至会影响性能。</Hint>
+:::caution
+
+除非你有紧急而迫切的需求，不要使用这一过时的技术，升级到 HTTP/2 就好了。在 HTTP/2 里，做域名分片就没必要了，HTTP/2 的连接可以很好的处理并发的无优先级的请求，在 HTTP/2 中使用域名分片甚至会影响性能。
+
+:::
 
 ### 管道机制
 
@@ -104,7 +110,11 @@ HTTP/1.1 版还引入了管道机制（pipelining），即在同一个 TCP 连�
 
 举例来说，客户端需要请求两个资源。以前的做法是，在同一个 TCP 连接里面，先发送 A 请求，然后等待服务器做出回应，收到后再发出 B 请求。_管道机制则是允许浏览器同时发出 A 请求和 B 请求，但是服务器还是按照顺序，先回应 A 请求，完成后再回应 B 请求_。
 
-<Hint type="warn">由于浏览器供应商难以实现，现被禁用或删除。</Hint>
+:::caution
+
+由于浏览器供应商难以实现，现被禁用或删除。
+
+:::
 
 <Img w="360" legend="图：管道机制" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/RUc1N2.png'/>
 

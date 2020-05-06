@@ -5,8 +5,6 @@ sidebar_label: Cookie
 
 import Img from '../../../src/components/Img';
 
-import Hint from '../../../src/components/Hint';
-
 ## 前言
 
 因为 HTTP 是无状态的，所以服务器没有办法维持一个状态（无记忆能力），比如保持用户的登录状态，而不是每次都要登录。为了让服务器可以“记忆”客户端，1994 年网景通讯的员工将“magic Cookies”的这个概念应用到了 web 通讯，试图解决 Web 中购物车应用。在文档中，网景浏览器在第一个浏览器就支持了 Cookie。
@@ -62,7 +60,11 @@ Cookie 的有效期可以使用 `Expires` 和`Max-Age` 两个属性来设置。
 
 上图通过`Set-Cookie`来设置 Cookie，其中 Expires 标记的过期时间是“GMT 2019 年 6 月 7 号 8 点 19 分”，而 Max-Age 则只有 10 秒，如果收到报文的时间是 6 月 6 号零点，那么 Cookie 的实际有效期就是“6 月 6 号零点过 10 秒”。
 
-<Hint type="tip">Max-Age 对应的相对时间是收到报文才开始计算的；而浏览器缓存中的 Cache-Control: max-age = 100 中的`max-age`是从服务器发送回应报文开始计算</Hint>
+:::tip
+
+Max-Age 对应的相对时间是收到报文才开始计算的；而浏览器缓存中的 Cache-Control: max-age = 100 中的`max-age`是从服务器发送回应报文开始计算
+
+:::
 
 ### Cookie 的作用域
 
@@ -70,7 +72,11 @@ Cookie 的有效期可以使用 `Expires` 和`Max-Age` 两个属性来设置。
 
 Cookie 作用域的设置比较简单，`Domain`和`Path`指定了 Cookie 所属的**域名**和**路径**，**浏览器在发送 Cookie 前会从 URI 中提取出 host 和 path 部分，对比 Cookie 的属性**。如果不满足条件，就不会在请求头里发送 Cookie。
 
-<Hint type="tip">使用这两个属性可以为不同的域名和路径分别设置各自的 Cookie。不过现实中为了省事，通常 Path 就用一个“/”或者直接省略，表示域名下的任意路径都允许使用 Cookie，让服务器自己去挑。</Hint>
+:::tip
+
+使用这两个属性可以为不同的域名和路径分别设置各自的 Cookie。不过现实中为了省事，通常 Path 就用一个“/”或者直接省略，表示域名下的任意路径都允许使用 Cookie，让服务器自己去挑。
+
+:::
 
 ### Cookie 的安全性
 

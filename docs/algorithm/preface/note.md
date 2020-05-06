@@ -5,12 +5,26 @@ sidebar_label: Note
 
 ## 注解说明
 
-import Hint from '../../../src/components/Hint';
+:::good
 
-<Hint type="good">最好遵守，不遵守也不会出错</Hint>
+最好遵守，不遵守也不会出错
 
-<Hint type="bad">必须遵守，不遵守很有可能出错</Hint>
+:::
 
-<Hint type="warn">特别强调，容易忽视等</Hint>
+:::bad
 
-<Hint type="tip">补充说明，小结等</Hint>
+必须遵守，不遵守很有可能出错
+
+:::
+
+:::caution
+
+特别强调，容易忽视等
+
+:::
+
+:::tip
+
+补充说明，小结等
+
+:::

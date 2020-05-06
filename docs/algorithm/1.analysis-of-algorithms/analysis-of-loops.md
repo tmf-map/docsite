@@ -3,8 +3,6 @@ title: Analysis of Loops
 sidebar_label: Analysis of Loops
 ---
 
-import Hint from '../../../src/components/Hint';
-
 ## Frequent Loops Complexity
 
 ### O(1)
@@ -123,7 +121,11 @@ As discussed before, worst case time complexity is the most useful among best, a
 
 For example consider the linear search function where we consider the case when element is present at the end or not present at all.
 
-<Hint type="tip">When the code is too complex to consider all if-else cases, we can get an upper bound by **ignoring** if else and other complex control statements.</Hint>
+:::tip
+
+When the code is too complex to consider all if-else cases, we can get an upper bound by **ignoring** if else and other complex control statements.
+
+:::
 
 Example: let `A[1, ..., n]` be an array storing a bit (1 or 0) at each location, and `f(m)` is a function whose time complexity is `θ(m)`. Consider the following program fragment written in a C like language:
 

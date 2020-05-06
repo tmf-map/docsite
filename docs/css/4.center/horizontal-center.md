@@ -3,7 +3,7 @@ title: 水平居中
 sidebar_label: 水平居中
 ---
 
-import Img from '../../../src/components/Img'; import Hint from '../../../src/components/Hint';
+import Img from '../../../src/components/Img';
 
 ## 行级元素
 
@@ -21,7 +21,11 @@ import Img from '../../../src/components/Img'; import Hint from '../../../src/co
 
 这种方法对 `display` 设置为 `inline`, `inline-*`(inline-block、inline-table、inline-flex) 的元素都有效。
 
-<Hint type="warn">这种方法要求父元素必须是块级元素。</Hint>
+:::caution
+
+这种方法要求父元素必须是块级元素。
+
+:::
 
 还有一种方法就是 flex ，也很简单，可以防止忘记检查父元素是否是块级元素：
 
@@ -55,7 +59,15 @@ import Img from '../../../src/components/Img'; import Hint from '../../../src/co
 }
 ```
 
-<Hint type="warn">元素需要设定 `width` 属性，否则元素的宽度会自动充满父元素，无法看出居中效果，就不存在相对父元素水平居中一说了。</Hint> <Hint type="warn">如果元素设置 `float` 属性，会导致第一种方法失效，flex 虽然还有效，但文字也是居中的，某些场景下是有问题的。</Hint>
+:::caution
+
+元素需要设定 `width` 属性，否则元素的宽度会自动充满父元素，无法看出居中效果，就不存在相对父元素水平居中一说了。 :::
+
+:::caution
+
+如果元素设置 `float` 属性，会导致第一种方法失效，flex 虽然还有效，但文字也是居中的，某些场景下是有问题的。
+
+:::
 
 ## 绝对定位元素
 
@@ -97,7 +109,11 @@ import Img from '../../../src/components/Img'; import Hint from '../../../src/co
 
 <Img width="500" align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/2nZEmW.jpg'/>
 
-<Hint type="tip">以上是相对复杂的浮动居中，对于一些简单的浮动居中，只需要使用一个浮动占位符即可。</Hint>
+:::tip
+
+以上是相对复杂的浮动居中，对于一些简单的浮动居中，只需要使用一个浮动占位符即可。
+
+:::
 
 ## 参考阅读
 

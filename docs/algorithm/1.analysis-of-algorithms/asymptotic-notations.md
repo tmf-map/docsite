@@ -5,8 +5,6 @@ sidebar_label: Asymptotic Notations
 
 import Img from '../../../src/components/Img';
 
-import Hint from '../../../src/components/Hint';
-
 The main idea of asymptotic analysis is to have a measure of efficiency of algorithms that doesn’t depend on machine specific constants, and doesn’t require algorithms to be implemented and time taken by programs to be compared. Asymptotic notations are mathematical tools to represent time complexity of algorithms for asymptotic analysis. The following 3 asymptotic notations are mostly used to represent time complexity of algorithms.
 
 ## Θ Notation
@@ -49,7 +47,11 @@ O(g(n)) = {f(n): there exist positive constants c and
                   all n >= n0}
 ```
 
-<Hint type="tip">Big O notation is usually used to classify algorithms according to how their running time or space requirements grow because we are generally interested in worst case.</Hint>
+:::tip
+
+Big O notation is usually used to classify algorithms according to how their running time or space requirements grow because we are generally interested in worst case.
+
+:::
 
 The general step wise procedure for Big O runtime analysis is as follows:
 

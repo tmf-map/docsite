@@ -3,7 +3,7 @@ title: 定位
 sidebar_label: 定位
 ---
 
-import Img from '../../../src/components/Img'; import Hint from '../../../src/components/Hint';
+import Img from '../../../src/components/Img';
 
 ## 五种定位
 
@@ -13,7 +13,11 @@ import Img from '../../../src/components/Img'; import Hint from '../../../src/co
 - **relative**: 生成相对定位的元素，相对于其正常位置进行定位，不脱离文档流。
 - **sticky**: relative + fixed，但不脱离文档流，需要指明 top，表示滚动到相对于 static 定位以外的第一个祖先元素的位置，变成类似 fixed 效果。demo
 
-<Hint type="tip">position 还可以是： `inherit`, `initial`, `unset`, 这是一般 CSS 属性都具有的。</Hint>
+:::tip
+
+position 还可以是： `inherit`, `initial`, `unset`, 这是一般 CSS 属性都具有的。
+
+:::
 
 注意 sticky 的兼容性：
 
@@ -25,7 +29,11 @@ Demo DOM 结构：
 
 <Img width="450" align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/5ACJIp.jpg'/>
 
-<Hint type="tip">`relative` 和 `sticky` 都未脱离文档流, [demo](https://codepen.io/muwenzi/pen/vqdxab)</Hint>
+:::tip
+
+`relative` 和 `sticky` 都未脱离文档流, [demo](https://codepen.io/muwenzi/pen/vqdxab)
+
+:::
 
 <img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/bTLccz.jpg'/>
 
@@ -35,7 +43,11 @@ Demo DOM 结构：
 
 ## 绝对定位
 
-<Hint type="tip">广义的绝对定位包括 `absolute` 和 `fixed` ，它们都会脱离常规流和文本流，[demo](https://codepen.io/muwenzi/pen/ydvMjV)</Hint>
+:::tip
+
+广义的绝对定位包括 `absolute` 和 `fixed` ，它们都会脱离常规流和文本流，[demo](https://codepen.io/muwenzi/pen/ydvMjV)
+
+:::
 
 <img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/EjTstb.jpg'/>
 
@@ -43,6 +55,14 @@ Demo DOM 结构：
 
 <Img width="300" align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/PEdJlr.jpg'/>
 
-<Hint type="warn">绝对定位可以让元素块状化。</Hint>
+:::caution
 
-<Hint type="warn">绝对定位的盒子， `float` 会被重置为 `none` </Hint>
+绝对定位可以让元素块状化。
+
+:::
+
+:::caution
+
+绝对定位的盒子， `float` 会被重置为 `none`
+
+:::

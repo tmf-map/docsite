@@ -3,7 +3,7 @@ title: 字体
 sidebar_label: 字体
 ---
 
-import Img from '../../../src/components/Img'; import Hint from '../../../src/components/Hint';
+import Img from '../../../src/components/Img';
 
 ## 字体类型
 

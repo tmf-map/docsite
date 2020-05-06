@@ -4,7 +4,7 @@ title: Middleware
 sidebar_label: Middleware
 ---
 
-import Hint from '../../../src/components/Hint'; import Img from '../../../src/components/Img';
+import Img from '../../../src/components/Img';
 
 ## 思想精华三：中间件思想与洋葱模型
 
@@ -74,7 +74,11 @@ export {
 dispatch(action); // {type: 'SOME_TYPE', payload: {...}}
 ```
 
-<Hint type="tip">此时的 dispatch 并不是源码中最原始的 dispatch 而是经过了 middleware 等一系列的 enhancers 的增强。</Hint>
+:::tip
+
+此时的 dispatch 并不是源码中最原始的 dispatch 而是经过了 middleware 等一系列的 enhancers 的增强。
+
+:::
 
 再深入一点去想，最原始的每次穿过一层 middleware(柯里化的函数) 的时候其最内层的函数并没有执行，而是将 `store.dispatch` 进行了增强：
 
@@ -123,7 +127,11 @@ const middleware2 = store => next => action => {
 
 <img width="350" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/MFHyUR.png'/>
 
-<Hint type="tip">当到达中间件右半边的时候， `getState` 返回的是最新修改后的 state。</Hint>
+:::tip
+
+当到达中间件右半边的时候， `getState` 返回的是最新修改后的 state。
+
+:::
 
 ### store.dispatch
 
@@ -144,13 +152,21 @@ const middleware2 = store => next => action => {
 
 <img width="420" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/F0kIkM.png'/>
 
-<Hint type="tip">中间件中每一层返回的 dispatch 都是一样的，都是经过所有 middleware 增强后的 dispatch。</Hint>
+:::tip
+
+中间件中每一层返回的 dispatch 都是一样的，都是经过所有 middleware 增强后的 dispatch。
+
+:::
 
 这也就使得某个 middleware 内部使用 `store.dispatch(action)`, 相当于重新来一遍，如下图所示：
 
 <Img width="420" align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/c8qzUQ.png'/>
 
-<Hint type="bad">middleware 内部不能简单粗暴地调用 `store.dispatch(action)`, 而要加以判断和限制，否则会形成无限循环。</Hint>
+:::bad
+
+middleware 内部不能简单粗暴地调用 `store.dispatch(action)`, 而要加以判断和限制，否则会形成无限循环。
+
+:::
 
 看看 middleware 中使用 `store.dispatch` 的正确姿势，以 redux-thunk 这个中间件为例：
 
@@ -163,7 +179,11 @@ const thunk = store => next => action =>
 
 这里加以判断避免了无限循环，另外可以将 `store.dispatch, store.getState` 传递给业务中的异步 action 相关代码。
 
-<Hint type="tip">在 middleware 中使用 dispatch 场景一般是接受到一个定向 action，这个 action 并不希望到达原生的分发 action，往往用在异步请求的需求里。</Hint>
+:::tip
+
+在 middleware 中使用 dispatch 场景一般是接受到一个定向 action，这个 action 并不希望到达原生的分发 action，往往用在异步请求的需求里。
+
+:::
 
 ### next
 
@@ -186,13 +206,29 @@ const middleware2 = store => next => action => {
 
 之前在解释洋葱模型的时候也说过 next 指向的是上一个 middleware 包装后的 dispatch。
 
-<Hint type="tip">next 本质上是 dispatch ，只是增强的层度不一样。</Hint>
+:::tip
 
-<Hint type="tip">next 在同一层的左右两边中，其值都是一样的。</Hint>
+next 本质上是 dispatch ，只是增强的层度不一样。
 
-<Hint type="tip">在代码里面，`next(action)` 之前处在洋葱的左边，之后处在洋葱的右边。</Hint>
+:::
 
-<Hint type="bad">要想进入下一个 middleware 必须写成 `next(action);` 而不是 `next;` 。</Hint>
+:::tip
+
+next 在同一层的左右两边中，其值都是一样的。
+
+:::
+
+:::tip
+
+在代码里面，`next(action)` 之前处在洋葱的左边，之后处在洋葱的右边。
+
+:::
+
+:::bad
+
+要想进入下一个 middleware 必须写成 `next(action);` 而不是 `next;` 。
+
+:::
 
 ## applyMiddleware
 

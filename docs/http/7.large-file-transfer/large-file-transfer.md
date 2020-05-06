@@ -5,8 +5,6 @@ sidebar_label: 大文件传输
 
 import Img from '../../../src/components/Img';
 
-import Hint from '../../../src/components/Hint';
-
 ## 前言
 
 由前面的内容可知 HTTP 可以传输很多种类型的数据，例如文本、图片、音频和视频等。也就是说一个响应报文可能非常小到`几B`，也可能`几GB`。现在的网页可能包含大量的信息，随随便便一个主页 HTML 就有可能上百 `KB`，高质量的图片都是`几十M`，更不要说那些电影、电视剧了，几 G、几十 G 都有可能。那么 HTTP 是通过什么方法来解决这些大文件传输的呢？
@@ -19,7 +17,11 @@ import Hint from '../../../src/components/Hint';
 
 不过这个解决方法也有个缺点，gzip 等压缩算法通常**只对文本文件有较好的压缩率**，而图片、音频视频等多媒体数据本身就已经是高度压缩的，再用 gzip 处理也不会变小（甚至还有可能会增大一点），所以它就失效了。
 
-<Hint type="tip">数据压缩只用于文本类型数据传输</Hint>
+:::tip
+
+数据压缩只用于文本类型数据传输
+
+:::
 
 ## 分块传输
 
@@ -29,7 +31,11 @@ import Hint from '../../../src/components/Hint';
 
 分块传输让客户端和服务器都不用在内存里保存文件的全部，每次只收发一小部分，网络也不会被大文件长时间占用，内存、带宽等资源也就节省下来了。
 
-<Hint type="tip">`Transfer-Encoding: chunked`和`Content-Length`这两个字段是互斥的，被分块的长度都是未知的</Hint>
+:::tip
+
+`Transfer-Encoding: chunked`和`Content-Length`这两个字段是互斥的，被分块的长度都是未知的
+
+:::
 
 ### 编码规则
 
@@ -44,7 +50,11 @@ import Hint from '../../../src/components/Hint';
 
 <Img w="600" legend="图：分块传输编码" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200109195548.png" />
 
-<Hint type="tip">分块编码传输可只应用于 HTTP/1.1 中，在 HTTP/2 中将采用数据流进行传输</Hint>
+:::tip
+
+分块编码传输可只应用于 HTTP/1.1 中，在 HTTP/2 中将采用数据流进行传输
+
+:::
 
 ## 范围请求
 

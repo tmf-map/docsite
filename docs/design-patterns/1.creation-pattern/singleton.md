@@ -3,7 +3,7 @@ title: Singleton
 sidebar_label: Singleton
 ---
 
-import Hint from '../../../src/components/Hint'; import Img from '../../../src/components/Img';
+import Img from '../../../src/components/Img';
 
 ## What is singleton
 

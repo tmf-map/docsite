@@ -5,15 +5,17 @@ sidebar_label: 响应头字段
 
 import Img from '../../../src/components/Img';
 
-import Hint from '../../../src/components/Hint';
-
 ## 概述
 
 `响应头字段`（Response header）被用于 HTTP 响应中并且和**响应主体无关的那一类 HTTP header**。像 `Location` 和 `Server` 都属于响应头字段等。常见的响应头字段如下图所示：
 
 <Img w="400" legend="图：HTTP响应头字段" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/kfSnMJ.png" />
 
-<Hint type="tip">并非所有出现在响应头中的字段都是响应头字段，例如`Content-Length`就是一个代表响应体消息大小的实体头字段</Hint>
+:::tip
+
+并非所有出现在响应头中的字段都是响应头字段，例如`Content-Length`就是一个代表响应体消息大小的实体头字段
+
+:::
 
 ## Accept-Ranges
 
@@ -62,7 +64,11 @@ Location: /index.html
 Location: https://www.baidu.com/index.html
 ```
 
-<Hint type="tip">Location 里的 URI 既可以使用绝对 URI，也可以使用相对 URI。但相对 URI 只能在站内跳转的时候使用</Hint>
+:::tip
+
+Location 里的 URI 既可以使用绝对 URI，也可以使用相对 URI。但相对 URI 只能在站内跳转的时候使用
+
+:::
 
 ## WWW-Authenticate
 

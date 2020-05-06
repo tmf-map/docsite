@@ -3,8 +3,6 @@ title: 缓存与记忆化
 sidebar_label: 缓存与记忆化
 ---
 
-import Hint from '../../../src/components/Hint';
-
 ## 什么是记忆化
 
 > 通过使用记忆化，遇到相同的输入会立即触发内部缓存命中直接返回结果。
@@ -13,7 +11,11 @@ import Hint from '../../../src/components/Hint';
 记忆化 -> 内部函数级缓存 -> 避免重复计算
 ```
 
-<Hint type="warn">单词是 memoize 不是 memorize 。</Hint>
+:::caution
+
+单词是 memoize 不是 memorize 。
+
+:::
 
 ## 同步缓存
 
