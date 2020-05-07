@@ -24,11 +24,13 @@
   --ifm-list-item-margin: 0.18rem;
   --ifm-leading: 1rem;
   --ifm-container-width: 1200px;
+  --ifm-line-height-base: 1.5;
 
   /* --ifm-font-family-base: Helvetica, Arial, sans-serif; */
   /* --ifm-font-color-base: rgb(74, 74, 74); */
   --ifm-font-size-base: 15px;
   --ifm-code-font-size: 85%;
+  --ifm-font-family-base: Arial, Helvetica, sans-serif, "Segoe UI", Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 
   --my-board--background: rgba(185, 202, 218, 0.15);
   --my-logo-font-family: 'Eurofighter Expanded';

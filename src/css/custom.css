@@ -133,3 +133,8 @@ article > header > h2.margin-bottom--sm {
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 var(--ifm-pre-padding);
 }
+
+/* Right TOC */
+.contents__left-border {
+  font-size: 0.85rem;
+}

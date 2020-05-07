@@ -17,7 +17,7 @@ import Hint from '../src/components/Hint';
 
 ## 整体流程
 
-<Img width="800" legend="Happy Path" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/github-webhooks-sequence-chart.svg' alt='github-webhooks-sequence-chart'/>
+<Img width="800" legend="Happy Path" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/3qlQ8t.png' alt='github-webhooks-sequence-chart'/>
 
 <!--truncate-->
 
