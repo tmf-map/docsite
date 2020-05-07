@@ -135,6 +135,7 @@ html[data-theme="dark"] .section-bgwhite-block-left {
   background-position: center;
   padding-top: 7.2rem;
   padding-bottom: 6.2rem;
+  font-size: 0.9375rem;
 }
 
 .overflow-hidden {

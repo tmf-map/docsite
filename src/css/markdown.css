@@ -1,3 +1,7 @@
+.markdown {
+  font-size: 0.9375rem;
+}
+
 .markdown > h2 {
   --ifm-heading-vertical-rhythm-bottom: 1;
   --ifm-h2-vertical-rhythm-top: 1.8;
