@@ -1,3 +1,7 @@
+.navbar {
+  font-size: 0.9375rem;
+}
+
 .navbar.navbar--fixed-top {
   top: -1px;
   border-bottom: 1px solid rgba(131, 133, 133, 0.23);
@@ -68,57 +72,6 @@
   transition: transform .1s,opacity .4s, -webkit-transform .1s;
   transform: translate(-50%);
 } */
-
-.menu .menu__link {
-  border: 1px solid transparent;
-  line-height: 1.25rem;
-}
-.menu .menu__link:hover {
-  --ifm-menu-color-background-active: rgb(230, 236, 241);
-  border: 1px solid rgb(230, 236, 241);
-}
-
-.menu .menu__link.menu__link--active:not(.menu__link--sublist) {
-  border: 1px solid rgba(167, 167, 167, 0.2);
-}
-
-.menu .menu__link.menu__link--active:not(.menu__link--sublist):hover {
-  --ifm-menu-color-background-active: rgb(255, 255, 255);
-  border: 1px solid #e6ecf1;
-}
-
-.menu .menu__link.menu__link--sublist:after {
-  background-image: url('data:image/svg+xml;utf8,<svg preserveAspectRatio="xMidYMid meet" height="1em" width="1em" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="rgba(157,170,182,1)"><g><polyline points="9 18 15 12 9 6"></polyline></g></svg>');
-  background-size: 1.1rem 1.1rem;
-  color: rgba(0, 0, 0, 0.2)
-}
-
-.menu .menu__list-item.menu__list-item .menu__link--sublist:after {
-  transform: rotateZ(90deg);
-}
-
-.menu .menu__list-item.menu__list-item--collapsed .menu__link--sublist:after {
-  transform: rotateZ(0);
-}
-
-html[data-theme="dark"] .navbar .navbar__logo + strong {
-  color: rgb(255, 255, 255);
-}
-
-html[data-theme="dark"] .menu .menu__link:hover {
-  --ifm-menu-color-background-active: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(167, 167, 167, 0.1);
-}
-
-html[data-theme="dark"] .menu .menu__link.menu__link--active:not(.menu__link--sublist) {
-  --ifm-menu-color-background-active: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(167, 167, 167, 0.1);
-}
-
-html[data-theme="dark"] .menu .menu__link.menu__link--active:not(.menu__link--sublist):hover {
-  --ifm-menu-color-background-active: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(167, 167, 167, 0.2);
-}
 
 /* Sidebar Nav */
 html[data-theme="dark"] .navbar + .main-wrapper > div > div:not(.row):not(.main):not(.hero--primary) {
