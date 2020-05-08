@@ -1,30 +1,50 @@
-module.exports = {
-  '1. Types': ['typescript/1.types/basic-types', 'typescript/1.types/enum'],
-  '2. Interface': [
-    'typescript/2.interface/as-object-array-type',
-    'typescript/2.interface/extend-implement'
-  ],
-  '3. Function': [
-    'typescript/3.function/types',
-    'typescript/3.function/parameters',
-    'typescript/3.function/overloading'
-  ],
-  '4. Class': [
-    'typescript/4.class/class-and-inheritance',
-    'typescript/4.class/data-modifiers',
-    'typescript/4.class/abstract-class',
-    'typescript/4.class/polymorphism',
-    'typescript/4.class/class-and-interface'
-  ],
-  '5. Generic': [
-    'typescript/5.generic/generic-function',
-    'typescript/5.generic/generic-interface',
-    'typescript/5.generic/generic-class'
-  ],
-  Config: [
-    'typescript/config/tsconfig.json',
-    'typescript/config/file-options',
-    'typescript/config/compiler-options',
-    'typescript/config/project-references'
-  ]
-};
+module.exports = [
+  'typescript/1.get-started',
+  {
+    '2. Types': ['typescript/2.types/basic-types', 'typescript/2.types/enum']
+  },
+  {
+    '3. Interface': [
+      'typescript/3.interface/as-object-array-type',
+      'typescript/3.interface/extend-implement'
+    ]
+  },
+  {
+    '4. Function': [
+      'typescript/4.function/types',
+      'typescript/4.function/parameters',
+      'typescript/4.function/overloading'
+    ]
+  },
+  {
+    '5. Class': [
+      'typescript/5.class/class-and-inheritance',
+      'typescript/5.class/data-modifiers',
+      'typescript/5.class/abstract-class',
+      'typescript/5.class/polymorphism',
+      'typescript/5.class/class-and-interface'
+    ]
+  },
+  {
+    '6. Generic': [
+      'typescript/6.generic/generic-function',
+      'typescript/6.generic/generic-interface',
+      'typescript/6.generic/generic-class'
+    ]
+  },
+  {
+    '7. Type Checking': [
+      'typescript/7.type-checking/type-inference',
+      'typescript/7.type-checking/type-compatibility',
+      'typescript/7.type-checking/type-protection'
+    ]
+  },
+  {
+    Config: [
+      'typescript/config/tsconfig.json',
+      'typescript/config/file-options',
+      'typescript/config/compiler-options',
+      'typescript/config/project-references'
+    ]
+  }
+];

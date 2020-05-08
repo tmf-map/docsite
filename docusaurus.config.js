@@ -79,7 +79,7 @@ module.exports = {
               label: 'React Stack'
             },
             {
-              to: 'docs/typescript/1.types/basic-types',
+              to: 'docs/typescript/1.get-started',
               activeBasePath: 'docs/typescript/',
               label: 'TypeScript'
             },
