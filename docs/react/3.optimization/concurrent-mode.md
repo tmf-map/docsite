@@ -36,7 +36,9 @@ Concurrent 模式通过使渲染可中断来修复此限制。这意味着当用
 
 <Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/react-concurrent-mode.png' alt='react-concurrent-mode' width='600'/>
 
-对比上一节 Concurrent 的概念，Concurrent 模式将 React 渲染更新过程分解成较小的任务。每执行完一段更新过程就把控制权交还给 React 负责任务协调的模块，看看有没有其它更紧急的任务需要做。如果有就会中断更新，转而执行更重要的任务，比如绘制用户 input 输入，完毕后再回到之前正在做的任务。
+Concurrent 模式将 React 渲染更新过程分解成较小的任务。每执行完一段更新过程就把控制权交还给 React 负责任务协调的模块，看看有没有其它更紧急的任务需要做。如果有就会中断更新，转而执行更重要的任务，比如绘制用户 input 输入，完毕后再回到之前正在做的任务。对比上一节 concurrent 的定义，React 这种新的更新方式正是并发执行的，这大概也是为什么名为 Concurrent 模式的原因。
+
+维护更新过程分解出的最小单位的数据结构叫做 fiber。同 Concurrent 一词一样，fiber 其实并不是一个新的概念，在其它计算机学科中，Fiber 指一种非常轻巧的线程，协作式执行多任务。本质上，React Fiber 是对调用堆栈的重新实现，使堆栈帧能保留在内存中，从而实现可以随时执行、中断调用等功能。
 
 ## Suspense 用于数据获取
 
@@ -234,3 +236,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(<App />);
 1. [深入剖析 React Concurrent, by 淡苍](https://zhuanlan.zhihu.com/p/60307571)
 1. [What Is React Concurrent Mode And Why You Will Love It? by Mariusz](https://dev.to/pagepro_agency/what-is-react-concurrent-mode-and-why-you-will-love-it-1j23)
 1. [What is React Concurrent Mode? by Sveta Slepner](https://medium.com/swlh/what-is-react-concurrent-mode-46989b5f15da)
+1. [React Fiber 是什么, by 程墨 Morgan](https://zhuanlan.zhihu.com/p/26027085)
+1. [Understanding Of React Fiber Architecture, by Aditya Srivastava](http://blogs.innovationm.com/understanding-of-react-fiber-architecture/)
+1. [React Fiber Architecture, by Andrew Clark](https://github.com/acdlite/react-fiber-architecture)
+1. [A closer look at react-fiber, by Anchen](https://medium.com/@li.anchen.au/a-closer-look-at-react-fiber-ff0787bc42cc)
