@@ -28,6 +28,14 @@ Concurrent 模式是一组 React 的新功能，可帮助应用保持响应，�
 
 所以什么是并发? 并发是将任务分割成可以独立执行的片段，让这些任务片段轮流执行，打破单线程限制，使其能处理多个任务，从而使我们的程序更加高效。
 
+## React Fiber
+
+同 Concurrent 一词一样，Fiber 其实并不是一个新的概念，在其它计算机学科中，Fiber 指一种非常轻巧的线程，协作式执行多任务。从这个名字可以看出 React Fiber 能够优化多任务执行，它出现主要目的就是让 React 在多任务时能更好的调度。
+
+React Fiber 是对 React 核心算法的重构。React 的核心是跟踪组件的状态变化并将更新状态映射到新界面。为了让上述 reconciliation 和 render 的过程更加弹性，React 决定把整个过程分解成一个一个小任务单元，维护 reconciliation/render 过程分解出的最小单位的数据结构叫做 fiber（注意首字母小写）。本质上，React Fiber 是对调用堆栈的重新实现，使堆栈帧能保留在内存中，从而实现可以随时执行、中断调用等功能。一个 fiber 对应一个堆栈帧，从而实现 reconciliation/render 过程的中断、并发。
+
+Fiber 可以看作是为 Concurrent 模式铺路，有了 Fiber 以后，React 才拥有了并发执行多任务的能力，才能开启 reconciliation/render 过程的并发执行。
+
 ## 阻塞渲染与可中断渲染
 
 渲染是用户体验中极为重要的因素，渲染速度越快，用户体验将越好。但是，当 React 渲染更新时，该过程是同步的。这期间有许多事情需要处理，比如调用组件各个生命周期函数、计算和对比虚拟 DOM、更新 DOM 树等。不能中断这个过程，必须等待更新完成，这种方式称为“阻塞渲染”。当组件树比较庞大的时候，问题就来了。浏览器主线程专心进行 React 渲染更新操作，用户在 input 中输入不会有反应。当 React 更新完成，刚刚输入的的东西一下子出现在了 input 中。这就是所谓的界面卡顿，用户体验非常不友好。
@@ -37,8 +45,6 @@ Concurrent 模式通过使渲染可中断来修复此限制。这意味着当用
 <Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/react-concurrent-mode.png' alt='react-concurrent-mode' width='600'/>
 
 Concurrent 模式将 React 渲染更新过程分解成较小的任务。每执行完一段更新过程就把控制权交还给 React 负责任务协调的模块，看看有没有其它更紧急的任务需要做。如果有就会中断更新，转而执行更重要的任务，比如绘制用户 input 输入，完毕后再回到之前正在做的任务。对比上一节 concurrent 的定义，React 这种新的更新方式正是并发执行的，这大概也是为什么名为 Concurrent 模式的原因。
-
-维护更新过程分解出的最小单位的数据结构叫做 fiber。同 Concurrent 一词一样，fiber 其实并不是一个新的概念，在其它计算机学科中，Fiber 指一种非常轻巧的线程，协作式执行多任务。本质上，React Fiber 是对调用堆栈的重新实现，使堆栈帧能保留在内存中，从而实现可以随时执行、中断调用等功能。
 
 ## Suspense 用于数据获取
 
@@ -240,3 +246,4 @@ ReactDOM.createRoot(document.getElementById('root')).render(<App />);
 1. [Understanding Of React Fiber Architecture, by Aditya Srivastava](http://blogs.innovationm.com/understanding-of-react-fiber-architecture/)
 1. [React Fiber Architecture, by Andrew Clark](https://github.com/acdlite/react-fiber-architecture)
 1. [A closer look at react-fiber, by Anchen](https://medium.com/@li.anchen.au/a-closer-look-at-react-fiber-ff0787bc42cc)
+1. [Inside Fiber: an in-depth overview of the new reconciliation algorithm in React, by MAX KORETSKYI AKA WIZARD](https://blog.ag-grid.com/inside-fiber-an-in-depth-overview-of-the-new-reconciliation-algorithm-in-react/)
