@@ -1,11 +1,8 @@
 ---
 title: 请求头字段
-sidebar_label: 请求头字段
 ---
 
 import Img from '../../../src/components/Img';
-
-import Hint from '../../../src/components/Hint';
 
 ## 概述
 
@@ -66,7 +63,11 @@ Content-Encoding: gzip
 - deflate：zlib（deflate）压缩格式，流行程度仅次于 gzip；
 - br：一种专门为 HTTP 优化的新压缩算法（Brotli）。
 
-<Hint type="tip">`Accept-Encoding` 和 `Content-Encoding` 这两个字段是可以省略的，如果请求报文里没有 `Accept-Encoding` 字段，就表示客户端不支持压缩数据；如果响应报文里没有 `Content-Encoding` 字段，就表示响应数据没有被压缩。</Hint>
+:::tip
+
+`Accept-Encoding` 和 `Content-Encoding` 这两个字段是可以省略的，如果请求报文里没有 `Accept-Encoding` 字段，就表示客户端不支持压缩数据；如果响应报文里没有 `Content-Encoding` 字段，就表示响应数据没有被压缩。
+
+:::
 
 ### Accept-Language
 
@@ -100,7 +101,11 @@ Accept-Language: zh-CN, zh, en
 Content-Type: text/html; charset=utf-8
 ```
 
-<Hint type="tip">请求头里一般不会包含`Accept-Charset`字段，只会有 `Accept-Language` 字段。而响应头里不会返回`Content-Language`字段，只会有 `Content-Type` 字段。</Hint>
+:::tip
+
+请求头里一般不会包含`Accept-Charset`字段，只会有 `Accept-Language` 字段。而响应头里不会返回`Content-Language`字段，只会有 `Content-Type` 字段。
+
+:::
 
 ## If-\*
 

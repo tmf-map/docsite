@@ -1,6 +1,5 @@
 ---
 title: 脚本加载
-sidebar_label: 脚本加载
 ---
 
 import Img from '../../../src/components/Img';

@@ -1,7 +1,6 @@
 ---
 id: first-unique-character
 title: 字符串中的第一个唯一字符
-sidebar_label: 字符串中的第一个唯一字符
 ---
 
 - 题源：《剑指 Offer: 面试题 50》P243

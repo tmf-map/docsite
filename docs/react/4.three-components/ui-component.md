@@ -1,7 +1,6 @@
 ---
 id: ui-component
 title: UI组件
-sidebar_label: UI组件
 ---
 
 ## 什么是 ui 组件？

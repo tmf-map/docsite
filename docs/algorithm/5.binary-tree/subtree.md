@@ -1,7 +1,6 @@
 ---
 id: subtree
 title: 二叉树的子结构
-sidebar_label: 二叉树的子结构
 ---
 
 - 题源：《剑指 Offer: 面试题 26》P148

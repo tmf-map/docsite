@@ -1,7 +1,6 @@
 ---
 id: cookie
 title: cookie
-sidebar_label: cookie
 ---
 
 https://www.youtube.com/watch?v=lNQAl71Abqc

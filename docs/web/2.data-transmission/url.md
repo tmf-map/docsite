@@ -1,6 +1,5 @@
 ---
 title: URL
-sidebar_label: URL
 ---
 
 URL 是互联网的基础设施之一。浏览器提供了一些原生对象，用来管理 URL。

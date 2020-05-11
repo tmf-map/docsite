@@ -1,6 +1,5 @@
 ---
 title: 图片
-sidebar_label: 图片
 ---
 
 ## `<img />`

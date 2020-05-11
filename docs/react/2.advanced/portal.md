@@ -1,9 +1,6 @@
 ---
 title: Portal
-sidebar_label: Portal
 ---
-
-import Hint from '../../../src/components/Hint';
 
 ## 什么是 Portal?
 
@@ -72,7 +69,11 @@ React Portal 之所以叫 Portal，因为做的就是和“传送门”一样的
 
 如果以上代码想写成 `signal` 的方式传递，要传递的东西会变得更加复杂，也缺乏灵活性。
 
-<Hint type="tip">当我们既希望在组件的 JSX 中选择使用 Dialog ，把 Dialog 用得像一个普通组件一样，但是又希望 Dialog 内容显示在另一个地方，就需要 Portal 上场了。</Hint>
+:::tip
+
+当我们既希望在组件的 JSX 中选择使用 Dialog ，把 Dialog 用得像一个普通组件一样，但是又希望 Dialog 内容显示在另一个地方，就需要 Portal 上场了。
+
+:::
 
 ## React v16 中的 Portal
 
@@ -169,7 +170,11 @@ componentWillUnmount () {
 }
 ```
 
-<Hint type="warn">`createPortal` 没有调用的话，那么 `this.container` 只是一个空 div。</Hint>
+:::caution
+
+`createPortal` 没有调用的话，那么 `this.container` 只是一个空 div。
+
+:::
 
 ## 通过 Portal 进行事件冒泡
 
@@ -185,7 +190,11 @@ v16 之前的 React Portal 实现方法，有一个小小的缺陷，就是 Port
 
 在 Dialog 画出的内容上点击， `handleDialogClick` 是不会被触发的。当然，这只是一个小小的缺陷，大部分场景下事件不传过来也没什么大问题。
 
-<Hint type="tip">在 v16 中，通过 Portal 渲染出去的 DOM，事件是会传送门的入口端冒泡出来的，上面的 `handleDialogClick` 也就会被调用到了。[Run in CodePen](https://codepen.io/muwenzi/pen/xxxZYER)</Hint>
+:::tip
+
+在 v16 中，通过 Portal 渲染出去的 DOM，事件是会传送门的入口端冒泡出来的，上面的 `handleDialogClick` 也就会被调用到了。[Run in CodePen](https://codepen.io/muwenzi/pen/xxxZYER)
+
+:::
 
 ## 参考资料
 

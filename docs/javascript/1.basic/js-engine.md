@@ -1,9 +1,8 @@
 ---
 title: JS 引擎
-sidebar_label: JS 引擎
 ---
 
-import Hint from '../../../src/components/Hint'; import Img from '../../../src/components/Img';
+import Img from '../../../src/components/Img';
 
 ## JS Engine
 
@@ -80,7 +79,11 @@ for (let i = 0; i < 1000; i++) {
 
 在同样的情况下，Compiler 可以通过用 2 代替循环（因为 add 函数每次都是执行 1 + 1）来进行一些优化。Compiler 最终给出的优化代码可以在更短的时间内执行完成。
 
-<Hint type="tip">Interpreter 可以立即开始执行代码，但不会进行优化。Compiler 虽然需要花费一些时间来编译代码，但是会生成对执行时更优的代码。</Hint>
+:::tip
+
+Interpreter 可以立即开始执行代码，但不会进行优化。Compiler 虽然需要花费一些时间来编译代码，但是会生成对执行时更优的代码。
+
+:::
 
 ### JIT
 

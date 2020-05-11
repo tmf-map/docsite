@@ -1,10 +1,7 @@
 ---
 id: route
 title: Route
-sidebar_label: Route
 ---
-
-import Hint from '../../../src/components/Hint';
 
 &lt;Route&gt; 组件是 react-router 中主要的结构单元。在任意位置只要匹配了 URL 的路径名 \(pathname\) 你就可以创建 &lt;Route&gt; 元素进行渲染。
 
@@ -22,7 +19,11 @@ import Hint from '../../../src/components/Hint';
 <Route exact path='/article' />
 ```
 
-<Hint type="warn">在匹配路由时，react-router 只关注 location 的**路径名**。</Hint>
+:::caution
+
+在匹配路由时，react-router 只关注 location 的**路径名**。
+
+:::
 
 例如当 URL 如下时：
 
@@ -149,7 +150,11 @@ const Article = () => (
 );
 ```
 
-<Hint type="warn">Switch 里面直接要嵌套 Route，否则在路由跳转的时候会出现一些意想不到的情况。</Hint>
+:::caution
+
+Switch 里面直接要嵌套 Route，否则在路由跳转的时候会出现一些意想不到的情况。
+
+:::
 
 ## 路径参数
 

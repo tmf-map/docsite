@@ -1,6 +1,5 @@
 ---
 title: Enum
-sidebar_label: Enum
 ---
 
 枚举（Enum）类型经常被用于取值在一定范围内的场景，比如一周只能有七天，[角色权限设计](https://www.cnblogs.com/bjxingch/articles/6561236.html)等。枚举类型变量使用`enum`字段来定义，枚举成员的值可以是数字或者字符串，并且枚举成员是只读的。

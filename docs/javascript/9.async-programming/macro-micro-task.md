@@ -1,6 +1,5 @@
 ---
 title: 宏任务和微任务
-sidebar_label: 宏任务和微任务
 ---
 
 import Img from '../../../src/components/Img';

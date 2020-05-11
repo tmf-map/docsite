@@ -1,7 +1,6 @@
 ---
 id: merged-sort
 title: 归并排序
-sidebar_label: 归并排序
 ---
 
 - 题源/在线：[LeetCode: 912](https://leetcode-cn.com/problems/sort-an-array/)

@@ -1,7 +1,6 @@
 ---
 id: powx-n
 title: 数值的整数次方
-sidebar_label: 数值的整数次方
 ---
 
 - 题源：《剑指 Offer: 面试题 16》P110

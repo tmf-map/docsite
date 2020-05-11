@@ -1,6 +1,5 @@
 ---
 title: 编译选项
-sidebar_label: 编译选项
 ---
 
 import Img from '../../../src/components/Img';

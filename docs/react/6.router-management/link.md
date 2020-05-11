@@ -1,7 +1,6 @@
 ---
 id: link
 title: Link
-sidebar_label: Link
 ---
 
 在各个页面间切换时如果使用锚点元素实现，那么每次点击时页面将被重新加载。React Router 提供了 &lt;Link&gt; 组件用来避免这种状况的发生。当你点击 &lt;Link&gt; 时，URL 会更新，组件会被重新渲染，但是页面不会重新加载。

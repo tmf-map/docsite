@@ -1,6 +1,5 @@
 ---
 title: SSL和TLS
-sidebar_label: SSL和TLS
 ---
 
 import Img from '../../../src/components/Img';

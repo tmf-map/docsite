@@ -1,6 +1,5 @@
 ---
 title: 列表
-sidebar_label: 列表
 ---
 
 ## 圆点列表

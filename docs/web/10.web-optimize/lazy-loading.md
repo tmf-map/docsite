@@ -1,9 +1,8 @@
 ---
 title: 延迟加载
-sidebar_label: 延迟加载
 ---
 
-import Hint from '../../../src/components/Hint'; import Img from '../../../src/components/Img';
+import Img from '../../../src/components/Img';
 
 延迟加载即懒加载，对于一些占用带宽的资源比如图片，使用延时加载首屏外资源，而不是加载所有资源。延迟加载图像和视频时，可以减少初始页面加载时间、初始页面负载以及系统资源使用量，优化页面的性能。
 
@@ -47,7 +46,11 @@ Chrome76 开始 `<img>` 和 `iframe` 支持原生懒加载特性，无需任何�
 - 判断浏览器是否支持原生 loading，可以使用 `'loading' in HTMLImageElement.prototype` 判断。
 - 获取 loading 属性值可以直接 `img.loading`。
 
-<Hint type="tip">图片的延迟加载要想取得比较好的效果，最好先指定 `width="" height=""`。</Hint>
+:::tip
+
+图片的延迟加载要想取得比较好的效果，最好先指定 `width="" height=""`。
+
+:::
 
 否则浏览器控制台会有如下警告：
 
@@ -79,7 +82,11 @@ Chrome76 开始 `<img>` 和 `iframe` 支持原生懒加载特性，无需任何�
 - `src` 属性，引用页面最初加载时显示的占位符图像，比如模糊图片或默认图片。
 - `data-src` 和 `data-srcset` 属性，属于占位符属性，其中包含元素进入视窗后要加载的图像的地址，在 DOM 中可以通过 [HTMLElement.dataset](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLElement/dataset) API 读取元素上设置的所有自定义数据属性(`data-*`)集。
 
-<Hint type="tip">默认占位图片使用 `src` 属性即可，可以在 DOM 中动态插入 [HTML5: srcset](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img) 属性。</Hint>
+:::tip
+
+默认占位图片使用 `src` 属性即可，可以在 DOM 中动态插入 [HTML5: srcset](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/img) 属性。
+
+:::
 
 现在，我们来看看如何在 JavaScript 中使用 Intersection Observer，并通过以下标记模式延迟加载图像：
 
@@ -167,7 +174,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 虽然此代码几乎可在任何浏览器中正常运行，但却存在潜在的性能问题，即重复的 setTimeout 调用可能纯属浪费，即使其中的代码受限制，它们仍会运行。在此示例中，当文档滚动或窗口调整大小时，不管视窗中是否有图像，每 200 毫秒都会运行一次检查。 此外，跟踪尚未延迟加载的元素数量，以及取消绑定滚动事件处理程序的繁琐工作将由开发者来完成。
 
-<Hint type="good">尽可能使用 Intersection Observer，如果有严格的兼容性要求，则回退到事件处理程序。</Hint>
+:::good
+
+尽可能使用 Intersection Observer，如果有严格的兼容性要求，则回退到事件处理程序。
+
+:::
 
 ### CSS 中的图像
 

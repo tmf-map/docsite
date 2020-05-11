@@ -1,10 +1,7 @@
 ---
 id: render-props
 title: Render Props
-sidebar_label: Render Props
 ---
-
-import Hint from '../../../src/components/Hint';
 
 Render Props 是指一种在 React 组件之间使用一个值为函数的 prop 在 React 组件间共享代码的简单技术。
 
@@ -34,6 +31,10 @@ class DataProvider extends React.Component {
 
 [React Router](https://reacttraining.com/react-router/web/api/Route/Route-render-methods) 是一个典型使用 render props 的库
 
-<Hint type="warn">如果在 render 方法里创建函数，那么使用 render prop 会抵消使用 PureComponent 带来的优势。这是因为浅 prop 比较对于新 props 总会返回 false，并且在这种情况下每一个 render 对于 render prop 将会生成一个新的值。</Hint>
+:::caution
+
+如果在 render 方法里创建函数，那么使用 render prop 会抵消使用 PureComponent 带来的优势。这是因为浅 prop 比较对于新 props 总会返回 false，并且在这种情况下每一个 render 对于 render prop 将会生成一个新的值。
+
+:::
 
 另外这种模式，会增加我们代码的层级关系和耦合程度，不利于代码的维护。可以考虑用 Hooks 替代。

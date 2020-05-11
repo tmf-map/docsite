@@ -1,6 +1,5 @@
 ---
 title: 事件对象
-sidebar_label: 事件对象
 ---
 
 ## Event 对象概述

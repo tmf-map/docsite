@@ -1,6 +1,5 @@
 ---
 title: Service Workers
-sidebar_label: Service Workers
 ---
 
 import Img from '../../../src/components/Img';

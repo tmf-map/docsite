@@ -1,7 +1,6 @@
 ---
 id: web-SQL
 title: Web SQL
-sidebar_label: Web SQL
 ---
 
 ![](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/xwy4r9.png)

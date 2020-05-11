@@ -1,6 +1,5 @@
 ---
 title: As object or array type
-sidebar_label: As object or array type
 ---
 
 import Img from '../../../src/components/Img';

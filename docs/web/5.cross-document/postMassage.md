@@ -1,7 +1,6 @@
 ---
 id: postMassage
 title: postMassage
-sidebar_label: postMassage
 ---
 
 ![](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/pSaI0z.png)

@@ -1,7 +1,6 @@
 ---
 id: missing-number
 title: 有序数组中缺失的数字
-sidebar_label: 有序数组中缺失的数字
 ---
 
 - 题源：《剑指 Offer: 面试题 53-2》P266

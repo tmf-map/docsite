@@ -1,11 +1,8 @@
 ---
 title: async/await
-sidebar_label: async/await
 ---
 
 import Img from '../../../src/components/Img';
-
-import Hint from '../../../src/components/Hint';
 
 ## 前言
 
@@ -70,7 +67,11 @@ f().then(v => console.log(v)); // 123
 > - 容错：由于 await 后面的 promise 运行结果可能是 rejected，最好把 await 放入 try-catch 中。
 > - 性能：await 后的异步操作，如果彼此没有依赖关系最好同时触发，在下面会有介绍。
 
-<Hint type="bad">只能在 async 函数内部使用，如果在普通函数中，会报错</Hint>
+:::bad
+
+只能在 async 函数内部使用，如果在普通函数中，会报错
+
+:::
 
 async 函数完全可以看作多个异步操作，包装成的一个 Promise 对象，而 await 命令就是内部 then 命令的语法糖。
 
@@ -177,7 +178,11 @@ const result = async function () {
 result();
 ```
 
-<Hint type="tip">await 关键字可以保证异步错误被调用栈外层捕获到而不是被抛到全局</Hint>
+:::tip
+
+await 关键字可以保证异步错误被调用栈外层捕获到而不是被抛到全局
+
+:::
 
 ## 性能
 

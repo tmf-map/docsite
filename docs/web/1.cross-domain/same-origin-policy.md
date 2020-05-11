@@ -1,6 +1,5 @@
 ---
 title: 同源策略
-sidebar_label: 同源策略
 ---
 
 <div align="center">

@@ -1,6 +1,5 @@
 ---
 title: 节流
-sidebar_label: 节流
 ---
 
 import Img from '../../../src/components/Img';

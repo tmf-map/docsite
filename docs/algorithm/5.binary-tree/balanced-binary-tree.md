@@ -1,7 +1,6 @@
 ---
 id: balanced-binary-tree
 title: 平衡二叉树
-sidebar_label: 平衡二叉树
 ---
 
 import Img from '../../../src/components/Img';

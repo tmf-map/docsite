@@ -1,6 +1,5 @@
 ---
 title: I 参考资料
-sidebar_label: I 参考资料
 ---
 
 1. [你不知道的 JavaScript（上卷）](https://book.douban.com/subject/26351021/)

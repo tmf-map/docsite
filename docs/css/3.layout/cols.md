@@ -1,9 +1,8 @@
 ---
 title: 列布局
-sidebar_label: 列布局
 ---
 
-import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem'; import Hint from '../../../src/components/Hint';
+import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';
 
 ## 两列布局
 
@@ -78,7 +77,11 @@ main {
 
 <img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/83imG8.jpg'/>
 
-<Hint type="tip">在子元素上使用 `order` 属性来调整顺序也能达到同样目的。</Hint>
+:::tip
+
+在子元素上使用 `order` 属性来调整顺序也能达到同样目的。
+
+:::
 
 ## 三列布局
 

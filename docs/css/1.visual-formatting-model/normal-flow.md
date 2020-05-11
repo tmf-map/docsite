@@ -1,9 +1,8 @@
 ---
 title: 文档流
-sidebar_label: 文档流
 ---
 
-import Hint from '../../../src/components/Hint'; import Img from '../../../src/components/Img';
+import Img from '../../../src/components/Img';
 
 ## 流 Flow
 
@@ -13,13 +12,21 @@ CSS 世界构建的基石是 HTML，而 HTML 最具代表的两个基石 `<div>`
 
 <Img width="450" align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/S74EgO.jpg'/>
 
-<Hint type="tip">所谓“流”，就是 CSS 世界中引导元素排列和定位的一条看不见的“水流”。</Hint>
+:::tip
+
+所谓“流”，就是 CSS 世界中引导元素排列和定位的一条看不见的“水流”。
+
+:::
 
 ## 文档流
 
 文档流（Normal Flow, 也有翻译成 `普通流`, `常规流`）中的盒肯定属于某一个格式化上下文（Formatting Context），可能是 BFC 和 IFC ，但不能两者都是。
 
-<Hint type="tip">简单点说，把格式化上下文看成是决定盒子详细排列布局的方案，盒子怎么排的。有两种方案，BFC 和 IFC ，每一种排列方案有其各自的规则和特点。</Hint>
+:::tip
+
+简单点说，把格式化上下文看成是决定盒子详细排列布局的方案，盒子怎么排的。有两种方案，BFC 和 IFC ，每一种排列方案有其各自的规则和特点。
+
+:::
 
 那么有一个疑问，我们不是有 block box 和 inline box 吗，它也规定了 box 的位置排列，一行一行排还是在一行里面一列一列排，那 BFC/IFC 又是什么鬼？
 

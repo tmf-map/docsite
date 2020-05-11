@@ -1,7 +1,6 @@
 ---
 id: webworker
 title: Web Woker
-sidebar_label: Web Woker
 ---
 
 Web Woker 是浏览器 Web API 之一，由于 JavaScript 语言采用的是单线程模型，也就是说，所有任务只能在一个线程上完成，一次只能做一件事。前面的任务没做完，后面的任务只能等着。随着电脑计算能力的增强，尤其是多核 CPU 的出现，单线程带来很大的不便，无法充分发挥计算机的计算能力。

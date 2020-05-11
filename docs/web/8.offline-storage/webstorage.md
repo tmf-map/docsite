@@ -1,6 +1,5 @@
 ---
 title: Web Storage
-sidebar_label: Web Storage
 ---
 
 ## Web Storage

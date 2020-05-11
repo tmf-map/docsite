@@ -1,9 +1,8 @@
 ---
 title: rem
-sidebar_label: rem
 ---
 
-import Img from '../../../src/components/Img'; import Hint from '../../../src/components/Hint';
+import Img from '../../../src/components/Img';
 
 ## 与 em 的区别
 

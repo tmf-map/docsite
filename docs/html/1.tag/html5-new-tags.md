@@ -1,6 +1,5 @@
 ---
 title: HTML5 新增标签
-sidebar_label: HTML5 新增标签
 ---
 
 ## `<header>...</header>`

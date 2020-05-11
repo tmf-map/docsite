@@ -1,9 +1,6 @@
 ---
 title: Hook
-sidebar_label: Hook
 ---
-
-import Hint from '../../../src/components/Hint';
 
 > Hook 是 React 16.8 的新增特性。它可以让你在不编写 class 的情况下使用 state 以及其他的 React 特性。
 
@@ -88,19 +85,31 @@ function ExampleWithManyStates() {
 
 其次， `useState` 接收的初始值没有规定一定要是 `string/number/boolean` 这种简单数据类型，它完全**可以接收对象或者数组作为参数**。最后，React 也给我们提供了一个 `useReducer` 的 hook ，如果你更喜欢 Redux 式的状态管理方案的话。
 
-<Hint type="warn">之前我们的 `this.setState` 做的是**合并状态**后返回一个新状态，而 `useState` 是直接**替换**老状态后返回新状态。</Hint>
+:::caution
+
+之前我们的 `this.setState` 做的是**合并状态**后返回一个新状态，而 `useState` 是直接**替换**老状态后返回新状态。
+
+:::
 
 从 `ExampleWithManyStates` 函数我们可以看到， `useState` 无论调用多少次，相互之间是独立的。这一点至关重要。为什么这么说呢？
 
 其实我们看 Hook 的“形态”，有点类似之前被官方否定掉的 Mixins 这种方案，都是提供一种“插拔式的功能注入”的能力。而 Mixins 之所以被否定，是因为**Mixins 机制是让多个 Mixins 共享一个对象的数据空间**，这样就很难确保不同 Mixins 依赖的状态不发生冲突。
 
-<Hint type="tip">每一个 hook 都是相互独立的，**不同组件调用同一个 hook 也能保证各自状态的独立性。**这就是两者的本质区别了。</Hint>
+:::tip
+
+每一个 hook 都是相互独立的，**不同组件调用同一个 hook 也能保证各自状态的独立性。**这就是两者的本质区别了。
+
+:::
 
 ### 怎么保证多个 useState 的相互独立
 
 还是看上面给出的 `ExampleWithManyStates` 例子，我们调用了三次`useState` ，每次我们传的参数只是一个值（如 42，'banana'），我们根本没有告诉 React 这些值对应的 key 是哪个，那 React 是怎么保证这三个 `useState` 找到它对应的 state 呢？
 
-<Hint type="tip">React 是根据 `useState` 出现的顺序来定的。</Hint>
+:::tip
+
+React 是根据 `useState` 出现的顺序来定的。
+
+:::
 
 我们具体来看一下：
 
@@ -146,7 +155,11 @@ useState(42); //读取状态变量age的值（这时候传的参数42直接被�
 useState([{text: 'Learn Hook'}]); //读取到的却是状态变量fruit的值，导致报错
 ```
 
-<Hint type="bad">React 规定我们必须把 hook 写在函数的最外层，不能写在 `ifelse` 等条件语句当中，来确保 hook 的执行顺序一致。</Hint>
+:::bad
+
+React 规定我们必须把 hook 写在函数的最外层，不能写在 `ifelse` 等条件语句当中，来确保 hook 的执行顺序一致。
+
+:::
 
 ## useEffect
 
@@ -211,9 +224,17 @@ function Example() {
 }
 ```
 
-<Hint type="tip">可以将 `useEffect` 看成是 `componentDidMount` ， `componentDidUpdate` 和 `componentWillUnmount` 三者的合体。</Hint>
+:::tip
 
-<Hint type="warn">如果 `useEffect` 没有返回函数，那么 `componentWillUnmount` 的时候是不会执行 `useEffect`。</Hint>
+可以将 `useEffect` 看成是 `componentDidMount` ， `componentDidUpdate` 和 `componentWillUnmount` 三者的合体。
+
+:::
+
+:::caution
+
+如果 `useEffect` 没有返回函数，那么 `componentWillUnmount` 的时候是不会执行 `useEffect`。
+
+:::
 
 我们再梳理一遍下面代码的逻辑：
 
@@ -231,7 +252,11 @@ function Example() {
 
 在这个例子里，我们的副作用是调用 Browser API 来修改文档标题。当 React 要渲染我们的组件时，它会先记住我们用到的副作用。等 React 更新了 DOM 之后，它再依次执行我们定义的副作用函数。
 
-<Hint type="warn">`useEffect` 中定义的副作用函数的执行不会阻碍浏览器更新视图，也就是说这些函数是**异步**执行的，而之前的 `componentDidMount` 或 `componentDidUpdate` 中的代码则是同步执行的。</Hint>
+:::caution
+
+`useEffect` 中定义的副作用函数的执行不会阻碍浏览器更新视图，也就是说这些函数是**异步**执行的，而之前的 `componentDidMount` 或 `componentDidUpdate` 中的代码则是同步执行的。
+
+:::
 
 这种安排对大多数副作用说都是合理的，但有的情况除外，比如我们有时候需要先根据 DOM 计算出某个元素的尺寸再重新渲染，这时候我们希望这次重新渲染是同步发生的，也就是说它会在浏览器真的去绘制这个页面前发生。
 
@@ -247,7 +272,11 @@ useEffect(() => {
 
 上面这个示例中，我们传入 `[count]` 作为第二个参数。这个参数是什么作用呢？如果 count 的值是 5，而且我们的组件重渲染的时候 `count` 还是等于 5，React 将对前一次渲染的 [5] 和后一次渲染的 [5] 进行比较。因为数组中的所有元素都是相等的(`5 === 5`)，React 会跳过这个 effect，这就实现了性能的优化。
 
-<Hint type="tip">如果数组中有多个元素，即使只有一个元素发生变化，React 也会执行 `useEffect` 。</Hint>
+:::tip
+
+如果数组中有多个元素，即使只有一个元素发生变化，React 也会执行 `useEffect` 。
+
+:::
 
 `useEffect` 的第二个参数，有三种情况：
 
@@ -255,7 +284,11 @@ useEffect(() => {
 - 传入一个空数组 `[]` , 只会在首次渲染时调用一次，相当于 `componentDidMount` 和 `componentWillUnmount`
 - 传入一个数组，其中包括变量，只有这些变量变动时， `useEffect` 才会执行
 
-<Hint type="warn">当我们第二个参数传一个空数组 `[]` 时，这种用法可能带来 Bug，少用。</Hint>
+:::caution
+
+当我们第二个参数传一个空数组 `[]` 时，这种用法可能带来 Bug，少用。
+
+:::
 
 第二个参数，可以传递 `props` ，例如：
 
@@ -272,7 +305,11 @@ useEffect(() => {
 
 另外，由于前文所说 Hook 可以反复多次使用，相互独立。所以相对合理的做法是：
 
-<Hint type="good">给每一个副作用一个单独的 `useEffect` 钩子。这样一来，这些副作用不再一股脑堆在生命周期钩子里，代码变得更加清晰。一些不必要的 `useEffect` 函数也可以避免。</Hint>
+:::good
+
+给每一个副作用一个单独的 `useEffect` 钩子。这样一来，这些副作用不再一股脑堆在生命周期钩子里，代码变得更加清晰。一些不必要的 `useEffect` 函数也可以避免。
+
+:::
 
 ### 解绑一些副作用
 
@@ -309,11 +346,23 @@ function FriendStatus(props) {
 
 **React 何时清除 effect？** `componentDidUpdate` + `componentWillUnmount`。首次不执行，React 会在执行当前 effect 之前对上一个 effect 进行清除，这也解释了为什么每次更新的时候都要运行 `useEffect` 。
 
-<Hint type="tip">并不是必须为 effect 中返回的函数命名。这里我们将其命名为 `cleanup` 是为了表明此函数的目的，但其实也可以返回一个箭头函数或者给起一个别的名字。</Hint>
+:::tip
 
-<Hint type="tip">`useEffect` 可以在组件渲染后实现各种不同的副作用。有些副作用可能需要清除，则需要返回一个函数。有些 effect 可能不必清除，所以不需要返回函数。</Hint>
+并不是必须为 effect 中返回的函数命名。这里我们将其命名为 `cleanup` 是为了表明此函数的目的，但其实也可以返回一个箭头函数或者给起一个别的名字。
 
-<Hint type="warn">这种解绑的模式跟 `componentWillUnmount` 不一样。 `componentWillUnmount` 只会在组件被销毁前执行一次而已，而 `useEffect` ，每次组件渲染后都会执行一遍 `useEffect` 里的函数，包括返回的 `cleanup` 函数也会重新执行一遍。</Hint>
+:::
+
+:::tip
+
+`useEffect` 可以在组件渲染后实现各种不同的副作用。有些副作用可能需要清除，则需要返回一个函数。有些 effect 可能不必清除，所以不需要返回函数。
+
+:::
+
+:::caution
+
+这种解绑的模式跟 `componentWillUnmount` 不一样。 `componentWillUnmount` 只会在组件被销毁前执行一次而已，而 `useEffect` ，每次组件渲染后都会执行一遍 `useEffect` 里的函数，包括返回的 `cleanup` 函数也会重新执行一遍。
+
+:::
 
 ### 为什么每次更新的时候都要运行 useEffect
 
@@ -409,7 +458,11 @@ useEffect(() => {
 
 我们将公共的部门提取出来，新建一个 `useFriendStatus` 的 Hook 专门用来判断某个 id 是否在线。
 
-<Hint type="bad">自定义 Hook 必须以 “use” 开头，不遵循的话，由于无法判断某个函数是否包含对其内部 Hook 的调用，React 将无法自动检查你的 Hook 是否违反了 [Hook 的规则](https://zh-hans.reactjs.org/docs/hooks-rules.html)。</Hint>
+:::bad
+
+自定义 Hook 必须以 “use” 开头，不遵循的话，由于无法判断某个函数是否包含对其内部 Hook 的调用，React 将无法自动检查你的 Hook 是否违反了 [Hook 的规则](https://zh-hans.reactjs.org/docs/hooks-rules.html)。
+
+:::
 
 ```jsx
 import {useState, useEffect} from 'react';

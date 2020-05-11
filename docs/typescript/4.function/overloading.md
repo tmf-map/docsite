@@ -1,6 +1,5 @@
 ---
 title: Overloading
-sidebar_label: Overloading
 ---
 
 ## Basic usage

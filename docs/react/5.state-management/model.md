@@ -1,7 +1,6 @@
 ---
 id: model
 title: Model
-sidebar_label: Model
 ---
 
 Model 是 Rematch 中的概念，主要用来简化 Redux，它将 Reducer, Action 放到了一起形成了 model 概念，并移除了定义起来非常繁琐鸡肋的 type。且内部支持异步功能，不需要引入 `redux-thunk`。

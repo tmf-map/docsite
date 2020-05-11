@@ -1,6 +1,5 @@
 ---
 title: 正则表达式
-sidebar_label: 正则表达式
 ---
 
 - 在线编写和检验正则的网站：https://regex101.com 支持多语言切换
