@@ -1,6 +1,5 @@
 ---
 title: 链接
-sidebar_label: 链接
 ---
 
 ## `<a href="">...</a>`

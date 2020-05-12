@@ -1,6 +1,5 @@
 ---
 title: 事件循环
-sidebar_label: 事件循环
 ---
 
 import Img from '../../../src/components/Img';

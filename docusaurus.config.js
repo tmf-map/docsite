@@ -79,7 +79,7 @@ module.exports = {
               label: 'React Stack'
             },
             {
-              to: 'docs/typescript/1.types/basic-types',
+              to: 'docs/typescript/1.get-started',
               activeBasePath: 'docs/typescript/',
               label: 'TypeScript'
             },
@@ -87,6 +87,11 @@ module.exports = {
               to: 'docs/webpack/1.Basic/basic',
               activeBasePath: 'docs/webpack/',
               label: 'Webpack'
+            },
+            {
+              to: 'docs/nodejs/package-manager/yarn',
+              activeBasePath: 'docs/nodejs/',
+              label: 'Node.js'
             }
           ]
         },
@@ -224,7 +229,6 @@ module.exports = {
           }
         },
         blog: {
-          path: './blog',
           editUrl: `https://github.com/${githubOrg}/${githubRepo}/edit/master/`
         },
         theme: {

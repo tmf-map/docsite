@@ -1,6 +1,5 @@
 ---
 title: Basic Types
-sidebar_label: Basic Types
 ---
 
 import Img from '../../../src/components/Img';

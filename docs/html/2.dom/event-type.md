@@ -1,6 +1,5 @@
 ---
 title: 事件类型
-sidebar_label: 事件类型
 ---
 
 ## mouseover & mouseenter

@@ -1,9 +1,8 @@
 ---
 title: Error Boundaries
-sidebar_label: Error Boundaries
 ---
 
-import Img from '../../../src/components/Img';import Hint from '../../../src/components/Hint';
+import Img from '../../../src/components/Img';
 
 In the past, JavaScript errors inside components used to corrupt React’s internal state and cause it to emit cryptic errors on next renders. These errors were always caused by an earlier error in the application code, but React did not provide a way to handle them gracefully in components, and could not recover from them. When these errors occur, your app always displays an empty page like this:
 
@@ -194,9 +193,11 @@ React 16 prints all errors that occurred during rendering to the console in deve
 
 You can also see the filenames and line numbers in the component stack trace. This works by default in Create React App projects.If you don’t use Create React App, you can add [this plugin](https://www.npmjs.com/package/babel-plugin-transform-react-jsx-source) manually to your Babel configuration. Note that it’s intended only for development and **must be disabled in production**.
 
-<Hint type="tip">
+:::tip
+
 Component names displayed in the stack traces depend on the `Function.name` property. If you support older browsers and devices which may not yet provide this natively (e.g. IE 11), consider including a `Function.name` polyfill in your bundled application, such as `function.name-polyfill`. Alternatively, you may explicitly set the `displayName` property on all your components.
-</Hint>
+
+:::
 
 ## How About try/catch?
 

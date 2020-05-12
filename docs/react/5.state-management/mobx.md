@@ -1,6 +1,5 @@
 ---
 title: MobX
-sidebar_label: MobX
 ---
 
 import Img from '../../../src/components/Img';

@@ -1,6 +1,5 @@
 ---
 title: class
-sidebar_label: class
 ---
 
 前言： ES6 中引入了类似传统面向对象语言中“class”的概念。实际上这些关键字只是一些语法糖，底层实现还是通过原型链之间的委托关联关系实现继承。通过[Babel 的转译](https://babeljs.io/repl#?babili=false&browsers=&build=&builtIns=false&spec=false&loose=false&code_lz=MYGwhgzhAEAKCmAnCB7AdtA3gKGtY6EALogK7BEqIAUaYAtvAJRa57REAWAlhAHR1GAXkHwAPmIBEAEXgAzMKRBFJAbjYBfNpQDKJbmgDm1JjnbRE8IqUQYA5ADkG8AFx2A1F14Dn6vFq1sUEgYACEUAE9oeAAPIng0ABMYBGR0M3xCEnJKGlFTNjwIUgAHJFpnJj92L35DBMT4ITtwiLtqrTxdfSMTDLxLa1toYrLEPm7EA2Mmd0loAFpoAHEG10lPHjq1juwNIA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=false&presets=es2015&prettier=true&targets=&version=7.4.5&externalPlugins=)可以发现可以映射到 ES5 的寄生组合继承。

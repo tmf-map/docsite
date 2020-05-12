@@ -1,9 +1,8 @@
 ---
 title: 盒模型
-sidebar_label: 盒模型
 ---
 
-import Hint from '../../../src/components/Hint'; import Img from '../../../src/components/Img';
+import Img from '../../../src/components/Img';
 
 ## display
 
@@ -106,7 +105,11 @@ margin 合并（重叠） 3 种场景：
 </div>
 ```
 
-<Hint type="tip">阻止父子 margin 合并都是针对父元素进行操作。</Hint>
+:::tip
+
+阻止父子 margin 合并都是针对父元素进行操作。
+
+:::
 
 在实际开发的时候，给我们带来麻烦的多半就是这里的父子 margin 合并。 比方说，现在流行官网使用一张大的背景图，然后配上大大的网站标题。由于这个标题一般离头图的顶部有一定距离，因此，我们很自然会想到使用 margin-top 定位，然后问题就来了。因为发生了“奇怪”的事情，头图居然也跟着掉下来了!
 
@@ -202,7 +205,11 @@ margin 合并（重叠） 3 种场景：
 
 此时父级 `<div>` 元素高度仅仅是 `20px`，因为子元素是个空 `<div>` ，它的 margin-top 和 margin-bottom 发生了合并。
 
-<Hint type="tip">这种空块级元素的 margin 合并特性即使自身没有设置 margin 也是会发生的。</Hint>
+:::tip
+
+这种空块级元素的 margin 合并特性即使自身没有设置 margin 也是会发生的。
+
+:::
 
 所谓“合” 并不一定要自己出力，只要出人就可以。比方说，我们一开始的“相邻兄弟元素 margin 合并”， 其实，就算兄弟不相邻，也是可以发生合并的，前提是中间插手的也是个会合并的家伙。比方说:
 

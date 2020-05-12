@@ -1,6 +1,7 @@
 name-template: '2020-Q?-M?'
 tag-template: '2020-Q?-M?'
 sort-by: 'title'
+sort-direction: 'ascending'
 exclude-labels:
   - 'dependencies'
   - 'security'
@@ -19,6 +20,7 @@ categories:
       - 'docs: react'
       - 'docs: webpack'
       - 'docs: typescript'
+      - 'docs: nodejs'
   - title: 'Backend'
     labels:
       - 'docs: java'
@@ -30,8 +32,9 @@ categories:
       - 'dev experience'
       - 'wiki'
       - 'website'
+
 change-template: '- $TITLE (#$NUMBER) @$AUTHOR'
 template: |
-  # Changes
+  # Release Note
 
   $CHANGES

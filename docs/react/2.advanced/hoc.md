@@ -1,10 +1,7 @@
 ---
 id: hoc
 title: HOC
-sidebar_label: HOC
 ---
-
-import Hint from '../../../src/components/Hint';
 
 [高阶组件](https://www.reactjscn.com/docs/higher-order-components.html)类似于函数式编程中的高阶函数，就是一个函数式组件接受一个组件作为参数，经过一系列加工后，最后返回一个新的组件。看下面的代码示例，withUser 函数就是一个高阶组件，它返回了一个新的组件，这个组件具有了它提供的获取用户信息的功能。
 
@@ -27,4 +24,8 @@ export default withUser(UserPage);
 
 对比组件将 props 属性转变成 UI，高阶组件则是将一个组件转换成另一个新组件。高阶组件是通过将原组件 包裹（wrapping） 在容器组件（container component）里面的方式来 组合（composes） 使用原组件。高阶组件就是一个没有副作用的纯函数。高阶组件并不关心数据是如何以及为什么被使用。
 
-<Hint type="bad">不要在高阶组件内部修改（或以其它方式修改）原组件的原型属性。</Hint>
+:::bad
+
+不要在高阶组件内部修改（或以其它方式修改）原组件的原型属性。
+
+:::

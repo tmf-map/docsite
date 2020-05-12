@@ -1,9 +1,6 @@
 ---
 title: 节点增删改查
-sidebar_label: 节点增删改查
 ---
-
-import Hint from '../../../src/components/Hint';
 
 ## 查找节点
 
@@ -30,7 +27,11 @@ However that doesn’t mean that CSS is happy to have an ID selector starting wi
 
 That’s because even though HTML5 is quite happy for an ID to start with a number, CSS is not. CSS simply **doesn’t allow selectors to begin with a number**. See more at [W3C Specification](https://www.w3.org/TR/CSS21/syndata.html#characters).
 
-<Hint type="tip">Similarly, the `querySelector` doesn’t allow selectors to begin with a number.</Hint>
+:::tip
+
+Similarly, the `querySelector` doesn’t allow selectors to begin with a number.
+
+:::
 
 ```js
 document.querySelectorAll('#10');
@@ -77,17 +78,33 @@ document.querySelectorAll('DIV, A, SCRIPT');
 
 如果 `querySelectorAll` 方法的参数是字符串 `*` ，则会返回文档中的所有元素节点。
 
-<Hint type="warn">它们不支持 CSS 伪元素的选择器（比如 `:first-line` 和 `:first-letter` ）和伪类的选择器（比如 `:link` 和 `:visited` ），即无法选中伪元素和伪类。</Hint>
+:::caution
 
-<Hint type="warn">`querySelectorAll` 的返回结果不是动态集合，不会实时反映元素节点的变化。</Hint>
+它们不支持 CSS 伪元素的选择器（比如 `:first-line` 和 `:first-letter` ）和伪类的选择器（比如 `:link` 和 `:visited` ），即无法选中伪元素和伪类。
+
+:::
+
+:::caution
+
+`querySelectorAll` 的返回结果不是动态集合，不会实时反映元素节点的变化。
+
+:::
 
 ### getElementsByTagName()
 
 `document.getElementsByTagName` 方法搜索 HTML 标签名，返回符合条件的元素。如果没有任何匹配的元素，就返回一个空集。
 
-<Hint type="tip">它的返回值是一个类似数组对象（ HTMLCollection 实例）</Hint>
+:::tip
 
-<Hint type="warn">可以实时反映 HTML 文档的变化。</Hint>
+它的返回值是一个类似数组对象（ HTMLCollection 实例）
+
+:::
+
+:::caution
+
+可以实时反映 HTML 文档的变化。
+
+:::
 
 ```js
 let paras = document.getElementsByTagName('p');
@@ -96,9 +113,17 @@ paras instanceof HTMLCollection; // true
 
 上面代码返回当前文档的所有 p 元素节点。
 
-<Hint type="tip">HTML 标签名是大小写不敏感的，因此 `getElementsByTagName` 方法也是大小写不敏感的。</Hint>
+:::tip
 
-<Hint type="tip">返回结果中，各个成员的顺序就是它们在文档中出现的顺序。</Hint>
+HTML 标签名是大小写不敏感的，因此 `getElementsByTagName` 方法也是大小写不敏感的。
+
+:::
+
+:::tip
+
+返回结果中，各个成员的顺序就是它们在文档中出现的顺序。
+
+:::
 
 如果传入 `*`，就可以返回文档中所有 HTML 元素。
 
@@ -110,9 +135,17 @@ let allElements = document.getElementsByTagName('*');
 
 `document.getElementsByClassName` 方法返回包括了所有 class 名字符合指定条件的元素，元素的变化实时反映在返回结果中。
 
-<Hint type="tip">它的返回值是一个类似数组对象（ HTMLCollection 实例）</Hint>
+:::tip
 
-<Hint type="warn">可以实时反映 HTML 文档的变化。</Hint>
+它的返回值是一个类似数组对象（ HTMLCollection 实例）
+
+:::
+
+:::caution
+
+可以实时反映 HTML 文档的变化。
+
+:::
 
 ```js
 let elements = document.getElementsByClassName(names);
@@ -128,7 +161,11 @@ let elements = document.getElementsByClassName('foo bar');
 
 上面代码返回同时具有 foo 和 bar 两个 class 的元素，foo 和 bar 的顺序不重要。
 
-<Hint type="warn">正常模式下，CSS 的 class 是大小写敏感的。（quirks mode 下，大小写不敏感。）</Hint>
+:::caution
+
+正常模式下，CSS 的 class 是大小写敏感的。（quirks mode 下，大小写不敏感。）
+
+:::
 
 ### document.getElementsByName()
 
@@ -148,7 +185,17 @@ forms[0].tagName; // "FORM"
 var elem = document.getElementById('para1');
 ```
 
-<Hint type="warn">该方法的参数是大小写敏感的。</Hint> <Hint type="warn">`Element` 后面没有 `s` 。</Hint>
+:::caution
+
+该方法的参数是大小写敏感的。
+
+:::
+
+:::tip
+
+`Element` 后面没有 `s` 。
+
+:::
 
 `document.getElementById` 方法与 `document.querySelector` 方法都能获取元素节点，不同之处是 `document.querySelector` 方法的参数使用 CSS 选择器语法，`document.getElementById` 方法的参数是元素的 id 属性值。
 
@@ -159,7 +206,11 @@ document.querySelector('#myElement');
 
 上面代码中，两个方法都能选中 id 为 myElement 的元素
 
-<Hint type="tip">`document.getElementById()` 比 `document.querySelector()` 效率高得多。</Hint>
+:::tip
+
+`document.getElementById()` 比 `document.querySelector()` 效率高得多。
+
+:::
 
 ## 增加节点
 
@@ -201,7 +252,11 @@ document.createElement('<div>');
 // DOMException: The tag name provided ('<div>') is not a valid name
 ```
 
-<Hint type="tip">`document.createElement` 的参数可以是自定义的标签名。</Hint>
+:::tip
+
+`document.createElement` 的参数可以是自定义的标签名。
+
+:::
 
 ```js
 document.createElement('foo');
@@ -547,7 +602,11 @@ d.outerHTML;
 // '<div id="d"><p>Hello</p></div>'
 ```
 
-<Hint type="tip">outerHTML 属性是可读写的，对它进行赋值，等于替换掉当前元素。</Hint>
+:::tip
+
+outerHTML 属性是可读写的，对它进行赋值，等于替换掉当前元素。
+
+:::
 
 ```js
 // HTML 代码如下
@@ -564,7 +623,11 @@ d.nodeName; // "DIV"
 
 上面代码中，变量 d 代表子节点，它的 outerHTML 属性重新赋值以后，内层的 div 元素就不存在了，被 p 元素替换了。但是，变量 d 依然指向原来的 div 元素，这表示被替换的 DIV 元素还存在于内存中。
 
-<Hint type="warn">如果一个节点没有父节点，设置 outerHTML 属性会报错。</Hint>
+:::caution
+
+如果一个节点没有父节点，设置 outerHTML 属性会报错。
+
+:::
 
 ```js
 var div = document.createElement('div');

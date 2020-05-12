@@ -1,6 +1,5 @@
 ---
 title: HTTPS
-sidebar_label: HTTPS
 ---
 
 import Img from '../../../src/components/Img';

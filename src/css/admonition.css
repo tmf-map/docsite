@@ -5,26 +5,26 @@
 .admonition.admonition-tip {
   background-color: rgba(235, 247, 253, 0.6);
   border: 1px solid #3884ff;
-  color: var(--ifm-font-base-color);
+  color: var(--ifm-font-color-base);
 }
 
 .admonition.admonition-good {
   background-color: rgba(246, 255, 237, 0.5);
   border: 1px solid #50c610;
-  color: var(--ifm-font-base-color);
+  color: var(--ifm-font-color-base);
 }
 
 .admonition.admonition-caution {
   background-color: rgba(255, 247, 230, 0.6);
   border: 1px solid #faad14;
-  color: var(--ifm-font-base-color);
+  color: var(--ifm-font-color-base);
 }
 
 .admonition.admonition-bad,
 .admonition.admonition-danger {
   background-color: rgba(255, 241, 240, 0.6);
   border: 1px solid #ff4642;
-  color: var(--ifm-font-base-color);
+  color: var(--ifm-font-color-base);
 }
 
 .admonition.admonition-tip a,

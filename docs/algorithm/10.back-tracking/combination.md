@@ -1,7 +1,6 @@
 ---
 id: combination
 title: 字符串的组合
-sidebar_label: 字符串的组合
 ---
 
 - 题源：《剑指 Offer: 面试题 38》P110

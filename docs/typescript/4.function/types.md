@@ -1,6 +1,5 @@
 ---
 title: Types
-sidebar_label: Types
 ---
 
 import Img from '../../../src/components/Img';

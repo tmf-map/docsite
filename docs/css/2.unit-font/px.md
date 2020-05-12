@@ -1,9 +1,8 @@
 ---
 title: px
-sidebar_label: px
 ---
 
-import Img from '../../../src/components/Img'; import Hint from '../../../src/components/Hint';
+import Img from '../../../src/components/Img';
 
 ## px
 
@@ -20,4 +19,8 @@ import Img from '../../../src/components/Img'; import Hint from '../../../src/co
 
 同理，对于非 Retina 屏的，0 ～ 1px 之间的我们称为零头。以是否占满一半即 0.5px 为界来决定忽略还是占满整个。
 
-<Hint type="tip">px 单位前出现小数，无论多少位小数，它们只会影响零头像素在小格（由 dpr 决定）是忽略还是占满整个小格。对于非 retina 屏的精度只有 **1px**，无论有多少位小数。dpr 为 2 的 retina 屏的精度只有 **0.5px**，无论有多少位小数。</Hint>
+:::tip
+
+px 单位前出现小数，无论多少位小数，它们只会影响零头像素在小格（由 dpr 决定）是忽略还是占满整个小格。对于非 retina 屏的精度只有 **1px**，无论有多少位小数。dpr 为 2 的 retina 屏的精度只有 **0.5px**，无论有多少位小数。
+
+:::

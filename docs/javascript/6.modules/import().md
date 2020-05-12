@@ -1,6 +1,5 @@
 ---
 title: 动态import()
-sidebar_label: 动态import()
 ---
 
 ## 为什么需要 import()

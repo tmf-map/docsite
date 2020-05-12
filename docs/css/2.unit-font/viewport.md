@@ -1,9 +1,8 @@
 ---
 title: 'vh/vw'
-sidebar_label: 'vh/vw'
 ---
 
-import Img from '../../../src/components/Img'; import Hint from '../../../src/components/Hint';
+import Img from '../../../src/components/Img';
 
 ## 视区 viewport
 

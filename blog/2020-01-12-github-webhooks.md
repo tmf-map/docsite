@@ -66,7 +66,7 @@ cp -rf ${SITE_PATH}/build/* /home/www
 
 这里也可以使用 `git pull`, 但不同的项目有可能 build 的时候会导致服务器端的仓库出现文件改动，保险起见建议使用 `fetch` + `reset` 的方式。
 
-:::tip
+:::caution
 
 不要直接把网站的静态目录和项目 dist 或者 build 目录当作同一个目录。
 

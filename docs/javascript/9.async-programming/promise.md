@@ -1,6 +1,5 @@
 ---
 title: Promise
-sidebar_label: Promise
 ---
 
 ## 使用 promise 的原因

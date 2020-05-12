@@ -1,7 +1,6 @@
 ---
 id: redux
 title: Redux
-sidebar_label: Redux
 ---
 
 import Img from '../../../src/components/Img';

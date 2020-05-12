@@ -1,6 +1,5 @@
 ---
 title: 缓存代理
-sidebar_label: 缓存代理
 ---
 
 import Img from '../../../src/components/Img';

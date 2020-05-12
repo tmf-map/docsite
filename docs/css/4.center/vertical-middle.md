@@ -1,9 +1,8 @@
 ---
 title: 垂直居中
-sidebar_label: 垂直居中
 ---
 
-import Img from '../../../src/components/Img'; import Hint from '../../../src/components/Hint';
+import Img from '../../../src/components/Img';
 
 <img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/qJ6qBL.png'/>
 
@@ -20,9 +19,17 @@ import Img from '../../../src/components/Img'; import Hint from '../../../src/co
 }
 ```
 
-<Hint type="tip">容器高度已知， `padding` 其实根本上就不存在居中的能力，但可以恰好算出位置，但最好不要这样做。</Hint>
+:::tip
 
-<Hint type="tip">容器高度未知，无论是单行还是多行都可以使用这个方法。</Hint>
+容器高度已知， `padding` 其实根本上就不存在居中的能力，但可以恰好算出位置，但最好不要这样做。
+
+:::
+
+:::tip
+
+容器高度未知，无论是单行还是多行都可以使用这个方法。
+
+:::
 
 ## 2. line-height
 
@@ -64,9 +71,17 @@ import Img from '../../../src/components/Img'; import Hint from '../../../src/co
 }
 ```
 
-<Hint type="tip">只有元素属于 `inline` 或是 `inline-block` (`table-cell` 也可以理解为 `inline-block`)，其身上的 `vertical-align` 属性才会起作用。</Hint>
+:::tip
 
-<Hint type="warn">如果对 `table-cell` 元素设置 `margin`, 那么将会无效。</Hint>
+只有元素属于 `inline` 或是 `inline-block` (`table-cell` 也可以理解为 `inline-block`)，其身上的 `vertical-align` 属性才会起作用。
+
+:::
+
+:::caution
+
+如果对 `table-cell` 元素设置 `margin`, 那么将会无效。
+
+:::
 
 > all elements, except elements with table `display` types other than `table-caption`, `table` and `inline-table`. It also applies to `::first-letter`. — [margin – CSS | MSDN](https://developer.mozilla.org/en-US/docs/Web/CSS/margin)
 
@@ -119,4 +134,8 @@ import Img from '../../../src/components/Img'; import Hint from '../../../src/co
 }
 ```
 
-<Hint type="warn">绝对定位可以让元素块状化。</Hint>
+:::caution
+
+绝对定位可以让元素块状化。
+
+:::

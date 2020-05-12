@@ -1,10 +1,7 @@
 ---
 id: unit-test
 title: 单元测试
-sidebar_label: 单元测试
 ---
-
-import Hint from '../../../src/components/Hint';
 
 TDD（Test-driven development）和单元测试密不可分，但 TDD 并不是银弹，不必一味地追求，为写测试而写测试，这需要自己去把控和权衡。
 
@@ -36,7 +33,11 @@ Jest 是 Facebook 开源的一个测试框架，相对其他测试框架，其�
 - **兼容性好**：兼容 Jasmine 框架语法，又新增了一些新的便捷功能。
 - **JSDOM**：不需要真实 DOM 环境执行，而是 JSDOM 模拟的 DOM。
 
-<Hint type="good">将 jest config 放在项目根目录下，可以省去一些配置上的麻烦和某些配置问题导致覆盖率为 0%的问题。</Hint>
+:::good
+
+将 jest config 放在项目根目录下，可以省去一些配置上的麻烦和某些配置问题导致覆盖率为 0%的问题。
+
+:::
 
 ## 测试覆盖率
 

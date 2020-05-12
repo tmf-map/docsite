@@ -1,6 +1,5 @@
 ---
 title: 内存泄漏
-sidebar_label: 内存泄漏
 ---
 
 不再用到的内存，没有及时释放，就叫做内存泄漏 (Memory Leak)。

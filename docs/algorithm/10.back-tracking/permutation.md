@@ -1,7 +1,6 @@
 ---
 id: permutation
 title: 字符串的排列
-sidebar_label: 字符串的排列
 ---
 
 - 题源：《剑指 Offer: 面试题 38》P110

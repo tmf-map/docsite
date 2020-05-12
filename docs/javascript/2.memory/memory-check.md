@@ -1,6 +1,5 @@
 ---
 title: 内存检测
-sidebar_label: 内存检测
 ---
 
 ## 对象大小

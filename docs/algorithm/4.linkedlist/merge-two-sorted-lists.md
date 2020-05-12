@@ -1,7 +1,6 @@
 ---
 id: merge-two-sorted-lists
 title: 合并两个有序链表
-sidebar_label: 合并两个有序链表
 ---
 
 - 题源：《剑指 Offer: 面试题 25》P145

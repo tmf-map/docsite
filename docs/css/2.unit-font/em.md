@@ -1,9 +1,8 @@
 ---
 title: em
-sidebar_label: em
 ---
 
-import Img from '../../../src/components/Img'; import Hint from '../../../src/components/Hint';
+import Img from '../../../src/components/Img';
 
 px 被称做“绝对单位”。也就是说，5px 在不同的场景下是一样的值。而其他的单位，如 em 和 rem，不是绝对的而是相对的。这也使得使用起来比较灵活也比较难以掌握。
 
@@ -14,7 +13,11 @@ em 特点：
 - em 的值并不是固定的；
 - em 会继承父级元素的字体大小。
 
-<Hint type="warn">任意浏览器的默认 `font-size: 16px` 。所有未经调整的浏览器都符合: `1em = 16px` 。那么 `12px = 0.75em`, `10px = 0.625em` 。</Hint>
+:::caution
+
+任意浏览器的默认 `font-size: 16px` 。所有未经调整的浏览器都符合: `1em = 16px` 。那么 `12px = 0.75em`, `10px = 0.625em` 。
+
+:::
 
 为了简化 font-size 的换算，需要在 CSS 中声明：
 

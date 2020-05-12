@@ -1,6 +1,5 @@
 ---
 title: 工程引用
-sidebar_label: 工程引用
 ---
 
 ## 概述

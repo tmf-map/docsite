@@ -1,9 +1,6 @@
 ---
 title: 节点基础概念
-sidebar_label: 节点基础概念
 ---
-
-import Hint from '../../../src/components/Hint';
 
 > DOM 是 JavaScript 操作网页的接口，全称为“文档对象模型”（Document Object Model）。它的作用是将网页转为一个 JavaScript 对象，从而可以用脚本进行各种操作（比如增删内容）。
 
@@ -127,11 +124,19 @@ if (node.nodeType === Node.ELEMENT_NODE) {
 
 ## Node 关系
 
-<Hint type="tip">浏览器原生提供 document 对象，代表整个文档。</Hint>
+:::tip
+
+浏览器原生提供 document 对象，代表整个文档。
+
+:::
 
 文档的第一层只有一个节点，就是 HTML 网页的第一个标签`<html>`，它构成了树结构的根节点（root node），其他 HTML 标签节点都是它的下级节点。
 
-<Hint type="tip">`html` 是 DOM 树的根节点</Hint>
+:::tip
+
+`html` 是 DOM 树的根节点
+
+:::
 
 除了根节点，其他节点都有三种层级关系。
 

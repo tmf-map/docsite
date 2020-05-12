@@ -1,6 +1,5 @@
 ---
 title: 根结构
-sidebar_label: 根结构
 ---
 
 ## `<html>...</html>`

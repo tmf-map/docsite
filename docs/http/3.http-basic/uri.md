@@ -1,6 +1,5 @@
 ---
 title: URI的组成部分
-sidebar_label: URI的组成部分
 ---
 
 ## URI 的定义

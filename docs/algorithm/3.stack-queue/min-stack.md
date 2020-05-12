@@ -1,7 +1,6 @@
 ---
 id: min-stack
 title: 最小栈
-sidebar_label: 最小栈
 ---
 
 - 题源：《剑指 Offer: 面试题 30》P165

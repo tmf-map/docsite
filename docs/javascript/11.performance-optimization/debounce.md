@@ -1,9 +1,8 @@
 ---
 title: 防抖
-sidebar_label: 防抖
 ---
 
-import Hint from '../../../src/components/Hint'; import Img from '../../../src/components/Img';
+import Img from '../../../src/components/Img';
 
 ## 什么是 debounce
 

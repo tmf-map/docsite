@@ -3,6 +3,7 @@
 @import './variables.css';
 @import './media-queries.css';
 @import './admonition.css';
+@import './leftbar.css';
 @import './navbar.css';
 @import './dropdown.css';
 @import './markdown.css';
@@ -74,7 +75,8 @@ main .container {
   padding-left: 0;
 }
 
-.container.margin-vert--xl {
+.container.margin-vert--xl,
+.container.margin-vert--lg {
   margin-top: 4rem !important;
 }
 

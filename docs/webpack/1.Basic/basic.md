@@ -2,8 +2,6 @@
 title: webpack核心概念
 ---
 
-import Img from '../../../src/components/Img';
-
 ## Entry
 
 `Entry` ⽤用来指定 `webpack` 的打包入⼝，入⼝文件只能是`.js`文件。对于非代码部分比如图片、字体等也会通过依赖加入到依赖图中。
@@ -72,15 +70,16 @@ module.exports = {
 
 ### 常用的 loaders
 
-| 名称          | 描述                          |
-| ------------- | ----------------------------- |
-| babel-loader  | 转换`ES6`以上新版本的`JS`代码 |
-| css-loader    | 支持`.css`文件的加载和解析    |
-| less-loader   | 将`less`文件转换成`css`       |
-| ts-loader     | 将`ts`转换成`js`              |
-| file-loader   | 进行图片、字体等打包          |
-| raw-loader    | 将文件以字符串的形式导入      |
-| thread-loader | 多进程打包`js`和`css`         |
+| 名称           | 描述                                        |
+| -------------- | ------------------------------------------- |
+| babel-loader   | 转换`ES6`以上新版本的`JS`代码               |
+| css-loader     | 支持`.css`文件的加载和解析                  |
+| less-loader    | 将`.less`文件转换成`.css`                   |
+| postcss-loader | 为 CSS 属性补齐前缀                         |
+| file-loader    | 进行图片、字体等打包                        |
+| url-loader     | 将体积小于设定值的图片、字体等转化为 base64 |
+| ts-loader      | 将`.ts`转换成`.js`                          |
+| thread-loader  | 多进程打包`js`和`css`                       |
 
 ### Loaders 的用法
 
@@ -128,15 +127,17 @@ use: [
 
 | 名称 | 描述 |
 | --- | --- |
-| SplitChunksPlugin | 提取公共资源 |
-| CleanWebpackPlugin | 每次构建后清楚`./dist`目录 |
-| MiniCssExtractPlugin | 将`CSS`从`bundle`文件里提取成一个独立的`css`文件 |
-| CopyWebpackPlugin | 将文件或者文件夹拷贝到构建的输出目录 |
-| HtmlWebpackPlugin | 创建`html`文件去承载输出的`bundle` |
-| UglifyjsWebpackPlugin | 压缩`js` |
-| ZipWebpackPlugin | 将打包后的资源生成一个`zip`包 |
+| html-webpack-plugin | 创建`html`文件去承载输出的`bundle` |
+| mini-css-extract-plugin | 将`CSS`从`bundle`文件里提取成一个独立的`css`文件 |
+| optimize-css-assets-webpack-plugin | 压缩 CSS 代码 |
+| uglifyjs-webpack-plugin | 压缩`js`(Webpack4 已经默认支持，不支持 ES6 代码) |
+| terser-webpack-plugin | 压缩`js`(Webpack4 已经默认支持，支持压缩 ES6 代码) |
+| clean-webpack-plugin | 每次构建后清除`./dist`目录 |
 | friendly-errors-webpack-plugin | 优化命令行的构建日志提示信息 |
-| webpack-livereload-plugin | 开启监听模式是，代码更改自动刷新页面 |
+| speed-measure-webpack-plugin | 查看打包耗时、以及每个 Plugin 和 Loader 耗时 |
+| webpack-bundle-analyzer | 可视化 Webpack 输出文件的体积 (业务组件、依赖第三方模块) |
+| webpack-livereload-plugin | 开启监听模式时，代码更改自动刷新页面 |
+| copy-webpack-plugin | 将文件或者文件夹拷贝到构建的输出目录 |
 
 :::caution
 

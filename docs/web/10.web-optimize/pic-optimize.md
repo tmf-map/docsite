@@ -1,7 +1,6 @@
 ---
 id: pic-optimize
 title: 图片优化
-sidebar_label: 图片优化
 ---
 
 ## 不在盒子元素中缩放图片

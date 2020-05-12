@@ -1,6 +1,5 @@
 ---
 title: CORS
-sidebar_label: CORS
 ---
 
 ## CORS 简介
@@ -173,7 +172,7 @@ Access-Control-Allow-Origin: *
 
 ## CORS 跨域 demo
 
-可以通过`git clone git@github.com:USTC-Han/cross-domain.git`将 demo 拷贝到本地，然后参考 Readme 中的步骤，运行其中的`1-CORS`项目，查看控制台 network 中接口的字段。
+可以通过`git clone git@github.com:Robbie-Han/cross-domain.git`将 demo 拷贝到本地，然后参考 Readme 中的步骤，运行其中的`1-CORS`项目，查看控制台 network 中接口的字段。
 
 **核心代码**
 

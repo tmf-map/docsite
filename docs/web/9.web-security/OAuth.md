@@ -1,11 +1,8 @@
 ---
 title: OAuth
-sidebar_label: OAuth
 ---
 
 import Img from '../../../src/components/Img';
-
-import Hint from '../../../src/components/Hint';
 
 ## OAuth 定义
 
@@ -136,7 +133,11 @@ https://github.com/login/oauth/authorize?
 
 上文介绍的`GitHub`便是采用了**授权码模式**，**第三方应用`leetcode`先申请一个授权码`code`，然后再用该授权码获取令牌**。
 
-<Hint type="tip">除了授权码模式外，还有密码模式、简化模式和客户端模式，这三种模式在本文中将不再介绍，也不推荐使用这三种授权模式。</Hint>
+:::tip
+
+除了授权码模式外，还有密码模式、简化模式和客户端模式，这三种模式在本文中将不再介绍，也不推荐使用这三种授权模式。
+
+:::
 
 如果对其它三种授权模式感兴趣，可以通过参考连接中的`1`和`2`来学习。
 

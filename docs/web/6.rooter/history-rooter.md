@@ -1,9 +1,6 @@
 ---
 title: History 路由
-sidebar_label: History 路由
 ---
-
-import Hint from '../../../src/components/Hint';
 
 `window.history` 表示当前窗口的浏览历史。
 
@@ -129,7 +126,11 @@ history.go(2);
 
 每当同一个文档的浏览历史（即`history`对象）出现变化时，就会触发`popstate`事件。
 
-<Hint type="warn">仅仅调用`pushState()`方法或`replaceState()`方法 ，并不会触发该事件，只有用户点击浏览器倒退按钮和前进按钮，或者使用 JavaScript 调用`history.back()`、`history.forward()`、`history.go()`方法时才会触发。</Hint>
+:::caution
+
+仅仅调用`pushState()`方法或`replaceState()`方法 ，并不会触发该事件，只有用户点击浏览器倒退按钮和前进按钮，或者使用 JavaScript 调用`history.back()`、`history.forward()`、`history.go()`方法时才会触发。
+
+:::
 
 另外，该事件只针对同一个文档，如果浏览历史的切换，导致加载不同的文档，该事件也不会触发。
 
@@ -156,7 +157,11 @@ window.addEventListener('popstate', function (event) {
 var currentState = history.state;
 ```
 
-<Hint type="warn">页面第一次加载的时候，浏览器不会触发`popstate`事件。</Hint>
+:::caution
+
+页面第一次加载的时候，浏览器不会触发`popstate`事件。
+
+:::
 
 ## 原理
 

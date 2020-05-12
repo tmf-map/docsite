@@ -1,6 +1,5 @@
 ---
 title: Set/Map
-sidebar_label: Set/Map
 ---
 
 https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/6#issuecomment-464321312

@@ -1,7 +1,6 @@
 ---
 id: reverse-linked-list
 title: 反转链表
-sidebar_label: 反转链表
 ---
 
 - 题源：《剑指 Offer: 面试题 24》P142

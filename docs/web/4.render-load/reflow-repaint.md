@@ -1,7 +1,6 @@
 ---
 id: reflow-repaint
 title: Reflow & Repaint
-sidebar_label: Reflow & Repaint
 ---
 
 根据渲染树布局，计算 CSS 样式，即每个节点在页面中的大小和位置等几何信息。HTML 默认是流式布局的，CSS 和 JS 会打破这种布局，改变 DOM 的外观样式以及大小和位置。这时就要提到两个重要概念：Reflow 和 Repaint。

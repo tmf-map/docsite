@@ -1,7 +1,6 @@
 ---
 id: rotate-string
 title: 翻转字符串
-sidebar_label: 翻转字符串
 ---
 
 - 题源：《剑指 Offer: 面试题 58》P284

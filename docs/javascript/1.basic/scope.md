@@ -1,6 +1,5 @@
 ---
 title: 作用域
-sidebar_label: 作用域
 ---
 
 Scope 指变量的**可见性**。

@@ -1,9 +1,6 @@
 ---
 title: JS 动画
-sidebar_label: JS 动画
 ---
-
-import Hint from '../../../src/components/Hint';
 
 ## JS 动画原理
 
@@ -102,4 +99,8 @@ class App extends React.Component {
 }
 ```
 
-<Hint type="warn">定时器在某些情况下也会出现降速的情况，具体参见[《定时器降速》](/docs/javascript/9.async-programming/timer#定时器降速)。因此不要指望一点误差也没有。</Hint>
+:::caution
+
+定时器在某些情况下也会出现降速的情况，具体参见[《定时器降速》](/docs/javascript/9.async-programming/timer#定时器降速)。因此不要指望一点误差也没有。
+
+:::

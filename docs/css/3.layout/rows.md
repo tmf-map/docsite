@@ -1,9 +1,8 @@
 ---
 title: 行布局
-sidebar_label: 行布局
 ---
 
-import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem'; import Hint from '../../../src/components/Hint';
+import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';
 
 ## 两行布局
 
@@ -53,7 +52,11 @@ main {
 </TabItem>
 </Tabs>
 
-<Hint type="tip">要想出现 y 轴的滚动条，那么父元素的实际高度要比子元素的高度小，且 `overflow-y` 是加在父元素上的。</Hint>
+:::tip
+
+要想出现 y 轴的滚动条，那么父元素的实际高度要比子元素的高度小，且 `overflow-y` 是加在父元素上的。
+
+:::
 
 如果使用的 `calc`, `margin`, `position: absolute` 之类的方式进行布局, 则 AUTO 部分的 `top` 偏移值可能在不同页面实际值不一样，那么使用 flex 将是一个非常不错的选择。
 

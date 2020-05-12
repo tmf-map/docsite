@@ -1,10 +1,7 @@
 ---
 id: state-test
 title: 状态测试
-sidebar_label: 状态测试
 ---
-
-import Hint from '../../../src/components/Hint';
 
 在 React App 的开发过程中，我们将状态测试主要分为 Action Test、Reducer Test 和 Selector Test。
 
@@ -63,7 +60,11 @@ describe('#action# setLinesData', () => {
 
 函数中的业务逻辑，需要根据具体的情况进行测试。
 
-<Hint type="bad">异步 action 的测试一定要向其传入并执行 done 函数， Jest 会等 done 回调执行结束后，结束测试。否则 test 会显示通过，但有错误，也失去了测试的意义。</Hint>
+:::bad
+
+异步 action 的测试一定要向其传入并执行 done 函数， Jest 会等 done 回调执行结束后，结束测试。否则 test 会显示通过，但有错误，也失去了测试的意义。
+
+:::
 
 ## Reducer Test
 

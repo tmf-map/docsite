@@ -1,9 +1,8 @@
 ---
 title: 浏览器窗口
-sidebar_label: 浏览器窗口
 ---
 
-import Hint from '../../../src/components/Hint'; import Img from '../../../src/components/Img';
+import Img from '../../../src/components/Img';
 
 ## window 的大小
 
@@ -15,13 +14,21 @@ import Hint from '../../../src/components/Hint'; import Img from '../../../src/c
 
 用户放大网页的时候（比如将网页从 100%的大小放大为 200%），这两个属性会变小。因为这时网页的像素大小不变（比如宽度还是 960 像素），只是每个像素占据的屏幕空间变大了，因为可见部分（视口）就变小了。
 
-<Hint type="warn">这两个属性值包括滚动条的高度和宽度。</Hint>
+:::caution
+
+这两个属性值包括滚动条的高度和宽度。
+
+:::
 
 ### outerWith/outerHeight
 
 `window.outerWidth` 和 `window.outerHeight`属性返回浏览器窗口的高度和宽度，包括浏览器菜单和边框（单位像素）。这两个属性只读。
 
-<Hint type="tip">outerWith/outerHeight 即为浏览器窗口的宽高。</Hint>
+:::tip
+
+outerWith/outerHeight 即为浏览器窗口的宽高。
+
+:::
 
 ## window 的位置
 
@@ -69,7 +76,11 @@ window.moveBy(25, 50);
 
 上面代码将窗口向右移动 25 像素、向下移动 50 像素。
 
-<Hint type="warn">为了防止有人滥用这两个方法，随意移动用户的窗口，目前只有一种情况，浏览器允许用脚本移动窗口：该窗口是用 `window.open` 方法新建的，并且它所在的 Tab 页是当前窗口里面唯一的。除此以外的情况，使用上面两个方法都是无效的。</Hint>
+:::caution
+
+为了防止有人滥用这两个方法，随意移动用户的窗口，目前只有一种情况，浏览器允许用脚本移动窗口：该窗口是用 `window.open` 方法新建的，并且它所在的 Tab 页是当前窗口里面唯一的。除此以外的情况，使用上面两个方法都是无效的。
+
+:::
 
 ## window 的缩放
 
@@ -104,7 +115,11 @@ window.resizeBy(-200, -200);
 
 `window.scrollX` 属性返回页面的水平滚动距离，`window.scrollY` 属性返回页面的垂直滚动距离，单位都为像素。这两个属性只读。
 
-<Hint type="warn">这两个属性的返回值不是整数，而是双精度浮点数。如果页面没有滚动，它们的值就是 0。</Hint>
+:::caution
+
+这两个属性的返回值不是整数，而是双精度浮点数。如果页面没有滚动，它们的值就是 0。
+
+:::
 
 举例来说，如果用户向下拉动了垂直滚动条 75 像素，那么 window.pageYOffset 就是 75 左右。用户水平向右拉动水平滚动条 200 像素，window.pageXOffset 就是 200 左右。
 
