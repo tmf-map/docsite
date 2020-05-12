@@ -44,11 +44,11 @@ module.exports = {
 
 - 在生产环境中配置`./dist`为输出目录, 执行`npm run build`后文件都被打包到了指定的`./dist`目录，打包过程如下所示：
 
-<Img src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200424154842.gif"/>
+<Img width="700" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200424154842.gif"/>
 
 - 在开发环境中配置`./dist`为输出目录, 执行`npm run dev`启动`webpackDevServer`后发现`./dist`目录一直为空，打包过程如下所示：
 
-<Img src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200424154744.gif"/>
+<Img width="700" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200424154744.gif"/>
 
 ## publicPath
 
@@ -89,25 +89,29 @@ module.exports = {
   //...
 ```
 
-在 demo 中的`index.less`中我们引入了`./images/logo.png`，当我们不设置`output.publicPath`时，打包结果如下：
+在 demo 中的`index.less`中我们引入了`./images/logo.png`，当我们不设置`output.publicPath`时，样式文件的打包结果如下：
 
 <Img width="700" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200502173152.png"/>
 
-当我们设置`output.publicPath`为"http://localhost:8080/"时，打包结果如下：
+设置`output.publicPath`为`http://localhost:8080/`时，打包结果如下：
 
 <Img width="700" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200502173001.png"/>
 
-打包后的`index.html`文件如下：
+当不设置`output.publicPath`时，包后的`index.html`文件如下：
+
+<Img width="700" height="246" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200512231507.png"/>
+
+设置`output.publicPath`为`http://localhost:8080/`时，打包后的`index.html`文件如下：
 
 <Img width="700" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200502173116.png"/>
 
 通过打包结果可以看出，在生产环境中，我们可以利用`publicPath`来为系统引用资源设置公共的 CDN`url`前缀。
 
-- 生产环境
+- 开发环境
 
 下面我们结合 demo，着重讲解在开发环境中`output.publicPath`的表现。
 
-- 我们不为`publicPath`赋值，让`publicPath`取默认值，因此我们期望打包后，所有文件都可以被打包到根目录，以`/`为前缀。
+我们不为`publicPath`赋值，让`publicPath`取默认值，因此我们期望打包后，所有文件都可以被打包到根目录，以`/`为前缀。
 
 ```js {7,18} title="webpack.dev.js"
 module.exports = {
@@ -138,7 +142,7 @@ module.exports = {
 
 由演示的结果可以看出，打包后的静态资源`search.html`、`index.js`和图片都是以`/`为前缀，这证明了**在默认的情况下，`output.publicPath`代表着项目根目录**。
 
-- 为了进一步的证明，我们还可以将`output.publicPath`改为`/dist/`，我们期望所有的静态资源都会添加/dist/前缀。运行过程如下图：
+为了进一步的证明，我们还可以将`output.publicPath`改为`/dist/`，我们期望所有的静态资源都会添加`/dist/`前缀。运行过程如下图：
 
 <Img width="700"  id = "second-demo" legend="演示2：output.publicPath为特定值" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200423181421.gif"/>
 
@@ -146,22 +150,22 @@ module.exports = {
 
 ### devServer.publicPath
 
-在开启 webpackDevServer 时浏览器中可通过该路径访问 `bundled` 文件，**静态文件前会加上这个路径前缀**。`devServer.publicPath`和`out.publicPath`的功能相似，两者之间的联系如下：
+在开启 webpackDevServer 时浏览器中可通过该路径访问 `bundled` 文件，**静态文件前会加上这个路径前缀**。`devServer.publicPath`和`output.publicPath`的功能相似，两者之间的联系如下：
 
 1. 若两者都不设置的话，那所有的静态文件都以“/”为前缀。
-2. 若`devServer.publicPath`没有设置，则默认为`out.publicPath`的值。
-3. 若`out.publicPath`的值没有设置，则所有静态文件以`devServer.publicPath`值为前缀。
-4. 若两者都有设置且不相同，则使用`loader`打包出的静态文件以`out.publicPath`的值为前缀，`html`文件以`devServer.publicPath`为前缀。
+2. 若`devServer.publicPath`没有设置，则默认为`output.publicPath`的值。
+3. 若`output.publicPath`的值没有设置，则所有静态文件以`devServer.publicPath`值为前缀。
+4. 若两者都有设置且不相同，则使用`loader`打包出的静态文件以`output.publicPath`的值为前缀，`html`文件以`devServer.publicPath`为前缀。
 
 :::good
 
-从上面两者的联系可以看出，我们最好只设置`out.publicPath`的值，或者两者设置为相同的值，不然两者关系太复杂。
+从上面两者的联系可以看出，我们最好只设置`output.publicPath`的值，或者两者设置为相同的值，不然两者关系太复杂。
 
 :::
 
 上述结论的`1`和`2`在前面的案例中已经涉及，分别对应<a href="#first-demo">演示 1</a> 和 <a href="#second-demo">演示 2</a>，此处不再细述，下面重点说下`3`和`4`。
 
-- 若`out.publicPath`的值没有设置，则所有静态文件以`devServer.publicPath`值为前缀，也就是说所有的静态资源会打包到`devServer.publicPath`的路径下。如下例所示：
+- 若`output.publicPath`的值没有设置，则所有静态文件以`devServer.publicPath`值为前缀，也就是说所有的静态资源会打包到`devServer.publicPath`的路径下。如下例所示：
 
 ```js {6,17} title="webpack.dev.js"
 module.exports = {
