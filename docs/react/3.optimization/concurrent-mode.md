@@ -109,7 +109,7 @@ function ProfileTimeline() {
 </SuspenseList>
 ```
 
-`SuspenseList`另一个有趣的属性是`revealOrder`，来看一下几张对比图。一般情况下，所有图片出现参差不齐。
+`SuspenseList`另一个有趣的属性是`revealOrder`，来看一下几张对比图。一般情况下，不设置`revealOrder`时，所有图片出现参差不齐。
 
 <Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/without-suspense.gif' alt='without-suspense' width='600'/>
 
@@ -127,7 +127,7 @@ function ProfileTimeline() {
 
 <Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/concurrent-loading.gif' alt='concurrent-loading' width='600'/>
 
-如上图，当用户从 Home 页面切换到 Profile 页面时，可能没有准备好新页面所需的数据或代码。这样过渡到一个空白屏或者大型的轮播图会是一个不愉快的体验。然而，通常获取所需的代码和数据不会花费太长时间。如果 React 可以在旧页面上多停留一段时间，并在展示新页面之前“跳过”“不够好的加载状态”，不是更好吗？
+如上图，当用户从 Home 页面切换到 Profile 页面时，可能没有准备好新页面所需的数据或代码。这样过渡到一个空白屏或者大型的轮播图会是一个不愉快的体验。然而，通常获取所需的代码和数据不会花费太长时间。如果 React 可以在旧页面上多停留一段时间，并在展示新页面之前"跳过"不够好的加载状态，不是更好吗？
 
 之前类比过 Concurrent 模式就像 React 工作"在分支上"。React 首先在内存中准备新页面 — 或者用类比的说法，"在不同的分支上"准备新页面。所以 React 可以在更新 DOM 之前进行等待，以便加载到更多资源。在 Concurrent 模式中，我们可以让 React 继续显示旧页面，且用户可以继续与其交互。当新页面准备就绪之后，React 可以带我们跳转到新页面。
 
@@ -142,7 +142,7 @@ const [startTransition, isPending] = useTransition(SUSPENSE_CONFIG);
 
 `useTransition`可以传入一个配置对象：
 
-- `timeoutMs` number 类型，表示希望这个转换在多少毫秒之内完成。`{timeoutMs: 2000}`表示如果下一个页面需要 2 秒以上才能加载好，那么先展示当前页面，到 2 秒后再展示 Loading 页面。
+- `timeoutMs` 类型为 number，表示希望这个转换在多少毫秒之内完成。`{timeoutMs: 2000}`表示如果下一个页面需要 2 秒以上才能加载好，那么先展示当前页面，到 2 秒后再展示 Loading 页面。
 
 `useTransition`包含两个返回值：
 
@@ -211,6 +211,8 @@ function App() {
 ```
 
 上述代码可以立即显示 input 的新文本，从而使用户感觉到网页在响应。同时，根据 `timeoutMs`，`Grid` 在更新前“延后” 5 秒，允许它在后台渲染当前文本。
+
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/deferred-value.gif' alt='deferred-value' width='600'/>
 
 [在 CodeSandbox 中尝试](https://codesandbox.io/s/blocking-vs-interruptible-8l52r?from-embed=&file=/src/App.js)
 
