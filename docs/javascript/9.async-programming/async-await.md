@@ -79,26 +79,7 @@ async 函数可以看作多个异步操作包装成的一个 Promise 对象，�
 
 ## 容错
 
-之前也谈到了 Promise 对错误处理的一些局限性，这里主要看看 await/async 对错误处理要注意的一些问题。在此之前，我们先看下如果对 await/async 不进行容错处理，将会发生什么：
-
-```js
-let result = async function () {
-  let content = await new Promise((resolve, reject) => {
-    setTimeout(() => {
-      reject(new Error('error'));
-    }, 200);
-  });
-  console.log('A', content);
-};
-
-result()
-  .then(res => console.log(res))
-  .catch(e => console.error(e));
-```
-
-<Img w="450" align="left" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/nHwgFI.png' alt='nHwgFI'/>
-
-我们可以发现错误也能被外层 `result()` 函数捕获，相当于在 try/catch 中直接 `throw error`，那我们哪还需要在 `result` 内部写什么 try/catch 之类的容错代码？带着这个疑问，我们来看以下容错处理的几种方法：
+之前也谈到了 Promise 对错误处理的一些局限性，这里主要看看 await/async 对错误处理要注意的一些问题。
 
 ### 方法一：try/catch
 
@@ -122,11 +103,44 @@ result();
 
 在捕捉到异常之后，在 catch 根据需要有几种方法来处理它：
 
-- **直接处理异常**，并返回一个正常值。（不在 catch 块中使用任何 return 语句相当于在 `result` 函数末尾 `return undefined`。）
-- **抛出异常**，如果你想让调用者来处理它，就将它抛出。可以直接抛出错误对象
-  - **直接抛出**：比如 `throw error`，这样`result()`的返回值就是一个 rejected 的 Promise，我们可以对它再继续做操作，比如`result().then().catch()`
-  - **加工一下再抛出**：包装成 Error 对象，比如 `throw new Error(error)`，那么在控制台中显示这个错误时它将给出完整的堆栈跟踪信息。
-- **拒绝它**，比如 `return Promise.reject(error)`。这相当于 throw error，因此不推荐使用。
+#### 1. 直接处理异常
+
+这是最常见的异常处理方式，比如当调用异步 API 返回错误的时候，将错误信息以弹框的形式显示给用户。
+
+```js
+catch (error) {
+  notification.error(error.message);
+}
+```
+
+#### 2. 加工一下再抛给外层函数去处理异常
+
+如果你想让调用者（即 `result` ）来处理它，就将它抛出，这样`result()`的返回值就是一个 rejected 的 Promise，我们可以像这样：`result().then().catch()` 在外层函数的 catch 去处理异常。
+
+我们可以先加工一下，比如包装成 Error 对象：`throw new Error(error)`，那么在控制台中显示这个错误时它将给出完整的堆栈跟踪信息。
+
+:::tip
+
+如果只是在 catch 中直接抛出错误：比如 `throw error`，那么就没必要去写 try/catch，因为不用 try/catch，外层函数也可以捕获异常：
+
+```js
+let result = async function () {
+  let content = await new Promise((resolve, reject) => {
+    setTimeout(() => {
+      reject(new Error('error'));
+    }, 200);
+  });
+  console.log('A', content);
+};
+
+result()
+  .then(res => console.log(res))
+  .catch(e => console.error(e));
+```
+
+<Img w="450" align="left" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/nHwgFI.png' alt='nHwgFI'/>
+
+:::
 
 :::caution
 
@@ -183,17 +197,17 @@ try {
 ### 方法二：使用 `.catch`
 
 ```js
-let result = asyncfunction () {
+let result = async function () {
   let content = await new Promise((resolve, reject) => {
     setTimeout(() => {
-      reject(new Error('error'))
-    }, 200)
+      reject(new Error('error'));
+    }, 200);
   }).catch(error => {
-    console.log(error)
-  })
-}
+    console.log(error);
+  });
+};
 
-result()
+result();
 ```
 
 注意：在 catch 里面不要直接将 error 返回，如果异步函数返回 resolve 正确结果时，data 是我们要的结果，如果是 reject 了，发生错误了，那么 data 是 error，这不是我们想要的，可以返回 undefined。
