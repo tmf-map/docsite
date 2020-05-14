@@ -32,7 +32,7 @@ Concurrent 模式是一组 React 的新功能，可帮助应用保持响应，�
 
 同 Concurrent 一词一样，Fiber 其实并不是一个新的概念，在其它计算机学科中，Fiber 指一种非常轻巧的线程，协作式执行多任务。从这个名字可以看出 React Fiber 能够优化多任务执行，它出现主要目的就是让 React 在多任务时能更好的调度。
 
-React Fiber 是对 React 核心算法的重构。React 在实现上分为 reconciler 和 renderer，核心是指 reconciler，重构后称为 Fiber reconciler。reconcile 分为两个阶段，render/reconciliation 和 commit。Fiber reconciler 将 render/reconciliation 分解成一个一个小任务单元，维护 render/reconciliation 分解出的最小单元的数据结构叫做 fiber（注意首字母小写）。本质上，React Fiber 是对调用堆栈的重新实现，使堆栈帧能保留在内存中，从而实现可以随时执行、中断调用等功能。一个 fiber 对应一个堆栈帧，从而实现 render/reconciliation 过程的中断、并发。
+React Fiber 是对 React 核心算法的重构。React 在实现上分为 reconciler 和 renderer，核心是指 reconciler，重构后称为 Fiber reconciler。reconcile 分为两个阶段，render/reconciliation 和 commit。Fiber reconciler 将 render/reconciliation 分解成一个一个小任务单元，维护 render/reconciliation 分解出的最小单元的数据结构叫做 fiber（注意首字母小写）。本质上，React Fiber 是对调用堆栈的重新实现，使[堆栈帧](https://en.wikipedia.org/wiki/Call_stack?fbclid=IwAR0dn9zvHIsxCzDiZDNELT5F_epW4NqXeOWs8nvij-RVm2KazdzSdO6-lAI#Structure)能保留在内存中，从而实现可以随时执行、中断调用等功能。一个 fiber 对应一个堆栈帧，从而实现 render/reconciliation 过程的中断、并发。
 
 Fiber 可以看作是为 Concurrent 模式铺路，有了 Fiber 以后，React 才拥有了并发执行多任务的能力，才能开启 reconciliation/render 过程的并发执行。
 
@@ -257,3 +257,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(<App />);
 1. [A closer look at react-fiber, by Anchen](https://medium.com/@li.anchen.au/a-closer-look-at-react-fiber-ff0787bc42cc)
 1. [Inside Fiber: an in-depth overview of the new reconciliation algorithm in React, by MAX KORETSKYI AKA WIZARD](https://blog.ag-grid.com/inside-fiber-an-in-depth-overview-of-the-new-reconciliation-algorithm-in-react/)
 1. [完全理解 React Fiber, by 黯羽轻扬](http://www.ayqy.net/blog/dive-into-react-fiber/)
+1. [How React Fiber Works, by Sebastian Markbåge](https://www.facebook.com/groups/2003630259862046/permalink/2054053404819731/)
+1. [Call stack, wikipedia](https://en.wikipedia.org/wiki/Call_stack?fbclid=IwAR0dn9zvHIsxCzDiZDNELT5F_epW4NqXeOWs8nvij-RVm2KazdzSdO6-lAI#Structure)
