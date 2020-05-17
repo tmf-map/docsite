@@ -77,9 +77,9 @@ await 只能在 async 函数内部使用，如果在普通函数中，会报错�
 
 async 函数可以看作多个异步操作包装成的一个 Promise 对象，而 await 命令就是内部 then 命令的语法糖。
 
-## 容错
+## 异常处理
 
-之前也谈到了 Promise 对错误处理的一些局限性，这里主要看看 await/async 对错误处理要注意的一些问题。
+之前也谈到了 Promise 对异常处理的一些局限性，这里主要看看 await/async 对异常处理要注意的一些问题。
 
 ### 方法一：try/catch
 
@@ -93,7 +93,7 @@ let result = async function () {
         reject(new Error('error'));
       }, 200);
     });
-  } catch (error) {
+  } catch (exception) {
     // some codes
   }
 };
@@ -108,8 +108,8 @@ result();
 这是最常见的异常处理方式，比如当调用异步 API 返回错误的时候，将错误信息以弹框的形式显示给用户。
 
 ```js
-catch (error) {
-  notification.error(error.message);
+catch (e) {
+  notification.error(e.message);
 }
 ```
 
@@ -117,11 +117,11 @@ catch (error) {
 
 如果你想让调用者（即 `result` ）来处理它，就将它抛出，这样`result()`的返回值就是一个 rejected 的 Promise，我们可以像这样：`result().then().catch()` 在外层函数的 catch 去处理异常。
 
-我们可以先加工一下，比如包装成 Error 对象：`throw new Error(error)`，那么在控制台中显示这个错误时它将给出完整的堆栈跟踪信息。
+我们可以先加工一下，比如包装成 Error 对象：`throw new Error(e)`，那么在控制台中显示这个错误时它将给出完整的堆栈跟踪信息。
 
 :::tip
 
-如果只是在 catch 中直接抛出错误：比如 `throw error`，那么就没必要去写 try/catch，因为不用 try/catch，外层函数也可以捕获异常：
+如果只是在 catch 中直接抛出异常：比如 `throw e`，那么就没必要去写 try/catch，因为不用 try/catch，外层函数也可以捕获异常：
 
 ```js
 let result = async function () {
@@ -154,8 +154,8 @@ let result = async function () {
         reject(new Error('error'));
       }, 200);
     });
-  } catch (error) {
-    console.log('A', error);
+  } catch (e) {
+    console.log('A', e);
   }
   console.log('B');
 };
@@ -181,8 +181,8 @@ class BookModel {
 }
 try {
   bookModel.fetchAll();
-} catch (error) {
-  console.log(error); // This will print "cb is not defined"
+} catch (e) {
+  console.log(e); // This will print "cb is not defined"
 }
 ```
 
@@ -202,15 +202,15 @@ let result = async function () {
     setTimeout(() => {
       reject(new Error('error'));
     }, 200);
-  }).catch(error => {
-    console.log(error);
+  }).catch(e => {
+    console.log(e);
   });
 };
 
 result();
 ```
 
-注意：在 catch 里面不要直接将 error 返回，如果异步函数返回 resolve 正确结果时，data 是我们要的结果，如果是 reject 了，发生错误了，那么 data 是 error，这不是我们想要的，可以返回 undefined。
+注意：在 catch 里面不要直接将 error 返回，如果异步函数返回 resolve 正确结果时，data 是我们要的结果，如果是 reject 了，发生错误了，那么 data 是 error，这不是我们想要的，可以返回 `undefined`。
 
 这种方法有两个小问题：
 
@@ -369,24 +369,46 @@ fetchA()
  .then(resB => fetchC(resB))
  .then(resC => fetchD(resC))
  .then(resD => ...)
- .catch(error => ...)
+ .catch(exception => ...)
 ```
 
 我们将逻辑分装在一个 async 函数里。这样我们就可以直接对 promise 使用 await 了，也就规避了写 then 回调。
 
 ```js
 try {
- let resA = fetchA();
- let resB = fetchB(resA);
- let resC = fetchC(resB);
- let resD = fetchD(resC);
+ let resA = await fetchA();
+ let resB = await fetchB(resA);
+ let resC = await fetchC(resB);
+ let resD = await fetchD(resC);
  ...
-} catch(error) {
+} catch(exception) {
  ...
 }
 ```
 
 这样比较看上去代码差不多，但是要注意，`.then(resA => fetchB(resA))`，then 里面的回调函数的处理逻辑可能更为复杂，**而这些代码在 await/async 代码中将会显得很“同步”**，没有那么多回调函数，也没有一层层的 then，代码顺序执行即可。
+
+:::caution
+
+如果将 then 的回调函数写成 async/await, 并不会单纯地按照 async/await 顺序执行，比如：
+
+```js
+fetchA()
+  .then(async resA => {
+    console.log('A1');
+    await fetchB(resA);
+    console.log('A2');
+    return res;
+  })
+  .then(resB => {
+    console.log('B');
+    fetchC(resB);
+  });
+```
+
+其执行顺序为 `A1 -> B -> A2`，具体原因参见 [宏任务和微任务：await 做了什么](/docs/javascript/9.async-programming/macro-micro-task#await-做了什么)
+
+:::
 
 ### 优点二：调试方便
 
@@ -396,19 +418,29 @@ try {
 
 ### 优点三：返回值统一
 
-async 关键字，尽管看起来不是很明显。它声明 `getBooksByAuthorWithAwait()` 函数的返回值是一个 promise，因此调用者可以安全地调用 `getBooksByAuthorWithAwait().then(…)` 或 `await getBooksByAuthorWithAwait()`。比如像下面这段代码：
+以 `getBooksByAuthor` 为例：该函数通过传入 `authorId` 返回该作者写的所有书。如果用 promise 的写法可能返回一个 promise（正常情况）或 null（异常情况）。因此，调用者无法安全地调用 `.then()`。
 
 ```js
-getBooksByAuthorWithPromise(authorId) {
- if (!authorId) {
-   return null;
- }
- return bookModel.fetchAll()
-   .then(books => books.filter(b => b.authorId === authorId));
- }
+function getBooksByAuthor(authorId) {
+  if (!authorId) {
+    return null;
+  }
+  return bookModel
+    .fetchAll()
+    .then(books => books.filter(b => b.authorId === authorId));
 }
 ```
 
-在上面的代码中，`getBooksByAuthorWithPromise` 可能返回一个 promise（正常情况）或 null（异常情况），在这种情况下，调用者无法安全地调用.then()。而如果使用 async 声明，则不会出现这种情况。
+而如果使用 async/await 声明，则不会出现这种情况。
 
-## Reference
+```js
+async function getBooksByAuthor(authorId) {
+  if (!authorId) {
+    return null;
+  }
+  const books = await bookModel.fetchAll();
+  return books.filter(b => b.authorId === authorId);
+}
+```
+
+使用 async/await 函数的返回值始终是一个 promise，因此调用者可以安全地调用 `getBooksByAuthor().then(…)` 或 `await getBooksByAuthor()`。
