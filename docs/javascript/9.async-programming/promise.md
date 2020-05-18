@@ -2,6 +2,8 @@
 title: Promise
 ---
 
+import Img from '../../../src/components/Img';
+
 ## 使用 promise 的原因
 
 解决回调函数多层嵌套，让异步方法可以像同步方法那样返回值，使代码更易读。
@@ -79,7 +81,9 @@ p.then('bar').then(value => {
 - .then()的参数如果只有一个字符串的话，此时可以忽略这个参数。
 - .then(String) <=> .then((value) => value) 其中 value 代表 Promise 的返回值。
 
-### promise.then()的注意事项：
+### promise.then() 的注意事项
+
+当 promise.then() 返回的状态是 `rejected` 的时候会被 `catch()` 捕获。这时候只要 catch 中不返回 rejected，都会执行后面的 then 操作。
 
 ```js
 Promise.resolve()
@@ -95,9 +99,59 @@ Promise.resolve()
   });
 ```
 
-当 promise.then()返回的状态是 rejected promise 的时候这个时候会被 catch()捕获，这时候只要 catch 中不返回 rejected。此时都会执行后面的 then 操作。
+<Img w="500" align="left" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/GGIo6C.png' alt='GGIo6C'/>
 
-### 注意 promise 和 setTimeOut()的优先级：
+:::tip
+
+`throw 'Oh no!'` 相当于 `Promise.reject('Oh no!')`，catch 中即使有 return 也还是会执行后面的 then，注意 return 在 promise 的 `.catch()` 中和 [在 async/await 的 try-catch 中的差异](/docs/javascript/9.async-programming/async-await#2-加工一下再抛给外层函数去处理异常)。
+
+:::
+
+当 promise 返回的状态是 `rejected` 的时候也会被 `catch()` 捕获。同理，这时候只要 catch 中不返回 rejected，都会执行后面的 then 操作。
+
+```js
+Promise.reject('exception')
+  .then(() => {})
+  .catch(reason => {
+    console.error('onRejected function called: ', reason);
+  })
+  .then(() => {
+    console.log("I am always called even if the prior then's promise rejects");
+  });
+```
+
+<Img w="500" align="left" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/8MSqBZ.png' alt='8MSqBZ'/>
+
+以上的例子可能还有点抽象，开发中我们经常会遇到 Promise 嵌套的情况，如果内层的 Promise 执行了 catch 中的代码，但没有返回 rejected，那么外层是进入 then 还是 catch 呢？
+
+```js {6}
+// 因为 return 了 promise，此时 foo 也是 promise
+function foo() {
+  return Promise.reject('exception')
+    .then(() => {})
+    .catch(reason => {
+      console.error('onRejected function called: ', reason);
+    });
+}
+
+foo()
+  .then(() => {
+    console.log('A');
+  })
+  .catch(() => {
+    console.log('B');
+  });
+```
+
+<Img w="440" align="left" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/43dnj4.png' alt='43dnj4'/>
+
+:::tip
+
+如果在 catch 中（高亮行）执行的是 `throw 'Oh no!'`，那么将会执行 `foo().catch()`。
+
+:::
+
+### 注意 promise 和 setTimeOut()的优先级
 
 ```js
 Promise.resolve('foo')
