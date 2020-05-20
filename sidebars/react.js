@@ -20,7 +20,8 @@ module.exports = {
     'react/3.optimization/pure-component',
     'react/3.optimization/memo',
     'react/3.optimization/code-splitting',
-    'react/3.optimization/suspense'
+    'react/3.optimization/suspense',
+    'react/3.optimization/concurrent-mode'
   ],
   '4. 三大组件': [
     'react/4.three-components/container-component',
