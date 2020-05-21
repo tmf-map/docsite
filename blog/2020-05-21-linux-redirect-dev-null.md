@@ -80,7 +80,7 @@ rm -r folder 2> /dev/null
 
 :::
 
-## 参考
+## 参考资料
 * [What is a Process?](https://bash.cyberciti.biz/guide/What_is_a_Process%3F)
 * [Linux的进程、线程、文件描述符是什么](https://github.com/labuladong/fucking-algorithm/blob/master/技术/linux进程.md)
 * [维基百科：/dev/null](https://zh.wikipedia.org/wiki//dev/null)
