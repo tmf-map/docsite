@@ -246,7 +246,7 @@ public interface Iterable<T> {
 
 以上都是需要注意的，但是默认方法对于在创建接口时提供标准方法实现非常有用，它能简化实现接口的任务。
 
-## 引用
+## 参考资料
 
 1. [Effective Java, By Joshua Bloch](https://book.douban.com/subject/30412517/)
 2. [Java 8 Default Methods, By Ebn Zhang](https://ebnbin.com/2015/12/20/java-8-default-methods/)
