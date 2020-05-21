@@ -43,7 +43,7 @@ struct task_struct {
 
 **每个进程被创建时，`files` 指向的数组前三位被填入默认值，分别指向标准输入流、标准输出流、标准错误流。我们常说的「文件描述符」就是指这个文件指针数组的索引，所以程序的文件描述符默认情况下 0 是输入，1 是输出，2 是错误。**
 
-:::caution
+:::tip
 
 Linux 中的所有设备都是抽象成文件的，设备可以当作文件一样读和写。
 
@@ -65,7 +65,7 @@ history | grep ssh
 ## 2> /dev/null
 通过上面的章节可以知道，`2` 表示标准错误，`>` 表示将标准错误重定向到某个地方。
 
-`/dev/null` 是一个特殊文件，在Unix系统中称为 null 设备。 通俗地说，它也称为比特垃圾桶（bit bucket）或黑洞（blackhole），因为它会立即丢弃写入其中的任何内容，并且在读取时仅返回文件结束EOF。
+`/dev/null` 是一个特殊文件，在Unix系统中称为 null 设备。 通俗地说，它也称为比特桶（bit bucket，也译作比特垃圾桶）或黑洞（blackhole），因为它会立即丢弃写入其中的任何内容，并且在读取时仅返回文件结束EOF。
 
 所以这个命令合起来就是将忽略执行命令产生的错误。比如：
 
@@ -73,6 +73,12 @@ history | grep ssh
 # 删除当前路径下的folder目录，如果不存在则忽略错误
 rm -r folder 2> /dev/null
 ```
+
+:::caution
+
+`2`和`>`不能有空格
+
+:::
 
 ## 参考
 * [What is a Process?](https://bash.cyberciti.biz/guide/What_is_a_Process%3F)
