@@ -15,7 +15,7 @@ import Img from '../src/components/Img';
 
 ## 整体流程
 
-<Img width="800" legend="Happy Path" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/3qlQ8t.png' alt='github-webhooks-sequence-chart'/>
+<Img width="800" legend="Happy Path" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/github-webhooks-sequence-chart.jpeg' alt='github-webhooks-sequence-chart'/>
 
 <!--truncate-->
 
@@ -66,7 +66,7 @@ cp -rf ${SITE_PATH}/build/* /home/www
 
 这里也可以使用 `git pull`, 但不同的项目有可能 build 的时候会导致服务器端的仓库出现文件改动，保险起见建议使用 `fetch` + `reset` 的方式。
 
-:::bad
+:::caution
 
 不要直接把网站的静态目录和项目 dist 或者 build 目录当作同一个目录。
 
@@ -172,7 +172,11 @@ server {
 
 ## Issues
 
-> 有时候 GitHub webhooks 调用并不会成功，需要 Redeliver 才行。
+:::caution
+
+有时候 GitHub webhooks 调用并不会成功，需要 Redeliver 才行。
+
+:::
 
 <Img w="720" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/pmZ3qZ.png' alt='pmZ3qZ'/>
 
