@@ -12,6 +12,7 @@
   --ifm-contents-link-color: rgb(116, 129, 141);
   --ifm-contents-padding-vertical: 0.5rem;
   --ifm-toc-border-color: var(--ifm-contents-border-color);
+  --ifm-toc-link-color: var(--ifm-contents-link-color);
   --ifm-code-background: rgba(191, 191, 191, 0.25);
   --ifm-hero-background-color: #24292e;
   --ifm-table-border-color: rgba(191, 191, 191, 0.3);
