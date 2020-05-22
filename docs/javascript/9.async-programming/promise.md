@@ -2,6 +2,8 @@
 title: Promise
 ---
 
+import Img from '../../../src/components/Img';
+
 ## 使用 promise 的原因
 
 解决回调函数多层嵌套，让异步方法可以像同步方法那样返回值，使代码更易读。
@@ -79,7 +81,9 @@ p.then('bar').then(value => {
 - .then()的参数如果只有一个字符串的话，此时可以忽略这个参数。
 - .then(String) <=> .then((value) => value) 其中 value 代表 Promise 的返回值。
 
-### promise.then()的注意事项：
+### promise.then()
+
+当 promise.then() 返回的状态是 `rejected` 的时候会被 `catch()` 捕获。这时候只要 catch 中不返回 rejected，都会执行后面的 then 操作。
 
 ```js
 Promise.resolve()
@@ -95,9 +99,59 @@ Promise.resolve()
   });
 ```
 
-当 promise.then()返回的状态是 rejected promise 的时候这个时候会被 catch()捕获，这时候只要 catch 中不返回 rejected。此时都会执行后面的 then 操作。
+<Img w="500" align="left" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/GGIo6C.png' alt='GGIo6C'/>
 
-### 注意 promise 和 setTimeOut()的优先级：
+:::tip
+
+`throw 'Oh no!'` 相当于 `Promise.reject('Oh no!')`，catch 中即使有 return 也还是会执行后面的 then，注意 return 在 promise 的 `.catch()` 中和 [在 async/await 的 try-catch 中的差异](/docs/javascript/9.async-programming/async-await#2-加工一下再抛给外层函数去处理异常)。
+
+:::
+
+当 promise 返回的状态是 `rejected` 的时候也会被 `catch()` 捕获。同理，这时候只要 catch 中不返回 rejected，都会执行后面的 then 操作。
+
+```js
+Promise.reject('exception')
+  .then(() => {})
+  .catch(reason => {
+    console.error('onRejected function called: ', reason);
+  })
+  .then(() => {
+    console.log("I am always called even if the prior then's promise rejects");
+  });
+```
+
+<Img w="500" align="left" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/8MSqBZ.png' alt='8MSqBZ'/>
+
+以上的例子可能还有点抽象，开发中我们经常会遇到 Promise 嵌套的情况，如果内层的 Promise 执行了 catch 中的代码，但没有返回 rejected，那么外层是进入 then 还是 catch 呢？
+
+```js {6}
+// 因为 return 了 promise，此时 foo 也是 promise
+function foo() {
+  return Promise.reject('exception')
+    .then(() => {})
+    .catch(reason => {
+      console.error('onRejected function called: ', reason);
+    });
+}
+
+foo()
+  .then(() => {
+    console.log('A');
+  })
+  .catch(() => {
+    console.log('B');
+  });
+```
+
+<Img w="440" align="left" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/43dnj4.png' alt='43dnj4'/>
+
+:::tip
+
+如果在 catch 中（高亮行）执行的是 `throw 'Oh no!'`，那么将会执行 `foo().catch()`。
+
+:::
+
+### promise 和 setTimeOut()的优先级
 
 ```js
 Promise.resolve('foo')
@@ -134,9 +188,13 @@ Promise.resolve('foo')
   });
 ```
 
-第一个 then()方法中返回了一个新定义的 Promise 对象，等待 1ms 后返回一个 promiseValue 为 foobar 的值和 fulfiled 状态。此时执行下一个 then(),把 foobar 传给浏览器定时器 API，然后将它放入宏任务异步队列中，return string 进入函数调用栈，将值传给下一个 then(),此时将 then()中的 onFulfilled 函数放入微任务队列中，此时调用栈为空。微任务队列中只有第三个.then()的内容，将微任务队列清空，将其中的同步代码放入调用栈，打印两个 console.log()语句到控制台。最后执行宏任务队列中的 setTimeOut()的回调函数。
+第一个 then()方法中返回了一个新定义的 Promise 对象，等待 1ms 后返回一个 promiseValue 为 foobar 的值和 fulfiled 状态。
 
-### promise.then()与微任务：
+此时执行下一个 then(),把 foobar 传给浏览器定时器 API，然后将它放入宏任务异步队列中，return string 进入函数调用栈，将值传给下一个 then()，此时将 then() 中的 onFulfilled 函数放入微任务队列中，此时调用栈为空。
+
+微任务队列中只有第三个 `.then()` 的内容，将微任务队列清空，将其中的同步代码放入调用栈，打印两个 `console.log()` 语句到控制台。最后执行宏任务队列中的 `setTimeOut()` 的回调函数。
+
+### promise.then() 与微任务
 
 ```js
 1 new Promise(resolve => {
@@ -184,41 +242,60 @@ Promise {<resolved>: undefined}
 当返回一个 rejected promise 的时候，或者 throw 出一个错，此时会被 catch()捕获
 
 ```js
-var p1 = new Promise(function (resolve, reject) {
+let p1 = new Promise(function (resolve, reject) {
   throw 'Uh-oh!';
 }).catch();
 // <=>
-var p1 = new Promise(function (resolve, reject) {
+let p1 = new Promise(function (resolve, reject) {
   return Promise.reject('Uh-oh!');
 }).catch();
 ```
 
-### catch()的注意事项；
+### catch() 的注意事项
 
 ```js
 // 在异步函数中抛出的错误不会被catch捕获到
-var p2 = new Promise(function (resolve, reject) {
+let p2 = new Promise(function (resolve, reject) {
   setTimeout(function () {
     throw 'Uncaught Exception!';
   }, 1000);
 });
 
 p2.catch(function (e) {
-  console.log(e); // 不会执行
+  console.log('oh no:', e); // 不会执行
+});
+```
+
+在异步函数中抛错之所以无法被 catch 到的原因是：`new Promise` 是同步的立即执行函数，执行到 `setTimeout` 函数，将它放到宏任务异步队列中，宏任务异步队列的执行优先级最低。只有当微任务异步队列和函数调用栈队列为空时才会调用。当 `setTimeout` 函数执行时，外部已经没有代码可以接到它所抛出的错误。所以异步回调函数抛出的错总是因为函数调用栈为空，没有代码可以承接错误而导致无法被捕获到。
+
+简单一点说，异步函数的执行上下文已经脱离了 Promise，出错的时候自然也就不会进入 Promise 的 catch 中，但如果是换成 `reject()`，可以想像成是 Promise 的一个钩子，自然也就能执行 Promise 的 catch ：
+
+```js
+// 在异步函数中使用 reject 会被catch捕获到
+let p2 = new Promise(function (resolve, reject) {
+  setTimeout(function () {
+    reject('Uncaught Exception!');
+  }, 1000);
 });
 
+p2.catch(function (e) {
+  console.log('oh no:', e); // 会执行
+});
+```
+
+另外还需要注意即使在同步代码中抛错，也不能写在 `resolve()` 后面，否则也不会被 `catch` 到：
+
+```js
 // 在resolve()后面抛出的错误会被忽略
-var p3 = new Promise(function (resolve, reject) {
+let p3 = new Promise(function (resolve, reject) {
   resolve();
   throw 'Silenced Exception!';
 });
 
 p3.catch(function (e) {
-  console.log(e); // 不会执行
+  console.log('oh no:', e); // 不会执行
 });
 ```
-
-在异步函数中抛错之所以无法被 catch 到的原因是：new Promise 是同步的立即执行函数，执行到 setTimeout 函数，将它放到宏任务异步队列中，宏任务异步队列的执行优先级最低。只有当微任务异步队列和函数调用栈队列为空时才会调用。当 setTimeout 函数执行时，外部已经没有代码可以接到它所抛出的错误。所以异步回调函数抛出的错总是因为函数调用栈为空，没有代码可以承接错误而导致无法被捕获到。
 
 ## Promise.prototype.all(iterable)
 

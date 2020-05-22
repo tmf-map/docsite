@@ -59,6 +59,10 @@
   -webkit-font-smoothing: initial;
 }
 
+.markdown .prism-code:focus {
+  outline: none;
+}
+
 .markdown .prism-code .token.keyword {
   font-style: normal !important;
 }
