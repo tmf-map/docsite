@@ -95,7 +95,7 @@ main .container {
   border-radius: 3px;
 }
 
-.contents__link {
+.table-of-contents__link {
   font-weight: 500;
   /* max-width: 224px;
   overflow: hidden;

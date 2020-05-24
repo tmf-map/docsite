@@ -29,6 +29,7 @@ module.exports = {
           label: 'Basis',
           to: 'docs/design-patterns/1.creation-pattern/singleton',
           position: 'right',
+          activeBaseRegex: 'docs/(design-patterns|algorithm|http)',
           items: [
             {
               to: 'docs/design-patterns/1.creation-pattern/singleton',
@@ -52,6 +53,8 @@ module.exports = {
           label: 'Frontend',
           to: 'docs/javascript/1.basic/js-engine',
           position: 'right',
+          activeBaseRegex:
+            'docs/(javascript|typescript|html|css|web|react|webpack|nodejs)',
           items: [
             {
               to: 'docs/javascript/1.basic/js-engine',
@@ -99,6 +102,7 @@ module.exports = {
           label: 'Backend',
           to: 'docs/java/object-oriented-programming/abstract-class-interface',
           position: 'right',
+          activeBaseRegex: 'docs/(java)',
           items: [
             {
               to:
@@ -111,6 +115,7 @@ module.exports = {
         {
           label: 'AI',
           position: 'right',
+          // activeBaseRegex: 'docs/(python)',
           items: []
         },
         {to: 'blog', label: 'Blog', position: 'right'},
@@ -122,8 +127,9 @@ module.exports = {
         },
         {
           href: `https://github.com/${githubOrg}/${githubRepo}`,
-          label: 'GitHub',
-          position: 'right'
+          className: 'header-github-link',
+          position: 'right',
+          'aria-label': 'GitHub'
         }
       ]
     },
