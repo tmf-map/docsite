@@ -10,7 +10,7 @@ module.exports = {
     'https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/docsite-logo-white-mode.png',
   organizationName: githubOrg, // Usually your GitHub org/user name.
   projectName: 'docsite', // Usually your repo name.
-  plugins: ['@docusaurus/plugin-google-analytics'],
+  plugins: ['@docusaurus/plugin-google-analytics', 'docusaurus-lunr-search'],
   themes: ['@docusaurus/theme-live-codeblock'],
   themeConfig: {
     googleAnalytics: {
