@@ -243,6 +243,7 @@
   background: #373940;
   z-index: 1000;
   top: -7px;
+  left: 11px;
   border-top: 1px solid #373940;
   border-right: 1px solid #373940;
   -webkit-transform: rotate(-45deg);
