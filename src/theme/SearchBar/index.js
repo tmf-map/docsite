@@ -9,6 +9,7 @@ import React, {useRef, useCallback} from 'react';
 import classnames from 'classnames';
 import {useHistory} from '@docusaurus/router';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import './styles.css';
 
 let loaded = false;
 const Search = props => {
