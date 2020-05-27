@@ -97,7 +97,7 @@ module.exports = {
               label: 'Node.js'
             },
             {
-              to: 'docs/fe-coding-guidelines/1.principles',
+              to: 'docs/fe-coding-guidelines/1.introduction',
               activeBasePath: 'docs/fe-coding-guidelines/',
               label: 'Coding Guidelines'
             }
