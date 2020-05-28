@@ -1137,10 +1137,10 @@
     react-router-dom "^5.1.2"
     react-toggle "^4.1.1"
 
-"@docusaurus/theme-live-codeblock@2.0.0-alpha.55":
-  version "2.0.0-alpha.55"
-  resolved "https://registry.yarnpkg.com/@docusaurus/theme-live-codeblock/-/theme-live-codeblock-2.0.0-alpha.55.tgz#1d3ad3f3305b4e5857e32f6a939fc18ccddb8d7d"
-  integrity sha512-f8KACwArMkUiKhS0ATVgSbV1TdX1l1Oium6wLowdWpIGFe2FuXtvAllx9WPChq9ef2ur3L32SaHTmDnyGdDfTg==
+"@docusaurus/theme-live-codeblock@2.0.0-alpha.56":
+  version "2.0.0-alpha.56"
+  resolved "https://registry.yarnpkg.com/@docusaurus/theme-live-codeblock/-/theme-live-codeblock-2.0.0-alpha.56.tgz#92a558842689048babf68467308af2c9bad3da46"
+  integrity sha512-pWwNBLHGNubrFgNLBcDMomM8MnaHY+yj4012QpqnFHC9cv2W4TTXQoTK7qt7hHso1HdHReGF8hCIswfkJkq6Vg==
   dependencies:
     "@philpl/buble" "^0.19.7"
     classnames "^2.2.6"
