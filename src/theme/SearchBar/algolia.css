@@ -296,7 +296,7 @@
   }
 
   .algolia-autocomplete .ds-dropdown-menu:before {
-    right: 6rem;
+    left: 10rem;
   }
 }
 
