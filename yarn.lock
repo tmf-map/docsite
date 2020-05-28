@@ -1089,12 +1089,7 @@
     "@docusaurus/utils" "^2.0.0-alpha.56"
     globby "^10.0.1"
 
-"@docusaurus/plugin-google-analytics@2.0.0-alpha.56", "@docusaurus/plugin-google-analytics@^2.0.0-alpha.55":
-  version "2.0.0-alpha.56"
-  resolved "https://registry.yarnpkg.com/@docusaurus/plugin-google-analytics/-/plugin-google-analytics-2.0.0-alpha.56.tgz#5556ca3c97dd99f5443cec8707755f78bd24b4b2"
-  integrity sha512-nL1hfPqUWJSAoMBqlLSF/ZlQ/HlOnZc4VQSqR5FkZV2UNhPI0kQKiIeBjzQFtODxfWfDBs2PQLMiA2Qx3Hme6A==
-
-"@docusaurus/plugin-google-analytics@^2.0.0-alpha.56":
+"@docusaurus/plugin-google-analytics@2.0.0-alpha.56", "@docusaurus/plugin-google-analytics@^2.0.0-alpha.56":
   version "2.0.0-alpha.56"
   resolved "https://registry.yarnpkg.com/@docusaurus/plugin-google-analytics/-/plugin-google-analytics-2.0.0-alpha.56.tgz#5556ca3c97dd99f5443cec8707755f78bd24b4b2"
   integrity sha512-nL1hfPqUWJSAoMBqlLSF/ZlQ/HlOnZc4VQSqR5FkZV2UNhPI0kQKiIeBjzQFtODxfWfDBs2PQLMiA2Qx3Hme6A==
@@ -1174,17 +1169,6 @@
     "@types/webpack" "^4.41.0"
     commander "^4.0.1"
     querystring "0.2.0"
-
-"@docusaurus/utils@^2.0.0-alpha.55", "@docusaurus/utils@^2.0.0-alpha.56":
-  version "2.0.0-alpha.56"
-  resolved "https://registry.yarnpkg.com/@docusaurus/utils/-/utils-2.0.0-alpha.56.tgz#2fd1d070351cd86f3614240b63a915b2e121150e"
-  integrity sha512-CMII7BYMQ5Dg9sHcejbxbyHTCG4CHQc/uFasL8FNXkHn7crw5Pz2re+IutSklE2SEI5lOZtMl5Lt8HKDvHzG1g==
-  dependencies:
-    escape-string-regexp "^2.0.0"
-    fs-extra "^8.1.0"
-    gray-matter "^4.0.2"
-    lodash.camelcase "^4.3.0"
-    lodash.kebabcase "^4.1.1"
 
 "@docusaurus/utils@^2.0.0-alpha.56":
   version "2.0.0-alpha.56"
