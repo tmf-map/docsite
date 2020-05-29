@@ -11,12 +11,8 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .hideLogoText {
-    display: none;
-  }
-
-  .navbar__brand--hidden{
     display: none;
   }
 }

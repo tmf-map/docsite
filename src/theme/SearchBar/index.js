@@ -5,14 +5,14 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React, {useRef, useCallback} from 'react';
+import React, {useState, useRef, useCallback} from 'react';
 import classnames from 'classnames';
 import {useHistory} from '@docusaurus/router';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import './styles.css';
 
-let loaded = false;
 const Search = props => {
+  const [algoliaLoaded, setAlgoliaLoaded] = useState(false);
   const initialized = useRef(false);
   const searchBarRef = useRef(null);
   const history = useHistory();
@@ -48,13 +48,13 @@ const Search = props => {
       : Promise.resolve([]);
 
   const loadAlgolia = () => {
-    if (!loaded) {
+    if (!algoliaLoaded) {
       Promise.all([
         getSearchData(),
         import('./lib/DocSearch'),
         import('./algolia.css')
       ]).then(([searchData, {default: DocSearch}]) => {
-        loaded = true;
+        setAlgoliaLoaded(true);
         window.searchData = searchData;
         window.DocSearch = DocSearch;
         initAlgolia();
@@ -64,35 +64,54 @@ const Search = props => {
     }
   };
 
-  const toggleSearchIconClick = useCallback(
-    e => {
-      if (!searchBarRef.current.contains(e.target)) {
-        searchBarRef.current.focus();
-      }
+  const toggleSearchInput = useCallback(() => {
+    loadAlgolia();
 
-      props.handleSearchBarToggle(!props.isSearchBarExpanded);
-    },
-    [props.isSearchBarExpanded]
-  );
+    if (algoliaLoaded) {
+      searchBarRef.current.focus();
+    }
+
+    props.handleSearchBarToggle(!props.isSearchBarExpanded);
+  }, [props.isSearchBarExpanded]);
+
+  const handleSearchInputBlur = useCallback(() => {
+    props.handleSearchBarToggle(!props.isSearchBarExpanded);
+  }, [props.isSearchBarExpanded]);
+
+  const handleSearchInput = useCallback(e => {
+    const needFocus = e.type !== 'mouseover';
+
+    loadAlgolia(needFocus);
+  });
 
   return (
     <div className="navbar__search" key="search-box">
-      <input
-        id="search_input_react"
-        type="search"
-        placeholder="Search"
-        aria-label="Search"
-        className={classnames(
-          'navbar__search-input',
-          {'search-bar-expanded': props.isSearchBarExpanded},
-          {'search-bar': !props.isSearchBarExpanded}
-        )}
-        onClick={loadAlgolia}
-        onMouseOver={loadAlgolia}
-        onFocus={toggleSearchIconClick}
-        onBlur={toggleSearchIconClick}
-        ref={searchBarRef}
-      />
+      <div className="searchWrapper">
+        <span
+          aria-label="expand searchbar"
+          role="button"
+          className={classnames('searchIconButton', {
+            searchIconButtonHidden: props.isSearchBarExpanded
+          })}
+          onClick={toggleSearchInput}
+          onKeyDown={toggleSearchInput}
+          tabIndex={0}
+        />
+
+        <input
+          id="search_input_react"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+          className={classnames('navbar__search-input', 'searchInput', {
+            searchInputExpanded: props.isSearchBarExpanded
+          })}
+          onMouseOver={handleSearchInput}
+          onFocus={handleSearchInput}
+          onBlur={handleSearchInputBlur}
+          ref={searchBarRef}
+        />
+      </div>
     </div>
   );
 };

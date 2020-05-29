@@ -214,12 +214,7 @@ function Navbar() {
               </svg>
             </div>
           )}
-          <Link
-            className={classnames('navbar__brand', {
-              'navbar__brand--hidden': isSearchBarExpanded
-            })}
-            to={logoLink}
-            {...logoLinkProps}>
+          <Link className="navbar__brand" to={logoLink} {...logoLinkProps}>
             {logoImageUrl != null && (
               <img
                 key={isClient}
