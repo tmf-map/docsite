@@ -54,7 +54,7 @@ module.exports = {
           to: 'docs/javascript/1.basic/js-engine',
           position: 'right',
           activeBaseRegex:
-            'docs/(javascript|typescript|html|css|web|react|webpack|nodejs|fe-coding-guidelines)',
+            'docs/(javascript|typescript|html|css|web|react|webpack|nodejs|fe-guidelines)',
           items: [
             {
               to: 'docs/javascript/1.basic/js-engine',
@@ -97,8 +97,8 @@ module.exports = {
               label: 'Node.js'
             },
             {
-              to: 'docs/fe-coding-guidelines/1.introduction',
-              activeBasePath: 'docs/fe-coding-guidelines/',
+              to: 'docs/fe-guidelines/1.introduction',
+              activeBasePath: 'docs/fe-guidelines/',
               label: 'Coding Guidelines'
             }
           ]

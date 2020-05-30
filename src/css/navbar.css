@@ -36,6 +36,7 @@
 
 /* Sidebar Nav */
 .navbar + .main-wrapper > div > div:not(.row):not(.main):not(.hero--primary) {
+  flex-shrink: 0;
   background-color: var(--my-board--background);
   width: 310px;
   top: 0;
