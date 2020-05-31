@@ -27,3 +27,4 @@ wiki: docs/wiki/**/*
 "docs: typescript": docs/typescript/**/*
 "docs: webpack": docs/webpack/**/*
 "docs: nodejs": docs/nodejs/**/*
+"docs: fe guidelines": docs/fe-guidelines/**/*
