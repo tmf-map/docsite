@@ -9,7 +9,7 @@ import React, {useState, useRef, useCallback} from 'react';
 import classnames from 'classnames';
 import {useHistory} from '@docusaurus/router';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import './styles.css';
+import styles from './styles.module.css';
 
 const Search = props => {
   const [algoliaLoaded, setAlgoliaLoaded] = useState(false);
@@ -86,12 +86,12 @@ const Search = props => {
 
   return (
     <div className="navbar__search" key="search-box">
-      <div className="searchWrapper">
+      <div className={styles.searchWrapper}>
         <span
           aria-label="expand searchbar"
           role="button"
-          className={classnames('searchIconButton', {
-            searchIconButtonHidden: props.isSearchBarExpanded
+          className={classnames(styles.searchIconButton, {
+            [styles.searchIconButtonHidden]: props.isSearchBarExpanded
           })}
           onClick={toggleSearchInput}
           onKeyDown={toggleSearchInput}
@@ -103,8 +103,8 @@ const Search = props => {
           type="search"
           placeholder="Search"
           aria-label="Search"
-          className={classnames('navbar__search-input', 'searchInput', {
-            searchInputExpanded: props.isSearchBarExpanded
+          className={classnames('navbar__search-input', styles.searchInput, {
+            [styles.searchInputExpanded]: props.isSearchBarExpanded
           })}
           onMouseOver={handleSearchInput}
           onFocus={handleSearchInput}

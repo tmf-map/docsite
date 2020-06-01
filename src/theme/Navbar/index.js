@@ -188,7 +188,7 @@ function Navbar() {
         [styles.navbarHidden]: !isNavbarVisible
       })}>
       <div className="navbar__inner">
-        <div className="navbar__items">
+        <div className={classnames('navbar__items', styles.navbarItemsCustom)}>
           {links != null && links.length !== 0 && (
             <div
               aria-label="Navigation bar toggle"
