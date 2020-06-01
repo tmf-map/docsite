@@ -152,7 +152,8 @@ function Navbar() {
     siteConfig: {
       themeConfig: {
         navbar: {title, links = [], hideOnScroll = false} = {},
-        disableDarkMode = false
+        disableDarkMode = false,
+        showGithub = true
       }
     },
     isClient
@@ -248,6 +249,16 @@ function Navbar() {
             .map((linkItem, i) => (
               <NavItem {...linkItem} key={i} />
             ))}
+          {showGithub && (
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://github.com/ThinkBucket/docsite"
+              className="navbar__item navbar__item navbar__link header-github-link"
+              aria-label="GitHub">
+              <i aria-hidden="true" />
+            </a>
+          )}
           {!disableDarkMode && (
             <Toggle
               className={styles.displayOnlyInLargeViewport}
@@ -282,6 +293,16 @@ function Navbar() {
               <strong className="navbar__title">{title}</strong>
             )}
           </Link>
+          {showGithub && sidebarShown && (
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href="https://github.com/ThinkBucket/docsite"
+              className="navbar__item navbar__link header-github-link custom-aside-github-link"
+              aria-label="GitHub">
+              <i aria-hidden="true" />
+            </a>
+          )}
           {!disableDarkMode && sidebarShown && (
             <Toggle
               aria-label="Dark mode toggle in sidebar"

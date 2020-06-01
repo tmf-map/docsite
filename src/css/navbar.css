@@ -22,6 +22,12 @@
   white-space: nowrap;
 }
 
+@media (max-width: 996px) {
+  .navbar__item.custom-aside-github-link {
+    display: inline-block;
+    margin-left: 10px;
+  }
+}
 .navbar__items:first-child {
   flex-grow: 2;
 }

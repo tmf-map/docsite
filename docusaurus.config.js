@@ -17,6 +17,7 @@ module.exports = {
       trackingID: 'UA-152610996-1'
     },
     disableDarkMode: false,
+    showGithub: true,
     navbar: {
       title: githubOrg,
       logo: {
@@ -124,12 +125,6 @@ module.exports = {
           activeBasePath: 'docs/wiki/',
           label: 'Wiki',
           position: 'right'
-        },
-        {
-          href: `https://github.com/${githubOrg}/${githubRepo}`,
-          className: 'header-github-link',
-          position: 'right',
-          'aria-label': 'GitHub'
         }
       ]
     },
