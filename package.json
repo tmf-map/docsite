@@ -50,7 +50,8 @@
     "docusaurus-lunr-search": "^1.0.3",
     "npm-to-yarn": "^1.0.1",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-toggle": "^4.1.1"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
@@ -62,7 +63,7 @@
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^2.5.1",
     "husky": "^4.2.5",
-    "lint-staged": "^10.2.6",
+    "lint-staged": "^10.2.7",
     "prettier": "^2.0.5"
   }
 }
