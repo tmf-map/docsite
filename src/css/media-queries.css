@@ -1,10 +1,10 @@
 /* Mobile */
 @media (width <= 996px) {
   :root {
-    --ifm-font-size-base: 15px;
+    --ifm-font-size-base: 16px;
   }
   html {
-    font-size: 15px;
+    font-size: 16px;
   }
   footer.footer {
     display: none;
@@ -14,10 +14,10 @@
 /* MacBook Pro 13.3 */
 @media (996px < width <= 1440px) {
   :root {
-    --ifm-font-size-base: 15px;
+    --ifm-font-size-base: 16px;
   }
   html {
-    font-size: 15px;
+    font-size: 16px;
   }
   .navbar + .main-wrapper > div > div:not(.row):not(.hero):not(.main) {
     width: 290px;
