@@ -3634,16 +3634,17 @@ doctrine@^3.0.0:
   dependencies:
     esutils "^2.0.2"
 
-docusaurus-lunr-search@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/docusaurus-lunr-search/-/docusaurus-lunr-search-1.0.3.tgz#24f38133d07a482c6d74f2bd0f1a08f674692c61"
-  integrity sha512-jWcKxvbecJtLizcJ9qcbEyiQgDwi9aTgYg1nlPZ6quMiVr1mYPt6sp/4sirAh+gCxVH+FxF/B0Af8TLytci8HA==
+docusaurus-lunr-search@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/docusaurus-lunr-search/-/docusaurus-lunr-search-2.0.1.tgz#ab5328b031a65f4342b0f17a55d2666c38f49789"
+  integrity sha512-cm5OBvSV7i2nVSCvUmRSEQGkjGEqkWHoqptGSOZPbGR7HxqdGAV+5yvAcCRoQbQORfOJfW9XwF2spkZ8WMRYyg==
   dependencies:
     autocomplete.js "^0.37.0"
     cheerio "^1.0.0-rc.3"
     classnames "^2.2.6"
     hogan.js "^3.0.2"
     lunr "^2.3.8"
+    lunr-languages "^1.4.0"
 
 dom-converter@^0.2:
   version "0.2.0"
@@ -6403,6 +6404,11 @@ lru-cache@^5.1.1:
   integrity sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==
   dependencies:
     yallist "^3.0.2"
+
+lunr-languages@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/lunr-languages/-/lunr-languages-1.4.0.tgz#42abb12aa81447d1ece5aa35676adcdf40a3e8a8"
+  integrity sha512-YWfZDExJN/MJEVE/DbM4AuVRLsqeHi+q3wmECMsWjGIOkd5mr9DUNos7fv8f5do9VLRMYXIzFjn+N4+KPI9pQA==
 
 lunr@^2.3.8:
   version "2.3.8"
