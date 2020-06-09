@@ -31,13 +31,13 @@
   font-size: 14px;
 }
 
-.markdown ul.tabs .tab-item {
+.markdown ul.tabs .tabs__item {
   font-weight: 500;
   color: rgba(0, 0, 0, 0.5);
   user-select: none;
 }
 
-.markdown ul.tabs .tab-item--active {
+.markdown ul.tabs .tabs__item--active {
   color: rgba(0, 0, 0, 1);
 }
 
@@ -75,14 +75,14 @@
   border-radius: 0 0 var(--ifm-global-radius) var(--ifm-global-radius);
 }
 
-.markdown .tab-item:hover {
+.markdown .tabs__item:hover {
   background-color: transparent;
   border-bottom-color: var(--ifm-color-primary-light);
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
 
-.markdown .tab-item:focus {
+.markdown .tabs__item:focus {
   outline: none;
   background-color: transparent;
 }
