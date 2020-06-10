@@ -22,19 +22,9 @@ Run `npm outdated` and you will see:
 
 ## npm install
 
-### Update package
-
-Besides install package, `npm i` can also be used to upgrade packages, such as `npm i packageName` will upgrade the package in `node_modules` to the `wanted` version and also update `package.josn` and `package-lock.json` automatically.
-
-:::caution
-
-Actually, the actions of `npm i` and `npm i packageName` are different. `npm i` will find the corresponding version in lock file first. If found, it will not upgrade the package even though there is a "wanted" version. But it will install the latest version according to the dependency definition if there is no lock file.
-
-:::
-
 ### Install package
 
-Any package on the npm repo can be installed by following simple command:
+这个是 npm 中最常用的命令：
 
 ```bash
 npm install packageName  # npm i packageName
@@ -97,6 +87,16 @@ npm install file://packages/mylib
 ```
 
 有关新的 `file://` 规范描述可以参考官方的 [file-specifiers](https://github.com/npm/npm/blob/link-specifier/doc/spec/file-specifiers.md)。
+
+### Update package
+
+除了安装包，`npm i` 也可以用于升级包，比如 `npm i packageName` 将会把 `node_modules` 中相应的包升级到 `wanted` 版本，同时也会自动更新 `package.josn` 和 `package-lock.json` 。
+
+:::caution
+
+`npm i` 和 `npm i packageName` 的行为是不一样的，`npm i` 会优先去 lockfile 里面找对应的版本，即使有 wanted 的更新版本也不会去下载安装，除非没有 lockfile。
+
+:::
 
 ## npm ci
 
