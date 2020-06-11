@@ -36,6 +36,6 @@ categories:
 
 change-template: '- $TITLE (#$NUMBER) @$AUTHOR'
 template: |
-  # Release Note
+  # Changes
 
   $CHANGES

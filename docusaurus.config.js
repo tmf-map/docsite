@@ -10,13 +10,14 @@ module.exports = {
     'https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/docsite-logo-white-mode.png',
   organizationName: githubOrg, // Usually your GitHub org/user name.
   projectName: 'docsite', // Usually your repo name.
-  plugins: ['@docusaurus/plugin-google-analytics'],
-  themes: ['@docusaurus/theme-live-codeblock'],
+  plugins: [require.resolve('@docusaurus/plugin-google-analytics'), require.resolve('docusaurus-lunr-search')],
+  themes: [require.resolve('@docusaurus/theme-live-codeblock')],
   themeConfig: {
     googleAnalytics: {
       trackingID: 'UA-152610996-1'
     },
     disableDarkMode: false,
+    showGithub: true,
     navbar: {
       title: githubOrg,
       logo: {
@@ -129,12 +130,6 @@ module.exports = {
           activeBasePath: 'docs/wiki/',
           label: 'Wiki',
           position: 'right'
-        },
-        {
-          href: `https://github.com/${githubOrg}/${githubRepo}`,
-          className: 'header-github-link',
-          position: 'right',
-          'aria-label': 'GitHub'
         }
       ]
     },

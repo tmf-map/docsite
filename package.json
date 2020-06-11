@@ -42,26 +42,28 @@
     }
   },
   "dependencies": {
-    "@docusaurus/core": "2.0.0-alpha.55",
-    "@docusaurus/plugin-google-analytics": "2.0.0-alpha.55",
-    "@docusaurus/preset-classic": "2.0.0-alpha.55",
-    "@docusaurus/theme-live-codeblock": "2.0.0-alpha.55",
+    "@docusaurus/core": "2.0.0-alpha.56",
+    "@docusaurus/plugin-google-analytics": "2.0.0-alpha.56",
+    "@docusaurus/preset-classic": "2.0.0-alpha.56",
+    "@docusaurus/theme-live-codeblock": "2.0.0-alpha.56",
     "classnames": "^2.2.6",
+    "docusaurus-lunr-search": "^1.0.3",
     "npm-to-yarn": "^1.0.1",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-toggle": "^4.1.1"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-import": "^2.21.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^2.5.1",
     "husky": "^4.2.5",
-    "lint-staged": "^10.2.6",
+    "lint-staged": "^10.2.9",
     "prettier": "^2.0.5"
   }
 }

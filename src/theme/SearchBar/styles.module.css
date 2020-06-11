@@ -1,0 +1,72 @@
+.searchIconButton {
+  display: none;
+}
+
+:global(.navbar__search):focus, :global(.navbar__search) *:focus {
+  outline-style: none;
+}
+
+:global(.navbar__search-input) {
+  border: 1px solid var(--ifm-navbar-search-input-background-color);
+  transition: border-color 0.1s ease-in;
+}
+
+:global(.navbar__search-input):focus {
+  border-color: rgba(0, 0, 0, 0.5);
+}
+
+html[data-theme="dark"] :global(.navbar__search-input):focus {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+@media (min-width: 769px) and (max-width: 996px) {
+  :global(.navbar__search),
+  :global(.navbar__search-input) {
+    width: 100%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .searchIconButton {
+    display: block;
+    position: absolute;
+    right: 0;
+    width: 2.75rem;
+    height: 2rem;
+    z-index: 1;
+  }
+
+  .searchIconButtonHidden {
+    visibility: hidden;
+  }
+
+  :global(.navbar__search) {
+    flex: 1 1 auto;
+    padding-left: 0;
+    width: 100%;
+  }
+
+  .searchWrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .searchInput {
+    background-position-x: 0.85rem;
+    width: 0;
+    transition: width 0.2s ease-in-out;
+  }
+
+  .searchInputExpanded {
+    width: 100%;
+  }
+
+  :global(.algolia-autocomplete) {
+    width: 100%;
+    display: flex !important;
+    justify-content: flex-end;
+  }
+}

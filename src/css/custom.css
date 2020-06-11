@@ -95,6 +95,10 @@ main .container {
   border-radius: 3px;
 }
 
+.pagination-nav .pagination-nav__link:hover {
+    border-color: var(--ifm-color-primary);
+}
+
 .table-of-contents__link {
   font-weight: 500;
   /* max-width: 224px;
