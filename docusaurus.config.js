@@ -55,7 +55,7 @@ module.exports = {
           to: 'docs/javascript/1.basic/js-engine',
           position: 'right',
           activeBaseRegex:
-            'docs/(javascript|typescript|html|css|web|react|webpack|nodejs)',
+            'docs/(javascript|typescript|html|css|web|react|webpack|nodejs|fe-guidelines)',
           items: [
             {
               to: 'docs/javascript/1.basic/js-engine',
@@ -96,6 +96,11 @@ module.exports = {
               to: 'docs/nodejs/package-manager/yarn',
               activeBasePath: 'docs/nodejs/',
               label: 'Node.js'
+            },
+            {
+              to: 'docs/fe-guidelines/1.introduction',
+              activeBasePath: 'docs/fe-guidelines/',
+              label: 'Coding Guidelines'
             }
           ]
         },
@@ -103,7 +108,7 @@ module.exports = {
           label: 'Backend',
           to: 'docs/java/object-oriented-programming/abstract-class-interface',
           position: 'right',
-          activeBaseRegex: 'docs/(java)',
+          activeBaseRegex: 'docs/(java/)',
           items: [
             {
               to:

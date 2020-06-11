@@ -28,11 +28,10 @@
 }
 
 @media (width > 996px) {
-  .navbar + .main-wrapper > div > div:not(.row) > div:not(.container) {
-    padding-top: 1.3rem;
+  .menu.menu--responsive {
+    padding-top: 1.8rem;
     padding-bottom: 2rem;
-    padding-left: 0.7rem;
-    top: var(--ifm-navbar-height);
+    padding-left: 1.2rem;
   }
   .container .col:first-child > div {
     max-width: 45.6vw !important;

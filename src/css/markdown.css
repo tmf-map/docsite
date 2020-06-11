@@ -63,7 +63,8 @@
   outline: none;
 }
 
-.markdown .prism-code .token.keyword {
+.markdown .prism-code .token.keyword,
+.markdown .prism-code .token.selector {
   font-style: normal !important;
 }
 

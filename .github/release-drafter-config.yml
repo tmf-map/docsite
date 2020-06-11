@@ -21,7 +21,7 @@ categories:
       - 'docs: webpack'
       - 'docs: typescript'
       - 'docs: nodejs'
-      - 'docs: FE guidelines'
+      - 'docs: fe guidelines'
   - title: 'Backend'
     labels:
       - 'docs: java'
