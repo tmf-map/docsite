@@ -16,13 +16,19 @@ Cookie 是浏览器保存在用户电脑上的一小段文本，**用来保存�
 
 ### 客户端设置 Cookie
 
-客户端可以在控制台通过`document.Cookie`来设置浏览器 Cookie。
+客户端可以在控制台通过`document.cookie`来设置浏览器 Cookie，更多操作请参考 [MDN: Document.cookie](https://developer.mozilla.org/zh-CN/docs/Web/API/Document/cookie)。
 
 例如：
 
 ```js
-document.Cookie = 'KMKNKK=1234;Sercure';
+document.cookie = 'KMKNKK=1234;Sercure';
 ```
+
+:::tip
+
+可以使用第三方成熟的库（比如 [js-cookie](https://www.npmjs.com/package/js-cookie)）去操作cookie，更为简单方便。
+
+:::
 
 ## Cookie 的工作过程
 
@@ -107,8 +113,8 @@ Cookie 的安全性常用的有三个字段：`HttpOnly`、`Secure`和`SameSite`
 Set-Cookie: __Secure-ID=123; Secure; Domain=example.com
 Set-Cookie: __Host-ID=123; Secure; Path=/
 
-document.Cookie = "__Secure-KMKNKK=1234;Sercure"
-document.Cookie = "__Host-KMKNKK=1234;Sercure;path=/"
+document.cookie = "__Secure-KMKNKK=1234;Sercure"
+document.cookie = "__Host-KMKNKK=1234;Sercure;path=/"
 ```
 
 ## 小结
@@ -121,8 +127,6 @@ document.Cookie = "__Host-KMKNKK=1234;Sercure;path=/"
 
 ## 相关拓展
 
-[理解 Session 和 Cookie -- 代码真香（YouTube 需翻墙）](https://www.youtube.com/watch?v=lNQAl71Abqc)
-
-[CSRF](https://www.thinkbucket.cn/docs/web/11.web-security/CSRF)
-
-[XSS](https://www.thinkbucket.cn/docs/web/11.web-security/XSS)
+1. [理解 Session 和 Cookie -- 代码真香（YouTube 需翻墙）](https://www.youtube.com/watch?v=lNQAl71Abqc)
+2. [CSRF](https://www.thinkbucket.cn/docs/web/11.web-security/CSRF)
+3. [XSS](https://www.thinkbucket.cn/docs/web/11.web-security/XSS)
