@@ -14,11 +14,11 @@ import Img from '../../../src/components/Img';
 
 ## npm outdated
 
-Run `npm outdated` and you will see:
+例如在 node 项目中运行 `npm outdated` 命令，如下图所示：
 
 <Img w="650" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/0zEWlT.png' alt='0zEWlT'/>
 
-`wanted` is decided by `dependencies`, `devDependencies` in `package.json`. Assume that the version of `less` is defined as `~` in `package.json`, so "wanted" will be shown as minor version.
+wanted 就是 `dependencies` `字段，devDependencies` 字段中指定的版本号应当升级的版本，可以看出上面列表 `less` 用的是 `^`，所以 wanted 会提示更新次要版本号。
 
 ## npm install
 
@@ -151,9 +151,19 @@ npm update packageName # alias up
 npm up -g packageName
 ```
 
-> Note: 全局安装的包可能需要管理员权限
+更新单个全局包，比如`yarn`
 
-**更新所有包** 有时你只希望更新所有包，去掉包名将试图更新所有包。
+```bash
+npm up -g yarn
+```
+
+:::tip
+
+全局安装的包可能需要管理员权限，取决于 node 的安装目录是否是 `~`。
+
+:::
+
+**更新所有包**有时你只希望更新所有包，去掉包名将试图更新所有包。
 
 ```bash
 npm up
@@ -165,18 +175,18 @@ npm up
 npm up -g
 ```
 
-更新单个全局包，比如`yarn`
-
-```bash
-npm up -g yarn
-```
-
 ## npm uninstall
 
 删除使用 `-g` 标记安装的包只须：
 
 ```bash
-npm uninstall -g packageName # aliases: un, r
+npm uninstall packageName # aliases: un, r
+```
+
+对于全局安装的包 加上 `-g` 即可：
+
+```bash
+npm r -g packageName # aliases: un, r
 ```
 
 :::tip
@@ -184,12 +194,6 @@ npm uninstall -g packageName # aliases: un, r
 全局安装的包可能需要管理员权限，取决于 node 的安装目录是否是 `~`。
 
 :::
-
-若删除个人用户目录下的包去掉标记执行：
-
-```bash
-npm r packageName
-```
 
 ## npm list
 
@@ -209,7 +213,7 @@ npm ls -g --depth=0
 
 `npm install`或`npm update`命令，从 registry 下载压缩包之后，都存放在本地的缓存目录。
 
-### 缓存策略
+### npm config get cache
 
 npm 的缓存目录是通过 cache 变量指定的，一般默认是在`~/.npm` 文件夹，可以执行下面的命令查看
 
@@ -219,19 +223,13 @@ npm config get cache
 
 在 npm@5 以前，每个缓存的模块在 `~/.npm` 文件夹中以模块名的形式直接存储，例如 koa 模块存储在`~/.npm/koa` 文件夹中。而 npm@5 版本开始，数据存储在 `~/.npm/_cacache` 中，并且不是以模块名直接存放。
 
-npm@5 重写了整个缓存系统，缓存将由 npm 来全局维护不用用户操心，这点也是在向 yarn 看齐。升级新版后，用户基本没有手动操作 npm cache 的场景。npm cache clean 将必须带上 --force 参数才能执行，并且会收到警告：
-
-npm 的缓存是使用 [pacote](https://www.npmjs.com/package/pacote) 模块进行下载和管理，基于 [cacache](https://www.npmjs.com/package/cacache) 缓存存储。由于 npm 会维护缓存数据的完整性，一旦数据发生错误，就回重新获取。因此不推荐手动清理缓存，除非需要释放磁盘空间，这也是要强制加上`--force` 参数的原因。
-
-目前没有提供用户自己管理缓存数据的命令，随着你不断安装新的模块，缓存数据也会越来越多，因为 npm 不会自己删除数据。
-
 :::caution
 
 npm@5 版本开始，数据存储在 `~/.npm/_cacache` 中，并且不是以模块名直接存放。
 
 :::
 
-### 缓存命令
+### npm cache add
 
 [npm cache](https://docs.npmjs.com/cli/cache) 提供了三个命令，分别是`npm cache add`, `npm cache clean`, `npm cache verify`。
 
@@ -239,21 +237,29 @@ npm@5 版本开始，数据存储在 `~/.npm/_cacache` 中，并且不是以模�
 npm cache add
 ```
 
-官方解释说这个命令主要是 npm 内部使用，但是也可以用来手动给一个指定的 package 添加缓存。(This command is primarily intended to be used internally by npm, but it can provide a way to add data to the local installation cache explicitly.)
+官方解释说这个命令主要是 npm 内部使用，但是也可以用来手动给一个指定的 package 添加缓存。
+
+> This command is primarily intended to be used internally by npm, but it can provide a way to add data to the local installation cache explicitly.
+
+### npm cache clean --force
 
 ```bash
 npm cache clean --force
 ```
 
-删除缓存目录下的所有数据。从 npm@5 开始，为了保证缓存数据的有效性和完整性，必须要加上 `--force` 参数。
+删除缓存目录下的所有数据。npm@5 重写了整个缓存系统，缓存将由 npm 来全局维护不用用户操心，这点也是在向 yarn 看齐。升级新版后，用户基本没有手动操作 npm cache 的场景。`npm cache clean` 将必须带上 `--force` 参数才能执行，并且会收到警告。
+
+npm 的缓存是使用 [pacote](https://www.npmjs.com/package/pacote) 模块进行下载和管理，基于 [cacache](https://www.npmjs.com/package/cacache) 缓存存储。由于 npm 会维护缓存数据的完整性，一旦数据发生错误，就回重新获取。因此不推荐手动清理缓存，除非需要释放磁盘空间，这也是要强制加上`--force` 参数的原因。
+
+### npm cache verify
+
+验证缓存数据的有效性和完整性，清理垃圾数据。
 
 ```bash
 npm cache verify
 ```
 
-验证缓存数据的有效性和完整性，清理垃圾数据。
-
-### 离线安装
+### offline/online
 
 npm 提供了离线安装模式，使用 `--offline`, `--prefer-offline`, `--prefer-online` 可以指定离线模式。
 
@@ -414,18 +420,18 @@ npx uglify-js@2.8.29 main.js -o ./dist/main.js
 
 ## `.npmrc`
 
-### 为什么要使用 `.npmrc`
+### Why we need
 
 常用场景：前端项目开发离不开安装各种 npm 依赖包，可以选择 npm 官方仓库也可以私有仓库，但更改仓库地址需要在安装时控制台打命令，比较麻烦，而 `.npmrc` 可以很方便地解决上面问题。当安装项目的依赖包时，会优先查找并读取项目根目录下的.npmrc 文件的配置。
 
-### 如何使用
+### How to use
 
 npmrc 使用起来非常的方便。只需要如下几个步骤：
 
 1. 在项目根目录创建一个.npmrc 的文件
 2. 在这个文件中写入相关配置信息
 
-### 相关配置说明
+### Configuration
 
 #### `registry=https://registry.npmjs.org`
 
@@ -457,7 +463,7 @@ node 和默认的 npm 版本对照：https://nodejs.org/zh-cn/download/releases/
 
 `.npmrc` 在 `npm publish` 的时候会自动忽略该文件
 
-<img src="https://user-images.githubusercontent.com/12554487/52620734-567b8b80-2ee0-11e9-878d-d7e868e4c819.png" width="400" />
+<Img w="400" align="left" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/JTyPeK.png' alt='JTyPeK'/>
 
 :::
 
@@ -465,7 +471,47 @@ See more: https://docs.npmjs.com/files/package.json
 
 ## nrm
 
-taobao 使用的坑点
+https://github.com/Pana/nrm
+
+NPM registry manager, fast switch between different registries: npm, cnpm, nj, taobao.
+
+```bash
+npm install -g nrm
+```
+
+常用命令：
+
+```bash
+$ nrm ls
+
+* npm -----  https://registry.npmjs.org/
+  yarn ----- https://registry.yarnpkg.com
+  cnpm ----  http://r.cnpmjs.org/
+  taobao --  https://registry.npm.taobao.org/
+  nj ------  https://registry.nodejitsu.com/
+  skimdb -- https://skimdb.npmjs.com/registry
+```
+
+```bash
+$ nrm use cnpm  //switch registry to cnpm
+
+    Registry has been set to: http://r.cnpmjs.org/
+```
+
+通常，其会根据 `.npmc` 自动切换，虽然很方便，但在网络正常的情况下，不建议改变仓库。当然还可以自己添加公司 npm 仓库，使其能够在官方和公司自己的 npm 仓库之间可以自由切换。
+
+```sh
+npm add <registry> <url> [home]  # Add one custom registry
+```
+
+:::caution
+
+使用 cnpm 和 taobao 的镜像的时候要注意两点：
+
+- 如果包安装失败，去 cnpm 或 taobao 官方仓库查看是否该包的同步有问题，可以自己手动触发与官方的同步，这点比较恼人。
+- 如果想去除 lockfile 中的 taobao 地址，不想用淘宝仓库了，最好删除 `node_modules` 和 `package-lcok.json` 重新安装，否则可能无论怎么切换仓库地址，最后安装的都是 taobao 仓库的包。
+
+:::
 
 ## lockfile
 
@@ -518,10 +564,10 @@ sudo npm install --unsafe-perm -g node-inspector
 5. [你所不知道的模块调试技巧 - npm link, 作者：atian25](https://github.com/atian25/blog/issues/17)
 6. [npx 简介, 作者：jackPan](https://www.jianshu.com/p/84daa0bea35c)
 7. [npmrc 使用小记，作者：绯雨闲丸](https://www.vanadis.cn/2017/03/25/npmrc/)
-8. https://nodesource.com/blog/configuring-your-npmrc-for-an-optimal-node-js-environment/
+8. [Configuring Your .npmrc for an Optimal Node.js Environment, By Tierney Cyren](https://nodesource.com/blog/configuring-your-npmrc-for-an-optimal-node-js-environment/)
 9. [npm 5 发布，有什么值得关注的新特性吗？](https://www.zhihu.com/question/60519361/answer/177577759)
 10. [说说 npm 5 的新坑](https://toutiao.io/posts/hrihhs/preview)
 11. [npm 和 yarn 缓存策略对比](https://segmentfault.com/a/1190000009709213)
 12. [npm5 新版功能特性解析及与 yarn 评测对比](https://www.qcloud.com/community/article/171211)
 13. [npm CLI documentation > CLI commands npm-ci](https://docs.npmjs.com/cli/ci.html)
-14. [Stackoverflow: What is the closest to `npm ci` in yarn](https://stackoverflow.com/questions/58482655/what-is-the-closest-to-npm-ci-in-yarn)
+14. [Stackoverflow: What is the closest to npm ci in yarn](https://stackoverflow.com/questions/58482655/what-is-the-closest-to-npm-ci-in-yarn)
