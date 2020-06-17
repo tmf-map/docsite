@@ -26,12 +26,14 @@ import Img from '../../../src/components/Img';
 
 为了更好的理解这些插件，可以点击下载我写的这个[demo](https://github.com/ThinkBucket/webpack-demo/tree/master/plugins)，本文中所有插件在 demo 中都有涉及，可以运行学习一下。
 
-:::caution
+:::danger
 
 如果使用 uglifyjs-webpack-plugin 压缩 ES6 代码会报如下错误：
 
-<Img w="520" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/uglifyjs-error.jpg" alt="uglifyjs-error" />
+<Img w="580" align="left" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/uglifyjs-error.jpg" alt="uglifyjs-error" />
   
+:::
+
 这时就需要使用 terser-webpack-plugin，直接引用即可，当然也可以自己再安装：
 
 ```js
@@ -47,13 +49,11 @@ module.exports = {
         terserOptions: {
           // https://github.com/webpack-contrib/terser-webpack-plugin#terseroptions
         }
-      }),
-    ],
+      })
+    ]
   }
 };
 ```
-
-:::
 
 ## html-webpack-plugin
 
@@ -371,4 +371,3 @@ module.exports = {
 2. [玩转 webpack，by 程柳锋](https://time.geekbang.org/course/intro/100028901)
 3. [webpack 不可错过的打包优化方法，by 前端工匠](https://mp.weixin.qq.com/s/hN2yTtFLyFBWmOrKF-E8lQ)
 4. [Webpack official doc: Optimization](https://webpack.js.org/configuration/optimization/)
-
