@@ -15,8 +15,8 @@ import Img from '../../../src/components/Img';
 | html-webpack-plugin | 创建`html`文件去承载输出的`bundle` |
 | mini-css-extract-plugin | 将`CSS`从`bundle`文件里提取成一个独立的`css`文件 |
 | optimize-css-assets-webpack-plugin | 压缩 CSS 代码 |
-| uglifyjs-webpack-plugin | 压缩`js`(Webpack4 已经默认支持，从[2.0.0 版](https://github.com/webpack-contrib/uglifyjs-webpack-plugin/releases) 本开始不再支持 ES6 代码) |
-| terser-webpack-plugin | 压缩`js`(Webpack4 已经默认支持，支持压缩 ES6 代码的压缩) |
+| uglifyjs-webpack-plugin | 压缩`js`(从[2.0.0 版](https://github.com/webpack-contrib/uglifyjs-webpack-plugin/releases) 本开始不再支持 ES6 代码) |
+| terser-webpack-plugin | 压缩`js`(Webpack4 已经内置该依赖包，支持压缩 ES6 代码的压缩) |
 | clean-webpack-plugin | 每次构建后清除`./dist`目录 |
 | friendly-errors-webpack-plugin | 优化命令行的构建日志提示信息 |
 | speed-measure-webpack-plugin | 查看打包耗时、以及每个 Plugin 和 Loader 耗时 |
@@ -25,6 +25,35 @@ import Img from '../../../src/components/Img';
 | copy-webpack-plugin | 将文件或者文件夹拷贝到构建的输出目录 |
 
 为了更好的理解这些插件，可以点击下载我写的这个[demo](https://github.com/ThinkBucket/webpack-demo/tree/master/plugins)，本文中所有插件在 demo 中都有涉及，可以运行学习一下。
+
+:::caution
+
+如果使用 uglifyjs-webpack-plugin 压缩 ES6 代码会报如下错误：
+
+<Img w="520" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/uglifyjs-error.jpg" alt="uglifyjs-error">
+  
+这时就需要使用 terser-webpack-plugin，直接引用即可，当然也可以自己再安装：
+
+```js
+const TerserPlugin = require('terser-webpack-plugin');
+
+module.exports = {
+  optimization: {
+    minimizer: [
+      new TerserPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: true, // Must be set to true if using source-maps in production
+        terserOptions: {
+          // https://github.com/webpack-contrib/terser-webpack-plugin#terseroptions
+        }
+      }),
+    ],
+  }
+};
+```
+
+:::
 
 ## html-webpack-plugin
 
@@ -336,8 +365,10 @@ module.exports = {
 
 <Img width="700" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200419120449.gif" />
 
-## 参考链接
+## 参考资料
 
-- [webpack official document](https://webpack.js.org/plugins/)
-- [玩转 webpack，by 程柳锋](https://time.geekbang.org/course/intro/100028901)
-- [webpack 不可错过的打包优化方法，by 前端工匠](https://mp.weixin.qq.com/s/hN2yTtFLyFBWmOrKF-E8lQ)
+1. [webpack official document](https://webpack.js.org/plugins/)
+2. [玩转 webpack，by 程柳锋](https://time.geekbang.org/course/intro/100028901)
+3. [webpack 不可错过的打包优化方法，by 前端工匠](https://mp.weixin.qq.com/s/hN2yTtFLyFBWmOrKF-E8lQ)
+4. [Webpack official doc: Optimization](https://webpack.js.org/configuration/optimization/)
+
