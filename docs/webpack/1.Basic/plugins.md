@@ -30,7 +30,7 @@ import Img from '../../../src/components/Img';
 
 如果使用 uglifyjs-webpack-plugin 压缩 ES6 代码会报如下错误：
 
-<Img w="520" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/uglifyjs-error.jpg" alt="uglifyjs-error">
+<Img w="520" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/uglifyjs-error.jpg" alt="uglifyjs-error" />
   
 这时就需要使用 terser-webpack-plugin，直接引用即可，当然也可以自己再安装：
 
