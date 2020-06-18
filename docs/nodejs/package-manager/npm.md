@@ -12,11 +12,43 @@ import Img from '../../../src/components/Img';
 
 <Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/Atnz2F.png' alt='Atnz2F'/>
 
+## Acronym
+
+### -g
+
+`--global` 缩写为 `-g`，表示安装之后的包将位于系统预设的全局目录之下。
+
+### -S
+
+`--save` 缩写为 `-S`，表示安装的包将写入 `package.json` 里面的 `dependencies`。
+
+### -D
+
+`--save-dev` 缩写为 `-D`，表示将安装的包将写入 `packege.json` 里面的 `devDependencies`。
+
+### -E
+
+`--save-exact` 缩写为 `-E`，表示安装的包的版本是精确指定的。比如 `npm install react -E` 后 `dependencies` 中 react 版本为：
+
+```json
+"react": "16.13.1"
+```
+
+以下缩写则不是很常用，仅供参考：
+
+### -O
+
+`--save-optional` 缩写为 `-O`，表示将安装的包将写入 `packege.json` 里面的 `optionalDependencies`。
+
+### -B
+
+`--save-bundle` 缩写为 `-B`，表示将安装的包将写入 `packege.json` 里面的 `bundleDependencies`。
+
 ## npm outdated
 
 例如在 node 项目中运行 `npm outdated` 命令，如下图所示：
 
-<Img w="650" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/0zEWlT.png' alt='0zEWlT'/>
+<Img w="580" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/0zEWlT.png' alt='0zEWlT'/>
 
 wanted 就是 `dependencies` `字段，devDependencies` 字段中指定的版本号应当升级的版本，可以看出上面列表 `less` 用的是 `^`，所以 wanted 会提示更新次要版本号。
 
@@ -27,8 +59,18 @@ wanted 就是 `dependencies` `字段，devDependencies` 字段中指定的版本
 这个是 npm 中最常用的命令：
 
 ```bash
-npm install packageName  # npm i packageName
+npm install packageName
 ```
+
+:::tip
+
+可以简写为：
+
+```bash
+npm i packageName
+```
+
+:::
 
 这个命令会将 package 安装在当前目录下 `node_modules` 目录内，可执行命令（如果有）安装在 `node_modules/.bin` 目录下。全局安装使用 `-g` 选项:
 
@@ -130,7 +172,17 @@ yarn 没有这个命令，但有一个比较类似的命令：`yarn install --fr
 
 ## npm update
 
-更新包有两种方式 `npm i packageName<@version>` 或者 `npm up packageName`
+更新包有两种方式 `npm i packageName<@version>` 或者 `npm update packageName`
+
+:::tip
+
+可以简写为：
+
+```bash
+npm up packageName
+```
+
+:::
 
 :::caution
 
@@ -180,13 +232,25 @@ npm up -g
 删除使用 `-g` 标记安装的包只须：
 
 ```bash
-npm uninstall packageName # aliases: un, r
+npm uninstall packageName
 ```
+
+:::tip
+
+可以简写为：
+
+```bash
+npm un packageName
+# or
+npm r packageName
+```
+
+:::
 
 对于全局安装的包 加上 `-g` 即可：
 
 ```bash
-npm r -g packageName # aliases: un, r
+npm r -g packageName
 ```
 
 :::tip
@@ -200,8 +264,22 @@ npm r -g packageName # aliases: un, r
 若要显示已安装的包的树形视图执行：
 
 ```bash
-npm ls -g  # aliases: list, la, ll
+npm list -g
 ```
+
+:::tip
+
+可以简写为：
+
+```bash
+npm ls packageName
+# or
+npm ll packageName
+# or
+npm la packageName
+```
+
+:::
 
 若只要显示第一层结构的包（你自己安装的包），可以执行：
 
@@ -286,10 +364,16 @@ npm set <key> <value>
 npm get [<key>]
 ```
 
-比如更换仓库
+比如更换仓库：
 
 ```bash
 npm config set registry https://registry.npmjs.org/
+```
+
+便于记忆可以用 edit 命令再进行编辑：
+
+```bash
+npm config edit
 ```
 
 ## npm link/unlink
@@ -558,16 +642,17 @@ sudo npm install --unsafe-perm -g node-inspector
 ## References
 
 1. [Node.js (简体中文)](<https://wiki.archlinux.org/index.php/Node.js_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)>)
-2. [The .bin folder stackoverflow](https://stackoverflow.com/questions/25306168/the-bin-folder)
-3. [npm 入门](https://zhuanlan.zhihu.com/p/27539908)
-4. [npm 模块安装机制简介](http://www.ruanyifeng.com/blog/2016/01/npm-install.html)
-5. [你所不知道的模块调试技巧 - npm link, 作者：atian25](https://github.com/atian25/blog/issues/17)
-6. [npx 简介, 作者：jackPan](https://www.jianshu.com/p/84daa0bea35c)
-7. [npmrc 使用小记，作者：绯雨闲丸](https://www.vanadis.cn/2017/03/25/npmrc/)
-8. [Configuring Your .npmrc for an Optimal Node.js Environment, By Tierney Cyren](https://nodesource.com/blog/configuring-your-npmrc-for-an-optimal-node-js-environment/)
-9. [npm 5 发布，有什么值得关注的新特性吗？](https://www.zhihu.com/question/60519361/answer/177577759)
-10. [说说 npm 5 的新坑](https://toutiao.io/posts/hrihhs/preview)
-11. [npm 和 yarn 缓存策略对比](https://segmentfault.com/a/1190000009709213)
-12. [npm5 新版功能特性解析及与 yarn 评测对比](https://www.qcloud.com/community/article/171211)
-13. [npm CLI documentation > CLI commands npm-ci](https://docs.npmjs.com/cli/ci.html)
-14. [Stackoverflow: What is the closest to npm ci in yarn](https://stackoverflow.com/questions/58482655/what-is-the-closest-to-npm-ci-in-yarn)
+1. [npm CLI documentation > CLI commands npm-install](https://docs.npmjs.com/cli/install)
+1. [The .bin folder stackoverflow](https://stackoverflow.com/questions/25306168/the-bin-folder)
+1. [npm 入门](https://zhuanlan.zhihu.com/p/27539908)
+1. [npm 模块安装机制简介](http://www.ruanyifeng.com/blog/2016/01/npm-install.html)
+1. [你所不知道的模块调试技巧 - npm link, 作者：atian25](https://github.com/atian25/blog/issues/17)
+1. [npx 简介, 作者：jackPan](https://www.jianshu.com/p/84daa0bea35c)
+1. [npmrc 使用小记，作者：绯雨闲丸](https://www.vanadis.cn/2017/03/25/npmrc/)
+1. [Configuring Your .npmrc for an Optimal Node.js Environment, By Tierney Cyren](https://nodesource.com/blog/configuring-your-npmrc-for-an-optimal-node-js-environment/)
+1. [npm 5 发布，有什么值得关注的新特性吗？](https://www.zhihu.com/question/60519361/answer/177577759)
+1. [说说 npm 5 的新坑](https://toutiao.io/posts/hrihhs/preview)
+1. [npm 和 yarn 缓存策略对比](https://segmentfault.com/a/1190000009709213)
+1. [npm5 新版功能特性解析及与 yarn 评测对比](https://www.qcloud.com/community/article/171211)
+1. [npm CLI documentation > CLI commands npm-ci](https://docs.npmjs.com/cli/ci.html)
+1. [Stackoverflow: What is the closest to npm ci in yarn](https://stackoverflow.com/questions/58482655/what-is-the-closest-to-npm-ci-in-yarn)

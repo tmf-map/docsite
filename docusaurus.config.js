@@ -10,7 +10,10 @@ module.exports = {
     'https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/docsite-logo-white-mode.png',
   organizationName: githubOrg, // Usually your GitHub org/user name.
   projectName: 'docsite', // Usually your repo name.
-  plugins: [require.resolve('@docusaurus/plugin-google-analytics'), require.resolve('docusaurus-lunr-search')],
+  plugins: [
+    require.resolve('@docusaurus/plugin-google-analytics'),
+    require.resolve('docusaurus-lunr-search')
+  ],
   themes: [require.resolve('@docusaurus/theme-live-codeblock')],
   themeConfig: {
     googleAnalytics: {
@@ -93,7 +96,7 @@ module.exports = {
               label: 'Webpack'
             },
             {
-              to: 'docs/nodejs/package-manager/yarn',
+              to: 'docs/nodejs/package-manager/package-version',
               activeBasePath: 'docs/nodejs/',
               label: 'Node.js'
             },
