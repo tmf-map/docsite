@@ -17,7 +17,11 @@ module.exports = {
     'algorithm/5.binary-tree/maximum-depth-of-binary-tree',
     'algorithm/5.binary-tree/balanced-binary-tree'
   ],
-  '8. 排序': ['algorithm/8.sort/merged-sort', 'algorithm/8.sort/quick-sort'],
+  '8. 排序': [
+    'algorithm/8.sort/merged-sort',
+    'algorithm/8.sort/quick-sort',
+    'algorithm/8.sort/sort-basic'
+  ],
   '9. 查找': [
     {
       type: 'category',
