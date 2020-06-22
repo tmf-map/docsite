@@ -12,7 +12,9 @@ module.exports = {
   '4. 链表': [
     'algorithm/4.linkedlist/linkedlist-1',
     'algorithm/4.linkedlist/linkedlist-2',
-    'algorithm/4.linkedlist/merge-two-sorted-lists'
+    'algorithm/4.linkedlist/merge-two-sorted-lists',
+    'algorithm/4.linkedlist/reverse-linked-list',
+    'algorithm/4.linkedlist/linked-list-cycle'
   ],
   '5. 二叉树': [
     'algorithm/5.binary-tree/build-tree',
