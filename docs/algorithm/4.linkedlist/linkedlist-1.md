@@ -1,7 +1,10 @@
 ---
 id: linkedlist-1
 title: 链表基本介绍
-keywords: single list, circular list, doubly list
+keywords:
+  - single linked list
+  - circular linked list
+  - doubly linked list
 ---
 
 import Img from '../../../src/components/Img';

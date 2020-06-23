@@ -14,7 +14,9 @@ module.exports = {
     'algorithm/4.linkedlist/linkedlist-2',
     'algorithm/4.linkedlist/merge-two-sorted-lists',
     'algorithm/4.linkedlist/reverse-linked-list',
-    'algorithm/4.linkedlist/linked-list-cycle'
+    'algorithm/4.linkedlist/linked-list-cycle',
+    'algorithm/4.linkedlist/middle-of-the-linked-list',
+    'algorithm/4.linkedlist/remove-nth-node-from-end-of-list'
   ],
   '5. 二叉树': [
     'algorithm/5.binary-tree/build-tree',
