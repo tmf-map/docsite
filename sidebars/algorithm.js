@@ -16,7 +16,8 @@ module.exports = {
     'algorithm/4.linkedlist/reverse-linked-list',
     'algorithm/4.linkedlist/linked-list-cycle',
     'algorithm/4.linkedlist/middle-of-the-linked-list',
-    'algorithm/4.linkedlist/remove-nth-node-from-end-of-list'
+    'algorithm/4.linkedlist/remove-nth-node-from-end-of-list',
+    'algorithm/4.linkedlist/LRU-cache'
   ],
   '5. 二叉树': [
     'algorithm/5.binary-tree/build-tree',
