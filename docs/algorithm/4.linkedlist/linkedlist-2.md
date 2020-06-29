@@ -19,7 +19,7 @@ import Img from '../../../src/components/Img';
 
 例如单链表的插入操作：
 
-<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/insert-linkedlist.png' alt='insert-linkedlist' width='600'/>
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/insert-x-linkedlist.png' alt='insert-x-linkedlist' width='600'/>
 
 如图所示，在 a 结点后插入 x 结点。通过遍历器 p 找到 a 结点，如果代码写作：
 
@@ -72,7 +72,7 @@ if (head.next === null) {
 
 从上面几个简单的例子可以看出，每次针对第一个或者最后一个结点进行特殊处理，这样的代码繁琐且容易出错。如何解决这个问题呢？这就需要引入一个"哨兵"，链表中的"哨兵"通常是新添加一个假的头节点，head 会一直指向这个哨兵结点，使得链表在任何时候都不为空。这种链表称为带头链表。
 
-<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/linklist-with-head.png' alt='linklist-with-head' width='600'/>
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/linkedlist-with-head.png' alt='linkedlist-with-head' width='700'/>
 
 使用带头链表后，单链表插入和删除操作：
 
@@ -141,8 +141,6 @@ const deleteAtIndex = function (head, index) {
 ## 举例画图，辅助思考
 
 对于比较复杂的链表操作，一会指这一会指那，很容易绕晕。这个时候可以使用举例法和画图法。可以找一个具体的例子，把它画在纸上，画出每部操作前后链表的变化，辅助思考。
-
-<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/draw-linkedlist.png' alt='draw-linkedlist' width='600'/>
 
 ## 参考链接
 
