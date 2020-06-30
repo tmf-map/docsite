@@ -70,7 +70,7 @@ if (head.next === null) {
 }
 ```
 
-从上面几个简单的例子可以看出，每次针对第一个或者最后一个结点进行特殊处理，这样的代码繁琐且容易出错。如何解决这个问题呢？这就需要引入一个"哨兵"，链表中的"哨兵"通常是新添加一个假的头节点，head 会一直指向这个哨兵结点，使得链表在任何时候都不为空。这种链表称为带头链表。
+从上面几个简单的例子可以看出，每次针对第一个或者最后一个结点进行特殊处理，这样的代码繁琐且容易出错。如何解决这个问题呢？这就需要引入一个"哨兵"，链表中的"哨兵"通常是新添加一个假的头节点，head 会一直指向这个哨兵结点，使得链表在任何时候都不为空。这种链表称为**带头链表**。
 
 <Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/linkedlist-with-head.png' alt='linkedlist-with-head' width='630'/>
 
@@ -129,6 +129,15 @@ const deleteAtIndex = function (head, index) {
 };
 ```
 
+## 双指针技巧
+
+双指针主要有两种应用场景：
+
+1. 两个指针从不同位置出发： 一个从头出发，另一个从尾出发
+2. 两个指针以不同速度移动：一个指针快一些，另一个慢一些
+
+由于一般的链表只有后继指针，因此第一种场景不太适用。比较常用的是第二种，快慢指针。具体的算法可以参考[判断链表中是否有环](/docs/algorithm/4.linkedlist/linked-list-cycle)、[链表的中间结点](/docs/algorithm/4.linkedlist/middle-of-the-linked-list)、[删除链表倒数第 n 个结点](/docs/algorithm/4.linkedlist/remove-nth-node-from-end-of-list)
+
 ## 重点留意边界条件处理
 
 经常用来检查链表代码的边界条件例如：
@@ -145,3 +154,4 @@ const deleteAtIndex = function (head, index) {
 ## 参考链接
 
 1. [数据结构与算法之美, by 王争](https://time.geekbang.org/column/intro/126)
+2. [链表, leetcode 探索](https://leetcode-cn.com/explore/learn/card/linked-list/)

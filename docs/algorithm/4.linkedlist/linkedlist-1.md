@@ -27,7 +27,7 @@ import Img from '../../../src/components/Img';
 
 <Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/singly-linked-list.png' alt='singly-linked-list' width='580'/>
 
-单链表的结构如上图所示。其中有两个结点很特殊，我们习惯性地称第一个结点为头结点，最后一个结点为尾结点。其中头结点用来记录链表地基地址，有了它才能遍历整个链表。而尾结点的特殊之处在于指针不再指向下一个结点，而是指向 NULL，表示这是链表上最后一个结点。
+单链表的结构如上图所示，其中的每个结点不仅仅包含值，还包含一个链接到下一个结点的后继指针 next。通过这种方式，单链表将所有结点按顺序组织起来。其中有两个结构很特殊，我们习惯性地称指向链表第一个结点的指针为头指针，最后一个结点为尾结点。其中头指针用来记录链表地基地址，有了它才能遍历整个链表。而尾结点的特殊之处在于其 next 指针不再指向下一个结点，而是指向 NULL，表示这是链表上最后一个结点。
 
 数组进行删除和插入操作时，为了保持内存数据的连续性，需要进行大量的数据移动，所以时间复杂度是 O(n)。而在链表中插入或者删除，并不需要移动，因为链表存储空间本身就是不连续的。所以，在链表中插入或删除一个数据是非常快的。
 
@@ -36,6 +36,12 @@ import Img from '../../../src/components/Img';
 如上图所示，在链表中插入和删除只需要更改几个相邻结点的指针，因此时间复杂度只有 O(1)。
 
 但是，当链表需要访问第 k 个结点时，就没有那么高效了。数组是连续存储的，只需要首地址和下标就可以计算出某元素对应的内存地址。而链表是不连续的，只能从头开始一个一个往下数，因此需要 O(n)的时间复杂度。
+
+:::tip
+
+在具体实现单链表插入和删除操作时，建议使用[**带头链表**](/docs/algorithm/4.linkedlist/linkedlist-2)
+
+:::
 
 ### 循环链表
 
@@ -47,7 +53,7 @@ import Img from '../../../src/components/Img';
 
 <Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/doubly-linked-list.png' alt='doubly-linked-list' width='700'/>
 
-单链表只有一个方向，双向链表，顾名思义，支持两个方向。双向链表中，每一个结点不止一个后继指针 next，还有一个前驱指针 prev。
+单链表只有一个方向，双向链表，顾名思义，支持两个方向。双向链表中，每一个结点不止一个后继指针 next，还有一个前驱指针 prev，指向该结点的前一个结点。
 
 ### 双向循环链表
 
@@ -65,3 +71,4 @@ import Img from '../../../src/components/Img';
 ## 参考链接
 
 1. [数据结构与算法之美, by 王争](https://time.geekbang.org/column/intro/126)
+2. [链表, leetcode 探索](https://leetcode-cn.com/explore/learn/card/linked-list/)
