@@ -25,13 +25,13 @@ import Img from '../../../src/components/Img';
 
 ### 单链表
 
-<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/singly-linked-list.png' alt='singly-linked-list' width='700'/>
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/singly-linked-list.png' alt='singly-linked-list' width='580'/>
 
 单链表的结构如上图所示。其中有两个结点很特殊，我们习惯性地称第一个结点为头结点，最后一个结点为尾结点。其中头结点用来记录链表地基地址，有了它才能遍历整个链表。而尾结点的特殊之处在于指针不再指向下一个结点，而是指向 NULL，表示这是链表上最后一个结点。
 
 数组进行删除和插入操作时，为了保持内存数据的连续性，需要进行大量的数据移动，所以时间复杂度是 O(n)。而在链表中插入或者删除，并不需要移动，因为链表存储空间本身就是不连续的。所以，在链表中插入或删除一个数据是非常快的。
 
-<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/delete-insert-singly-list.png' alt='delete-insert-singly-list' width='600'/>
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/delete-insert-singly-list.png' alt='delete-insert-singly-list' width='500'/>
 
 如上图所示，在链表中插入和删除只需要更改几个相邻结点的指针，因此时间复杂度只有 O(1)。
 
@@ -39,7 +39,7 @@ import Img from '../../../src/components/Img';
 
 ### 循环链表
 
-<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/circularly-linked-list.png' alt='circularly-linked-list' width='700'/>
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/circularly-linked-list.png' alt='circularly-linked-list' width='550'/>
 
 循环链表是一个特殊的单链表，区别仅在于尾结点。不同于单链表尾结点指向 NULL，循环链表尾结点指向头节点。从上图也可以看出，它像一个环一样首尾相连，所以叫做"循环"链表。与单链表相比，循环链表的优点在于从链尾到链头比较方便。当需要处理的数据具有环形结构的时候，就适合采用循环链表。比如著名的约瑟夫问题。
 
@@ -51,7 +51,9 @@ import Img from '../../../src/components/Img';
 
 ### 双向循环链表
 
-<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/doubly-circularly-linked-list.png' alt='doubly-circularly-linked-list' width='700'/>
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/doubly-circularly-linked-list.png' alt='doubly-circularly-linked-list' width='630'/>
+
+结合了双向链表和循环链表的特点，尾结点的后继指针 next 指向第一个结点，而第一个结点的前驱指针指 prev 向尾结点。
 
 ### 链表和数组的性能对比
 
