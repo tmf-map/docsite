@@ -20,18 +20,7 @@ function extend<T, U>(first: T, second: U): T & U {
   return result;
 }
 
-class Person {
-  constructor(public name: string) {}
-}
-interface Loggable {
-  log(): void;
-}
-class ConsoleLogger implements Loggable {
-  log() {
-    // ...
-  }
-}
-var jim = extend(new Person('Jim'), new ConsoleLogger());
+var jim = extend({ name: 'Jim' }, { log(): ... });
 var n = jim.name;
 jim.log();
 ```
@@ -68,66 +57,6 @@ function rating(score: Scores) {
 }
 
 rating(3);
-```
-
-### 类型保护与类型区分（Type Guards and Differentiating Types）
-
-使用联合类型时，我们无法知道编译时的具体类型，所以在运行时必须要确定类型，否则可能会访问一个不存在的成员属性，导致程序出错。所以代码中需要做类型保护和类型区分。
-
-- `typeof`类型保护
-
-可以通过 `typeof variable === 'type'` 来判断基本类型，并自动缩窄对应分支下的联合类型：
-
-```ts
-let x: number | string;
-if (typeof x === 'string') {
-  // 正确 typeof类型保护，自动缩窄到string
-  x.toUpperCase();
-}
-```
-
-- `instanceof`类型保护
-
-instanceof 用来检测实例与“类”的所属关系，也是一种类型保护。例如：
-
-```ts
-let x: Date | RegExp;
-if (x instanceof RegExp) {
-  // 正确 instanceof类型保护，自动缩窄到RegExp实例类型
-  x.test('');
-} else {
-  // 正确 自动缩窄到Date实例类型
-  x.getTime();
-}
-```
-
-- 用户自定义的类型保护
-
-`typeof`与`instanceof`类型保护能够满足一般场景，对于一些更加特殊的场景，可以通过自定义类型保护来缩窄类型。类型保护就是一些在运行时检查的表达式，以确保在某个作用域里的类型。要定义一个类型保护，只要简单地定义一个函数，它的返回值是一个`类型谓词(type predicate）：`
-
-```text
-parameterName is Type
-```
-
-其中 parameterName 必须是当前函数签名中的参数名，例如下面的`opts is RequestOptions`：
-
-```ts
-interface RequestOptions {
-  url: string;
-  onSuccess?: () => void;
-  onFailure?: () => void;
-}
-
-// 自定义类型保护，将参数类型any缩窄到RequestOptions
-function isValidRequestOptions(opts: any): opts is RequestOptions {
-  return opts && opts.url;
-}
-
-let opts;
-if (isValidRequestOptions(opts)) {
-  // opts从any缩窄到RequestOptions
-  opts.url;
-}
 ```
 
 ## 索引类型（Index types）
