@@ -50,7 +50,7 @@ import Img from '../../../src/components/Img';
 
 <Img w="580" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/0zEWlT.png' alt='0zEWlT'/>
 
-wanted 就是 `dependencies` `字段，devDependencies` 字段中指定的版本号应当升级的版本，可以看出上面列表 `less` 用的是 `^`，所以 wanted 会提示更新次要版本号。
+wanted 就是 `dependencies` 或 `devDependencies` 字段中指定的版本号应当升级的版本，可以看出上面列表 `less` 用的是 `^`，所以 wanted 会提示更新次要版本号。
 
 ## npm install
 
@@ -142,7 +142,12 @@ npm install file://packages/mylib
 
 ## npm ci
 
-该命令类似于 `npm i` ，但它旨在用于自动化环境，如测试平台，持续集成和部署。通过跳过某些面向用户的功能，它可以比常规的 npm 安装快得多。它也比常规安装更严格，它可以帮助捕获由于用户的增量安装而本地环境引起的错误或不一致。
+该命令类似于 `npm i` ，但它旨在用于自动化环境，如测试平台，持续集成和部署。
+
+优点：
+
+- 通过跳过某些面向用户的功能，它可以比 `npm i` 快得多。
+- 可以避免 `npm i` 增量安装而引起的本地和线上不一致等问题。
 
 例如配置 Travis 以使用 `npm ci` 而不是 `npm i`:
 
@@ -158,8 +163,8 @@ cache:
 
 总之，使用 `npm i` 和使用的主要区别 `npm ci` 是：
 
-- 该项目**必须**有一个 `package-lock.json` 或 `npm-shrinkwrap.json` 。
-- 它永远不会写入 `package.json` 或任何 lockfile，安装基本上是冻结的。
+- 使用 `npm ci` 时该项目**必须**有一个 `package-lock.json` 或 `npm-shrinkwrap.json` 。
+- `npm ci` 永远不会写入 `package.json` 或任何 lockfile，安装基本上是冻结的。
 - 如果 lockfile 中的依赖项与其中的依赖项不匹配 `package.json`，`npm ci` 则将退出并显示错误，而不是更新 lockfile。
 - 如果 `node_modules` 已经存在，它将在 `npm ci` 开始安装之前自动删除。
 - `npm ci` 只能一次安装整个项目，使用此命令无法添加单个依赖包。
@@ -384,25 +389,25 @@ https://docs.npmjs.com/cli/link
 
 ```bash
 cd path/my-project
-npm link path/my-package
+npm link path/npm-package
 ```
 
 不同目录下：
 
 ```bash
 # 先到模块目录，把它 link 到全局
-cd path/my-package
+cd path/npm-package
 npm link
 
 # 再去项目目录通过包名来 link
 cd path/my-project
-npm link my-package
+npm link npm-package
 ```
 
 去掉 link：
 
 ```bash
-npm unlink my-package
+npm unlink npm-package
 ```
 
 :::caution
@@ -607,7 +612,7 @@ npm add <registry> <url> [home]  # Add one custom registry
 
 ### `npm-shrinkwrap.json`
 
-npm@5 新增的 `package-lock.json` 文件和~~之前~~通过 `npm shrinkwrap` 命令生成的 `npm-shrinkwrap.json` 文件的格式完全相同，文件内记录了**版本，来源，树结构等所有依赖的 metadata**。
+npm@5 新增的 `package-lock.json` 文件和通过 `npm shrinkwrap` 命令生成的 `npm-shrinkwrap.json` 文件的格式完全相同，文件内记录了**版本，来源，树结构等所有依赖的 metadata**。
 
 需要注意的是 npm shrinkwrap 并不是一个新功能特性，而是从 npm@2 就开始有的功能。也就是说在 npm@5 之前的版本也是可以通过 shrinkwrap 锁定依赖的。（在这一点上，其实 Facebook 也是早期在使用 npm shrinkwrap 等功能时无法满足需求才导致了现在 yarn 的出现。可以阅读 Facebook 的这篇文章了解他们开发 yarn 的动机。）
 
