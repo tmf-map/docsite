@@ -37,6 +37,12 @@ html[data-theme="dark"] .navbar__search-input:focus {
   border-color: rgba(255, 255, 255, 0.5);
 }
 
+@media (max-width: 996px) {
+  .navbar__search-input {
+    width: 12.5rem;
+  }
+}
+
 /* Mobile */
 @media (max-width: 768px) {
   .search-icon-hidden {
@@ -48,7 +54,6 @@ html[data-theme="dark"] .navbar__search-input:focus {
     padding-left: 0;
     width: 100%;
     position: relative;
-    width: 100%;
     display: flex;
     justify-content: flex-end;
   }
