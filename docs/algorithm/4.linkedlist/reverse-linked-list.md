@@ -38,21 +38,21 @@ var reverse = function (head) {
 
 首先要明确递归函数的意义。reverse 函数的意义是：输入一个头节点 head，将以这个结点为头的链表反转，返回反转后的新头节点。
 
-<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/reverse-list-1.png' alt='reverse-list-1' width='600'/>
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/reverse-list-1.png' alt='reverse-list-1' width='500'/>
 
-那么如上图这样一个链表，执行`reverse(head.next)`，会执行`let newHead = reverse(head.next);`，可以得到如下图的链表：
+上图这样一个链表，通过 reverse 函数可以将其拆成如下两部分：
 
-<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/reverse-list-2.png' alt='reverse-list-2' width='600'/>
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/reverse-list-2.png' alt='reverse-list-2' width='550'/>
 
 `reverse(head.next)`执行完后，会得到如下链表，刚刚已经明确过，reverse 函数会返回反转后的链表的新头，我们使用 last 来接收。
 
-<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/reverse-list-3.png' alt='reverse-list-3' width='600'/>
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/reverse-list-3.png' alt='reverse-list-3' width='470'/>
 
 最后只需合并两个部分：
 
-<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/reverse-list-4.png' alt='reverse-list-4' width='600'/>
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/reverse-list-4.png' alt='reverse-list-4' width='500'/>
 
-<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/reverse-list-5.png' alt='reverse-list-5' width='600'/>
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/reverse-list-5.png' alt='reverse-list-5' width='500'/>
 
 ### 方法二：迭代
 
@@ -75,6 +75,8 @@ var reverseLinkedlist = function (head) {
 ```
 
 ## 复杂度
+
+两种算法的复杂度相同为：
 
 - 时间复杂度：O(n)
 - 空间复杂度：O(1)
