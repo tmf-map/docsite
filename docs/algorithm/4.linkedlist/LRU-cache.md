@@ -189,6 +189,6 @@ LRUCache.prototype.put = function (key, value) {
 - 时间复杂度：O(1)
 - 空间复杂度：O(n)
 
-## 参考链接
+## 参考资料
 
 1. [labuladong 的算法小抄 之 如何实现 LRU 算法，by labuladong](https://labuladong.gitbook.io/algo/gao-pin-mian-shi-xi-lie/lru-suan-fa)

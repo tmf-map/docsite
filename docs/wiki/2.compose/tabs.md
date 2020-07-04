@@ -36,6 +36,12 @@ will result in
 
 </Tabs>
 
+:::caution
+
+If you want to switch languages by tabs, there must be blank lines before and after the code block in `TabItem`.
+
+:::
+
 When you want to write `npm i packageName`, you can use:
 
     ```bash npm2yarn

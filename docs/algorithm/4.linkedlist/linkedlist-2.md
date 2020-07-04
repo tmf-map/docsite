@@ -152,7 +152,7 @@ const deleteAtIndex = function (head, index) {
 
 对于比较复杂的链表操作，一会指这一会指那，很容易绕晕。这个时候可以使用举例法和画图法。可以找一个具体的例子，把它画在纸上，画出每部操作前后链表的变化，辅助思考。
 
-## 参考链接
+## 参考资料
 
 1. [数据结构与算法之美, by 王争](https://time.geekbang.org/column/intro/126)
 2. [链表, leetcode 探索](https://leetcode-cn.com/explore/learn/card/linked-list/)
