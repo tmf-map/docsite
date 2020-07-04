@@ -1138,14 +1138,13 @@
     react-router-dom "^5.1.2"
     react-toggle "^4.1.1"
 
-"@docusaurus/theme-live-codeblock@2.0.0-alpha.56":
-  version "2.0.0-alpha.56"
-  resolved "https://registry.yarnpkg.com/@docusaurus/theme-live-codeblock/-/theme-live-codeblock-2.0.0-alpha.56.tgz#92a558842689048babf68467308af2c9bad3da46"
-  integrity sha512-pWwNBLHGNubrFgNLBcDMomM8MnaHY+yj4012QpqnFHC9cv2W4TTXQoTK7qt7hHso1HdHReGF8hCIswfkJkq6Vg==
+"@docusaurus/theme-live-codeblock@2.0.0-alpha.58":
+  version "2.0.0-alpha.58"
+  resolved "https://registry.yarnpkg.com/@docusaurus/theme-live-codeblock/-/theme-live-codeblock-2.0.0-alpha.58.tgz#7e66f92ae6ff941bdaaff0d1b25927937be497cb"
+  integrity sha512-24O8PyKxX/PdQHbqHGGjkQmsg5vNBRBSBDXmUWNAObt5/6g/5WRerwMd0U+K4YnZ2tAneUnkJxCEJ8W8k+GACQ==
   dependencies:
     "@philpl/buble" "^0.19.7"
-    classnames "^2.2.6"
-    clipboard "^2.0.6"
+    clsx "^1.1.1"
     parse-numeric-range "^0.0.2"
     prism-react-renderer "^1.1.0"
     react-live "^2.2.1"
@@ -2798,6 +2797,11 @@ clone-deep@^0.2.4:
     kind-of "^3.0.2"
     lazy-cache "^1.0.3"
     shallow-clone "^0.1.2"
+
+clsx@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/clsx/-/clsx-1.1.1.tgz#98b3134f9abbdf23b2663491ace13c5c03a73188"
+  integrity sha512-6/bPho624p3S2pMyvP5kKBPXnI3ufHLObBFCfgx+LkeR5lg2XYy2hqZqUf45ypD8COn2bhgGJSUE+l5dhNBieA==
 
 coa@^2.0.2:
   version "2.0.2"
