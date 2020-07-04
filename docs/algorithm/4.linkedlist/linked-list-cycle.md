@@ -13,7 +13,9 @@ import TabItem from '@theme/TabItem';
 
 Given a linked list, determine if it has a cycle in it.
 
-<Tabs defaultValue="js" values={[ {label: 'JavaScript', value: 'js'}, {label: 'Python', value: 'py'} ]}> <TabItem value="js">
+<Tabs defaultValue="js" values={[ {label: 'JavaScript', value: 'js'}, {label: 'Python', value: 'py'} ]}>
+
+<TabItem value="js">
 
 ```js
 function ListNode(val) {
@@ -48,7 +50,9 @@ class ListNode:
 
 ## 代码实现
 
-<Tabs defaultValue="js" values={[ {label: 'JavaScript', value: 'js'}, {label: 'Python', value: 'py'} ]}> <TabItem value="js">
+<Tabs defaultValue="js" values={[ {label: 'JavaScript', value: 'js'}, {label: 'Python', value: 'py'} ]}>
+
+<TabItem value="js">
 
 ```js
 /*

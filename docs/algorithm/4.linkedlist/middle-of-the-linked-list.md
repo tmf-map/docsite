@@ -15,7 +15,9 @@ import Img from '../../../src/components/Img';
 
 Given a non-empty, singly linked list with head node head, return a middle node of linked list.If there are two middle nodes, return the second middle node.
 
-<Tabs defaultValue="js" values={[ {label: 'JavaScript', value: 'js'}, {label: 'Python', value: 'py'} ]}> <TabItem value="js">
+<Tabs defaultValue="js" values={[ {label: 'JavaScript', value: 'js'}, {label: 'Python', value: 'py'} ]}>
+
+<TabItem value="js">
 
 ```js
 function ListNode(val) {
@@ -81,7 +83,9 @@ while fast.next and fast.next.next:
 
 ## 代码实现
 
-<Tabs defaultValue="js" values={[ {label: 'JavaScript', value: 'js'}, {label: 'Python', value: 'py'} ]}> <TabItem value="js">
+<Tabs defaultValue="js" values={[ {label: 'JavaScript', value: 'js'}, {label: 'Python', value: 'py'} ]}>
+
+<TabItem value="js">
 
 ```js
 /**

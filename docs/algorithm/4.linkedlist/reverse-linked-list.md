@@ -15,7 +15,9 @@ import Img from '../../../src/components/Img';
 
 Reverse a singly linked list.
 
-<Tabs defaultValue="js" values={[ {label: 'JavaScript', value: 'js'}, {label: 'Python', value: 'py'} ]}> <TabItem value="js">
+<Tabs defaultValue="js" values={[ {label: 'JavaScript', value: 'js'}, {label: 'Python', value: 'py'} ]}>
+
+<TabItem value="js">
 
 ```js
 function ListNode(val) {
@@ -43,7 +45,9 @@ class ListNode:
 
 ### 方法一：递归
 
-<Tabs defaultValue="js" values={[ {label: 'JavaScript', value: 'js'}, {label: 'Python', value: 'py'} ]}> <TabItem value="js">
+<Tabs defaultValue="js" values={[ {label: 'JavaScript', value: 'js'}, {label: 'Python', value: 'py'} ]}>
+
+<TabItem value="js">
 
 ```js
 /*
@@ -98,7 +102,9 @@ class Solution:
 
 ### 方法二：迭代
 
-<Tabs defaultValue="js" values={[ {label: 'JavaScript', value: 'js'}, {label: 'Python', value: 'py'} ]}> <TabItem value="js">
+<Tabs defaultValue="js" values={[ {label: 'JavaScript', value: 'js'}, {label: 'Python', value: 'py'} ]}>
+
+<TabItem value="js">
 
 ```js
 /*

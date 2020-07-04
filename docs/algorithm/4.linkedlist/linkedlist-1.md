@@ -33,7 +33,9 @@ import Img from '../../../src/components/Img';
 
 单链表的结构如上图所示，其中的每个结点不仅仅包含值，还包含一个链接到下一个结点的后继指针 next。通过这种方式，单链表将所有结点按顺序组织起来。其中有两个结构很特殊，我们习惯性地称指向链表第一个结点的指针为头指针，最后一个结点为尾结点。其中头指针用来记录链表地基地址，有了它才能遍历整个链表。而尾结点的特殊之处在于其 next 指针不再指向下一个结点，而是指向 NULL，表示这是链表上最后一个结点。
 
-<Tabs defaultValue="js" values={[ {label: 'JavaScript', value: 'js'}, {label: 'Python', value: 'py'} ]}> <TabItem value="js">
+<Tabs defaultValue="js" values={[ {label: 'JavaScript', value: 'js'}, {label: 'Python', value: 'py'} ]}>
+
+<TabItem value="js">
 
 ```js
 function ListNode(val) {
