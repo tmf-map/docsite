@@ -26,7 +26,7 @@ function NavLink({
   to,
   href,
   label,
-  activeClassName = 'navbar__link--active',
+  activeclassname = 'navbar__link--active',
   prependBaseUrlToHref,
   ...props
 }) {
@@ -44,7 +44,7 @@ function NavLink({
           }
         : {
             isNavLink: true,
-            activeClassName,
+            activeclassname,
             to: toUrl,
             ...(activeBasePath || activeBaseRegex
               ? {
@@ -96,7 +96,7 @@ function NavItem({items, position, className, ...props}) {
         {items.map(({className: childItemClassName, ...childItemProps}, i) => (
           <li key={i}>
             <NavLink
-              activeClassName="dropdown__link--active"
+              activeclassname="dropdown__link--active"
               className={navLinkClassNames(childItemClassName, true)}
               {...childItemProps}
             />
@@ -135,7 +135,7 @@ function MobileNavItem({items, position, className, ...props}) {
         {items.map(({className: childItemClassName, ...childItemProps}, i) => (
           <li className="menu__list-item" key={i}>
             <NavLink
-              activeClassName="menu__link--active"
+              activeclassname="menu__link--active"
               className={navLinkClassNames(childItemClassName)}
               {...childItemProps}
               onClick={props.onClick}
