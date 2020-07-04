@@ -69,4 +69,10 @@ html[data-theme="dark"] .navbar__search-input:focus {
     display: flex !important;
     justify-content: flex-end;
   }
+
+  .algolia-autocomplete {
+    width: 100%;
+    display: flex !important;
+    justify-content: flex-end;
+  }
 }
