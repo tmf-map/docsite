@@ -20,8 +20,8 @@ function extend<T, U>(first: T, second: U): T & U {
   return result;
 }
 
-var jim = extend({ name: 'Jim' }, { log(): ... });
-var n = jim.name;
+let jim = extend({ name: 'Jim' }, { log(): ... });
+let n = jim.name;
 jim.log();
 ```
 
@@ -67,6 +67,27 @@ rating(3);
 function pluck(o, names) {
   return names.map(n => o[n]);
 }
+```
+
+`pluck函数`能从`对象o`中摘出来`names`指定的那部分属性，存在 2 个类型约束：
+
+- 参数`names`中只能出现`o`具有的属性
+
+- 返回类型取决于参数`o`所包含的属性值的类型
+
+这两条约束都可以通过泛型来描述。
+
+```ts
+interface pluck {
+  <T, K extends keyof T>(o: T, names: K[]): T[K][];
+}
+
+let obj = {a: 1, b: '2', c: false};
+// 参数检查
+// Type 'n' is not assignable to type '"a" | "b" | "c"'.
+pluck(obj, ['n']);
+// 返回类型推断
+let xs: (string | number)[] = pluck(obj, ['a', 'b']);
 ```
 
 下面的例子展示了如何通过`索引类型查询`和`索引访问`操作符，在 TypeScript 里使用`pluck`函数：
