@@ -47,7 +47,7 @@
     "@docusaurus/preset-classic": "2.0.0-alpha.58",
     "@docusaurus/theme-live-codeblock": "2.0.0-alpha.58",
     "classnames": "^2.2.6",
-    "docusaurus-lunr-search": "^2.0.1",
+    "docusaurus-lunr-search": "^2.1.4",
     "npm-to-yarn": "^1.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
