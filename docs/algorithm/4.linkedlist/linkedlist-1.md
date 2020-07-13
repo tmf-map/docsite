@@ -58,8 +58,8 @@ class ListNode:
         self.val = x
         self.next = None
 
-head = new ListNode('data1')
-head.next = new ListNode('data2')
+head = ListNode('data1')
+head.next = ListNode('data2')
 # ...
 ```
 
@@ -102,6 +102,10 @@ a.next = a.next.next;
 
 单链表只有一个方向，双向链表，顾名思义，支持两个方向。双向链表中，每一个结点不止一个后继指针 next，还有一个前驱指针 prev，指向该结点的前一个结点。
 
+<Tabs defaultValue="js" values={[ {label: 'JavaScript', value: 'js'}, {label: 'Python', value: 'py'} ]}>
+
+<TabItem value="js">
+
 ```js
 function ListNode(val) {
   this.val = val;
@@ -114,6 +118,27 @@ head.next = new ListNode('data2');
 head.next.prev = head;
 // ...
 ```
+
+</TabItem>
+
+<TabItem value="py">
+
+```py
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+        self.prev = None
+
+head = ListNode('data1')
+head.next = ListNode('data2')
+head.next.prev = head
+# ...
+```
+
+</TabItem>
+
+</Tabs>
 
 双向链表的缺点显而易见，需要多分配一个指针域；执行各种操作后，为了维护双向链表结构，导致复杂度有所增加。其优点在于，当需要双向查找或者需要找到某结点的前驱结点时，可以节省时间。比如[LRU 缓存](/docs/algorithm/4.linkedlist/LRU-cache)。
 

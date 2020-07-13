@@ -37,19 +37,19 @@ LRU 策略全称为 Least Recently Used 最近最少使用，即最近最少使�
 
 举个例子，比如手机后台程序：
 
-先后打开了「设置」「手机管家」「日历」，它们在后台的顺序是这样的：
+先后打开了 `Messages`, `App Store`, `Chrome`, 它们在后台的顺序是这样的：
 
-<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/background-program-1.jpg' alt='background-program-1' width='600'/>
+<Img w="400" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/IMG_5420.jpeg' alt='IMG_5420'/>
 
-这时如果又访问了「设置」，「设置」会被提前成第一个变成这样：
+这时如果又访问了 `App Store`, `App Store`会被提前成第一个变成这样：
 
-<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/background-program-2.jpg' alt='background-program-2' width='600'/>
+<Img w="400" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/IMG_5421.jpeg' alt='IMG_5421'/>
 
-假设手机只允许后台开 3 个应用程序，现在已经满了。如果再打开一个应用「时钟」，就必须关闭一个应用为「时钟」腾出一个位置，关闭哪个呢？
+假设手机只允许后台开 3 个应用程序，现在已经满了。如果再打开一个应用 `Maps`，就必须关闭一个应用为 `Maps` 腾出一个位置，关闭哪个呢？
 
-按照 LRU 的策略，最底下的「手机管家」会被淘汰，因为它最近最少使用。然后把新打开的应用放到最上面：
+按照 LRU 的策略，最底下的 `Messages` 会被淘汰，因为它最近最少使用。然后把新打开的应用放到最上面：
 
-<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/background-program-3.jpg' alt='background-program-3' width='600'/>
+<Img w="400" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/IMG_5422.jpeg' alt='IMG_5422'/>
 
 ## 思路
 
