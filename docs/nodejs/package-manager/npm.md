@@ -132,7 +132,7 @@ npm install file://packages/mylib
 
 ### Update package
 
-除了安装包，`npm i` 也可以用于升级包，比如 `npm i packageName` 将会把 `node_modules` 中相应的包升级到 `wanted` 版本，同时也会自动更新 `package.josn` 和 `package-lock.json` 。
+除了安装包，`npm i` 也可以用于升级包，比如 `npm i packageName` 将会把 `node_modules` 中相应的包升级到 `wanted` 版本，同时也会自动更新 `package.json` 和 `package-lock.json` 。
 
 :::caution
 
@@ -413,7 +413,7 @@ npm unlink npm-package
 :::caution
 
 - 如果在 my-project 里面重新执行过 `npm i` 那么 link 就会失效，需要重新 link。
-- 在 my-package 里面的修改能自动同步到 my-project。
+- 在 npm-package 里面的修改能自动同步到 my-project。
 - 使用 `nvm` 的时候要注意不同项目是否用的是同一个版本的 node，否则 link 是不会生效的。
 
 :::
