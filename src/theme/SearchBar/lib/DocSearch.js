@@ -1,9 +1,9 @@
 import Hogan from 'hogan.js';
-import autocomplete from 'autocomplete.js';
-import $ from 'autocomplete.js/zepto';
 import LunrSearchAdapter from './lunar-search';
+import autocomplete from 'autocomplete.js';
 import templates from './templates';
 import utils from './utils';
+import $ from 'autocomplete.js/zepto';
 
 /**
  * Adds an autocomplete dropdown to an input field
@@ -150,7 +150,7 @@ class DocSearch {
       this.client.search(query).then(hits => {
         if (
           this.queryDataCallback &&
-          typeof this.queryDataCallback === 'function'
+          typeof this.queryDataCallback == 'function'
         ) {
           this.queryDataCallback(hits);
         }
@@ -242,10 +242,9 @@ class DocSearch {
     if (url) {
       const containsAnchor = url.indexOf('#') !== -1;
       if (containsAnchor) return url;
-      if (anchor) return `${hit.url}#${hit.anchor}`;
+      else if (anchor) return `${hit.url}#${hit.anchor}`;
       return url;
-    }
-    if (anchor) return `#${hit.anchor}`;
+    } else if (anchor) return `#${hit.anchor}`;
     /* eslint-disable */
     console.warn('no anchor nor url for : ', JSON.stringify(hit));
     /* eslint-enable */
