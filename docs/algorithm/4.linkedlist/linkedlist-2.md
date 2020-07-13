@@ -131,6 +131,67 @@ const deleteAtIndex = function (head, index) {
 };
 ```
 
+使用带头链表后，双向链表的插入和删除操作：
+
+```js
+let node = function (x) {
+  this.val = x;
+  this.next = null;
+  this.prev = null;
+};
+
+/**
+ * Add a node of value val before the index-th node in the linked list.
+ * If index equals to the length of linked list, the node will be appended to the end of linked list.
+ * If index is greater than the length, the node will not be inserted.
+ * @param {node} head
+ * @param {number} index
+ * @param {number} val
+ * @return {node}
+ */
+const addAtIndex = function (head, index, val) {
+  let fakeHead = new node(null);
+  fakeHead.next = head;
+  let cur = fakeHead;
+  for (let i = 0; i < index; i++) {
+    if (cur !== null) {
+      cur = cur.next;
+    } else {
+      return head; // index out of bounds
+    }
+  }
+  const newNode = new node(val);
+  newNode.next = cur.next;
+  cur.next.prev = newNode;
+  cur.next = newNode;
+  newNode.prev = cur;
+
+  return fakeHead.next;
+};
+
+/**
+ * Delete the index-th node in the linked list, if the index is valid.
+ * @param {node} head
+ * @param {number} index
+ * @return {node}
+ */
+const deleteAtIndex = function (head, index) {
+  let fakeHead = new node(null);
+  fakeHead.next = head;
+  let cur = fakeHead;
+  for (let i = 0; i < index; i++) {
+    if (cur !== null) {
+      cur = cur.next;
+    } else {
+      return head; // index out of bounds
+    }
+  }
+  cur.next = cur.next.next;
+  cur.next.prev = cur;
+  return fakeHead.next;
+};
+```
+
 ## 双指针技巧
 
 双指针主要有两种应用场景：
