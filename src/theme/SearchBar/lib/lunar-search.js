@@ -1,33 +1,11 @@
-// eslint-disable-next-line
-import lunr from 'lunr';
+import lunr from 'docusaurus-lunr-search/src/lunr.client';
 
 lunr.tokenizer.separator = /[\s\-/]+/;
 
 class LunrSearchAdapter {
-  constructor(searchData) {
-    this.searchData = searchData;
-    this.init();
-    this.titleHitsRes = [];
-  }
-
-  init() {
-    const {searchData} = this;
-    this.lunrIndex = lunr(function () {
-      this.ref('id');
-      this.field('title', {boost: 200});
-      this.field('content', {boost: 2});
-      this.field('keywords', {boost: 100});
-      this.metadataWhitelist = ['position'];
-      searchData.forEach((d, i) => {
-        const doc = {
-          id: i,
-          title: d.title,
-          content: d.content,
-          keywords: d.keywords
-        };
-        this.add(doc);
-      });
-    });
+  constructor(searchDocs, searchIndex) {
+    this.searchDocs = searchDocs;
+    this.lunrIndex = lunr.Index.load(searchIndex);
   }
 
   getLunrResult(input) {
@@ -108,7 +86,6 @@ class LunrSearchAdapter {
     let previewEnd = end;
     let ellipsesBefore = true;
     let ellipsesAfter = true;
-    // eslint-disable-next-line
     for (let k = 0; k < 3; k++) {
       const nextSpace = doc.content.lastIndexOf(' ', previewStart - 2);
       const nextDot = doc.content.lastIndexOf('.', previewStart - 2);
@@ -124,7 +101,6 @@ class LunrSearchAdapter {
       }
       previewStart = nextSpace + 1;
     }
-    // eslint-disable-next-line
     for (let k = 0; k < 10; k++) {
       const nextSpace = doc.content.indexOf(' ', previewEnd + 1);
       const nextDot = doc.content.indexOf('.', previewEnd + 1);
@@ -156,17 +132,15 @@ class LunrSearchAdapter {
   }
 
   search(input) {
-    return new Promise(resolve => {
+    return new Promise((resolve, rej) => {
       const results = this.getLunrResult(input);
       const hits = [];
-      // eslint-disable-next-line
       results.length > 5 && (results.length = 5);
       this.titleHitsRes = [];
       this.contentHitsRes = [];
       results.forEach(result => {
-        const doc = this.searchData[result.ref];
+        const doc = this.searchDocs[result.ref];
         const {metadata} = result.matchData;
-        // eslint-disable-next-line
         for (const i in metadata) {
           if (metadata[i].title) {
             if (!this.titleHitsRes.includes(result.ref)) {
@@ -184,7 +158,6 @@ class LunrSearchAdapter {
           }
         }
       });
-      // eslint-disable-next-line
       hits.length > 5 && (hits.length = 5);
       resolve(hits);
     });

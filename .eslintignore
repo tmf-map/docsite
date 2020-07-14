@@ -4,3 +4,4 @@ build
 jest.config.js
 jest.transform.js
 docusaurus.config.js
+src/theme/SearchBar

@@ -11,6 +11,7 @@ const typescript = require('./typescript');
 const webpack = require('./webpack');
 const wiki = require('./wiki');
 const nodejs = require('./nodejs');
+const feGuidelines = require('./fe-guidelines');
 
 module.exports = {
   javascript,
@@ -25,5 +26,6 @@ module.exports = {
   typescript,
   wiki,
   webpack,
-  nodejs
+  nodejs,
+  feGuidelines
 };

@@ -1,5 +1,5 @@
-/* Mobile */
-@media (width <= 996px) {
+/* iPhone */
+@media (width < 768px) {
   :root {
     --ifm-font-size-base: 14px;
   }
@@ -11,13 +11,26 @@
   }
 }
 
-/* MacBook Pro 13.3 */
-@media (996px < width <= 1440px) {
+/* iPad */
+@media (768px <= width < 996px) {
   :root {
-    --ifm-font-size-base: 14px;
+    --ifm-font-size-base: 16px;
   }
   html {
-    font-size: 14px;
+    font-size: 16px;
+  }
+  footer.footer {
+    display: none;
+  }
+}
+
+/* iPad Pro, MacBook Pro 13.3 */
+@media (996px <= width <= 1440px) {
+  :root {
+    --ifm-font-size-base: 16px;
+  }
+  html {
+    font-size: 16px;
   }
   .navbar + .main-wrapper > div > div:not(.row):not(.hero):not(.main) {
     width: 290px;
@@ -28,11 +41,10 @@
 }
 
 @media (width > 996px) {
-  .navbar + .main-wrapper > div > div:not(.row) > div:not(.container) {
-    padding-top: 1.3rem;
+  .menu.menu--responsive {
+    padding-top: 1.8rem;
     padding-bottom: 2rem;
-    padding-left: 0.7rem;
-    top: var(--ifm-navbar-height);
+    padding-left: 1.2rem;
   }
   .container .col:first-child > div {
     max-width: 45.6vw !important;

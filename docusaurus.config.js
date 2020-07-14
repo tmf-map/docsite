@@ -10,8 +10,11 @@ module.exports = {
     'https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/docsite-logo-white-mode.png',
   organizationName: githubOrg, // Usually your GitHub org/user name.
   projectName: 'docsite', // Usually your repo name.
-  plugins: ['@docusaurus/plugin-google-analytics', 'docusaurus-lunr-search'],
-  themes: ['@docusaurus/theme-live-codeblock'],
+  plugins: [
+    require.resolve('@docusaurus/plugin-google-analytics'),
+    require.resolve('docusaurus-lunr-search')
+  ],
+  themes: [require.resolve('@docusaurus/theme-live-codeblock')],
   themeConfig: {
     googleAnalytics: {
       trackingID: 'UA-152610996-1'
@@ -55,7 +58,7 @@ module.exports = {
           to: 'docs/javascript/1.basic/js-engine',
           position: 'right',
           activeBaseRegex:
-            'docs/(javascript|typescript|html|css|web|react|webpack|nodejs)',
+            'docs/(javascript|typescript|html|css|web|react|webpack|nodejs|fe-guidelines)',
           items: [
             {
               to: 'docs/javascript/1.basic/js-engine',
@@ -93,9 +96,14 @@ module.exports = {
               label: 'Webpack'
             },
             {
-              to: 'docs/nodejs/package-manager/yarn',
+              to: 'docs/nodejs/package-manager/package-version',
               activeBasePath: 'docs/nodejs/',
               label: 'Node.js'
+            },
+            {
+              to: 'docs/fe-guidelines/1.introduction',
+              activeBasePath: 'docs/fe-guidelines/',
+              label: 'Coding Guidelines'
             }
           ]
         },
@@ -103,7 +111,7 @@ module.exports = {
           label: 'Backend',
           to: 'docs/java/object-oriented-programming/abstract-class-interface',
           position: 'right',
-          activeBaseRegex: 'docs/(java)',
+          activeBaseRegex: 'docs/(java/)',
           items: [
             {
               to:
