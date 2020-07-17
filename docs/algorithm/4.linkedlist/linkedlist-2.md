@@ -19,7 +19,7 @@ import Img from '../../../src/components/Img';
 
 例如单链表的插入操作：
 
-<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/insert-x-linkedlist.png' alt='insert-x-linkedlist' width='550'/>
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/insert-x-linkedlist.png' alt='insert-x-linkedlist' width='480'/>
 
 如图所示，在 a 结点后插入 x 结点。通过遍历器 p 找到 a 结点，如果代码写作：
 
@@ -39,7 +39,7 @@ p.next = x;
 
 ## 利用哨兵简化实现难度
 
-哨兵解决国家边界问题，同理链表中加入哨兵也是为了解决边界问题。我们先看几个例子。
+哨兵（**sentinel**）解决国家边界问题，同理链表中加入哨兵也是为了解决边界问题。我们先看几个例子。
 
 例如单链表插入操作。向 p 结点后面插入一个新结点：
 
@@ -70,14 +70,14 @@ if (head.next === null) {
 }
 ```
 
-从上面几个简单的例子可以看出，每次针对第一个或者最后一个结点进行特殊处理，这样的代码繁琐且容易出错。如何解决这个问题呢？这就需要引入一个"哨兵"，链表中的"哨兵"通常是新添加一个假的头节点，head 会一直指向这个哨兵结点，使得链表在任何时候都不为空。这种链表称为**带头链表**。
+从上面几个简单的例子可以看出，每次针对第一个或者最后一个结点进行特殊处理，这样的代码繁琐且容易出错。如何解决这个问题呢？这就需要引入一个"哨兵"，链表中的"哨兵"通常是新添加一个**假的头节点(dummy head)**，head 会一直指向这个哨兵结点，使得链表在任何时候都不为空。这种链表称为**带头链表**。
 
-<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/linkedlist-with-head.png' alt='linkedlist-with-head' width='630'/>
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/etQAIJ.png' alt='linkedlist-with-head' width='630'/>
 
 使用带头链表后，单链表插入和删除操作：
 
 ```js
-let node = function (x) {
+const ListNode = function (x) {
   this.val = x;
   this.next = null;
 };
@@ -86,55 +86,42 @@ let node = function (x) {
  * Add a node of value val before the index-th node in the linked list.
  * If index equals to the length of linked list, the node will be appended to the end of linked list.
  * If index is greater than the length, the node will not be inserted.
- * @param {node} head
- * @param {number} index
- * @param {number} val
- * @return {node}
  */
 const addAtIndex = function (head, index, val) {
-  let fakeHead = new node(null);
-  fakeHead.next = head;
-  let cur = fakeHead;
+  let dummyHead = new ListNode(null);
+  dummyHead.next = head;
+  let cur = dummyHead;
   for (let i = 0; i < index; i++) {
-    if (cur !== null) {
-      cur = cur.next;
-    } else {
-      return head; // index out of bounds
-    }
+    if (!cur) return head; // index out of bounds
+    cur = cur.next;
   }
-  const newNode = new node(val);
+  const newNode = new ListNode(val);
   newNode.next = cur.next;
   cur.next = newNode;
 
-  return fakeHead.next;
+  return dummyHead.next;
 };
 
 /**
  * Delete the index-th node in the linked list, if the index is valid.
- * @param {node} head
- * @param {number} index
- * @return {node}
  */
 const deleteAtIndex = function (head, index) {
-  let fakeHead = new node(null);
-  fakeHead.next = head;
-  let cur = fakeHead;
+  let dummyHead = new ListNode(null);
+  dummyHead.next = head;
+  let cur = dummyHead;
   for (let i = 0; i < index; i++) {
-    if (cur !== null) {
-      cur = cur.next;
-    } else {
-      return head; // index out of bounds
-    }
+    if (!cur) return head; // index out of bounds
+    cur = cur.next;
   }
   cur.next = cur.next.next;
-  return fakeHead.next;
+  return dummyHead.next;
 };
 ```
 
 使用带头链表后，双向链表的插入和删除操作：
 
 ```js
-let node = function (x) {
+const ListNode = function (x) {
   this.val = x;
   this.next = null;
   this.prev = null;
@@ -144,51 +131,38 @@ let node = function (x) {
  * Add a node of value val before the index-th node in the linked list.
  * If index equals to the length of linked list, the node will be appended to the end of linked list.
  * If index is greater than the length, the node will not be inserted.
- * @param {node} head
- * @param {number} index
- * @param {number} val
- * @return {node}
  */
 const addAtIndex = function (head, index, val) {
-  let fakeHead = new node(null);
-  fakeHead.next = head;
-  let cur = fakeHead;
+  let dummyHead = new ListNode(null);
+  dummyHead.next = head;
+  let cur = dummyHead;
   for (let i = 0; i < index; i++) {
-    if (cur !== null) {
-      cur = cur.next;
-    } else {
-      return head; // index out of bounds
-    }
+    if (!cur) return head; // index out of bounds
+    cur = cur.next;
   }
-  const newNode = new node(val);
+  const newNode = new ListNode(val);
   newNode.next = cur.next;
   cur.next.prev = newNode;
   cur.next = newNode;
   newNode.prev = cur;
 
-  return fakeHead.next;
+  return dummyHead.next;
 };
 
 /**
  * Delete the index-th node in the linked list, if the index is valid.
- * @param {node} head
- * @param {number} index
- * @return {node}
  */
 const deleteAtIndex = function (head, index) {
-  let fakeHead = new node(null);
-  fakeHead.next = head;
-  let cur = fakeHead;
+  let dummyHead = new ListNode(null);
+  dummyHead.next = head;
+  let cur = dummyHead;
   for (let i = 0; i < index; i++) {
-    if (cur !== null) {
-      cur = cur.next;
-    } else {
-      return head; // index out of bounds
-    }
+    if (!cur) return head; // index out of bounds
+    cur = cur.next;
   }
   cur.next = cur.next.next;
   cur.next.prev = cur;
-  return fakeHead.next;
+  return dummyHead.next;
 };
 ```
 

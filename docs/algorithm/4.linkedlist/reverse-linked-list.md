@@ -112,15 +112,15 @@ class Solution:
  * @return {ListNode}
  */
 var reverseLinkedlist = function (head) {
-  let pre = null;
+  let prev = null;
   let cur = head;
   while (cur) {
     let next = cur.next;
-    cur.next = pre;
-    pre = cur;
+    cur.next = prev;
+    prev = cur;
     cur = next;
   }
-  return pre;
+  return prev;
 };
 ```
 
@@ -131,14 +131,14 @@ var reverseLinkedlist = function (head) {
 ```py
 class Solution:
     def reverseList(self, head: ListNode) -> ListNode:
-        pre = None
+        prev = None
         cur = head
         while cur:
             next = cur.next
-            cur.next = pre
-            pre = cur
+            cur.next = prev
+            prev = cur
             cur = next
-        return pre
+        return prev
 ```
 
 </TabItem>

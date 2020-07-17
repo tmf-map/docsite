@@ -1,6 +1,6 @@
 ---
 id: LRU-cache
-title: LRU缓存
+title: LRU 缓存
 ---
 
 import Tabs from '@theme/Tabs';
@@ -23,7 +23,11 @@ import Img from '../../../src/components/Img';
   - 如果 key 不存在，则插入该组 key-value
   - 当缓存容量达到上限时，它应该在写入新数据之前删除**最久未使用**的数据，从而为新的数据值留出空间
 
-> 注意需要在 **O(1)** 时间复杂度内完成这两种操作。
+:::note
+
+注意需要在 **O(1)** 时间复杂度内完成这两种操作。
+
+:::
 
 <Tabs defaultValue="js" values={[ {label: 'JavaScript', value: 'js'}, {label: 'Python', value: 'py'} ]}>
 
@@ -69,7 +73,7 @@ cache.get(4) # 返回  4
 
 LRU 算法是一种缓存淘汰策略。缓存容量都有限，如果满了就需要删除一些数据，给新的数据腾出空间。那么删除哪些呢？我们期望删除缓存中没什么用的数据，把有用的留着，方便以后继续使用。什么样的数据没用呢？
 
-:::note
+:::tip
 
 LRU 策略全称为 **Least Recently Used** 最近最少使用，即最近最少使用的数据是没用的，会被淘汰。
 
@@ -102,17 +106,17 @@ LRU 策略全称为 **Least Recently Used** 最近最少使用，即最近最少
 
 所以结合一下，形成一种新的数据结构：**哈希链表**。LRU 缓存算法的核心数据结构就是哈希链表，它是双向链表和哈希表的结合体。这个数据结构长这样：
 
-<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/AoiuKD.png' alt='AoiuKD'/>
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/doBYyK.png' alt='doBYyK'/>
 
 :::tip
 
-为什么需要双向链表而不是单链表？
+**Q:** 为什么需要双向链表而不是单链表？
 
-> 因为需要进行删除指定结点操作，还需要确保该操作时间复杂度为 O(1)。单链表无法以 O(1)的时间复杂度获取指定结点的前驱结点。
+因为需要[删除给定指针(`hash_map[key]`)指向的结点](/docs/algorithm/4.linkedlist/linkedlist-1#双向链表)，且确保该操作时间复杂度为 **O(1)**。单链表无法以 O(1) 的时间复杂度获取指定结点的前驱结点。
 
 :::
 
-实际上 cache 的主体还是双向链表，哈希表是为了加快其查找，双向链表节点的多少对应 cache 的 capacity，即双向链表需要一个 size 属性与 capacity 对应。
+实际上 cache 的主体还是双向链表，哈希表是为了加快其查找，双向链表节点的个数对应 cache 的 capacity，即双向链表需要一个 size 属性与 capacity 对应。
 
 基本思路：
 
@@ -306,13 +310,11 @@ class DoublyLinkedList:
         self.size -= 1
         return last_node
 
-
 class LRUCache:
     def __init__(self, capacity: int):
         self.capacity = capacity
         self.hash_map = {}
         self.doubly_linked_list = DoublyLinkedList()
-
 
     def get(self, key: int) -> int:
         if key not in self.hash_map:
