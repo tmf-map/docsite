@@ -57,11 +57,11 @@ while fast and fast.next:
 
 当结点个数为奇数时，slow 结点落在链表的中间结点：
 
-<Img w="600" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/so3oiq.png' alt='so3oiq'/>
+<Img w="660" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/oY7h7f.png' alt='oY7h7f'/>
 
 当结点个数为偶数时： slow 结点落在靠右的中间结点（符合题意）：
 
-<Img w="475" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/ydG0Hp.png' alt='ydG0Hp'/>
+<Img w="550" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/LHpvrJ.png' alt='LHpvrJ'/>
 
 **Solution 2**
 
@@ -75,11 +75,11 @@ while fast.next and fast.next.next:
 
 当结点个数为奇数时，slow 结点落在链表的中间结点：
 
-<Img w="600" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/C8kQpR.png' alt='C8kQpR'/>
+<Img w="660" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/oY7h7f.png' alt='oY7h7f'/>
 
 当结点个数为偶数时： slow 结点落在靠左的中间结点（ 不符合题意）：
 
-<Img w="480" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/sYqHV6.png' alt='sYqHV6'/>
+<Img w="550" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/LOmcqj.png' alt='LOmcqj'/>
 
 ## 代码实现
 
