@@ -106,7 +106,7 @@ LRU 策略全称为 **Least Recently Used** 最近最少使用，即最近最少
 
 所以结合一下，形成一种新的数据结构：**哈希链表**。LRU 缓存算法的核心数据结构就是哈希链表，它是双向链表和哈希表的结合体。这个数据结构长这样：
 
-<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/doBYyK.png' alt='doBYyK'/>
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/3MnCat.png' alt='3MnCat'/>
 
 :::tip
 
@@ -178,7 +178,7 @@ function DoublyLinkedList() {
  * @param {ListNode} node
  *
  */
-DoublyLinkedList.prototype.unshift = function (node) {
+DoublyLinkedList.prototype.addAtHead = function (node) {
   node.next = this.dummyHead.next;
   node.prev = this.dummyHead;
   this.dummyHead.next = node;
@@ -186,23 +186,11 @@ DoublyLinkedList.prototype.unshift = function (node) {
   this.size++;
 };
 /**
- * 删除双向链表中的某个结点。结点一定存在
- * @param {ListNode} node
- *
- */
-DoublyLinkedList.prototype.remove = function (node) {
-  node.prev.next = node.next;
-  node.next.prev = node.prev;
-  node.next = null;
-  node.prev = null;
-  this.size--;
-};
-/**
  * 删除双向链表最后一个结点，并返回该结点
  * @return {ListNode}
  *
  */
-DoublyLinkedList.prototype.pop = function () {
+DoublyLinkedList.prototype.deleteAtTail = function () {
   const last = this.dummyTail.prev;
   this.dummyTail.prev = last.prev;
   last.prev.next = last.next;
@@ -210,6 +198,18 @@ DoublyLinkedList.prototype.pop = function () {
   last.next = null;
   this.size--;
   return last;
+};
+/**
+ * 删除双向链表中的某个结点。结点一定存在
+ * @param {ListNode} node
+ *
+ */
+DoublyLinkedList.prototype.delete = function (node) {
+  node.prev.next = node.next;
+  node.next.prev = node.prev;
+  node.next = null;
+  node.prev = null;
+  this.size--;
 };
 
 /**
@@ -241,19 +241,19 @@ LRUCache.prototype.get = function (key) {
  * @return {void}
  */
 LRUCache.prototype.put = function (key, value) {
-  const x = new ListNode(key, value);
+  const node = new ListNode(key, value);
 
   if (this.hashmap[key] !== undefined) {
-    this.doublyLinkedList.remove(this.hashmap[key]);
-    this.doublyLinkedList.unshift(x);
-    this.hashmap[key] = x;
+    this.doublyLinkedList.delete(this.hashmap[key]);
+    this.doublyLinkedList.addAtHead(node);
+    this.hashmap[key] = node;
   } else {
     if (this.doublyLinkedList.size === this.capacity) {
-      const last = this.doublyLinkedList.pop();
+      const last = this.doublyLinkedList.deleteAtTail();
       this.hashmap[last.key] = undefined;
     }
-    this.doublyLinkedList.unshift(x);
-    this.hashmap[key] = x;
+    this.doublyLinkedList.addAtHead(node);
+    this.hashmap[key] = node;
   }
 };
 
@@ -274,41 +274,39 @@ class ListNode:
     def __init__(self, key: int, value: int):
         self.key = key
         self.value = value
-        self.prev = None
         self.next = None
+        self.prev = None
 
 class DoublyLinkedList:
     def __init__(self):
-        self.dummy_head = ListNode(None, None)
-        self.dummy_tail = ListNode(None, None)
+        self.dummy_head = ListNode(0, 0)
+        self.dummy_tail = ListNode(0, 0)
         self.dummy_head.next = self.dummy_tail
         self.dummy_tail.prev = self.dummy_head
         self.size = 0
 
-    # Adds an element to the front of the DoublyLinkedList
-    def unshift(self, node: ListNode) -> None:
+    def add_at_head(self, node: ListNode) -> None:
         node.next = self.dummy_head.next
         node.prev = self.dummy_head
         self.dummy_head.next = node
         node.next.prev = node
         self.size += 1
 
-    def remove(self, node: ListNode) -> None:
+    def delete_at_tail(self) -> ListNode:
+        last_node = self.dummy_tail.prev
+        self.dummy_tail.prev = last_node.prev
+        last_node.prev.next = last_node.next
+        last_node.prev = None
+        last_node.next = None
+        self.size -= 1
+        return last_node
+
+    def delete(self, node: ListNode) -> None:
         node.prev.next = node.next
         node.next.prev = node.prev
         node.next = None
         node.prev = None
         self.size -= 1
-
-    # Removes the element at the back of the DoublyLinkedList
-    def pop(self) -> ListNode:
-        last_node = self.dummy_tail.prev
-        last_node.prev.next = self.dummy_tail
-        self.dummy_tail.prev = last_node.prev
-        last_node.prev = None
-        last_node.next = None
-        self.size -= 1
-        return last_node
 
 class LRUCache:
     def __init__(self, capacity: int):
@@ -324,18 +322,16 @@ class LRUCache:
         self.put(key, val)
         return val
 
+    # Key code
     def put(self, key: int, value: int) -> None:
         node = ListNode(key, value)
         if key in self.hash_map:
-            self.doubly_linked_list.remove(self.hash_map[key])
-            self.doubly_linked_list.unshift(node)
-            self.hash_map[key] = node
-        else:
-            if self.doubly_linked_list.size is self.capacity:
-                last_node = self.doubly_linked_list.pop()
-                del self.hash_map[last_node.key]
-            self.doubly_linked_list.unshift(node)
-            self.hash_map[key] = node
+            self.doubly_linked_list.delete(self.hash_map[key])
+        elif self.doubly_linked_list.size == self.capacity:
+            last_node = self.doubly_linked_list.delete_at_tail()
+            del self.hash_map[last_node.key]
+        self.doubly_linked_list.add_at_head(node)
+        self.hash_map[key] = node
 
 
 

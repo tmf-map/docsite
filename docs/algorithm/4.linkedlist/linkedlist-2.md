@@ -70,7 +70,7 @@ if (head.next === null) {
 }
 ```
 
-从上面几个简单的例子可以看出，每次针对第一个或者最后一个结点进行特殊处理，这样的代码繁琐且容易出错。如何解决这个问题呢？这就需要引入一个"哨兵"，链表中的"哨兵"通常是新添加一个**假的头节点(dummy head)**，head 会一直指向这个哨兵结点，使得链表在任何时候都不为空。这种链表称为**带头链表**。
+从上面几个简单的例子可以看出，每次针对第一个或者最后一个结点进行特殊处理，这样的代码繁琐且容易出错。如何解决这个问题呢？这就需要引入一个"哨兵"，链表中的"哨兵"通常是新添加一个**假的头节点(dummy head)**，这样使得链表在任何时候都不为空。这种链表称为**带头链表**。
 
 <Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/etQAIJ.png' alt='linkedlist-with-head' width='630'/>
 
@@ -165,6 +165,8 @@ const deleteAtIndex = function (head, index) {
   return dummyHead.next;
 };
 ```
+
+具体例子可以参考 [删除链表倒数第 n 个结点](/docs/algorithm/4.linkedlist/remove-nth-node-from-end-of-list)。
 
 ## 双指针技巧
 
