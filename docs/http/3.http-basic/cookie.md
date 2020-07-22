@@ -26,7 +26,7 @@ document.cookie = 'KMKNKK=1234;Sercure';
 
 :::tip
 
-可以使用第三方成熟的库（比如 [js-cookie](https://www.npmjs.com/package/js-cookie)）去操作cookie，更为简单方便。
+可以使用第三方成熟的库（比如 [js-cookie](https://www.npmjs.com/package/js-cookie)）去操作 cookie，更为简单方便。
 
 :::
 

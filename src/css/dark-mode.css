@@ -14,11 +14,11 @@ html[data-theme="dark"] blockquote {
   color: var(--ifm-code-color);
 }
 
-html[data-theme="dark"] .markdown ul.tabs .tab-item {
+html[data-theme="dark"] .markdown ul.tabs .tabs__item {
   color: rgba(255, 255, 255, 0.5);
 }
 
-html[data-theme="dark"] .markdown ul.tabs .tab-item--active {
+html[data-theme="dark"] .markdown ul.tabs .tabs__item--active {
   color: rgb(255, 255, 255);
 }
 

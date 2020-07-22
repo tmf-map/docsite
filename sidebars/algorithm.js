@@ -9,7 +9,17 @@ module.exports = {
     'algorithm/2.array/3sum'
   ],
   '3. 栈与队列': ['algorithm/3.stack-queue/min-stack'],
-  '4. 链表': ['algorithm/4.linkedlist/merge-two-sorted-lists'],
+  '4. 链表': [
+    'algorithm/4.linkedlist/linkedlist-1',
+    'algorithm/4.linkedlist/linkedlist-2',
+    'algorithm/4.linkedlist/design-linked-list',
+    'algorithm/4.linkedlist/merge-two-sorted-lists',
+    'algorithm/4.linkedlist/reverse-linked-list',
+    'algorithm/4.linkedlist/linked-list-cycle',
+    'algorithm/4.linkedlist/middle-of-the-linked-list',
+    'algorithm/4.linkedlist/remove-nth-node-from-end-of-list',
+    'algorithm/4.linkedlist/LRU-cache'
+  ],
   '5. 二叉树': [
     'algorithm/5.binary-tree/build-tree',
     'algorithm/5.binary-tree/mirror-tree',
