@@ -598,7 +598,7 @@ npm add <registry> <url> [home]  # Add one custom registry
 使用 cnpm 和 taobao 的镜像的时候要注意两点：
 
 - 如果包安装失败，去 cnpm 或 taobao 官方仓库查看是否该包的同步有问题，可以自己手动触发与官方的同步，这点比较恼人。
-- 如果想去除 lockfile 中的 taobao 地址，不想用淘宝仓库了，最好删除 `node_modules` 和 `package-lcok.json` 重新安装，否则可能无论怎么切换仓库地址，最后安装的都是 taobao 仓库的包。
+- 如果想去除 lockfile 中的 taobao 地址，不想用淘宝仓库了，最好删除 `node_modules` 和 `package-lcok.json`，运行 `npm cache clean --force` 后再重新安装，否则可能无论怎么切换仓库地址，最后安装的还是 taobao 仓库的包，yarn 也是同理(`yarn cache clean`)。
 
 :::
 
