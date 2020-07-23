@@ -33,6 +33,8 @@ module.exports = {
       type: 'category',
       label: '二分查找',
       items: [
+        'algorithm/9.search/binary-search',
+        'algorithm/9.search/binary-search-plus',
         'algorithm/9.search/number-same-as-index',
         'algorithm/9.search/number-in-sorted-array',
         'algorithm/9.search/missing-number'
