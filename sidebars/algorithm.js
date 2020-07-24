@@ -35,6 +35,8 @@ module.exports = {
       items: [
         'algorithm/9.search/binary-search',
         'algorithm/9.search/binary-search-plus',
+        'algorithm/9.search/sqrtx',
+        'algorithm/9.search/search-in-rotated-sorted-array',
         'algorithm/9.search/number-same-as-index',
         'algorithm/9.search/number-in-sorted-array',
         'algorithm/9.search/missing-number'
