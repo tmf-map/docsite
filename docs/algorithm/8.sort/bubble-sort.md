@@ -17,11 +17,11 @@ import TabItem from '@theme/TabItem';
 
 下面使用一个例子，来演示下冒泡排序的整个过程。首先设定一组待排序数据 `5, 4, 6, 2, 1, 3`。并将其从小到大进行排序。第一次冒泡操作的详细过程如下图所示：
 
-<Img w="540" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/kpxFBS.png' alt='kpxFBS'/>
+<Img w="590" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/zzmUUK.png' alt='zzmUUK'/>
 
 通过上图可以看出，经过一趟冒泡操作，待排数据中最大的值被放到了正确的位置上。要想完成所有数据的排序，我们只要进行 6 次这样的冒泡操作就行了。
 
-<Img w="510" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/IPpQxY.png' alt='IPpQxY'/>
+<Img w="550" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/IPpQxY.png' alt='IPpQxY'/>
 
 ## 实现
 
@@ -64,7 +64,7 @@ var sortArray = function (nums) {
         hasSwitched = true;
       }
     }
-    if (!flag) return nums;
+    if (!hasSwitched) return nums;
   }
 
   return nums;
