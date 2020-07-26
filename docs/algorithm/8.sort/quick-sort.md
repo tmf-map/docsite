@@ -5,103 +5,97 @@ title: 快速排序
 
 import Img from '../../../src/components/Img';
 
+import Math from '../../../src/components/Math';
+
+import GifPlayer from '../../../src/components/GifPlayer';
+
 ## 思想
 
 快速排序利用的是分治思想，在代排序列中挑选任意一个数据作为 pivot（分区点），将小于 pivot 的数据放到它的左边，将大于 pivot 的数据放到它的右边。然后再利用同样的方法分别对左边和右边的数据进行递归操作，直到区间缩小为 1，就说明所有的数据都有序了。
 
-## 分区
+### 分区
 
-快速排序算法实现的关键是分区，关于分区我们一般会使用以下两种方案：
+快速排序算法实现的关键是分区函数（partition）的实现，可以使用双指针:
 
-### 方法一
+1. 双指针：left，right，取中间元素的**值**为 pivot
+2. 移动 right 指针，`> pivot` 的时候向左移动，否则停止并标记当前元素
+3. 移动 left 指针，`< pivot` 的时候向左移动，否则停止并标记当前元素
+4. 当左右指针不指向同一个元素时:
+   - 交换两个指针所指向的元素
+   - 记录交换后的 pivot 的位置
+   - if left < right: 重复步骤 2
+5. return pivot 的位置
 
-申请两个临时的空数组 X、Y，每次取代排数组中间值为 pivot，小于 pivot 的放到 X 数组，大于中 pivot 的放 Y 数组。
+:::tip
 
-为了更好的理解，我们可以假设代排序列为 8、10、2、5、6、1、3，分区操作如下图所示：
-
-<Img w="500" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200626223158.jpg'/>
-
-这种分区方式在实现起来也很方便，但是分区需要很多额外的内存空间，所以**分区操作**的空间复杂度就不是为 O(1)的原地排序算法了。
-
-### 方法二：双指针
-
-使用双指针法，左右各一个指针，取第一个值 pivot，先移动右指针，大于等于 pivot 的时候像左移动，小于的时候停止。然后再移动左指针，在遇到不小于 pivot 的时候停止，交换两个指针所指向的元素，直到两指针指向同一个元素或左指针大于右指针为止。
-
-使用双指针法进行分区，虽然操作起来更加的复杂，但是可以保证**分区操作**的空间复杂度为 O(1)。
-
-## 实现
-
-### 方法一分区
-
-```js
-function quickSort(arr) {
-  if (arr.length <= 1) {
-    // 当分区只有一个元素的时候直接返回/终止递归
-    return arr;
-  }
-
-  let left = [],
-    right = []; // 设置两个临时数组
-  const middleIndex = (arr.length / 2) >> 1; // 设置中间的元素为pivot
-  const middle = arr[middleIndex];
-
-  // 对元素分区
-  for (let i = 0; i < arr.length; i++) {
-    if (i !== middleIndex) {
-      // 当元素不是pivot的时候才为其分区
-      if (arr[i] >= middle) {
-        right.push(arr[i]);
-      } else {
-        left.push(arr[i]);
-      }
-    }
-  }
-  // 递归左右分区，并将三个部分拼接在一起
-  return quickSort(left).concat(middle, quickSort(right));
-}
-```
-
-:::bad
-
-从上面可以看出，算法的实现相当的简单，但是当递归没有回溯前，创建的数组也没有被释放，当数据量较大时，这是一个非常占用内存的写法，所以我们并不推荐这么写，包括面试的时候如果快排这么写的话，肯定是要减分的。
+使用双指针法进行分区，虽然操作起来更加的复杂，但是可以保证**分区操作**的**空间**复杂度为 O(1)。
 
 :::
 
-### 方法二分区
+### 递归
+
+有了 partition 函数后，我们就可以对左右两部分再次利用递归，但我们如何确定左右两部分的边界范围呢？
+
+现在看看为什么 partition 函数需要返回 pivot 所在的位置了，这个位置 - 1 就是左部分的右边界，+ 1 就是右部分的左边界。而左部分的左边界，在函数中即 left 也一直保存在外层的函数栈中，右部分的右边界同理：
 
 ```js
-function quickSort(arr, left, right) {
-  if (i >= j) return; // 递归终止条件
-  const pivot = arr[left]; // 设置第一个元素为pivot
-  let i = left,
-    j = right; // 设置左右指针
-
-  while (i < j) {
-    while (arr[j] >= pivot && i < j) {
-      // 遇到小于pivot的时候停止
-      j--;
-    }
-    while (arr[i] <= pivot && i < j) {
-      // 遇到大于pivot的时候停止
-      i++;
-    }
-    [arr[i], arr[j]] = [arr[j], arr[i]]; // 交换两个元素
-  }
-  [arr[i], arr[left]] = [arr[left], arr[i]]; // 交换pivot和i指针所指向的元素
-
-  // 递归分区
-  quickSort(arr, left, i - 1);
-  quickSort(arr, i + 1, right);
+function recursive(arr, left, right) {
+  if (left >= right) return;
+  let index = partition(arr, left, right);
+  recursive(arr, left, index - 1);
+  recursive(arr, index + 1, right);
+  return arr;
 }
-
-quickSort(arr, 0, arr.length - 1);
 ```
 
-## 分析（双指针法）
+## 演示
+
+假设待排序列为 `7, 3, 5, 4, 6, 1, 2`，详细过程如下图所示：
+
+<GifPlayer gif="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/quick-sort-two-pointer.2020-07-26%2013_04_24.gif" still="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/quick-sort-two-pointer.jpg" />
+
+## 实现
+
+```js
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var sortArray = function (nums) {
+  if (nums.length <= 1) {
+    return nums;
+  }
+  // 递归排序基数左右两边的序列
+  function recursive(arr, left, right) {
+    if (left >= right) return;
+    let index = partition(arr, left, right);
+    recursive(arr, left, index - 1);
+    recursive(arr, index + 1, right);
+    return arr;
+  }
+  // 将小于基数的数放到基数左边，大于基数的数放到基数右边，并返回基数的位置
+  function partition(arr, left, right) {
+    // 取第一个数为基数
+    let temp = arr[left];
+    while (left < right) {
+      while (left < right && arr[right] >= temp) right--;
+      arr[left] = arr[right];
+      while (left < right && arr[left] < temp) left++;
+      arr[right] = arr[left];
+    }
+    // 修改基数的位置
+    arr[left] = temp;
+    return left;
+  }
+  return recursive(nums, 0, nums.length - 1);
+};
+```
+
+## 分析
 
 ### 空间复杂度
 
-通过上面的算法实现可以看出，双指针法分区操作的空间复杂度为 O(1)，因为快排是使用递归操作的，递归深度为 O(logn)，所以该算法空间复杂度为 O(logn)。
+通过上面的算法实现可以看出，双指针法分区操作的空间复杂度为 O(1)，因为快排是使用递归操作的，递归深度为 O(logn)，所以该算法空间复杂度为 **O(logn)**。
 
 ### 时间复杂度
 
@@ -117,13 +111,13 @@ T(n) = 2*T(n/2) + n
      ......
 ```
 
-当 n/2^k 的值为 1 的时候，<Math code="k = log_{2}n" />，此时时间复杂度为 O(nlog(n))。
+当 n/2^k 的值为 1 的时候，<Math code="k = log_{2}n" />，此时时间复杂度为 **O(nlogn)**。
 
 使用快排最坏的情况为当每次分区被划分为 n-1 和 0 个元素时，此时时间复杂度的算法为 `T(n) = T(n-1) + T(0) + O(n)`，此时时间复杂度退化为 O(n^2)。
 
 ### 稳定性
 
-快排不是一个稳定的算法，例如这组数据 4，8，7，2，3，5，9，2，在经过第一次分区操作之后，两个 2 的相对先后顺序就会改变。
+快排是一个**不稳定**的算法，例如这组数据 4，8，7，2，3，5，9，2，在经过第一次分区操作之后，两个 2 的相对先后顺序就会改变。
 
 ## 优化
 
