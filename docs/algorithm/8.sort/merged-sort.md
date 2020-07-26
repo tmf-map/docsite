@@ -42,7 +42,7 @@ import Img from '../../../src/components/Img';
 
 归并过程如下图所示：
 
-<Img w="500" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200627125544.png'/>
+<Img w="600" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200726204132.png'/>
 
 ## 实现
 
