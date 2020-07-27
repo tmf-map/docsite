@@ -1096,10 +1096,10 @@
     "@docusaurus/types" "^2.0.0-alpha.58"
     "@docusaurus/utils" "^2.0.0-alpha.58"
 
-"@docusaurus/plugin-google-analytics@2.0.0-alpha.58", "@docusaurus/plugin-google-analytics@^2.0.0-alpha.58":
-  version "2.0.0-alpha.58"
-  resolved "https://registry.yarnpkg.com/@docusaurus/plugin-google-analytics/-/plugin-google-analytics-2.0.0-alpha.58.tgz#5586f843a518250f9f8ca1178fa77533971bef42"
-  integrity sha512-R4I8j+XJkOl7fz8+lRnQKr8YP4zrG6dWBNZ66JquUwL6jmaavq1VRVavm7/s5Wr/vYLcpEWjynHViwDdVLegoQ==
+"@docusaurus/plugin-google-analytics@2.0.0-alpha.59", "@docusaurus/plugin-google-analytics@^2.0.0-alpha.58":
+  version "2.0.0-alpha.59"
+  resolved "https://registry.yarnpkg.com/@docusaurus/plugin-google-analytics/-/plugin-google-analytics-2.0.0-alpha.59.tgz#7356d159700d6c1ce3a7acd41aecbcfde9286f7b"
+  integrity sha512-hjFKc+CopgP9RiZLFP3ANmdOupWqGcrmcb5nDEvlmIcHKdp6qraJFIcB7riX50GWpqKgh1mb664ogN9itA7CHQ==
 
 "@docusaurus/plugin-google-gtag@^2.0.0-alpha.58":
   version "2.0.0-alpha.58"
