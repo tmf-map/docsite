@@ -51,6 +51,7 @@
     "npm-to-yarn": "^1.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-lifecycles-compat": "^3.0.4",
     "react-toggle": "^4.1.1"
   },
   "devDependencies": {
