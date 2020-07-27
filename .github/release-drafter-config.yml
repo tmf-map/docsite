@@ -25,6 +25,9 @@ categories:
   - title: 'Backend'
     labels:
       - 'docs: java'
+  - title: 'AI'
+    labels:
+      - 'docs: python'
   - title: 'Blog'
     labels:
       - 'blog'
