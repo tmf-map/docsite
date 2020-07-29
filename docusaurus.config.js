@@ -41,15 +41,15 @@ module.exports = {
           activeBaseRegex: 'docs/(design-patterns|algorithm|http)',
           items: [
             {
-              to: 'docs/design-patterns/1.creation-pattern/singleton',
-              activeBasePath: 'docs/design-patterns/',
-              label: 'Design Patterns'
-            },
-            {
               to:
                 'docs/algorithm/1.analysis-of-algorithms/asymptotic-notations',
               activeBasePath: 'docs/algorithm/',
               label: 'Algorithm'
+            },
+            {
+              to: 'docs/design-patterns/1.creation-pattern/singleton',
+              activeBasePath: 'docs/design-patterns/',
+              label: 'Design Patterns'
             },
             {
               to: 'docs/http/1.web-basic/tcp-ip',
@@ -129,8 +129,14 @@ module.exports = {
         {
           label: 'AI',
           position: 'right',
-          // activeBaseRegex: 'docs/(python)',
-          items: []
+          activeBaseRegex: 'docs/(python)',
+          items: [
+            {
+              to: 'docs/python/1.get-started',
+              activeBasePath: 'docs/python/',
+              label: 'Python'
+            }
+          ]
         },
         {to: 'blog', label: 'Blog', position: 'right'},
         {
