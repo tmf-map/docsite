@@ -19,7 +19,6 @@ module.exports = {
     googleAnalytics: {
       trackingID: 'UA-152610996-1'
     },
-    disableDarkMode: false,
     showGithub: true,
     navbar: {
       title: githubOrg,
@@ -28,7 +27,7 @@ module.exports = {
         src:
           'https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/docsite-logo-white-mode.png'
       },
-      links: [
+      items: [
         {
           label: 'Basis',
           to: 'docs/design-patterns/1.creation-pattern/singleton',
@@ -140,7 +139,7 @@ module.exports = {
       style: 'dark',
       links: [
         {
-          title: '',
+          title: githubOrg,
           items: [
             {
               html: `<img class="footer-logo" loading="lazy" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/docsite-logo-dark-mode.png" /><span>${githubOrg}</span>`
