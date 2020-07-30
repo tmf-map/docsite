@@ -7,6 +7,8 @@ import Img from '../../../src/components/Img';
 
 import Math from '../../../src/components/Math';
 
+import GifPlayer from '../../../src/components/GifPlayer';
+
 ## 基本概念
 
 堆是一个完全二叉树，堆中每一个节点的值都必须大于等于（或小于等于）其子树中每个节点的值。
@@ -28,9 +30,7 @@ import Math from '../../../src/components/Math';
 
 将序列调整为一个大顶堆，首先从后往前处理数组，找到第一个非叶子节点，然后比较其子节点，如果子节点的值大于当前节点，就将当前节点和最大的子节点交换。然后重复此过程，直到根节点调整完毕后结束。
 
-<Img w="500" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200627213004.png'/>
-
-<Img w="500" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200627213016.png'/>
+<GifPlayer gif="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200730140334.gif" still="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200730141249.png" />
 
 由完全二叉树的特点不难得出，从 1 到 n/2 的元素都是非叶子节点，n/2+1 到 n 都是叶子节点。（其中 n/2 向下取整）
 
@@ -74,7 +74,7 @@ function heapify(arr, n, i) {
 
 经过上面建堆的过程，我们会获得一个**大顶堆**，大顶堆的根元素是所有元素最大的，我们可以将其与最后一个元素交换，然后对剩下的`n-1`个元素进行排序。最后一个元素成为根元素后和其左右子元素比较，与较大的交换，然后再将根元素与最后一个元素交换，依次类推，直到剩余一个元素。排序的过程下图所示：
 
-<Img w="500" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200703234649.png'/>
+<Img w="600" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200730144433.png'/>
 
 ### 实现
 
@@ -137,7 +137,7 @@ arr.shift(); // 删除第一个元素
 
 **建堆的时间复杂度**：建堆的主要工作是**遍历非叶子节点**和**调换父子节点**，这一过程也被称为堆化。也就是说堆化最多从树的倒数第二层到根元素都是需要的，而每个节点堆化的过程中，需要比较和交换的节点个数和这个节点的高度 k 成正比，如下图：
 
-<Img w="500" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200704005328.png'/>
+<Img w="600" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200730141353.png'/>
 
 由上图可以看出高度为 1（倒数第二层）的非叶子节点为 2^(h-1)个，每个节点执行 heapify 函数中的 while 只需要执行 1 遍，而高度为 2 的非叶子节点，每个节点执行 heapify 函数 while 需要执行 2 遍，依次类推，我们发现将每个节点的高度求和，得出的就是建堆的时间复杂度。
 
@@ -175,4 +175,4 @@ h 为树的高度 <Math code="log_{2}n" /> ，将 h 代进去，得出建堆的�
 
 其次，相比于快速排序，堆排序算法的数据交换次数要更多。快速排序元素的交换次数为初始序列的逆序数，而堆排序在建堆的时候会破坏初始序列的逆序数。例如当一个有序的初始序列，通过建大顶堆使得数据变得无序，如下图：
 
-<Img w="500" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200704114522.png'/>
+<Img w="600" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200730142535.png'/>

@@ -7,7 +7,7 @@ import Img from '../../../src/components/Img';
 
 ### O(n^2) 小结
 
-<Img w="500" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200622001045.png'/>
+<Img w="500" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200730153551.png'/>
 
 通过对三种时间复杂度为 O(n^2)排序算法进行分析，我们不难看出：
 
@@ -19,7 +19,7 @@ import Img from '../../../src/components/Img';
 
 时间复杂度为 O(nlogn)的排序有快速排序、归并排序和堆排序三种，它们的空间复杂度和稳定性如图所示：
 
-<Img w="500" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200704111443.png'/>
+<Img w="300" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200730153620.png'/>
 
 在归并排序的性能分析中可以了解到，归并排序虽然稳定，但是空间复杂度高，在处理较小的排序序列可以使用，体积较大则不推荐使用。
 

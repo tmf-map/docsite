@@ -9,7 +9,7 @@ import Img from '../../../src/components/Img';
 
 选择排序会将待排序列划分为已排序区间和未排序区间，**每次会从未排序区间中找到最小的元素，将其放到已排序区间的末尾**。选择排序的过程如下图所示：
 
-<Img w="500" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200621225611.png'/>
+<Img w="300" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200730151711.png'/>
 
 ## 实现
 
