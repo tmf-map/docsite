@@ -6,9 +6,9 @@ title: Enum
 
 枚举按照类型划分，主要分为以下三种：
 
-- [数字枚举（Numeric enum）](/docs/typescript/1.types/enum#数字枚举)
-- [字符串枚举（String enum）](/docs/typescript/1.types/enum#字符串枚举)
-- [异构枚举（Heterogeneous enum）](/docs/typescript/1.types/enum#异构枚举)
+- [数字枚举（Numeric enum）](/docs/typescript/2.types/enum#数字枚举)
+- [字符串枚举（String enum）](/docs/typescript/2.types/enum#字符串枚举)
+- [异构枚举（Heterogeneous enum）](/docs/typescript/2.types/enum#异构枚举)
 
 ## 数字枚举
 

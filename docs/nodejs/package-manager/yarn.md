@@ -47,7 +47,7 @@ npm install -g yarn@1.19.2
 
 ### Windows
 
-1. 下载最新的.msi 文件，[点击这里下载](yarnpkg.com/latest.msi)，跟随指引安装即可。
+1. 下载最新的.msi 文件，[点击这里下载](https://yarnpkg.com/latest.msi)，跟随指引安装即可。
 
 2. 通过`Chocolatey`安装。`Chocolatey` 是一个 Windows 专用的软件包管理工具，请按照此[说明](https://chocolatey.org/install)安装`Chocolatey`。安装成功后，在控制台执行如下命令安装 yarn：
 

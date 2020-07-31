@@ -10,10 +10,10 @@ import Img from '../../../src/components/Img';
 
 本文将`compilerOptions`中的属性划分为以下四类进行讲解：
 
-- [Basic Options](/docs/typescript/2.config/compiler-options#basic-options)
-- [Strict Type-Checking Options](/docs/typescript/2.config/compiler-options#strict-type-checking-options)
-- [Additional Checks](/docs/typescript/2.config/compiler-options#additional-checks)
-- [Module Resolution Options](/docs/typescript/2.config/compiler-options#module-resolution-options)
+- [Basic Options](/docs/typescript/config/compiler-options#basic-options)
+- [Strict Type-Checking Options](/docs/typescript/config/compiler-options#strict-type-checking-options)
+- [Additional Checks](/docs/typescript/config/compiler-options#additional-checks)
+- [Module Resolution Options](/docs/typescript/config/compiler-options#module-resolution-options)
 
 ## Basic Options
 
