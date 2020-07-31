@@ -15,6 +15,12 @@ module.exports = {
     require.resolve('docusaurus-lunr-search')
   ],
   themes: [require.resolve('@docusaurus/theme-live-codeblock')],
+  customFields: {
+    icp: {
+      href: 'http://beian.miit.gov.cn/',
+      text: '冀ICP备19034211号'
+    }
+  },
   themeConfig: {
     googleAnalytics: {
       trackingID: 'UA-152610996-1'
@@ -197,11 +203,7 @@ module.exports = {
       //   alt: `${githubOrg} Logo`,
       //   src: '',
       // },
-      copyright: `Copyright © ${new Date().getFullYear()} ${githubOrg}`,
-      icp: {
-        href: 'http://beian.miit.gov.cn/',
-        text: '冀ICP备19034211号'
-      }
+      copyright: `Copyright © ${new Date().getFullYear()} ${githubOrg}`
     },
     prism: {
       theme: require('prism-react-renderer/themes/nightOwl'),
