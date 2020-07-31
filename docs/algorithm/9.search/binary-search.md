@@ -3,7 +3,7 @@ id: binary-search
 title: 二分查找
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '../../../src/components/Img'; import GifPlayer from '../../../src/components/GifPlayer';
 
 ## 二分查找的基本思想
 
@@ -86,6 +86,8 @@ var binarySearch_Recursion = function (nums, target) {
 ```
 
 时间复杂度：O(logn) 空间复杂度：O(n)
+
+<GifPlayer gif="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/binary-search-simple.2020-07-31%2014_43_58.gif" still="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/binary-search-simple.2020-07-31%2014_43_58.png"/>
 
 ## 实现细节 注意事项
 

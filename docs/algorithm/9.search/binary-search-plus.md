@@ -3,7 +3,7 @@ id: binary-search-plus
 title: 二分查找几种变体
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '../../../src/components/Img'; import GifPlayer from '../../../src/components/GifPlayer';
 
 对于存在重复数字的有序序列，二分查找有几种变体。
 
@@ -42,6 +42,8 @@ var binarySearch = function (nums, target) {
 - 如果`mid===0`，肯定是第一个；如果前一个值不等于目标值，即`nums[mid-1] !== target`，那么`mid`也是第一个等于目标值的下标。
 - 除去上述两种情况，第一个等于目标值的元素一定在`mid`左边，故而调整`right = mid-1`。
 
+<GifPlayer gif="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/binary-search-left-range.2020-07-31%2014_40_22.gif" still="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/binary-search-left-range.2020-07-31%2014_40_22.png"/>
+
 ## 查找最后一个值等于目标值的元素
 
 ```js
@@ -71,6 +73,8 @@ var binarySearch = function (nums, target) {
   return -1;
 };
 ```
+
+<GifPlayer gif="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/binary-search-right-range.2020-07-31%2014_41_23.gif" still="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/binary-search-left-range.2020-07-31%2014_40_22.png"/>
 
 ## 查找第一个值大于等于目标值的元素
 
@@ -106,6 +110,8 @@ var binarySearch = function (nums, target) {
   - 如果`mid===0`或者前一个元素小于目标值，则当前`mid`是第一个大于等于目标值的元素
   - 反之，第一个大于等于目标值的元素一定在当前值左边，即`[left, mid-1]`
 
+<GifPlayer gif="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/binary-search-first-big.2020-07-31%2014_36_43.gif" still="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/binary-search-left-range.2020-07-31%2014_40_22.png"/>
+
 ## 查找最后一个值小于等于目标值的元素
 
 ```js
@@ -133,6 +139,8 @@ var binarySearch = function (nums, target) {
   return -1;
 };
 ```
+
+<GifPlayer gif="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/binary-search-last-small.2020-07-31%2014_38_04.gif" still="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/binary-search-left-range.2020-07-31%2014_40_22.png"/>
 
 ## 参考资料
 
