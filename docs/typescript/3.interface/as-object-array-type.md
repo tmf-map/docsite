@@ -12,7 +12,7 @@ Interface in TypeScript can be used to define a type and also to implement it in
 - interface extends interface
 - class implements interface
 
-In this section, we mainly focus on the object and array type definition using interface. As function type definition will be introduced in [Function: Types](/docs/typescript/3.function/types#interface) section.
+In this section, we mainly focus on the object and array type definition using interface. As function type definition will be introduced in [Function: Types](/docs/typescript/4.function/types#interface) section.
 
 Interface likes contract which defines the structure of the object, array, function and also class. However, we need to note that the TypeScript compiler does not convert interface to JavaScript. It uses interface for type checking.
 
@@ -164,7 +164,7 @@ Above, `strArr[0] = 123` also causes an error because TS will convert numeric in
 
 ### Readonly properties
 
-At this time, you may wonder what's the difference between the [array types in Basic Types](/docs/typescript/1.types/basic-types#array) and interface indexable types, they both can be used to define the type of array.
+At this time, you may wonder what's the difference between the [array types in Basic Types](/docs/typescript/2.types/basic-types#array) and interface indexable types, they both can be used to define the type of array.
 
 Besides the difference mentioned above, we can also use `readonly` before index which would like this:
 

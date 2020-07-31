@@ -11,8 +11,8 @@ module.exports = {
   organizationName: githubOrg, // Usually your GitHub org/user name.
   projectName: 'docsite', // Usually your repo name.
   plugins: [
-    require.resolve('@docusaurus/plugin-google-analytics'),
-    require.resolve('docusaurus-lunr-search')
+    ['@docusaurus/plugin-google-analytics', {id: 'plugin-google-analytics'}],
+    ['docusaurus-lunr-search', {id: 'plugin-lunr-search'}]
   ],
   themes: [require.resolve('@docusaurus/theme-live-codeblock')],
   customFields: {
