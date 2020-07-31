@@ -14,6 +14,10 @@
   font-size: .9rem;
 }
 
+.menu__link.menu__link--sublist {
+  outline: none;
+}
+
 .menu .menu__link.menu__link--active:not(.menu__link--sublist) {
   border: 1px solid rgba(167, 167, 167, 0.2);
 }
