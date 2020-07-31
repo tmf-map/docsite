@@ -199,7 +199,7 @@ let arr3: Array<number | string> = [1, 2, 3, 'a'];
 
 ### Function
 
-See more at [Function -> Types](/docs/typescript/2.function/types) section.
+See more at [Function -> Types](/docs/typescript/4.function/types) section.
 
 ## TS Special Types
 
