@@ -14,6 +14,6 @@ tsc
 
 下面我们将通过以下三个方面来讲述`tsconfig.json`配置：
 
-- [**文件选项**](/docs/typescript/2.config/file-options)：`files`、`include`、`exclude`
-- [**编译选项**](/docs/typescript/2.config/compiler-options)：`compilerOptions`
-- [**项目引用**](/docs/typescript/2.config/project-references)：`extends`、`references`
+- [**文件选项**](/docs/typescript/config/file-options)：`files`、`include`、`exclude`
+- [**编译选项**](/docs/typescript/config/compiler-options)：`compilerOptions`
+- [**项目引用**](/docs/typescript/config/project-references)：`extends`、`references`

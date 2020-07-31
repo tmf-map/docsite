@@ -34,7 +34,7 @@ kvp2.display(); //Output: Key = CEO, Val = Bill
 
 ## 泛型类实现泛型接口
 
-在[Generic Interface](/docs/typescript/3.generic/generic-interface#类实现泛型接口)中我们举了一个类实现泛型接口的例子，但该类只能实现`IKeyValueProcessor<number, string>`类型的接口，扩展性很差。为了增加类的可扩展性，可以用泛型类来改造`kvProcessor`类：
+在[Generic Interface](/docs/typescript/6.generic/generic-interface#类实现泛型接口)中我们举了一个类实现泛型接口的例子，但该类只能实现`IKeyValueProcessor<number, string>`类型的接口，扩展性很差。为了增加类的可扩展性，可以用泛型类来改造`kvProcessor`类：
 
 ```ts
 interface IKeyValueProcessor<T, U> {
