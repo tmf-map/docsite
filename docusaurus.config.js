@@ -6,13 +6,36 @@ module.exports = {
   tagline: 'Explore and study full stack technology',
   url: 'https://thinkbucket.cn',
   baseUrl: '/',
-  favicon:
-    'https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/docsite-logo-white-mode.png',
+  favicon: '/img/docsite.png',
   organizationName: githubOrg, // Usually your GitHub org/user name.
   projectName: 'docsite', // Usually your repo name.
   plugins: [
     ['@docusaurus/plugin-google-analytics', {id: 'plugin-google-analytics'}],
-    ['docusaurus-lunr-search', {id: 'plugin-lunr-search'}]
+    ['docusaurus-lunr-search', {id: 'plugin-lunr-search'}],
+    [
+      '@docusaurus/plugin-pwa',
+      {
+        debug: true,
+        offlineModeActivationStrategies: ['appInstalled', 'queryString'],
+        pwaHead: [
+          {
+            tagName: 'link',
+            rel: 'icon',
+            href: '/img/docsite.png'
+          },
+          {
+            tagName: 'link',
+            rel: 'manifest',
+            href: '/manifest.json' // your PWA manifest
+          },
+          {
+            tagName: 'meta',
+            name: 'theme-color',
+            content: 'rgb(0, 122, 255)'
+          }
+        ]
+      }
+    ]
   ],
   themes: [require.resolve('@docusaurus/theme-live-codeblock')],
   customFields: {
