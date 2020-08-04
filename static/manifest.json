@@ -1,7 +1,7 @@
 {
   "name": "ThinkBucket",
   "short_name": "ThinkBucket",
-  "theme_color": "rgb(0, 122, 255)",
+  "theme_color": "#434343",
   "background_color": "#424242",
   "display": "standalone",
   "scope": "/",
