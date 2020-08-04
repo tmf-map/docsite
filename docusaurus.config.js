@@ -15,7 +15,7 @@ module.exports = {
     [
       '@docusaurus/plugin-pwa',
       {
-        debug: true,
+        debug: false,
         offlineModeActivationStrategies: ['appInstalled', 'queryString'],
         pwaHead: [
           {
@@ -32,6 +32,37 @@ module.exports = {
             tagName: 'meta',
             name: 'theme-color',
             content: '#434343'
+          },
+          {
+            tagName: 'meta',
+            name: 'apple-mobile-web-app-capable',
+            content: 'yes'
+          },
+          {
+            tagName: 'meta',
+            name: 'apple-mobile-web-app-status-bar-style',
+            content: '#000'
+          },
+          {
+            tagName: 'link',
+            rel: 'apple-touch-icon',
+            href: '/img/docsite.png'
+          },
+          {
+            tagName: 'link',
+            rel: 'mask-icon',
+            href: '/img/docsite.svg',
+            color: 'rgb(62, 204, 94)'
+          },
+          {
+            tagName: 'meta',
+            name: 'msapplication-TileImage',
+            content: '/img/docsite.png'
+          },
+          {
+            tagName: 'meta',
+            name: 'msapplication-TileColor',
+            content: '#000'
           }
         ]
       }

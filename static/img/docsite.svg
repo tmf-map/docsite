@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>docsite</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="docsite-logo-radius" transform="translate(-6.000000, -6.000000)">
+            <g id="docsite" transform="translate(6.000000, 6.000000)">
+                <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="60" height="60" rx="12"></rect>
+                <polygon id="Path" fill="#60AEF3" points="18.5 6 30.1 14.256125 19.1030832 22.5122501 8 14.256125"></polygon>
+                <polygon id="Path-2" fill="#593AE3" points="41.2462249 6 52.2 14.256125 41.2462249 22.5122501 30.1 14.256125"></polygon>
+                <polygon id="Path-3" fill="#3656E9" points="19.05 22.5122501 30.1 30.8444444 41.15 22.5122501 30.1 14.256125"></polygon>
+                <polygon id="Path-8" fill="#A5DCFA" points="8 14.256125 8 39.2745787 19.05 47.5863328 19.05 22.5502847"></polygon>
+                <polygon id="Path-9" fill="#69BFF6" points="19.05 22.5502847 30.1 30.8444444 30.1 55.6888889 19.05 47.5863328"></polygon>
+                <path d="M30.1,30.8444444 L41.15,22.5122501" id="Path-12"></path>
+                <polygon id="Path-13" fill="#4184EF" points="30.1 30.8444444 41.15 22.5122501 41.15 47.5863328 30.1 55.6888889"></polygon>
+                <polygon id="Path-14" fill="#444CE9" points="41.15 22.5502847 52.2 14.256125 52.2 39.1195868 41.15 47.5863328"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
