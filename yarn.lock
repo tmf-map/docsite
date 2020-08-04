@@ -2009,10 +2009,10 @@
   resolved "https://registry.yarnpkg.com/@docusaurus/plugin-google-gtag/-/plugin-google-gtag-2.0.0-alpha.61.tgz#9471a39b27425708b6e8cca3fca8bace7e459153"
   integrity sha512-9l/CUNtBIZqTKY7vD0dOOTrLRpbViXSQPsIOlfYDilS2AQmpsoJVQf6CcCts+GaxWMu0pTw3zeCNnFtJfDV5pA==
 
-"@docusaurus/plugin-pwa@^2.0.0-alpha.59":
-  version "2.0.0-alpha.59"
-  resolved "https://registry.yarnpkg.com/@docusaurus/plugin-pwa/-/plugin-pwa-2.0.0-alpha.59.tgz#db26da231cec9e40f1d49152a3a2ee7758850c40"
-  integrity sha512-Qj0ZeSptnANrgopAe8JfxTPHBpTeE/3iOsABMEkZvWxR0mjC0+Xe+QwME5uUqzolqyspqEs/yd2UibTTauVJEQ==
+"@docusaurus/plugin-pwa@^2.0.0-alpha.61":
+  version "2.0.0-alpha.61"
+  resolved "https://registry.yarnpkg.com/@docusaurus/plugin-pwa/-/plugin-pwa-2.0.0-alpha.61.tgz#62db6341a7c17c0e4b8bf0c2f112b59239fe7d86"
+  integrity sha512-bR9RNX9zzF6amtQbVkT18tc0lz+TQrDnRRL4HLnhIsrMjL8xFcV4cnJS61qWCRVbwCB6o22CjbWwDBTRMDmrBQ==
   dependencies:
     "@babel/plugin-proposal-nullish-coalescing-operator" "^7.10.1"
     "@babel/plugin-proposal-optional-chaining" "^7.10.3"
