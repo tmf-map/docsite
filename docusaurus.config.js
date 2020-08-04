@@ -1,3 +1,5 @@
+const path = require('path');
+
 const githubOrg = 'ThinkBucket';
 const githubRepo = 'docsite';
 
