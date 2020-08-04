@@ -31,7 +31,7 @@ module.exports = {
           {
             tagName: 'meta',
             name: 'theme-color',
-            content: '#061625'
+            content: '#434343'
           }
         ]
       }
