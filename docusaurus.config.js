@@ -17,6 +17,7 @@ module.exports = {
       {
         debug: false,
         offlineModeActivationStrategies: ['appInstalled', 'queryString'],
+        swCustom: path.resolve(__dirname, 'src/sw.js'),
         pwaHead: [
           {
             tagName: 'link',
