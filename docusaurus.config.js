@@ -17,7 +17,7 @@ module.exports = {
     [
       '@docusaurus/plugin-pwa',
       {
-        debug: false,
+        debug: true,
         offlineModeActivationStrategies: ['appInstalled', 'queryString'],
         swCustom: path.resolve(__dirname, 'src/sw.js'),
         pwaHead: [
