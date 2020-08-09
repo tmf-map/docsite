@@ -4,37 +4,33 @@ title: Advanced Types
 
 ## 交叉类型（Intersection Types）
 
-交叉类型是将多个类型合并为一个类型。 我们可以把现有的多种类型叠加到一起成为一种类型，以获取所需的所有类型的特性。 例如，`Person & Serializable & Loggable`类型同时是`Person`、`Serializable`和`Loggable`类型，则这个类型的对象同时拥有了这三种类型的所有成员。交叉类型多用于 `mixins` 和其它不适合典型的面向对象模型的地方。下面的例子简要地展示了如何创建一个 mixin：
+交叉类型是将多个类型合并为一个新类型，新的类型具有这多个类型的所有属性，我们可以通过这种方式获取所需的所有类型的特性。例如，`DogInterface & CatInterface` 类型同时是 `DogInterface`和`CatInterface`类型，则这个类型的对象同时拥有了这两种类型的所有属性。交叉类型多用于 `mixins` 和其它不适合典型的面向对象模型的地方。
 
 ```ts
-function extend<T, U>(first: T, second: U): T & U {
-  let result = <T & U>{};
-  for (let id in first) {
-    (<any>result)[id] = (<any>first)[id];
-  }
-  for (let id in second) {
-    if (!result.hasOwnProperty(id)) {
-      (<any>result)[id] = (<any>second)[id];
-    }
-  }
-  return result;
+interface DogInterface {
+  run(): void;
 }
 
-let jim = extend({ name: 'Jim' }, { log(): ... });
-let n = jim.name;
-jim.log();
+interface CatInterface {
+  climb(): void;
+}
+
+let pet: DogInterface & CatInterface = {
+  // pet 具有 DogInterface 和 CatInterface 的所有属性
+  run() {},
+  climb() {}
+};
 ```
 
 ## 联合类型（Union Types）
 
-联合类型与交叉类型类似，都可以拥有多个类型。区别是：**联合类型一次只能是一种类型；而交叉类型每次都是多个类型的合并类型**。联合类型表示一个值可以是几种类型之一。用竖线 `|` 分隔每个类型，所以 `number | string | boolean`表示一个值可以是 `number`， `string`，或 `boolean`。
-
-联合类型在实际项目中，使用场景比交叉类型广泛得多。
+联合类型与交叉类型类似，都可以拥有多个类型，但是联合类型声明的类型并不确定，可以是几种类型之一。用竖线 `|` 分隔每个类型，所以 `number | string | boolean`表示一个值可以是 `number`， `string`，或 `boolean`。联合类型灵活度较高，在实际项目中，使用场景比交叉类型广泛得多。
 
 - 字符串填充：
 
 ```ts
 function padLeft(value: string, padding: number | string) {
+  // padding 是 number 和 string 类型之一，所以需要先判断类型，再执行对应的操作
   if (typeof padding === 'number') {
     return Array(padding + 1).join(' ') + value;
   }
@@ -47,17 +43,17 @@ function padLeft(value: string, padding: number | string) {
 padLeft('Hello world', 4);
 ```
 
-- 常见例子，常量的联合类型，五分制考试打分：
+- 常量的联合类型，常见例子，五分制考试打分：
 
 ```ts
 type Scores = 1 | 2 | 3 | 4 | 5;
-
-function rating(score: Scores) {
-  console.log(`Set score ${score}`);
-}
-
-rating(3);
 ```
+
+:::ts
+
+交叉类型和联合类型的区别是：**联合类型一次只能是一种类型；而交叉类型每次都是多个类型的合并类型**
+
+:::
 
 ## 索引类型（Index types）
 
@@ -78,6 +74,8 @@ function pluck(o, names) {
 这两条约束都可以通过泛型来描述。
 
 ```ts
+// 定义泛型变量 T 约束参数 o
+// 定义泛型变量 K 约束参数 names，并为 K 增加约束：K继承 o 的所有属性的联合类型
 interface pluck {
   <T, K extends keyof T>(o: T, names: K[]): T[K][];
 }
@@ -227,6 +225,12 @@ type Flags = {[K in Keys]: boolean};
 
 另外，Partial 与 Readonly 都能够完整保留源类型信息（从输入的源类型中取属性名及值类型，仅存在修饰符上的差异，源类型与新类型之间有兼容关系），称为`同态（homomorphic）转换`，而 Stringify 丢弃了源属性值类型，属于`非同态（non-homomorphic）转换`。
 
+:::tip
+
+映射类型的本质是一种`预先定义的泛型接口`，通常还会结合索引类型获取对象的属性和属性值，从而将一个对象映射成所需要的结构。
+
+:::
+
 ### 由映射类型进行推断
 
 对类型做映射相当于类型层面的包装，现在了解了如何包装一个类型的属性，那么接下来就是如何拆包：
@@ -372,7 +376,7 @@ type T = Boxed<string | boolean[]>;
 
 ### 条件类型中的类型推断
 
-在条件类型的 extends 子句中，可以通过 infer 声明引入一个将被推断的类型变量，例如：
+在条件类型的 extends 子句中，可以通过`infer`关键字引入一个待推断或者延迟推断的类型变量，例如：
 
 ```ts
 type ReturnType<T> = T extends (...args: any[]) => infer R ? R : any;
