@@ -1,10 +1,9 @@
 module.exports = [
-  'python/1.get-started',
   {
-    '2. Basic': [
-      'python/2.basic/language-semantics',
-      'python/2.basic/scalar-types',
-      'python/2.basic/control-flow'
+    '1. Get Started': [
+      'python/1.get-started/history',
+      'python/1.get-started/installation',
+      'python/1.get-started/ide-tools'
     ]
   }
 ];
