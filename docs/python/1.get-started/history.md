@@ -42,7 +42,7 @@ Shell 字面意思就是“壳”，区别于“内核”，Shell 接受用户�
 
 :::note
 
-Python 有“蟒蛇”的意思但是这个 Python 并不是来源于此，据 Guido 本人说这是为了纪念最喜欢的喜剧团体“[Monty Python](https://movie.douban.com/subject/1485976/)”的名字，又因为与蛇有关系，后来就有了那个盘绕的巨蟒的 logo。
+Python 有“蟒蛇”的意思，但是这个 Python 并不是来源于此，据 Guido 本人说这是为了纪念最喜欢的喜剧团体“[Monty Python](https://movie.douban.com/subject/1485976/)”的名字，又因为与蛇有关系，后来就有了那个盘绕的巨蟒的 logo。
 
 <Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/tWHAX5.png' alt='tWHAX5'/>
 
