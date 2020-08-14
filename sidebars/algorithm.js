@@ -8,7 +8,13 @@ module.exports = {
     'algorithm/2.array/inverse-pairs',
     'algorithm/2.array/3sum'
   ],
-  '3. 栈与队列': ['algorithm/3.stack-queue/min-stack'],
+  '3. 栈与队列': [
+    'algorithm/3.stack-queue/stack',
+    'algorithm/3.stack-queue/min-stack',
+    'algorithm/3.stack-queue/basic-calculator',
+    'algorithm/3.stack-queue/valid-parentheses',
+    'algorithm/3.stack-queue/queue'
+  ],
   '4. 链表': [
     'algorithm/4.linkedlist/linkedlist-1',
     'algorithm/4.linkedlist/linkedlist-2',

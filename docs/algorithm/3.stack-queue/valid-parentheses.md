@@ -1,6 +1,6 @@
 ---
-id: basic-calculator
-title: 基本计算器
+id: valid-parentheses
+title: 有效的括号
 ---
 
 - 在线：[LeetCode: 20](https://leetcode.com/problems/valid-parentheses/)
