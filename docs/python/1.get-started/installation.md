@@ -176,6 +176,20 @@ conda update anaconda # 更新 anaconda
 conda update python # 更新 python
 ```
 
+`update` 命令其实并不一定将 package 升级到最新版，而是升级到可兼容当前环境的其他包的最新版，比如现有 py 是 3.7，执行 `conda update python` 并不会将 python 升级到 3.8，而是只会升级到最新的 3.7 版本的 Python，其他的包可能也会进行相应的兼容升级：
+
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/Screen Shot 2020-08-15 at 11.56.29 PM.png' alt='ScreenShot2020-08-15at11.56.29PM'/>
+
+想要升级 Python 到 3.8 版的话可以运行 `conda install python=3.8`，这将会更新一大波需要升级才能兼容 3.8 的包，其中也包括一部分 anaconda 相关的包：
+
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/Screen Shot 2020-08-15 at 11.54.14 PM.png' alt='ScreenShot2020-08-15at11.54.14PM'/>
+
+:::tip
+
+另外也可以直接升级 anaconda，它也会升级相应的 python 和 conda。
+
+:::
+
 ### Config
 
 ```bash
@@ -223,3 +237,4 @@ See more: https://docs.python-guide.org/dev/virtualenvs/
 
 1. [Conda official docs: Downloading conda](https://docs.conda.io/projects/conda/en/latest/user-guide/install/download.html#anaconda-or-miniconda)
 2. [Conda official docs: Managing environments](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
+3. [Conda official docs: conda update](https://docs.conda.io/projects/conda/en/latest/commands/update.html)

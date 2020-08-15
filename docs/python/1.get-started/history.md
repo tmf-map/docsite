@@ -92,7 +92,7 @@ Python 诞生后得到了 Guido 同事的欢迎，他们也都纷纷参与到 Py
 
 2016 到 2017 年谷歌开发的围棋 AI 程序 `AlphaGo`，接连击败欧洲冠军樊麾，韩国九段棋手李世石，而后又赢了世界冠军柯洁，登顶地球之巅，此时距离深蓝（Deep Blue）在国际象棋中横扫人类选手刚好 20 年，[二者之间区别](https://www.zhihu.com/question/41188831)。
 
-<Img w="600" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/crKU83.jpg' alt='crKU83'/>
+<Img w="600" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/AlphaGo.jpeg' legend="Figure: Photo from the Financial Times." origin="http://prod-upp-image-read.ft.com/4bb1cd86-0a48-11e7-ac5a-903b21361b43" alt='AlphaGo'/>
 
 围棋这个被认为是人类智慧遮羞布的领域，就这么猝不及防地就被机器按在地上狠狠地摩擦，这个彻底引发了舆论的狂欢，人们纷纷奔走相告 Al 时代来临了，那么问题来了：
 

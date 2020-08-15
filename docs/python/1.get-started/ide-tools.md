@@ -22,6 +22,18 @@ Hello World
 
 Professional 版（收费）适用于基于 Python 的 Web 项目，对 HTML, JS, 和 SQL 的支持比较好，Debug node server 的时候也比较方便，而 Community 版（免费）则专注于 Python 程序。
 
+通过 PyCharm 配置 Python 环境比较简单：
+
+<Img w="550" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/zaFnq7.png' alt='zaFnq7'/>
+
+`Project Interpreter` 将会列出 Python 解释器和其对应的 Packages：
+
+<Img w="650" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/gHgDWp.png' alt='gHgDWp'/>
+
+点击解释器下拉框右边的设置按钮将可以添加新的 Python 环境，参考如下设置：
+
+<Img w="650" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/C7BncM.png' alt='C7BncM'/>
+
 Hello World
 
 ## Tools
