@@ -28,12 +28,17 @@
     margin-left: 10px;
   }
 }
+
 .navbar__items:first-child {
   flex-grow: 2;
 }
 
 .navbar__items--right {
   flex-grow: 1;
+}
+
+.navbar__brand {
+  height: 1.7rem;
 }
 
 .navbar__brand.active {
