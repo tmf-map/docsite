@@ -47,7 +47,7 @@ Go to https://www.anaconda.com/products/individual and [download](https://www.an
 
 <Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/iR4tZl.png' alt='iR4tZl'/>
 
-## CLI
+### Python Cli
 
 ```bash
 (base) ➜ python
@@ -68,7 +68,9 @@ Hello World
 
 :::
 
-## Conda
+## Environment manager
+
+### Conda
 
 Conda 是**包管理器**+**环境管理器**，类似于 npm + nvm。Conda 虽然因 Python 项目而创造，但可适用多种语言：Python, R, Ruby, Lua, Scala, Java, JavaScript, C/C++, FORTRAN 等。
 
@@ -79,7 +81,7 @@ conda --version
 conda -V
 ```
 
-### Environment
+#### Environment
 
 ```bash
 # 创建一个名为 python36 的环境，指定 Python 版本是 3.6，多个包以空格隔开
@@ -145,7 +147,7 @@ conda env update --prefix ./env --file environment.yml  --prune
 
 :::
 
-### Package
+#### Package
 
 ```bash
 # 包的增删改查
@@ -190,7 +192,7 @@ conda update python # 更新 python
 
 :::
 
-### Config
+#### Config
 
 ```bash
 # 添加Anaconda的TUNA镜像
@@ -201,7 +203,7 @@ conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/f
 conda config --set show_channel_urls yes
 ```
 
-## Pip
+### Pip
 
 pip 是用于安装和管理软件包的**包管理器**，类似于 npm。
 
@@ -220,8 +222,6 @@ pip 是用于安装和管理软件包的**包管理器**，类似于 npm。
 - pip 可以安装一些 conda 无法安装的包；conda 也可以安装一些 pip 无法安装的包。因此当使用一种命令无法安装包时，可以尝试用另一种命令。
 
 :::
-
-## Other environment manager
 
 ### Virtualenv
 

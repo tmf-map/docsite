@@ -8,9 +8,9 @@ import Img from '../../../src/components/Img';
 
 Python Offical Doc: https://www.python.org/doc/
 
-## Origin
+## 起源
 
-### Creator
+### 创始人
 
 > Life is short, you need Python.
 
@@ -18,7 +18,7 @@ Python Offical Doc: https://www.python.org/doc/
 
 Python 的创始人是一名来自荷兰的程序员 [Guido van Rossum](https://gvanrossum.github.io/)，也因为这个名字冗长又难记，调皮的中国程序员发挥拼音的特长给他起了个特短的名称"龟(Gui)叔"，此处表示敬意。
 
-### ABC
+### ABC 语言
 
 故事要从 [ABC 语言](https://baike.baidu.com/item/ABC%E8%AF%AD%E8%A8%80/334996) 开始说起，它是由荷兰国家数学和计算机科学研究中心的 CWI 部门负责研发的一种结构化高级语言。1982 年 Guido 从阿姆斯特丹大学毕业进入了该组织，参与 ABC 语言的研发，ABC 语言致力于提高程序语言的可读性和易用性，说白了就是降低编程语言的学习门槛，让更多的非计算机专业的人也能快速上手，其实听 ABC 的名字应该也能听出来了。
 
@@ -190,13 +190,13 @@ Python 被广泛的应用于诸多领域(>100%):
 
 更多案例: https://www.python.org/about/success/
 
-## Summary
+## 小结
 
 Python 以脚本语言起家，最初被设计用来编写自动化脚本，它从人的视角出发以人为本，使得其语法有几分自然语言的风格，这就注定了它的不平凡。在面世的前十年，并没有获得多大的关注，进入 21 世纪以来，尤其是近十年间，凭借自身优雅简洁易推倒的特质，以及机器学习人工智能大数据处理等高新技术的兴起和发展，脚本这个小寺庙早已容不下 Python 这尊大佛。Python 在越来越多的领域攻城略地捷报频传，当年的名不见经传的小伙子，现在已然成长为开疆拓土的柱国大将。
 
 Python 语言从群众中来到群众中去，随着奇点临近，AI 到来，Python 必然还会再上一层楼，互联网的风口瞬息万变，唯一不变的就是变化本身，Python 已经于风口浪尖处稳稳站住了脚跟，未来的 Python 将会更加大放异彩，Life is short, you need Python.
 
-## Reference
+## 参考资料
 
 1. [互联网圈顶级流量,你不了解的 Python 的前世今生,负门槛科普, by 冬至饮雪](https://www.bilibili.com/video/BV1Z7411s7xc)
 2. [Python Knowledge Handbook, by liyangbit](https://github.com/liyangbit/Python-Knowledge-Handbook)
