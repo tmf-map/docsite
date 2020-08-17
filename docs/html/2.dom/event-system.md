@@ -2,7 +2,7 @@
 title: 事件系统
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '@site/src/components/Img';
 
 ## 事件系统概述
 

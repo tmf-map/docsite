@@ -3,7 +3,7 @@ id: linkedlist-2
 title: 链表解题技巧
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '@site/src/components/Img';
 
 ## 理解指针或引用的含义
 

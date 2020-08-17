@@ -3,7 +3,7 @@ id: selection-sort
 title: 选择排序
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '@site/src/components/Img';
 
 ## 思想
 

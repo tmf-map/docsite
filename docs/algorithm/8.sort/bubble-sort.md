@@ -3,7 +3,7 @@ id: bubble-sort
 title: 冒泡排序
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '@site/src/components/Img';
 
 import Tabs from '@theme/Tabs';
 

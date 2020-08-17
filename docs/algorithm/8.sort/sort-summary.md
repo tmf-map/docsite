@@ -3,7 +3,7 @@ id: sort-summary
 title: 排序总结
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '@site/src/components/Img';
 
 ### O(n^2) 小结
 

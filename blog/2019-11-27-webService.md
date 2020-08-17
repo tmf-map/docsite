@@ -7,7 +7,7 @@ author_image_url: https://robbie-pic.oss-cn-beijing.aliyuncs.com/IMG_4175.JPG?x-
 tags: [webService]
 ---
 
-import Img from '../src/components/Img';
+import Img from '@site/src/components/Img';
 
 ## 什么是 Web Service：
 

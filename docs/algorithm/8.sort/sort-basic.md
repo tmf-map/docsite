@@ -3,7 +3,7 @@ id: sort-basic
 title: 排序基础
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '@site/src/components/Img';
 
 ## Overview
 

@@ -3,7 +3,7 @@ id: balanced-binary-tree
 title: 平衡二叉树
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '@site/src/components/Img';
 
 - 题源：《剑指 Offer: 面试题 55-2》P273
 - 在线：[LeetCode: 110](https://leetcode-cn.com/problems/balanced-binary-tree/)

@@ -2,7 +2,7 @@
 title: Logic Operation
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '@site/src/components/Img';
 
 ### 规则 1: 摩根律
 

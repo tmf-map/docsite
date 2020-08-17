@@ -2,7 +2,7 @@
 title: 公共资源提取
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '@site/src/components/Img';
 
 ## 概述
 

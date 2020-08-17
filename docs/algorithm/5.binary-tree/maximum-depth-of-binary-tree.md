@@ -3,7 +3,7 @@ id: maximum-depth-of-binary-tree
 title: 二叉树的最大深度
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '@site/src/components/Img';
 
 - 题源：《剑指 Offer: 面试题 55-1》P271
 - 在线：[LeetCode: 104](https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/)

@@ -2,7 +2,7 @@
 title: 浮动
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '@site/src/components/Img';
 
 ## float 的影响
 

@@ -7,7 +7,7 @@ author_image_url: https://robbie-pic.oss-cn-beijing.aliyuncs.com/IMG_4175.JPG?x-
 tags: [正向代理, 反向代理]
 ---
 
-import Img from '../src/components/Img';
+import Img from '@site/src/components/Img';
 
 ## 正向代理
 

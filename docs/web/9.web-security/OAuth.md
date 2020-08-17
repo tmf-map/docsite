@@ -2,7 +2,7 @@
 title: OAuth
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '@site/src/components/Img';
 
 ## OAuth 定义
 

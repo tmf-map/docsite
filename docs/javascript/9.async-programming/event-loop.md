@@ -2,7 +2,7 @@
 title: 事件循环
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '@site/src/components/Img';
 
 ## 浏览器事件循环
 

@@ -2,7 +2,7 @@
 title: 常用的Plugins
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '@site/src/components/Img';
 
 ## Plugins
 

@@ -3,7 +3,7 @@ id: middleware
 title: Middleware
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '@site/src/components/Img';
 
 ## 思想精华三：中间件思想与洋葱模型
 

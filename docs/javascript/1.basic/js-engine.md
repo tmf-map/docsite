@@ -2,7 +2,7 @@
 title: JS 引擎
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '@site/src/components/Img';
 
 ## JS Engine
 

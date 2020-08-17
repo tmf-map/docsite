@@ -3,7 +3,7 @@ id: binary-search
 title: 二分查找
 ---
 
-import Img from '../../../src/components/Img'; import GifPlayer from '../../../src/components/GifPlayer';
+import Img from '@site/src/components/Img'; import GifPlayer from '@site/src/components/GifPlayer';
 
 ## 二分查找的基本思想
 

@@ -2,7 +2,7 @@
 title: 常用的Loaders
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '@site/src/components/Img';
 
 ## 概要
 

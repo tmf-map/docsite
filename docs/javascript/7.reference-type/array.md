@@ -2,7 +2,7 @@
 title: 数组
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '@site/src/components/Img';
 
 <Img width="300" align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/AD9JzZ.jpg'/>
 

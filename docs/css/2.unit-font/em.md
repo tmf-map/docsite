@@ -2,7 +2,7 @@
 title: em
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '@site/src/components/Img';
 
 px 被称做“绝对单位”。也就是说，5px 在不同的场景下是一样的值。而其他的单位，如 em 和 rem，不是绝对的而是相对的。这也使得使用起来比较灵活也比较难以掌握。
 

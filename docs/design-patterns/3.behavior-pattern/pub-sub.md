@@ -2,7 +2,7 @@
 title: Publish–Subscribe
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '@site/src/components/Img';
 
 ## 定义
 

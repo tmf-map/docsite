@@ -2,7 +2,7 @@
 title: 脚本加载
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '@site/src/components/Img';
 
 ## 单线程 JS
 

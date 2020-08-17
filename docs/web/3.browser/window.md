@@ -2,7 +2,7 @@
 title: 浏览器窗口
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '@site/src/components/Img';
 
 ## window 的大小
 

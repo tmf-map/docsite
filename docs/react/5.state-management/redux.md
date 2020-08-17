@@ -3,7 +3,7 @@ id: redux
 title: Redux
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '@site/src/components/Img';
 
 Redux 虽然核心源码比较小巧，但是思想比较“奇葩”，要想真正用好它得从思想到源码有一个全面的了解，否则，会越使用越迷糊，被那些黑魔法搞得晕头转向。
 

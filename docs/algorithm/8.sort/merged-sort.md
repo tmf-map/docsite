@@ -3,7 +3,7 @@ id: merged-sort
 title: 归并排序
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '@site/src/components/Img';
 
 - 题源/在线：[LeetCode: 912](https://leetcode-cn.com/problems/sort-an-array/)
 

@@ -2,7 +2,7 @@
 title: ES6 Module
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '@site/src/components/Img';
 
 ## 概述
 

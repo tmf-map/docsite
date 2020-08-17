@@ -2,7 +2,7 @@
 title: As object or array type
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '@site/src/components/Img';
 
 Interface in TypeScript can be used to define a type and also to implement it in the class. The most scenarios can be summarized as following:
 

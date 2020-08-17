@@ -3,7 +3,7 @@ id: JWT
 title: JWT
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '@site/src/components/Img';
 
 ## JWT 定义
 

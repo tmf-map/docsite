@@ -2,7 +2,7 @@
 title: MobX
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '@site/src/components/Img';
 
 MobX 是一个简单的、可扩展的状态管理库。
 

@@ -2,7 +2,7 @@
 title: 延迟加载
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '@site/src/components/Img';
 
 延迟加载即懒加载，对于一些占用带宽的资源比如图片，使用延时加载首屏外资源，而不是加载所有资源。延迟加载图像和视频时，可以减少初始页面加载时间、初始页面负载以及系统资源使用量，优化页面的性能。
 

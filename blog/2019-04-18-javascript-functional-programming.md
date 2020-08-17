@@ -7,7 +7,7 @@ author_image_url: https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/5tLtEV.jpg
 tags: [javascript, book]
 ---
 
-import Img from '../src/components/Img';
+import Img from '@site/src/components/Img';
 
 <Img src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/DErEJX.jpg" width="250" alt="JavaScript函数式编程指南" />
 

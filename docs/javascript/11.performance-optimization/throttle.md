@@ -2,7 +2,7 @@
 title: 节流
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '@site/src/components/Img';
 
 节流 (throttle) 是固定时间内触发，以鼠标点击为例，它不是以最后一次为准，而是看是不是刚好达到所规定的时间间隔，否则就忽略这次操作。像 `window.scroll` 这种一般需要进行节流。
 

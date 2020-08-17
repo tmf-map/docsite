@@ -2,7 +2,7 @@
 title: 分代回收
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '@site/src/components/Img';
 
 ### Node 的 GC 特点
 

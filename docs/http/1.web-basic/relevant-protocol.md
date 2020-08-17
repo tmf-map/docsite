@@ -2,7 +2,7 @@
 title: HTTP相关协议
 ---
 
-import Img from '../../../src/components/Img'
+import Img from '@site/src/components/Img'
 
 ## 前言
 

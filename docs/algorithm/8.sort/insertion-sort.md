@@ -3,7 +3,7 @@ id: insertion-sort
 title: 插入排序
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '@site/src/components/Img';
 
 ## 扑克牌
 

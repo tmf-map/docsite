@@ -2,7 +2,7 @@
 title: 基础概念
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '@site/src/components/Img';
 
 ## 可替换元素
 

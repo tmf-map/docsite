@@ -3,7 +3,7 @@ id: lifecycle
 title: 生命周期
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '@site/src/components/Img';
 
 ## React v16.3 之前
 

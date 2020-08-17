@@ -2,7 +2,7 @@
 title: rem
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '@site/src/components/Img';
 
 ## 与 em 的区别
 

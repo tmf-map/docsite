@@ -2,7 +2,7 @@
 title: HTTP/2
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '@site/src/components/Img';
 
 ## 简介
 

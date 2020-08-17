@@ -2,7 +2,7 @@
 title: Type Compatibility
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '@site/src/components/Img';
 
 TS 允许将一些不同类型的变量相互赋值，虽然某种程度上可能会产生一些不可靠的行为，但增加了语言的**灵活性**，毕竟它的祖宗 JS 就是靠灵活性起家的，而灵活性已经深入前端的骨髓，有时会不得不做一些妥协。
 

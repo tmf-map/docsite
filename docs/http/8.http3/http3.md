@@ -2,7 +2,7 @@
 title: HTTP/3
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '@site/src/components/Img';
 
 ## HTTP/2 的缺点
 

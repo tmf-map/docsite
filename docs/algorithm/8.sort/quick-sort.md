@@ -3,11 +3,11 @@ id: quick-sort
 title: 快速排序
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '@site/src/components/Img';
 
-import Math from '../../../src/components/Math';
+import Math from '@site/src/components/Math';
 
-import GifPlayer from '../../../src/components/GifPlayer';
+import GifPlayer from '@site/src/components/GifPlayer';
 
 ## 思想
 

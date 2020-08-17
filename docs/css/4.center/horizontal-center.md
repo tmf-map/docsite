@@ -2,7 +2,7 @@
 title: 水平居中
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '@site/src/components/Img';
 
 ## 行级元素
 

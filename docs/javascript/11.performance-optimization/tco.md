@@ -2,7 +2,7 @@
 title: 递归与尾调用优化
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '@site/src/components/Img';
 
 > 对于你写的 97%的代码，多上几毫秒并不会有什么区别，特别是相对代码的可维护性来说。 - Knuth
 

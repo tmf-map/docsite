@@ -2,7 +2,7 @@
 title: 通用头字段
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '@site/src/components/Img';
 
 ## 概述
 

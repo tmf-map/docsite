@@ -7,7 +7,7 @@ author_image_url: https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/5tLtEV.jpg
 tags: [webhooks, github, Kimi]
 ---
 
-import Img from '../src/components/Img';
+import Img from '@site/src/components/Img';
 
 ## 前言
 

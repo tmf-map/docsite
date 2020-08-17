@@ -2,7 +2,7 @@
 title: 代码分割与懒加载
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '@site/src/components/Img';
 
 ## 概述
 

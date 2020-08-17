@@ -2,7 +2,7 @@
 title: 大文件传输
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '@site/src/components/Img';
 
 ## 前言
 

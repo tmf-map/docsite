@@ -2,7 +2,7 @@
 title: 缓存代理
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '@site/src/components/Img';
 
 ## 代理服务
 

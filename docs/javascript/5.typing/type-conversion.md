@@ -2,7 +2,7 @@
 title: 类型转换
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '@site/src/components/Img';
 
 ## 手动类型转换
 

@@ -3,7 +3,7 @@ id: bucket-sort
 title: 桶排序
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '@site/src/components/Img';
 
 ## 思想
 

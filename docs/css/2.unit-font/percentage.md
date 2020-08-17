@@ -2,7 +2,7 @@
 title: '%'
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '@site/src/components/Img';
 
 百分比是一定有其对应的参照值的。也就是说，百分比值是一种相对值，任何时候要分析它的效果，都需要正确找到它的参照。
 

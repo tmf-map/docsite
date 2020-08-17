@@ -2,7 +2,7 @@
 title: BigInt
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '@site/src/components/Img';
 
 ## The problem in number
 

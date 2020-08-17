@@ -2,7 +2,7 @@
 title: Type Protection
 ---
 
-import Img from '../../../src/components/Img';
+import Img from '@site/src/components/Img';
 
 ## What's type protection
 
