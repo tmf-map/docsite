@@ -49,10 +49,11 @@
 .navbar + .main-wrapper > div > div:not(.row):not(.main):not(.hero--primary) {
   flex-shrink: 0;
   background-color: var(--my-color-background);
-  width: 310px;
+  /* (1 - x) * 100 * 3 / 12 = 100x => x = 20 */
+  width: 20%;
   top: 0;
   border: none;
-  margin-right: 2rem;
+  margin-right: 1.5rem;
 }
 
 .navbar__item > .navbar__link {

@@ -76,7 +76,8 @@ main .container > .row > .col:first-child:not(.footer__col) {
 }
 
 main .container > .row > .col:last-child:not(.footer__col) {
-  margin-left: 1.3rem;
+  margin-left: 1.5rem;
+  margin-right: 1rem;
 }
 
 main .container .col:first-child > div {
