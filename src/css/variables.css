@@ -11,7 +11,7 @@
   --ifm-contents-border-color: rgba(191, 191, 191, 0.2);
   --ifm-contents-link-color: rgb(116, 129, 141);
   --ifm-contents-padding-vertical: 0.5rem;
-  --ifm-toc-border-color: var(--ifm-contents-border-color);
+  --ifm-toc-border-color: rgba(191, 191, 191, 0.3);
   --ifm-toc-link-color: var(--ifm-contents-link-color);
   --ifm-code-background: rgba(191, 191, 191, 0.25);
   --ifm-hero-background-color: #24292e;
@@ -31,8 +31,6 @@
 
   --ifm-code-font-size: 85%;
 
-  --my-board--background: rgba(185, 202, 218, 0.15);
-  --my-logo-font-family: 'Eurofighter Expanded';
   --my-color-gray-1: #ffffff;
   --my-color-gray-2: #fafafa;
   --my-color-gray-3: #f5f5f5;
@@ -46,6 +44,19 @@
   --my-color-gray-11: #1f1f1f;
   --my-color-gray-12: #141414;
   --my-color-gray-13: #000000;
+  --my-board--background: rgba(185, 202, 218, 0.15);
+  --my-color-background: #f1f2f3;
+  --my-color-main-page-background: var(--my-color-gray-1);
+  --my-color-main-page-shadow: rgba(60, 64, 67, 0.1) 0px 1px 3px 1px;
+  --my-logo-font-family: 'Eurofighter Expanded';
 
   -webkit-font-smoothing: antialiased;
+}
+
+:root[data-theme='dark'] {
+  --my-color-background: var(--my-color-gray-10);
+  --my-color-main-page-background: var(--ifm-background-color);
+  --my-color-main-page-shadow: rgba(230, 233, 236, 0.09) 0px 0px 1px 1px;
+  --ifm-footer-background-color: var(--ifm-background-color);
+  --ifm-toc-border-color: rgba(191, 191, 191, 0.16);
 }

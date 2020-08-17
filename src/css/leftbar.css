@@ -1,6 +1,8 @@
 /* Left content */
 .menu .menu__link {
   border: 1px solid transparent;
+  border-top-right-radius: 1.0625rem;
+  border-bottom-right-radius: 1.0625rem;
   line-height: 1.25rem;
   font-size: 0.9375rem;
 }
