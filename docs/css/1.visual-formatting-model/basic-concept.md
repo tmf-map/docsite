@@ -2,8 +2,6 @@
 title: 基础概念
 ---
 
-import Img from '@site/src/components/Img';
-
 ## 可替换元素
 
 可替换元素（replaced element）是 CSS 世界中的另一个派系。从名字上理解：

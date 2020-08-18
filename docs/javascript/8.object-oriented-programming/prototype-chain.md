@@ -2,8 +2,6 @@
 title: 原型和原型链
 ---
 
-import Img from '@site/src/components/Img';
-
 <Img w="700" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/4iriid.jpg'/>
 
 - \***\*proto\*\***:

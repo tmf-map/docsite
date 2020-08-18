@@ -7,8 +7,6 @@ author_image_url: https://robbie-pic.oss-cn-beijing.aliyuncs.com/IMG_4175.JPG?x-
 tags: [webService]
 ---
 
-import Img from '@site/src/components/Img';
-
 ## 什么是 Web Service：
 
 相比于 Web Service（网络服务），“本地服务”这个名词我们似乎更加的熟悉。本地服务通过本地的计算机环境为系统功能提供服务，完成某项特定的功能，使用期间不需要使用网络。而对应的 Web Service 则是利用网络调用其他网站的资源来实现系统的某项特定功能。

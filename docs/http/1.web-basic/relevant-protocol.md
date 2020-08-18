@@ -2,8 +2,6 @@
 title: HTTP相关协议
 ---
 
-import Img from '@site/src/components/Img'
-
 ## 前言
 
 在 HTTP2 之前，HTTP 的运行是建立在 TCP 和 IP 协议之上的，所以 HTTP 协议与 TCP 和 IP 协议息息相关。但当 HTTP 发展到 HTTP3 的时候，为了从根本解决“队头阻塞”问题，将 TCP 替换成了“不可靠的”UDP 协议。而本节主要的目的就是简单介绍这些与 HTTP 协议相关的网络协议。

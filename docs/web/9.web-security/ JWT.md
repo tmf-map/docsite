@@ -3,8 +3,6 @@ id: JWT
 title: JWT
 ---
 
-import Img from '@site/src/components/Img';
-
 ## JWT 定义
 
 `JWT`(JSON Web Token) 是一个基于 `JSON` 的开放标准（RFC 7519），用于创建`access token`，是目前最流行的**跨域认证解决方案**。简单来说，**一个 JWT 就是一个字符串**，形式如下：

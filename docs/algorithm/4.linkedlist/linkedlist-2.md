@@ -3,8 +3,6 @@ id: linkedlist-2
 title: 链表解题技巧
 ---
 
-import Img from '@site/src/components/Img';
-
 ## 理解指针或引用的含义
 
 有些语言中有"指针"的概念，比如 C 语言，而在 Java 中取而代之的是"引用"。不论是指针还是引用，它们的意思是一样的，指存储所指对象的内存地址。接下来我们都以指针来讲解。

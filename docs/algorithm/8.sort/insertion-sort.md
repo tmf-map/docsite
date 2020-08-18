@@ -3,8 +3,6 @@ id: insertion-sort
 title: 插入排序
 ---
 
-import Img from '@site/src/components/Img';
-
 ## 扑克牌
 
 插入排序算法类似于玩扑克时抓牌的过程，玩家每拿到一张牌都要插入到手中已有的牌里，使之从小到大排好序。

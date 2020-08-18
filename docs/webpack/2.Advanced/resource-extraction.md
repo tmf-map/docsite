@@ -2,8 +2,6 @@
 title: 公共资源提取
 ---
 
-import Img from '@site/src/components/Img';
-
 ## 概述
 
 当项目的多个页面使用相同的基础库，或者引用了相同的模块时，对每个页面都打包一遍是很浪费资源的。所以，需要在打包的时候通过提取公共资源来减少打包后`bundle`的体积。在`webpack 3`版本时，一般会使用`CommonsChunkPlugin`插件进行资源提取，但是在`webpack 4`版本中，推荐使用`SplitChunksPlugin`来代替`CommonsChunkPlugin`，而`CommonsChunkPlugin`已被删除。

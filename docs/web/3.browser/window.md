@@ -2,8 +2,6 @@
 title: 浏览器窗口
 ---
 
-import Img from '@site/src/components/Img';
-
 ## window 的大小
 
 <img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/kqJMh6.jpg'/>

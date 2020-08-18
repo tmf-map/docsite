@@ -2,8 +2,6 @@
 title: Class and Inheritance
 ---
 
-import Img from '@site/src/components/Img';
-
 ## Class
 
 A class is an abstract concept that describes what the object will contain and how an object will behave. In other words, it is a blueprint or prototype that defines the states (properties) and the behaviors (methods) common to all objects of a certain kind. As shown in the following image, the `Student` class describes some states and behaviors that all students share. Objects are often used to model real-world objects you find in everyday life. An object is a specimen of a class. They all have their own specific states and behaviors.

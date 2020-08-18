@@ -3,8 +3,6 @@ id: middleware
 title: Middleware
 ---
 
-import Img from '@site/src/components/Img';
-
 ## 思想精华三：中间件思想与洋葱模型
 
 ### 在 dispatch 过程中穿过 middleware

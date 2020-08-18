@@ -2,8 +2,6 @@
 title: rem
 ---
 
-import Img from '@site/src/components/Img';
-
 ## 与 em 的区别
 
 rem 这个单位是目前做多端适配的时候，用得非常多的一个单位，尤其是在适配各种移动设备小屏幕方面。

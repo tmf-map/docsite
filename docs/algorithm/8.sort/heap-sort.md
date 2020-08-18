@@ -3,12 +3,6 @@ id: heap-sort
 title: 堆排序
 ---
 
-import Img from '@site/src/components/Img';
-
-import Math from '@site/src/components/Math';
-
-import GifPlayer from '@site/src/components/GifPlayer';
-
 ## 基本概念
 
 堆是一个完全二叉树，堆中每一个节点的值都必须大于等于（或小于等于）其子树中每个节点的值。

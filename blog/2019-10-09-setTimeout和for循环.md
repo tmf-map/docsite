@@ -7,8 +7,6 @@ author_image_url: https://robbie-pic.oss-cn-beijing.aliyuncs.com/IMG_4175.JPG?x-
 tags: [setTimeout, for]
 ---
 
-import Img from '@site/src/components/Img';
-
 ## 前言：
 
 浏览器事件循环经典题目:

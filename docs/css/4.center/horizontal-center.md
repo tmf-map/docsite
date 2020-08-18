@@ -2,8 +2,6 @@
 title: 水平居中
 ---
 
-import Img from '@site/src/components/Img';
-
 ## 行级元素
 
 <img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/YMZ0YS.png'/>

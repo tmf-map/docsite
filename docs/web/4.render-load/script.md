@@ -2,8 +2,6 @@
 title: 脚本加载
 ---
 
-import Img from '@site/src/components/Img';
-
 ## 单线程 JS
 
 JS 代码在一个线程中执行，即主线程，这意味着一次只能执行一行 JS 代码。需要注意的是，这一个线程还负责文档的生命周期，比如：layout 和 paint。因此，JS 代码运行的时候将会阻碍其他工作：

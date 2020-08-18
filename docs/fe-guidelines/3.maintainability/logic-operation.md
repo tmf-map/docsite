@@ -2,8 +2,6 @@
 title: Logic Operation
 ---
 
-import Img from '@site/src/components/Img';
-
 ### 规则 1: 摩根律
 
 对于 `!(!a...)` 的场景，可读性十分差，可以用[摩根律](https://en.wikipedia.org/wiki/De_Morgan%27s_laws)减少一层取反。

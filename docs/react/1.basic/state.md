@@ -3,8 +3,6 @@ id: state
 title: 状态
 ---
 
-import Img from '@site/src/components/Img';
-
 React 的状态包括组件的外部状态（props）和组件的内部状态（state），二者发生改变的时候都会更新组件。
 
 ## state v.s. props

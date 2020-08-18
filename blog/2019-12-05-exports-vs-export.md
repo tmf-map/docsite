@@ -7,8 +7,6 @@ author_image_url: https://robbie-pic.oss-cn-beijing.aliyuncs.com/IMG_4175.JPG?x-
 tags: [exports, export, export default]
 ---
 
-import Img from '@site/src/components/Img';
-
 ## 前言
 
 在[exports 和 module.exports](/blog/2019/12/03/exports-vs-module.exports)这篇博客中，我们详细解释了在 CommonJS 规范中`exports`和`module.exports`的区别。本篇博客将讨论 CommonJS 规范和 ES6 规范模块导出之间的关系。

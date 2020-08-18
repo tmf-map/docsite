@@ -221,7 +221,10 @@ module.exports = {
           showLastUpdateAuthor: true,
           // Equivalent to `enableUpdateTime`.
           showLastUpdateTime: true,
-          remarkPlugins: [require('./src/plugins/remark-npm2yarn')],
+          remarkPlugins: [
+            require('./src/plugins/remark-npm2yarn'),
+            require('./src/plugins/remark-global-modules')
+          ],
           // options for remark-admonitions, this does not work now.
           admonitions: {
             customTypes: {

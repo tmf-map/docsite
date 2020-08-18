@@ -3,12 +3,6 @@ id: remove-nth-node-from-end-of-list
 title: 删除链表倒数第 n 个结点
 ---
 
-import Tabs from '@theme/Tabs';
-
-import TabItem from '@theme/TabItem';
-
-import Img from '@site/src/components/Img';
-
 - 在线：[LeetCode: 19](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)
 
 ## 题目

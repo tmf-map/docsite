@@ -2,8 +2,6 @@
 title: Service Workers
 ---
 
-import Img from '@site/src/components/Img';
-
 W3C 组织早在 2014 年 5 月就提出过 Service Worker 这样的一个 HTML5 API，主要用来做持久的离线缓存。
 
 当然这个 API 不是凭空而来，至于其中的由来我们可以简单的捋一捋：

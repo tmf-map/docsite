@@ -2,8 +2,6 @@
 title: 浮动
 ---
 
-import Img from '@site/src/components/Img';
-
 ## float 的影响
 
 同一附属于父元素的子元素，都进行 float 的话，它们会在同一层（同一个常规流），注意 float 会脱离文本流（Content Flow），因为浮动本身就不是常规流的定位方案，那它肯定也会脱离常规流。

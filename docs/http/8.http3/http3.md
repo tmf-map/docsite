@@ -2,8 +2,6 @@
 title: HTTP/3
 ---
 
-import Img from '@site/src/components/Img';
-
 ## HTTP/2 的缺点
 
 在 HTTP/2 中通过虚拟的“流”与多路复用等技术解决了应用层“队头阻塞”问题，性能方面比 HTTP/1.1 有了很大的提升。但 HTTP/2 依旧存在许多待解决的问题。

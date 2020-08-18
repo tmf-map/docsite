@@ -7,8 +7,6 @@ author_image_url: https://robbie-pic.oss-cn-beijing.aliyuncs.com/IMG_4175.JPG?x-
 tags: [exports, module.exports, node.js]
 ---
 
-import Img from '@site/src/components/Img';
-
 ## 前言
 
 `exports`和`module.exports`这两个之间的关系一直傻傻的分不清，为啥有了`module.exports`还要有`exports`？我想通过这篇文章来理清两者之间的关系。

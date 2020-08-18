@@ -2,8 +2,6 @@
 title: Types
 ---
 
-import Img from '@site/src/components/Img';
-
 In TypeScript, if we define function likes in JavaScript, there will be a hint that tell us we should define the type of parameter.
 
 ```ts

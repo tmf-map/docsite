@@ -2,8 +2,6 @@
 title: 加密算法
 ---
 
-import Img from '@site/src/components/Img';
-
 ## 概述
 
 在阅读本文之前建议先读一下这篇文章 -- [HTTPS 的故事-前端外刊评论](https://qianduan.group/posts/5a6560b00cf6b624d2239c6f)

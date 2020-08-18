@@ -2,8 +2,6 @@
 title: 客户端缓存
 ---
 
-import Img from '@site/src/components/Img';
-
 ## 概述
 
 缓存（Cache）是计算机领域里的一个重要概念，是优化系统性能的利器。

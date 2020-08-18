@@ -2,8 +2,6 @@
 title: 通用头字段
 ---
 
-import Img from '@site/src/components/Img';
-
 ## 概述
 
 **通用头字段**即在*请求头*和*响应头*里都可以出现的字段，常见的字段有：`Cache-Control`、`Date`、`Transfer-Encoding`、`Via`、`Warning`等，这些字段所代表的含义如下图所示：

@@ -2,8 +2,6 @@
 title: HTTPS
 ---
 
-import Img from '@site/src/components/Img';
-
 ## 前言
 
 由于 HTTP **明文传输**的特点，使得整个传输过程完全透明，任何人都能够在链路中截获、修改或者伪造请求或响应报文，数据不具有可信性。所以我们需要使用一种安全的数据传输方式--HTTPS。

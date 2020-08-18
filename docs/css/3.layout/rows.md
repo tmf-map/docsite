@@ -2,8 +2,6 @@
 title: 行布局
 ---
 
-import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';
-
 ## 两行布局
 
 两行布局主要是 PX-AUTO 型，[在线 Demo](https://codepen.io/muwenzi/pen/jjKrrw) , 但在实际应用中需要注意两点：

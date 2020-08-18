@@ -2,8 +2,6 @@
 title: HTTP/2
 ---
 
-import Img from '@site/src/components/Img';
-
 ## 简介
 
 HTTP/2 主要目的是提高网页性能，最近几年比较火，将其单独抽成一块讲。2015 年，HTTP/2 发布。它不叫 HTTP/2.0，是因为标准委员会不打算再发布子版本了，下一个新版本将是 HTTP/3。

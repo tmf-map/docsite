@@ -3,12 +3,6 @@ id: reverse-linked-list
 title: 反转链表
 ---
 
-import Tabs from '@theme/Tabs';
-
-import TabItem from '@theme/TabItem';
-
-import Img from '@site/src/components/Img';
-
 - 在线：[LeetCode: 206](https://leetcode.com/problems/reverse-linked-list/)
 
 ## 题目

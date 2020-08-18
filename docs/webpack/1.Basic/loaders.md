@@ -2,8 +2,6 @@
 title: 常用的Loaders
 ---
 
-import Img from '@site/src/components/Img';
-
 ## 概要
 
 `webpack` 默认只支持打包 `JS` 和 `JSON` 两种文件类型，为了支持其它文件类型的打包，需要使用对应的`Loaders`。`Loaders`本身是一个函数，接受源文件作为参数，返回转换的结果。常用的`Loaders`如下所示：

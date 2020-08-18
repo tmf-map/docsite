@@ -2,8 +2,6 @@
 title: 常用的Plugins
 ---
 
-import Img from '@site/src/components/Img';
-
 ## Plugins
 
 插件用于 `bundle` 文件的优化，资源管理和环境变量注入，作于用整个构建过程。插件可以看作是`loaders`功能的补充，对于`loader`无法完成的打包需求，可以考虑使用插件来实现。

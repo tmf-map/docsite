@@ -2,8 +2,6 @@
 title: 递归与尾调用优化
 ---
 
-import Img from '@site/src/components/Img';
-
 > 对于你写的 97%的代码，多上几毫秒并不会有什么区别，特别是相对代码的可维护性来说。 - Knuth
 
 > 对于大多数的应用而言，牺牲效率以获得更高的可维护性是值得考虑的。应该让代码更容易阅读和调试，即使它不是最快的。——[《JavaScript 函数式编程指南》](https://book.douban.com/subject/30283769/)P178

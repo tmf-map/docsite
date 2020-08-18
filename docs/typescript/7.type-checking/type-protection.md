@@ -2,8 +2,6 @@
 title: Type Protection
 ---
 
-import Img from '@site/src/components/Img';
-
 ## What's type protection
 
 Before introducing type protection, let's look at an example, we want to call the printing method after creating the instance:

@@ -2,8 +2,6 @@
 title: OAuth
 ---
 
-import Img from '@site/src/components/Img';
-
 ## OAuth 定义
 
 [OAuth 2.0（开放授权）](https://zh.wikipedia.org/wiki/%E5%BC%80%E6%94%BE%E6%8E%88%E6%9D%83)是一个开放标准，**允许用户让第三方应用通过`access_token`（令牌）来访问该用户在某一网站上（微信、微博、Github）存储的私密的资源（如用户名、邮箱、联系人列表），而无需将账号和密码提供给第三方应用**。

@@ -2,8 +2,6 @@
 title: 实体头字段
 ---
 
-import Img from '@site/src/components/Img';
-
 ## 概述
 
 `实体字段`是用来描述实体内容的字段，可以用于请求报文或响应报文中。常见的实体字段有`Content-Length`，`Content-Language`，`Content-Encoding`。这些字段的含义如下所示：

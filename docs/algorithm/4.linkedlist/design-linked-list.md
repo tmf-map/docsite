@@ -3,10 +3,6 @@ id: design-linked-list
 title: 设计链表
 ---
 
-import Tabs from '@theme/Tabs';
-
-import TabItem from '@theme/TabItem';
-
 - 在线：[LeetCode: 707](https://leetcode.com/problems/design-linked-list/)
 
 ## 题目

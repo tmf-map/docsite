@@ -3,12 +3,6 @@ id: LRU-cache
 title: LRU 缓存
 ---
 
-import Tabs from '@theme/Tabs';
-
-import TabItem from '@theme/TabItem';
-
-import Img from '@site/src/components/Img';
-
 - 在线：[LeetCode: 146](https://leetcode.com/problems/lru-cache/)
 
 ## 题目

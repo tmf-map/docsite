@@ -2,8 +2,6 @@
 title: 事件系统
 ---
 
-import Img from '@site/src/components/Img';
-
 ## 事件系统概述
 
 ### 基础概念

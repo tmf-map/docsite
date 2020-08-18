@@ -7,12 +7,6 @@ keywords:
   - doubly linked list
 ---
 
-import Tabs from '@theme/Tabs';
-
-import TabItem from '@theme/TabItem';
-
-import Img from '@site/src/components/Img';
-
 ## 链表和数组
 
 链表和数组都属于基础的数据结构--线性表。它们在内存存储上表现不一样，各种操作的效率也不一样。

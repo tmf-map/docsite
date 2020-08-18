@@ -3,12 +3,6 @@ id: bubble-sort
 title: 冒泡排序
 ---
 
-import Img from '@site/src/components/Img';
-
-import Tabs from '@theme/Tabs';
-
-import TabItem from '@theme/TabItem';
-
 - 题源/在线：[LeetCode: 912](https://leetcode-cn.com/problems/sort-an-array/)
 
 ## 思想

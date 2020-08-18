@@ -3,8 +3,6 @@ id: binary-search
 title: 二分查找
 ---
 
-import Img from '@site/src/components/Img'; import GifPlayer from '@site/src/components/GifPlayer';
-
 ## 二分查找的基本思想
 
 二分查找的思想非常朴素好理解。在一个排好序的数组中，从中间元素开始查找，如果中间元素正好是要查找元素，则结束查找；如果要查找元素大于中间元素，则在大于中间元素的一半数组中继续二分查找；反之，在小于中间元素的一半中继续查找。

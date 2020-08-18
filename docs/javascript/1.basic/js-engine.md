@@ -2,8 +2,6 @@
 title: JS 引擎
 ---
 
-import Img from '@site/src/components/Img';
-
 ## JS Engine
 
 - Chrome: [V8](https://v8.dev/)

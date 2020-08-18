@@ -3,8 +3,6 @@ id: sort-summary
 title: 排序总结
 ---
 
-import Img from '@site/src/components/Img';
-
 ### O(n^2) 小结
 
 <Img w="500" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200730153551.png'/>

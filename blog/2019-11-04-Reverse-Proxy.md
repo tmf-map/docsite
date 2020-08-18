@@ -7,8 +7,6 @@ author_image_url: https://robbie-pic.oss-cn-beijing.aliyuncs.com/IMG_4175.JPG?x-
 tags: [正向代理, 反向代理]
 ---
 
-import Img from '@site/src/components/Img';
-
 ## 正向代理
 
 A 同学创业需要启动资金，于是他决定去找马云爸爸借钱，可想而知，最后碰一鼻子灰回来了。情急之下，他想到一个办法，找关系开后门，经过一番消息打探，原来 A 同学的大学老师王老师是马云的同学，于是 A 同学找到王老师，托王老师帮忙去马云那借 500 万过来。

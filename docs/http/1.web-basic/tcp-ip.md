@@ -2,8 +2,6 @@
 title: TCP/IP协议
 ---
 
-import Img from '@site/src/components/Img';
-
 ## 前言
 
 TCP/IP 协议实际上是一系列网络通信协议的统称，其中最核心的两个协议是 TCP 和 IP，其他的还有 UDP、ICMP、ARP 等等，共同构成了一个复杂但有层次的协议栈。

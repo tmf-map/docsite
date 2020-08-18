@@ -2,8 +2,6 @@
 title: TCP握手和挥手
 ---
 
-import Img from '@site/src/components/Img'
-
 ## 三次握手和四次挥手
 
 ### 三次握手

@@ -2,8 +2,6 @@
 title: 回调
 ---
 
-import Img from '@site/src/components/Img';
-
 ## 简介
 
 JS 中的许多操作是**异步**的。比如，这个 `loadScript(src)` 函数：

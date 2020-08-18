@@ -2,8 +2,6 @@
 title: Promise
 ---
 
-import Img from '@site/src/components/Img';
-
 ## 使用 promise 的原因
 
 解决回调函数多层嵌套，让异步方法可以像同步方法那样返回值，使代码更易读。
