@@ -20,6 +20,20 @@ import GifPlayer from '../../../src/components/GifPlayer';
 
 <GifPlayer gif="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/queue.2020-08-14 15_21_10.gif" still="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/queue.png"/>
 
+## 循环队列
+
+为充分利用空间，克服"假溢出"现象，将空间想象为一个首尾相接的圆环。存储在其中的队列称为循环队列（Circular Queue）。循环队列是把顺序队列首尾相连，把存储队列元素的表从逻辑上看成一个环。在一个普通队列里，一旦一个队列满了，即使在队列前部仍有空间，也不能再入队。但是使用循环队列，我们能使用这些空间去存储新的值。循环队列的一个好处是我们可以利用这个队列之前用过的空间。
+
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/circular-queue-null.png' alt='circular-queue-null' width="380"/>
+
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/circular-queue.png' alt='circular-queue' width="380"/>
+
+## 双端队列
+
+双端队列 Double-ended queue，简称为 Deque，一个队列，其中的元素可以从头或尾添加或删除。
+
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/deque.png' alt='deque' width="600"/>
+
 ## 参考资料
 
 1. [数据结构与算法之美, by 王争](https://time.geekbang.org/column/intro/126)
