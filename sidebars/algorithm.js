@@ -13,7 +13,9 @@ module.exports = {
     'algorithm/3.stack-queue/min-stack',
     'algorithm/3.stack-queue/basic-calculator',
     'algorithm/3.stack-queue/valid-parentheses',
-    'algorithm/3.stack-queue/queue'
+    'algorithm/3.stack-queue/queue',
+    'algorithm/3.stack-queue/circular-queue',
+    'algorithm/3.stack-queue/sliding-window-max'
   ],
   '4. 链表': [
     'algorithm/4.linkedlist/linkedlist-1',
