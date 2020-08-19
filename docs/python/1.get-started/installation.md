@@ -9,7 +9,7 @@ Python 的版本分为官方版和发行版：
 - 官方版：解释器（Interpreter）+ 标准库
 - 发行版：解释器（Interpreter）+ 标准库 + 常用软件包
 
-安装 Python 的方法有很多种，在 macOS 上也自带了一个默认的 Python，但对于新手或者不想折腾的，可以直接上手 Anaconda 去管理 Python 和一些 package。它也是 Python 最流行的发型版本，里面包含很多常用的科学计算库，下面将重点介绍 Anaconda 的使用。
+安装 Python 的方法有很多种，在 macOS 上也自带了一个默认的 Python，但对于新手或者不想折腾的，可以直接上手 Anaconda 去管理 Python 和一些 package。它也是 Python 最流行的发行版本，里面包含很多常用的科学计算库，下面将重点介绍 Anaconda 的使用。
 
 ## Anaconda
 
@@ -225,7 +225,7 @@ pip 是用于安装和管理软件包的**包管理器**，类似于 npm。
 
 ### Virtualenv
 
-[Virtualenv](https://virtualenv.pypa.io/en/latest/) 为应用提供了隔离的 Python 运行环境，解决了不同应用间多版本的冲突问题。。当一个程序需要使用 Python 2.7 版本，而另一个程序需要使用 Python 3.6 版本，如何同时使用这两个程序？如果将所有程序都安装在系统下的默认路径，如：`/usr/lib/python2.7/site-packages`，当升级了某个程序时，将会对其他的程序造成影响。
+[Virtualenv](https://virtualenv.pypa.io/en/latest/) 为应用提供了隔离的 Python 运行环境，解决了不同应用间多版本的冲突问题。当一个程序需要使用 Python 2.7 版本，而另一个程序需要使用 Python 3.6 版本，如何同时使用这两个程序？如果将所有程序都安装在系统下的默认路径，如：`/usr/lib/python2.7/site-packages`，当升级了某个程序时，将会对其他的程序造成影响。
 
 ### Pipenv
 
