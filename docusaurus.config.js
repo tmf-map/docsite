@@ -84,6 +84,11 @@ module.exports = {
               label: 'CSS'
             },
             {
+              to: 'docs/stylus/1.stylus-code-guide',
+              activeBasePath: 'docs/stylus/',
+              label: 'Stylus'
+            },
+            {
               to: 'docs/web/1.cross-domain/same-origin-policy',
               activeBasePath: 'docs/web/',
               label: 'Web'
