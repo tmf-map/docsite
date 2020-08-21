@@ -56,20 +56,19 @@ module.exports = {
       items: [
         {
           label: 'Basis',
-          to: 'docs/design-patterns/1.creation-pattern/singleton',
           position: 'right',
           activeBaseRegex: 'docs/(design-patterns|algorithm|http)',
           items: [
-            {
-              to: 'docs/design-patterns/1.creation-pattern/singleton',
-              activeBasePath: 'docs/design-patterns/',
-              label: 'Design Patterns'
-            },
             {
               to:
                 'docs/algorithm/1.analysis-of-algorithms/asymptotic-notations',
               activeBasePath: 'docs/algorithm/',
               label: 'Algorithm'
+            },
+            {
+              to: 'docs/design-patterns/1.creation-pattern/singleton',
+              activeBasePath: 'docs/design-patterns/',
+              label: 'Design Patterns'
             },
             {
               to: 'docs/http/1.web-basic/tcp-ip',
@@ -80,7 +79,6 @@ module.exports = {
         },
         {
           label: 'Frontend',
-          to: 'docs/javascript/1.basic/js-engine',
           position: 'right',
           activeBaseRegex:
             'docs/(javascript|typescript|html|css|web|react|webpack|nodejs|fe-guidelines)',
@@ -134,7 +132,6 @@ module.exports = {
         },
         {
           label: 'Backend',
-          to: 'docs/java/object-oriented-programming/abstract-class-interface',
           position: 'right',
           activeBaseRegex: 'docs/(java/)',
           items: [
@@ -149,8 +146,14 @@ module.exports = {
         {
           label: 'AI',
           position: 'right',
-          // activeBaseRegex: 'docs/(python)',
-          items: []
+          activeBaseRegex: 'docs/(python)',
+          items: [
+            {
+              to: 'docs/python/1.get-started/history',
+              activeBasePath: 'docs/python/',
+              label: 'Python'
+            }
+          ]
         },
         {to: 'blog', label: 'Blog', position: 'right'},
         {
