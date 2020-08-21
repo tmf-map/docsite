@@ -2,8 +2,6 @@
 title: 类型转换
 ---
 
-import Img from '../../../src/components/Img';
-
 ## 手动类型转换
 
 ### 将任意类型的值转为原始类型的值

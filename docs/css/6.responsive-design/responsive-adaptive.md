@@ -2,8 +2,6 @@
 title: Responsive & Adaptive
 ---
 
-import Img from '../../../src/components/Img';
-
 Online demo: http://www.liquidapsive.com
 
 ## Basic Concept

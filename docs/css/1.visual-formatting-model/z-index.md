@@ -2,8 +2,6 @@
 title: 层叠
 ---
 
-import Img from '../../../src/components/Img';
-
 ## 层叠顺序
 
 <Img width="450" align="center" legend="图: 层叠顺序类型标注" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/page228image27822112.jpg'/>

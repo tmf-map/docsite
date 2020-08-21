@@ -2,8 +2,6 @@
 title: Flex
 ---
 
-import Img from '../../../src/components/Img';
-
 ## 概览
 
 [Flexbox 布局语法速查手册](http://www.webhek.com/apps/flex-cheatsheet/)

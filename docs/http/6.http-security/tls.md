@@ -2,8 +2,6 @@
 title: SSL和TLS
 ---
 
-import Img from '../../../src/components/Img';
-
 ## 概述
 
 为了解决 HTTP 协议传输不安全等缺点，在上世纪 90 年代中期，由网景（NetScape）公司设计了 **SSL(Secure Sockets Layer) 安全套接层协议**。SSL 经历了 1.0、2.0、3.0 版本后发展成了标准化的安全协议 - **TLS(Transport Layer Security) 传输层安全性协议**，TLS 有 1.0 (RFC 2246)、1.1(RFC 4346)、1.2(RFC 5246)、1.3(RFC 8446) 版本。

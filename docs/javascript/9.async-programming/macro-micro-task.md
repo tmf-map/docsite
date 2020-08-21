@@ -2,8 +2,6 @@
 title: 宏任务和微任务
 ---
 
-import Img from '../../../src/components/Img';
-
 我们先来看一道有关事件循环的前端面试题：
 
 ```js

@@ -2,8 +2,6 @@
 title: 垂直居中
 ---
 
-import Img from '../../../src/components/Img';
-
 <img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/qJ6qBL.png'/>
 
 ## 1. padding

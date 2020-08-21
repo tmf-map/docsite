@@ -2,8 +2,6 @@
 title: 数组
 ---
 
-import Img from '../../../src/components/Img';
-
 <Img width="300" align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/AD9JzZ.jpg'/>
 
 shift, 转移，移动，去除 https://github.com/muwenzi/Program-Blog/issues/23

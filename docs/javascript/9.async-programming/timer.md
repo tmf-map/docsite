@@ -2,8 +2,6 @@
 title: 定时器
 ---
 
-import Img from '../../../src/components/Img';
-
 有时我们并不想立即执行一个函数，而是等待特定一段时间之后再执行，目前有两种方式可以实现：
 
 - `setTimeout` 将函数的执行推迟到一段时间之后再执行。

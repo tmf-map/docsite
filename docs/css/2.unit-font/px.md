@@ -2,8 +2,6 @@
 title: px
 ---
 
-import Img from '../../../src/components/Img';
-
 ## px
 
 ### px 有效位数

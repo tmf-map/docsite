@@ -2,8 +2,6 @@
 title: Asymptotic Notations
 ---
 
-import Img from '../../../src/components/Img';
-
 The main idea of asymptotic analysis is to have a measure of efficiency of algorithms that doesn’t depend on machine specific constants, and doesn’t require algorithms to be implemented and time taken by programs to be compared. Asymptotic notations are mathematical tools to represent time complexity of algorithms for asymptotic analysis. The following 3 asymptotic notations are mostly used to represent time complexity of algorithms.
 
 ## Θ Notation

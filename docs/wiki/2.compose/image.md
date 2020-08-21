@@ -2,10 +2,6 @@
 title: Image
 ---
 
-import Img from '../../../src/components/Img';
-
-import GifPlayer from '../../../src/components/GifPlayer';
-
 ## Img
 
 This component is often used for align, lazy-loading, and adding legend and supports jpg, png, gif, etc.
@@ -13,15 +9,13 @@ This component is often used for align, lazy-loading, and adding legend and supp
 ### Example
 
 ```jsx
-import Img from '../../../src/components/Img';
-
 <Img
   w="450"
   src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/tree-shaking.jpg"
   legend="Figure: Tree shaking - green and yellow leaves"
   origin="https://m.redocn.com/ziranfengjing_6554002.html"
   alt="tree-shaking"
-/>;
+/>
 ```
 
 <Img
@@ -51,12 +45,10 @@ Similar to Facebook's GIF toggle UI, this React component displays a still image
 ### Example
 
 ```jsx
-import GifPlayer from '../../../src/components/GifPlayer';
-
 <GifPlayer
   gif="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/quick-sort-two-pointer.2020-07-26%2013_04_24.gif"
   still="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/quick-sort-two-pointer.jpg"
-/>;
+/>
 ```
 
 <GifPlayer

@@ -2,8 +2,6 @@
 title: ES6 Module
 ---
 
-import Img from '../../../src/components/Img';
-
 ## 概述
 
 > 在 ES6 之前，社区制定了一些模块加载方案，最主要的有 CommonJS 和 AMD 两种。前者用于服务器，后者用于浏览器。ES6 在语言标准的层面上，实现了模块功能，而且实现得相当简单，完全可以取代 CommonJS 和 AMD 规范，成为浏览器和服务器通用的模块解决方案。

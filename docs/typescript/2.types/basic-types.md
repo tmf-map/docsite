@@ -2,8 +2,6 @@
 title: Basic Types
 ---
 
-import Img from '../../../src/components/Img';
-
 ## Type Annotations
 
 - **What**: Like type declaration in Java.
