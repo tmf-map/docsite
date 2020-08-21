@@ -2,9 +2,13 @@
 title: Advanced Types
 ---
 
+import Img from '../../../src/components/Img';
+
+高级类型，即 TypeScript 为了保障语言的灵活性，所引入的一些语言特性，这些特性将有助于我们应对复杂多变的开发场景，让类型变得更加灵活多变，也可以将其看成是类型通过某种“运算”，产生新的类型。
+
 ## 交叉类型（Intersection Types）
 
-交叉类型是将多个类型合并为一个新类型，新的类型具有这多个类型的所有属性，我们可以通过这种方式获取所需的所有类型的特性。例如，`DogInterface & CatInterface` 类型同时是 `DogInterface`和`CatInterface`类型，则这个类型的对象同时拥有了这两种类型的所有属性。交叉类型多用于 `mixins` 和其它不适合典型的面向对象模型的地方。
+交叉类型是将多个类型合并为一个新类型，新的类型具有这多个类型的所有属性，我们可以通过这种方式获取所需的所有类型的特性。例如：
 
 ```ts
 interface DogInterface {
@@ -22,121 +26,249 @@ let pet: DogInterface & CatInterface = {
 };
 ```
 
+`DogInterface & CatInterface` 类型同时是 `DogInterface` 和 `CatInterface` 类型，则这个类型的对象同时拥有了这两种类型的所有属性。交叉类型多用于 `mixins` 和其它不适合典型的面向对象模型的地方。
+
+:::tip
+
+虽然从名称上看交叉类型取的是类型交集，实际上取的是类型的**并集**。
+
+:::
+
 ## 联合类型（Union Types）
 
-联合类型与交叉类型类似，都可以拥有多个类型，但是联合类型声明的类型并不确定，可以是几种类型之一。用竖线 `|` 分隔每个类型，所以 `number | string | boolean`表示一个值可以是 `number`， `string`，或 `boolean`。联合类型灵活度较高，在实际项目中，使用场景比交叉类型广泛得多。
-
-- 字符串填充：
+联合类型与交叉类型类似，都可以拥有多个类型，但是联合类型声明的类型并不确定，可以是几种类型之一。用竖线 `|` 分隔每个类型，比如：
 
 ```ts
-function padLeft(value: string, padding: number | string) {
-  // padding 是 number 和 string 类型之一，所以需要先判断类型，再执行对应的操作
-  if (typeof padding === 'number') {
-    return Array(padding + 1).join(' ') + value;
-  }
-  if (typeof padding === 'string') {
-    return padding + value;
-  }
-  return value;
-}
-
-padLeft('Hello world', 4);
+let a: number | string | boolean = 'abc';
 ```
 
-- 常量的联合类型，常见例子，五分制考试打分：
+所以 `a` 可以是 `number`， `string`，或 `boolean` 任意一种类型。
+
+### 数字/字符串字面量联合类型
+
+有时候我们不仅需要限制变量的类型，还需要限制变量在某一个具体的范围类，这里我们就需要用到字面量的联合类型，比如：
 
 ```ts
-type Scores = 1 | 2 | 3 | 4 | 5;
+type Gender = 'male' | 'female';
+type Score = 1 | 2 | 3 | 4 | 5; // 电影打分
+```
+
+### 对象联合类型
+
+```ts
+interface DogInterface {
+  run(): void;
+}
+
+interface CatInterface {
+  climb(): void;
+}
+
+class Dog implements DogInterface {
+  run() {}
+  eat() {}
+}
+class Cat implements CatInterface {
+  climb() {}
+  eat() {}
+}
+
+let pet: Dog | Cat = new Cat();
+pet.eat(); // OK
+pet.climb(); // OK
+pet.run(); // Error: Property 'run' does not exist on type 'Cat'.
+
+function getPet(isDog) {
+  let pet = isDog ? new Dog() : new Cat();
+  pet.eat(); // OK
+  pet.climb(); // Error: Property 'climb' does not exist on type 'Dog | Cat'.
+  pet.run(); // Error: Property 'run' does not exist on type 'Dog | Cat'.
+  return pet;
+}
 ```
 
 :::tip
 
-交叉类型和联合类型的区别是：**联合类型一次只能是一种类型；而交叉类型每次都是多个类型的合并类型**
+虽然从名称上看联合类型是取所有类型的并集，在以上例子中实际上只能访问类型的**交集**。
+
+:::
+
+### 可区分的联合类型
+
+这种类型本质上讲是结合了联合类型和字面量类型的一种类型保护方法，它的核心思想是如果是一个类型是多个类型的联合类型，并且每个类型之间有一个公共的属性，那我们就可以凭借这个公共属性创建类型保护区块，比如：
+
+```ts
+interface Square {
+  category: 'square';
+  size: number;
+}
+interface Rectangle {
+  category: 'rectangle';
+  width: number;
+  height: number;
+}
+type Shape = Square | Rectangle;
+
+function area(s: Shape) {
+  switch (s.category) {
+    case 'square': // 区块1
+      return s.size * s.size;
+    case 'rectangle': // 区块2
+      return s.width * s.height;
+  }
+}
+```
+
+通过两个接口的公有属性，我们就可以创建不同的类型保护区块。以上代码不做升级的话，是没有问题的，但是如果以后某一天我们需要加入新的类型，比如：
+
+```ts
+interface Circle {
+  category: 'circle';
+  radius: number;
+}
+type Shape = Square | Rectangle | Circle;
+```
+
+加入新的类型之后，`area` 函数也没有报错，但是如果运行以下代码，将会是 `undefined`：
+
+```ts
+area({category: 'circle', radius: 3});
+```
+
+那如何让错误能够提前显示呢？这里有两种方法：
+
+#### 方法一：明确函数的返回值类型
+
+```ts
+function area(s: Shape): number {}
+```
+
+当返回值是 `undefined` 的时候会立即报错提示
+
+#### 方法二：利用 `never` 类型
+
+```ts
+function area(s: Shape) {
+  switch (
+    s.category // 在某些代码中用 typeof 也是同理
+  ) {
+    case 'square': // 区块1
+      return s.size * s.size;
+    case 'rectangle': // 区块2
+      return s.width * s.height;
+    default:
+      return ((e: never) => {
+        throw new Error(e);
+      })(s); // Error: Argument of type 'Circle' is not assignable to parameter of type 'never'.
+  }
+}
+```
+
+检查 `s` 是不是 `never` 类型，如果是`never` 类型，则说明前面的所有分支都被覆盖了，这个分支就永远不会走到。如果不是 `never` 类型，则说明前面的分支有遗漏，此时我们再补上 circle 分支即可。
+
+:::tip
+
+交叉类型和联合类型的区别：
+
+| 交叉类型 | 联合类型 |
+| --- | --- |
+| 适合做对象的混入 | 使类型具有一定的**不确定性**，从而增强代码的灵活性 |
+| 每次都是多个类型的合并类型 | 一次只能是一种类型 |
+
+联合类型灵活度较高，在实际项目中，使用场景比交叉类型广泛得多。
 
 :::
 
 ## 索引类型（Index types）
 
-使用索引类型，编译器就能够检查使用了动态属性名的代码。 例如，一个常见的 JavaScript 模式是从对象中选取属性的子集。
+介绍索引类型之前，我们先了解一下 JS 中会用到的 `pluck` 函数，也可以叫做 `getValuesByKeys`：从对象中选取一些属性的值组成一个新的数组。
 
-```js
-function pluck(o, names) {
-  return names.map(n => o[n]);
+```ts
+function pluck(obj: any, keys: string[]) {
+  return keys.map(n => obj[n]);
+}
+
+let obj = {a: 1, b: 2, c: 3};
+pluck(obj, ['a', 'b']); // [1, 2]
+pluck(obj, ['e', 'b']); // [undefined, undefined] No Error
+```
+
+当取 `obj` 中不存在的属性时，TS 并没有报错，那怎么样才能让 TS 能够对其进行类型约束呢？这里就需要用到索引类型，我们先了解以下关于索引类型的几个概念：
+
+### 索引查询操作符 `keyof T`
+
+```ts
+keyof T // 表示对象 T 的所有公共属性的字面量的联合类型
+```
+
+比如：
+
+```ts
+interface Obj {
+  a: number;
+  b: string;
+}
+
+let key: keyof Obj; // 即 let key: "a" | "b"
+```
+
+### 索引访问操作符 `T[K]`
+
+```ts
+T[K]; // 表示对象 T 的属性 K 所代表的类型
+```
+
+比如：
+
+```ts
+let value: Obj['a']; // 即 let value: number
+```
+
+### 泛型约束 `T extends U`
+
+```ts
+T extends U // 表示泛型变量 T 可以继承类型 U 来获得某些属性
+```
+
+清楚了以上三个概念后，我们现在就来改造一下 `pluck` 函数，首先我们想把它改造成一个泛型函数，并对其做一些约束：
+
+`keys` 里面的元素只能是 `obj` 具有的属性
+
+```ts
+function pluck<T, K>(obj: T, keys: K[]) {
+  return keys.map(n => obj[n]);
 }
 ```
 
-`pluck函数`能从`对象o`中摘出来`names`指定的那部分属性，存在 2 个类型约束：
-
-- 参数`names`中只能出现`o`具有的属性
-
-- 返回类型取决于参数`o`所包含的属性值的类型
-
-这两条约束都可以通过泛型来描述。
+然后再对 K 进行进一步约束：
 
 ```ts
-// 定义泛型变量 T 约束参数 o
-// 定义泛型变量 K 约束参数 names，并为 K 增加约束：K继承 o 的所有属性的联合类型
-interface pluck {
-  <T, K extends keyof T>(o: T, names: K[]): T[K][];
-}
-
-let obj = {a: 1, b: '2', c: false};
-// 参数检查
-// Type 'n' is not assignable to type '"a" | "b" | "c"'.
-pluck(obj, ['n']);
-// 返回类型推断
-let xs: (string | number)[] = pluck(obj, ['a', 'b']);
-```
-
-下面的例子展示了如何通过`索引类型查询`和`索引访问`操作符，在 TypeScript 里使用`pluck`函数：
-
-```ts
-function pluck<T, K extends keyof T>(o: T, names: K[]): T[K][] {
-  return names.map(n => o[n]);
-}
-
-interface Person {
-  name: string;
-  age: number;
-}
-let person: Person = {
-  name: 'Jarid',
-  age: 35
-};
-let strings: string[] = pluck(person, ['name']); // ok, string[]
-```
-
-编译器会检查字符串`'name'`是否真的是`Person`的一个属性。 这个例子中还引入了几个新的类型操作符。 首先是`keyof T`，**索引类型查询操作符**。对于任何类型 T，`keyof T`的结果为 `T上已知的公共属性名的联合`。 例如：
-
-```ts
-let personProps: keyof Person; // 'name' | 'age'
-```
-
-此时`keyof Person`与 `'name' | 'age'` 是可以相互替换的，但是如果添加了其它的属性到 Person，例如 `address: string`，那么 `keyof Person` 会自动变为 `'name' | 'age' | 'address'`。可以在诸如 pluck 这样的通用上下文中使用 keyof，在这种情况下,使用之前可能无法提前知道属性名称，但编译器会检查是否传入了正确的属性名给`pluck`：
-
-```ts
-pluck(person, ['age', 'unknown']); // error, 'unknown' is not in 'name' | 'age'
-```
-
-第二个操作符是 `T[K]`， **索引访问操作符**。在这里，类型语法反映了表达式语法。 这意味着 `person['name']` 具有类型 `Person['name']` — 在上面的例子里则为 `string类型`。但是，就像索引类型查询一样，你可以在普通的上下文里使用 `T[K]`，这正是它的强大所在。 你只要确保类型变量 `K extends keyof T`就可以了。 例如下面 `getProperty函数`的例子：
-
-```ts
-function getProperty<T, K extends keyof T>(o: T, name: K): T[K] {
-  return o[name]; // o[name] is of type T[K]
+function pluck<T, K extends keyof T>(obj: T, keys: K[]) {
+  return keys.map(n => obj[n]);
 }
 ```
 
-`getProperty`里的 `o: T`和 `name: K`，意味着 `o[name]: T[K]`。当返回 `T[K]`的结果，编译器会实例化键的真实类型，因此`getProperty`的返回值类型会随着需要的属性改变。
+再对函数返回值进行约束，首先是一个数组 `[]`，其次元素类型是属性 K 对应的类型，即 `T[K]`：
 
 ```ts
-let name: string = getProperty(person, 'name');
-let age: number = getProperty(person, 'age');
-let unknown = getProperty(person, 'unknown'); // error, 'unknown' is not in 'name' | 'age'
+function pluck<T, K extends keyof T>(obj: T, keys: K[]): T[K][] {
+  return keys.map(n => obj[n]);
+}
 ```
 
-### 索引签名（Index types and index signatures）
+这样我们就通过索引类型把 `pluck` 函数改造好了，现在再 get `obj` 中不存在的属性时，TS 的类型检查就会及时报错：
 
-JavaScript 中通过索引访问对象的时候，传入的索引如果不是字符串类型，是对象类型，会先隐式地调用`toString`方法将索引转换为字符串类型，然后再做索引。而在 TypeScript 中，如果传入的索引是对象类型，则会抛出下面示例中的错误，所以用户必须明确的写出 `toString()`方法。
+```ts
+pluck(obj, ['e', 'b']); // Error: Type '"e"' is not assignable to type '"a" | "b" | "c"'.
+```
+
+由此可以看到，索引类型可以实现对象属性的查询和访问，然后再配合泛型约束就能够使我们建立对象、对象属性以及属性值之间的约束关系。
+
+### 索引签名（Index Signatures）
+
+JavaScript 中通过索引访问对象的时候，传入的索引如果不是字符串类型，是对象类型，会先隐式地调用 `toString` 方法将索引转换为字符串类型，然后再做索引。
+
+而在 TypeScript 中，如果传入的索引是对象类型，则会抛出下面示例中的错误，所以用户必须明确的写出 `toString()`方法。
 
 ```ts
 const obj = {
@@ -182,48 +314,128 @@ foo['a'].messages;
 
 :::
 
-## 映射类型（Mapped types）
+## 映射类型（Mapped Types）
+
+### 含义
 
 通过映射类型我们可以从一个现有的类型衍生出一个新的类型。在映射类型里，新类型以相同的形式去转换旧类型里每个属性。 例如，把一个类型的所有属性都变成可选或只读：
 
 ```ts
+interface Obj {
+  a: string;
+  b: number;
+  c: boolean;
+}
+```
+
+我们想把以上接口的所有属性变为只读，有一个快速的方法，首先定义一个新的类型别名：
+
+```ts
+type ReadonlyObj = Readonly<Obj>;
+```
+
+这个类型别名由 TS 内置的泛型接口衍生而来，接口的名称就是 `Readonly`，接口要传入的类型就是我们指定的 `Obj`，此时，我们会发现，新的成员和旧的成员都是相同的，但所有的属性变成了 `readonly`。
+
+### `Readonly<T>`
+
+我们再看下其在 TS 内置的类库是怎么实现的：
+
+```ts
+/**
+ * Make all properties in T readonly
+ */
 type Readonly<T> = {
   readonly [P in keyof T]: T[P];
 };
+```
+
+`Readonly` 是一个泛型接口，而且是一个可索引类型的泛型接口，它的索引签名是 `[P in keyof T]`，其中：
+
+- `keyof T` 是索引类型的查询操作符，它表示类型 T 的所有属性的联合类型
+- `P in` 相当于执行了一次 `for-in` 操作，它会将变量 P 依次地绑定到 T 的所有属性上
+- 索引签名的返回值就是一个索引访问操作符 `T[P]`，表示属性 P 所指定的类型
+- 最后再加上 `readonly` 就把所有属性变成了只读
+
+### `Partial<T>`
+
+Partial 可以把一个接口的所有属性都变成可选的：
+
+```ts
+/**
+ * Make all properties in T optional
+ */
 type Partial<T> = {
   [P in keyof T]?: T[P];
 };
-
-let obj = {a: 1, b: '2'};
-let constObj: Readonly<typeof obj>;
-let optionalObj: Partial<typeof obj>;
-
-// 错误 Cannot assign to 'a' because it is a read-only property.
-constObj.a = 2;
-// 错误 Type '{}' is missing the following properties from type '{ a: number; b: string; }': a, b
-obj = {};
-// 正确
-optionalObj = {};
 ```
 
 ```ts
-// 找一个“类型集”
-type Keys = 'a' | 'b';
-// 通过类型映射得到新类型 { a: boolean, b: boolean }
-type Flags = {[K in Keys]: boolean};
+type OptionalObj = Partial<Obj>;
 ```
 
-`[K in Keys]`形式上与索引签名类似，只是融合了`for...in`语法。其中：
+原理和 Readonly 的实现基本是一样的，只不过把 `readonly` 变成了 `?`。
 
-- `K`：类型变量，依次绑定到每个属性上，对应每个属性名的类型
+### `Pick<T, K extends keyof T>`
 
-- `Keys`：字符串字面量构成的联合类型，表示一组属性名（的类型）
+Pick 映射类型可以抽取 Object 的一些子集：
 
-- `boolean`：映射结果类型，即每个属性值的类型
+```ts
+/**
+ * From T, pick a set of properties whose keys are in the union K
+ */
+type Pick<T, K extends keyof T> = {
+  [P in K]: T[P];
+};
+```
 
-类似的，`[P in keyof T]`只是以`keyof T`为（属性名）类型集，从而对现有类型做映射得到新类型
+第一个参数是 T，代表我们要抽取的对象，第二个参数是 K，K 有一个约束即来自 T 所有属性字面量的联合类型，新的类型属性一定要从 K 中选取，
 
-另外，Partial 与 Readonly 都能够完整保留源类型信息（从输入的源类型中取属性名及值类型，仅存在修饰符上的差异，源类型与新类型之间有兼容关系），称为`同态（homomorphic）转换`，而 Stringify 丢弃了源属性值类型，属于`非同态（non-homomorphic）转换`。
+```ts
+type PickObj = Pick<Obj, 'a' | 'b'>;
+// equals
+type PickObj = {
+  a: number;
+  b: string;
+};
+```
+
+我们可以看到 a 和 b 就会单独抽取出来 形成一个新的类型。
+
+:::tip
+
+`Readonly`, `Partial`, `Pick` 只会作用于 Obj 的属性，而不会引用新的属性，它们仅存在修饰符上的差异，源类型与新类型之间有兼容关系。官方统称为：同态（homomorphic）转换，意思是
+
+:::
+
+### `Record<K extends keyof any, T>`
+
+下面再介绍一种映射类型，它会创建一些新的属性：
+
+```ts
+/**
+ * Construct a type with a set of properties K of type T
+ */
+type Record<K extends keyof any, T> = {
+  [P in K]: T;
+};
+```
+
+```ts
+type RecordObj = Record<'x' | 'y', Obj>;
+// equals
+type RecordObj = {
+  x: Obj;
+  y: Obj;
+};
+```
+
+第一个参数 `x` 和 `y` 不来自于 Obj，是一个新的类型，第二个参数是一个已知的类型 Obj，这样新的类型有一些属性，由 Record 的第一个参数所指定，这些属性的类型是一个已知的类型，由第二个参数所指定。这种类型就是一个非同态类型。
+
+:::tip
+
+Record 产生了新的属性，属于`非同态（non-homomorphic）转换`。
+
+:::
 
 :::tip
 
@@ -231,89 +443,45 @@ type Flags = {[K in Keys]: boolean};
 
 :::
 
-### 由映射类型进行推断
-
-对类型做映射相当于类型层面的包装，现在了解了如何包装一个类型的属性，那么接下来就是如何拆包：
-
-```ts
-function unproxify<T>(t: Proxify<T>): T {
-  let result = {} as T;
-  for (const k in t) {
-    result[k] = t[k].get();
-  }
-  return result;
-}
-
-let originalProps = unproxify(proxyProps);
-```
-
-拆包推断只适用于同态的映射类型。 如果映射类型不是同态的，那么需要给拆包函数一个明确的类型参数。
-
-`TypeScript 2.8`在`lib.d.ts`里增加了一些预定义的有条件类型：
-
-- `Exclude<T, U>` -- 从 T 中剔除可以赋值给 U 的类型
-- `Extract<T, U>` -- 提取 T 中可以赋值给 U 的类型
-- `NonNullable<T>` -- 从 T 中剔除 null 和 undefined
-- `ReturnType<T>` -- 获取函数返回值类型
-- `InstanceType<T>` -- 获取构造函数类型的实例类型
-
-```ts
-// 示例：
-type T00 = Exclude<'a' | 'b' | 'c' | 'd', 'a' | 'c' | 'f'>; // "b" | "d"
-type T01 = Extract<'a' | 'b' | 'c' | 'd', 'a' | 'c' | 'f'>; // "a" | "c"
-
-type T02 = Exclude<string | number | (() => void), Function>; // string | number
-type T03 = Extract<string | number | (() => void), Function>; // () => void
-
-type T04 = NonNullable<string | number | undefined>; // string | number
-type T05 = NonNullable<(() => string) | string[] | null | undefined>; // (() => string) | string[]
-
-function f1(s: string) {
-  return {a: 1, b: s};
-}
-
-class C {
-  x = 0;
-  y = 0;
-}
-
-type T10 = ReturnType<() => string>; // string
-type T11 = ReturnType<(s: string) => void>; // void
-type T12 = ReturnType<<T>() => T>; // {}
-type T13 = ReturnType<<T extends U, U extends number[]>() => T>; // number[]
-type T14 = ReturnType<typeof f1>; // { a: number, b: string }
-type T15 = ReturnType<any>; // any
-type T16 = ReturnType<never>; // any
-type T17 = ReturnType<string>; // Error
-type T18 = ReturnType<Function>; // Error
-
-type T20 = InstanceType<typeof C>; // C
-type T21 = InstanceType<any>; // any
-type T22 = InstanceType<never>; // any
-type T23 = InstanceType<string>; // Error
-type T24 = InstanceType<Function>; // Error
-```
-
-注意：`Exclude类型`是建议的`Diff类型`的一种实现。使用 Exclude 这个名字是为了避免破坏已经定义了 Diff 的代码，并且这个名字能更好地表达类型的语义。没有增加`Omit<T, K>类型`，是因为它可以很容易地用`Pick<T, Exclude<keyof T, K>>`来表示。
-
 ## 条件类型（Conditional Types）
 
-TypeScript 2.8 引入了条件类型，增强了表达`非均匀类型映射（non-uniform type mapping）`的能力。条件类型能够根据类型兼容关系（即条件）从两个类型中选出一个：
+### 基本条件类型
+
+[TypeScript 2.8](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-8.html) 引入了条件类型，即由条件表达式决定具体的类型：
 
 ```ts
 T extends U ? X : Y
 ```
 
-语义类似于三目运算符，若`T`是`U`的子类型，则为`X`类型，否则就是`Y`类型。另外，还有一种情况是条件的真假无法确定（无法确定`T`是不是`U`的子类型），此时为`X | Y`类型，例如：
+语义类似于三目运算符，若 `T` 是 `U` 的子类型，则为 `X` 类型，否则就是 `Y` 类型。条件类型使得类型具有不唯一性，同样也增加了语言的灵活性。例如：
 
 ```ts
-declare function f<T extends boolean>(x: T): T extends true ? string : number;
-
-// x 的类型为 string | number
-let x = f(Math.random() < 0.5);
+type TypeName<T> = T extends string
+  ? 'string'
+  : T extends number
+  ? 'number'
+  : T extends boolean
+  ? 'boolean'
+  : T extends undefined
+  ? 'undefined'
+  : T extends Function
+  ? 'function'
+  : 'object';
 ```
 
-另外，如果 T 或 U 含有类型变量，就要等到类型变量都有对应的具体类型后才能得出条件类型的结果。例如：
+这里我们定义一个类型别名：`TypeName`，它是一个条件类型，而且是一个条件类型的嵌套，它会依次判断 T 的类型，然后返回不同的字符串。
+
+```ts
+type T1 = TypeName<string>; // type T1 = "string"
+type T2 = TypeName<string[]>; // type T1 = "object"
+```
+
+:::tip
+
+如果条件的真假无法确定（无法确定 `T` 是不是 `U` 的子类型），此时为`X | Y`类型，因为条件类型无非两种可能类型，这样可以确保其一定合法。
+
+// TODO make below example simpler  
+如果 T 或 U 含有类型变量，就要等到类型变量都有对应的具体类型后才能得出条件类型的结果。例如：
 
 ```ts
 interface Foo {
@@ -329,52 +497,118 @@ function foo<U>(x: U) {
 }
 ```
 
-其中 a 的类型为`U extends Foo ? string : number`（即条件不确定的情况），因为`f(x)`中`x`的类型 U 尚不确定，无从得知`U`是不是`Foo`的子类型。但条件类型无非两种可能类型，所以`let b: string | number = a;`一定是合法的（无论`x`是什么类型）
+其中 a 的类型为`U extends Foo ? string : number`（即条件不确定的情况），因为`f(x)`中`x`的类型 U 尚不确定，无从得知`U`是不是`Foo`的子类型。但条件类型无非两种可能类型，所以`let b: string | number = a;`一定是合法的（无论`x`是什么类型）。
 
-### 可分配条件类型（Distributive conditional types）
+:::
 
-`可分配条件类型（distributive conditional type）`中被检查的类型是个`裸类型参数（naked type parameter）`。其特殊之处在于满足`分配律`：
+### 分配式条件类型
 
-```ts
-(A | B | C) extends U ? X : Y
-等价于
-(A extends U ? X : Y) | (B extends U ? X : Y) | (C extends U ? X : Y)
-```
-
-例如：
+分配式条件类型（Distributive conditional types）就是类型 T 如果是一个联合类型情况下，这时候结果类型会变成多个条件类型的联合类型：
 
 ```ts
-// 嵌套的条件类型类似于模式匹配
-type TypeName<T> = T extends string
-  ? 'string'
-  : T extends number
-  ? 'number'
-  : T extends boolean
-  ? 'boolean'
-  : T extends undefined
-  ? 'undefined'
-  : T extends Function
-  ? 'function'
-  : 'object';
-
-// T 类型等价于联合类型 string" | "function
-type T = TypeName<string | (() => void)>;
+(A | B) extends U ? X : Y
+// 等价于
+(A extends U ? X : Y) | (B extends U ? X : Y)
 ```
 
-另外，在`T extends U ? X : Y`中，`X`中出现的`T`都具有`U`类型约束：
+:::tip
+
+分配式条件类型满足`分配律`。
+
+:::
 
 ```ts
-type BoxedValue<T> = {value: T};
-type BoxedArray<T> = {array: T[]};
-type Boxed<T> = T extends any[] ? BoxedArray<T[number]> : BoxedValue<T>;
-
-// T 类型等价于联合类型 BoxedValue<string> | BoxedArray<boolean>
-type T = Boxed<string | boolean[]>;
+type T3 = TypeName<string | string[]>; // type T3 = "string" | "object"
 ```
 
-上例中`Boxed<T>`的 True 分支具有`any[]`类型约束，因此能够通过索引访问（`T[number]`）得到数组元素的类型
+利用分配式条件类型特性可以帮助我们实现一些类型的复杂运算，例如提取某些类型，排除某些类型等。下面介绍 5 个常用的官方预置(`lib.d.ts`)条件类型。
 
-### 条件类型中的类型推断
+### `Exclude<T, U>`
+
+Exclude 的作用就是从类型 T 中过滤掉可以赋值给类型 U 的类型。定义如下：
+
+```ts
+/**
+ * Exclude from T those types that are assignable to U
+ */
+type Exclude<T, U> = T extends U ? never : T;
+```
+
+```ts
+type T4 = Exclude<'a' | 'b' | 'c', 'a' | 'e'>; // type T4 = "b" | "c"
+
+// 分解步骤
+// Step1: Exclude<"a", "a" | "e"> | Exclude<"b", "a" | "e"> | Exclude<"c", "a" | "e">
+// Step2: never | "b" | "c"
+// Step3: "b" | "c"
+```
+
+:::tip
+
+使用 Exclude 这个名字是为了避免破坏已经定义了 Diff 的代码，并且这个名字能更好地表达类型的语义。没有增加`Omit<T, K>类型`，是因为它可以很容易地用`Pick<T, Exclude<keyof T, K>>`来表示。
+
+:::
+
+### `NonNullable<T>`
+
+我们可以基于 Exclude 再作扩展，过滤掉类型中不需要的类型，比如说 `undefined` 和 `null`:
+
+```ts
+/**
+ * Exclude null and undefined from T
+ */
+type NonNullable<T> = T extends null | undefined ? never : T;
+```
+
+```ts
+type T5 = NonNullable<string | number | undefined | null>; // type T5 = string | number
+```
+
+### `Extract<T, U>`
+
+Extract 和 Exclude 正好相反：
+
+```ts
+/**
+ * Extract from T those types that are assignable to U
+ */
+type Extract<T, U> = T extends U ? T : never;
+```
+
+```ts
+type T6 = Extract<'a' | 'b' | 'c', 'a' | 'e'>; // type T6 = "a"
+```
+
+### `ReturnType<T>`
+
+ReturnType 和以上实现不太一样，它用来获取函数的返回值类型：
+
+```ts
+/**
+ * Obtain the return type of a function type
+ */
+type ReturnType<T extends (...args: any) => any> = T extends (
+  ...args: any
+) => infer R
+  ? R
+  : any;
+```
+
+```ts
+function f1(s: string) {
+  return {a: 1, b: s};
+}
+
+type T7 = ReturnType<() => string>; // string
+type T8 = ReturnType<(s: string) => void>; // void
+type T9 = ReturnType<<T>() => T>; // {}
+type T10 = ReturnType<<T extends U, U extends number[]>() => T>; // number[]
+type T11 = ReturnType<typeof f1>; // { a: number, b: string }
+type T12 = ReturnType<any>; // any
+type T13 = ReturnType<never>; // any
+type T14 = ReturnType<string>; // Error
+type T15 = ReturnType<Function>; // Error
+```
 
 在条件类型的 extends 子句中，可以通过`infer`关键字引入一个待推断或者延迟推断的类型变量，例如：
 
@@ -384,24 +618,14 @@ type ReturnType<T> = T extends (...args: any[]) => infer R ? R : any;
 
 上例中引入了类型变量`R`表示函数返回类型，并在 True 分支中引用，从而提取出返回类型。
 
-### 预定义的条件类型
+### `InstanceType<T>`
 
-TypeScript 还内置了一些常用的条件类型：
+InstanceType 用来获取构造函数的返回值类型：
 
 ```ts
-// 从 T 中去掉属于 U 的子类型的部分，即之前示例中的 Diff
-type Exclude<T, U> = T extends U ? never : T;
-// 从 T 中筛选出属于 U 的子类型的部分，之前示例中的 Filter
-type Extract<T, U> = T extends U ? T : never;
-// 从 T 中去掉 null 与 undefined 部分
-type NonNullable<T> = T extends null | undefined ? never : T;
-// 取出函数类型的返回类型
-type ReturnType<T extends (...args: any) => any> = T extends (
-  ...args: any
-) => infer R
-  ? R
-  : any;
-// 取出构造函数类型的示例类型
+/**
+ * Obtain the return type of a constructor function type
+ */
 type InstanceType<T extends new (...args: any) => any> = T extends new (
   ...args: any
 ) => infer R
@@ -409,8 +633,26 @@ type InstanceType<T extends new (...args: any) => any> = T extends new (
   : any;
 ```
 
+```ts
+class C {
+  x = 0;
+  y = 0;
+}
+
+type T16 = InstanceType<typeof C>; // C
+type T17 = InstanceType<any>; // any
+type T18 = InstanceType<never>; // any
+type T19 = InstanceType<string>; // Error
+type T20 = InstanceType<Function>; // Error
+```
+
+## 小结
+
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/l1kwUS.png' alt='l1kwUS'/>
+
 ## References
 
 1. [TypeScript 中文网: 高级类型](https://www.tslang.cn/docs/handbook/advanced-types.html)
 2. [TypeScript official docs: Advanced Types](https://www.typescriptlang.org/docs/handbook/advanced-types.html)
-3. [深入理解 TypeScript](https://jkchao.github.io/typescript-book-chinese/)
+3. [TypeScript official docs: TypeScript 2.8 - Conditional Types](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-8.html#predefined-conditional-types)
+4. [深入理解 TypeScript](https://jkchao.github.io/typescript-book-chinese/)
