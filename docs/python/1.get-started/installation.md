@@ -2,8 +2,6 @@
 title: Installation
 ---
 
-import Img from '../../../src/components/Img';
-
 Python 的版本分为官方版和发行版：
 
 - 官方版：解释器（Interpreter）+ 标准库
