@@ -10,13 +10,21 @@ module.exports = {
     'https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/docsite-logo-white-mode.png',
   organizationName: githubOrg, // Usually your GitHub org/user name.
   projectName: 'docsite', // Usually your repo name.
-  plugins: [require.resolve('@docusaurus/plugin-google-analytics'), require.resolve('docusaurus-lunr-search')],
+  plugins: [
+    ['@docusaurus/plugin-google-analytics', {id: 'plugin-google-analytics'}],
+    ['docusaurus-lunr-search', {id: 'plugin-lunr-search'}]
+  ],
   themes: [require.resolve('@docusaurus/theme-live-codeblock')],
+  customFields: {
+    icp: {
+      href: 'http://beian.miit.gov.cn/',
+      text: '冀ICP备19034211号'
+    }
+  },
   themeConfig: {
     googleAnalytics: {
       trackingID: 'UA-152610996-1'
     },
-    disableDarkMode: false,
     showGithub: true,
     navbar: {
       title: githubOrg,
@@ -25,23 +33,22 @@ module.exports = {
         src:
           'https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/docsite-logo-white-mode.png'
       },
-      links: [
+      items: [
         {
           label: 'Basis',
-          to: 'docs/design-patterns/1.creation-pattern/singleton',
           position: 'right',
           activeBaseRegex: 'docs/(design-patterns|algorithm|http)',
           items: [
-            {
-              to: 'docs/design-patterns/1.creation-pattern/singleton',
-              activeBasePath: 'docs/design-patterns/',
-              label: 'Design Patterns'
-            },
             {
               to:
                 'docs/algorithm/1.analysis-of-algorithms/asymptotic-notations',
               activeBasePath: 'docs/algorithm/',
               label: 'Algorithm'
+            },
+            {
+              to: 'docs/design-patterns/1.creation-pattern/singleton',
+              activeBasePath: 'docs/design-patterns/',
+              label: 'Design Patterns'
             },
             {
               to: 'docs/http/1.web-basic/tcp-ip',
@@ -52,7 +59,6 @@ module.exports = {
         },
         {
           label: 'Frontend',
-          to: 'docs/javascript/1.basic/js-engine',
           position: 'right',
           activeBaseRegex:
             'docs/(javascript|typescript|html|css|web|react|webpack|nodejs|fe-guidelines)',
@@ -93,7 +99,7 @@ module.exports = {
               label: 'Webpack'
             },
             {
-              to: 'docs/nodejs/package-manager/yarn',
+              to: 'docs/nodejs/package-manager/package-version',
               activeBasePath: 'docs/nodejs/',
               label: 'Node.js'
             },
@@ -106,7 +112,6 @@ module.exports = {
         },
         {
           label: 'Backend',
-          to: 'docs/java/object-oriented-programming/abstract-class-interface',
           position: 'right',
           activeBaseRegex: 'docs/(java/)',
           items: [
@@ -121,8 +126,14 @@ module.exports = {
         {
           label: 'AI',
           position: 'right',
-          // activeBaseRegex: 'docs/(python)',
-          items: []
+          activeBaseRegex: 'docs/(python)',
+          items: [
+            {
+              to: 'docs/python/1.get-started/history',
+              activeBasePath: 'docs/python/',
+              label: 'Python'
+            }
+          ]
         },
         {to: 'blog', label: 'Blog', position: 'right'},
         {
@@ -137,7 +148,7 @@ module.exports = {
       style: 'dark',
       links: [
         {
-          title: '',
+          title: githubOrg,
           items: [
             {
               html: `<img class="footer-logo" loading="lazy" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/docsite-logo-dark-mode.png" /><span>${githubOrg}</span>`
@@ -195,11 +206,7 @@ module.exports = {
       //   alt: `${githubOrg} Logo`,
       //   src: '',
       // },
-      copyright: `Copyright © ${new Date().getFullYear()} ${githubOrg}`,
-      icp: {
-        href: 'http://beian.miit.gov.cn/',
-        text: '冀ICP备19034211号'
-      }
+      copyright: `Copyright © ${new Date().getFullYear()} ${githubOrg}`
     },
     prism: {
       theme: require('prism-react-renderer/themes/nightOwl'),

@@ -9,7 +9,17 @@ module.exports = {
     'algorithm/2.array/3sum'
   ],
   '3. 栈与队列': ['algorithm/3.stack-queue/min-stack'],
-  '4. 链表': ['algorithm/4.linkedlist/merge-two-sorted-lists'],
+  '4. 链表': [
+    'algorithm/4.linkedlist/linkedlist-1',
+    'algorithm/4.linkedlist/linkedlist-2',
+    'algorithm/4.linkedlist/design-linked-list',
+    'algorithm/4.linkedlist/merge-two-sorted-lists',
+    'algorithm/4.linkedlist/reverse-linked-list',
+    'algorithm/4.linkedlist/linked-list-cycle',
+    'algorithm/4.linkedlist/middle-of-the-linked-list',
+    'algorithm/4.linkedlist/remove-nth-node-from-end-of-list',
+    'algorithm/4.linkedlist/LRU-cache'
+  ],
   '5. 二叉树': [
     'algorithm/5.binary-tree/build-tree',
     'algorithm/5.binary-tree/mirror-tree',
@@ -17,12 +27,42 @@ module.exports = {
     'algorithm/5.binary-tree/maximum-depth-of-binary-tree',
     'algorithm/5.binary-tree/balanced-binary-tree'
   ],
-  '8. 排序': ['algorithm/8.sort/merged-sort', 'algorithm/8.sort/quick-sort'],
+  '8. 排序': [
+    'algorithm/8.sort/sort-basic',
+    {
+      type: 'category',
+      label: 'O(n2)',
+      items: [
+        'algorithm/8.sort/bubble-sort',
+        'algorithm/8.sort/insertion-sort',
+        'algorithm/8.sort/selection-sort'
+      ]
+    },
+    {
+      type: 'category',
+      label: 'O(nlogn)',
+      items: [
+        'algorithm/8.sort/quick-sort',
+        'algorithm/8.sort/merged-sort',
+        'algorithm/8.sort/heap-sort'
+      ]
+    },
+    {
+      type: 'category',
+      label: 'O(n)',
+      items: ['algorithm/8.sort/bucket-sort', 'algorithm/8.sort/radix-sort']
+    },
+    'algorithm/8.sort/sort-summary'
+  ],
   '9. 查找': [
     {
       type: 'category',
       label: '二分查找',
       items: [
+        'algorithm/9.search/binary-search',
+        'algorithm/9.search/binary-search-plus',
+        'algorithm/9.search/sqrtx',
+        'algorithm/9.search/search-in-rotated-sorted-array',
         'algorithm/9.search/number-same-as-index',
         'algorithm/9.search/number-in-sorted-array',
         'algorithm/9.search/missing-number'

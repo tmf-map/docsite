@@ -132,7 +132,7 @@ xhr.withCredentials = false;
 
 服务器收到"预检"请求以后，检查了 Origin、Access-Control-Request-Method 和 Access-Control-Request-Headers 字段以后，确认允许跨域请求，就可以做出回应。 ![](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/wBmuWq.png)
 
-上面的 HTTP 回应中，关键的是 Access-Control-Allow-Origin 字段，表示https://go.tradeshift.com可以请求数据。该字段也可以设为星号，表示同意任意跨源请求。
+上面的 HTTP 回应中，关键的是 Access-Control-Allow-Origin 字段，表示 `https://go.tradeshift.com` 可以请求数据。该字段也可以设为星号，表示同意任意跨源请求。
 
 ```
 Access-Control-Allow-Origin: *

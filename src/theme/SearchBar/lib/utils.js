@@ -1,4 +1,4 @@
-import $ from './zepto';
+import $ from 'autocomplete.js/zepto';
 
 const utils = {
   /*
@@ -196,7 +196,7 @@ const utils = {
    * @param {object} object Hit object returned by the Algolia API
    * @param {string} property Object key to look for
    * @return {string}
-   * */
+   **/
   getHighlightedValue(object, property) {
     if (
       object._highlightResult &&
@@ -237,7 +237,7 @@ const utils = {
    * @param {object} object Hit object returned by the Algolia API
    * @param {string} property Object key to look for
    * @return {string}
-   * */
+   **/
   getSnippetedValue(object, property) {
     if (
       !object._snippetResult ||

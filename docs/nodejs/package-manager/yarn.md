@@ -47,7 +47,7 @@ npm install -g yarn@1.19.2
 
 ### Windows
 
-1. 下载最新的.msi 文件，[点击这里下载](yarnpkg.com/latest.msi)，跟随指引安装即可。
+1. 下载最新的.msi 文件，[点击这里下载](https://yarnpkg.com/latest.msi)，跟随指引安装即可。
 
 2. 通过`Chocolatey`安装。`Chocolatey` 是一个 Windows 专用的软件包管理工具，请按照此[说明](https://chocolatey.org/install)安装`Chocolatey`。安装成功后，在控制台执行如下命令安装 yarn：
 
@@ -184,10 +184,34 @@ yarn cache clean
 
 ## yarn config
 
-yarn 设置镜像源为淘宝镜像
+```bash
+yarn config set <key> <value> [-g|--global]
+```
+
+例如设置镜像源为淘宝镜像：
 
 ```bash
 yarn config set registry http://registry.npm.taobao.org
+```
+
+例如修改 package.json -> scripts 中运行的 shell，比如 "start": "source variables.sh; node app.js"，因为 Unix-like OS 默认是 `/bin/sh`，用该配置指明 shell 可以保证不同机器上运行 `source` 命令不会出错：
+
+```bash
+yarn config set script-shell /bin/bash
+```
+
+:::tip
+
+配置也可以放在项目的 `.yarnrc` 或 `.npmrc` 文件中。
+
+:::
+
+其他常用命令：
+
+```bash
+yarn config get <key>
+yarn config delete <key>
+yarn config list # Displays the current configuration.
 ```
 
 ## yarn create
@@ -494,4 +518,6 @@ error: unknown option '--cwd'
 
 ## References
 
-[Yarn 中文网](http://yarnpkg.top/index.html) [Yarn official site](https://yarnpkg.com/cli/add)
+1. [Yarn 中文网](http://yarnpkg.top/index.html) [Yarn official site](https://yarnpkg.com/cli/add)
+2. [yarn config](https://classic.yarnpkg.com/en/docs/cli/config/)
+3. [npm-run-script](https://docs.npmjs.com/cli/run-script)

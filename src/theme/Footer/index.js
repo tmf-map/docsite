@@ -40,10 +40,11 @@ const FooterLogo = ({url, alt}) => (
 function Footer() {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
-  const {themeConfig = {}} = siteConfig;
+  const {themeConfig = {}, customFields = {}} = siteConfig;
   const {footer} = themeConfig;
+  const {icp} = customFields;
 
-  const {copyright, icp, links = [], logo = {}} = footer || {};
+  const {copyright, links = [], logo = {}} = footer || {};
   const logoUrl = useBaseUrl(logo.src);
 
   if (!footer) {
