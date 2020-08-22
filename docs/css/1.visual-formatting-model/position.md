@@ -2,8 +2,6 @@
 title: 定位
 ---
 
-import Img from '../../../src/components/Img';
-
 ## 五种定位
 
 - **static**: 默认值。没有定位，不脱离文档流（忽略 top, bottom, left, right 或者 z-index 声明）。

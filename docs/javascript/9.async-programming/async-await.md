@@ -2,8 +2,6 @@
 title: async/await
 ---
 
-import Img from '../../../src/components/Img';
-
 ## Introduction
 
 async/await 建立在 Promise 上，并且与所有现有的基于 Promise 的 API 兼容。

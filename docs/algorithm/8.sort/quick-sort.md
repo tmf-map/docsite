@@ -3,12 +3,6 @@ id: quick-sort
 title: 快速排序
 ---
 
-import Img from '../../../src/components/Img';
-
-import Math from '../../../src/components/Math';
-
-import GifPlayer from '../../../src/components/GifPlayer';
-
 ## 思想
 
 快速排序利用的是分治思想，在代排序列中挑选任意一个数据作为 pivot（分区点），将小于 pivot 的数据放到它的左边，将大于 pivot 的数据放到它的右边。然后再利用同样的方法分别对左边和右边的数据进行递归操作，直到区间缩小为 1，就说明所有的数据都有序了。

@@ -2,8 +2,6 @@
 title: 响应头字段
 ---
 
-import Img from '../../../src/components/Img';
-
 ## 概述
 
 `响应头字段`（Response header）被用于 HTTP 响应中并且和**响应主体无关的那一类 HTTP header**。像 `Location` 和 `Server` 都属于响应头字段等。常见的响应头字段如下图所示：

@@ -2,8 +2,6 @@
 title: BigInt
 ---
 
-import Img from '../../../src/components/Img';
-
 ## The problem in number
 
 In some special scenarios, the backend may return such a string:
