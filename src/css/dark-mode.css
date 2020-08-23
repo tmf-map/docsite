@@ -1,7 +1,8 @@
 html[data-theme="dark"] {
   --ifm-color-primary: rgb(10, 132, 255);
-  --ifm-navbar-shadow: 0 1px 2px 0 rgba(116, 129, 141, 0.1);
-  --ifm-navbar-background-color: var(--ifm-background-color);
+  --ifm-navbar-shadow: none;
+  /* 0 1px 2px 0 rgba(116, 129, 141, 0.1); */
+  --ifm-navbar-background-color: #222;
   /* --ifm-background-color: #1d1f21; */
   --ifm-toc-link-color: #fff;
 }

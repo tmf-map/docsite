@@ -8,6 +8,7 @@
 @import './dropdown.css';
 @import './markdown.css';
 @import './footer.css';
+@import './blog.css';
 @import './gif-player.css';
 
 /* homepage banner */
@@ -18,6 +19,10 @@
   background-position: center;
   padding: 8rem 0 16rem 0;
 } */
+
+main {
+  --my-main-padding-top: 2.2rem;
+}
 
 header .button--outline {
   color: #d1d1d1 !important;
@@ -66,6 +71,7 @@ table tbody {
 
 main .container {
   max-width: none;
+  padding-top: var(--my-main-padding-top) !important;
   padding-bottom: 3.5rem !important;
 }
 
@@ -78,6 +84,10 @@ main .container > .row > .col:first-child:not(.footer__col) {
 main .container > .row > .col:last-child:not(.footer__col) {
   margin-left: 1.5rem;
   margin-right: 1rem;
+}
+
+main .container > .row > .col:last-child:not(.footer__col) > div {
+  top: calc(var(--ifm-navbar-height) + var(--my-main-padding-top));
 }
 
 main .container .col:first-child > div {
@@ -165,4 +175,8 @@ article > header > h2.margin-bottom--sm {
   height: 18px;
   width: 2px;
   background-color: var(--ifm-color-primary);
+}
+
+button[aria-label="Copy code to clipboard"] {
+  font-size: 0.75rem;
 }

@@ -50,10 +50,10 @@
   flex-shrink: 0;
   background-color: var(--my-color-background);
   /* (1 - x) * 100 * 3 / 12 = 100x => x = 20 */
-  width: 20%;
+  width: 21%;
   top: 0;
   border: none;
-  margin-right: 1.5rem;
+  margin-right: 1%;
 }
 
 .navbar__item > .navbar__link {

@@ -9,6 +9,10 @@
   footer.footer {
     display: none;
   }
+  .main-wrapper main .container {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
 }
 
 /* iPad */
@@ -21,6 +25,10 @@
   }
   footer.footer {
     display: none;
+  }
+  .main-wrapper main .container {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
   }
 }
 
@@ -47,7 +55,7 @@
     padding-left: 1.2rem;
   }
   .container .col:first-child > div {
-    max-width: 48.5vw !important;
+    max-width: 48vw !important;
   }
   footer.footer {
     display: block;
