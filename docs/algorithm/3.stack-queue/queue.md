@@ -9,9 +9,9 @@ import GifPlayer from '../../../src/components/GifPlayer';
 
 ## 队列
 
-队列也是一种操作受限的线性表。只允许一端插入另一端删除数据，满足先进先出的特性。
+队列也是一种操作受限的线性表。只允许一端插入另一端删除数据，满足先进先出（FIFO）的特性。
 
-## 如何实现一个队列
+## 队列的基本操作
 
 队列主要包括两个操作：
 
@@ -19,6 +19,28 @@ import GifPlayer from '../../../src/components/GifPlayer';
 - 出队`dequeue()`：从队头取一个数据
 
 <GifPlayer gif="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/queue.2020-08-14 15_21_10.gif" still="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/queue.png"/>
+
+如上图所示，队列是典型的 FIFO 数据结构。新元素始终在队列的末尾。而在删除时，只能删除第一个元素。
+
+## 队列的缺点
+
+我们考虑如下的例子：分配一个长度为 6 的队列。
+
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/queue1.png' alt='queue1' width="415"/>
+
+做一次入队操作，可以成功。操作完成后，队列如下：
+
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/queue2.png' alt='queue2' width="415"/>
+
+做一次出队操作，可以成功，操作完成后，队列如下：
+
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/queue3.png' alt='queue3' width="415"/>
+
+此时，如果还想做一次入队操作，却不能成功，但其实队列中是有剩余空间的。这叫做队列的"假溢出"现象。
+
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/queue4.png' alt='queue4' width="415"/>
+
+随着头指针向后移动，浪费的空间将越来越多。如何解决这个问题呢？
 
 ## 循环队列
 

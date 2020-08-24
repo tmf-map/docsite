@@ -70,12 +70,7 @@ var calculate = function (s) {
           stack.push(stack.pop() * num);
           break;
         case '/':
-          let temp = stack.pop();
-          if (temp >= 0) {
-            stack.push(Math.floor(temp / num));
-          } else {
-            stack.push(Math.ceil(temp / num));
-          }
+          stack.push(parseInt(stack.pop() / num));
           break;
       }
       num = 0;
