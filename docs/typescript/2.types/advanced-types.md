@@ -46,7 +46,7 @@ let a: number | string | boolean = 'abc';
 
 ### 数字/字符串字面量联合类型
 
-有时候我们不仅需要限制变量的类型，还需要限制变量在某一个具体的范围类，这里我们就需要用到字面量的联合类型，比如：
+有时候我们不仅需要限制变量的类型，还需要限制变量在某一个具体的范围内，这里我们就需要用到字面量的联合类型，比如：
 
 ```ts
 type Gender = 'male' | 'female';
@@ -403,7 +403,7 @@ type PickObj = {
 
 :::tip
 
-`Readonly`, `Partial`, `Pick` 只会作用于 Obj 的属性，而不会引用新的属性，它们仅存在修饰符上的差异，源类型与新类型之间有兼容关系。官方统称为：同态（homomorphic）转换，意思是
+`Readonly`, `Partial`, `Pick` 只会作用于 Obj 的属性，而不会引用新的属性，它们仅存在修饰符上的差异，源类型与新类型之间有兼容关系。官方统称为：`同态（homomorphic）转换`。
 
 :::
 
@@ -648,7 +648,7 @@ type T20 = InstanceType<Function>; // Error
 
 ## 小结
 
-<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/l1kwUS.png' alt='l1kwUS'/>
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/uPic/高级类型-line.png' alt='高级类型-line'/>
 
 ## References
 
