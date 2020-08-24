@@ -2,8 +2,6 @@
 title: Observer
 ---
 
-import Img from '../../../src/components/Img';
-
 ## 定义
 
 观察者模式就是，一个对象（被观察者）的状态发生改变时，会通知所有依赖它的对象（观察者），这两者是直接关联的。

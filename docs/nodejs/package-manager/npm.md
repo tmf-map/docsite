@@ -2,8 +2,6 @@
 title: npm
 ---
 
-import Img from '../../../src/components/Img';
-
 [npm (Node Packaged Modules)](https://www.npmjs.com/) is node's official package manager. You can also see all the versions of node and corresponding npm [here](https://nodejs.org/zh-cn/download/releases/).
 
 ## Overview

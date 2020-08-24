@@ -2,8 +2,6 @@
 title: IDE & Tools
 ---
 
-import Img from '../../../src/components/Img';
-
 ## IDE
 
 ### VSCode

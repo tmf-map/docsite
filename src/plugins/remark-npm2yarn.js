@@ -47,17 +47,17 @@ const transformNode = node => {
 };
 
 const matchNode = node => node.type === 'code' && node.meta === 'npm2yarn';
-const nodeForImport = {
-  type: 'import',
-  value:
-    "import Tabs from '@theme/Tabs';\nimport TabItem from '@theme/TabItem';"
-};
+// const nodeForImport = {
+//   type: 'import',
+//   value:
+//     "import Tabs from '@theme/Tabs';\nimport TabItem from '@theme/TabItem';"
+// };
 
 module.exports = () => {
-  let transformed = false;
+  // let transformed = false;
   const transformer = node => {
     if (matchNode(node)) {
-      transformed = true;
+      // transformed = true;
       return transformNode(node);
     }
     if (Array.isArray(node.children)) {
@@ -72,9 +72,10 @@ module.exports = () => {
         }
       }
     }
-    if (node.type === 'root' && transformed) {
-      node.children.unshift(nodeForImport);
-    }
+    // Has been moved to global modules
+    // if (node.type === 'root' && transformed) {
+    //   node.children.unshift(nodeForImport);
+    // }
     return null;
   };
   return transformer;

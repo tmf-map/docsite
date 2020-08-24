@@ -2,8 +2,6 @@
 title: History
 ---
 
-import Img from '../../../src/components/Img';
-
 <Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/DhC3L9.png' alt='DhC3L9'/>
 
 Python Offical Doc: https://www.python.org/doc/

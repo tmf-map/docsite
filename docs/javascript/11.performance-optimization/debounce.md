@@ -2,8 +2,6 @@
 title: 防抖
 ---
 
-import Img from '../../../src/components/Img';
-
 ## 什么是 debounce
 
 以鼠标点击为例无论多快地点击多少次，最终都以最后一次加 delay 的时间为准且，下图一个颜色的我只会执行最后一次，且还是加了 delay 时间的：
