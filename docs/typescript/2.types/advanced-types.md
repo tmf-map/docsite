@@ -2,8 +2,6 @@
 title: Advanced Types
 ---
 
-import Img from '../../../src/components/Img';
-
 高级类型，即 TypeScript 为了保障语言的灵活性，所引入的一些语言特性，这些特性将有助于我们应对复杂多变的开发场景，让类型变得更加灵活多变，也可以将其看成是类型通过某种“运算”，产生新的类型。
 
 ## 交叉类型（Intersection Types）
