@@ -3,10 +3,6 @@ id: queue
 title: 队列
 ---
 
-import Img from '../../../src/components/Img';
-
-import GifPlayer from '../../../src/components/GifPlayer';
-
 ## 队列
 
 队列也是一种操作受限的线性表。只允许一端插入另一端删除数据，满足先进先出（FIFO）的特性。

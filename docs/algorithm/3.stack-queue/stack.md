@@ -3,10 +3,6 @@ id: stack
 title: 栈
 ---
 
-import Img from '../../../src/components/Img';
-
-import GifPlayer from '../../../src/components/GifPlayer';
-
 ## 栈
 
 栈是一种操作受限的线性表。只允许一端插入和删除数据，满足后进先出（LIFO）的特性。
