@@ -646,7 +646,7 @@ type T20 = InstanceType<Function>; // Error
 
 ## 小结
 
-<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/uPic/高级类型-line.png' alt='高级类型-line'/>
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/advanced-types.png' alt='advanced-types'/>
 
 ## References
 
