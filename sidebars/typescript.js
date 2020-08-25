@@ -1,7 +1,11 @@
 module.exports = [
   'typescript/1.get-started',
   {
-    '2. Types': ['typescript/2.types/basic-types', 'typescript/2.types/enum']
+    '2. Types': [
+      'typescript/2.types/basic-types',
+      'typescript/2.types/enum',
+      'typescript/2.types/advanced-types'
+    ]
   },
   {
     '3. Interface': [
