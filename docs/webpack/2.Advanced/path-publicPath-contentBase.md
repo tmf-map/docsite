@@ -2,8 +2,6 @@
 title: path vs. publicPath vs. contentBase
 ---
 
-import Img from '../../../src/components/Img';
-
 ## 概述
 
 在`webapck`的打包配置中，一般会使用到`path`、 `publicPath` 和 `contentBase`来配置资源路径，那么三者分别代表什么含义呢？三者的含义简要概述如下：

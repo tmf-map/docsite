@@ -2,8 +2,6 @@
 title: 编译选项
 ---
 
-import Img from '../../../src/components/Img';
-
 ## compilerOptions
 
 `compilerOptions`（编译选项）是`tsconfig.json`文件中的重要组成部分，通过配置`compilerOptions`中的属性可以实现项目的定制化编译。当`tsconfig.json`文件中不包含`compilerOptions`对象时，编译器编译时会使用默认值。

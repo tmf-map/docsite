@@ -2,8 +2,6 @@
 title: 文档流
 ---
 
-import Img from '../../../src/components/Img';
-
 ## 流 Flow
 
 流实际上是 CSS 中的一种基本的定位和布局机制，流和现实世界的水流有异曲同工的表现。CSS 世界的“流”似乎就是按照现实世界的“水流”创造的。

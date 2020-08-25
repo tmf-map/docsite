@@ -2,8 +2,6 @@
 title: 列布局
 ---
 
-import Tabs from '@theme/Tabs'; import TabItem from '@theme/TabItem';
-
 ## 两列布局
 
 常见的两列布局有：PX-AUTO, AUTO-PX, 如果使用 flex 进行布局话，那基本上就是一种布局，另外一种通过 `flex-direction` 属性调整即可（DOM 保持不变的情况下）。[在线 Demo](https://codepen.io/muwenzi/pen/WqywJr)

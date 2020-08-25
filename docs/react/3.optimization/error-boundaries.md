@@ -2,8 +2,6 @@
 title: Error Boundaries
 ---
 
-import Img from '../../../src/components/Img';
-
 In the past, JavaScript errors inside components used to corrupt React’s internal state and cause it to emit cryptic errors on next renders. These errors were always caused by an earlier error in the application code, but React did not provide a way to handle them gracefully in components, and could not recover from them. When these errors occur, your app always displays an empty page like this:
 
 <Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/nVraRt.png'/>

@@ -7,8 +7,6 @@ author_image_url: https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/5tLtEV.jpg
 tags: [webhooks, github, Kimi]
 ---
 
-import Img from '../src/components/Img';
-
 ## 前言
 
 对于一些 GitHub 上的仓库，我们希望当代码进入 master 或者其它特定分支时网站能够自动部署。此时，就需要用到 Github Webhooks 功能。本文以静态网站的自动化部署为例，介绍如何配置 GitHub webhook、如何写自动化脚本以及如何开启监听服务等，非静态网站原理也是类似。

@@ -2,8 +2,6 @@
 title: 盒模型
 ---
 
-import Img from '../../../src/components/Img';
-
 ## display
 
 | level | box | display | formatting context |
