@@ -48,6 +48,8 @@
   --my-color-background: #f2f3f4;
   --my-color-main-page-background: var(--my-color-gray-1);
   --my-color-main-page-shadow: rgba(60, 64, 67, 0.1) 0px 1px 3px 1px;
+  --my-color-scrollbar-thumb: var(--my-color-gray-6);
+  --my-color-scrollbar-thumb-hover: var(--my-color-gray-7);
   --my-logo-font-family: 'Eurofighter Expanded';
 
   -webkit-font-smoothing: antialiased;
@@ -57,6 +59,8 @@
   --my-color-background: var(--my-color-gray-10);
   --my-color-main-page-background: var(--ifm-background-color);
   --my-color-main-page-shadow: rgba(230, 233, 236, 0.09) 0px 0px 1px 1px;
+  --my-color-scrollbar-thumb: var(--my-color-gray-8);
+  --my-color-scrollbar-thumb-hover: var(--my-color-gray-7);
   --ifm-footer-background-color: var(--ifm-background-color);
   --ifm-toc-border-color: rgba(191, 191, 191, 0.16);
 }
