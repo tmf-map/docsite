@@ -72,7 +72,9 @@ var isValid = function (s) {
       stack.push('}');
     } else if (s[i] === '(') {
       stack.push(')');
-    } else if (stack.length === 0 || s[i] !== stack.pop()) {
+    } else if (s[i] !== stack.pop()) {
+      return false;
+    } else if (stack.length === 0) {
       return false;
     }
   }

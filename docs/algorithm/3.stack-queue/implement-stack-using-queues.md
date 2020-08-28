@@ -31,6 +31,28 @@ stack.empty(); // returns false
 - Depending on your language, queue may not be supported natively. You may simulate a queue by using a list or deque (double-ended queue), as long as you use only standard operations of a queue.
 - You may assume that all operations are valid (for example, no pop or top operations will be called on an empty stack).
 
+## 思路
+
+使用一个队列作为存储栈元素的主队列，另一个队列作为辅助队列。
+
+入栈操作是在栈顶，跟入队操作在队尾一致，直接使用入队操作即可。
+
+出栈操作在栈顶，但出队在队头，因此需要使用辅助队列暂存一些元素。如下：
+
+执行一次出栈操作，应该将栈顶（队尾）元素 6 出栈，但队列只能从头出队，因此，先将前面的元素都入队到辅助队列中：
+
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/s-by-q-1.png' alt='s-by-q-1' width="500"/>
+
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/s-by-q-2.png' alt='s-by-q-2' width="500"/>
+
+再执行一次出队操作即可弹出栈顶元素，完成出栈操作：
+
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/s-by-q-3.png' alt='s-by-q-3' width="500"/>
+
+之后，我们需要恢复一个存储元素的主队列和一个辅助队列的数据结构，以便执行其它操作：只需调换两个队列即可
+
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/s-by-q-4.png' alt='s-by-q-4' width="500"/>
+
 ## 代码实现
 
 ```js
