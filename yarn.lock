@@ -1305,12 +1305,11 @@
     react-router-dom "^5.1.2"
     react-toggle "^4.1.1"
 
-"@docusaurus/theme-live-codeblock@2.0.0-alpha.61":
-  version "2.0.0-alpha.61"
-  resolved "https://registry.yarnpkg.com/@docusaurus/theme-live-codeblock/-/theme-live-codeblock-2.0.0-alpha.61.tgz#d5cfedb39b2c8a1056faf2c1a7d741be529b2bf6"
-  integrity sha512-igosF2WroIQ7SbMwCDUlO2vaCsfOHn7OPpj6FcQy+00oFMNsSIKImwCV47XjjxGcwleIoHFm+6lPFJjWwvh8Yw==
+"@docusaurus/theme-live-codeblock@2.0.0-alpha.62":
+  version "2.0.0-alpha.62"
+  resolved "https://registry.yarnpkg.com/@docusaurus/theme-live-codeblock/-/theme-live-codeblock-2.0.0-alpha.62.tgz#af2dcaea4a8c650def33434df61c2117d0ab60ad"
+  integrity sha512-W537g5WCs7Vr1BOcHSOD7Np+FbdRAUw3I/IYKl67s5WHckoMJfjNfDiIfUD//CkV+jmpReD9zFE5V7pv0M+bkQ==
   dependencies:
-    "@hapi/joi" "^17.1.1"
     "@philpl/buble" "^0.19.7"
     clsx "^1.1.1"
     parse-numeric-range "^0.0.2"
