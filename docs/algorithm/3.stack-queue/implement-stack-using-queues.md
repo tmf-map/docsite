@@ -43,6 +43,8 @@ stack.empty(); // returns false
 
 <Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/s-by-q-1.png' alt='s-by-q-1' width="500"/>
 
+执行完结果如下：
+
 <Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/s-by-q-2.png' alt='s-by-q-2' width="500"/>
 
 再执行一次出队操作即可弹出栈顶元素，完成出栈操作：
