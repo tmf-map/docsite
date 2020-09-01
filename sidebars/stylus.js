@@ -1,1 +1,1 @@
-module.exports = ['stylus/1.stylus-code-guide'];
+module.exports = ['stylus/1.what-is-stylus'];
