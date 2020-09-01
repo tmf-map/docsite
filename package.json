@@ -43,8 +43,8 @@
   },
   "dependencies": {
     "@docusaurus/core": "2.0.0-alpha.62",
-    "@docusaurus/preset-classic": "2.0.0-alpha.61",
-    "@docusaurus/theme-live-codeblock": "2.0.0-alpha.61",
+    "@docusaurus/preset-classic": "2.0.0-alpha.62",
+    "@docusaurus/theme-live-codeblock": "2.0.0-alpha.62",
     "classnames": "^2.2.6",
     "docusaurus-lunr-search": "^2.1.7",
     "npm-to-yarn": "^1.0.1",

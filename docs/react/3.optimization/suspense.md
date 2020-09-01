@@ -3,7 +3,7 @@ id: suspense
 title: Suspense
 ---
 
-Suspense lets components “wait” for something before rendering. Today, Suspense only supports one use case: [loading components dynamically with React.lazy](). In the future, it will support other use cases like data fetching.
+Suspense lets components “wait” for something before rendering. Today, Suspense only supports one use case: loading components dynamically with React.lazy. In the future, it will support other use cases like data fetching.
 
 - React.lazy
 - React.Suspense
@@ -12,7 +12,7 @@ Suspense lets components “wait” for something before rendering. Today, Suspe
 
 `React.lazy()` lets you define a component that is loaded dynamically. This helps reduce the bundle size to delay loading components that aren’t used during the initial render.
 
-You can learn how to use it from our [code splitting documentation](). You might also want to check out [this article](https://medium.com/@pomber/lazy-loading-and-preloading-components-in-react-16-6-804de091c82d) explaining how to use it in more detail.
+You can learn how to use it from our [code splitting documentation](https://reactjs.org/docs/code-splitting.html). You might also want to check out [this article](https://medium.com/@pomber/lazy-loading-and-preloading-components-in-react-16-6-804de091c82d) explaining how to use it in more detail.
 
 ```jsx
 // This component is loaded dynamically
@@ -45,7 +45,7 @@ function MyComponent() {
 }
 ```
 
-It is documented in our [code splitting guide](). Note that `lazy` components can be deep inside the `Suspense` tree — it doesn’t have to wrap every one of them. The best practice is to place `<Suspense>` where you want to see a loading indicator, but to use lazy() wherever you want to do code splitting.
+It is documented in our [code splitting guide](https://reactjs.org/docs/code-splitting.html). Note that `lazy` components can be deep inside the `Suspense` tree — it doesn’t have to wrap every one of them. The best practice is to place `<Suspense>` where you want to see a loading indicator, but to use lazy() wherever you want to do code splitting.
 
 While this is not supported today, in the future we plan to let `Suspense` handle more scenarios such as data fetching. You can read about this in [our roadmap](https://reactjs.org/blog/2018/11/27/react-16-roadmap.html).
 
