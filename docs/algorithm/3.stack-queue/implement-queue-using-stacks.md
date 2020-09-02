@@ -33,13 +33,11 @@ queue.empty(); // returns false
 
 ## 思路
 
-使用一个栈作为存储队列元素的主栈，另一个栈作为辅助。
+使用一个栈作为存储队列元素的主栈，另一个栈作为辅助。队头对应主栈的栈底，队尾对应主栈的栈顶。
 
 入队操作是在队尾，跟入栈在栈顶一致，直接使用入栈操作即可。
 
-出队操作在队头，但出栈操作在栈顶，因此需要暂存一些元素。
-
-执行一次出队操作，应该将队头元素 2 出队，但栈是能从栈顶 pop，因此先将栈顶元素一个一个出栈，再 push 进辅助栈暂存：
+执行一次出队操作，应该将队头元素 2 出队，但栈只能从栈顶 pop，为了取到位于栈底的队头元素 2，先将其前面的元素一个一个出栈，再 push 进辅助栈暂存：
 
 <Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/q-by-s-1.png' alt='q-by-s-1' width="400"/>
 
@@ -47,21 +45,17 @@ queue.empty(); // returns false
 
 <Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/q-by-s-2.png' alt='q-by-s-2' width="400"/>
 
-这时再执行一次 pop 操作，就可以完成队头元素出队操作：
+这时再执行一次 pop 操作，就可以取到队头元素，完成出队操作：
 
 <Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/q-by-s-3.png' alt='q-by-s-3' width="400"/>
 
-之后我们需要还原主栈，以便进行其它操作。
+之后我们需要还原主栈，恢复其原本的元素顺序，以便进行其它操作。将辅助栈内元素再依次 pop 出来，push 进主栈：
 
 <Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/q-by-s-4.png' alt='q-by-s-4' width="400"/>
 
-将辅助栈内元素再依次 pop 出来，push 进主栈：
-
-<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/q-by-s-5.png' alt='q-by-s-5' width="400"/>
-
 执行完结果如下：
 
-<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/q-by-s-6.png' alt='q-by-s-6' width="400"/>
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/q-by-s-5.png' alt='q-by-s-5' width="400"/>
 
 ## 代码实现
 
