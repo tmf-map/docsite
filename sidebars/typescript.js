@@ -44,6 +44,13 @@ module.exports = [
     ]
   },
   {
+    '8. Migration': [
+      'typescript/8.migration/ts-loader-to-babel-loader',
+      'typescript/8.migration/tslint-to-eslint',
+      'typescript/8.migration/js-to-ts'
+    ]
+  },
+  {
     Config: [
       'typescript/config/tsconfig.json',
       'typescript/config/file-options',
