@@ -40,7 +40,7 @@ title: 队列
 
 ## 循环队列
 
-为充分利用空间，克服"假溢出"现象，将空间想象为一个首尾相接的圆环。存储在其中的队列称为[循环队列（Circular Queue）](/docs/algorithm/3.stack-queue/circular-queue.md)。循环队列是把顺序队列首尾相连，把存储队列元素的表从逻辑上看成一个环。在一个普通队列里，一旦一个队列满了，即使在队列前部仍有空间，也不能再入队。但是使用循环队列，我们能使用这些空间去存储新的值。循环队列的一个好处是我们可以利用这个队列之前用过的空间。
+为充分利用空间，克服"假溢出"现象，将空间想象为一个首尾相接的圆环。存储在其中的队列称为[循环队列（Circular Queue）](/docs/algorithm/3.stack-queue/circular-queue)。循环队列是把顺序队列首尾相连，把存储队列元素的表从逻辑上看成一个环。在一个普通队列里，一旦一个队列满了，即使在队列前部仍有空间，也不能再入队。但是使用循环队列，我们能使用这些空间去存储新的值。循环队列的一个好处是我们可以利用这个队列之前用过的空间。
 
 <Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/circular-queue-null.png' alt='circular-queue-null' width="380"/>
 
