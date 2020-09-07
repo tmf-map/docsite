@@ -216,14 +216,16 @@ Intuitive and flexible destructuring of Objects into individual variables during
 ES6:
 
 ```js
-let {a, b} = obj;
+let {a, b = 1, c: cc, d: dd = 1} = obj;
 ```
 
 ES5:
 
 ```js
 var a = obj.a;
-var b = obj.b;
+var b = obj.b || 1;
+var cc = obj.c;
+var dd = obj.d || 1;
 ```
 
 :::tip
@@ -235,6 +237,27 @@ You can also use it as a param in function, but please wrap the brace with `()`.
 ```js
 const getA = ({a}) => {};
 ```
+
+:::caution
+
+Do not use `ab-cd` pattern as the key of object, otherwise it will cause error when using destructure asssignment:
+
+```js
+let a = {"ab-cd": 123};
+let {ab-cd} = a; // Uncaught SyntaxError: Unexpected token '-'
+let {'ab-cd'} = a // Uncaught SyntaxError: Unexpected token '}'
+```
+
+And you have to use another valid key to avoid this error:
+
+```js
+let {'ab-cd': b} = a;
+b // 123
+let {'xy-z': c = 1} = a;
+c // 1
+```
+
+:::
 
 ### Deep Matching
 
