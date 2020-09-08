@@ -9,9 +9,7 @@ title: 对角线遍历
 
 ## 题目
 
-给你一幅由 `N × N` 矩阵表示的图像，其中每个像素的大小为 4 字节。请你设计一种算法，将图像旋转 90 度。
-
-**不占用额外内存空间能否做到？**
+给定一个含有 M x N 个元素的矩阵（M 行，N 列），请以对角线遍历的顺序返回这个矩阵中的所有元素，对角线遍历如下图所示。
 
 示例 1:
 
@@ -28,7 +26,29 @@ title: 对角线遍历
 
 ## 思路
 
-- 待补充
+**思路一：按顺序遍历矩阵中的每一个元素放入新的二维矩阵，最后再拍平获得遍历后一维数组**
+
+- 从下图对角线遍历的顺序可以知道，`matrix`中一维数组中的元素，分别在连续的对角线层中。因此可以按照`matrix[0] -> matrix[i], matrix[i][0] -> matrix[i][i]`顺序遍历`matrix`，计算当前元素所在的对角线层，然后根据层数的奇偶决定当前元素放进该层的头部还是末尾，最终生成二维数组，然后再将二维数组拍平为一维数组即可。下图中展示了遍历 matrix 之后得到的二维数组
+
+- 缺点：因为生成的是二维数组，且多了一步拍平的过程，导致时间和空间复杂度都有所增加；优点：按顺序遍历二维数组，不需要计算下一秒要遍历的元素的索引，更便于理解
+
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/diagonal-traverse2.jpg' alt='diagonal-traverse2' width='600'/>
+
+**思路二**
+
+- 根据对角线遍历的顺序遍历`matrix`，使用变量 `direction` 表示当前对角线的方向，假设当前对角线头部元素为 `matrix[i][j]`，根据当前对角线方向遍历该对角线：
+
+  1. 向上的对角线，下一个元素是 `matrix[i - 1][j + 1]`
+
+  2. 向下的对角线，下一个元素是 `matrix[i + 1][j - 1]`
+
+- 遍历当前对角线元素直到到达尾部（也是矩阵边界）结束，寻找下一条对角线的头部元素
+
+  1. 向上的对角线头部：如果当前尾部不在矩阵最后一行，则下一个对角线的头部是当前尾部的正下方元素；否则，下一条对角线首部是当前尾部的右边元素
+
+  2. 向下的对角线首部：如果当前尾部不在矩阵最后一行，下一条对角线的首部是当前尾部正下方元素；否则，下一条对角线首部是当前尾部的右边元素
+
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/diagonal-traverse1.jpg' alt='diagonal-traverse1' width='500'/>
 
 ## 代码实现
 
@@ -37,10 +57,53 @@ title: 对角线遍历
  * @param {number[][]} matrix
  * @return {number[]}
  */
-var findDiagonalOrder = function (matrix) {};
+let findDiagonalOrder = function (matrix) {
+  if (!matrix || matrix.length === 0) return [];
+
+  // 矩阵的行数
+  const N = matrix.length;
+  // 矩阵的列数
+  const M = matrix[0].length;
+  let row = 0,
+    column = 0;
+  let direction = 1;
+  let result = new Array(M * N);
+  let r = 0;
+
+  while (row < N && column < M) {
+    // 添加当前元素到result
+    result[r++] = matrix[row][column];
+
+    // 根据当前元素的位置和对角线方向，计算下一个元素的位置
+    let new_row = row + (direction === 1 ? -1 : 1);
+    let new_column = column + (direction === 1 ? 1 : -1);
+
+    // 计算当前元素的索引是否在矩阵的范围内，如果不在，说明要找下一个头部元素了
+    if (new_row < 0 || new_row === N || new_column < 0 || new_column === M) {
+      if (direction === 1) {
+        // 向上对角线
+        // 如果当前尾部不在矩阵最后一行，则下一个对角线的头部是当前尾部的正下方元素；否则，下一条对角线头部是当前尾部的右边元素。
+        row += column === M - 1 ? 1 : 0;
+        column += column < M - 1 ? 1 : 0;
+      } else {
+        // 向下对角线
+        // 如果当前尾部不在矩阵最后一行，下一条对角线的头部是当前尾部正下方元素；否则，下一条对角线头部是当前尾部的右边元素。
+        column += row === N - 1 ? 1 : 0;
+        row += row < N - 1 ? 1 : 0;
+      }
+
+      // 切换对角线方向
+      direction = 1 - direction;
+    } else {
+      row = new_row;
+      column = new_column;
+    }
+  }
+  return result;
+};
 ```
 
 ## 复杂度
 
-- 时间复杂度：
-- 空间复杂度：
+- 时间复杂度：O(N\*M)，
+- 空间复杂度：O(1)，不使用额外空间。注意：输出数组空间不计入空间复杂度，因为这是题目要求的空间。空间复杂度应该指除了最终数组以外的空间。上一个方法中是中间数组，该方法中只有几个变量

@@ -10,7 +10,7 @@ keywords:
 
 ## 数组简介
 
-首先来简单了解一下**线性表（Linear List）**，它是数据按照一定的线性顺序排列而成的数据集合。数组(Array)就是一种线性表数据结构，它用一组**连续的**内存空间，来存储一组元素。常见的线性表结构还有[链表(Linked list)](/docs/algorithm/4.linkedlist/linkedlist-1)、队列(Queue)、[栈(Stack)](/docs/algorithm/3.stack-queue/min-stack)等。
+首先来简单了解一下**线性表（Linear List）**，它是数据按照一定的`线性顺序`排列而成的数据集合。所谓`线性`和`非线性`只在逻辑层面上讨论，而不考虑实际存储。线性表中除了头部和尾部元素外（头部元素有后继元素，尾部元素有前驱元素），其他元素都同时有前驱和后继元素。数组(Array)就是一种线性表数据结构，它用一组**连续的**内存空间，来存储一组元素。常见的线性表结构还有[链表(Linked list)](/docs/algorithm/4.linkedlist/linkedlist-1)、队列(Queue)、[栈(Stack)](/docs/algorithm/3.stack-queue/min-stack)等。
 
 <Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/linearList.jpg' alt='linearList' width='630'/>
 
@@ -24,7 +24,7 @@ keywords:
 
 ### 数组的索引（index）
 
-数组通过名为 `索引` 的数字来标识每个元素在数组中的位置，且在大多数编程语言中，索引是从 0 算起的。可以通过索引快速访问数组中的元素，时间复杂度为 O(1)。而线性表是没有索引的，这是它与数组最大的不同点。
+数组通过名为 `索引` 的数字来标识每个元素在数组中的位置，且在大多数编程语言中，索引是从 0 算起的。可以通过索引快速访问数组中的元素，时间复杂度为 O(1)。索引是数组特有的，而线性表是没有的，这是它与数组最大的不同点。
 
 ## 数组的操作
 
