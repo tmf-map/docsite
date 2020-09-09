@@ -88,6 +88,23 @@ main .container > .row > .col:last-child:not(.footer__col) {
 
 main .container > .row > .col:last-child:not(.footer__col) > div {
   top: calc(var(--ifm-navbar-height) + var(--my-main-padding-top));
+  overflow: hidden;
+}
+
+main .container > .row > .col:last-child:not(.footer__col) > div:hover {
+  overflow: overlay;
+}
+
+main .container > .row > .col:last-child:not(.footer__col) > div:hover::-webkit-scrollbar-thumb {
+  background-color: var(--my-color-scrollbar-thumb);
+}
+
+main .container > .row > .col:last-child:not(.footer__col) > div:hover::-webkit-scrollbar-track-piece {
+  background-color: var(--my-color-background);
+}
+
+main .container > .row > .col:last-child:not(.footer__col) > div:hover::-webkit-scrollbar-thumb:hover {
+  background-color: var(--my-color-scrollbar-thumb-hover);
 }
 
 main .container .col:first-child > div {

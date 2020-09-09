@@ -61,6 +61,9 @@
 
 .menu .menu__list-item {
   margin-right: 3px;
+  white-space: nowrap;
+  /* overflow:hidden;
+  text-overflow:ellipsis; */
 }
 
 .menu .menu__list-item.menu__list-item .menu__link--sublist:after {
