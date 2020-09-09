@@ -92,7 +92,7 @@ main .container > .row > .col:last-child:not(.footer__col) > div {
 }
 
 main .container > .row > .col:last-child:not(.footer__col) > div:hover {
-  overflow: overlay;
+  overflow-y: overlay;
 }
 
 main .container > .row > .col:last-child:not(.footer__col) > div:hover::-webkit-scrollbar-thumb {
