@@ -48,7 +48,7 @@ Object.defineProperty(obj, prop, descriptor);
 `configurable` 字段配置对象属性是否可以删除属性：
 
 ```js
-var person = {};
+let person = {};
 Object.defineProperty(person, 'name', {
   configurable: false,
   enumerable: true,
@@ -62,7 +62,7 @@ console.log(person); //{name: 'robbie'}
 `enumerable` 配置属性是否是可枚举类型使用 `for…in` 或 `Object.keys()` ）：
 
 ```js
-var person = {};
+let person = {};
 Object.defineProperty(person, 'name', {enumerable: false, value: 'robbie'});
 Object.keys(person); // []
 ```
@@ -70,7 +70,7 @@ Object.keys(person); // []
 `writable` 用来配置属性是否可修改：
 
 ```js
-var person = {};
+let person = {};
 Object.defineProperty(person, 'name', {writable: false, value: 'robbie'});
 person.name = 'sherry';
 console.log(person); //{name: 'robbie'}
@@ -79,7 +79,7 @@ console.log(person); //{name: 'robbie'}
 `value` 配置属性值：
 
 ```js
-var person = {};
+let person = {};
 Object.defineProperty(person, 'name', {value: 'robbie'});
 console.log(person); // {name: "robbie"}
 ```
@@ -94,7 +94,7 @@ console.log(person); // {name: "robbie"}
 在特性中使用 `get` / `set` 属性来定义对应的方法。
 
 ```js
-var obj = {log: ['a', 'b', 'c']};
+let obj = {log: ['a', 'b', 'c']};
 
 Object.defineProperty(obj, 'latest', {
   get: function () {
@@ -117,7 +117,7 @@ console.log(obj.log); // ["a", "b", "c", "d"]
 或者直接在对象里面进行 `get` / `set` :
 
 ```js
-var obj = {
+let obj = {
   log: ['a', 'b', 'c'],
   get latest() {
     return this.log[this.log.length - 1];
@@ -144,7 +144,7 @@ get 或 set 不是必须成对出现，任写其一就可以。如果不设置�
 Object.freeze: 不能增加和删除属性，不可以修改属性值(属性值为对象的除外)
 
 ```js
-var app = {
+let app = {
   name: 'ts',
   test: {
     name: 'kimi'
@@ -179,10 +179,10 @@ console.log('name', App.name); // 'asgh'
 - `=` 左边是 Rest，右边是 Spread
 - 函数参数也是 Rest，解构的值要是可迭代的(iterable)。
 
-#### Rest Parameter [ …rest]
+### Rest Parameter […rest]
 
 ```js
-var myName = ['Marina', 'Magdy', 'Shafiq'];
+let myName = ['Marina', 'Magdy', 'Shafiq'];
 const [firstName, ...familyName] = myName;
 console.log(firstName); // Marina ;
 console.log(familyName); // [ "Magdy" , "Shafiq"] ;
@@ -197,11 +197,11 @@ myData('Marina', 24, 'Front-End Developer');
 
 Rest 就像是把多个值压缩成一个值，好像大喊一声，“其余的人都给我过来！”。
 
-#### Spread Operator […spread]
+### Spread Operator […spread]
 
 ```js
-var myName = ['Marina', 'Magdy', 'Shafiq'];
-var newArr = [...myName, 'FrontEnd', 24];
+let myName = ['Marina', 'Magdy', 'Shafiq'];
+let newArr = [...myName, 'FrontEnd', 24];
 console.log(newArr); // ["Marina" , "Magdy" , "Shafiq" , "FrontEnd" , 24 ] ;
 ```
 
@@ -223,12 +223,42 @@ ES5:
 
 ```js
 var a = obj.a;
-var b = obj.b || 1;
+var b = obj.b === void 0 ? 1 : obj.b;
 var cc = obj.c;
-var dd = obj.d || 1;
+var dd = obj.d === void 0 ? 1 : obj.d;
 ```
 
 :::tip
+
+The `void` operator is often used merely to obtain the `undefined` primitive value, usually using `void(0)` (which is equivalent to `void 0`).
+
+:::
+
+```js
+let obj = {
+  a: 0,
+  b: null,
+  c: false,
+  d: '',
+  e: NaN,
+  f: undefined
+};
+
+let {a = 123, b = 123, c = 123, d = 123, e = 123, f = 123} = obj;
+```
+
+Only `f` is `123`:
+
+```js
+a; // 0
+b; // null
+c; // false
+d; // ""
+e; // NaN
+f; // 123
+```
+
+:::caution
 
 You can also use it as a param in function, but please wrap the brace with `()`.
 
@@ -252,9 +282,9 @@ And you have to use another valid key to avoid this error:
 
 ```js
 let {'ab-cd': b} = a;
-b // 123
+b; // 123
 let {'xy-z': c = 1} = a;
-c // 1
+c; // 1
 ```
 
 :::
@@ -398,14 +428,14 @@ ES6 一共有 5 种方法可以遍历对象的属性。
 - 顺序也不是无序随机的，而是遵循一定的规则
 
 ```js
-var obj = {
+let obj = {
   m: function () {},
   b: '',
   2: '',
-  '1': '',
+  1: '',
   [Symbol('b')]: '',
   [Symbol('a')]: '',
-  '3': '',
+  3: '',
   a: ''
 };
 
@@ -441,3 +471,4 @@ Reflect.ownKeys(obj); // ["1", "2", "3", "m", "b", "a", Symbol(b), Symbol(a)]
 4. [【译】JS 解构的五种有趣用法](https://juejin.im/post/5d673044f265da03d60f12f7)
 5. [理解 Object.defineProperty 的作用，作者：戎马](https://segmentfault.com/a/1190000007434923)
 6. [ECMAScript 6 — New Features: Destructuring Assignment, By Dr. Ralf S. Engelschall](http://es6-features.org/#ObjectMatchingDeepMatching)
+7. [MDN: void operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/void)
