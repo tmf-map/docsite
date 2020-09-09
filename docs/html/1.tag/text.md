@@ -56,6 +56,12 @@ title: 文本格式
 <strike>Text</strike>
 ```
 
+### `<s>...</s>`
+
+```jsx live
+<s>Text</s>
+```
+
 ### `<del>...</del>`
 
 ```jsx live
