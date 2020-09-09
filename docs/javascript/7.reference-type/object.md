@@ -466,7 +466,7 @@ Reflect.ownKeys(obj); // ["1", "2", "3", "m", "b", "a", Symbol(b), Symbol(a)]
 ## 参考资料
 
 1. [属性的可枚举性和遍历，作者：阮一峰](http://es6.ruanyifeng.com/#docs/object#%E5%B1%9E%E6%80%A7%E7%9A%84%E5%8F%AF%E6%9E%9A%E4%B8%BE%E6%80%A7%E5%92%8C%E9%81%8D%E5%8E%86)
-2. [stackoverflow: Does JavaScript Guarantee Object Property Order? ](https://stackoverflow.com/a/38218582)
+2. [stackoverflow: Does JavaScript Guarantee Object Property Order?](https://stackoverflow.com/a/38218582)
 3. [ES6: What is the difference between Rest and Spread? By Marina Shafiq](https://medium.com/javascript-in-plain-english/es6-spread-parameter-vs-rest-operator-5e3c924c4e1f)
 4. [【译】JS 解构的五种有趣用法](https://juejin.im/post/5d673044f265da03d60f12f7)
 5. [理解 Object.defineProperty 的作用，作者：戎马](https://segmentfault.com/a/1190000007434923)
