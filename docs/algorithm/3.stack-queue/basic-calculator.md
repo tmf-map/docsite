@@ -39,7 +39,9 @@ Note:
 
 ## 思路
 
-遍历算式字符串，因为运算符有优先级，使用栈来存储运算符和算数。每次将运算符和其对应的算数入栈，如果遇到高优先级的运算符，和栈顶元素运算完后再入栈。
+遍历算式字符串，因为运算符有优先级，使用栈来存储每一次的运算结果。每次将运算符和其对应的算数计算后入栈，如果遇到高优先级的运算符，和栈顶元素运算完后再入栈。
+
+<GifPlayer gif="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/basic-calculator.2020-09-10 13_17_45.gif" still="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/basic-calculator.2020-09-10 13_17_45.png"/>
 
 ## 代码实现
 
