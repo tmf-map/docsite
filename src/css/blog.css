@@ -1,0 +1,50 @@
+article.margin-bottom--xl {
+  background-color: var(--my-color-main-page-background);
+  padding: 1.5rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  border-radius: 8px;
+  margin-bottom: 2.5rem !important;
+}
+
+.main-wrapper > div.container.margin-vert--lg {
+  margin-top: 3rem !important;
+  margin-bottom: 3rem !important;
+}
+
+.main-wrapper > div.container.margin-vert--lg > .row > div.col.col--8.col--offset-2 {
+  padding-left: var(--ifm-spacing-horizontal);
+  padding-right: var(--ifm-spacing-horizontal);
+}
+
+.main-wrapper > div.container.margin-vert--lg > .row > div.col.col--8.col--offset-2 > article {
+  background-color: var(--my-color-main-page-background);
+  padding: 1.5rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  border-radius: 8px;
+}
+
+.main-wrapper > div.container.margin-vert--lg > .row > div.col.col--8.col--offset-2 > article + div {
+  background-color: var(--my-color-main-page-background);
+  padding-left: 3rem;
+  padding-right: 3rem;
+  margin-top: -1rem;
+  padding-bottom: 3rem;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.main-wrapper > div.container.margin-vert--lg > .row > div.col.col--8.col--offset-2 > div.margin-vert--xl {
+  margin-bottom: 0 !important;
+}
+
+.main-wrapper > div.container.margin-vert--lg > .row > div.col.col--8.col--offset-2 > article footer.margin-vert--lg {
+  margin-top: 1rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.main-wrapper > div.container.margin-vert--lg > .row > .col.col--8.col--offset-2 > .margin-vert--xl {
+  margin-bottom: 1.8rem !important;
+  margin-top: 1.8rem !important;
+}
