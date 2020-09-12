@@ -4,9 +4,15 @@ title: getBoundingClientRect
 
 ## Overview
 
-`Element.getBoundingClientRect()` 方法返回元素的宽高和其相对于视窗[Viewport](/docs/css/2.unit-font/viewport#视区-viewport)的位置（`top` `right` `bottom` `left`），元素与视窗的关系，如下图所示：
+`Element.getBoundingClientRect()` 方法返回元素的宽高(`width`、`height`)和其相对于视窗[Viewport](/docs/css/2.unit-font/viewport#视区-viewport)的位置（`top` `right` `bottom` `left`），元素与视窗的关系，如下图所示：
 
 <Img width="600" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200831210220.png" />
+
+:::tip
+
+需要注意的是在标准盒模型下，元素的 size 是等于`width/height + padding + border-width`的，如果设置了`box-sizing: border-box`，元素的 size 即为设置的`width/height`。
+
+:::
 
 ## Syntax
 
@@ -25,6 +31,12 @@ domRect = element.getBoundingClientRect();
 如果元素是一个非矩形的图形，例如元素可能是个五角星、圆或者椭圆之类的非矩形元素，此时返回的结果是以**能包含完整元素的最小矩形**为基准的。如下图：
 
 <Img width="600" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200831210304.png" />
+
+## width & offsetWidth
+
+在一般情况下，`element.getBoundingClientRect().width === element.offsetWidth`（height 与 offsetHeight 同理），但是如果元素设置了`transform`属性，`offsetWidth`和`offsetHeigh`的值并不会被影响，依旧等于`width/height + padding + border-width`。而`element.getBoundingClientRect()`的所有返回值会返回真实渲染的值。
+
+例如，一个宽高都为 100px 的元素，当为元素设置`transform: scale(0.5)`时，`element.getBoundingClientRect().width`的返回值为`50px`，而`offsetWidth`的值为依旧为`100px`。这里有一个小的[demo](https://codepen.io/ustc-han/pen/dyMegRj)，可以观察下两者的具体区别。
 
 ## Application
 
@@ -87,11 +99,16 @@ function isInViewPort(element) {
 }
 ```
 
-:::tip 此处只考虑了在垂直方向上，元素是否在视窗内，如果还要考虑水平移动，需要对 left 和 right 进行判断。 :::
+:::tip
+
+此处只考虑了在垂直方向上，元素是否在视窗内，如果还要考虑水平移动，需要对 left 和 right 进行判断。
+
+:::
 
 ## 参考链接
 
-1. [MDN 文档--getBoundingClientRect](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/getBoundingClientRect)
+1. [MDN 文档--getBoundingClientRect](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRe)
 1. [getBoundingClientRect 的用法, by 椰子糖糖发射机](https://juejin.im/post/6844903888902963213)
 1. [你真的会用 getBoundingClientRect 吗？,by zuopf769](https://github.com/zuopf769/notebook/blob/master/fe/%E4%BD%A0%E7%9C%9F%E7%9A%84%E4%BC%9A%E7%94%A8getBoundingClientRect%E5%90%97/README.md)
 1. [判断元素是否在视窗之内](https://cloud.tencent.com/developer/article/1548752)
+1. [clientWidth 和 getBoundingClientRect, by Qz](https://qinzhen001.github.io/2017/11/29/clientWidth%E5%92%8CgetBoundingClientRect-myblog/)
