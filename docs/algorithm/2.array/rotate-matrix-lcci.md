@@ -53,14 +53,45 @@ title: 旋转矩阵
 
 ## 思路
 
-- 待补充
+- 先水平翻转，再通过主对角线翻转
+
+```text
+1, 2, 3      7, 8, 9      7, 4, 1
+4, 5, 6  =>  4, 5, 6  =>  8, 5, 2
+7, 8, 9      1, 2, 3      9, 6, 3
+```
 
 ## 代码实现
 
 ```js
+/**
+ * @param {number[][]} matrix
+ * @return {void} Do not return anything, modify matrix in-place instead.
+ */
+let rotate = function (matrix) {
+  let n = matrix.length;
+  let temp;
+  // 水平翻转
+  for (let i = 0; i < n / 2; ++i) {
+    for (let j = 0; j < n; ++j) {
+      temp = matrix[n - i - 1][j];
+      matrix[n - i - 1][j] = matrix[i][j];
+      matrix[i][j] = temp;
+    }
+  }
+  // 主对角线翻转
+  for (let i = 0; i < n; ++i) {
+    for (let j = 0; j < i; ++j) {
+      temp = matrix[j][i];
+      matrix[j][i] = matrix[i][j];
+      matrix[i][j] = temp;
+    }
+  }
+};
 ```
 
 ## 复杂度
 
-- 时间复杂度：
-- 空间复杂度：
+- 时间复杂度：O(N<sup>2</sup>)，其中 N 是 矩阵 的边长。对于每一次翻转操作，我们都需要枚举矩阵中一半的元素
+
+- 空间复杂度：O(1)

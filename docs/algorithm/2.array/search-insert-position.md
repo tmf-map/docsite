@@ -53,9 +53,9 @@ title: 搜索插入位置
 ```js
 let searchInsert = function (nums, target) {
   const n = nums.length;
-  let left = 0,
-    right = n - 1,
-    ans = n;
+  let left = 0;
+  let right = n - 1;
+  let ans = n;
   while (left <= right) {
     let mid = ((right - left) >> 1) + left;
     if (target <= nums[mid]) {
