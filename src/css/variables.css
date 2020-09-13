@@ -48,8 +48,8 @@
   --my-color-background: #f2f3f4;
   --my-color-main-page-background: var(--my-color-gray-1);
   --my-color-main-page-shadow: rgba(60, 64, 67, 0.1) 0px 1px 3px 1px;
-  --my-color-scrollbar-thumb: var(--my-color-gray-6);
-  --my-color-scrollbar-thumb-hover: var(--my-color-gray-7);
+  --my-color-scrollbar-thumb: var(--my-color-gray-5);
+  --my-color-scrollbar-thumb-hover: var(--my-color-gray-6);
   --my-logo-font-family: 'Eurofighter Expanded';
 
   -webkit-font-smoothing: antialiased;

@@ -31,11 +31,15 @@ title: 队列
 
 ## 循环队列
 
-为充分利用空间，克服"假溢出"现象，将空间想象为一个首尾相接的圆环，这种队列我们将其称为[循环队列（Circular Queue）](/docs/algorithm/3.stack-queue/circular-queue)。可以利用这个队列之前用过的空间去存储新的值。当存储空间的最后一个位置已被使用而再要进入队时，只要存储空间的第一个位置空闲，便可将元素加入到第一个位置，即将存储空间的第一个位置作为队尾。
+为充分利用空间，克服"假溢出"现象，将空间想象为一个首尾相接的圆环，这种队列我们将其称为[循环队列（Circular Queue）](/docs/algorithm/3.stack-queue/circular-queue)，如下图所示：
 
 <Img w="750" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/crnFrD.png' alt='crnFrD'/>
 
-在循环队列中，当队列为空时，有`head = tail`，而当所有队列空间全占满时，也有`head = tail`。为了区别这两种情况，规定循环队列最多只能有`MaxSize - 1`个队列元素，当循环队列中只剩下一个空存储单元时，队列就已经满了。因此，队列判空的条件是`head = tail`，而队列判满的条件是`head =（tail+1) % MaxSize`。
+在循环队列中，当队列为空时，有`head = tail`，如果当所有队列空间全占满时，也有`head = tail`，将无法区别这两种情况，所以规定循环队列最多只能有`MaxSize - 1`个队列元素，当循环队列中只剩下一个空存储单元时，队列就已经满了。因此，队列判空的条件是`head = tail`，而队列判满的条件是`head =（tail+1) % MaxSize`。
+
+对于"假溢出"现象，比如下面这张图，刚开始队列已满，然后进行了一次出队操作，空出了 `0` 这个位置，下一个元素 `8` 入队列时，因为是循环队列，`tail` 可以继续移动到 `0` 的位置：
+
+<Img w="760" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/EV9ea5.png' alt='EV9ea5'/>
 
 ## 双端队列
 
