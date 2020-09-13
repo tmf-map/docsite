@@ -2,14 +2,13 @@
 title: BigInt
 ---
 
-import Img from '../../../src/components/Img';
-
 ## The problem in number
 
 In some special scenarios, the backend may return such a string:
 
 ```js
 '{"value": 9223372036854775807}'; // 19-digits
+
 ```
 
 If you use `JSON.parse ()` to parse directly:

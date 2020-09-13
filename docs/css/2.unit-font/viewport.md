@@ -2,8 +2,6 @@
 title: 'vh/vw'
 ---
 
-import Img from '../../../src/components/Img';
-
 ## 视区 viewport
 
 有些文章直译成“视口”，我觉得太挫了，中文你都看不懂是啥意思，翻译成视窗和视区还行，不过视区容易和市区谐音。

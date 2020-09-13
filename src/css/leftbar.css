@@ -1,6 +1,32 @@
 /* Left content */
+.menu {
+  overflow: hidden;
+}
+
+.menu:hover {
+  overflow-y: overlay;
+}
+
+/* .menu:hover::-webkit-scrollbar {
+  width: 6px;
+} */
+
+.menu:hover::-webkit-scrollbar-thumb {
+  background-color: var(--my-color-scrollbar-thumb);
+}
+
+.menu:hover::-webkit-scrollbar-track-piece {
+  background-color: var(--my-color-background);
+}
+
+.menu:hover::-webkit-scrollbar-thumb:hover {
+  background-color: var(--my-color-scrollbar-thumb-hover);
+}
+
 .menu .menu__link {
   border: 1px solid transparent;
+  border-top-right-radius: 1.0625rem;
+  border-bottom-right-radius: 1.0625rem;
   line-height: 1.25rem;
   font-size: 0.9375rem;
 }
@@ -31,6 +57,13 @@
   background-image: url('data:image/svg+xml;utf8,<svg preserveAspectRatio="xMidYMid meet" height="1em" width="1em" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="rgba(157,170,182,1)"><g><polyline points="9 18 15 12 9 6"></polyline></g></svg>');
   background-size: 1.1rem 1.1rem;
   color: rgba(0, 0, 0, 0.2)
+}
+
+.menu .menu__list-item {
+  margin-right: 3px;
+  white-space: nowrap;
+  /* overflow:hidden;
+  text-overflow:ellipsis; */
 }
 
 .menu .menu__list-item.menu__list-item .menu__link--sublist:after {

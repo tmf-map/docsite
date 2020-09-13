@@ -3,8 +3,6 @@ id: binary-search-plus
 title: 二分查找几种变体
 ---
 
-import Img from '../../../src/components/Img'; import GifPlayer from '../../../src/components/GifPlayer';
-
 对于存在重复数字的有序序列，二分查找有几种变体。
 
 ## 查找第一个值等于目标值的元素

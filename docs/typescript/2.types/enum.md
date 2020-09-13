@@ -10,9 +10,11 @@ title: Enum
 - [字符串枚举（String enum）](/docs/typescript/2.types/enum#字符串枚举)
 - [异构枚举（Heterogeneous enum）](/docs/typescript/2.types/enum#异构枚举)
 
-## 数字枚举
+## 作为变量
 
-### 自动递增
+### 数字枚举
+
+#### 自动递增
 
 ```ts
 enum Days {
@@ -74,7 +76,7 @@ console.log(Days[3] === 'Wed'); // true
 
 :::
 
-### 反向映射
+#### 反向映射
 
 正向映射是指由`key`求出`value`的过程，而反向映射是指由`value`求出`key`的过程。数字枚举除了具有上述功能外，还具有**反向映射**功能，如下所示：
 
@@ -123,7 +125,7 @@ console.log(Days); // {0: "Sun", 1: "Mon", 2: "Tue", 3: "Wed", 4: "Thu", 5: "Fri
 
 由上面编译的结果可知，对于枚举中的`Days`是由`JS`中的对象实现的。`Days`的枚举成员和对应的值分别作为 Days 的`key: value`，然后又作为`value: key`存到`Days`对象中，实现了反向映射功能。
 
-## 字符串枚举
+### 字符串枚举
 
 字符串枚举要求每一个枚举成员的值都必须是字符串，或者是对其它字符串枚举成员的引用。
 
@@ -150,7 +152,7 @@ var Direction;
 
 与数字枚举相比，字符串枚举没有**反向映射**，但是字符串枚举可以提供一个运行时更有意义的值。
 
-## 异构枚举
+### 异构枚举
 
 异构枚举即枚举成员既包含字符串成员，又包括数字成员。如下所示：
 
@@ -167,7 +169,7 @@ enum BooleanLikeHeterogeneousEnum {
 
 :::
 
-## 枚举成员
+### 枚举成员
 
 在枚举类型中，枚举成员通常分为**常数项**和**计算所得项**两种。下面的例子展示了两种成员类型的用法：
 
@@ -211,7 +213,7 @@ enum Color {
 
 :::
 
-## 常量枚举
+### 常量枚举
 
 在某些需求很严格的情况下，为了避免在额外生成的代码上的开销和额外的非直接的对枚举成员的访问，我们可以使用**常量枚举**，**常量枚举**是指使用 `const enum` 定义的枚举类型，**它的枚举成员都是常数项**，如下所示：
 
@@ -254,7 +256,77 @@ const enum Color {
 
 :::
 
-## 作为变量类型
+### 遍历枚举变量
+
+```ts
+enum Days {
+  Sun,
+  Mon,
+  Tue,
+  Wed,
+  Thu,
+  Fri,
+  Sat
+}
+
+for (let enumMember in Days) {
+  console.log('enum member: ', enumMember);
+}
+```
+
+Output:
+
+```bash
+enum member:  0
+enum member:  1
+enum member:  2
+enum member:  3
+enum member:  4
+enum member:  5
+enum member:  6
+enum member:  Sun
+enum member:  Mon
+enum member:  Tue
+enum member:  Wed
+enum member:  Thu
+enum member:  Fri
+enum member:  Sat
+```
+
+以上我们发现直接遍历的时候 name 和 value 都打印出来了，其实转成 JS 的时候结构是比较特殊的，和其他语言的 Enum 还有本质上的区别：
+
+```js
+'use strict';
+var Days;
+(function (Days) {
+  Days[(Days['Sun'] = 0)] = 'Sun';
+  Days[(Days['Mon'] = 1)] = 'Mon';
+  Days[(Days['Tue'] = 2)] = 'Tue';
+  Days[(Days['Wed'] = 3)] = 'Wed';
+  Days[(Days['Thu'] = 4)] = 'Thu';
+  Days[(Days['Fri'] = 5)] = 'Fri';
+  Days[(Days['Sat'] = 6)] = 'Sat';
+})(Days || (Days = {}));
+for (let enumMember in Days) {
+  console.log('enum member: ', enumMember);
+}
+```
+
+其本质上还是 Object，也可以使用 `Object.keys` 进行遍历:
+
+```ts
+Object.keys(Days).forEach(v => {
+  console.log('enum member: ', v);
+});
+```
+
+:::tip
+
+Enum 本质上还是 Object，可以使用 Object 相关的方法，遍历的时候如果只需要获取 name 或 value 还需要进一步过滤。
+
+:::
+
+## 作为类型
 
 在`TS`中，枚举和枚举成员可以作为一种类型存在，即**已经定义好的枚举变量和枚举成员可以作为变量类型来定义变量**。例如在函数中，**枚举类型变量可以作为函数的返回类型**，如下例所示：
 
@@ -305,3 +377,4 @@ console.log(e === f); // This condition will always return 'false' since the typ
 2. [TypeScript 入门教程，by xcatliu](https://ts.xcatliu.com/advanced/enum#wai-bu-mei-ju)
 3. [TypeScript in action, by Liang Xiao](https://time.geekbang.org/course/detail/211-108549)
 4. [TypeScript Data Type - Enum, by Tutorials Teacher](https://www.tutorialsteacher.com/typescript/typescript-enum)
+5. [How to get names of enum entries? stackoverflow, by Judah Gabriel Himango](https://stackoverflow.com/questions/18111657/how-to-get-names-of-enum-entries)

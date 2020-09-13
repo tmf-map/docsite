@@ -2,8 +2,6 @@
 title: 类型转换
 ---
 
-import Img from '../../../src/components/Img';
-
 ## 手动类型转换
 
 ### 将任意类型的值转为原始类型的值
@@ -175,18 +173,18 @@ var obj =
 
 ```js
 +true - // 1
-false + // 0
-'abc' - // NaN
-'abc' + // NaN
-[] + // 0
-['12'] + // 12
-{} + //NaN
-null + // 0
-undefined + //NaN
-new Date() + // Date.now()
-'   1   ' + // 1
-'1.2e2' + // 120
-new Set() + //NaN
+  false + // 0
+  'abc' - // NaN
+  'abc' + // NaN
+  [] + // 0
+  ['12'] + // 12
+  {} + //NaN
+  null + // 0
+  undefined + //NaN
+  new Date() + // Date.now()
+  '   1   ' + // 1
+  '1.2e2' + // 120
+  new Set() + //NaN
   new Map(); //NaN
 ```
 

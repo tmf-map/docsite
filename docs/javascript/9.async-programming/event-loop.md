@@ -2,8 +2,6 @@
 title: 事件循环
 ---
 
-import Img from '../../../src/components/Img';
-
 ## 浏览器事件循环
 
 事件循环可以理解成由三部分组成，分别是：

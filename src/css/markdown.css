@@ -91,3 +91,12 @@
 .markdown ul.tabs {
   background-color: rgba(185, 202, 218, 0.2);
 }
+
+.markdown code,
+.table-of-contents code {
+  background-color: var(--ifm-code-background);
+}
+
+.markdown code {
+  color: var(--ifm-code-color);
+}

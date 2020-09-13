@@ -3,10 +3,6 @@ id: linked-list-cycle
 title: 判断链表中是否有环
 ---
 
-import Tabs from '@theme/Tabs';
-
-import TabItem from '@theme/TabItem';
-
 - 在线：[LeetCode: 141](https://leetcode.com/problems/linked-list-cycle/)
 
 ## 题目
