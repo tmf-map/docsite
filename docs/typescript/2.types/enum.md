@@ -270,7 +270,7 @@ enum Days {
 }
 
 for (let enumMember in Days) {
-   console.log("enum member: ", enumMember);
+  console.log('enum member: ', enumMember);
 }
 ```
 
@@ -284,40 +284,40 @@ enum member:  3
 enum member:  4
 enum member:  5
 enum member:  6
-enum member:  Sun 
-enum member:  Mon 
-enum member:  Tue 
-enum member:  Wed 
-enum member:  Thu 
-enum member:  Fri 
-enum member:  Sat 
+enum member:  Sun
+enum member:  Mon
+enum member:  Tue
+enum member:  Wed
+enum member:  Thu
+enum member:  Fri
+enum member:  Sat
 ```
 
 以上我们发现直接遍历的时候 name 和 value 都打印出来了，其实转成 JS 的时候结构是比较特殊的，和其他语言的 Enum 还有本质上的区别：
 
 ```js
-"use strict";
+'use strict';
 var Days;
 (function (Days) {
-    Days[Days["Sun"] = 0] = "Sun";
-    Days[Days["Mon"] = 1] = "Mon";
-    Days[Days["Tue"] = 2] = "Tue";
-    Days[Days["Wed"] = 3] = "Wed";
-    Days[Days["Thu"] = 4] = "Thu";
-    Days[Days["Fri"] = 5] = "Fri";
-    Days[Days["Sat"] = 6] = "Sat";
+  Days[(Days['Sun'] = 0)] = 'Sun';
+  Days[(Days['Mon'] = 1)] = 'Mon';
+  Days[(Days['Tue'] = 2)] = 'Tue';
+  Days[(Days['Wed'] = 3)] = 'Wed';
+  Days[(Days['Thu'] = 4)] = 'Thu';
+  Days[(Days['Fri'] = 5)] = 'Fri';
+  Days[(Days['Sat'] = 6)] = 'Sat';
 })(Days || (Days = {}));
 for (let enumMember in Days) {
-    console.log("enum member: ", enumMember);
+  console.log('enum member: ', enumMember);
 }
 ```
 
 其本质上还是 Object，也可以使用 `Object.keys` 进行遍历:
 
 ```ts
-Object.keys(Days).forEach(v=> {
-  console.log("enum member: ", v);
-})
+Object.keys(Days).forEach(v => {
+  console.log('enum member: ', v);
+});
 ```
 
 :::tip
