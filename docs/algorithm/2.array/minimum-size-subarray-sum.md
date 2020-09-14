@@ -42,8 +42,8 @@ let minSubArrayLen = function (s, nums) {
     return 0;
   }
   let ans = n + 1;
-  let start = 0,
-    end = 0;
+  let start = 0;
+  let end = 0;
   let sum = 0;
   while (end < n) {
     sum += nums[end];
