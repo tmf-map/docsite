@@ -4,9 +4,16 @@ module.exports = {
     'algorithm/1.analysis-of-algorithms/analysis-of-loops'
   ],
   '2. 数组': [
+    'algorithm/2.array/array-introduce',
+    'algorithm/2.array/array-skills',
+    'algorithm/2.array/search-insert-position',
     'algorithm/2.array/duplicated-number-in-array',
+    'algorithm/2.array/kth-largest-element-in-an-array',
     'algorithm/2.array/inverse-pairs',
-    'algorithm/2.array/3sum'
+    'algorithm/2.array/3sum',
+    'algorithm/2.array/rotate-matrix-lcci',
+    'algorithm/2.array/diagonal-traverse',
+    'algorithm/2.array/minimum-size-subarray-sum'
   ],
   '3. 栈与队列': [
     {
