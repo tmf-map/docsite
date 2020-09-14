@@ -173,18 +173,18 @@ var obj =
 
 ```js
 +true - // 1
-false + // 0
-'abc' - // NaN
-'abc' + // NaN
-[] + // 0
-['12'] + // 12
-{} + //NaN
-null + // 0
-undefined + //NaN
-new Date() + // Date.now()
-'   1   ' + // 1
-'1.2e2' + // 120
-new Set() + //NaN
+  false + // 0
+  'abc' - // NaN
+  'abc' + // NaN
+  [] + // 0
+  ['12'] + // 12
+  {} + //NaN
+  null + // 0
+  undefined + //NaN
+  new Date() + // Date.now()
+  '   1   ' + // 1
+  '1.2e2' + // 120
+  new Set() + //NaN
   new Map(); //NaN
 ```
 
