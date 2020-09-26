@@ -64,6 +64,10 @@ var y =
 
 其中的 `window.pageXOffset` 和 `window.pageYOffset` 分别是 `window.scrollX` 和 `window.scrollY`的别名，两者是相等的，但是 window.pageXOffset 和 window.pageYOffset 具有较好的兼容性。
 
+`window.scrollY`的示意图如下：
+
+<Img width="400" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200926193731.png" />
+
 `window.pageXOffset` 表示文档/页面水平方向滚动的像素值。其加上元素到视窗的水平距离，可以得到元素到整个网页左上角的水平距离。
 
 `window.pageYOffset` 表示文档/页面垂直方向滚动的像素值。其加上元素到视窗的垂直距离，可以得到元素到整个网页左上角的垂直距离。
