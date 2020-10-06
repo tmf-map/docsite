@@ -7,11 +7,15 @@ module.exports = [
     ],
     '2. Basic Syntax': [
       'python/2.basic-syntax/data-type',
-      'python/2.basic-syntax/variable',
-      'python/2.basic-syntax/if-else',
-      'python/2.basic-syntax/loop',
-      'python/2.basic-syntax/list',
-      'python/2.basic-syntax/dict'
+      'python/2.basic-syntax/string-unicode',
+      'python/2.basic-syntax/condition',
+      'python/2.basic-syntax/loop'
+    ],
+    '3. Basic Data Structure': [
+      'python/3.basic-data-structure/list',
+      'python/3.basic-data-structure/set',
+      'python/3.basic-data-structure/tuple',
+      'python/3.basic-data-structure/dict'
     ]
   }
 ];
