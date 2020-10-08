@@ -7,14 +7,14 @@ module.exports = [
     ],
     '2. Basic Syntax': [
       'python/2.basic-syntax/data-type',
-      'python/2.basic-syntax/string-unicode',
-      'python/2.basic-syntax/control-workflow'
+      'python/2.basic-syntax/unicode-string',
+      'python/2.basic-syntax/control-flow'
     ],
-    '3. Basic Data Structure': [
-      'python/3.basic-data-structure/list',
-      'python/3.basic-data-structure/set',
-      'python/3.basic-data-structure/tuple',
-      'python/3.basic-data-structure/dict'
+    '3. Built-in Data Structure': [
+      'python/3.built-in-data-structure/list',
+      'python/3.built-in-data-structure/set',
+      'python/3.built-in-data-structure/tuple',
+      'python/3.built-in-data-structure/dict'
     ]
   }
 ];

@@ -349,3 +349,7 @@ set()
 >>> basket_copy
 {'apple', 'banana', 'orange', 'pear'}
 ```
+
+## 参考资料
+
+1. [菜鸟教程：Python3 集合](https://www.runoob.com/python3/python3-set.html)

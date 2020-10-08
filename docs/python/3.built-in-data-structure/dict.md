@@ -205,3 +205,7 @@ NameError: name 'dict6' is not defined
 ### `popitem()`
 
 随机返回并删除字典中的最后一对键和值。
+
+## 参考资料
+
+1. [菜鸟教程：Python3 字典](https://www.runoob.com/python3/python3-dictionary.html)

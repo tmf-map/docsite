@@ -189,3 +189,7 @@ TypeError: '>' not supported between instances of 'int' and 'str'
 >>> min(tup2)
 '4'
 ```
+
+## 参考资料
+
+1. [菜鸟教程：Python3 元组](https://www.runoob.com/python3/python3-tuple.html)

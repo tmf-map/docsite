@@ -24,7 +24,7 @@ a = [1, 2, 3]
 通过下标的方式读取元素的时候，索引若超出了范围，Python 会报一个 `IndexError` 错误，所以，要确保索引不要越界。
 
 ```py
-a[3]
+>>> a[3]
 ---------------------------------------------------------------------------
 IndexError                                Traceback (most recent call last)
 <ipython-input-17-1c90a8b28085> in <module>
@@ -117,3 +117,7 @@ list 是一个可变的有序表，所以，可以往 list 中追加元素到末
 ### `list.clear()`
 
 ### `list.copy()`
+
+## 参考资料
+
+1. [菜鸟教程：Python3 列表](https://www.runoob.com/python3/python3-list.html)
