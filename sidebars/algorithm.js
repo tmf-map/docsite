@@ -56,6 +56,13 @@ module.exports = {
     'algorithm/5.binary-tree/maximum-depth-of-binary-tree',
     'algorithm/5.binary-tree/balanced-binary-tree'
   ],
+  '6. 图': [
+    'algorithm/6.graph/graph',
+    'algorithm/6.graph/bfs-dfs',
+    'algorithm/6.graph/number-of-islands',
+    'algorithm/6.graph/is-graph-bipartite',
+    'algorithm/6.graph/find-the-town-judge'
+  ],
   '8. 排序': [
     'algorithm/8.sort/sort-basic',
     {
