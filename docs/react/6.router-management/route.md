@@ -114,9 +114,9 @@ const Main = () => (
 
 ## 嵌套路由
 
-文章详情页路由`/article/:id`并未包含在上述 &lt;Switch&gt; 中。它由 &lt;Article&gt; 组件负责在路径包含 '/article' 的情形下进行渲染。
+文章详情页路由`/article/:id`并未包含在上述 `<Switch>` 中。它由 `<Article>` 组件负责在路径包含 `/article` 的情形下进行渲染。
 
-在&lt;Article&gt;组件中，我们将为两种路径进行渲染：
+在 `<Article>` 组件中，我们将为两种路径进行渲染：
 
 - /article ：对应路径名仅仅是/article 时，因此需要在 exact 元素上添加 exact 参数。
 - /article/:id ：  该路由使用一个路由参数来获取 /article 后的路径名。
@@ -132,15 +132,14 @@ const Article = () => (
 
 组合在相同组件中分享共同前缀的路由是一种有用的方法。这就需要简化父路由并且提供一个区域来渲染具有相同前缀的通用路由。
 
-例如，&lt;Article&gt; 用来渲染所有以`/article`开始的全部路由。
+例如，`<Article>` 用来渲染所有以`/article`开始的全部路由。
 
 ```jsx
 const Article = () => (
   <div>
     <h2>This is a article page!</h2>
     <nav>
-      <span>ArticleList</span>
-      <span>ArticleList</span>
+      <Link to="/article">Article List</span>
     </nav>
     <Switch>
       <Route exact path="/article" component={ArticleList} />
@@ -153,6 +152,22 @@ const Article = () => (
 :::caution
 
 Switch 里面直接要嵌套 Route，否则在路由跳转的时候会出现一些意想不到的情况。
+
+:::
+
+下面我们将 Article 放到整个系统中，即在其外面还有一层主路由，例如：
+
+```jsx
+<Switch>
+  <Route exact path="/home" component={Home} />
+  <Route exact path="/author" component={Author} />
+  <Route path="/article" component={Article} />
+</Switch>
+```
+
+:::caution
+
+此时，`/article` 路由不能用 `exact`，否则 `<Article>` 组件中的 `<Switch>` 将会失效，不能正确地根据不同子路由渲染对应的组件。
 
 :::
 
