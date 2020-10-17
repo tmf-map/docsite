@@ -50,7 +50,7 @@
     "docusaurus-lunr-search": "^2.1.7",
     "npm-to-yarn": "^1.0.1",
     "react": "^16.14.0",
-    "react-dom": "^16.13.1",
+    "react-dom": "^16.14.0",
     "react-lifecycles-compat": "^3.0.4",
     "react-toggle": "^4.1.1"
   },
