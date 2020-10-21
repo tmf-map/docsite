@@ -214,10 +214,10 @@ module.exports = {
         },
         {to: 'blog', label: 'Blog', position: 'right'},
         {
-          to: 'docs/wiki/1.get-started',
-          activeBasePath: 'docs/wiki/',
           label: 'Wiki',
-          position: 'right'
+          position: 'right',
+          activeBasePath: 'docs/wiki/',
+          to: 'docs/wiki/1.get-started'
         }
       ]
     },
