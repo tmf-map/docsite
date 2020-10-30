@@ -66,7 +66,7 @@ var y =
 
 `window.scrollY`的示意图如下：
 
-<Img width="400" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200926193731.png" />
+<Img width="500" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200926193731.png" />
 
 `window.pageXOffset` 表示文档/页面水平方向滚动的像素值。其加上元素到视窗的水平距离，可以得到元素到整个网页左上角的水平距离。
 

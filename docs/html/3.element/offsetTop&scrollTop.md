@@ -16,9 +16,9 @@ title: offsetTop & scrollTop
 
 ## scrollTop & scrollLeft
 
-`element.offsetTop`和 `element.offsetLeft`分别代编垂直方向和水平方向滚动（内卷）的像素值。当一个元素的内容没有产生垂直方向的滚动条，`scrollTop` 值为 0。同理，当没有水平方向的滚动条，`scrollLeft` 值为 0。
+`element.scrollTop`和 `element.scrollLeft`分别代编垂直方向和水平方向滚动（内卷）的像素值。当一个元素的内容没有产生垂直方向的滚动条，`scrollTop` 值为 0。同理，当没有水平方向的滚动条，`scrollLeft` 值为 0。
 
-这两个属性值，都不是可读属性值，例如，可以如下设置`scrollTop`的值：
+这两个属性为可写属性，例如，可以设置`scrollTop`的值：
 
 ```js
 // Set the number of pixels scrolled.
@@ -35,7 +35,7 @@ element.scrollTop = intValue;
 
 `scrollTop`的示意图如下：
 
-<Img width="400" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200926185326.png" />
+<Img width="500" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200926185326.png" />
 
 通过上图可以看出，`scrollTop`的返回值为元素内容顶部到**它对应的`viewport`**可见内容顶部的距离。
 
