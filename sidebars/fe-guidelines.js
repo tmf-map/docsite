@@ -20,5 +20,6 @@ module.exports = [
       'fe-guidelines/7.frameworks-libs/redux'
     ]
   },
-  'fe-guidelines/8.commit-message'
+  'fe-guidelines/8.commit-message',
+  'fe-guidelines/9.stylus-code-guide'
 ];

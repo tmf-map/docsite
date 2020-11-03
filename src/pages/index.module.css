@@ -59,6 +59,7 @@ html[data-theme="dark"] .section-bgwhite-block-left {
 
 .landing {
   -webkit-font-smoothing: auto;
+  background-color: var(--uni-background-color);
 }
 
 .landing table thead {

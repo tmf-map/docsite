@@ -4,11 +4,40 @@ module.exports = {
     'algorithm/1.analysis-of-algorithms/analysis-of-loops'
   ],
   '2. 数组': [
+    'algorithm/2.array/array-introduce',
+    'algorithm/2.array/array-skills',
+    'algorithm/2.array/search-insert-position',
     'algorithm/2.array/duplicated-number-in-array',
+    'algorithm/2.array/kth-largest-element-in-an-array',
     'algorithm/2.array/inverse-pairs',
-    'algorithm/2.array/3sum'
+    'algorithm/2.array/3sum',
+    'algorithm/2.array/rotate-matrix-lcci',
+    'algorithm/2.array/diagonal-traverse',
+    'algorithm/2.array/minimum-size-subarray-sum'
   ],
-  '3. 栈与队列': ['algorithm/3.stack-queue/min-stack'],
+  '3. 栈与队列': [
+    {
+      type: 'category',
+      label: '栈',
+      items: [
+        'algorithm/3.stack-queue/stack',
+        'algorithm/3.stack-queue/min-stack',
+        'algorithm/3.stack-queue/basic-calculator',
+        'algorithm/3.stack-queue/valid-parentheses',
+        'algorithm/3.stack-queue/implement-queue-using-stacks'
+      ]
+    },
+    {
+      type: 'category',
+      label: '队列',
+      items: [
+        'algorithm/3.stack-queue/queue',
+        'algorithm/3.stack-queue/circular-queue',
+        'algorithm/3.stack-queue/sliding-window-max',
+        'algorithm/3.stack-queue/implement-stack-using-queues'
+      ]
+    }
+  ],
   '4. 链表': [
     'algorithm/4.linkedlist/linkedlist-1',
     'algorithm/4.linkedlist/linkedlist-2',
@@ -26,6 +55,13 @@ module.exports = {
     'algorithm/5.binary-tree/subtree',
     'algorithm/5.binary-tree/maximum-depth-of-binary-tree',
     'algorithm/5.binary-tree/balanced-binary-tree'
+  ],
+  '6. 图': [
+    'algorithm/6.graph/graph',
+    'algorithm/6.graph/bfs-dfs',
+    'algorithm/6.graph/number-of-islands',
+    'algorithm/6.graph/is-graph-bipartite',
+    'algorithm/6.graph/find-the-town-judge'
   ],
   '8. 排序': [
     'algorithm/8.sort/sort-basic',

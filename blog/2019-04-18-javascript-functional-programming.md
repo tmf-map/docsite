@@ -519,7 +519,7 @@ Lodash 在**数组超过 200 个**才会启动惰性求值。因为惰性求值�
 
 `short-fusion`是 lodash 的概念，以下引自 lodash：http://lodash.think2011.net/_
 
-> shortcut fusion 是一种通过合并链式 iteratee 调用从而大大降低迭代的次数以提高执行性能的方式。 部分链有资格 shortcut fusion，如果它至少有超过二百个元素的数组和任何只接受一个参数的 iteratees。 触发的方式是任何一个 shortcut fusion 有了变化。
+> shortcut fusion 是一种通过合并链式 iteratee 调用从而大大降低迭代的次数以提高执行性能的方式。 部分链有资格 shortcut fusion，如果它至少有超过二百个元素的数组和任何只接受一个参数的 iterates。 触发的方式是任何一个 shortcut fusion 有了变化。
 
 这部分内容作者说了几句比较有意思的话：
 
@@ -685,9 +685,9 @@ return 24;
 
 ### 2.5.3. 函数式库
 
-- [lodash](): 广为人知的一个函数库，为平时开发的数据操作提供了比较便捷的方法，也能让 map,filter 这些操作数组的方法有更好的兼容度，不会因为 null 而报错。也提供了`lodash/fp`这种借鉴部分函数式编程的库，也进行了函数的柯里化，可以将 lodash 当成是入门函数式编程的入门方法库。
+- [lodash](https://lodash.com/): 广为人知的一个函数库，为平时开发的数据操作提供了比较便捷的方法，也能让 map,filter 这些操作数组的方法有更好的兼容度，不会因为 null 而报错。也提供了`lodash/fp`这种借鉴部分函数式编程的库，也进行了函数的柯里化，可以将 lodash 当成是入门函数式编程的入门方法库。
 
-- [ramda](): 比 lodash 更加偏向 FP，数据一律放在最后一个参数，函数都被柯里化过，准确一点说是半柯里化，可以多参数传参。提供了一些 combinator 和 logic function，但是缺少对 Functor, Monad 等这些 FP 编程必备概念的实现。
+- [ramda](https://ramdajs.com/): 比 lodash 更加偏向 FP，数据一律放在最后一个参数，函数都被柯里化过，准确一点说是半柯里化，可以多参数传参。提供了一些 combinator 和 logic function，但是缺少对 Functor, Monad 等这些 FP 编程必备概念的实现。
 
 - [sanctuary](https://sanctuary.js.org/): 名字很有意思：Refuge from unsafe JavaScript。维护者也是以前写[ramda-fantasy](https://github.com/ramda/ramda-fantasy)。它是在 ramda + Haskell 的基础上衍生出来的，函数都被严格的柯里化，对 Maybe, Monad, Either 都有实现，还提供了强类型校验，写起来比较严格和别扭，没有 ramda 和 FP 的基础很难入门。
 

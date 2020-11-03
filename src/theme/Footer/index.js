@@ -62,7 +62,10 @@ function Footer() {
             {links.map((linkItem, i) => (
               <div key={i} className="col footer__col">
                 {linkItem.title != null ? (
-                  <h4 className="footer__title">{linkItem.title}</h4>
+                  // Note: i === 0 means it's the first colum used for logo and we should ignore this title
+                  <h4 className="footer__title">
+                    {i !== 0 ? linkItem.title : ''}
+                  </h4>
                 ) : null}
                 {linkItem.items != null &&
                 Array.isArray(linkItem.items) &&

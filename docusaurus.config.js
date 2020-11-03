@@ -1,3 +1,5 @@
+const path = require('path');
+
 const githubOrg = 'ThinkBucket';
 const githubRepo = 'docsite';
 
@@ -26,13 +28,68 @@ module.exports = {
   tagline: 'Explore and study full stack technology',
   url: 'https://thinkbucket.cn',
   baseUrl: '/',
-  favicon:
-    'https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/docsite-logo-white-mode.png',
+  favicon: '/img/docsite.png',
   organizationName: githubOrg, // Usually your GitHub org/user name.
   projectName: 'docsite', // Usually your repo name.
   plugins: [
     ['@docusaurus/plugin-google-analytics', {id: 'plugin-google-analytics'}],
-    ['docusaurus-lunr-search', {id: 'plugin-lunr-search'}]
+    ['docusaurus-lunr-search', {id: 'plugin-lunr-search'}],
+    [
+      '@docusaurus/plugin-pwa',
+      {
+        debug: true,
+        offlineModeActivationStrategies: ['appInstalled', 'queryString'],
+        swCustom: path.resolve(__dirname, 'src/sw.js'),
+        pwaHead: [
+          {
+            tagName: 'link',
+            rel: 'icon',
+            href: '/img/docsite.png'
+          },
+          {
+            tagName: 'link',
+            rel: 'manifest',
+            href: '/manifest.json' // your PWA manifest
+          },
+          {
+            tagName: 'meta',
+            name: 'theme-color',
+            content: '#434343'
+          },
+          {
+            tagName: 'meta',
+            name: 'apple-mobile-web-app-capable',
+            content: 'yes'
+          },
+          {
+            tagName: 'meta',
+            name: 'apple-mobile-web-app-status-bar-style',
+            content: '#000'
+          },
+          {
+            tagName: 'link',
+            rel: 'apple-touch-icon',
+            href: '/img/docsite.png'
+          },
+          {
+            tagName: 'link',
+            rel: 'mask-icon',
+            href: '/img/docsite.svg',
+            color: 'rgb(62, 204, 94)'
+          },
+          {
+            tagName: 'meta',
+            name: 'msapplication-TileImage',
+            content: '/img/docsite.png'
+          },
+          {
+            tagName: 'meta',
+            name: 'msapplication-TileColor',
+            content: '#000'
+          }
+        ]
+      }
+    ]
   ],
   themes: [require.resolve('@docusaurus/theme-live-codeblock')],
   customFields: {
@@ -157,10 +214,10 @@ module.exports = {
         },
         {to: 'blog', label: 'Blog', position: 'right'},
         {
-          to: 'docs/wiki/1.get-started',
-          activeBasePath: 'docs/wiki/',
           label: 'Wiki',
-          position: 'right'
+          position: 'right',
+          activeBasePath: 'docs/wiki/',
+          to: 'docs/wiki/1.get-started'
         }
       ]
     },
