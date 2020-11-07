@@ -19,5 +19,10 @@ module.exports = {
     'html/2.dom/event-system',
     'html/2.dom/event-object',
     'html/2.dom/event-type'
+  ],
+  '3. Element': [
+    'html/3.element/offsetTop&scrollTop',
+    'html/3.element/clientHeight&offsetHeight&scrollHeight',
+    'html/3.element/getBoundingClientRect'
   ]
 };
