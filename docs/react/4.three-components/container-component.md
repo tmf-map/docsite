@@ -4,14 +4,11 @@ title: Container Component
 
 ## What's the container
 
-Redux 的一个重要思想是将组件主要分为 **container（容器型） 组件**和 **presentational（展示型） 组件**。
-
-- container 主要是为 presentational 组件提供一个 **数据容器**，这里的数据包括属性和方法（需要 dispatch 的方法，和不需要 dispatch 的方法）。
-- presentational 组件仅仅作为拿到数据（血液）后的展示作用，上承接 container 传过来的数据，下接 ui 组件。
-
-一个完整 React App 的组件树，根节点即 mountNode，叶子节点应该是 presentational 组件或 ui 组件，中间的节点是 container 组件，主要用与传递和监听数据，作为一个数据的中间容器。
+The current suggested best practice in Redux is to categorize your components as “presentational” or “container” components, and extract a connected container component wherever it makes sense. Container provides a data "container" for presentational components which is only used to display the data (props look like blood).
 
 <Img w="700" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/Qi9Owo.png' alt='Qi9Owo'/>
+
+Whenever you feel like you're duplicating code in parent components to provide data for same kinds of children, time to extract a container. Generally as soon as you feel a parent knows too much about “personal” data or actions of its children, time to extract a container.
 
 ## Get started to Redux
 
@@ -34,49 +31,158 @@ From there, you may import any of the listed React Redux APIs and use them withi
 
 ### connect
 
+The `connect()` function connects a React component to a Redux store. It provides its connected component with the pieces of the data it needs from the store, and the functions it can use to dispatch actions to the store.
+
+It does not modify the component passed to it; instead, it returns **a new**, **connected** component that wraps the component you passed in.
+
 ```js
-connect(
-  [mapStateToProps],
-  [mapDispatchToProps],
-  [mergeProps],
-  [options]
-)(Component);
+connect(mapStateToProps?, mapDispatchToProps?, mergeProps?, options?)(MyComponent);
 ```
 
-connect: 一个柯里化函数，函数将被调用两次。
+Actually, `connect()` is a curried function which will be called twice:
 
-1. 第一次是设置参数，第一次调用的时候 4 个参数都是可选。
-2. 第二次是组件与 Redux store 连接。
-
-connect 函数不会修改传入的 React 组件，返回的是一个新的已与 Redux store 连接的组件。
+1. The first time is to set the parameters, and the 4 parameters are optional at the first call.
+2. The second time is to connect the component to the Redux store.
 
 :::good
 
-- `mapStateToProps` 和 `mapDispatchToProps` 里面的对象保持扁平化，不要发生嵌套。
-- `connect` 的参数名字可以自定义，但推荐使用默认的参数名字。
+- The objects in `mapStateToProps` and `mapDispatchToProps` should be kept flat and do not nest.
+- The parameter name of `connect` can be customized, but it is recommended to use the default parameter name.
 
 :::
 
 ### mapStateToProps
 
-- **mapStateToProps\(state, ownProps?\): stateProps** 在 store 发生改变的时候才会调用，然后把返回的结果作为组件的 props。
+`mapStateToProps?: (state, ownProps?) => stateProps`
+
+### state
+
+If your `mapStateToProps` function is declared as taking one parameter, it will be called whenever the store state changes, and given the store state as the only parameter.
+
+```js
+const mapStateToProps = state => ({todos: state.todos});
+```
+
+#### ownProps
+
+If your `mapStateToProps` function is declared as taking two parameters, it will be called whenever the store state changes or when the wrapper component receives new props (based on shallow equality comparisons). It will be given the store state as the first parameter, and the wrapper component's props as the second parameter.
+
+The second parameter is normally referred to as `ownProps` by convention.
+
+```js
+const mapStateToProps = (state, ownProps) => ({
+  todo: state.todos[ownProps.id]
+});
+```
+
+#### Returns
+
+Your `mapStateToProps` function should return a plain object that contains the data the component needs:
+
+- Each field in the object will become a prop for your actual component
+- The values in the fields will be used to determine if your component needs to re-render
+
+For example:
+
+```js
+function mapStateToProps(state) {
+  return {
+    a: 42,
+    todos: state.todos,
+    filter: state.visibilityFilter
+  };
+}
+
+// component will receive: props.a, props.todos, and props.filter
+```
+
+This object, normally referred to as `stateProps`, will be merged as props to your connected component. If you define `mergeProps`, it will be supplied as the first parameter to `mergeProps`.
 
 :::tip
 
-- 该函数 return 的对象里面的值有变化才会引起其所对应的 Component 的更新。
-- mapStateToProps 可以不传，如果不传，组件不会监听 store 的变化，也就是说 store 的更新不会引起 Component 的更新。
+`mapStateToProps` does not have to be passed to `connect`. If it is not passed, the component will not monitor the changes of the store, which means that the update of the store will not cause the update of the Component.
 
 :::
 
+#### Return Values Determine If Your Component Re-Renders
+
+The return of the `mapStateToProps` determine whether the connected component will re-render. React Redux internally implements the `shouldComponentUpdate` method such that the wrapper component re-renders precisely when the data your component needs has changed. By default, React Redux decides whether the contents of the object returned from `mapStateToProps` are different using `===` comparison (a "shallow equality" check) on each fields of the returned object. If any of the fields have changed, then your component will be re-rendered so it can receive the updated values as props. Note that returning a mutated object of the same reference is a common mistake that can result in your component not re-rendering when expected.
+
+To summarize the behavior of the component wrapped by `connect` with `mapStateToProps` to extract data from the store:
+
+|  | `(state) => stateProps` | `(state, ownProps) => stateProps` |
+| --- | --- | --- |
+| `mapStateToProps` runs when: | store `state` changes | store `state` changes <br /> or <br />any field of `ownProps` is different |
+| component re-renders when: | any field of `stateProps` is different | any field of `stateProps` is different <br /> or <br /> any field of `ownProps` is different |
+
+#### Only Return New Object References If Needed
+
+React Redux does shallow comparisons to see if the `mapStateToProps` results have changed. It’s easy to accidentally return new object or array references every time, which would cause your component to re-render even if the data is actually the same.
+
+Many common operations result in new object or array references being created:
+
+- Creating new arrays with `someArray.map()` or `someArray.filter()`
+- Merging arrays with `array.concat`
+- Selecting portion of an array with `array.slice`
+- Copying values with `Object.assign`
+- Copying values with the spread operator `{ ...oldState, ...newData }`
+
+Put these operations in [memoized selector functions](https://redux.js.org/recipes/computing-derived-data#creating-a-memoized-selector) to ensure that they only run if the input values have changed. This will also ensure that if the input values _haven't_ changed, `mapStateToProps` will still return the same result values as before, and `connect` can skip re-rendering.
+
+For more reference:
+
+- [Usage Guidelines](https://react-redux.js.org/using-react-redux/connect-mapstate#usage-guidelines)
+- [mapStateToProps and Performance](https://react-redux.js.org/using-react-redux/connect-mapstate#mapstatetoprops-and-performance)
+- [Behavior and Gotchas](https://react-redux.js.org/using-react-redux/connect-mapstate#behavior-and-gotchas)
+
 ### mapDispatchToProps
 
-`mapDispatchToProps(dispatch, ownProps?): dispatchProps`
+`mapDispatchToProps?: Object | (dispatch, ownProps?) => dispatchProps`
 
-里面主要是事件绑定的方法，方法里面可以通过 `dispatch` 调用 `action` 。
+It's the second parameter to `connect()` may either be an [object](https://react-redux.js.org/api/connect#object-shorthand-form)(each field is an action creator), a function, or not supplied. Your component will receive `dispatch` by default, i.e., when you do not supply a second parameter to connect():
+
+```js
+// do not pass `mapDispatchToProps`
+connect()(MyComponent);
+connect(mapState)(MyComponent);
+connect(mapState, null, mergeProps, options)(MyComponent);
+```
+
+In most scenarios, we define a `mapDispatchToProps` as a function, it will be called with a maximum of two parameters:
+
+- `dispatch: Function`
+- `ownProps?: Object`
+
+#### dispatch
+
+If your `mapDispatchToProps` is declared as a function taking one parameter, it will be given the dispatch of your store.
+
+```js
+const mapDispatchToProps = dispatch => {
+  return {
+    // dispatching plain actions
+    increment: () => dispatch({type: 'INCREMENT'}),
+    decrement: () => dispatch({type: 'DECREMENT'}),
+    reset: () => dispatch({type: 'RESET'})
+  };
+};
+```
+
+#### ownProps
+
+```js
+const mapDispatchToProps = (dispatch, ownProps) => {
+  toggleTodo: () => dispatch(toggleTodo(ownProps.todoId));
+};
+```
 
 ### mergeProps
 
-- **mergeProps\(stateProps, dispatchProps, ownProps\): props** 用来指定这三个 props 的合并规则，合并的结果作为组件的 props。如果要指定这个函数，建议不要太复杂。
+`mergeProps?: (stateProps, dispatchProps, ownProps) => props`
+
+It is used to specify the merging rules of these three props, and the merged result is used as the component's props.
+
+If specified, defines how the final props for your own wrapped component are determined, it is recommended not to be too complicated. If you do not provide mergeProps, your wrapped component receives `{ ...ownProps, ...stateProps, ...dispatchProps }` by default.
 
 ```jsx
 const mapStateToProps = state => ({
@@ -95,19 +201,105 @@ const mergeProps = (stateProps, dispatchProps, ownProps) => {
 export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(Table);
 ```
 
-:::bad
+:::caution
 
-使用 ES2015 的 **Object.assign** 方法来做 props 的合并，第一个参数传空对象。
+Pass an empty object as the first parameter when using **Object.assign** method to merge props.
 
 :::
 
 ### options
 
-里面主要关注 pure。
+`options?: Object`
 
-- _\[pure = true\] \(Boolean\)_: 如果为 true，connector 将执行 shouldComponentUpdate 并且浅对比 mergeProps 的结果，避免不必要的更新，前提是当前组件是一个“**纯**”组件，它不依赖于任何的输入或 state 而只依赖于 props 和 Redux store 的 state。**默认值为 true**。
-- _\[withRef = false\] \(Boolean\)_: 如果为 true，connector 会保存一个对被被包含的组件实例的引用，该引用通过 `getWrappedInstance()` 方法获得。**默认值为 false**。
-- **Component** 就是要被连接的 React 组件。
+```js
+{
+  context?: Object,
+  pure?: boolean,
+  areStatesEqual?: Function,
+  areOwnPropsEqual?: Function,
+  areStatePropsEqual?: Function,
+  areMergedPropsEqual?: Function,
+  forwardRef?: boolean,
+}
+```
+
+#### context
+
+React-Redux v6 allows you to supply a custom context instance to be used by React-Redux. You need to pass the instance of your context to both `<Provider />` and your connected component. You may pass the context to your connected component either by passing it here as a field of option, or as a prop to your connected component in rendering.
+
+```js
+// const MyContext = React.createContext();
+connect(mapStateToProps, mapDispatchToProps, null, {context: MyContext})(
+  MyComponent
+);
+```
+
+#### pure
+
+default value: `true`
+
+Assumes that the wrapped component is a “pure” component and does not rely on any input or state other than its props and the selected Redux store’s state.
+
+When `options.pure` is true, `connect` performs several **shallow equality** checks that are used to **avoid unnecessary** calls to `mapStateToProps`, `mapDispatchToProps`, `mergeProps`, and ultimately to `render`. These include `areStatesEqual`, `areOwnPropsEqual`, `areStatePropsEqual`, and `areMergedPropsEqual`. While the defaults are probably appropriate 99% of the time, you may wish to override them with custom implementations for performance or other reasons.
+
+For more option details, see https://react-redux.js.org/api/connect#options-object
+
+### Using in TypeScript
+
+The following example is using [Rematch](/docs/react/5.state-management/model), you can also use original Redux, see more details on [official docs](https://react-redux.js.org/using-react-redux/static-typing).
+
+```ts title="store.ts"
+import middlewares from '@/middlewares';
+import models from '@/models';
+import {init, RematchRootState, RematchDispatch} from '@rematch/core';
+
+const store = init({
+  models,
+  redux: {
+    middlewares: [...middlewares]
+  }
+});
+
+export type Store = typeof store;
+export type Dispatch = RematchDispatch<typeof models>;
+export type RootState = RematchRootState<typeof models>;
+
+export default store;
+```
+
+Because **types can be defined in any order**, you can declare your component before declaring the connector if you want.
+
+```tsx title="MyComponent.tsx"
+// alternately, declare `type Props = Props From Redux & {backgroundColor: string}`
+interface Props extends PropsFromRedux {
+  backgroundColor: string;
+}
+
+const mapStateToProps = (state: RootState) => ({
+  isOn: state.isOn
+});
+
+// myComponent is one of models
+const mapDispatchToProps = ({myComponent: {toggleOn}}: Dispatch) => ({
+  toggleOn
+});
+
+const MyComponent: React.FC = (props: Props) => (
+  <div style={{backgroundColor: props.backgroundColor}}>
+    <button onClick={props.toggleOn}>
+      Toggle is {props.isOn ? 'ON' : 'OFF'}
+    </button>
+  </div>
+);
+
+const connector = connect(mapStateToProps, mapDispatchToProps);
+
+type PropsFromRedux = ConnectedProps<typeof connector>;
+
+export default connector(MyComponent);
+```
+
+As of v7.1.2, the `@types/react-redux` package exposes a helper type, `ConnectedProps`, that can extract the return types of `mapStateToProps` and `mapDispatchToProps` from the first function. This means that if you split the connect call into **two steps**, all of the "props from Redux" can be inferred automatically without having to write them by hand. While this approach may feel unusual if you've been using React-Redux for a while, it does simplify the type declarations considerably.
 
 ## Hooks
 
@@ -367,4 +559,5 @@ export const MemoizedCounterComponent = React.memo(CounterComponent);
 
 ## Reference
 
-1. [React Redux official docs: Hooks](https://react-redux.js.org/api/hooks)
+1. [React Redux official docs: connect()](https://react-redux.js.org/api/connect)
+2. [React Redux official docs: Hooks](https://react-redux.js.org/api/hooks)
