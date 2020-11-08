@@ -327,7 +327,7 @@ The selector function should be [pure](https://en.wikipedia.org/wiki/Pure_functi
 
 :::
 
-The selector is approximately equivalent to the [`mapStateToProps` argument to `connect`](../using-react-redux/connect-mapstate) conceptually, such as:
+The selector is approximately equivalent to the `mapStateToProps` argument to `connect` conceptually, such as:
 
 ```ts
 const mapStateToProps = state => ({
@@ -542,7 +542,7 @@ As mentioned earlier, by default `useSelector()` will do a **reference equality 
 
 However, unlike `connect()`, `useSelector()` does not prevent the component from re-rendering **due to its parent re-rendering**, even if the component's props did not change.
 
-If further performance optimizations are necessary, you may consider wrapping your function component in [React.memo()](/docs/react/4.three-components/container-component):
+If further performance optimizations are necessary, you may consider wrapping your function component in [React.memo()](/docs/react/3.optimization/memo):
 
 ```jsx
 const CounterComponent = ({name}) => {
