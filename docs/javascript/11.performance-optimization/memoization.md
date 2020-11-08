@@ -22,13 +22,13 @@ title: 缓存与记忆化
 function memoize(fn) {
   let cache = {};
   return (...args) => {
-    let n = args[0]; // just taking one argument here
+    const n = args[0]; // just taking one argument here
     if (n in cache) {
       console.log('Fetching from cache');
       return cache[n];
     }
     console.log('Calculating result');
-    let result = fn(n);
+    const result = fn(n);
     cache[n] = result;
     return result;
   };
@@ -50,3 +50,5 @@ console.log(memorizedAdd(4)); // Fetching from cache
 为了简化生成密匙的逻辑，简单的记忆化仅限于一元函数。对于需要记忆化多个参数的函数可以使用柯里化，来避免缓存层给函数增加额外的开销和复杂度。
 
 ## 异步缓存
+
+// TODO
