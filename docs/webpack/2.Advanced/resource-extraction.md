@@ -1,5 +1,5 @@
 ---
-title: 公共资源提取
+title: Split Chunks
 ---
 
 ## 概述

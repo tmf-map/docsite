@@ -1,5 +1,5 @@
 ---
-title: webpack核心概念
+title: Basic Concepts
 ---
 
 ## Entry

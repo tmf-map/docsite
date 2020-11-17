@@ -1,5 +1,5 @@
 ---
-title: 常用的Loaders
+title: Loaders
 ---
 
 ## 概要

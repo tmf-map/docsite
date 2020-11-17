@@ -1,8 +1,8 @@
 ---
-title: 常用的Plugins
+title: Plugins
 ---
 
-## Plugins
+## Plugins overview
 
 插件用于 `bundle` 文件的优化，资源管理和环境变量注入，作于用整个构建过程。插件可以看作是`loaders`功能的补充，对于`loader`无法完成的打包需求，可以考虑使用插件来实现。
 
@@ -88,27 +88,27 @@ module.exports = {
 
 通过上面的配置可以将`index.html`打包成只有一行的文件，文件名为`split.html`。通过`chunks`数组可以将打包好的某些`boundle`和`chunk`路径添加到`.html`的`script`标签的`src`属性上。`minify`各字段的具体含义和用法可以通过[html-minifier-terser](https://github.com/DanielRuf/html-minifier-terser)查询。
 
-|Name|Type|Default|Description|
-|:--:|:--:|:-----:|:----------|
-|**`title`**|`{String}`|`Webpack App`|The title to use for the generated HTML document|
-|**`filename`**|`{String}`|`'index.html'`|The file to write the HTML to. Defaults to `index.html`. You can specify a subdirectory here too (eg: `assets/admin.html`)|
-|**`template`**|`{String}`|``|`webpack` relative or absolute path to the template. By default it will use `src/index.ejs` if it exists. Please see the [docs](https://github.com/jantimon/html-webpack-plugin/blob/master/docs/template-option.md) for details|
-|**`templateContent`**|`{string\|Function\|false}`|false| Can be used instead of `template` to provide an inline template - please read the [Writing Your Own Templates](https://github.com/jantimon/html-webpack-plugin#writing-your-own-templates) section |
-|**`templateParameters`**|`{Boolean\|Object\|Function}`| `false`| Allows to overwrite the parameters used in the template - see [example](https://github.com/jantimon/html-webpack-plugin/tree/master/examples/template-parameters) |
-|**`inject`**|`{Boolean\|String}`|`true`|`true \|\| 'head' \|\| 'body' \|\| false` Inject all assets into the given `template` or `templateContent`. When passing `true` or `'body'` all javascript resources will be placed at the bottom of the body element. `'head'` will place the scripts in the head element - see the [inject:false example](https://github.com/jantimon/html-webpack-plugin/tree/master/examples/custom-insertion-position)|
-|**`publicPath`**|`{String\|'auto'}`|`'auto'`|The publicPath used for script and link tags|
-|**`scriptLoading`**|`{'blocking'\|'defer'}`|`'blocking'`| Modern browsers support non blocking javascript loading (`'defer'`) to improve the page startup performance. |
-|**`favicon`**|`{String}`|``|Adds the given favicon path to the output HTML|
-|**`meta`**|`{Object}`|`{}`|Allows to inject `meta`-tags. E.g. `meta: {viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no'}`|
-|**`base`**|`{Object\|String\|false}`|`false`|Inject a [`base`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base) tag. E.g. `base: "https://example.com/path/page.html`|
-|**`minify`**|`{Boolean\|Object}`|`true` if `mode` is `'production'`, otherwise `false`|Controls if and in what ways the output should be minified. See [minification](#minification) below for more details.|
-|**`hash`**|`{Boolean}`|`false`|If `true` then append a unique `webpack` compilation hash to all included scripts and CSS files. This is useful for cache busting|
-|**`cache`**|`{Boolean}`|`true`|Emit the file only if it was changed|
-|**`showErrors`**|`{Boolean}`|`true`|Errors details will be written into the HTML page|
-|**`chunks`**|`{?}`|`?`|Allows you to add only some chunks (e.g only the unit-test chunk)|
-|**`chunksSortMode`**|`{String\|Function}`|`auto`|Allows to control how chunks should be sorted before they are included to the HTML. Allowed values are `'none' \| 'auto' \| 'manual' \| {Function}`|
-|**`excludeChunks`**|`{Array.<string>}`|``|Allows you to skip some chunks (e.g don't add the unit-test chunk)|
-|**`xhtml`**|`{Boolean}`|`false`|If `true` render the `link` tags as self-closing (XHTML compliant)|
+| Name | Type | Default | Description |
+| :-: | :-: | :-: | :-- |
+| **`title`** | `{String}` | `Webpack App` | The title to use for the generated HTML document |
+| **`filename`** | `{String}` | `'index.html'` | The file to write the HTML to. Defaults to `index.html`. You can specify a subdirectory here too (eg: `assets/admin.html`) |
+| **`template`** | `{String}` | `` | `webpack` relative or absolute path to the template. By default it will use `src/index.ejs` if it exists. Please see the [docs](https://github.com/jantimon/html-webpack-plugin/blob/master/docs/template-option.md) for details |
+| **`templateContent`** | `{string\|Function\|false}` | false | Can be used instead of `template` to provide an inline template - please read the [Writing Your Own Templates](https://github.com/jantimon/html-webpack-plugin#writing-your-own-templates) section |
+| **`templateParameters`** | `{Boolean\|Object\|Function}` | `false` | Allows to overwrite the parameters used in the template - see [example](https://github.com/jantimon/html-webpack-plugin/tree/master/examples/template-parameters) |
+| **`inject`** | `{Boolean\|String}` | `true` | `true \|\| 'head' \|\| 'body' \|\| false` Inject all assets into the given `template` or `templateContent`. When passing `true` or `'body'` all javascript resources will be placed at the bottom of the body element. `'head'` will place the scripts in the head element - see the [inject:false example](https://github.com/jantimon/html-webpack-plugin/tree/master/examples/custom-insertion-position) |
+| **`publicPath`** | `{String\|'auto'}` | `'auto'` | The publicPath used for script and link tags |
+| **`scriptLoading`** | `{'blocking'\|'defer'}` | `'blocking'` | Modern browsers support non blocking javascript loading (`'defer'`) to improve the page startup performance. |
+| **`favicon`** | `{String}` | `` | Adds the given favicon path to the output HTML |
+| **`meta`** | `{Object}` | `{}` | Allows to inject `meta`-tags. E.g. `meta: {viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no'}` |
+| **`base`** | `{Object\|String\|false}` | `false` | Inject a [`base`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base) tag. E.g. `base: "https://example.com/path/page.html` |
+| **`minify`** | `{Boolean\|Object}` | `true` if `mode` is `'production'`, otherwise `false` | Controls if and in what ways the output should be minified. See [minification](#minification) below for more details. |
+| **`hash`** | `{Boolean}` | `false` | If `true` then append a unique `webpack` compilation hash to all included scripts and CSS files. This is useful for cache busting |
+| **`cache`** | `{Boolean}` | `true` | Emit the file only if it was changed |
+| **`showErrors`** | `{Boolean}` | `true` | Errors details will be written into the HTML page |
+| **`chunks`** | `{?}` | `?` | Allows you to add only some chunks (e.g only the unit-test chunk) |
+| **`chunksSortMode`** | `{String\|Function}` | `auto` | Allows to control how chunks should be sorted before they are included to the HTML. Allowed values are `'none' \| 'auto' \| 'manual' \| {Function}` |
+| **`excludeChunks`** | `{Array.<string>}` | `` | Allows you to skip some chunks (e.g don't add the unit-test chunk) |
+| **`xhtml`** | `{Boolean}` | `false` | If `true` render the `link` tags as self-closing (XHTML compliant) |
 
 ```js
 new HtmlWebpackPlugin({
@@ -118,6 +118,7 @@ new HtmlWebpackPlugin({
 }),
 new HtmlWebpackHarddiskPlugin(),
 ```
+
 https://ejs.co/
 
 https://www.cnblogs.com/zhishaofei/p/10222503.html
@@ -130,7 +131,7 @@ plugins: [
     alwaysWriteToDisk: true
   }),
   new HtmlWebpackHarddiskPlugin()
-]
+];
 ```
 
 ...achieve this:
@@ -139,7 +140,7 @@ plugins: [
 app.get('*', (req, res) => {
   // for example
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
-})
+});
 ```
 
 https://github.com/jantimon/html-webpack-harddisk-plugin
@@ -419,7 +420,7 @@ module.exports = {
 
 <Img width="700" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200419120449.gif" />
 
-## 参考资料
+## References
 
 1. [webpack official document](https://webpack.js.org/plugins/)
 2. [玩转 webpack，by 程柳锋](https://time.geekbang.org/course/intro/100028901)
