@@ -54,7 +54,8 @@ module.exports = {
     'algorithm/5.binary-tree/mirror-tree',
     'algorithm/5.binary-tree/subtree',
     'algorithm/5.binary-tree/maximum-depth-of-binary-tree',
-    'algorithm/5.binary-tree/balanced-binary-tree'
+    'algorithm/5.binary-tree/balanced-binary-tree',
+    'algorithm/5.binary-tree/tree-traversal'
   ],
   '6. 图': [
     'algorithm/6.graph/graph',
