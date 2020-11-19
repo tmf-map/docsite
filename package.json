@@ -42,7 +42,7 @@
     }
   },
   "dependencies": {
-    "@docusaurus/core": "2.0.0-alpha.66",
+    "@docusaurus/core": "2.0.0-alpha.68",
     "@docusaurus/plugin-pwa": "^2.0.0-alpha.66",
     "@docusaurus/preset-classic": "2.0.0-alpha.66",
     "@docusaurus/theme-live-codeblock": "2.0.0-alpha.66",
