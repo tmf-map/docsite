@@ -11,24 +11,24 @@ title: JS 引擎
 
 ## V8 Engine Workflow
 
-<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/jyJKvS.jpg'/>
+<img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/v8.png' alt='v8'/>
 
 JS 代码块加载完毕后，会首先进入语法 Parser 阶段。该阶段主要作用是生成 AST 和构建作用域。
 
 从广义上讲，Parser 阶段主要包括 **词法分析(lexical analysis)** 和 **语法分析(syntax analysis)**。
 
 - **词法分析**：(分词)从代码中读取一组字符并将它们组合成语句(tokens)，它还涉及删除空格字符、注释等。最后，整个代码串将被拆分为一系列语句。
-- **语法分析**：(也称为解析器)将在词法分析后获取一个简单的语句列表，并将其转换为树形表示即 AST，并检查是否有语法错误。如果出现不正确，则向外抛出一个语法错误（SyntaxError），停止该 JS 代码的后续执行：
+- **语法分析**：(也称为解析器)将在词法分析后获取一个简单的语句列表，并将其转换为树形表示即 AST，并检查是否有语法错误。如果出现不正确，则向外抛出一个语法错误（SyntaxError），如下图所示，停止该 JS 代码的后续执行：
 
 <Img width="400" align="left" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/V5pGiz.jpg" />
 
-然后，AST(抽象语法树) 基于 Parser 的分类构造树状结构。
+然后，AST(抽象语法树) 基于解析器（Parser）的分类构造树状结构。
 
-随后将 AST 提供给 Interpreter 生成 ByteCode。ByteCode 不是最底层的代码，但可以被执行。在此阶段，浏览器借助 V8 引擎执行 ByteCode 进行工作，因此用户无需等待。
+随后将 AST 提供给解释器（Interpreter）生成 ByteCode。ByteCode 不是最底层的代码，但可以被执行。在此阶段，浏览器借助 V8 引擎执行 ByteCode 进行工作，因此用户无需等待。
 
-同时，Profiler 将查找可以被优化的代码，然后将它们传递给 Compiler。Compiler 生成优化代码的同时，浏览器暂时用 ByteCode 执行操作。并且，一旦 Compiler 生成了优化代码，优化代码则将完全替换掉临时的 ByteCode。
+同时，Profiler 将查找可以被优化的代码，然后将它们传递给编译器（Compiler）。如果发现了某一段代码会被重复多次执行，就会将这段代码标记为热点代码。编译器生成优化代码的同时，浏览器暂时用 ByteCode 执行操作。并且，一旦编译器生成了优化代码，优化代码则将完全替换掉临时的 ByteCode。
 
-<Img width="600" align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/kvO4JB.jpg'/>
+不过，和静态语言不同的是，JavaScript 是一种非常灵活的动态语言，对象的结构和属性是可以在运行时任意修改的，而经过优化编译器优化过的代码只能针对某种固定的结构，一旦在执行过程中，对象的结构被动态修改了，那么优化之后的代码势必会变成无效的代码，这时候优化编译器就需要执行反优化操作，经过反优化的代码，下次执行时就会回退到解释器解释执行。
 
 ## Parser
 
@@ -95,3 +95,4 @@ Interpreter 可以立即开始执行代码，但不会进行优化。Compiler �
 2. [WebAssembly](https://app.yinxiang.com/fx/67a2ad7e-3d41-4814-93fd-b4ee30a32407)
 3. [JavaScript: Under the Hood, By Mano lingam](https://blog.bitsrc.io/javascript-under-the-hood-632ccae06b27)
 4. [What is the Difference Between Machine Code and Bytecode](https://pediaa.com/what-is-the-difference-between-machine-code-and-bytecode/)
+5. [图解 Google V8, 李兵](https://time.geekbang.org/column/article/211682)

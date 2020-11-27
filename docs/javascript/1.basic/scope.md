@@ -2,6 +2,8 @@
 title: 作用域
 ---
 
+## 概述
+
 Scope 指变量的**可见性**。
 
 ```js
@@ -33,7 +35,7 @@ console.log(test()); // red
 
 在解析阶段构建的作用域其实就是**定义了一套变量查找(即变量可见性)的规则**。请注意这里说的是一套规则，有没有找到，没有找到报 `ReferenceError` 的错都不是解析器的事情：
 
-<img width="400" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/V0UPNK.jpg'/>
+<Img width="400" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/V0UPNK.jpg'  align="left"/>
 
 作用域链是指变量查找的顺序，先去哪里找，再去哪里找，就像一根链条以下从下往上找。
 
@@ -60,19 +62,21 @@ function f1() {
 
 函数声明： ES5 规定，函数只能在顶层作用域和函数作用域之中声明，不能在块级作用域声明； ES6 引入了块级作用域，明确允许在块级作用域之中声明函数。ES6 规定，块级作用域之中，函数声明语句的行为类似于 let，在块级作用域之外不可引用。
 
-> **注意**
->
-> 由于要兼容老的代码，ES6 在附录 B 里面规定，浏览器的实现可以不遵守上面的规定，有自己的行为方式。
->
-> - 允许在块级作用域内声明函数。
-> - 函数声明类似于 var，即会提升到全局作用域或函数作用域的头部。
-> - 同时，函数声明还会提升到所在的块级作用域的头部。
+:::caution
+
+由于要兼容老的代码，ES6 在附录 B 里面规定，浏览器的实现可以不遵守上面的规定，有自己的行为方式。
+
+- 允许在块级作用域内声明函数。
+- 函数声明类似于 var，即会提升到全局作用域或函数作用域的头部。
+- 同时，函数声明还会提升到所在的块级作用域的头部。
+
+:::
 
 上面三条规则只对 ES6 的浏览器实现有效，其他环境的实现不用遵守，还是将块级作用域的函数声明当作 let 处理。根据这三条规则，浏览器的 ES6 环境中，块级作用域内声明的函数，行为类似于 var 声明的变量。
 
 ES6 新增了 `let` 命令，用来声明变量。它的用法类似于 `var` ，但是所声明的变量，只在 `let` 命令所在的代码块内有效，如下图所示：
 
-<img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/NecK56.png'/>
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/NecK56.png' width="700"  align="left"/>
 
 从下面两个例子看看，在 `for` 循环中使用 `var` 和 `let` 的区别：
 
@@ -218,11 +222,11 @@ let x = 'global';
 
 这四种声明，用下图就可以快速理解：
 
-<img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/hwksuH.jpg'/>
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/hwksuH.jpg' width="500"/>
 
 下面来看一个有趣的例子：
 
-<img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/wZTieV.jpg'/>
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/wZTieV.jpg' width="600"  align="left"/>
 
 从图上这一系列操作可以看出，如果 `let x` 的初始化过程失败了，会导致：
 
