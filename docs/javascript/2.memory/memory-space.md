@@ -6,12 +6,9 @@ title: 内存空间
 
 ### 继承关系
 
-0bject 类是 Javascript 的对象的具体表现。Javascript 的对象种类繁多，它们是以继承 object 类的子对象的形式表现出来的。Object 类的继承关系如图 1 所示：
+Object 类是 Javascript 的对象的具体表现。Javascript 的对象种类繁多，它们是以继承 Object 类的子对象的形式表现出来的。Object 类的继承关系如图 1 所示，根据 [V8 源码](https://github.com/v8/v8/blob/master/src/objects/objects.h) 整理。
 
-<div align="center">
-    <img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/j1MT8i.png'/>
-    <p>图1：Object 类的继承关系，根据<a href="https://github.com/v8/v8/blob/master/src/objects/objects.h">V8源码</a>整理</p>
-</div>
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/j1MT8i.png' legend="图1：Object 类的继承关系"/>
 
 这些类本质上都是 C++ 的类，和 JS 相关的会以 "JS" 前缀命名。
 
@@ -53,25 +50,35 @@ JS 的内嵌对象包括以下几种:
 
 它们无法引用其他值，并且始终是叶或终止节点。
 
-**数字**可以存储为：
+#### 数字
+
+可以存储为：
 
 - 中间 31 位整型值（称为**小整型** (SMI, Small Integer)），或
 - 堆对象，作为**堆数字**引用。堆数字用于存储不适合 SMI 格式的值（例如双精度），或者在需要将值“包装”起来时使用（例如在值上设置属性）。
 
-**字符串**可以存储在以下位置：
+#### 字符串
+
+可以存储在以下位置：
 
 - **VM 堆**中，或
 - **渲染器内存**中（外部）。将创建一个包装器对象并用于访问外部存储空间，例如，外部存储空间是存储脚本源和从网页接收（而不是复制到 VM 堆上）的其他内容的位置。
 
 新 JavaScript 对象的内存分配自专用的 JavaScript 堆（或 **VM 堆**）。这些对象由 V8 的垃圾回收器管理，因此，只要存在一个对它们的强引用，它们就会一直保持活动状态。
 
-**原生对象**是 JavaScript 堆之外的任何对象。与堆对象相反，原生对象在其生命周期内不由 V8 垃圾回收器管理，并且只能使用其 JavaScript 包装器对象从 JavaScript 访问。
+#### 原生对象
 
-**Cons 字符串**是一种由存储并联接的成对字符串组成的对象，是串联的结果。cons 字符串内容仅根据需要进行联接。一个示例便是需要构造已联接字符串的子字符串。
+JavaScript 堆之外的任何对象。与堆对象相反，原生对象在其生命周期内不由 V8 垃圾回收器管理，并且只能使用其 JavaScript 包装器对象从 JavaScript 访问。
+
+#### Cons 字符串
+
+一种由存储并联接的成对字符串组成的对象，是串联的结果。cons 字符串内容仅根据需要进行联接。一个示例便是需要构造已联接字符串的子字符串。
 
 例如，如果您将 a 与 b 串联，您将获得一个字符串 (a, b)，它表示串联结果。如果您稍后将 d 与该结果串联，您将得到另一个 cons 字符串 ((a, b), d)。
 
-**数组** - 数组是一个具有数字键的对象。它们在 V8 VM 中广泛使用，用于存储大量数据。用作字典的成套键值对采用数组形式。
+#### 数组
+
+数组是一个具有数字键的对象。它们在 V8 VM 中广泛使用，用于存储大量数据。用作字典的成套键值对采用数组形式。
 
 典型的 JavaScript 对象可以是两个数组类型之一，用于存储：
 
@@ -80,7 +87,9 @@ JS 的内嵌对象包括以下几种:
 
 数字元素如果属性数量非常少，可以将其存储在 JavaScript 对象自身内部。
 
-**Map** - 一种用于说明对象种类及其布局的对象。例如，可以使用 Map 说明用于[快速属性访问](https://developers.google.com/v8/design.html#prop_access)的隐式对象层次结构。
+#### Map
+
+一种用于说明对象种类及其布局的对象。例如，可以使用 Map 说明用于 [快速属性访问](https://developers.google.com/v8/design.html#prop_access) 的隐式对象层次结构。
 
 ### 对象组
 

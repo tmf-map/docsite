@@ -4,9 +4,7 @@ title: 引用计数
 
 引用计数 reference counting（第一个版本 js 的， 90 年代初 的事情，最简单的 GC 算法），缺点，**循环引用会有可能内存泄漏**，不能做并行 GC，效率是最高，移动端 native 还在用
 
-<div align="center">
-    <img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/lAnhj6.jpg'/>
-</div>
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/lAnhj6.jpg' width="500"/>
 
 在低版本 IE 中经常会出现内存泄露，很多时候就是因为其采用引用计数方式进行垃圾回收。引用计数的策略是跟踪记录每个值被使用的次数，当声明了一个 变量并将一个引用类型赋值给该变量的时候这个值的引用次数就加 1，如果该变量的值变成了另外一个，则这个值得引用次数减 1，当这个值的引用次数变为 0 的时 候，说明没有变量在使用，这个值没法被访问了，因此可以将其占用的空间回收，这样垃圾回收器会在运行的时候清理掉引用次数为 0 的值占用的空间。
 
@@ -16,9 +14,7 @@ title: 引用计数
 
 语言引擎有一张"引用表"，保存了内存里面所有的资源（通常是各种值）的引用次数。如果一个值的引用次数是 0，就表示这个值不再用到了，因此可以将这块内存释放。
 
-<div align="center">
-    <img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/jEdPCn.jpg'/>
-</div>
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/jEdPCn.jpg' width="400"/>
 
 上图中，左下角的两个值，没有任何引用，所以可以释放。
 

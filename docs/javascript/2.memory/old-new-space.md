@@ -2,7 +2,7 @@
 title: 分代回收
 ---
 
-### Node 的 GC 特点
+## Node 的 GC 特点
 
 https://github.com/v8/v8/wiki
 
