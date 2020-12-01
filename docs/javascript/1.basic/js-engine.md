@@ -11,7 +11,7 @@ title: JS 引擎
 
 ## V8 Engine Workflow
 
-<img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/v8.png' alt='v8'/>
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/v8.png' alt='v8' width="750"/>
 
 JS 代码块加载完毕后，会首先进入语法 Parser 阶段。该阶段主要作用是生成 AST 和构建作用域。
 
