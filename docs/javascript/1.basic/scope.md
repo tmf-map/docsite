@@ -218,7 +218,7 @@ let x = 'global';
 
 这四种声明，用下图就可以快速理解：
 
-<img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/four-statements.jpg'/>
+<img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/four-statements.jpg' width="550" />
 
 下面来看一个有趣的例子：
 
