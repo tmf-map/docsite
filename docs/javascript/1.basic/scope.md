@@ -37,16 +37,16 @@ console.log(test()); // red
 
 <Img width="400" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/V0UPNK.jpg'  align="left"/>
 
-作用域链是指变量查找的顺序，先去哪里找，再去哪里找，就像一根链条以下从下往上找。
+`作用域链`是指变量查找的顺序，先去哪里找，再去哪里找，就像一根链条从下往上找。
 
 ## 块级作用域
 
-变量声明： ES5 只有全局作用域和函数作用域，没有块级作用域，导致了以下的不合理场景出现：
+变量声明：ES5 只有`全局作用域`和`函数作用域`，没有块级作用域，导致了以下的不合理场景出现：
 
 - 由于变量提升，内层变量可能会覆盖外层变量
 - 用来计数的循环变量泄露为全局变量
 
-ES6 中 let 的出现实际上为 JavaScript 新增了块级作用域，在语句块中声明的语句或变量只在当前语句块中起作用。
+ES6 中 let 的出现实际上为 JavaScript 新增了`块级作用域`，在语句块中声明的语句或变量只在当前语句块中起作用。
 
 ```js
 function f1() {
@@ -76,7 +76,7 @@ function f1() {
 
 ES6 新增了 `let` 命令，用来声明变量。它的用法类似于 `var` ，但是所声明的变量，只在 `let` 命令所在的代码块内有效，如下图所示：
 
-<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/NecK56.png' width="700"  align="left"/>
+<img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/scope-reference-error.jpg'/>
 
 从下面两个例子看看，在 `for` 循环中使用 `var` 和 `let` 的区别：
 
@@ -222,11 +222,11 @@ let x = 'global';
 
 这四种声明，用下图就可以快速理解：
 
-<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/hwksuH.jpg' width="500"/>
+<img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/four-statements.jpg' width="550" />
 
 下面来看一个有趣的例子：
 
-<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/wZTieV.jpg' width="600"  align="left"/>
+<img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/wZTieV.jpg'/>
 
 从图上这一系列操作可以看出，如果 `let x` 的初始化过程失败了，会导致：
 
