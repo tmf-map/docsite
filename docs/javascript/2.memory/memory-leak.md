@@ -2,6 +2,8 @@
 title: 内存泄漏
 ---
 
+## 概述
+
 不再用到的内存，没有及时释放，就叫做内存泄漏 (Memory Leak)。
 
 JS 中常见的内存泄漏有：
@@ -73,7 +75,7 @@ JS 中常见的内存泄漏有：
 
 当我们不断点击 `button` 的时候通过 `Performance` 面板可以分析出以下内存占用图：
 
-<img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/fP2iLE.png'/>
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/fP2iLE.png'/>
 
 可以看出发生了内存泄漏，如果修改一下代码，将全局变量换成局部变量：
 
@@ -94,11 +96,15 @@ JS 中常见的内存泄漏有：
 
 再看一下内存占用图，内存得到了及时的回收：
 
-<img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/uxQLmN.png'/>
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/uxQLmN.png'/>
 
 尤其当全局变量用于临时存储和处理大量信息时，需要多加小心。如果必须使用全局变量存储大量数据时，确保用完以后把它设置为 `null` 或者重新定义。与全局变量相关的增加内存消耗的一个主因是缓存。
 
-> 缓存数据是为了重用，**缓存必须有一个大小上限才有用**。高内存消耗导致缓存突破上限，因为缓存内容无法被回收。
+:::tip
+
+缓存数据是为了重用，**缓存必须有一个大小上限才有用**。高内存消耗导致缓存突破上限，因为缓存内容无法被回收。
+
+:::
 
 ## 创建以及删除 DOM
 
@@ -115,9 +121,7 @@ document.body.removeChild(node);
 
 答案是 `NO` ，因为 `node` 的引用还存在着，虽然在 DOM 中被删除了，但在 `window` 中引用还在，这个时候 node 的子元素就会以游离状态的 DOM 存在，而且无法被回收，如下图所示：
 
-<div align="center">
-    <img width="300" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/fGBpmf.png'/>
-</div>
+<Img width="300" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/fGBpmf.png'/>
 
 解决方案就是 `node = null` ，手动清空引用，消除游离状态的 DOM。
 
@@ -132,7 +136,7 @@ setInterval(function () {
 }, 1000);
 ```
 
-<img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/qpzkFL.png'/>
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/qpzkFL.png'/>
 
 `setInterval` 只是放大了内存泄漏，但并不是罪魁祸首。
 
