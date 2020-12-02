@@ -19,7 +19,7 @@ keywords:
 
 看几个例子:
 
-<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/is-not-tree.jpeg' legend="图 1" alt='tree-traversal' width="650"/>
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/is-not-tree.jpeg' alt='tree-traversal' width="650" legend="图 1" />
 
 上图中的结构均不是树。
 
@@ -39,13 +39,13 @@ keywords:
 - graph 3：
   - 违背了特点 5：树里面出现了环 A - B - C - A。
 
-<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/is-tree.jpeg' legend="图 2" alt='tree-traversal' width="650"/>
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/is-tree.jpeg' alt='tree-traversal' width="650" legend="图 2" />
 
 上图中的结构都是树，可以对照 5 个特点进行验证。
 
 通过上面几个例子可以看出 `树` 这种数据结构很像现实中的“树”，上图 `树` 中的每个圆圈就是树的一个 `节点`，圆圈之间的相连的线表示了节点之间的关系，通常上下相连我们称为“父子节点”，有相同直接父节点的我们称为“兄弟节点”，这和现实中的“辈分”也是很相似的，对应的还可以有“祖父节点”等。比如在下图中：A 节点就是 B 节点的父节点，B 节点就是 A 节点的子节点。F 和 G 两个节点的父节点是同一个节点，所以他们互为兄弟节点，同理，H、I、J 也互为兄弟节点。而 A 节点是没有父节点的，把这样的节点叫做根节点，根节点只有一个。F、G、K、I 和 L 是没有子节点的，这样的节点我们叫做叶子节点或者叶节点。
 
-<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/tree-node-relation.jpeg' legend="图 3" alt='tree-traversal' width="650" style="margin: auto"/>
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/tree-node-relation.jpeg' alt='tree-traversal' width="650" legend="图 3" />
 
 ## 高度 (Height)
 
@@ -69,7 +69,7 @@ keywords:
 
 对于任意节点 n，n 的层数为 **n 的深度 + 1**。以上图*图 3* 为例，节点 D 的深度为 2，则其所在层为 3，也就是节点 D 到根点的唯一路径为 D - B - A 上的“节点”数。同理可知节点 K 所在的层数为 5。
 
-<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/tree-height-depth-level.jpeg' legend="图 4" alt='tree-traversal' width="650"/>
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/tree-height-depth-level.jpeg' alt='tree-traversal' width="650" legend="图 4" />
 
 对比 `高度` `深度` `层` 这三个概念，我们可以类比生活中的含义来简化记忆：
 
@@ -88,4 +88,4 @@ keywords:
 ## 参考资料
 
 1. [数据结构与算法之美, by 王争](https://time.geekbang.org/column/intro/126)
-2. [树 (数据结构), wikipedia](<https://zh.wikipedia.org/wiki/%E6%A0%91_(%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84)>)
+2. [树 (数据结构), wikipedia](https://zh.wikipedia.org/wiki/%E6%A0%91_%28%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%29)
