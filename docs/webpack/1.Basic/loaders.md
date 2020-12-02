@@ -391,6 +391,65 @@ module: {
 
 :::
 
+Used in TypeScript:
+
+```js title="webpack.config.dev.js"
+module: {
+    rules: [
+        {
+            test: /\.tsx?$/,
+            use: [
+                {
+                    loader: 'thread-loader'
+                },
+                {
+                    loader: 'ts-loader',
+                    options: {
+                        transpileOnly: true,
+                        happyPackMode: true // IMPORTANT! use happyPackMode mode to speed-up compilation and reduce errors reported to webpack
+                    }
+                }
+            ]
+        }
+    ]
+}
+```
+
+```js title="webpack.config.prod.js"
+module: {
+    rules: [
+        {
+            test: /\.tsx?$/,
+            use: [
+                {
+                    loader: 'thread-loader',
+                    options: {
+                        // there should be 1 cpu for the fork-ts-checker-webpack-plugin
+                        workers: require('os').cpus().length - 1
+                    }
+                },
+                {
+                    loader: 'ts-loader',
+                    options: {
+                        happyPackMode: true // IMPORTANT! use happyPackMode mode to speed-up compilation and reduce errors reported to webpack
+                    }
+                }
+            ]
+        }
+    ]
+},
+plugins: [
+    new ForkTsCheckerWebpackPlugin({
+        typescript: {
+            diagnosticOptions: {
+                semantic: true,
+                syntactic: true
+            }
+        }
+    })
+]
+```
+
 ## 参考链接
 
 - [webpack official document](https://webpack.js.org/loaders/)
