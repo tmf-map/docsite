@@ -1,6 +1,5 @@
 ---
-id: presentational-component
-title: 展示型组件
+title: Presentational Component
 ---
 
 ## presentational 组件

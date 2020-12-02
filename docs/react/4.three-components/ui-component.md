@@ -1,6 +1,5 @@
 ---
-id: ui-component
-title: UI组件
+title: UI Component
 ---
 
 ## 什么是 ui 组件？
