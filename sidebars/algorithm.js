@@ -50,6 +50,8 @@ module.exports = {
     'algorithm/4.linkedlist/LRU-cache'
   ],
   '5. 二叉树': [
+    'algorithm/5.binary-tree/tree',
+    'algorithm/5.binary-tree/binary-tree',
     'algorithm/5.binary-tree/build-tree',
     'algorithm/5.binary-tree/mirror-tree',
     'algorithm/5.binary-tree/subtree',
