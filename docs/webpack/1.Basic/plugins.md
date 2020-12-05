@@ -86,11 +86,11 @@ module.exports = {
 };
 ```
 
-通过上面的配置可以将`index.html`打包成只有一行的文件，文件名为`split.html`。通过`chunks`数组可以将打包好的某些`boundle`和`chunk`路径添加到`.html`的`script`标签的`src`属性上。`minify`各字段的具体含义和用法可以通过[html-minifier-terser](https://github.com/DanielRuf/html-minifier-terser)查询。
+通过上面的配置可以将`index.html`打包成只有一行的文件，文件名为`split.html`。通过`chunks`数组可以将打包好的某些`boundle`和`chunk`路径添加到`.html`的`script`标签的`src`属性上。`minify`各字段的具体含义和用法可以通过 [html-minifier-terser](https://github.com/DanielRuf/html-minifier-terser) 查询。
 
 | Name | Type | Default | Description |
 | :-: | :-: | :-: | :-- |
-| **`title`** | `{String}` | `Webpack App` | The title to use for the generated HTML document |
+| **`title`** | `{String}` | `Webpack App` | The title to use for the generated HTML document, can use `<%= htmlWebpackPlugin.options.title %>` in ejs file. |
 | **`filename`** | `{String}` | `'index.html'` | The file to write the HTML to. Defaults to `index.html`. You can specify a subdirectory here too (eg: `assets/admin.html`) |
 | **`template`** | `{String}` | `` | `webpack` relative or absolute path to the template. By default it will use `src/index.ejs` if it exists. Please see the [docs](https://github.com/jantimon/html-webpack-plugin/blob/master/docs/template-option.md) for details |
 | **`templateContent`** | `{string\|Function\|false}` | false | Can be used instead of `template` to provide an inline template - please read the [Writing Your Own Templates](https://github.com/jantimon/html-webpack-plugin#writing-your-own-templates) section |
@@ -110,20 +110,43 @@ module.exports = {
 | **`excludeChunks`** | `{Array.<string>}` | `` | Allows you to skip some chunks (e.g don't add the unit-test chunk) |
 | **`xhtml`** | `{Boolean}` | `false` | If `true` render the `link` tags as self-closing (XHTML compliant) |
 
-```js
+You can use [ejs](https://ejs.co/) as well (by default, `template` will use `src/index.ejs`).
+
+```js title="webpack.config.js"
 new HtmlWebpackPlugin({
-    template: 'index.ejs',
-    alwaysWriteToDisk: true,
-    isProdEnv: process.env.NODE_ENV === 'production'
+  template: 'index.ejs', // customize the path of ejs file which is in root dir
+  alwaysWriteToDisk: true,
+  isProdEnv: process.env.NODE_ENV === 'production'
 }),
 new HtmlWebpackHarddiskPlugin(),
 ```
 
-https://ejs.co/
+```html title="index.ejs"
+<body>
+  <noscript> You need to enable JavaScript to run this app. </noscript>
+  <div id="root"></div>
+  <% if (htmlWebpackPlugin.options.isProdEnv) { %>
+  <script src="https://unpkg.com/react@16.14.0/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@16.14.0/umd/react-dom.production.min.js"></script>
+  <% } %> <% if (!htmlWebpackPlugin.options.isProdEnv) { %>
+  <script src="https://unpkg.com/react@16.14.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16.14.0/umd/react-dom.development.js"></script>
+  <% } %>
+</body>
+```
 
-https://www.cnblogs.com/zhishaofei/p/10222503.html
+Except above, you should set `index.html` as the default page as following:
 
-Use html-webpack-harddisk-plugin after HtmlWebpackPlugin. It keeps index.html at hard disk, so that you can simply doing this:
+```js
+app.get('*', (req, res) => {
+  // for example
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+});
+```
+
+## html-webpack-harddisk-plugin
+
+You can use [html-webpack-harddisk-plugin](https://github.com/jantimon/html-webpack-harddisk-plugin) after `HtmlWebpackPlugin`. It keeps `index.html` at hard disk when using the webpack dev server or middleware(development env), so that you can simply doing this:
 
 ```js
 plugins: [
@@ -133,17 +156,6 @@ plugins: [
   new HtmlWebpackHarddiskPlugin()
 ];
 ```
-
-...achieve this:
-
-```js
-app.get('*', (req, res) => {
-  // for example
-  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
-});
-```
-
-https://github.com/jantimon/html-webpack-harddisk-plugin
 
 ## mini-css-extract-plugin
 
@@ -427,3 +439,5 @@ module.exports = {
 3. [webpack 不可错过的打包优化方法，by 前端工匠](https://mp.weixin.qq.com/s/hN2yTtFLyFBWmOrKF-E8lQ)
 4. [Webpack official doc: Optimization](https://webpack.js.org/configuration/optimization/)
 5. [html-webpack-plugin 使用总结, by 闲不住的李先森](https://juejin.im/post/6844903853708541959)
+6. [HtmlWebpackPlugin 用的 html 的 ejs 模板文件中如何使用条件判断](https://www.cnblogs.com/zhishaofei/p/10222503.html)
+7. [html-webpack-plugin 使用总结](https://juejin.cn/post/6844903853708541959)
