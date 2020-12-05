@@ -86,7 +86,7 @@ module.exports = {
 };
 ```
 
-通过上面的配置可以将`index.html`打包成只有一行的文件，文件名为`split.html`。通过`chunks`数组可以将打包好的某些`boundle`和`chunk`路径添加到`.html`的`script`标签的`src`属性上。`minify`各字段的具体含义和用法可以通过 [html-minifier-terser](https://github.com/DanielRuf/html-minifier-terser) 查询。
+通过上面的配置可以将`index.html`打包成只有一行的文件，文件名为`split.html`。通过`chunks`数组可以将打包好的某些`bundle`和`chunk`路径添加到`.html`的`script`标签的`src`属性上。`minify`各字段的具体含义和用法可以通过 [html-minifier-terser](https://github.com/DanielRuf/html-minifier-terser) 查询。
 
 | Name | Type | Default | Description |
 | :-: | :-: | :-: | :-- |
@@ -424,7 +424,7 @@ module.exports = {
 };
 ```
 
-`options`表示其它配置，一般可能会设置为`copyUnmodified`属性。使用`--watch`或`webpack-dev-server`时，如果`copyUnmodified`默认值为`false`表示只复制修改的文件。如果设置为`ture`，代表只要有文件修改，所有文件都会被复制一遍。
+`options`表示其它配置，一般可能会设置为`copyUnmodified`属性。使用`--watch`或`webpack-dev-server`时，如果`copyUnmodified`默认值为`false`表示只复制修改的文件。如果设置为`true`，代表只要有文件修改，所有文件都会被复制一遍。
 
 与`CopyWebpackPlugin`相关的更多配置，可以参考[CopyWebpackPlugin](https://webpack.js.org/plugins/copy-webpack-plugin/)
 
