@@ -1,8 +1,8 @@
 ---
-title: 常用的Plugins
+title: Plugins
 ---
 
-## Plugins
+## Plugins overview
 
 插件用于 `bundle` 文件的优化，资源管理和环境变量注入，作于用整个构建过程。插件可以看作是`loaders`功能的补充，对于`loader`无法完成的打包需求，可以考虑使用插件来实现。
 
@@ -10,7 +10,7 @@ title: 常用的Plugins
 
 | 名称 | 描述 |
 | --- | --- |
-| html-webpack-plugin | 创建`html`文件去承载输出的`bundle` |
+| html-webpack-plugin | 动态生成`html`文件去承载输出的`bundle` |
 | mini-css-extract-plugin | 将`CSS`从`bundle`文件里提取成一个独立的`css`文件 |
 | optimize-css-assets-webpack-plugin | 压缩 CSS 代码 |
 | uglifyjs-webpack-plugin | 压缩`js`(从[2.0.0 版](https://github.com/webpack-contrib/uglifyjs-webpack-plugin/releases) 本开始不再支持 ES6 代码) |
@@ -55,7 +55,7 @@ module.exports = {
 
 ## html-webpack-plugin
 
-`html-webpack-plugin`的主要功能是打包和压缩 HTML 文件。
+[html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin) 的主要功能是打包和压缩 HTML 文件，简化了 HTML 文件的创建，对于在文件名中包含每次会随着编译而发生变化哈希的 webpack bundle 尤其有用。当然你也可以不用这个插件直接创建一个静态 HTML 文件，如果需要动态改变内容的话在 webpack 里面通过 JS 来操作这个 HTML 文件，但这样比较麻烦，要想省事的话用 `html-webpack-plugin` 会简单很多。
 
 - `html-webpack-plugin` 安装
 
@@ -86,7 +86,76 @@ module.exports = {
 };
 ```
 
-通过上面的配置可以将`index.html`打包成只有一行的文件，文件名为`split.html`。通过`chunks`数组可以将打包好的某些`boundle`和`chunk`路径添加到`.html`的`script`标签的`src`属性上。`minify`各字段的具体含义和用法可以通过[html-minifier-terser](https://github.com/DanielRuf/html-minifier-terser)查询。
+通过上面的配置可以将`index.html`打包成只有一行的文件，文件名为`split.html`。通过`chunks`数组可以将打包好的某些`bundle`和`chunk`路径添加到`.html`的`script`标签的`src`属性上。`minify`各字段的具体含义和用法可以通过 [html-minifier-terser](https://github.com/DanielRuf/html-minifier-terser) 查询。
+
+| Name | Type | Default | Description |
+| :-: | :-: | :-: | :-- |
+| **`title`** | `{String}` | `Webpack App` | The title to use for the generated HTML document, can use `<%= htmlWebpackPlugin.options.title %>` in ejs file. |
+| **`filename`** | `{String}` | `'index.html'` | The file to write the HTML to. Defaults to `index.html`. You can specify a subdirectory here too (eg: `assets/admin.html`) |
+| **`template`** | `{String}` | `` | `webpack` relative or absolute path to the template. By default it will use `src/index.ejs` if it exists. Please see the [docs](https://github.com/jantimon/html-webpack-plugin/blob/master/docs/template-option.md) for details |
+| **`templateContent`** | `{string\|Function\|false}` | false | Can be used instead of `template` to provide an inline template - please read the [Writing Your Own Templates](https://github.com/jantimon/html-webpack-plugin#writing-your-own-templates) section |
+| **`templateParameters`** | `{Boolean\|Object\|Function}` | `false` | Allows to overwrite the parameters used in the template - see [example](https://github.com/jantimon/html-webpack-plugin/tree/master/examples/template-parameters) |
+| **`inject`** | `{Boolean\|String}` | `true` | `true \|\| 'head' \|\| 'body' \|\| false` Inject all assets into the given `template` or `templateContent`. When passing `true` or `'body'` all javascript resources will be placed at the bottom of the body element. `'head'` will place the scripts in the head element - see the [inject:false example](https://github.com/jantimon/html-webpack-plugin/tree/master/examples/custom-insertion-position) |
+| **`publicPath`** | `{String\|'auto'}` | `'auto'` | The publicPath used for script and link tags |
+| **`scriptLoading`** | `{'blocking'\|'defer'}` | `'blocking'` | Modern browsers support non blocking javascript loading (`'defer'`) to improve the page startup performance. |
+| **`favicon`** | `{String}` | `` | Adds the given favicon path to the output HTML |
+| **`meta`** | `{Object}` | `{}` | Allows to inject `meta`-tags. E.g. `meta: {viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no'}` |
+| **`base`** | `{Object\|String\|false}` | `false` | Inject a [`base`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base) tag. E.g. `base: "https://example.com/path/page.html` |
+| **`minify`** | `{Boolean\|Object}` | `true` if `mode` is `'production'`, otherwise `false` | Controls if and in what ways the output should be minified. See [minification](#minification) below for more details. |
+| **`hash`** | `{Boolean}` | `false` | If `true` then append a unique `webpack` compilation hash to all included scripts and CSS files. This is useful for cache busting |
+| **`cache`** | `{Boolean}` | `true` | Emit the file only if it was changed |
+| **`showErrors`** | `{Boolean}` | `true` | Errors details will be written into the HTML page |
+| **`chunks`** | `{?}` | `?` | Allows you to add only some chunks (e.g only the unit-test chunk) |
+| **`chunksSortMode`** | `{String\|Function}` | `auto` | Allows to control how chunks should be sorted before they are included to the HTML. Allowed values are `'none' \| 'auto' \| 'manual' \| {Function}` |
+| **`excludeChunks`** | `{Array.<string>}` | `` | Allows you to skip some chunks (e.g don't add the unit-test chunk) |
+| **`xhtml`** | `{Boolean}` | `false` | If `true` render the `link` tags as self-closing (XHTML compliant) |
+
+You can use [ejs](https://ejs.co/) as well (by default, `template` will use `src/index.ejs`).
+
+```js title="webpack.config.js"
+new HtmlWebpackPlugin({
+  template: 'index.ejs', // customize the path of ejs file which is in root dir
+  alwaysWriteToDisk: true,
+  isProdEnv: process.env.NODE_ENV === 'production'
+}),
+new HtmlWebpackHarddiskPlugin(),
+```
+
+```html title="index.ejs"
+<body>
+  <noscript> You need to enable JavaScript to run this app. </noscript>
+  <div id="root"></div>
+  <% if (htmlWebpackPlugin.options.isProdEnv) { %>
+  <script src="https://unpkg.com/react@16.14.0/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@16.14.0/umd/react-dom.production.min.js"></script>
+  <% } %> <% if (!htmlWebpackPlugin.options.isProdEnv) { %>
+  <script src="https://unpkg.com/react@16.14.0/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16.14.0/umd/react-dom.development.js"></script>
+  <% } %>
+</body>
+```
+
+Except above, you should set `index.html` as the default page as following:
+
+```js
+app.get('*', (req, res) => {
+  // for example
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+});
+```
+
+## html-webpack-harddisk-plugin
+
+You can use [html-webpack-harddisk-plugin](https://github.com/jantimon/html-webpack-harddisk-plugin) after `HtmlWebpackPlugin`. It keeps `index.html` at hard disk when using the webpack dev server or middleware(development env), so that you can simply doing this:
+
+```js
+plugins: [
+  new HtmlWebpackPlugin({
+    alwaysWriteToDisk: true
+  }),
+  new HtmlWebpackHarddiskPlugin()
+];
+```
 
 ## mini-css-extract-plugin
 
@@ -355,7 +424,7 @@ module.exports = {
 };
 ```
 
-`options`表示其它配置，一般可能会设置为`copyUnmodified`属性。使用`--watch`或`webpack-dev-server`时，如果`copyUnmodified`默认值为`false`表示只复制修改的文件。如果设置为`ture`，代表只要有文件修改，所有文件都会被复制一遍。
+`options`表示其它配置，一般可能会设置为`copyUnmodified`属性。使用`--watch`或`webpack-dev-server`时，如果`copyUnmodified`默认值为`false`表示只复制修改的文件。如果设置为`true`，代表只要有文件修改，所有文件都会被复制一遍。
 
 与`CopyWebpackPlugin`相关的更多配置，可以参考[CopyWebpackPlugin](https://webpack.js.org/plugins/copy-webpack-plugin/)
 
@@ -363,9 +432,12 @@ module.exports = {
 
 <Img width="700" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200419120449.gif" />
 
-## 参考资料
+## References
 
 1. [webpack official document](https://webpack.js.org/plugins/)
 2. [玩转 webpack，by 程柳锋](https://time.geekbang.org/course/intro/100028901)
 3. [webpack 不可错过的打包优化方法，by 前端工匠](https://mp.weixin.qq.com/s/hN2yTtFLyFBWmOrKF-E8lQ)
 4. [Webpack official doc: Optimization](https://webpack.js.org/configuration/optimization/)
+5. [html-webpack-plugin 使用总结, by 闲不住的李先森](https://juejin.im/post/6844903853708541959)
+6. [HtmlWebpackPlugin 用的 html 的 ejs 模板文件中如何使用条件判断](https://www.cnblogs.com/zhishaofei/p/10222503.html)
+7. [html-webpack-plugin 使用总结](https://juejin.cn/post/6844903853708541959)
