@@ -395,23 +395,23 @@ Used in TypeScript:
 
 ```js title="webpack.config.dev.js"
 module: {
-    rules: [
+  rules: [
+    {
+      test: /\.tsx?$/,
+      use: [
         {
-            test: /\.tsx?$/,
-            use: [
-                {
-                    loader: 'thread-loader'
-                },
-                {
-                    loader: 'ts-loader',
-                    options: {
-                        transpileOnly: true,
-                        happyPackMode: true // IMPORTANT! use happyPackMode mode to speed-up compilation and reduce errors reported to webpack
-                    }
-                }
-            ]
+          loader: 'thread-loader'
+        },
+        {
+          loader: 'ts-loader',
+          options: {
+            transpileOnly: true,
+            happyPackMode: true // IMPORTANT! use happyPackMode mode to speed-up compilation and reduce errors reported to webpack
+          }
         }
-    ]
+      ]
+    }
+  ];
 }
 ```
 
