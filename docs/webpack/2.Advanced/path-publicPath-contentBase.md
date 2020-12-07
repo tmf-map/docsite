@@ -4,7 +4,7 @@ title: path vs. publicPath vs. contentBase
 
 ## 概述
 
-在`webapck`的打包配置中，一般会使用到`path`、 `publicPath` 和 `contentBase`来配置资源路径，那么三者分别代表什么含义呢？三者的含义简要概述如下：
+在`webpack`的打包配置中，一般会使用到`path`、 `publicPath` 和 `contentBase`来配置资源路径，那么三者分别代表什么含义呢？三者的含义简要概述如下：
 
 - `path`在生产环境（production）中代表**打包后资源在项目中的存放目录**，在**开发环境（development）中可以省略**。
 - `publicPath`在生产环境一般用来**为`CDN`资源添加前缀**，在开启 webpackDevServer 的开发环境中代表**打包后资源在内存中存放的相对路径**，默认为**项目根目录**。
@@ -54,9 +54,10 @@ module.exports = {
 
 `output`中的`publicPath`可以分为两种情况：
 
-1. 在生产环境中，通过设置`publicPath`添加 <abbr title="Content Delivery Network">CDN</abbr> 前缀，将我们的静态资源进行 CDN 托管。
-
-2. 在开发环境中，通过设置`publicPath`添加相对路径前缀，在开启`webpackDevServer`时，指明打包后的资源路径，默认路径为项目的根目录。
+1. 绝对路径：通常用在生产环境中
+   1. 将 webpack 的打包好的静态资源进行 CDN 托管，通过设置`publicPath`添加 <abbr title="Content Delivery Network">CDN</abbr> 前缀
+   2. 也可以不用 CDN，将其直接指向服务器上的静态资源目录，如 `/static/`, `/public/`, `/build/`, `/dist/` 等。
+2. 相对路径：通常用在开发环境中，通过设置`publicPath`添加相对路径前缀，在开启`webpackDevServer`时，指明打包后的资源路径，默认路径为项目的根目录，如 `./build/`, `./dist/`，一般保持默认即可。
 
 :::caution
 
@@ -66,7 +67,7 @@ module.exports = {
 
 - 生产环境
 
-在生产环境下，如果我们不设置`publicPath`，资源的引用会采用相对路径引用。但有时候我们可能会利用 CDN 来托管这些资源，此时我们就需要为引用的资源添加 CDN 的 url 前缀。例如在生产环境中我们可以配置如下：
+在生产环境下，如果我们不设置`publicPath`，资源的引用会采用**相对路径**引用。但有时候我们可能会利用 CDN 来托管这些资源，此时我们就需要为引用的资源添加 CDN 的 url 前缀。例如在生产环境中我们可以配置如下：
 
 ```js {7} title="webpack.prod.js"
 module.exports = {
@@ -138,9 +139,9 @@ module.exports = {
 
 <Img width="700" id = "first-demo" legend="演示1：output.publicPath默认值" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200423180630.gif"/>
 
-由演示的结果可以看出，打包后的静态资源`search.html`、`index.js`和图片都是以`/`为前缀，这证明了**在默认的情况下，`output.publicPath`代表着项目根目录**。
+由演示的结果可以看出，打包后的静态资源`search.html`、`index.js`和图片本质上都是以`./`为前缀，还是相对路径，这证明了**在默认的情况下，`output.publicPath`代表着项目根目录**。
 
-为了进一步的证明，我们还可以将`output.publicPath`改为`/dist/`，我们期望所有的静态资源都会添加`/dist/`前缀。运行过程如下图：
+为了进一步的证明，我们还可以将`output.publicPath`改为`/dist/`（假设 `/dist/` 为服务器的静态资源目录，需要服务器配置），我们期望所有的静态资源都会添加`/dist/`前缀。运行过程如下图：
 
 <Img width="700"  id = "second-demo" legend="演示2：output.publicPath为特定值" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200423181421.gif"/>
 
@@ -240,7 +241,7 @@ module.exports = {
 
 ## 参考链接
 
-- [Webpack 中 path/publicPath/contentBase 的关系，by fi3ework ](https://github.com/fi3ework/blog/issues/39)
+- [Webpack 中 path/publicPath/contentBase 的关系，by fi3ework](https://github.com/fi3ework/blog/issues/39)
 - [webpack 配置文件中 publicPath 和 contentBase 傻傻分不清, by 小飞猫\_](https://blog.csdn.net/wang839305939/article/details/85855967)
 - [webpack 配置 publicPath 的理解, by SamWeb](https://www.cnblogs.com/SamWeb/p/8353367.html)
 - [webpack 中的热更新及原理分析，by 程柳锋](https://time.geekbang.org/course/detail/100028901-98391)
