@@ -2,14 +2,15 @@
 title: 同源策略
 ---
 
-<div align="center">
-    <img src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/VKSsM4.png" width="345" height="125"/>
-    <p>图1：同源示意图</p >
-</div>
+<Img src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/VKSsM4.png" width="345" height="125" legend="图1：同源示意图"/>
 
 同源策略：协议、域名、端口全部相同，三者缺一不可。
 
-注： 有些人会说 baidu.com zhihu.com qq.com 是一级域名，虽然是错误的，但可以理解(说的人多了也就是对的了……)，这是站在使用者/购买者角度看的，对于购买域名者来说 xxx.com xxx.com.cn 就相当一级域名，但是从真正的域名分级看，它们俩分别是二级域名、三级域名。
+:::tip
+
+有些人会说 `baidu.com` `zhihu.com` `qq.com` 是一级域名，虽然是错误的，但可以理解(说的人多了也就是对的了……)，这是站在使用者/购买者角度看的，对于购买域名者来说 `xxx.com` `xxx.com.cn` 就相当一级域名，但是从真正的域名分级看，它们俩分别是二级域名、三级域名。
+
+:::
 
 同源政策的目的，是为了保证用户信息的安全，防止恶意的网站窃取数据。
 
