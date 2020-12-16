@@ -2,6 +2,8 @@
 title: CORS
 ---
 
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/CORS.png' alt='CORS'/>
+
 ## 简介
 
 CORS 是跨源资源共享（Cross-Origin Resource Sharing）的缩写。它是 W3C 标准，是跨源 AJAX 请求的根本解决方法。相比 JSONP 只能发 GET 请求，**CORS 允许任何类型的请求**。
@@ -161,7 +163,7 @@ Access-Control-Allow-Origin: *
 
    该字段可选，用来指定本次预检请求的有效期，单位为秒。上面结果中，有效期是 1h（3600 秒），即允许缓存该条回应 1h，在此期间，不用发出另一条预检请求。
 
-## 浏览器的正常请求和回应
+### 浏览器的正常请求和回应
 
 **一旦服务器通过了"预检"请求，浏览器会发送一个正常的 CORS 请求**，就都跟简单请求一样，会有一个 `Origin` 头信息字段。服务器的回应，也都会有一个 `Access-Control-Allow-Origin` 头信息字段。
 
