@@ -6,11 +6,11 @@ title: 内存检测
 
 将内存视为具有原始类型（如数字和字符串）和对象（引用类型）的图。形象一点，可以将内存表示为一个由多个互连的节点组成的图，如下所示：
 
-<Img width="350" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/Z3bLkf.jpg'/>
+<Img width="300" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/Z3bLkf.jpg' legend="图：内存的节点表示" origin="https://developers.google.com/web/tools/chrome-devtools/memory-problems/memory-101#object_sizes" />
 
-:::tip
+:::note
 
-图中数字只是节点编号，并不是实际的值
+图中数字只是节点编号，并不是实际的值。
 
 :::
 
@@ -54,7 +54,7 @@ title: 内存检测
 
 :::
 
-<Img width="420" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/enmBSs.jpg'/>
+<Img width="360" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/enmBSs.jpg' legend="图：Retained Size" origin="https://developers.google.com/web/tools/chrome-devtools/memory-problems/memory-101#retained_size" />
 
 任何无法从根到达的对象都会被 GC 回收。
 
@@ -81,8 +81,12 @@ title: 内存检测
 - 节点 5 支配节点 8
 - 节点 6 支配节点 7
 
-<Img width="210" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/fN93zR.jpg'/>
+<Img width="180" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/fN93zR.jpg' legend="图1" origin="https://developers.google.com/web/tools/chrome-devtools/memory-problems/memory-101#dominators" />
 
 在下面的示例中，节点 `#3` 是 `#10` 的支配项，但 `#7` 也存在于从 GC 到 `#10` 的每一个简单路径中。因此，如果对象 B 存在于从根到对象 A 的每一个简单路径中，那么对象 B 就是对象 A 的支配项。
 
-<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/dominators.gif'/>
+<Img width="560" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/dominators.gif' legend="图2" origin="https://developers.google.com/web/tools/chrome-devtools/memory-problems/memory-101#dominators" />
+
+## Reference
+
+1. [Memory Terminology by Google](https://developers.google.com/web/tools/chrome-devtools/memory-problems/memory-101)
