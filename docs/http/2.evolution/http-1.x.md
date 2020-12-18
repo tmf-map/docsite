@@ -64,9 +64,11 @@ HTTP/1.1 版的最大变化，就是引入了**持久连接（persistent connect
 
 因为 TCP 连接长时间不关闭，服务器必须在内存里保存它的状态，这就占用了服务器的资源。如果有大量的空闲长连接只连不发，就会很快耗尽服务器的资源，导致服务器无法为真正有需要的用户提供服务。所以当客户端和服务器发现对方一段时间没有活动，就可以主动关闭连接。不过，规范的做法是，客户端在最后一个请求时，发送 `Connection: close`，明确要求服务器关闭 TCP 连接。
 
-<Img width="500" legend="图：长短链接对比图" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/FKLcnQ.jpg" />
+<Img width="600" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/short-lived-persistent.png' alt='short-lived-persistent'/>
 
-通过上图可以看出，在客户端和服务器需要多次传输时，长链接相比与短链接的效率要高很多。 :::tip
+通过上图可以看出，在客户端和服务器需要多次传输时，长链接相比与短链接的效率要高很多。
+
+:::tip
 
 目前，对于同一个域名，大多数浏览器允许同时建立 6 个持久连接。
 
