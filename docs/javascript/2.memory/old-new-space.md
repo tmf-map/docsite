@@ -86,13 +86,13 @@ Scavenge，拷贝-收集算法，它将新生代划分为两半即 semi space �
 
 通过这两个阶段，就可以令不能利用的内存空间重新得到利用。Mark-Sweep 算法的操作过程如下图所示<sup>[4]</sup>：
 
-<Img width="570" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/bPLpnZ.png' legend="图 执行 GC 前堆的状态" alt='bPLpnZ'/>
+<Img width="570" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/bPLpnZ.png' legend="图 执行 GC 前堆的状态" />
 
-<Img width="580" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/dD14g7.png' legend="图 设置标志位的处理" alt='dD14g7'/>
+<Img width="580" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/dD14g7.png' legend="图 设置标志位的处理" />
 
-<Img width="600" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/lpdWZ9.png' legend="图 标记阶段结束后的堆状态" alt='lpdWZ9'/>
+<Img width="600" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/lpdWZ9.png' legend="图 标记阶段结束后的堆状态" />
 
-<Img width="600" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/PVWVI5.png' legend="图 清除阶段结束后的堆状态" alt='PVWVI5'/>
+<Img width="600" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/PVWVI5.png' legend="图 清除阶段结束后的堆状态" />
 
 #### 变量清除后的问题：碎片化
 

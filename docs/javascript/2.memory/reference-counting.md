@@ -4,7 +4,7 @@ title: 引用计数
 
 > GC 原本是一种“释放怎么都无法被引用的对象的机制”。那么人们自然而然地就会 想到，可以让所有对象事先记录下“有多少程序引用自己”。让各对象知道自己的“人气指 数”，从而让没有人气的对象自己消失，这就是引用计数法(Reference Counting)，它是 George E. Collins 于 1960 年钻研出来的<sup>[1]</sup>。
 
-<Img w="480" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/P4Vpjz.png' alt='P4Vpjz'/>
+<Img w="480" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/P4Vpjz.png' />
 
 引用计数是 GC 算法中最简单也最容易实现的一种，它和标记清除方式差不多是在同一时间发明出来的，第一个 JS 版本大概是 90 年代初的事情。
 
@@ -12,13 +12,13 @@ title: 引用计数
 
 引用计数法中引入了一个概念，那就是“计数器”。计数器表示的是对象的人气指数， 也就是有多少程序引用了这个对象(被引用数)。
 
-<Img w="280" legend="图1 引用计数法中的对象" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/q7W2rw.png' alt='q7W2rw'/>
+<Img w="280" legend="图1 引用计数法中的对象" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/q7W2rw.png' />
 
 当引用发生增减时对计数进行更新。引用计数的增减，一般发生在变量赋值、对象内容更新、函数结束（局部变量不再被引用）等时间点。当一个对象的引用计数变为 0 时，则说明它将来不会再被引用，因此可以释放相应的内存空间。
 
 结合图片来看一下 `update_ptr()`<sup>[2]</sup> 函数执行时的情况。请看图 2(a)。初始状态下从 根引用 A 和 C，从 A 引用 B。A 持有唯一指向 B 的指针，假设现在将该指针更新到了 C，请看图 2(b)。
 
-<Img w="600" legend="图2 update_ptr() 函数执行时的情况" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/BT2csn.png' alt='BT2csn'/>
+<Img w="600" legend="图2 update_ptr() 函数执行时的情况" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/BT2csn.png' />
 
 通过以上的更新，B 的计数器值变成了 0，因此 B 被回收了。且 B 连接上了空闲链表， 能够再被利用了。又因为新形成了由 A 指向 C 的指针，所以 C 的计数器的值增量为 2。
 
@@ -38,7 +38,7 @@ title: 引用计数
 
 ### 循环引用无法回收
 
-<Img w="350" legend="图3 循环引用对象" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/xxBE1k.png' alt='xxBE1k'/>
+<Img w="350" legend="图3 循环引用对象" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/xxBE1k.png' />
 
 像上述这样，因为两个对象互相引用，所以各对象的计数器的值都是 1。但是这些对象 组并没有被其他任何对象引用。因此想一并回收这两个对象都不行，只要它们的计数器值都 是 1，就无法回收。像这样在两个及两个以上的对象互相循环引用形成对象组的情况下，即 使这些对象组都成了垃圾，程序也无法将它们回收，有可能造成内存泄漏。
 
