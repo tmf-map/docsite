@@ -1,6 +1,5 @@
 ---
-id: session
-title: session
+title: Session
 ---
 
 ![](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/v09UXT.png)

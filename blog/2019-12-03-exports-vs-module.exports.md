@@ -179,6 +179,6 @@ require：  function () {
 
 与本文内容相关的还有 ES6 模块的导出规范，如果对 ES6 模块`export`和`export default`感兴趣，可以[点击此处查看相关总结](https://www.thinkbucket.cn/docs/javascript/6.modules/es6-module)。
 
-## 参考链接
+## 参考资料
 
 [Node.js 模块里 exports 与 module.exports 的区别? --- 小明 plus](https://www.zhihu.com/question/26621212)

@@ -1,5 +1,4 @@
 ---
-id: JWT
 title: JWT
 ---
 
@@ -121,7 +120,7 @@ Authorization: Bearer <token>
 
 除了上述两种案例外，还有很多其他的风险案例，如果感兴趣可以参考这篇文章：[JWT 介绍及其安全性分析](https://www.freebuf.com/vuls/219056.html)。因此，为了保证数据的安全性，`JWT`一般需要结合`https`一起使用。
 
-## 参考连接
+## 参考资料
 
 1. [JSON Web Token 入门教程，by 阮一峰](http://www.ruanyifeng.com/blog/2018/07/json_web_token-tutorial.html)
 2. [Token Authentication: The Secret to Scalable User Management，by Lindsay Brunner](https://stormpath.com/blog/token-authentication-scalable-user-mgmt)

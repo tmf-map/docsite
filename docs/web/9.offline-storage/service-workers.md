@@ -199,7 +199,7 @@ function execute() {
 
 [Can I use notifications?](https://caniuse.com/#search=notifications) <Img  src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/can_i_use_notifications.png"/>
 
-## 参考链接
+## 参考资料
 
 1. [PWA 文档 -- LAVAS](https://lavas.baidu.com/pwa)
 2. [下一代 Web 应用模型 — Progressive Web App @黄玄](https://zhuanlan.zhihu.com/p/25167289)

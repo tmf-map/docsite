@@ -137,7 +137,7 @@ https://github.com/login/oauth/authorize?
 
 :::
 
-如果对其它三种授权模式感兴趣，可以通过参考连接中的`1`和`2`来学习。
+如果对其它三种授权模式感兴趣，可以通过参考资料中的`1`和`2`来学习。
 
 另外，阮一峰在他的博客--[GitHub OAuth 第三方登录示例教程](http://www.ruanyifeng.com/blog/2019/04/github-oauth.html)中对授权码模式进行了代码实践，建议实践一下。
 
@@ -184,7 +184,7 @@ https://leetcode.com/accounts/github/login/callback/?code=9275236b97affb3c6cc&st
 
 因为两次`state`都是`Github`给出，此时通过对比用户本地保存的`state`和授权服务器返回的`state`，来判断是否是异常请求。这样就可以避免`CSRF`攻击。
 
-## 参考链接
+## 参考资料
 
 1. [彻底理解 OAuth2 协议，by 代码真香](https://www.youtube.com/watch?v=T0h6A-M_WmI)
 2. [理解 OAuth 2.0, by 阮一峰](https://www.ruanyifeng.com/blog/2014/05/oauth_2_0.html)

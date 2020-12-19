@@ -450,7 +450,7 @@ plugins: [
 ]
 ```
 
-## 参考链接
+## 参考资料
 
 - [webpack official document](https://webpack.js.org/loaders/)
 - [玩转 webpack，by 程柳锋](https://time.geekbang.org/course/intro/100028901)

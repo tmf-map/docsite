@@ -239,9 +239,9 @@ module.exports = {
 
 由上图可知服务器资源的目录为`./dist`，当我们在地址栏输入`dist/search.html`时页面可以正常显示，这也说明`contentBase`与`publicPath`其实没啥关系，互不影响。
 
-## 参考链接
+## 参考资料
 
-- [Webpack 中 path/publicPath/contentBase 的关系，by fi3ework](https://github.com/fi3ework/blog/issues/39)
-- [webpack 配置文件中 publicPath 和 contentBase 傻傻分不清, by 小飞猫\_](https://blog.csdn.net/wang839305939/article/details/85855967)
-- [webpack 配置 publicPath 的理解, by SamWeb](https://www.cnblogs.com/SamWeb/p/8353367.html)
-- [webpack 中的热更新及原理分析，by 程柳锋](https://time.geekbang.org/course/detail/100028901-98391)
+1. [Webpack 中 path/publicPath/contentBase 的关系，by fi3ework](https://github.com/fi3ework/blog/issues/39)
+2. [webpack 配置文件中 publicPath 和 contentBase 傻傻分不清, by 小飞猫\_](https://blog.csdn.net/wang839305939/article/details/85855967)
+3. [webpack 配置 publicPath 的理解, by SamWeb](https://www.cnblogs.com/SamWeb/p/8353367.html)
+4. [webpack 中的热更新及原理分析，by 程柳锋](https://time.geekbang.org/course/detail/100028901-98391)

@@ -1,5 +1,5 @@
 ---
-title: 脚本加载
+title: Script Loading
 ---
 
 ## 单线程 JS

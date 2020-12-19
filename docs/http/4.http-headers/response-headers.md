@@ -117,7 +117,7 @@ Vary: Accept-Encoding,User-Agent,Accept
 
 除了上述字段外还有`Access-Control-Allow-Origin`、`Access-Control-Allow-Methods`、`Access-Control-Allow-Headers`、`Access-Control-Allow-Credentials`等字段，这些`Access-Control-Allow-*`用在`CORS`跨域的预检请求对应的响应头中。关于这部分可以参考文档中关于[CORS](/docs/web/1.cross-domain/cors)的内容。
 
-## 参考链接
+## 参考资料
 
 - [图解 HTTP -- [日]上野宣](https://book.douban.com/subject/25863515/)
 - [HTTP Headers -- MDN](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers)

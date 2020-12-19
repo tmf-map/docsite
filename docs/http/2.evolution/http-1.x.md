@@ -115,7 +115,7 @@ HTTP/1.1 版还引入了管道机制（pipelining），即在同一个 TCP 连�
 
 <Img w="360" legend="图：管道机制" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/RUc1N2.png'/>
 
-## 参考链接
+## 参考资料
 
 [HTTP 协议入门 -- 阮一峰](https://www.ruanyifeng.com/blog/2016/08/http.html)
 

@@ -371,7 +371,7 @@ console.log(e === f); // This condition will always return 'false' since the typ
 
 此外即使同一个枚举中不同枚举成员定义的变量也是不可以比较的。
 
-## 参考链接
+## 参考资料
 
 1. [TypeScipt Document](https://www.tslang.cn/docs/handbook/enums.html)
 2. [TypeScript 入门教程，by xcatliu](https://ts.xcatliu.com/advanced/enum#wai-bu-mei-ju)

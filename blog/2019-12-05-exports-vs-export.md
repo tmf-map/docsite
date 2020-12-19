@@ -107,7 +107,7 @@ console.log(_myInfo.default);
 - [ES6 模块打包后文件](https://robbie-blog.oss-cn-shanghai.aliyuncs.com/ES6.js)
 - [CommonJS 模块打包后文件](https://robbie-blog.oss-cn-shanghai.aliyuncs.com/commonJS.js)
 
-## 参考链接
+## 参考资料
 
 - [ECMAScript 6 入门 -- 阮一峰](http://es6.ruanyifeng.com/#docs/module-loader#ES6-%E6%A8%A1%E5%9D%97%E4%B8%8E-CommonJS-%E6%A8%A1%E5%9D%97%E7%9A%84%E5%B7%AE%E5%BC%82)
 

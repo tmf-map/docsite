@@ -161,7 +161,7 @@ module.exports = {
               label: 'CSS'
             },
             {
-              to: 'docs/web/1.cross-domain/same-origin-policy',
+              to: 'docs/web/1.get-started',
               activeBasePath: 'docs/web/',
               label: 'Web'
             },

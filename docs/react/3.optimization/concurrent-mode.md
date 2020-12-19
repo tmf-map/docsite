@@ -242,7 +242,7 @@ import ReactDOM from 'react-dom';
 ReactDOM.createRoot(document.getElementById('root')).render(<App />);
 ```
 
-## 参考链接
+## 参考资料
 
 1. [Concurrent 模式介绍 (实验性), react 官方文档](https://zh-hans.reactjs.org/docs/concurrent-mode-intro.html)
 1. [理解 React 的下一步：Concurrent Mode 與 Suspense，by C.T.Lin](https://medium.com/@chentsulin/%E7%90%86%E8%A7%A3-react-%E7%9A%84%E4%B8%8B%E4%B8%80%E6%AD%A5-concurrent-mode-%E8%88%87-suspense-327b8a3df0fe)

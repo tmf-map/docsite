@@ -58,7 +58,7 @@ scheme         path
 - query(查询参数)：针对已定位的文件路径内的资源，可以通过查询参数精确定位。查询参数是一个“key=value”形式的字符串。
 - fragment（片段标识符）：它是 URI 所定位的资源内部的一个“锚点”或者说是“标签”，浏览器可以在获取资源后直接**跳转到它指示的位置**。
 
-## 参考链接
+## 参考资料
 
 [HTTP 协议中 URI 和 URL 有什么区别？ -- daixinye](https://www.zhihu.com/question/21950864)
 

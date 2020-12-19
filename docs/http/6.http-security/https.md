@@ -69,6 +69,6 @@ master_secret = PRF(pre_master_secret, "master secret", ClientHello.random + Ser
 - 传输性能。通过对数据进行加密，HTTPS 能够减少数据的大小从而获得更高的传输性能。
 - SEO。使用 HTTPS 能优化 SEO 排名。使用 Google Chrome 浏览器时，如果采用 HTTP 协议，浏览器会显示 Not Secure。
 
-## 参考链接
+## 参考资料
 
 1. [what is http, by tutorialsteacher](https://www.tutorialsteacher.com/https/what-is-https)

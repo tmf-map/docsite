@@ -434,7 +434,7 @@ m.counter; // 6
 
 [exports、export 和 export default 的关系](/blog/2019/12/05/exports-vs-export)
 
-## 参考链接
+## 参考资料
 
 [ECMAScript 6 入门 -- 阮一峰](http://es6.ruanyifeng.com/#docs/module)
 

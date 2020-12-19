@@ -572,7 +572,7 @@ for (var p of params.entries()) {
 }
 ```
 
-## 参考链接
+## 参考资料
 
 - [Location](https://developer.mozilla.org/en-US/docs/Web/API/Location), by MDN
 - [URL](https://developer.mozilla.org/en-US/docs/Web/API/URL), by MDN

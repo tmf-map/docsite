@@ -91,7 +91,7 @@ Google 的 Chrome 于 2012 年开始开发 QUIC 协议，**QUIC 协议在当前 
 
 <Img w="600" legend="图：TLS1.3恢复连接" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200109121509.png" />
 
-## 参考链接
+## 参考资料
 
 - [解读 HTTP/2 与 HTTP/3 的新特 -- 前端工匠](https://mp.weixin.qq.com/s/zhYWDhsqrBO5MB4Hw2XkDA)
 - [如何看待 HTTP/3 ？ -- 车小胖](https://www.zhihu.com/question/302412059/answer/533223530)

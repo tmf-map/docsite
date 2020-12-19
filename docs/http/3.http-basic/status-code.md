@@ -48,6 +48,6 @@ HTTP 响应状态共有 5 大类，分别是数字 1、2、3、4、5 开头。
 |  | 502 Bad Gateway | 网关错误，通常是服务器作为网关或者代理时返回的错误码，表示服务器自身工作正常，访问后端服务器时发生了错误，但具体的错误原因也是不知道的。 |
 |  | 503 Service Unavailable | 服务器暂时处于超负载或者正在停机维护，如果事先得知解除以上状况所需时间，最好写入 Retry-After 首部字段返回给客户端 |
 
-## 参考链接：
+## 参考资料
 
 [HTTP 响应代码 -- MDN](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status)

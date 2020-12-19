@@ -1,5 +1,5 @@
 ---
-title: 同源策略
+title: Same-Origin Policy
 ---
 
 <Img src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/VKSsM4.png" width="345" height="125" legend="图1：同源示意图"/>
