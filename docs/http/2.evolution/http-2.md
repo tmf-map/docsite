@@ -30,7 +30,7 @@ HTTPS 是 HTTP/2 的必要条件。
 
 ## 一个 TCP 连接
 
-<Img w="500" legend="图：HTTP/1.1与HTTP/2数据传输对比图" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/hTkV0T.jpg'/>
+<Img w="600" legend="图：HTTP/1.1与HTTP/2数据传输对比图" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/http-2.png'/>
 
 由上图可以看出，HTTP/1.1 中**同一个 TCP 连接里面**，上一个响应发送完了，服务器才能发送下一个。而 HTTP/2 采用多路复用（后面介绍）**允许单一的 TCP 连接同时发起多重的请求响应**，比如 `GET style.css` 和 `GET script.js` 差不多就是同时发送的。
 
