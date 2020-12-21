@@ -2,6 +2,8 @@
 title: JS 引擎
 ---
 
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/1_bxEkHw1xewxOFjmGunb-Cw.png' alt='JavaScript Cover'/>
+
 ## JS Engine
 
 - Chrome: [V8](https://v8.dev/)
@@ -11,7 +13,7 @@ title: JS 引擎
 
 ## V8 Engine Workflow
 
-<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/v8.png' alt='v8' width="750"/>
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/v8.png' alt='v8' width="650"/>
 
 JS 代码块加载完毕后，会首先进入语法 Parser 阶段。该阶段主要作用是生成 AST 和构建作用域。
 
@@ -66,7 +68,7 @@ for (let i = 0; i < 1000; i++) {
 - **Interpreter** 接收上面的代码后，它将逐行读取并立即执行代码，直到循环结束。 它的工作仅仅是实时地将代码转换为我们的计算机可以理解的内容。
 - 如果这段代码接受者是 **Compiler**，它会先完整地读取整个程序，对我们要执行的代码进行分析，并生成电脑可以读懂的机器语言。过程如同获取 X（我们的 JS 文件）并生成 Y（机器语言）一样。如果我们使用 Interpreter 执行 Y，则会获得与执行 X 相同的结果。
 
-<Img width="600" align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/y0T9vQ.jpg'/>
+<Img width="600" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/MA5ENK.png' alt='ByteCode'/>
 
 从上图中可以看出，ByteCode 只是中间码，计算机仍需要对其进行翻译才能执行。 但是 Interpreter 和 Compiler 都将源代码转换为机器语言，它们唯一的区别在于转换的过程不尽相同。
 
