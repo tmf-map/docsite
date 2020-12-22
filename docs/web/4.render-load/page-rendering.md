@@ -20,15 +20,15 @@ title: 页面渲染
 
 3. 最后通过调用操作系统 Native GUI(图像用户接口)的 API 绘制。
 
-![](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/kBpnEt.png)
+<Img align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/page-render.jpg' alt='page-render' />
 
 <p align="center">图1：DOM、CSSOM 和 Render Tree 关系</p>
 
 [如图 1 所示](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-tree-construction?hl=zh-cn)，**在 DOM 树和 CSS 规则树合并成渲染树的时候会忽略`<head>`等不可见节点和设置了样式为 display:none 的节点**。生成渲染树后然后进入布局，布局计算每个对象的精确位置和大小，然后通过绘制，呈现出页面。
 
-![](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/yw9qb5brpt.png)
+<Img align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/render-steps.jpg' alt='render-steps' width="800" />
 
-<img src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/s6T92W.png" width="650"/>
+<Img align="center" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/construct-step.jpg" alt='construct-step' width="750"/>
 
 浏览器工作流程：构建 DOM -> 构建 CSSOM -> 构建渲染树 -> 布局 -> 绘制。
 
@@ -60,5 +60,5 @@ Chrome 的渲染机制要先构建 DOM 树和 CSSOM 树，二者都得构建完�
 
 ## 参考资料
 
-1. [参考链接一](https://juejin.im/post/5b88ddca6fb9a019c7717096#heading-4)
-1. [参考链接二](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-blocking-css?hl=zh-cn)
+1. [css 加载会造成阻塞吗？](https://juejin.im/post/5b88ddca6fb9a019c7717096#heading-4)
+1. [阻塞渲染的 CSS](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-blocking-css?hl=zh-cn)
