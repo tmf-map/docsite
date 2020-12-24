@@ -240,23 +240,52 @@ document.cookie = '__Host-KMKNKK=1234;Sercure;path=/';
 
 ## 应用举例
 
+Cookie 相比 Session 更符合业务场景也更方便实用。各大互联网企业都对其有高强度的依赖。
+
 ### 存储用户登录状态
 
-通过 Cookie 可以记住用户浏览网站上的浏览信息，因为 HTTP 本身是无状态的，导致服务器没有办法维持一个状态，比如保持用户的登录状态，而不是每次都要登录。
+通过 Cookie 可以记住用户浏览网站上的浏览信息，因为 HTTP 本身是无状态的，导致服务器没有办法维持一个状态，比如保持用户的登录状态，而不是每次都要登录。通常用来在用户登录后生成一个用户唯一的 token 来标志用户已登录，也可使用这种方式来判断用户是否登录过期或设置登录时效。
 
 ### 临时保存购物车等信息
 
 因为 HTTP 是无状态的，所以服务器没有办法维持一个状态（无记忆能力），比如保持用户的登录状态，而不是每次都要登录。为了让服务器可以“记忆”客户端，1994 年网景通讯的员工将“magic Cookies”的这个概念应用到了 web 通讯，试图解决 Web 中购物车应用。在文档中，网景浏览器在第一个浏览器就支持了 Cookie。
 
+下面通过一个淘宝购物车的例子来说明。
+
+1. 打开淘宝网：https://www.taobao.com
+2. 搜索任意商品，比如 `iPhone`。这时可以看到`购物车`数量为 `0`:
+
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/CB9xR2.png' alt='CB9xR2'/>
+
+3. 选择任意商品进入详情后加入购物车，可以看到`购物车`已增加为`1`:
+
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/vFmgRP.png' alt='vFmgRP'/>
+
+4. 打开开发者工具，查看 cookie，找到 `mt` 发现其值为 `ci=1_1`:
+
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/BNImRC.png' alt='BNImRC'/>
+
+5. 右击打开菜单后点击`Edit "Value"`后，修改其值为 `ci=2_1`，刷新页面后发现。购物车已经变为 `2` 了:
+
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/W0Oaur.png' alt='W0Oaur'/>
+
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/YbzwKG.png' alt='YbzwKG'/>
+
+6. 鼠标移入购物车打开详情后，数字自动刷新回了 `1`。这点淘宝做的还是很好的。不完全信任 cookie 值。
+
+<GifPlayer
+  gif="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/cookie.gif"
+  still="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/cookie.jpg"
+/>
+
 ## 优缺点
 
 ### 优点
 
-1. BOM 丰富的 api 使其具有高扩展性
-2. 存储在浏览器端，减少了服务器存储的压力
-3. 遵循同源策略，可设置域名和路径对数据进行隔离
-4. 可通过 SSL 传输，降低了请求被破解的可能性
-5. 可设置 Cookie 失效时间，防止 Cookie 永久保留在浏览器端引起的资源浪费和数据过期
+1. 存储在浏览器端，减少了服务器存储的压力
+2. 遵循同源策略，可设置域名和路径对数据进行隔离
+3. 可通过 SSL 传输，降低了请求被破解的可能性
+4. 可设置 Cookie 失效时间，防止 Cookie 永久保留在浏览器端引起的资源浪费和数据过期
 
 ### 缺点
 
