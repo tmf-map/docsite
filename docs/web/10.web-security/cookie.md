@@ -255,21 +255,21 @@ Cookie 相比 Session 更符合业务场景也更方便实用。各大互联网�
 1. 打开淘宝网：https://www.taobao.com
 2. 搜索任意商品，比如 `iPhone`。这时可以看到`购物车`数量为 `0`:
 
-<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/CB9xR2.png' alt='CB9xR2'/>
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/CB9xR2.png' />
 
-3. 选择任意商品进入详情后加入购物车，可以看到`购物车`已增加为`1`:
+1. 选择任意商品进入详情后加入购物车，可以看到`购物车`已增加为`1`:
 
-<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/vFmgRP.png' alt='vFmgRP'/>
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/vFmgRP.png' />
 
 4. 打开开发者工具，查看 cookie，找到 `mt` 发现其值为 `ci=1_1`:
 
-<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/BNImRC.png' alt='BNImRC'/>
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/aupPib.png' />
 
 5. 右击打开菜单后点击`Edit "Value"`后，修改其值为 `ci=2_1`，刷新页面后发现。购物车已经变为 `2` 了:
 
-<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/W0Oaur.png' alt='W0Oaur'/>
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/XMLveR.png' />
 
-<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/YbzwKG.png' alt='YbzwKG'/>
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/YbzwKG.png' />
 
 6. 鼠标移入购物车打开详情后，数字自动刷新回了 `1`。这点淘宝做的还是很好的。不完全信任 cookie 值。
 
