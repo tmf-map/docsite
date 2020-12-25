@@ -10,7 +10,7 @@ JS 代码在一个线程中执行，即主线程，这意味着一次只能执�
 
 如果 HTML 解析器碰到`<script>`标签，会暂停解析 HTML 文档并加载、解析和执行 JS 代码。因为 JS 有可能通过 document.write()修改文档，进而改变 DOM 结构（HTML 标准的“解析模型”有一张图可以一目了然：http://t.cn/Ai9cupLc ）：
 
-<Img width="550" align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/parser-steps.jpg' alt='parser-steps' />
+<Img width="400" align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/parser-steps.jpg' alt='parser-steps' />
 
 所以 HTML 解析器必须停下来执行 JavaScript，然后再恢复解析 HTML。至于执行 JavaScript 的细节，大家可以关注 V8 团队相关的分享：http://t.cn/RB9qP51 。
 
