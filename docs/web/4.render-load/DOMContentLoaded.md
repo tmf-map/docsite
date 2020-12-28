@@ -162,6 +162,5 @@ DOMContentLoaded 事件的触发代表**HTML 文档被加载和解析完成**，
 
 ## 参考链接
 
-[参考链接 1](https://juejin.im/post/5b88ddca6fb9a019c7717096#heading-0)
-
-[参考链接 2](https://zhuanlan.zhihu.com/p/25876048)
+- [css 加载会造成阻塞吗](https://juejin.im/post/5b88ddca6fb9a019c7717096#heading-0)
+- [你不知道的 DOMContentLoaded](https://zhuanlan.zhihu.com/p/25876048)

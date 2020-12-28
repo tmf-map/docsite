@@ -19,11 +19,24 @@ title: Reflow & Repaint
 - 计算 offsetWidth 和 offsetHeight 属性
 - 设置 style 属性的值
 
-![](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/kh0bLF.png)
+| 常见引起表格重排属性和方法 |  |  |  |
+| --- | --- | --- | --- |
+| width | height | margin | padding |
+| display | border | position | overflow |
+| clientWidth | clientHeight | clientTop | clientLeft |
+| offsetWidth | offsetHeight | offsetTop | offsetLeft |
+| scrollWidth | scrollHeight | scrollTop | scrollLeft |
+| scrollIntoView() | scrollTo() | getComputedStyle() |  |
+| getBoundingClientRect() | scrollIntoViewIfNeeded() |  |
 
-2. 常见引起重绘属性和方法
+2. 常见引起重绘的属性和方法
 
-![](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/bVJZq9.png)
+| 常见引起重绘的属性和方法 |  |  |  |
+| --- | --- | --- | --- |
+| color | border-style | visibility | background |
+| text-decoration | background-image | background-position | background-repeat |
+| outline-color | outline | outline-style | border-radius |
+| outline-width | box-shadow | background-size |
 
 下面例子中，触发了几次回流和重绘？
 

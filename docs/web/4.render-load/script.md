@@ -6,17 +6,17 @@ title: 脚本加载
 
 JS 代码在一个线程中执行，即主线程，这意味着一次只能执行一行 JS 代码。需要注意的是，这一个线程还负责文档的生命周期，比如：layout 和 paint。因此，JS 代码运行的时候将会阻碍其他工作：
 
-<Img width="650" align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/CHWd5i.png'/>
+<Img width="750" align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/js-thread.jpg' alt='js-thread' />
 
 如果 HTML 解析器碰到`<script>`标签，会暂停解析 HTML 文档并加载、解析和执行 JS 代码。因为 JS 有可能通过 document.write()修改文档，进而改变 DOM 结构（HTML 标准的“解析模型”有一张图可以一目了然：http://t.cn/Ai9cupLc ）：
 
-<Img width="400" align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/3PxN7P.png'/>
+<Img width="400" align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/parser-steps.jpg' alt='parser-steps' />
 
 所以 HTML 解析器必须停下来执行 JavaScript，然后再恢复解析 HTML。至于执行 JavaScript 的细节，大家可以关注 V8 团队相关的分享：http://t.cn/RB9qP51 。
 
 ## async & defer
 
-![](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/OelrrE.png)
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/async-defer.jpg' align="center" alt='async-defer' />
 
 其中蓝色线代表 JS 加载；红色线代表 JS 执行；绿色线代表 HTML 解析。
 
