@@ -18,7 +18,7 @@ title: 面向对象特性
 
 继承是实现代码重用的有力手段，人们可以基于已存在的类构造出一个新类，复用已有类的方法和域。被继承的类称为超类或父类，新类称为子类。子类中可以访问父类里的 protected 和 public 方法、域，如果二者在同一个包中，也可以访问包访问级别的方法、域。下面示例中的 Manager 类继承了 Employee 类，并在其基础上增加了 bonus 域和访问方法。因此，Manager 类的对象可以通过方法查到薪水和奖金信息。
 
-```Java
+```java
 public class Employee {
     private double salary;
 
@@ -42,7 +42,7 @@ public class Manager extends Employee {
 
 B 类继承了 A 类，并且覆盖了 A 类的 method()方法。
 
-```Java
+```java
 A object1 = new A();
 A object2 = new B();
 A[] objects = new A[] {object1, object2};
