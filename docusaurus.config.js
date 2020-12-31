@@ -287,7 +287,8 @@ module.exports = {
     },
     prism: {
       theme: require('prism-react-renderer/themes/nightOwl'),
-      darkTheme: require('prism-react-renderer/themes/dracula')
+      darkTheme: require('prism-react-renderer/themes/dracula'),
+      additionalLanguages: ['java']
     }
   },
   presets: [
