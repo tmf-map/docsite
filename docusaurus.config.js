@@ -28,7 +28,7 @@ module.exports = {
   tagline: 'Explore and study full stack technology',
   url: 'https://thinkbucket.cn',
   baseUrl: '/',
-  favicon: '/img/docsite.png',
+  favicon: '/img/favicon/docsite.png',
   organizationName: githubOrg, // Usually your GitHub org/user name.
   projectName: 'docsite', // Usually your repo name.
   plugins: [
