@@ -10,13 +10,9 @@ Object 类是 Javascript 的对象的具体表现。Javascript 的对象种类�
 
 <Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/j1MT8i.png' legend="图1：Object 类的继承关系"/>
 
-这些类本质上都是 C++ 的类，和 JS 相关的会以 "JS" 前缀命名。
+这些类本质上都是 C++ 的类，和 JS 相关的会以 "JS" 前缀命名。Object 类的子对象的分配方法各有不同，下文所说的 `对象` 指的是顶层的 `Object`。
 
-Object 类的子对象的分配方法各有不同，下文所说的 `对象` 指的是顶层的 `Object`。
-
-图 1 中的 `Smi (Small integer)` 类是下文将要介绍的“内嵌对象”。也就是说，它们是没有被分配到 VMHeap 的直接数据。
-
-生成实例时会把图 1 中的 `HeapObject` 类从 VM Heap 分配出去。也就是说， `HeapObject` 类的实例是 GC 的对象。因此，我们没必要明确地销毁实例。 `HeapObject` 类是用于生成 GC 对象，也就是实例的，所以可以说是最为重要的类。
+图 1 中的 `Smi (Small integer)` 类是下文将要介绍的“内嵌对象”。也就是说，它们是没有被分配到 VMHeap 的直接数据。生成实例时会把图 1 中的 `HeapObject` 类从 VM Heap 分配出去。也就是说， `HeapObject` 类的实例是 GC 的对象。因此，我们没必要明确地销毁实例。 `HeapObject` 类是用于生成 GC 对象，也就是实例的，所以可以说是最为重要的类。
 
 `HeapObject` 类实例(对象)必定存有指向 `Map` 类实例(map 对象)的指针。本文将其称为 `map地址` 。这个 `Map` 类负责管理对象的型信息，例如保留实例的大小和型的种类等。 `Map` 这个名字来源于 `SelfVM` 。
 
@@ -29,8 +25,9 @@ JS 的内嵌对象包括以下几种:
 1. number
 2. symbol
 3. string
-4. true、false
-5. null、undefined
+4. boolean
+5. null
+6. undefined
 
 下面就以其中的 number 为例来说明。 number 不会分配 VM Heap 的对象，而是把信息嵌入指针本身。
 

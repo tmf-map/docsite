@@ -32,7 +32,7 @@ title: TCP握手和挥手
 
 TCP 三次握手、HTTP 数据传输和四次挥手的大致流程如下图所示：
 
-<Img width="360" legend="图：三次握手和四次挥手图示" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/Znl1Ty.jpg" />
+<Img width="600" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/tcp-handshake.png' alt='tcp-handshake'/>
 
 ## TCP 链接过程中的相关问题
 
