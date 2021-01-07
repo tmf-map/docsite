@@ -44,7 +44,7 @@ module.exports = {
           {
             tagName: 'link',
             rel: 'icon',
-            href: '/img/docsite.png'
+            href: '/img/icons/32x32@2x.png'
           },
           {
             tagName: 'link',
@@ -69,18 +69,18 @@ module.exports = {
           {
             tagName: 'link',
             rel: 'apple-touch-icon',
-            href: '/img/docsite.png'
+            href: '/img/icons/32x32@2x.png'
           },
           {
             tagName: 'link',
             rel: 'mask-icon',
-            href: '/img/docsite.svg',
+            href: '/img/favicon/docsite.svg',
             color: 'rgb(62, 204, 94)'
           },
           {
             tagName: 'meta',
             name: 'msapplication-TileImage',
-            content: '/img/docsite.png'
+            content: '/img/icons/32x32@2x.png'
           },
           {
             tagName: 'meta',
