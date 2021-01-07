@@ -44,7 +44,7 @@ module.exports = {
           {
             tagName: 'link',
             rel: 'icon',
-            href: '/img/icons/32x32@2x.png'
+            href: '/img/icons/mobile.svg'
           },
           {
             tagName: 'link',
@@ -69,7 +69,7 @@ module.exports = {
           {
             tagName: 'link',
             rel: 'apple-touch-icon',
-            href: '/img/icons/32x32@2x.png'
+            href: '/img/icons/mobile.svg'
           },
           {
             tagName: 'link',
@@ -80,7 +80,7 @@ module.exports = {
           {
             tagName: 'meta',
             name: 'msapplication-TileImage',
-            content: '/img/icons/32x32@2x.png'
+            content: '/img/icons/mobile.svg'
           },
           {
             tagName: 'meta',
