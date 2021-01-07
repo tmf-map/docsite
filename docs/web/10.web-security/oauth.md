@@ -23,7 +23,7 @@ title: OAuth
 
 ### OAuth 运行流程
 
-<Img w="400" legend="OAuth授权流程" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200216165331.png" />
+<Img w="710" legend="图：OAuth授权流程" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/zG6rd5.jpg" />
 
 如上图所示：
 

@@ -6,7 +6,7 @@ title: Cookie
 
 Cookie，原意是曲奇饼。将黄油、中筋面粉、鸡蛋液搅拌后冷藏 30 分钟，取出擀至任意形状后放入 180 度烤箱 20 分钟左右即可<sup>[1]</sup>。在美国与加拿大代表细小而扁平的蛋糕式的面饼。它的名字是由荷兰语：**koekje** 来的，意为“细小的蛋糕”。据考证，曲奇源自波斯（今伊朗）<sup>[2]</sup>。
 
-## Cookie 是什么
+## 什么是 Cookie
 
 ### 解决的问题
 
@@ -23,7 +23,7 @@ Cookie，原意是曲奇饼。将黄油、中筋面粉、鸡蛋液搅拌后冷�
 - 一种是保存在客户端的方式，即 Cookie。
 - 一种是保存在服务器端的方式，即 Session。
 
-其中 Session 虽然被存储在服务器端，但是仍需要 SessionId 的帮助来确定每一次请求对应的用户状态，而 SessionId 又常常存放在 Cookie 中，这种绕地球一圈的解决方式确实在安全性上要强于 Cookie（要盗取 SessionId 就要先破解 Cookie）。
+其中 Session 虽然被存储在服务器端，但是仍需要 SessionID 的帮助来确定每一次请求对应的用户状态，而 SessionID 又常常存放在 Cookie 中，这种绕地球一圈的解决方式确实在安全性上要强于 Cookie（要盗取 SessionID 就要先破解 Cookie）。
 
 <Img w="500" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/WSZuNg.png" />
 
@@ -68,7 +68,7 @@ Cookie 的工作需要依靠**请求头**中的`Cookie`字段和**响应头**中
 
 Cookie 的工作过程如下图所示：
 
-<Img w="600" legend="Cookie的工作过程" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/l4Y5bL.png" />
+<Img w="460" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/ZSwvDS.png" />
 
 通过上图可以看出：
 

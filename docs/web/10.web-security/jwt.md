@@ -12,7 +12,7 @@ header.payload.signature;
 
 ## session 认证的问题
 
-<Img w="430" legend="session认证模型" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200218233629.png" />
+<Img w="600" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/CKdYzW.png" />
 
 如上图，传统使用`seesion`进行身份认证的流程如下：
 
@@ -28,13 +28,13 @@ header.payload.signature;
 
 ## 为什么使用 JWT
 
-<Img w="430" legend="JWT-Token认证流程" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/qh2bq2.png" />
+<Img w="600" legend="JWT-Token认证流程" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/UFPIq3.png" />
 
 如图所示，存在 3 个角色：
 
 - Authentication server （认证服务器）
-- user（用户）
-- app server （应用服务器）
+- User（用户）
+- Application server （应用服务器）
 
 **步骤：**
 

@@ -1,5 +1,4 @@
 ---
-id: rendering-engine
 title: 浏览器内核
 ---
 
