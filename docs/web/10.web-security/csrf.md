@@ -6,11 +6,9 @@ title: CSRF
 
 CSRF（Cross-site request forgery）跨站请求伪造，也被称为“OneClick Attack”或者“Session Riding”，通常缩写为 CSRF 或者 XSRF，是一种对网站的恶意利用。
 
-<div align="center">
-    <img width="640" height="365" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/xwd1jG.png" />
-</div>
+<Img w="730" legend="图：CSRF 基本原理" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/F1sPZs.png" />
 
-例如，用户 A 可能正在浏览用户 B 发布消息的聊天论坛。假设 B 制作了一个引用 A 银行网站的 HTML 图像元素，如下所示
+例如，用户 A 可能正在浏览用户 B 发布消息的聊天论坛。假设 B 制作了一个引用 A 银行网站的 HTML 图像元素，如下所示：
 
 ```html
 <img src="http://www.bank.com/withdraw?user=A&amount=999999&for=XiaoMing" />
