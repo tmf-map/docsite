@@ -574,7 +574,7 @@ for (var p of params.entries()) {
 
 ## 参考资料
 
-- [Location](https://developer.mozilla.org/en-US/docs/Web/API/Location), by MDN
-- [URL](https://developer.mozilla.org/en-US/docs/Web/API/URL), by MDN
-- [URLSearchParams](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams), by MDN
-- [Easy URL Manipulation with URLSearchParams](https://developers.google.com/web/updates/2016/01/urlsearchparams?hl=en), by Eric Bidelman
+1. [Location, by MDN](https://developer.mozilla.org/en-US/docs/Web/API/Location)
+2. [URL, by MDN](https://developer.mozilla.org/en-US/docs/Web/API/URL)
+3. [URLSearchParams, by MDN](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams)
+4. [Easy URL Manipulation with URLSearchParams, by Eric Bidelman](https://developers.google.com/web/updates/2016/01/urlsearchparams?hl=en)
