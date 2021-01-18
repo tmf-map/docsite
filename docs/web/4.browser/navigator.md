@@ -1,5 +1,5 @@
 ---
-title: 浏览器信息
+title: Navigator
 ---
 
 `window.navigator`属性指向一个包含浏览器信息的 navigator 对象。脚本通过这个属性了解用户使用的是哪一种浏览器。

@@ -9,8 +9,7 @@ module.exports = {
     'http/3.http-basic/uri',
     'http/3.http-basic/message-structure',
     'http/3.http-basic/request-methods',
-    'http/3.http-basic/status-code',
-    'http/3.http-basic/cookie'
+    'http/3.http-basic/status-code'
   ],
   '4. HTTP首部信息': [
     'http/4.http-headers/headers',

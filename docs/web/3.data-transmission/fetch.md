@@ -276,7 +276,7 @@ withTimeout(1000, fetch('https://foo.com/bar/'))
 
 请参考 BigInt [Use text() in fetch](/docs/javascript/5.typing/bigint#use-text-in-fetch)
 
-## 参考链接
+## 参考资料
 
 1. [Fetch API, MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API/Using_Fetch)
 2. [How to use the Fetch API in JavaScript, by Atta](https://attacomsian.com/blog/javascript-fetch-api)

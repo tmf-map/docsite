@@ -164,8 +164,8 @@ module.exports = {
 
 通过上面的结果可以看出，通过使用`SplitChunksPlugin`我们可以将公共资源(`react` 和 `react-dom`)提出到`vendors.chunk.js`文件中，将引用的`commons`文件提取到`commons~detail~split.chunk.js`文件中，对应打包后的`boundle`文件体积都有减小。因为`detail`只引用了`react`包，所以减少的体积较少。
 
-## 参考链接
+## 参考资料
 
-- [提取页面公共资源，by 程柳锋](https://time.geekbang.org/course/detail/190-100678)
-- [Webpack 的 Bundle Split 和 Code Split 区别和应用， by JS 菌](https://segmentfault.com/a/1190000017893334)
-- [webpack document](https://webpack.js.org/plugins/split-chunks-plugin/)
+1. [提取页面公共资源，by 程柳锋](https://time.geekbang.org/course/detail/190-100678)
+2. [Webpack 的 Bundle Split 和 Code Split 区别和应用， by JS 菌](https://segmentfault.com/a/1190000017893334)
+3. [webpack document](https://webpack.js.org/plugins/split-chunks-plugin/)

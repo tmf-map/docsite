@@ -1,5 +1,4 @@
 ---
-id: JWT
 title: JWT
 ---
 
@@ -13,7 +12,7 @@ header.payload.signature;
 
 ## session 认证的问题
 
-<Img w="430" legend="session认证模型" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200218233629.png" />
+<Img w="600" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/CKdYzW.png" />
 
 如上图，传统使用`seesion`进行身份认证的流程如下：
 
@@ -29,13 +28,13 @@ header.payload.signature;
 
 ## 为什么使用 JWT
 
-<Img w="430" legend="JWT-Token认证流程" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/qh2bq2.png" />
+<Img w="600" legend="JWT-Token认证流程" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/UFPIq3.png" />
 
 如图所示，存在 3 个角色：
 
 - Authentication server （认证服务器）
-- user（用户）
-- app server （应用服务器）
+- User（用户）
+- Application server （应用服务器）
 
 **步骤：**
 
@@ -121,7 +120,7 @@ Authorization: Bearer <token>
 
 除了上述两种案例外，还有很多其他的风险案例，如果感兴趣可以参考这篇文章：[JWT 介绍及其安全性分析](https://www.freebuf.com/vuls/219056.html)。因此，为了保证数据的安全性，`JWT`一般需要结合`https`一起使用。
 
-## 参考连接
+## 参考资料
 
 1. [JSON Web Token 入门教程，by 阮一峰](http://www.ruanyifeng.com/blog/2018/07/json_web_token-tutorial.html)
 2. [Token Authentication: The Secret to Scalable User Management，by Lindsay Brunner](https://stormpath.com/blog/token-authentication-scalable-user-mgmt)

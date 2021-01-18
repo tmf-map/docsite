@@ -109,7 +109,7 @@ function isInViewPort(element) {
 
 :::
 
-## 参考链接
+## 参考资料
 
 1. [MDN 文档--getBoundingClientRect](https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRe)
 1. [getBoundingClientRect 的用法, by 椰子糖糖发射机](https://juejin.im/post/6844903888902963213)

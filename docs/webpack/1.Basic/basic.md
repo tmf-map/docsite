@@ -214,7 +214,7 @@ module.exports = {
 
 此时`mode`将会根据`process.env.NODE_ENV`判断运行环境。
 
-## 参考链接
+## 参考资料
 
 - [玩转 webpack，by 程柳锋](https://time.geekbang.org/course/intro/190)
 - [带你深度解锁 Webpack 系列, 刘小夕](https://juejin.im/post/5e5c65fc6fb9a07cd00d8838)

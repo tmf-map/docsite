@@ -1,5 +1,5 @@
 ---
-title: 浏览器窗口
+title: Window
 ---
 
 ## window 的大小

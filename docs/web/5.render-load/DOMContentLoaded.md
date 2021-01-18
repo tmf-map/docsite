@@ -160,7 +160,7 @@ DOMContentLoaded 事件的触发代表**HTML 文档被加载和解析完成**，
 
 ![](https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/uY4AEb.png)
 
-## 参考链接
+## 参考资料
 
-- [css 加载会造成阻塞吗](https://juejin.im/post/5b88ddca6fb9a019c7717096#heading-0)
-- [你不知道的 DOMContentLoaded](https://zhuanlan.zhihu.com/p/25876048)
+1. [css 加载会造成阻塞吗？by 可乐好喝不胖](https://juejin.im/post/5b88ddca6fb9a019c7717096#heading-0)
+2. [你不知道的 DOMContentLoaded by 编译青春](https://zhuanlan.zhihu.com/p/25876048)

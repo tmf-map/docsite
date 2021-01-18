@@ -53,7 +53,7 @@ proc.process(1, 'Bill');
 
 由改造后的代码可知，泛型类`kvProcessor`实现了泛型接口`IKeyValueProcessor`，但是没有为`<T, U>`赋予特定的类型，因此`kvProcessor`类可以实现`T`和`U`是任何类型的泛型接口。因为`proc`是属于接口类型，所以`new kvProcessor`后不用添加`<number, string>`。
 
-## 参考链接
+## 参考资料
 
 - [TypeScript Generic Class - Tutorials Teacher](https://www.tutorialsteacher.com/typescript/typescript-generic-class)
 - [typeScript handbook](https://www.typescriptlang.org/docs/handbook/generics.html)

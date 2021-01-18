@@ -316,7 +316,7 @@ export function cube(x) {
 
 通过打包后的结果可以看出，打包后的`bundle`中即并没有包含`variate`变量，也没有`helloWorld`函数的返回结果。
 
-## 参考链接
+## 参考资料
 
 - [webpack official document](https://webpack.js.org/guides/tree-shaking/)
 - [Webpack Tree shaking 深入探究，by sialvsic](https://juejin.im/post/5bb8ef58f265da0a972e3434#heading-0)

@@ -89,7 +89,7 @@ SDK ＝放着你想要的软件功能的软件包
 
 API ＝ SDK 上唯一的接口
 
-## 参考链接
+## 参考资料
 
 - [Web service 是什么---阮一峰](http://www.ruanyifeng.com/blog/2009/08/what_is_web_service.html)
 

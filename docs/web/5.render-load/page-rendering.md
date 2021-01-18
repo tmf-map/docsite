@@ -60,5 +60,5 @@ Chrome 的渲染机制要先构建 DOM 树和 CSSOM 树，二者都得构建完�
 
 ## 参考资料
 
-1. [css 加载会造成阻塞吗？](https://juejin.im/post/5b88ddca6fb9a019c7717096#heading-4)
-1. [阻塞渲染的 CSS](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-blocking-css?hl=zh-cn)
+1. [css 加载会造成阻塞吗？By 可乐好喝不胖](https://juejin.im/post/5b88ddca6fb9a019c7717096#heading-4)
+2. [阻塞渲染的 CSS: By Ilya Grigorik](https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-blocking-css?hl=zh-cn)

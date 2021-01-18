@@ -248,7 +248,7 @@ src
 
 添加魔法注释后的代码可以点击`github`仓库的[code-split-1](https://github.com/ThinkBucket/webpack-demo/tree/master/code-split-1)下载运行。
 
-## 参考链接
+## 参考资料
 
 - [代码分割和动态 import，by 程柳锋](https://time.geekbang.org/course/detail/190-102405)
 - [Webpack 的 Bundle Split 和 Code Split 区别和应用， by JS 菌](https://segmentfault.com/a/1190000017893334)

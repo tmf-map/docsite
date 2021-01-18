@@ -202,9 +202,9 @@ Proxy-Authorization: Basic dGlw0jkpNLAGfFY5
 
 ## 其他字段
 
-除了上述字段外还有`Origin`、`Access-Control-Request-Methods`、`Access-Control-Request-Headers`等字段，这些`Access-Control-Request-*`用在`CORS`跨域的预检请求报文中。关于这部分的内容可以参考文档中关于[CORS](/docs/web/1.cross-domain/cors)。
+除了上述字段外还有`Origin`、`Access-Control-Request-Methods`、`Access-Control-Request-Headers`等字段，这些`Access-Control-Request-*`用在`CORS`跨域的预检请求报文中。关于这部分的内容可以参考文档中关于[CORS](/docs/web/2.cross-domain/cors)。
 
-## 参考链接
+## 参考资料
 
 - [图解 HTTP -- [日]上野宣](https://book.douban.com/subject/25863515/)
 - [HTTP Headers -- MDN](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers)

@@ -45,7 +45,7 @@ element.scrollTop = intValue;
 
 :::
 
-## 参考链接
+## 参考资料
 
 1. [Element.scrollTop -- MDN](https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollTop)
 1. [HTMLElement.offsetTop-- MDN](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetTop)

@@ -295,7 +295,7 @@ MobX 的优点在于，学习成本小，模版代码少。这是因为 MobX 本
 
 在小型项目中使用 MobX 是非常方便快捷的。大型项目中，可维护性和规范性更好的 Redux 更有优势。
 
-## 参考链接
+## 参考资料
 
 1. [MobX](https://mobx.js.org/README.html)
 2. [Becoming fully reactive: an in-depth explanation of MobX @Michel Weststrate](https://hackernoon.com/becoming-fully-reactive-an-in-depth-explanation-of-mobservable-55995262a254)

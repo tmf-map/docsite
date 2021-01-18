@@ -152,7 +152,7 @@ display('Bill Gates'); //Compiler Error
 
 例子中`display`函数是一个泛型函数，类型变量`T`继承了`Person`类，因此函数参数类型必须是`Person`的实例或者继承自`Person`类，否则将会提示出错。
 
-## 参考连接
+## 参考资料
 
 - [TypeScript - Generic, by tutorialsteacher](https://www.tutorialsteacher.com/typescript/typescript-generic)
 - [typeScript handbook](https://www.typescriptlang.org/docs/handbook/generics.html)
