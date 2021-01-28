@@ -92,6 +92,12 @@ module.exports = {
 
 <Img width="700" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200502173152.png"/>
 
+:::tip
+
+如果 `index.less` 里引用的资源路径是 `/` 开头的绝对路径，打包将不受 webpack 配置的影响，始终指向的是服务器静态资源的地址，[file-loader](/docs/webpack/1.Basic/loaders#file-loader), [url-loader](/docs/webpack/1.Basic/loaders#url-loader) 也不会起作用，其只对相对路径有效。
+
+:::
+
 设置`output.publicPath`为`http://localhost:8080/`时，打包结果如下：
 
 <Img width="700" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200502173001.png"/>
