@@ -2,6 +2,59 @@
 title: Loaders
 ---
 
+`webpack` 开箱即用只支持 `JS` 和 `JSON` 两种文件类型，通过 `Loaders` 去支持其它文件类型并且把它们转化成有效的模块，并且可以添加到依赖图中。本身是一个函数，接受源文件作为参数，返回转换的结果。
+
+## 常用的 loaders
+
+| 名称           | 描述                                        |
+| -------------- | ------------------------------------------- |
+| babel-loader   | 转换`ES6`以上新版本的`JS`代码               |
+| css-loader     | 支持`.css`文件的加载和解析                  |
+| less-loader    | 将`.less`文件转换成`.css`                   |
+| postcss-loader | 为 CSS 属性补齐前缀                         |
+| file-loader    | 进行图片、字体等打包                        |
+| url-loader     | 将体积小于设定值的图片、字体等转化为 base64 |
+| ts-loader      | 将`.ts`转换成`.js`                          |
+| thread-loader  | 多进程打包`js`和`css`                       |
+
+## Loaders 的用法
+
+```js
+module.exports = {
+  output: {
+    filename: 'bundle.js'
+  },
+  module: {
+    rules: [
+      {test: /\.txt$/, use: 'raw-loader'} // test指的是匹配规则，use指定使用loader的名称。
+    ]
+  }
+};
+```
+
+其中`use` 字段有以下三种写法：
+
+- 可以是一个字符串，例如上例中的 `use: 'raw-loader'`'。
+- `use` 字段可以是一个数组，例如打包`.css`文件`use: ['style-loader', 'css-loader']`。
+- `use` 数组的每一项既可以是**字符串**也可以是**对象**，当我们需要在`webpack` 的配置文件中对 `loader` 进行配置，就需要将其编写为一个对象，并且在此对象的 `options` 字段中进行配置，如：
+
+```js
+use: [
+  {
+    loader: 'file-loader',
+    options: {
+      name: '[name]_[hash:8].[ext]'
+    }
+  }
+];
+```
+
+:::tip
+
+`use` 中 `loader` 的调用顺序从右向左。
+
+:::
+
 ## 概要
 
 `webpack` 默认只支持打包 `JS` 和 `JSON` 两种文件类型，为了支持其它文件类型的打包，需要使用对应的`Loaders`。`Loaders`本身是一个函数，接受源文件作为参数，返回转换的结果。常用的`Loaders`如下所示：

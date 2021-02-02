@@ -1,5 +1,5 @@
 ---
-title: path vs. publicPath vs. contentBase
+title: path 路径
 ---
 
 ## 概述
