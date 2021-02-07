@@ -30,3 +30,4 @@ title: npm vs. yarn
 | npm i -g [package] | yarn global add [package] | 全局安装依赖包 |
 | npm update –save | yarn upgrade [package] | 升级依赖包 |
 | npm uninstall [package] | yarn remove [package] | 移除依赖包 |
+| npm --prefix [path] [command] | yarn --cwd [path] [command] | 到指定目录执行命令 |
