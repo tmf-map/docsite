@@ -1,5 +1,5 @@
 /* iPhone */
-@media (width < 768px) {
+@media (max-width: 767px) {
   :root {
     --ifm-font-size-base: 14px;
   }
@@ -16,7 +16,7 @@
 }
 
 /* iPad */
-@media (768px <= width < 996px) {
+@media (min-width: 768px) and (max-width: 995px) {
   :root {
     --ifm-font-size-base: 16px;
   }
@@ -33,7 +33,7 @@
 }
 
 /* iPad Pro, MacBook Pro 13.3 */
-@media (996px <= width <= 1440px) {
+@media (min-width: 996px) and (max-width: 1440px) {
   :root {
     --ifm-font-size-base: 16px;
   }
@@ -48,7 +48,7 @@
   }
 }
 
-@media (width > 996px) {
+@media (min-width: 997px) {
   .menu.menu--responsive {
     padding-top: 0;
     padding-bottom: 2rem;

@@ -27,6 +27,9 @@
     display: inline-block;
     margin-left: 10px;
   }
+  .navbar__items--right {
+    display: none;
+  }
 }
 
 .navbar__items:first-child {
