@@ -197,6 +197,11 @@ module.exports = {
                 'docs/java/object-oriented-programming/abstract-class-interface',
               activeBasePath: 'docs/java/',
               label: 'Java'
+            },
+            {
+              to: 'docs/go/1.get-started/history',
+              activeBasePath: 'docs/go/',
+              label: 'Go'
             }
           ]
         },
