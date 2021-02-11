@@ -2,9 +2,9 @@
 title: History
 ---
 
-<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/DhC3L9.png' alt='DhC3L9'/>
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/DhC3L9.png' alt='python cover'/>
 
-Python Offical Doc: https://www.python.org/doc/
+Python Official Doc: https://www.python.org/doc/
 
 ## 起源
 
