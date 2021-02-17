@@ -6,14 +6,14 @@ title: 其他配置项
 
 指定构建出不同运行环境的代码。
 
-| 值                 | 描述                                       |
-| ------------------ | ------------------------------------------ |
-| web                | 浏览器（默认），所有代码都集中在一个文件里 |
-| node               | NodeJS 使用 `require` 语句加载 Chunk 代码  |
-| async-node         | NodeJS 异步加载 Chunk 代码                 |
-| webworker          | WebWorker                                  |
-| electron-main      | Electron 主线程                            |
-| exlectron-renderer | Electron 渲染线程                          |
+| 值                | 描述                                       |
+| ----------------- | ------------------------------------------ |
+| web               | 浏览器（默认），所有代码都集中在一个文件里 |
+| node              | NodeJS 使用 `require` 语句加载 Chunk 代码  |
+| async-node        | NodeJS 异步加载 Chunk 代码                 |
+| webworker         | WebWorker                                  |
+| electron-main     | Electron 主线程                            |
+| electron-renderer | Electron 渲染线程                          |
 
 ## devTool
 
@@ -33,7 +33,7 @@ module.export = {
 
 #### development
 
-七种 SourceMap 模式。详细信息看 [传送门](https://webpack.docschina.org/configuration/devtool/)
+七种 SourceMap 模式。[详细信息](https://webpack.docschina.org/configuration/devtool/)
 
 #### production
 
@@ -98,9 +98,7 @@ module.export = {
 
 ## resolveLoader
 
-如何寻找 Loader。
-
-默认配置
+如何寻找 Loader，默认配置：
 
 ```js
 module.export = {
@@ -132,3 +130,7 @@ module.export = {
 - normal 标准输出
 - verbose 全部输出
 - errors-only 只输出错误
+
+## 参考资料
+
+1. [Webpack Guidebook: 其他配置项, by tsejx](https://tsejx.github.io/webpack-guidebook/basic-summary/core-concepts/other-options)

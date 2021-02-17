@@ -10,7 +10,7 @@ title: devServer 开发服务器
 
 :::tip
 
-devServer 会将 Webpack 构建出的文件保存在内存中
+devServer 会将 Webpack 构建出的文件保存在内存中。
 
 :::
 
@@ -247,3 +247,7 @@ module.exports = {
   ]
 };
 ```
+
+## 参考资料
+
+1. [Webpack Guidebook: devServer 开发服务器, by tsejx](https://tsejx.github.io/webpack-guidebook/basic-summary/core-concepts/dev-server)
