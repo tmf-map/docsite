@@ -138,6 +138,14 @@ npm install file://packages/mylib
 
 :::
 
+## npm --prefix [path] [command]
+
+To run an npm script from another directory, use `--prefix`, similar to ["yarn --cwd"](/docs/nodejs/package-manager/yarn#yarn---cwd-path)
+
+```bash
+npm --prefix ./client install
+```
+
 ## npm ci
 
 该命令类似于 `npm i` ，但它旨在用于自动化环境，如测试平台，持续集成和部署。
