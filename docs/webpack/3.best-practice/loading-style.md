@@ -4,7 +4,7 @@ title: 加载样式
 
 ## 加载样式
 
-要加载 CSS 您需要使用 [css-loader](https://www.npmjs.com/package/css-loader) 和 [style-loader](https://www.npmjs.com/package/style-loader)。 css-loader 遍历匹配文件中的 `@import` 和 `url()`，并将它们视为常规 ES2015 import。如果 `@import` 指向外部资源，则 css-loader 会跳过它，因为 Webpack 只处理内部资源。
+要加载 CSS 你需要使用 [css-loader](https://www.npmjs.com/package/css-loader) 和 [style-loader](https://www.npmjs.com/package/style-loader)。 css-loader 遍历匹配文件中的 `@import` 和 `url()`，并将它们视为常规 ES2015 import。如果 `@import` 指向外部资源，则 css-loader 会跳过它，因为 Webpack 只处理内部资源。
 
 其他 CSS 预处理器需要使用到的资源加载器：
 
@@ -13,9 +13,9 @@ title: 加载样式
 
 ### PostCSS
 
-PostCSS 允许您通过 JavaScript 插件对 CSS 执行转换，您甚至可以找到类似 Sass 功能的插件。PostCSS 相当于 CSS 的 Babel。[postcss-loader](https://www.npmjs.com/package/postcss-loader) 可以将它与 Webpack 搭配使用。
+PostCSS 允许你通过 JavaScript 插件对 CSS 执行转换，你甚至可以找到类似 Sass 功能的插件。PostCSS 相当于 CSS 的 Babel。[postcss-loader](https://www.npmjs.com/package/postcss-loader) 可以将它与 Webpack 搭配使用。
 
-下面的例子说明了如何使用 PostCSS 自动设置浏览器厂商前缀。另外，这个配置还添加了 press——一个 PostCSS 插件——允许您在 CSS 中使用类似 Sass 的标签。您可以将此技术与其他 loader 混合使用，以启动自动添加前缀。
+下面的例子说明了如何使用 PostCSS 自动设置浏览器厂商前缀。另外，这个配置还添加了 press——一个 PostCSS 插件——允许你在 CSS 中使用类似 Sass 的标签。你可以将此技术与其他 loader 混合使用，以启动自动添加前缀。
 
 ```js
 module.exports = {
@@ -49,7 +49,7 @@ PostCSS 支持基于 `postcss.config.js` 的配置。它的内部基于 `cosmico
 
 ### cssnext
 
-[cssnext](http://cssnext.io/) 是一个 PostCSS 插件，用于体验一些未来的 CSS 特性。您可以通过 [postcss-cssnext](https://www.npmjs.com/package/postcss-cssnext) 使用它。
+[cssnext](http://cssnext.io/) 是一个 PostCSS 插件，用于体验一些未来的 CSS 特性。你可以通过 [postcss-cssnext](https://www.npmjs.com/package/postcss-cssnext) 使用它。
 
 请参考以下配置：
 
@@ -75,9 +75,9 @@ module.exports = {
 
 ## 理解文件查找
 
-为了充分使用 `css-loader`，您应该理解它如何执行查找。`css-loader` 默认处理 **相对导入**，它不会触及绝对导入（例如：`url("/static/img/demo.png")`）。如果您依赖此类导入，则必须将文件复制到项目中。
+为了充分使用 `css-loader`，你应该理解它如何执行查找。`css-loader` 默认处理 **相对导入**，它不会触及绝对导入（例如：`url("/static/img/demo.png")`）。如果你依赖此类导入，则必须将文件复制到项目中。
 
-[copy-webpack-plugin](https://www.npmjs.com/package/copy-webpack-plugin) 可以将文件复制到 Webpack 中，但您也可以将文件复制到 Webpack 之外。前一种方法的好处是 webpack-dev-server 可以访问到它。
+[copy-webpack-plugin](https://www.npmjs.com/package/copy-webpack-plugin) 可以将文件复制到 Webpack 中，但你也可以将文件复制到 Webpack 之外。前一种方法的好处是 webpack-dev-server 可以访问到它。
 
 :::tip
 
@@ -87,7 +87,7 @@ module.exports = {
 
 ### 处理 css-loader 导入
 
-如果要以特定方式处理 css-loader 导入，则应将 `importLoaders` 选项设置为一个数字，该数字告诉加载程序在对所找到的导入文件执行 css-loader 之前需要执行多少个 loader 。如果您通过 `@import` 语句从 CSS 导入其他 CSS 文件，并希望通过特定的 loader 处理导入，则此技术至关重要。
+如果要以特定方式处理 css-loader 导入，则应将 `importLoaders` 选项设置为一个数字，该数字告诉加载程序在对所找到的导入文件执行 css-loader 之前需要执行多少个 loader 。如果你通过 `@import` 语句从 CSS 导入其他 CSS 文件，并希望通过特定的 loader 处理导入，则此技术至关重要。
 
 请考虑从 CSS 文件导入以下内容：
 
@@ -95,7 +95,7 @@ module.exports = {
 @import './variables.sass';
 ```
 
-要处理 Sass 文件，您必须编写配置：
+要处理 Sass 文件，你必须编写配置：
 
 ```js
 module.exports = {
@@ -119,11 +119,11 @@ module.exports = {
 };
 ```
 
-如果您向链中添加了更多 loader（例如 [postcss-loader](https://www.npmjs.com/package/postcss-loader)），则必须相应地调整 `importLoaders` 选项。
+如果你向链中添加了更多 loader（例如 [postcss-loader](https://www.npmjs.com/package/postcss-loader)），则必须相应地调整 `importLoaders` 选项。
 
 ### 从 node_modules 目录加载文件
 
-您可以直接从 `node_modules` 目录加载文件。考虑 Bootstrap 及其用法，例如：
+你可以直接从 `node_modules` 目录加载文件。考虑 Bootstrap 及其用法，例如：
 
 ```css
 @import '~bootstrap/less/bootstrap';
@@ -133,7 +133,7 @@ module.exports = {
 
 :::tip
 
-如果您正在使用 postcss-loader，则可以跳过 `~`，就像 [postcss-loader issue tracker](https://github.com/postcss/postcss-loader/issues/166) 讨论的内容一样。`postcss-loader` 可以在没有波形符号的情况下解析导入。
+如果你正在使用 postcss-loader，则可以跳过 `~`，就像 [postcss-loader issue tracker](https://github.com/postcss/postcss-loader/issues/166) 讨论的内容一样。`postcss-loader` 可以在没有波形符号的情况下解析导入。
 
 :::
 
@@ -195,7 +195,7 @@ const commonConfig = merge([
 ]);
 ```
 
-在进行此类更改后，您不必从应用程序代码中引用样式。这也意味着 CSS Modules 不再起作用，你也必须小心 CSS 规则的排序。
+在进行此类更改后，你不必从应用程序代码中引用样式。这也意味着 CSS Modules 不再起作用，你也必须小心 CSS 规则的排序。
 
 :::tip
 
@@ -205,13 +205,13 @@ const commonConfig = merge([
 
 ## 去除未使用样式
 
-[PurifyCSS](https://www.npmjs.com/package/purifycss) 可以通过分析文件达到去除未使用的样式的目的。它遍历您的代码并确定正在使用的 CSS 类，通常这就可以收集到足够的信息来从项目中删除未使用的 CSS。它也适用于单页应用程序。
+[PurifyCSS](https://www.npmjs.com/package/purifycss) 可以通过分析文件达到去除未使用的样式的目的。它遍历你的代码并确定正在使用的 CSS 类，通常这就可以收集到足够的信息来从项目中删除未使用的 CSS。它也适用于单页应用程序。
 
 [uncss](https://www.npmjs.com/package/uncss) 是 PurifyCSS 的一个很好的替代品。它通过 PhantomJS 运行，并以不同的方式执行其工作。
 
 :::tip
 
-如果使用 CSS Modules，则需要小心。您必须按照 [purifycss-webpack README](purgecss-webpack-plugin) 文件中所讨论的那样将相关类 `列入白名单`。
+如果使用 CSS Modules，则需要小心。你必须按照 [purifycss-webpack README](purgecss-webpack-plugin) 文件中所讨论的那样将相关类 `列入白名单`。
 
 :::
 
@@ -252,3 +252,7 @@ module.exports = {
   }
 };
 ```
+
+## 参考资料
+
+1. [Webpack Guidebook: 加载样式, by tsejx](https://tsejx.github.io/webpack-guidebook/best-practice/practical-application/loading-style)
