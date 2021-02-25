@@ -184,7 +184,7 @@ exports.extractCSS = ({include, exclude, use = []}) => {
 尽管通过 JavaScript 引入样式，然后再打包是推荐的做法，但我们也可以在入口通过 `glob` 找到 CSS 文件来达到同样的目的：
 
 ```js
-const globa = require('glob');
+const glob = require('glob');
 
 const commonConfig = merge([
   {
