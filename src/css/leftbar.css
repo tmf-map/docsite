@@ -25,6 +25,8 @@
 
 .menu .menu__link {
   border: 1px solid transparent;
+  border-top-right-radius: 1.0625rem;
+  border-bottom-right-radius: 1.0625rem;
   line-height: 1.25rem;
   font-size: 0.9375rem;
 }
@@ -43,7 +45,7 @@
 }
 
 .menu .menu__link.menu__link--active:not(.menu__link--sublist) {
-  border: 1px solid #e9e7e7;
+  border: 1px solid rgba(167, 167, 167, 0.2);
 }
 
 .menu .menu__link.menu__link--active:not(.menu__link--sublist):hover {
