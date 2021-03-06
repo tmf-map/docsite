@@ -5,7 +5,7 @@ title: Installation
 ## 下载地址
 
 - Go 官网下载地址：https://golang.org/dl/
-- Go 官方大陆镜像站：https://golang.google.cn/dl/
+- Go 官方大陆镜像下载地址：https://golang.google.cn/dl/
 
 下图中的版本号可能并不是最新的，但总体来说安装教程是类似的。Go 语言更新迭代比较快，推荐使用较新版本，体验最新特性。
 
