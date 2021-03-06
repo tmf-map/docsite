@@ -143,15 +143,16 @@ ValueError: '1' is not in list
 
 ```py
 try:
-    idx = a.index('1') # 0
+    idx = a.index('1')
 except ValueError:
     idx = -1
+# -1
 ```
 
 也可以使用类似三目运算符的方法：
 
 ```py
-a.index(1) if 1 in a else -1 # 0
+a.index('1') if '1' in a else -1 # -1
 ```
 
 :::
