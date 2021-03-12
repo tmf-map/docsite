@@ -141,9 +141,9 @@ module.exports = {
 
 现在我们有一个很好的打包了，但所有的 CSS 都去了哪里？根据配置，它已被内联到 JavaScript！虽然这在开发过程中很方便，但听起来并不理想。
 
-当前的解决方案 CSS 是无法缓存的，并且还有一个未样式化元素闪动（FOUC）问题。发生 FOUC 是因为浏览器需要一段时间才能加载 JavaScript，并且到那时才会应用样式。将 CSS 分离到自己的文件可以让浏览器单独管理它，从而避免了这个问题。
+当前的解决方案 CSS 是无法缓存的，并且还有一个未样式化元素闪动（[FOUC](https://en.wikipedia.org/wiki/Flash_of_unstyled_content)）问题。发生 FOUC 是因为浏览器需要一段时间才能加载 JavaScript，并且到那时才会应用样式。将 CSS 分离到自己的文件可以让浏览器单独管理它，从而避免了这个问题。
 
-Webpack 提供了一种使用 mini-css-extract-plugin（MCEP）生成单独的 CSS 包的方法。它可以将多个 CSS 文件聚合为一个。出于这个原因，它配备了一个 loader 来专门处理这个过程。然后，插件会获取 loader 抽取的结果并发出单独的文件。
+Webpack 提供了一种使用 [mini-css-extract-plugin](https://www.npmjs.com/package/mini-css-extract-plugin)（MCEP）生成单独的 CSS 包的方法。它可以将多个 CSS 文件聚合为一个。出于这个原因，它配备了一个 loader 来专门处理这个过程。然后，插件会获取 loader 抽取的结果并发出单独的文件。
 
 由于这个过程会产生比较大的开销，所以，MiniCssExtractPlugin 只会作用于编译阶段，它不适用于热模块更换（HMR）。鉴于这个插件只是在生产环境中使用，所以也不是什么大的问题。
 
