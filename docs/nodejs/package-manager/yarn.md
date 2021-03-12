@@ -451,7 +451,7 @@ yarn upgrade --latest --pattern "gulp-(match|newer)"
 
 详细日志模式，运行 yarn 命令时，增加参数`--verbose`，这在排查错误时很有帮助
 
-## yarn [command] --cwd
+## yarn --cwd [path] [command]
 
 - `cwd`是`current working directory`的缩写，中文是`当前工作目录`
 - 使用方式：`yarn --cwd [path] [command]`，这个命令的含义是：通过`--cwd`和`path`参数，使得命令在`path`这个文件路径下执行
@@ -466,16 +466,16 @@ yarn upgrade --latest --pattern "gulp-(match|newer)"
   /layer2
 ```
 
-如果想在`project/`中指定`yarn run`命令在`/layer1`路径下执行，则该命令需要写为：
+如果想在`project/`中指定`yarn install`命令在`/layer1`路径下执行，则该命令需要写为：
 
 ```bash
-yarn --cwd layer1 run
+yarn --cwd layer1 install
 ```
 
 如果`--cwd [path]`参数的使用顺序不对，则会报错，无法识别`--cwd`参数：
 
 ```bash
-yarn run --cwd layer1
+yarn install --cwd layer1
 ```
 
 ```bash
