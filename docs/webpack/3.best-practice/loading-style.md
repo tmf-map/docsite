@@ -211,7 +211,7 @@ const commonConfig = merge([
 
 :::tip
 
-如果使用 CSS Modules，则需要小心。你必须按照 [purifycss-webpack README](purgecss-webpack-plugin) 文件中所讨论的那样将相关类 `列入白名单`。
+如果使用 CSS Modules，则需要小心。你必须按照 [purgecss-webpack-plugin README](https://www.npmjs.com/package/purifycss-webpack-plugin) 文件中所讨论的那样将相关类 `列入白名单`。
 
 :::
 
