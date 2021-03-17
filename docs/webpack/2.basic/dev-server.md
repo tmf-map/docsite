@@ -51,7 +51,7 @@ module.exports = {
 
 :::tip
 
-如果您的网页应用使用基于 HTML History API 记录路由，你可以启动 `devServer.historyApiFallback`
+如果你的网页应用使用基于 HTML History API 记录路由，你可以启动 `devServer.historyApiFallback`
 
 :::
 
@@ -225,7 +225,7 @@ module.exports = {
 
 ## 轮询而非监测文件
 
-有时，WDS 提供的文件监测设置将无法在您的系统上运行。在旧版本的 Windows，Ubuntu，Vagrant 和 Docker 上可能会出现问题。启用轮询是一个很好的选择：
+有时，WDS 提供的文件监测设置将无法在你的系统上运行。在旧版本的 Windows，Ubuntu，Vagrant 和 Docker 上可能会出现问题。启用轮询是一个很好的选择：
 
 ```js
 const path = require('path');

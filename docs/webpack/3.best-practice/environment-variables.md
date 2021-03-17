@@ -153,5 +153,5 @@ Webpack 可以根据 DefinePlugin 的声明来选择正确的代码。此处你�
 
 ## 参考资料
 
-1. [实用 Webpack 插件之 DefinePlugin, By 趁你还年轻](https://segmentfault.com/a/1190000017217915)
+1. [实用 Webpack 插件之 DefinePlugin, by 趁你还年轻](https://segmentfault.com/a/1190000017217915)
 2. [Webpack Guidebook: 环境变量, by tsejx](https://tsejx.github.io/webpack-guidebook/best-practice/practical-application/environment-variables)
