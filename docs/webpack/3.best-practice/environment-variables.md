@@ -2,11 +2,11 @@
 title: 环境变量
 ---
 
-有时，部分代码应仅在开发期间执行，或者有一些实验性质的代码不适宜放在生产环境中。控制 **环境变量** 变得很有价值，因为您可以使用它们切换功能。
+有时，部分代码应仅在开发期间执行，或者有一些实验性质的代码不适宜放在生产环境中。控制 **环境变量** 变得很有价值，因为你可以使用它们切换功能。
 
-由于 JavaScript 压缩会删除一些不需要的代码，因此您可以按照这样的形式来编写自己的代码。Webpack DefinePlugin 可以自由替换环境变量，以便您可以根据环境变量将 `if (process.env.NODE_ENV === "development")` 类型的代码转换为 `if (true)` 或 `if (false)`。
+由于 JavaScript 压缩会删除一些不需要的代码，因此你可以按照这样的形式来编写自己的代码。Webpack DefinePlugin 可以自由替换环境变量，以便你可以根据环境变量将 `if (process.env.NODE_ENV === "development")` 类型的代码转换为 `if (true)` 或 `if (false)`。
 
-您可以找到依赖此行为的包。React 可能是早期采用该技术的最著名的例子。因此，使用 DefinePlugin 可以在某种程度上降低 React 生产构建的大小，并且您可以看到其他软件包也具备类似的效果。
+你可以找到依赖此行为的包。React 可能是早期采用该技术的最著名的例子。因此，使用 DefinePlugin 可以在某种程度上降低 React 生产构建的大小，并且你可以看到其他软件包也具备类似的效果。
 
 Webpack 4 基于给定模式设置 `process.env.NODE_ENV`。不过，了解它并知道其工作方式还是非常必要的。
 
@@ -73,14 +73,13 @@ if (foo === 'bar') {
 // if (false) 意味整个块都会被移除
 ```
 
-消除是 DefinePlugin 的核心思想，它允许不同的切换。压缩器执行分析并切换代码的 ​​ 整个部分。
+消除是 DefinePlugin 的核心思想，它允许不同的切换。压缩器执行分析并切换代码的整个部分。
 
 ## process.env.NODE_ENV
 
 和以前一样，将这个想法封装成一个函数。由于 Webpack 替换自由变量的方式，你应该用 `JSON.stringify` 对变量进行转化，最终得到一个像 `'"demo"'` 一样的字符串，然后 Webpack 将其插入到对应的字段中：
 
-```js
-// webpack.parts.js
+```js title="webpack.parts.js"
 const webpack = require('webpack');
 
 exports.setFreeVariable = (key, value) => {
@@ -95,16 +94,34 @@ exports.setFreeVariable = (key, value) => {
 
 将其合并到主配置上：
 
-```js
-// webpack.config.js
+```js title="webpack.config.js"
 const commonConfig = merge([
   parts.setFreeVariable('Hello', 'hello from config')
 ]);
 ```
 
-> [webpack-conditional-loader](https://www.npmjs.com/package/webpack-conditional-loader) 基于代码注释执行类似的操作，它可以用来消除整个代码块。
+:::tip
 
-> `webpack.EnvironmentPlugin(["NODE_ENV"])` 是一种允许您引用环境变量的快捷方式。它在底层使用了 `DefinePlugin`，你可以通过传递 `process.env.NODE_ENV` 达到相同的效果。
+- [webpack-conditional-loader](https://www.npmjs.com/package/webpack-conditional-loader) 基于代码注释执行类似的操作，它可以用来消除整个代码块。
+- `webpack.EnvironmentPlugin(["NODE_ENV"])` 是一种允许你引用环境变量的快捷方式。它在底层使用了 `DefinePlugin`，你可以通过传递 `process.env.NODE_ENV` 达到相同的效果。
+
+:::
+
+## 读取 `.env` 文件
+
+你也可以通过 [dotenv-webpack](https://www.npmjs.com/package/dotenv-webpack) 直接读取 `.env` 文件的环境变量：
+
+```js title="webpack.config.js"
+
+const Dotenv = require('dotenv-webpack');
+
+module.exports = {
+  plugins: [
+    new Dotenv({
+        path: resolve(__dirname, '../.env')
+    })
+}
+```
 
 ## 通过 Babel 替换自由变量
 
@@ -112,7 +129,7 @@ const commonConfig = merge([
 
 ## 选择要使用的模块
 
-本章中讨论的技术可用于根据环境变量选择整个模块。如上所示，DefinePlugin 基于拆分分支允许您选择要使用的代码以及要丢弃的代码。这个想法可用于在模块级别实现分支。考虑下面的文件结构：
+本章中讨论的技术可用于根据环境变量选择整个模块。如上所示，DefinePlugin 基于拆分分支允许你选择要使用的代码以及要丢弃的代码。这个想法可用于在模块级别实现分支。考虑下面的文件结构：
 
 ```bash
 .
@@ -132,8 +149,9 @@ if (process.env.NODE_ENV === 'production') {
 }
 ```
 
-Webpack 可以根据 DefinePlugin 的声明来选择正确的代码。此处您必须使用 CommonJS 模块规范，因为 ES2015 `import` 不允许动态导入行为。
+Webpack 可以根据 DefinePlugin 的声明来选择正确的代码。此处你必须使用 CommonJS 模块规范，因为 ES2015 `import` 不允许动态导入行为。
 
 ## 参考资料
 
 1. [实用 Webpack 插件之 DefinePlugin, By 趁你还年轻](https://segmentfault.com/a/1190000017217915)
+2. [Webpack Guidebook: 环境变量, by tsejx](https://tsejx.github.io/webpack-guidebook/best-practice/practical-application/environment-variables)
