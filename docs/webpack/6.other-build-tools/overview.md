@@ -76,3 +76,7 @@ Glup 就像是一个产品的 **流水线**，整个产品从无到有，都要�
 拓展资料：[Gulp 与 Webpack 深度对比](https://www.cnblogs.com/RuMengkai/p/6667321.html)
 
 Webpack 是一个模块打包器。Webpack 单独与一些的 Task Runner 配合工作。然而，由于社区开发的 Webpack 插件，Bundler 和 Task Runner 之间的界限变得模糊。有时，这些插件用于执行通常在 Webpack 之外完成的任务，例如清理构建目录或部署构建代码。
+
+## 参考资料
+
+1. [Webpack Guidebook: 构建工具, by tsejx](https://tsejx.github.io/webpack-guidebook/basic-summary/basic-concepts/build-tool)
