@@ -193,26 +193,21 @@ module.exports = {
 
 ## 参考资料
 
-1. https://github.com/pmmmwh/react-refresh-webpack-plugin/
-1. https://webpack.js.org/concepts/hot-module-replacement/
-1. https://webpack.docschina.org/guides/hot-module-replacement/
-1. https://juejin.cn/post/6844903861002436621
-1. https://juejin.cn/post/6844903796200439816
-1. https://www.webpackjs.com/api/hot-module-replacement/
-1. https://stackoverflow.com/questions/58725966/webpack-dev-server-how-to-preserve-state-with-module-hot-data
-1. https://github.com/facebook/create-react-app/blob/7e48117abfa263bfa2559b73eebc2c2ea3ecee13/packages/react-dev-utils/webpackHotDevClient.js
-1. https://blog.csdn.net/bangbDIV/article/details/107365123
-1. https://github.com/gaearon/react-hot-loader
-1. https://github.com/gaearon/react-hot-loader#hot-loaderreact-dom
-1. https://github.com/gaearon/react-hot-loader/issues/884#issuecomment-383365781
-1. http://gaearon.github.io/react-hot-loader/getstarted/
-1. https://cloud.tencent.com/developer/article/1515569
-1. https://github.com/dvajs/babel-plugin-dva-hmr/issues/21
-1. https://juejin.cn/post/6844904057593659400
+1. [pmmmwh/react-refresh-webpack-plugin README](https://github.com/pmmmwh/react-refresh-webpack-plugin/)
+1. [Webpack: Hot Module Replacement](https://webpack.js.org/concepts/hot-module-replacement/)
+1. [Webpack: 模块热替换](https://webpack.docschina.org/guides/hot-module-replacement/)
+1. [webpack 学习之路（四）webpack-hot-middleware 实现热更新, by daly42872](https://juejin.cn/post/6844903861002436621)
+1. [Webpack 自动刷新和 HMR, by patrick_kibo](https://juejin.cn/post/6844903796200439816)
+1. [Webpack 模块热替换(hot module replacement) API](https://www.webpackjs.com/api/hot-module-replacement/)
+1. [stackoverflow: webpack-dev-server: how to preserve state with module.hot.data?](https://stackoverflow.com/questions/58725966/webpack-dev-server-how-to-preserve-state-with-module-hot-data)
+1. [Facebook/create-react-app webpackHotDevClient.js](https://github.com/facebook/create-react-app/blob/7e48117abfa263bfa2559b73eebc2c2ea3ecee13/packages/react-dev-utils/webpackHotDevClient.js)
+1. [react 配置 HMR(热替换 保留页面数据状态), by 哈娄](https://blog.csdn.net/bangbDIV/article/details/107365123)
+1. [react-hot-loader](http://gaearon.github.io/react-hot-loader/getstarted/)
+1. [react-hot-loader: Performance oriented .babelrc for TS users, by RomanHotsiy](https://github.com/gaearon/react-hot-loader/issues/884#issuecomment-383365781)
+1. [使用 webpack 实现 react 的热更新, by Nealyang](https://cloud.tencent.com/developer/article/1515569)
+1. [基于 webpack 的热重载 live reload 和热更新 HMR, by 快狗打车前端团队](https://juejin.cn/post/6844904057593659400)
 1. [Webpack 如何配置热更新，By 发声的沉默者](https://juejin.cn/post/6844904164707794951)
-1. https://www.zoo.team/article/webpack
-1. https://github.com/webpack-contrib/webpack-hot-middleware/pull/393
-1. https://github.com/facebook/react/issues/16604
+1. [看完这篇，面试再也不怕被问 Webpack 热更新, by 米亚](https://www.zoo.team/article/webpack)
+1. [How should we set up apps for HMR now that Fast Refresh replaces react-hot-loader?](https://github.com/facebook/react/issues/16604)
 1. [使用 webpack 实现 react 的热更新, By isNealyang](https://segmentfault.com/a/1190000011151106)
-1. https://github.com/pmmmwh/react-refresh-webpack-plugin/
-1. https://tsejx.github.io/webpack-guidebook/principle-analysis/operational-principle/hot-module-replacement
+1. [Webpack Guidebook: 模块热更新, by tsejx](https://tsejx.github.io/webpack-guidebook/principle-analysis/operational-principle/hot-module-replacement)
