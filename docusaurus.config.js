@@ -151,7 +151,7 @@ module.exports = {
               label: 'TypeScript'
             },
             {
-              to: 'docs/html/preface/overview',
+              to: 'docs/html/1.get-started',
               activeBasePath: 'docs/html/',
               label: 'HTML'
             },
@@ -168,7 +168,7 @@ module.exports = {
             {
               to: 'docs/react/1.basic/jsx',
               activeBasePath: 'docs/react/',
-              label: 'React Stack'
+              label: 'React'
             },
             {
               to: 'docs/webpack/1.Basic/basic',
@@ -178,7 +178,7 @@ module.exports = {
             {
               to: 'docs/nodejs/package-manager/package-version',
               activeBasePath: 'docs/nodejs/',
-              label: 'Node.js'
+              label: 'NodeJS'
             },
             {
               to: 'docs/fe-guidelines/1.introduction',
