@@ -176,7 +176,7 @@ module.exports = {
               label: 'Webpack'
             },
             {
-              to: 'docs/nodejs/package-manager/package-version',
+              to: 'docs/nodejs/1.get-started',
               activeBasePath: 'docs/nodejs/',
               label: 'NodeJS'
             },
