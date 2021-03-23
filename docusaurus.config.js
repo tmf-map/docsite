@@ -117,8 +117,7 @@ module.exports = {
           activeBaseRegex: 'docs/(design-patterns|algorithm|http)',
           items: [
             {
-              to:
-                'docs/algorithm/1.analysis-of-algorithms/asymptotic-notations',
+              to: 'docs/algorithm/1.get-started/asymptotic-notations',
               activeBasePath: 'docs/algorithm/',
               label: 'Algorithm'
             },
