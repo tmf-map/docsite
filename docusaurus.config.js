@@ -122,12 +122,12 @@ module.exports = {
               label: 'Algorithm'
             },
             {
-              to: 'docs/design-patterns/1.creation-pattern/singleton',
+              to: 'docs/design-patterns/1.get-started',
               activeBasePath: 'docs/design-patterns/',
               label: 'Design Patterns'
             },
             {
-              to: 'docs/http/1.web-basic/tcp-ip',
+              to: 'docs/http/1.get-started',
               activeBasePath: 'docs/http/',
               label: 'HTTP'
             }
