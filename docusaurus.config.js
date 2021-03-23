@@ -193,8 +193,7 @@ module.exports = {
           activeBaseRegex: 'docs/(java/)',
           items: [
             {
-              to:
-                'docs/java/object-oriented-programming/abstract-class-interface',
+              to: 'docs/java/1.get-started/introduction',
               activeBasePath: 'docs/java/',
               label: 'Java'
             }
