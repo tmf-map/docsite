@@ -12,7 +12,7 @@ title: SSL和TLS
 
 ## SSL/TLS 加密
 
-SSL/TLS 数据的加密通过**对称加密和非对称加密**来实现。其利用非对称加密算法（RSA/ECDHE）**实现身份认证和密钥协商**，对称加密算法**[使用协商后的密钥对数据加密](//docs/http/6.http-security/https#https-建立连接的过程)**。
+SSL/TLS 数据的加密通过**对称加密和非对称加密**来实现。其利用非对称加密算法（RSA/ECDHE）**实现身份认证和密钥协商**，对称加密算法**[使用协商后的密钥对数据加密](//docs/http/7.http-security/https#https-建立连接的过程)**。
 
 <Img w="500" legend="图：TLS混合加密" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200202175232.png" />
 

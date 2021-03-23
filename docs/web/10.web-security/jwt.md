@@ -102,7 +102,7 @@ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiJiMDhmODZhZi0zNWRhLTQ4ZjItOGZ
 
 客户端收到认证服务器返回的 `Token`，可以将其存在 `Cookie`或`localStorage/sessionStorage`中。
 
-当客户端访问应用服务器时，每次请求都需要带上`Token`。你可以把它放在 `Cookie` 里面自动发送，但是这样不能跨域，所以更好的做法是放在 `HTTP` 请求头的[Authorization](/docs/http/4.http-headers/request-header#authorization)字段里面，如下所示：
+当客户端访问应用服务器时，每次请求都需要带上`Token`。你可以把它放在 `Cookie` 里面自动发送，但是这样不能跨域，所以更好的做法是放在 `HTTP` 请求头的[Authorization](/docs/http/5.http-headers/request-header#authorization)字段里面，如下所示：
 
 ```
 Authorization: Bearer <token>

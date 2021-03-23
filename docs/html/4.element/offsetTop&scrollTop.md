@@ -41,7 +41,7 @@ element.scrollTop = intValue;
 
 :::tip
 
-当`scrollTop`被用于根元素`<html>`，此时它的返回值和`scrollY`是相同的，它的应用场景详见：[getBoundingClientRect-获取元素相对于整个网页左上角定位的属性值](/docs/html/3.element/getBoundingClientRect#%E8%8E%B7%E5%8F%96%E5%85%83%E7%B4%A0%E7%9B%B8%E5%AF%B9%E4%BA%8E%E6%95%B4%E4%B8%AA%E7%BD%91%E9%A1%B5%E5%B7%A6%E4%B8%8A%E8%A7%92%E5%AE%9A%E4%BD%8D%E7%9A%84%E5%B1%9E%E6%80%A7%E5%80%BC)
+当`scrollTop`被用于根元素`<html>`，此时它的返回值和`scrollY`是相同的，它的应用场景详见：[getBoundingClientRect-获取元素相对于整个网页左上角定位的属性值](/docs/html/4.element/getBoundingClientRect#%E8%8E%B7%E5%8F%96%E5%85%83%E7%B4%A0%E7%9B%B8%E5%AF%B9%E4%BA%8E%E6%95%B4%E4%B8%AA%E7%BD%91%E9%A1%B5%E5%B7%A6%E4%B8%8A%E8%A7%92%E5%AE%9A%E4%BD%8D%E7%9A%84%E5%B1%9E%E6%80%A7%E5%80%BC)
 
 :::
 
