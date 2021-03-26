@@ -199,7 +199,7 @@ module.exports = {
               label: 'Java'
             },
             {
-              to: 'docs/go/1.get-started/history',
+              to: 'docs/go/1.get-started/introduction',
               activeBasePath: 'docs/go/',
               label: 'Go'
             }
