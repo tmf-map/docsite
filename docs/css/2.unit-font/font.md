@@ -8,7 +8,7 @@ title: font
 
 ### 衬线和无衬线
 
-- 衬/chèn/线：**serif**
+- 衬（chèn）线：**serif**
 - 无衬线/非衬线：**sans-serif** (sans: _prep_. 无,没有)
 
 <Img width="600" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/CGcoCe.png'/>
