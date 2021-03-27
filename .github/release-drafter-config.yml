@@ -1,5 +1,5 @@
-name-template: '2020-Q?-M?'
-tag-template: '2020-Q?-M?'
+name-template: '2021-Q?-M?'
+tag-template: '2021-Q?-M?'
 sort-by: 'title'
 sort-direction: 'ascending'
 exclude-labels:
@@ -25,6 +25,7 @@ categories:
   - title: 'Backend'
     labels:
       - 'docs: java'
+      - 'docs: go'
   - title: 'AI'
     labels:
       - 'docs: python'
