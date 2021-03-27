@@ -4,7 +4,7 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
-    "build": "USE_SIMPLE_CSS_MINIFIER=true docusaurus build",
+    "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "lint": "eslint --cache \"**/*.js\"",
@@ -42,10 +42,10 @@
     }
   },
   "dependencies": {
-    "@docusaurus/core": "2.0.0-alpha.70",
-    "@docusaurus/plugin-pwa": "^2.0.0-alpha.70",
-    "@docusaurus/preset-classic": "2.0.0-alpha.70",
-    "@docusaurus/theme-live-codeblock": "2.0.0-alpha.70",
+    "@docusaurus/core": "2.0.0-alpha.72",
+    "@docusaurus/plugin-pwa": "^2.0.0-alpha.72",
+    "@docusaurus/preset-classic": "2.0.0-alpha.72",
+    "@docusaurus/theme-live-codeblock": "2.0.0-alpha.72",
     "classnames": "^2.2.6",
     "docusaurus-lunr-search": "^2.1.10",
     "npm-to-yarn": "^1.0.1",
@@ -55,7 +55,7 @@
     "react-toggle": "^4.1.1"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^2.0.0-alpha.70",
+    "@docusaurus/module-type-aliases": "^2.0.0-alpha.72",
     "@tsconfig/docusaurus": "^1.0.2",
     "@types/react": "^17.0.1",
     "@types/react-helmet": "^6.1.0",
