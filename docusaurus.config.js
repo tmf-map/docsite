@@ -114,7 +114,7 @@ module.exports = {
           label: 'Basis',
           position: 'right',
           // no `to` means activeBaseRegex gets ignored, so it's a must
-          to: 'docs/algorithm/1.get-started/asymptotic-notations',
+          to: 'docs/algorithm/1.analysis-of-algorithms/asymptotic-notations',
           activeBaseRegex: 'docs/(design-patterns|algorithm|http)',
           items: [
             {
@@ -194,7 +194,7 @@ module.exports = {
           label: 'Backend',
           position: 'right',
           // no `to` means activeBaseRegex gets ignored, so it's a must
-          to: 'docs/java/1.get-started/introduction',
+          to: 'docs/java/object-oriented-programming/abstract-class-interface',
           activeBaseRegex: 'docs/(java)',
           items: [
             {
