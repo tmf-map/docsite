@@ -4,15 +4,20 @@ title: Introduction
 
 <Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/go-gopher.png' alt='go-cover'/>
 
-Go Official Doc: https://golang.org/
+- Go Official Doc: https://golang.org/
+- GoCN: https://gocn.vip/
 
 ## Google 开源
 
-<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/FCIo2t.png'/>
-
-其中包含了 Unix 的作者、Chrome V8 的作者等业界大佬，
+大多数现代编程语言（如 Java，Python 等）都来自 90 年代的单线程环境。虽然一些编程语言的框架在不断地提高多核资源使用效率，例如 Java 的 Netty 等，但仍然需要开发人员花费大量的时间和精力搞懂这些框架的运行原理后才能熟练掌握。
 
 <Img w="600" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/o4kx1O.jpg' legend='图：Go 语言的诞生背景'/>
+
+Go 于 2009 年正式开源，当时多核处理器已经上市。Go 语言在多核并发上拥有原生的设计优势，Go 语言从底层原生支持并发，无须第三方库、开发者的编程技巧和开发经验。
+
+Go 是从 2007 年末由 Robert Griesemer, Rob Pike, Ken Thompson 主持开发，后来还加入了 Ian Lance Taylor, Russ Cox 等人，并最终于 2009 年 11 月开源，在 2012 年早些时候发布了 Go 1 稳定版本。现在 Go 的开发已经是完全开放的，并且拥有一个活跃的社区。
+
+<Img w="620" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/jH8hA3.png' />
 
 ## 特点
 
@@ -75,15 +80,39 @@ goroutine  9169 ...
 
 ### 部署简单
 
-#### 可直接编译成机器码
+- 可直接编译成机器码: Go 代码是可以直接变成二进制 `1010...` 的
+- 直接运行即可部署：操作系统是可以直接 `./` 去执行的
+- 不依赖其他库：最终生成的可执行程序是一个静态的(可执行)文本文件
 
-#### 不依赖其他库
+以 `helloWorld.go` 为例，写好后，我们对它进行编译：
 
-#### 直接运行即可部署
+```bash
+$ go build helloWorld.go
+$ ll
+-rwxr-xr-x  1 kimi  staff   2.0M Mar 27 13:05 helloWorld
+-rw-r--r--@ 1 kimi  staff    73B Feb 11 23:06 helloWorld.go
+```
+
+可以发现一个 `helloWorld` 就 `2.0M` 还是比较大的，我通过 `ldd`(macOS: `otool -L`)来查看，它是否依赖其他库呢?
+
+```bash
+ $ otool -L helloWorld
+ helloWorld:
+        /usr/lib/libSystem.B.dylib (compatibility version 0.0.0, current version 0.0.0)
+        /System/Library/Frameworks/Security.framework/Versions/A/Security (compatibility version 0.0.0, current version 0.0.0)
+        /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation (compatibility version 0.0.0, current version 0.0.0)
+```
+
+可以发现它除了标准的系统库，它不依赖于任何库，然后我们 `./helloWorld` 执行，就能够执行成功了：
+
+```bash
+$ ./helloWorld
+Hello, World
+```
 
 ### 语法简洁
 
-Go 语言简单易学，学习曲线平缓，不需要像 C/C++ 语言动辄需要两到三年的学习期。Go 语言被称为“互联网时代的 C 语言”。Go 语言的风格类似于 C 语言。其语法在 C 语言的基础上进行了大幅的简化，去掉了不需要的表达式括号，循环也只有 `for` 一种表示方法，就可以实现数值、键值等各种遍历。语言只有 25 个关键字，没有 `class` 等一些复杂的概念，非常简单容易上手。
+Go 语言简单易学，学习曲线平缓，不需要像 C/C++ 语言动辄需要两到三年的学习期。Go 语言被称为“互联网时代的 C 语言”。Go 语言的风格类似于 C 语言。其语法在 C 语言的基础上进行了大幅的简化，去掉了分号，循环也只有 `for` 一种表示方法，就可以实现数值、键值等各种遍历。语言只有 25 个关键字，没有 `class` 等一些复杂的概念，非常简单容易上手。
 
 ### 代码风格统一
 
@@ -112,21 +141,25 @@ Go 语言实现了开发效率与执行效率的完美结合，让你像写 Pyth
 - 互联网基础设施
   - 代表项目:以太坊、hyperledger 等。
 
-Go 语言简单易学，天生支持并发，完美契合当下高并发的互联网生态。Go 语言的岗位需求持续高涨，目前的 Go 程序员数量少，待遇好。国内 Go 语言的需求潜力巨大，目前无论是国内大厂还是新兴互联网公司基本上都会有 Go 语言的岗位需求。下图是应用 Go 语言的公司举例：
+Go 语言简单易学，天生支持并发，完美契合当下高并发的互联网生态。Go 语言的岗位需求持续高涨，目前的 Go 程序员数量少，待遇好。国内 Go 语言的需求潜力巨大，目前无论是国内大公司还是新兴互联网公司基本上都会有 Go 语言的岗位需求。下图是一些应用 Go 语言的公司：
 
 <Img w="600" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/DoZqPP.png' legend='图：应用 Go 语言的公司' />
 
 <Img w="600" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/DDAkEG.png' legend='图：新兴公司和行业的选择' />
 
-除了上面列出的大厂外，很多小型公司或创业公司也开始使用 Go 语言，并且很多公司把 Go 语言作为其主要开发语言。
-
-做游戏，对并发要求比较高，现在“真正的企业级编程语言”只有 Java，现在 Go 也在大力发展，前景良好。大厂用的 Java 和你用的不是一个 Java。有财力和人力去做一些优化。Go 语言在北京招聘的比较多，但 Go 工程师目前比较少。
+除了上面列出的大公司外，很多小公司或创业公司也开始使用 Go 语言，并且很多公司把 Go 语言作为其主要开发语言。在游戏行业，对并发要求比较高，Go 也是十分适合。目前真正的“企业级编程语言”只有 Java，同时 Go 也在大力发展，前景良好，目前是供不应求的状态。大公司用的 Java 和小企业用的其实并不是一个 Java，他们有财力和人力去做一些优化，而 Go 上手就可以获得相对不错的性能。
 
 ### Gopher
 
-https://www.gophercon.com/
+Gopher Conference 是 Go 开发者一年一度的技术盛会，包括 Go 语言的发展和 Go 项目的实践分享。
 
-<Img w="650" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/seW0sY.jpg' alt='gopher con'/>
+Gopher Global: https://www.gophercon.com/
+
+<Img w="600" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/seW0sY.jpg' alt='gopher con'/>
+
+Gopher China: https://github.com/gopherchina/conference
+
+> 2021 年，是 Go 语言无比重要的一年，因为 Go 即将完全解决压在 Go 头顶的三座大山：error handling、go module 和泛型。前面两个在之前陆续版本之中已经解决，终于在今年初官方通过多个版本的讨论和迭代，正式确认了泛型的语法和方案。一旦泛型发布，我们坚信 Go 即将在更多领域内开花结果。而 Go 作为一门构建现代网络软件生态系统的重要的开源语言，在这十二年里，Go 从一门小众语言，逐渐统治云计算领域，跻身最多人使用的语言 Top10，成为腾讯、阿里内部的第二大语言，全世界至少有 300 万开发者在使用。这其中，中国 Gopher 们的贡献是无法忽略的，中国 Gopher 贡献的 Go 开源项目最多，参与的分享最多，线下的活动最多，正因为有大家的积极参与才成就了中国在 Go 领域远远领先于其他国家的现状。 —— _GoCN_
 
 ## 小结
 
@@ -163,10 +196,12 @@ https://www.gophercon.com/
 
 Gopher 即“地鼠”的意思，而 Go 语言的 logo 就是一个 gopher:
 
-<Img w="200" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/gopher.png' alt='gopher'/>
+<Img w="160" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/gopher.png' alt='gopher'/>
 
 ## 参考资料
 
 1. [为什么你应该学习 Go 语言？, by 李文周](https://www.liwenzhou.com/posts/Go/about_golang/)
-2. [go 和 golang 是什么关系？ - 知乎用户的回答 - 知乎](https://www.zhihu.com/question/39508749/answer/947297975)
-3. [为什么写 Go 的人叫自己 Gopher？ - 知乎用户的回答 - 知乎](https://www.zhihu.com/question/367293477/answer/981552624)
+2. [Go 语言教程, by runoob](https://www.runoob.com/go/go-tutorial.html)
+3. [2021，属于 Golang 和 Gopher 的全新纪元, by GoCN](https://jishuin.proginn.com/p/763bfbd4f35f)
+4. [go 和 golang 是什么关系？ - 知乎用户的回答 - 知乎](https://www.zhihu.com/question/39508749/answer/947297975)
+5. [为什么写 Go 的人叫自己 Gopher？ - 知乎用户的回答 - 知乎](https://www.zhihu.com/question/367293477/answer/981552624)
