@@ -87,19 +87,6 @@ dpi 是 dots per inch, 不论是 dpi 还是 ppi，实际都是一种换算的概
 
 iPhone 上由于都是用的苹果的 webview 渲染的，故表现得较为一致。
 
-## Safari px 有效位数
-
-我们以 `1.3px` 和 **dpr 为 2** 的是 Retina 屏为例，它的实际最小粒度是 `0.5px`，我们称之为一小格，那么 `1.3px` 中的`1px` 部分，Y 轴会占据 2 小格。
-
-剩下 `0.3px`，按照上图 2dpr 屏幕进行画图，在**0 ～ 0.5px 之间的那一部分我们称之为零头**。
-
-- 如果零头的部分 ≥ 当前小格一半(0.25px)，那么实际效果是占满该小格。
-- 如果零头的部分 < 当前小格一半(0.25px)，那么实际效果是忽略该零头。
-
-所以 `1.3px` 最后实际渲染出来是 `1.5px`，如下图所示：
-
-<Img w="250" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/GjeXh6.png' />
-
 ## 参考资料
 
 1. [HTML - 移动端 meta viewport, by liuxuan](https://www.jianshu.com/p/641589d0d975)
