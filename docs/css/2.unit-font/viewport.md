@@ -71,7 +71,7 @@ vh = window.innerHeight
 
 ## 参考资料
 
-1. [移动前端开发之 viewport 的深入理解, by 无双](www.cnblogs.com/2050/p/3877280.html)
+1. [移动前端开发之 viewport 的深入理解, by 无双](http://www.cnblogs.com/2050/p/3877280.html)
 2. [移动前端第一弹：viewport 详解, by 杜瑶（@doyoe）](http://blog.doyoe.com/2015/10/13/mobile/%E7%A7%BB%E5%8A%A8%E5%89%8D%E7%AB%AF%E7%AC%AC%E4%B8%80%E5%BC%B9%EF%BC%9Aviewport%E8%AF%A6%E8%A7%A3/)
 3. [HTML - 移动端 meta viewport, by liuxuan](https://www.jianshu.com/p/641589d0d975)
 4. [什么是 Viewport Meta（width 详解）及在手机上的应用, by Gideon](https://justcode.ikeepstudying.com/2016/07/%E4%BB%80%E4%B9%88%E6%98%AFviewport-meta%EF%BC%88width%E8%AF%A6%E8%A7%A3%EF%BC%89%E5%8F%8A%E5%9C%A8%E6%89%8B%E6%9C%BA%E4%B8%8A%E7%9A%84%E5%BA%94%E7%94%A8/)
