@@ -1,6 +1,53 @@
 ---
-title: Plugins
+title: plugins 插件
 ---
+
+## Plugins
+
+插件用于 `bundle` 文件的优化，资源管理和环境变量注入，作于用整个构建过程。插件可以看作是`loaders`功能的补充，对于`loader`无法完成的打包需求，可以考虑使用插件来实现。
+
+### 常用的 Plugins
+
+| 名称 | 描述 |
+| --- | --- |
+| html-webpack-plugin | 创建`html`文件去承载输出的`bundle` |
+| mini-css-extract-plugin | 将`CSS`从`bundle`文件里提取成一个独立的`css`文件 |
+| optimize-css-assets-webpack-plugin | 压缩 CSS 代码 |
+| uglifyjs-webpack-plugin | 压缩`js`(从[2.0.0 版](https://github.com/webpack-contrib/uglifyjs-webpack-plugin/releases) 本开始不再支持 ES6 代码) |
+| terser-webpack-plugin | 压缩`js`(Webpack4 已经内置该依赖包，支持压缩 ES6 代码的压缩) |
+| clean-webpack-plugin | 每次构建后清除`./dist`目录 |
+| friendly-errors-webpack-plugin | 优化命令行的构建日志提示信息 |
+| speed-measure-webpack-plugin | 查看打包耗时、以及每个 Plugin 和 Loader 耗时 |
+| webpack-bundle-analyzer | 可视化 Webpack 输出文件的体积 (业务组件、依赖第三方模块) |
+| webpack-livereload-plugin | 开启监听模式时，代码更改自动刷新页面 |
+| copy-webpack-plugin | 将文件或者文件夹拷贝到构建的输出目录 |
+
+:::caution
+
+在`webpack 3`版本时，一般会使用`CommonsChunkPlugin`插件进行资源提取，但是在`webpack 4`版本中，推荐使用`SplitChunksPlugin`来代替`CommonsChunkPlugin`，而`CommonsChunkPlugin`已被删除。
+
+:::
+
+:::caution
+
+在`webpack 3.x`的版本中提取`CSS`会使用`ExtractTextWebpackPlugin`，而在`webpack 4`该插件已经被`MiniCssExtractPlugin`替代。
+
+:::
+
+### Plugins 用法
+
+```js
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+module.exports = {
+  output: {
+    filename: 'bundle.js'
+  },
+  plugins: [
+    new HtmlWebpackPlugin({template: './src/index.html'}) // 插件需要放到`plugins`数组中
+  ]
+};
+```
 
 ## Plugins overview
 

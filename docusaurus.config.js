@@ -171,7 +171,7 @@ module.exports = {
               label: 'React Stack'
             },
             {
-              to: 'docs/webpack/1.Basic/basic',
+              to: 'docs/webpack/1.get-started',
               activeBasePath: 'docs/webpack/',
               label: 'Webpack'
             },

@@ -1,5 +1,5 @@
 ---
-title: Code Split and Lazy Loading
+title: 代码拆分 Code Splitting
 ---
 
 ## 概述

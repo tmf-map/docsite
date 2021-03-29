@@ -1,5 +1,5 @@
 ---
-title: Split Chunks
+title: 分割打包 Bundle Splitting
 ---
 
 ## 概述
@@ -10,8 +10,9 @@ title: Split Chunks
 
 `SplitChunksPlugin`是`webpack`的内置插件，不需要单独安装，其各字段的默认配置如下：
 
-```js
-optimization: {
+```js title="webpack.config.js"
+module.exports = {
+  optimization: {
     splitChunks: {
       chunks: 'async', // async 分离异步引入的库，initial 分离同步引用的库，all 分离所有类型的库
       minSize: 30000, // 进行脚本分离的最少字节
@@ -35,6 +36,7 @@ optimization: {
       }
     }
   }
+};
 ```
 
 `cacheGroups`对象能够继承或者覆盖`splitChunks.*`中的配置项，但是`test`、`priority`和`reuseExistingChunk`仅能在其子对象内部使用。`cacheGroups`中还可以在子对象内部使用`name`字段，当不设置`name`字段时，提取后的`chunk`与其子对象名相同。

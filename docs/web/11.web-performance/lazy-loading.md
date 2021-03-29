@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 ```
 
-此代码在 scroll 事件处理程序中使用 `getBoundingClientRect` 来检查是否有任何 `img.lazy` 元素处于视窗中。 使用 `setTimeout` 调用来延迟处理，active 变量则包含处理状态，用于限制函数调用。 延迟加载图像时，这些元素随即从元素数组中移除。 当元素数组的 `length` 达到 0 时，滚动事件处理程序代码随即移除。 您可在[此 CodePen 示例](https://codepen.io/malchata/pen/mXoZGx)中，查看代码的实际运行情况。
+此代码在 scroll 事件处理程序中使用 `getBoundingClientRect` 来检查是否有任何 `img.lazy` 元素处于视窗中。 使用 `setTimeout` 调用来延迟处理，active 变量则包含处理状态，用于限制函数调用。 延迟加载图像时，这些元素随即从元素数组中移除。 当元素数组的 `length` 达到 0 时，滚动事件处理程序代码随即移除。 你可在[此 CodePen 示例](https://codepen.io/malchata/pen/mXoZGx)中，查看代码的实际运行情况。
 
 虽然此代码几乎可在任何浏览器中正常运行，但却存在潜在的性能问题，即重复的 setTimeout 调用可能纯属浪费，即使其中的代码受限制，它们仍会运行。在此示例中，当文档滚动或窗口调整大小时，不管视窗中是否有图像，每 200 毫秒都会运行一次检查。 此外，跟踪尚未延迟加载的元素数量，以及取消绑定滚动事件处理程序的繁琐工作将由开发者来完成。
 
@@ -236,7 +236,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 ```
 
-如上文所述，由于并非所有浏览器都支持 Intersection Observer，因此您需要确保提供回退方案或 polyfill。 请参阅[此 CodePen 演示](https://codepen.io/malchata/pen/wyLMpR)，查看代码的实际运行情况。
+如上文所述，由于并非所有浏览器都支持 Intersection Observer，因此你需要确保提供回退方案或 polyfill。 请参阅[此 CodePen 演示](https://codepen.io/malchata/pen/wyLMpR)，查看代码的实际运行情况。
 
 ## 参考资料
 

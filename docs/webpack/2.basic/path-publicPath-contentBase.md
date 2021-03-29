@@ -1,5 +1,5 @@
 ---
-title: path vs. publicPath vs. contentBase
+title: path 路径
 ---
 
 ## 概述
@@ -94,7 +94,7 @@ module.exports = {
 
 :::tip
 
-如果 `index.less` 里引用的资源路径是 `/` 开头的绝对路径，打包将不受 webpack 配置的影响，始终指向的是服务器静态资源的地址，[file-loader](/docs/webpack/1.Basic/loaders#file-loader), [url-loader](/docs/webpack/1.Basic/loaders#url-loader) 也不会起作用，其只对相对路径有效。
+如果 `index.less` 里引用的资源路径是 `/` 开头的绝对路径，打包将不受 webpack 配置的影响，始终指向的是服务器静态资源的地址，[file-loader](/docs/webpack/2.basic/loaders#file-loader), [url-loader](/docs/webpack/2.basic/loaders#url-loader) 也不会起作用，其只对相对路径有效。
 
 :::
 
