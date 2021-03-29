@@ -22,7 +22,7 @@ title: clientHeight & offsetHeight & scrollHeight
 
 当存在垂直滚动条的时候，滚动条会挤占`width`的空间，例如元素设置的`width: 100px`，当出现宽度为`5px`的滚动条时，元素的`width`的值会变为`95px`。
 
-在一般情况下， `offsetHeight === getBoundingClientRect().height`，两者的详细关系，可以查看[getBoundingClientRect](http://localhost:3000/docs/html/3.element/getBoundingClientRect#width--offsetwidth)。
+在一般情况下， `offsetHeight === getBoundingClientRect().height`，两者的详细关系，可以查看[getBoundingClientRect](http://localhost:3000/docs/html/4.element/getBoundingClientRect#width--offsetwidth)。
 
 ## scrollHeight
 

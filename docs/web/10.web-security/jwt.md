@@ -14,7 +14,7 @@ header.payload.signature;
 
 <Img w="600" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/CKdYzW.png" />
 
-如上图，传统使用`seesion`进行身份认证的流程如下：
+如上图，传统使用`session`进行身份认证的流程如下：
 
 1. 客户端向服务器发送用户名和密码。
 2. 服务器验证通过后，在当前对话（`session`）里面保存相关数据，比如用户名、过期时间等。
@@ -102,9 +102,9 @@ eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiJiMDhmODZhZi0zNWRhLTQ4ZjItOGZ
 
 客户端收到认证服务器返回的 `Token`，可以将其存在 `Cookie`或`localStorage/sessionStorage`中。
 
-当客户端访问应用服务器时，每次请求都需要带上`Token`。你可以把它放在 `Cookie` 里面自动发送，但是这样不能跨域，所以更好的做法是放在 `HTTP` 请求头的[Authorization](/docs/http/4.http-headers/request-header#authorization)字段里面，如下所示：
+当客户端访问应用服务器时，每次请求都需要带上`Token`。你可以把它放在 `Cookie` 里面自动发送，但是这样不能跨域，所以更好的做法是放在 `HTTP` 请求头的[Authorization](/docs/http/5.http-headers/request-header#authorization)字段里面，如下所示：
 
-```
+```text
 Authorization: Bearer <token>
 ```
 

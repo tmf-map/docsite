@@ -2,7 +2,7 @@
 title: JS 引擎
 ---
 
-<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/1_bxEkHw1xewxOFjmGunb-Cw.png' alt='JavaScript Cover'/>
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/javascript-cover.png' alt='javascript-cover'/>
 
 ## JS Engine
 

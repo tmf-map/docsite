@@ -77,7 +77,7 @@ Google 的 Chrome 于 2012 年开始开发 QUIC 协议，**QUIC 协议在当前 
 
 ### TLS1.3 创建连接
 
-下图是我们在[HTTPS](/docs/http/6.http-security/https#https-建立连接的过程)中讲过的 TLS1.3 连接的简化版，因为客户端的`Finished`消息和请求连接是一起发给服务器的，所以 TLS1.3 创建连接只需要 1 个 RTT。
+下图是我们在[HTTPS](/docs/http/7.http-security/https#https-建立连接的过程)中讲过的 TLS1.3 连接的简化版，因为客户端的`Finished`消息和请求连接是一起发给服务器的，所以 TLS1.3 创建连接只需要 1 个 RTT。
 
 <Img w="600" legend="图：TLS1.3创建连接" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200108234311.png" />
 

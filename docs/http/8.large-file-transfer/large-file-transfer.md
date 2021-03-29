@@ -10,7 +10,7 @@ title: 大文件传输
 
 通过**数据压缩**，可以减小实体数据的大小。例如当实体数据是`100KB`时，50%的压缩率，可以将数据能够压缩到 50K 的大小，**这就相当于在带宽不变的情况下网速提升了一倍**。
 
-在[请求头字段](/docs/http/4.http-headers/request-header#accept-encoding)那一节曾经提到过`Accept-Encoding`头字段，它的参数是浏览器支持的压缩格式，例如：`gzip`、`br`等。这样服务器就可以根据`Accept-Encoding`的参数选择一种压缩算法，放进`Content-Encoding`响应头里，再把原数据压缩后发给浏览器。
+在[请求头字段](/docs/http/5.http-headers/request-header#accept-encoding)那一节曾经提到过`Accept-Encoding`头字段，它的参数是浏览器支持的压缩格式，例如：`gzip`、`br`等。这样服务器就可以根据`Accept-Encoding`的参数选择一种压缩算法，放进`Content-Encoding`响应头里，再把原数据压缩后发给浏览器。
 
 不过这个解决方法也有个缺点，gzip 等压缩算法通常**只对文本文件有较好的压缩率**，而图片、音频视频等多媒体数据本身就已经是高度压缩的，再用 gzip 处理也不会变小（甚至还有可能会增大一点），所以它就失效了。
 
