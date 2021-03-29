@@ -72,7 +72,7 @@ dpi 是 dots per inch, 不论是 dpi 还是 ppi，实际都是一种换算的概
 - 一般手机：1px
 - iPhone6: 0.5px
 
-这下我们终于明白设计师要的是啥效果了，那我们怎么解决呢？可以阅读后面 [rem](/docs/css/2.unit-font/rem) 的部分。
+这下我们终于明白设计师要的是啥效果了，那我们怎么解决呢？可以阅读后面 [rem](/docs/css/2.unit-font/rem) 部分。
 
 [这个例子](https://codepen.io/muwenzi/pen/LKezGK)，可以在 mac 上的 Chrome，Safari 以及 iPhone 上微信，Chrome，Safari 上分别观察效果，注意不同 dpr 的设备显示效果是不一样的，以 dpr 为 2 的 mac 为例，Chrome 是不支持 0.5px 显示的，Safari 可以。
 
