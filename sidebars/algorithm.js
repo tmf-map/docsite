@@ -1,7 +1,7 @@
 module.exports = {
-  '1. Analysis of Algorithms': [
-    'algorithm/1.analysis-of-algorithms/asymptotic-notations',
-    'algorithm/1.analysis-of-algorithms/analysis-of-loops'
+  '1. 开始': [
+    'algorithm/1.get-started/asymptotic-notations',
+    'algorithm/1.get-started/analysis-of-loops'
   ],
   '2. 数组': [
     'algorithm/2.array/array-introduce',

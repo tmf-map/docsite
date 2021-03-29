@@ -1,7 +1,8 @@
 ---
-id: jsx
 title: JSX
 ---
+
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/react-cover.png' alt='react-cover'/>
 
 ## JSX 基础概念
 
