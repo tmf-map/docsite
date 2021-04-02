@@ -15,7 +15,7 @@ title: Introduction
 
 Go 于 2009 年正式开源，当时多核处理器已经上市。Go 语言在多核并发上拥有原生的设计优势，Go 语言从底层原生支持并发，无须第三方库、开发者的编程技巧和开发经验。
 
-Go 是从 2007 年末由 Robert Griesemer, Rob Pike, Ken Thompson 主持开发，后来还加入了 Ian Lance Taylor, Russ Cox 等人，并最终于 2009 年 11 月开源，在 2012 年早些时候发布了 Go 1 稳定版本。现在 Go 的开发已经是完全开放的，并且拥有一个活跃的社区。
+Go 是从 2007 年末由 Rob Pike, Ken Thompson, Robert Griesemer 主持开发，后来还加入了 Ian Lance Taylor, Russ Cox 等人，并最终于 2009 年 11 月开源，在 2012 年早些时候发布了 Go 1 稳定版本。现在 Go 的开发已经是完全开放的，并且拥有一个活跃的社区。
 
 <Img w="620" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/jH8hA3.png' />
 
@@ -37,9 +37,9 @@ Go 是从 2007 年末由 Robert Griesemer, Rob Pike, Ken Thompson 主持开发�
 
 <Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/mQ5YFo.png' legend='图：Fibonacci斐波那契数列算法'/>
 
-### 高并发（语言层面）
+### 高并发
 
-Go 语言的并发具有天生的基因支持，充分的利用多核，如下代码便可轻松开启高并发：
+Go 语言的并发具有**天生语言层面**的基因支持，充分的利用多核，如下代码便可轻松开启高并发：
 
 ```go
 package main
@@ -84,29 +84,29 @@ goroutine  9169 ...
 - 直接运行即可部署：操作系统是可以直接 `./` 去执行的
 - 不依赖其他库：最终生成的可执行程序是一个静态的(可执行)文本文件
 
-以 `helloWorld.go` 为例，写好后，我们对它进行编译：
+以 `hello.go` 为例，写好后，我们对它进行编译：
 
 ```bash
-$ go build helloWorld.go
+$ go build hello.go
 $ ll
--rwxr-xr-x  1 kimi  staff   2.0M Mar 27 13:05 helloWorld
--rw-r--r--@ 1 kimi  staff    73B Feb 11 23:06 helloWorld.go
+-rwxr-xr-x  1 kimi  staff   2.0M Mar 27 13:05 hello
+-rw-r--r--@ 1 kimi  staff    73B Feb 11 23:06 hello.go
 ```
 
-可以发现一个 `helloWorld` 就 `2.0M` 还是比较大的，我通过 `ldd`(macOS: `otool -L`)来查看，它是否依赖其他库呢?
+可以发现一个 `hello` 就 `2.0M` 还是比较大的，我们通过 `ldd`(macOS: `otool -L`)来查看它是否依赖其他库：
 
 ```bash
- $ otool -L helloWorld
- helloWorld:
+ $ otool -L hello
+ hello:
         /usr/lib/libSystem.B.dylib (compatibility version 0.0.0, current version 0.0.0)
         /System/Library/Frameworks/Security.framework/Versions/A/Security (compatibility version 0.0.0, current version 0.0.0)
         /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation (compatibility version 0.0.0, current version 0.0.0)
 ```
 
-可以发现它除了标准的系统库，它不依赖于任何库，然后我们 `./helloWorld` 执行，就能够执行成功了：
+可以发现它除了标准的系统库，它不依赖于任何库，然后我们 `./hello` 执行，就能够执行成功了：
 
 ```bash
-$ ./helloWorld
+$ ./hello
 Hello, World
 ```
 
@@ -118,13 +118,37 @@ Go 语言简单易学，学习曲线平缓，不需要像 C/C++ 语言动辄需�
 
 Go 语言提供了一套格式化工具：`go fmt`。一些 Go 语言的开发环境或者编辑器在保存时，都会使用格式化工具进行修改代码的格式化，这样就保证了不同开发者提交的代码都是统一的格式。
 
+### 丰富的标准库
+
+Go 语言的标准库十分丰富，比如：
+
+<Img w="360" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/go-standard-libraries.jpg' alt='go-standard-libraries'/>
+
+如果不是一些极特殊的要求，Go 语言的标准库是完全可以满足日常的开发需求的。
+
 ### 高开发效率
 
-Go 语言和 C 语言虽然都是编译型语言，但 GO 带有 GC 垃圾回收，但也可以手动去控制内存。
+Go 语言和 C 语言虽然都是编译型语言，但 GO 带有 GC 垃圾回收，也可以手动去控制内存。
 
 <Img w="600" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/l6cicw.jpg' alt='图：语言的开发和运行效率'/>
 
 Go 语言实现了开发效率与执行效率的完美结合，让你像写 Python 代码（效率）一样编写 C 代码（性能）。
+
+## 不足
+
+### 包管理不够完善
+
+大部分包都在 Github 上，Github 上大部分的代码，都是第三方私人的，这个危险还是比较大的，这样对代码的定性还是比较有风险的。
+
+### 无泛化类型
+
+目前是没有泛化类型的，这也是很多用 Go 时间长的工程师抱怨的，没有泛化，很多代码都要重复去写。Go 计划在 2.0 版本要加上泛型。从设计上来讲，泛型有弊有利，利就是所谓的方便写代码，弊就是代码的复杂度、难度会更大一些。
+
+### 没有 Exception
+
+Go 语言采取了一个极端，所有 Exception 都用 Error 来处理，它希望把全部的 Exception 都改为 Error 来处理。这点像 C 语言，也是全部 Error 没有 Exception，所以说 Go 语言根本就没有 `try..catch` 语法。因为它认为，全部 Exception 都可以通过 Error 逐层往外抛。
+
+对于这种语法特点，很多长期写 Java 的工程师可能会比较别扭一些，因为他们习惯通过 `try..catch` 来捕获，Java 实际上就是另一个极端，它喜欢把全部的 Error 用 Exception 来捕获，这两个极端谁对谁错，有很多争议。那 Go 语言是做了一个极端选择，并没有做中间选擇，比如 Python 做了一个中间选择，你可以用 `try..catch` , 也可用 Error。
 
 ## 发展现状
 
@@ -201,7 +225,8 @@ Gopher 即“地鼠”的意思，而 Go 语言的 logo 就是一个 gopher:
 ## 参考资料
 
 1. [为什么你应该学习 Go 语言？, by 李文周](https://www.liwenzhou.com/posts/Go/about_golang/)
-2. [Go 语言教程, by runoob](https://www.runoob.com/go/go-tutorial.html)
-3. [2021，属于 Golang 和 Gopher 的全新纪元, by GoCN](https://jishuin.proginn.com/p/763bfbd4f35f)
-4. [go 和 golang 是什么关系？ - 知乎用户的回答 - 知乎](https://www.zhihu.com/question/39508749/answer/947297975)
-5. [为什么写 Go 的人叫自己 Gopher？ - 知乎用户的回答 - 知乎](https://www.zhihu.com/question/367293477/answer/981552624)
+2. [8 小时专职 Golang 工程师, by 刘丹冰 Aceld](https://www.bilibili.com/video/BV1gf4y1r79E)
+3. [Go 语言教程, by runoob](https://www.runoob.com/go/go-tutorial.html)
+4. [2021，属于 Golang 和 Gopher 的全新纪元, by GoCN](https://jishuin.proginn.com/p/763bfbd4f35f)
+5. [go 和 golang 是什么关系？ - 知乎用户的回答 - 知乎](https://www.zhihu.com/question/39508749/answer/947297975)
+6. [为什么写 Go 的人叫自己 Gopher？ - 知乎用户的回答 - 知乎](https://www.zhihu.com/question/367293477/answer/981552624)

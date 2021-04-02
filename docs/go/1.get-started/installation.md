@@ -27,3 +27,37 @@ go version go1.15.8 darwin/amd64
 ```
 
 Confirm that the command prints the installed version of Go.
+
+## GOROOT
+
+`GOROOT` 和 `GOPATH` 都是环境变量，其中 `GOROOT` 是我们安装 go 开发包的路径。
+
+## GOPATH
+
+从 **Go 1.8** 版本开始，Go 开发包在安装完成后会为 `GOPATH` 设置一个默认目录，在 macOS 中默认是 `~/go`。
+
+我们只需要记住默认的 `GOPATH` 路径在哪里就可以了，并且默认情况下 `GOROOT` 下的 `bin` 目录及 `GOPATH` 下的 `bin` 目录都已经添加到环境变量中了，我们也不需要额外配置了。
+
+## GOPROXY
+
+Go1.14 版本之后，都推荐使用 `go mod` 模式来管理依赖环境了，也不再强制我们把代码必须写在 `GOPATH` 下面的 `src` 目录了，你可以在你电脑的任意位置编写 go 代码。
+
+:::tip
+
+1.11 版本之前不支持 `go mod`，1.14 正式发布了 `go mod`。
+
+:::
+
+默认 `GOPROXY` 配置是：
+
+```bash
+GOPROXY=https://proxy.golang.org,direct
+```
+
+由于国内访问不到 `https://proxy.golang.org`，所以推荐使用下面的命令去修改 `GOPROXY`:
+
+```bash
+go env -w GOPROXY=https://goproxy.cn,direct
+# or
+go env -w GOPROXY=https://goproxy.io,direct
+```
