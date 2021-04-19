@@ -2,7 +2,7 @@
 title: 文档流
 ---
 
-## 流 Flow
+# 流 Flow
 
 流实际上是 CSS 中的一种基本的定位和布局机制，流和现实世界的水流有异曲同工的表现。CSS 世界的“流”似乎就是按照现实世界的“水流”创造的。
 
@@ -16,7 +16,7 @@ CSS 世界构建的基石是 HTML，而 HTML 最具代表的两个基石 `<div>`
 
 :::
 
-## 文档流
+# 文档流
 
 文档流（Normal Flow, 也有翻译成 `普通流`, `常规流`）中的盒肯定属于某一个格式化上下文（Formatting Context），可能是 BFC 和 IFC ，但不能两者都是。
 
@@ -36,7 +36,7 @@ CSS 世界构建的基石是 HTML，而 HTML 最具代表的两个基石 `<div>`
 
 文档流中的盒肯定属于某一个格式化上下文，但并不代表脱离文档流的盒子不属于某一个格式化上下文，比如浮动盒子和绝对定位的盒子，它们属于 BFC。
 
-## BFC
+# BFC
 
 BFC(Block Formatting Context) 即块格式化上下文，是一种虚拟概念，可以理解称创建一个 BFC 就会产生一个“结界”，形成了一个封闭的空间，里面的人出不去，外面的人进不来，具有极强的防御力。
 
@@ -58,7 +58,7 @@ BFC 规则规定了在该 BFC 中 boxes(包括：浮动的 box，绝对定位的
 - **去除父子 margin 重叠**：BFC 元素是不会发生 margin 重叠的，因为 margin 重叠会影响外面元素。
 - **自适应布局**：实现更健壮、更智能的自适应布局。
 
-### 什么元素会触发产生一个（新）BFC？
+## 什么元素会触发产生一个（新）BFC？
 
 https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Block_formatting_context
 
@@ -72,7 +72,7 @@ https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Block_formatting_context
 
 Demo: https://codepen.io/muwenzi/pen/vqdJxz
 
-### BFC 特点
+## BFC 特点
 
 - 内部盒子会在垂直方向排列，即行排，一行一行进行排列布局；每个盒的左外边界挨着包含块的左外边界（对于从右向左的格式化，右外边界挨着）。
 - BFC 就是页面上的一个隔离的独立容器，里外互相不影响，产生了一种“结界”效果。可以用来解决**父子 margin 重叠的问题**，在**父元素上新建 BFC**即可。
@@ -80,19 +80,23 @@ Demo: https://codepen.io/muwenzi/pen/vqdJxz
 - 计算 BFC 的高度时，会计算所有子元素，连浮动元素也参与计算，故可以用来清除浮动。如计算红色块的高度，因为其是一个新的 BFC，所以浮动黑块也参与计算；需要注意的是**计算 html 高度的时候浮动元素也会参与计算**。
 - 当元素不是 BFC 的子元素的时候，浮动元素高度不参与 BFC 计算，如计算蓝色的高度，因为其没有建立 BFC，故 BFC1-1 不会参与计算，需要注意的是**如果浮动元素它的上一级 BFC 是 html 的话，在计算 body 的高度，则浮动不会参与计算，因为 body 没有建立 BFC**。
 
-## IFC
+# IFC
 
 IFC(Inline Formatting Context)，IFC 和 BFC 都是虚拟概念。BFC 可能和某一个具体产生 BFC 的元素还有关系，而 IFC 则更玄乎了。它来规定同一行盒子的宽高、垂直和水平排列方式等，虽然是虚拟概念，但是它会影响到 containing block 的排列和大小。在 CSS 规范中也解释了 IFC 的 I 不是指 inline box，而是 inline-level box，它不包括 inline-block inline-table 等，因为它们遵循的是 BFC。
 
-> Inline-level boxes that are not inline boxes (such as replaced inline-level elements, inline-block elements, and inline-table elements) are called atomic inline-level boxes because they participate in their inline formatting context as a single opaque box.
+:::tip
 
-### IFC 特点
+Inline-level boxes that are not inline boxes (such as replaced inline-level elements, inline-block elements, and inline-table elements) are called atomic inline-level boxes because they participate in their inline formatting context as a single opaque box.
+
+:::
+
+## IFC 特点
 
 - 在一个 IFC 中，盒是一个接一个水平放置的，从包含块的顶部开始
 - 这些盒之间的**水平**margin，border 和 padding**都有效**。
 - 盒可能以不同的方式垂直对齐，以它们的底部或者顶部对齐，或者以它们里面的文本的基线对齐。
 
-### 行盒(line box)
+## 行盒(line box)
 
 同一行的 inline box 组成的盒子叫做行盒(line box)，这是一个完完全全的虚拟概念，并不存在实际元素与其对应，如下图的绿色框所示。
 
@@ -106,7 +110,7 @@ IFC(Inline Formatting Context)，IFC 和 BFC 都是虚拟概念。BFC 可能和�
 
 Demo: [line box 与 float，vertical-align，text-align](https://codepen.io/muwenzi/pen/ZdrmKZ&sa=D&ust=1571373688507000)
 
-### 行内盒(inline box)
+## 行内盒(inline box)
 
 一个 inline box 是一个特殊的 line box，其内容参与了它的包含行的 IFC
 
@@ -117,7 +121,7 @@ Demo: [line box 与 float，vertical-align，text-align](https://codepen.io/muwe
 
 Demo: [inline box 与换行，溢出](https://codepen.io/muwenzi/pen/jjZJyv&sa=D&ust=1571373688509000)
 
-### 行高
+## 行高
 
 <Img w="600" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/HNnrga.png'/>
 
@@ -149,6 +153,44 @@ https://codepen.io/muwenzi/pen/LKQaqW
 - 图片 vertical-align:bottom
 - 父元素设置 line-height:0 原因是当 line-height:0 时,行盒的基线会上移
 
-补充：
+## 内联盒模型
 
-<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/cOGAiu.jpg'/>
+下面是一段很普通的 HTML，
+
+<img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/example-html.png' alt='example-html' width='400'/>
+
+看似普通，实际上包含了很多术语和概念，通俗地说，包含了很多种盒子：
+
+### 内容区域（content area）
+
+<img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/content-area.png' alt='content-area' width='400'/>
+
+内容区域指围绕着文字"看不见的"盒子，其大小仅受字符本身特性控制。可以理解为如图中选中的区域。
+
+如果内容是字符，可以理解为字符盒子（character box）。如果是图片这样的替换元素，可以理解为元素本身。
+
+### 内联盒子（inline box）
+
+<img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/inline-box.png' alt='inline-box' width='400'/>
+
+内联盒子不会让内容显示成块，而是排成一行。
+
+这种盒子又可细分为内联盒子和匿名内联盒子。如果含有内联标签（虚线框标注），就属于前者；如果只有光秃秃的文字（实线框标注），就属于后者。
+
+:::tip
+
+并不是所有光秃秃的文字都是“匿名内联盒子”，还有可能是匿名块级盒子，关键是看所在的标签是块级还是内联。
+
+:::
+
+### 行框盒子（line box）
+
+<img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/line-box.png' alt='line-box' width='400'/>
+
+每一行就是一个行框盒子，如上图实线框标注，此盒子由一个个“内联盒子”组成。
+
+### 包含块（containing block）
+
+<img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/containing-block.png' alt='containing-block' width='400'/>
+
+整个 p 标签就是一个包含块，如上图实线框标注，此盒子由一行一行的“行框盒子”组成。
