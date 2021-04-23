@@ -197,4 +197,4 @@ https://codepen.io/muwenzi/pen/LKQaqW
 
 ## 参考资料
 
-1. [CSS 世界，by 张鑫旭](https://cread.jd.com/read/startRead.action?bookId=30392603&readType=1)
+1. [CSS 世界，by 张鑫旭](https://book.douban.com/subject/27615777/)
