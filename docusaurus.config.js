@@ -114,21 +114,21 @@ module.exports = {
           label: 'Basis',
           position: 'right',
           // no `to` means activeBaseRegex gets ignored, so it's a must
-          to: 'docs/algorithm/1.get-started/asymptotic-notations',
+          to: 'docs/algorithm/get-started/asymptotic-notations',
           activeBaseRegex: 'docs/(design-patterns|algorithm|http)/',
           items: [
             {
-              to: 'docs/algorithm/1.get-started/asymptotic-notations',
+              to: 'docs/algorithm/get-started/asymptotic-notations',
               activeBasePath: 'docs/algorithm/',
               label: 'Algorithm'
             },
             {
-              to: 'docs/design-patterns/1.get-started',
+              to: 'docs/design-patterns/get-started',
               activeBasePath: 'docs/design-patterns/',
               label: 'Design Patterns'
             },
             {
-              to: 'docs/http/1.get-started',
+              to: 'docs/http/get-started',
               activeBasePath: 'docs/http/',
               label: 'HTTP'
             }
@@ -138,52 +138,52 @@ module.exports = {
           label: 'Frontend',
           position: 'right',
           // no `to` means activeBaseRegex gets ignored, so it's a must
-          to: 'docs/javascript/1.basic/js-engine',
+          to: 'docs/javascript/basic/js-engine',
           activeBaseRegex:
             'docs/(javascript|typescript|html|css|web|react|webpack|nodejs|fe-guidelines)/',
           items: [
             {
-              to: 'docs/javascript/1.basic/js-engine',
+              to: 'docs/javascript/basic/js-engine',
               activeBasePath: 'docs/javascript/',
               label: 'JavaScript'
             },
             {
-              to: 'docs/typescript/1.get-started',
+              to: 'docs/typescript/get-started',
               activeBasePath: 'docs/typescript/',
               label: 'TypeScript'
             },
             {
-              to: 'docs/html/1.get-started',
+              to: 'docs/html/get-started',
               activeBasePath: 'docs/html/',
               label: 'HTML'
             },
             {
-              to: 'docs/css/1.visual-formatting-model/basic-concept',
+              to: 'docs/css/visual-formatting-model/basic-concept',
               activeBasePath: 'docs/css/',
               label: 'CSS'
             },
             {
-              to: 'docs/web/1.get-started',
+              to: 'docs/web/get-started',
               activeBasePath: 'docs/web/',
               label: 'Web'
             },
             {
-              to: 'docs/react/1.basic/jsx',
+              to: 'docs/react/basic/jsx',
               activeBasePath: 'docs/react/',
               label: 'React'
             },
             {
-              to: 'docs/webpack/1.get-started',
+              to: 'docs/webpack/get-started',
               activeBasePath: 'docs/webpack/',
               label: 'Webpack'
             },
             {
-              to: 'docs/nodejs/1.get-started',
+              to: 'docs/nodejs/get-started',
               activeBasePath: 'docs/nodejs/',
               label: 'NodeJS'
             },
             {
-              to: 'docs/fe-guidelines/1.introduction',
+              to: 'docs/fe-guidelines/introduction',
               activeBasePath: 'docs/fe-guidelines/',
               label: 'Coding Guidelines'
             }
@@ -193,11 +193,11 @@ module.exports = {
           label: 'Backend',
           position: 'right',
           // no `to` means activeBaseRegex gets ignored, so it's a must
-          to: 'docs/java/1.get-started/introduction',
+          to: 'docs/java/get-started/introduction',
           activeBaseRegex: 'docs/(java)/', // `/` can avoid the confusion such as `javascript`
           items: [
             {
-              to: 'docs/java/1.get-started/introduction',
+              to: 'docs/java/get-started/introduction',
               activeBasePath: 'docs/java/',
               label: 'Java'
             }
@@ -207,11 +207,11 @@ module.exports = {
           label: 'AI',
           position: 'right',
           // no `to` means activeBaseRegex gets ignored, so it's a must
-          to: 'docs/python/1.get-started/history',
+          to: 'docs/python/get-started/history',
           activeBaseRegex: 'docs/(python)/',
           items: [
             {
-              to: 'docs/python/1.get-started/history',
+              to: 'docs/python/get-started/history',
               activeBasePath: 'docs/python/',
               label: 'Python'
             }
@@ -222,7 +222,7 @@ module.exports = {
           label: 'Wiki',
           position: 'right',
           activeBasePath: 'docs/wiki/',
-          to: 'docs/wiki/1.get-started'
+          to: 'docs/wiki/get-started'
         }
       ]
     },
