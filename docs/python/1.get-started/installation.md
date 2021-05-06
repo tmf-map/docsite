@@ -133,15 +133,19 @@ dependencies:
 conda env create -f environment.yml
 ```
 
-如果后面 `environment.yml` 文件有更新的话可以运行以下命令更新依赖项：
+如果后面 `environment.yml` 有更新的话可以在 `environment.yml` 所在的目录运行以下命令来更新依赖包：
 
 ```bash
-conda env update --prefix ./env --file environment.yml  --prune
+conda env update
 ```
 
 :::tip
 
-`--prune` 选项将会删除环境中不再需要的所有依赖项。
+还可以在该命令后面加入以下选项：
+
+- `--prefix <path>` 将包装在某个特定的 path 下面
+- `--file <path>/environment.yml` 指定某个路径下面的 `environment.yml`
+- `--prune` 选项将会删除环境中不再需要的所有依赖项
 
 :::
 
