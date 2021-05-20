@@ -24,7 +24,7 @@ HTTP 响应状态共有 5 大类，分别是数字 1、2、3、4、5 开头。
 |  | 201 Created | 请求成功，并创建了一个新的资源，响应的实体主体部分中应该包含各种引用了已创建的资源的 URL，Location 首部包含的则是最具体的引用。（REST 里面，POST 或者 PUT 常常返回这样的状态） |
 |  | 202 Accepted | 请求已经接收到，但还未响应，没有结果。这只是意味着接受请求时，它看起来是有效的 |
 |  | 204 No Content | 请求成功，没有内容返回。通常在更新服务器上资源的时候成功的情况下不要求返回实体内容就会产生这个状态码 |
-|  | 206 Partial Content | 请求成功，返回部分内容。往往表示成功执行了一个部分或 Range（范围）请求 |
+|  | 206 Partial Content | 请求成功，返回部分内容。往往表示成功执行了一个部分或 Range 请求 |
 |  |  |  |
 | 3XX | 301 Moved Permanently | 永久重定向，表示请求的资源被分配了新的 URI，以后应使用资源现在所指的 URI |
 |  | 302 Found | 临时重定向，表示请求的资源被分配了新的 URI，希望用户本次使用新的 URI 访问 |
@@ -41,6 +41,7 @@ HTTP 响应状态共有 5 大类，分别是数字 1、2、3、4、5 开头。
 |  | 405 Method Not Allowed | 指定的请求方法不能被用于请求相应的资源，应该在响应中包含 Allow 首部，以告知客户端对所请求的资源可以使用哪些方法 |
 |  | 406 Not Acceptable | 资源无法满足客户端请求的条件，例如请求中文但只有英文； |
 |  | 413 Request Entity Too Large | 客户端发送的实体主体部分比服务器能够或者希望处理的要大时，返回此状态码 |
+|  | 416 Range Not Satisfiable | Means `Range` in reqest header is not satisfiable |
 |  | 429 Too Many Requests | 客户端在给定时间范围内发送了太多请求 |
 |  |  |  |
 | 5XX | 500 Internal Server Error | 服务器执行请求出错 |
