@@ -7,9 +7,9 @@ html[data-theme="dark"] {
   --ifm-toc-link-color: #fff;
 }
 
-html[data-theme="dark"] .footer.footer--dark {
+/* html[data-theme="dark"] .footer.footer--dark {
   --ifm-footer-background-color: var(--ifm-background-color);
-}
+} */
 
 html[data-theme="dark"] blockquote {
   color: var(--ifm-code-color);

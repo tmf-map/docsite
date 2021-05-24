@@ -6,6 +6,9 @@
   --ifm-color-primary-dark: #0085cc;
   --ifm-color-primary-darker: #0065a3;
   --ifm-color-primary-darkest: #00508a;
+  --ifm-navbar-background-color: rgb(36, 41, 46);
+  --ifm-navbar-link-color: #eee;
+  --ifm-navbar-search-input-background-color: #34383d;
 
   --ifm-color-emphasis-alpha-60: #5C6975;
   --ifm-contents-border-color: rgba(191, 191, 191, 0.2);
@@ -19,7 +22,7 @@
   --ifm-table-stripe-background: rgba(185, 202, 218, 0.15);
   --ifm-table-cell-padding: 0.7rem;
   --ifm-menu-color-background-active: rgb(255, 255, 255);
-  --ifm-navbar-shadow: 0 3px 8px 0 rgba(116, 129, 141, 0.1);
+  --ifm-navbar-shadow: none;
   --ifm-navbar-height: 3.75rem;
   --ifm-navbar-padding-horizontal: 2rem;
   --ifm-spacing-horizontal: 1.5rem;
@@ -61,6 +64,5 @@
   --my-color-main-page-shadow: rgba(230, 233, 236, 0.09) 0px 0px 1px 1px;
   --my-color-scrollbar-thumb: var(--my-color-gray-8);
   --my-color-scrollbar-thumb-hover: var(--my-color-gray-7);
-  --ifm-footer-background-color: var(--ifm-background-color);
   --ifm-toc-border-color: rgba(191, 191, 191, 0.16);
 }
