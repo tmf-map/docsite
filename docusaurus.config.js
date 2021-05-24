@@ -25,7 +25,7 @@ const admonitions = {
 
 module.exports = {
   title: githubOrg,
-  tagline: 'Explore and study full stack technology',
+  tagline: 'A thousand journey takes every step',
   url: 'https://thinkbucket.cn',
   baseUrl: '/',
   favicon: '/img/favicon/docsite.png',
