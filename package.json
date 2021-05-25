@@ -1,6 +1,6 @@
 {
   "name": "thinkbucket",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",

@@ -44,14 +44,14 @@ function Section({who, company, position, description, mirror}) {
 export default function Overview() {
   return (
     <div className="section text--center">
-      <p
+      {/* <p
         className={classNames(
           styles.centered,
           styles.text,
           styles['heading-helper']
         )}>
         The technology we are exploring
-      </p>
+      </p> */}
       <Heading>Overview</Heading>
       <div className={styles.testimonials}>
         <Section

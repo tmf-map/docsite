@@ -37,6 +37,10 @@
   flex-grow: 2;
 }
 
+.navbar__items:first-child svg {
+  color: #ddd;
+}
+
 .navbar__items--right {
   flex-grow: 1;
 }

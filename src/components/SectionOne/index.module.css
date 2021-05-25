@@ -68,3 +68,15 @@
   font-family: 'Fira Sans';
   font-size: 1.1rem;
 }
+
+@media (max-width: 996px) {
+  .container {
+    padding-top: 6rem;
+    padding-bottom: 8rem;
+  }
+  .slogan {
+    font-size: 36px;
+    line-height: 48px;
+    max-width: 75vw;
+  }
+}
