@@ -2,10 +2,10 @@
 
 .container {
   position: relative;
-  background-image: linear-gradient(
+  background-image: url(https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/homepage-cosmos-bg.svg), linear-gradient(
     180deg,
     var(--ifm-navbar-background-color) 0,
-    #1f232e 100%
+    rgba(20, 20, 20) 100%
   );
   background-repeat: repeat-x;
   background-position: center;
