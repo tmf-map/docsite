@@ -112,7 +112,7 @@ module.exports = {
       },
       items: [
         {
-          label: 'Basis',
+          label: 'Basics',
           position: 'right',
           activeBaseRegex: 'docs/(design-patterns|algorithm|http)',
           items: [
