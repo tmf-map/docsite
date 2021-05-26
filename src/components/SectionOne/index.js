@@ -11,11 +11,7 @@ const SectionOne = () => {
   const {tagline, organizationName, projectName} = siteConfig;
   return (
     <div className={styles.container}>
-      {/* <div className={styles.topBg} /> */}
       <p className={styles.slogan}>{tagline}</p>
-      {/* <p className={styles.sloganCN}>
-        不積跬步，无以至千里；不積小流，无以成江海。——荀子
-      </p> */}
       <a
         className={styles.version}
         href={`https://github.com/${organizationName}/${projectName}/releases`}

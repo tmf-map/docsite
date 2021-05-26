@@ -22,19 +22,6 @@
   font-family: 'Fira Sans';
 }
 
-/* .topBg {
-  position: absolute;
-  top: -60px;
-  width: 100%;
-  height: 254px;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.741791) -15.09%,
-    rgba(16, 16, 16, 0.0001) 73.61%
-  );
-  z-index: 999;
-} */
-
 .slogan {
   text-align: center;
   font-weight: 300;
@@ -63,8 +50,6 @@
 .getStartedBtn button {
   margin-top: 2.5rem;
   padding: 0.6rem 2.2rem;
-  /* font-weight: 400; */
-  /* text-transform: uppercase; */
   font-family: 'Fira Sans';
   font-size: 1.1rem;
 }
