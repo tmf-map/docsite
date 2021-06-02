@@ -25,7 +25,7 @@ const admonitions = {
 
 module.exports = {
   title: githubOrg,
-  tagline: 'Explore and study full stack technology',
+  tagline: 'Small steps get us to faraway places',
   url: 'https://thinkbucket.cn',
   baseUrl: '/',
   favicon: '/img/favicon/docsite.png',
@@ -111,7 +111,7 @@ module.exports = {
       },
       items: [
         {
-          label: 'Basis',
+          label: 'Basics',
           position: 'right',
           // no `to` means activeBaseRegex gets ignored, so it's a must
           to: 'docs/algorithm/1.get-started/asymptotic-notations',

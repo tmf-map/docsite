@@ -6,7 +6,7 @@ exclude-labels:
   - 'dependencies'
   - 'security'
 categories:
-  - title: 'Basis'
+  - title: 'Basics'
     labels:
       - 'docs: algorithm'
       - 'docs: design patterns'

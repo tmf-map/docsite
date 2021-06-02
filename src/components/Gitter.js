@@ -1,7 +1,6 @@
 import React from 'react';
 import cx from 'classnames';
 
-import Button from './Button';
 import Heading from './Heading';
 import styles from '../pages/index.module.css';
 
@@ -13,9 +12,9 @@ export default function Gitter() {
         <img className={styles.contactLogo} src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/gitter-logo.svg" alt=""/>
         <img className={styles.contactLogo} src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/slack-logo.svg" alt=""/>
       </div> */}
-      <Button className={styles.gitter} to="https://gitter.im">
+      {/* <Button className={styles.gitter} to="https://gitter.im">
         Our Gitter
-      </Button>
+      </Button> */}
     </div>
   );
 }

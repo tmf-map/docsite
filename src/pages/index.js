@@ -13,7 +13,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 import WIP from '../components/WIP';
 import Gitter from '../components/Gitter';
-import Header from '../components/Header';
+import SectionOne from '../components/SectionOne';
 import Overview from '../components/Overview';
 import ClientSide from '../components/ClientSide';
 import ServerSide from '../components/ServerSide';
@@ -30,7 +30,7 @@ export default function HomePage() {
   return (
     <Layout keywords={keywords} description={tagline}>
       <div className={cx(styles.landing, styles['overflow-hidden'])}>
-        <Header />
+        <SectionOne />
         <div className="main">
           <div className="container">
             <Overview />
