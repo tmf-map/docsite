@@ -4,7 +4,7 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
-    "build": "docusaurus build",
+    "build": "USE_SIMPLE_CSS_MINIFIER=true docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "lint": "eslint --cache \"**/*.js\"",
@@ -46,6 +46,7 @@
     "@docusaurus/plugin-pwa": "^2.0.0-alpha.72",
     "@docusaurus/preset-classic": "2.0.0-alpha.72",
     "@docusaurus/theme-live-codeblock": "2.0.0-alpha.72",
+    "@http-util/request": "^0.1.0",
     "classnames": "^2.2.6",
     "npm-to-yarn": "^1.0.1",
     "react": "^16.14.0",
