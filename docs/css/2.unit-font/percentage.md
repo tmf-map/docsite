@@ -264,9 +264,7 @@ p {
 
 :::
 
-例如，一个宽度为 150px，高度为 100px 的元素，定义 `transform:translate(50%, 50%)` 的效果是 `transform:translate(75px, 50px)`。
-
-另外，`translate3d` 对应是还有第三个维度的，但是，经过测试，最后的第 3 个值不可以使用百分比（否则样式定义无效）。至于为什么不可以参照呢，大概是因为那是神秘的第三维度吧…
+例如，一个宽度为 150px，高度为 100px 的元素，定义 `transform:translate(50%, 50%)` 的效果是 `transform:translate(75px, 50px)`。另外，`translate3d` 对应是还有第三个维度的，但经过测试，最后的第 3 个值不可以使用百分比（否则样式定义无效）。
 
 如果你想要知道更多的百分比值在 CSS 属性中的可用情况及参照值，请参考 [MDN CSS percentage values](https://developer.mozilla.org/en-US/docs/Web/CSS/percentage)。
 
