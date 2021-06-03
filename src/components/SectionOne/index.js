@@ -7,7 +7,7 @@ import styles from './index.module.css';
 const SectionOne = () => {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
-  const {tagline, organizationName, projectName} = siteConfig;
+  const {tagline, organizationName, projectName, themeConfig} = siteConfig;
   const [version, setVersion] = useState('');
   useEffect(() => {
     request
@@ -34,7 +34,9 @@ const SectionOne = () => {
         Latest version: {version}
       </a>
       <div className={styles.getStartedBtn}>
-        <Button to="/docs/react/1.basic/jsx">Get Started</Button>
+        <Button to={`/${themeConfig?.navbar?.items?.[0]?.items?.[0]?.to}`}>
+          Get Started
+        </Button>
       </div>
     </div>
   );
