@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import request from '@http-util/request';
-import pkg from '../../../package.json';
 import Button from '../Button';
 import styles from './index.module.css';
 
@@ -17,10 +16,12 @@ const SectionOne = () => {
       .get()
       .then(res => {
         const tagName = res?.[0]?.tag_name;
-        setVersion(tagName ?? pkg.version);
+        const d = new Date();
+        setVersion(tagName ?? `${d.getFullYear()}.${d.getMonth()}`);
       })
       .catch(() => {
-        setVersion(pkg.version);
+        const d = new Date();
+        setVersion(`${d.getFullYear()}.${d.getMonth()}`);
       });
   }, []);
   return (
