@@ -161,7 +161,7 @@ Go 语言采取了一个极端，所有 Exception 都用 Error 来处理，它�
 - 基础后端软件
   - 代表项目:tidb、influxdb、cockroachdb 等。
 - 微服务
-  - 代表项目:go-kit. micro、 monzo bank 的 typhon bilibili 等。
+  - 代表项目:go-kit、micro、 monzo bank 的 typhon bilibili 等。
 - 互联网基础设施
   - 代表项目:以太坊、hyperledger 等。
 
