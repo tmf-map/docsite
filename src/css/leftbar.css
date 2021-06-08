@@ -24,8 +24,8 @@
 }
 
 .menu .menu__link {
-  border: 1px solid transparent !important;
-  --ifm-menu-color-background-active: transparent;
+  border: 1px solid transparent;
+  /* --ifm-menu-color-background-active: transparent; */
   line-height: 1.25rem;
   font-size: 0.9375rem;
 }
