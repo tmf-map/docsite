@@ -25,7 +25,7 @@ const admonitions = {
 
 module.exports = {
   title: githubOrg,
-  tagline: 'Explore and study full stack technology',
+  tagline: 'Small steps get us to faraway places',
   url: 'https://thinkbucket.cn',
   baseUrl: '/',
   favicon: '/img/favicon/docsite.png',
@@ -112,23 +112,22 @@ module.exports = {
       },
       items: [
         {
-          label: 'Basis',
+          label: 'Basics',
           position: 'right',
           activeBaseRegex: 'docs/(design-patterns|algorithm|http)',
           items: [
             {
-              to:
-                'docs/algorithm/1.analysis-of-algorithms/asymptotic-notations',
+              to: 'docs/algorithm/1.get-started/asymptotic-notations',
               activeBasePath: 'docs/algorithm/',
               label: 'Algorithm'
             },
             {
-              to: 'docs/design-patterns/1.creation-pattern/singleton',
+              to: 'docs/design-patterns/1.get-started',
               activeBasePath: 'docs/design-patterns/',
               label: 'Design Patterns'
             },
             {
-              to: 'docs/http/1.web-basic/tcp-ip',
+              to: 'docs/http/1.get-started',
               activeBasePath: 'docs/http/',
               label: 'HTTP'
             }
@@ -151,7 +150,7 @@ module.exports = {
               label: 'TypeScript'
             },
             {
-              to: 'docs/html/preface/overview',
+              to: 'docs/html/1.get-started',
               activeBasePath: 'docs/html/',
               label: 'HTML'
             },
@@ -168,17 +167,17 @@ module.exports = {
             {
               to: 'docs/react/1.basic/jsx',
               activeBasePath: 'docs/react/',
-              label: 'React Stack'
+              label: 'React'
             },
             {
-              to: 'docs/webpack/1.Basic/basic',
+              to: 'docs/webpack/1.get-started',
               activeBasePath: 'docs/webpack/',
               label: 'Webpack'
             },
             {
-              to: 'docs/nodejs/package-manager/package-version',
+              to: 'docs/nodejs/1.get-started',
               activeBasePath: 'docs/nodejs/',
-              label: 'Node.js'
+              label: 'NodeJS'
             },
             {
               to: 'docs/fe-guidelines/1.introduction',
@@ -193,8 +192,7 @@ module.exports = {
           activeBaseRegex: 'docs/(java/)',
           items: [
             {
-              to:
-                'docs/java/object-oriented-programming/abstract-class-interface',
+              to: 'docs/java/1.get-started/introduction',
               activeBasePath: 'docs/java/',
               label: 'Java'
             },

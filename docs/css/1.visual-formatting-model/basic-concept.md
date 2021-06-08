@@ -2,6 +2,8 @@
 title: 基础概念
 ---
 
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/css-cover.png' alt='css-cover'/>
+
 ## 可替换元素
 
 可替换元素（replaced element）是 CSS 世界中的另一个派系。从名字上理解：

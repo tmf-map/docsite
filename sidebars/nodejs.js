@@ -1,4 +1,5 @@
 module.exports = [
+  'nodejs/1.get-started',
   {
     'Package Manager': [
       'nodejs/package-manager/package-version',
