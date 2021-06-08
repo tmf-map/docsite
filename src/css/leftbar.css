@@ -24,9 +24,8 @@
 }
 
 .menu .menu__link {
-  border: 1px solid transparent;
-  border-top-right-radius: 1.0625rem;
-  border-bottom-right-radius: 1.0625rem;
+  border: 1px solid transparent !important;
+  --ifm-menu-color-background-active: transparent;
   line-height: 1.25rem;
   font-size: 0.9375rem;
 }
@@ -49,7 +48,7 @@
 }
 
 .menu .menu__link.menu__link--active:not(.menu__link--sublist):hover {
-  --ifm-menu-color-background-active: rgb(255, 255, 255);
+  /* --ifm-menu-color-background-active: rgb(255, 255, 255); */
   border: 1px solid #e6ecf1;
 }
 
