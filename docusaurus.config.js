@@ -130,6 +130,11 @@ module.exports = {
               to: 'docs/http/1.get-started',
               activeBasePath: 'docs/http/',
               label: 'HTTP'
+            },
+            {
+              to: 'docs/dev-tools/1.get-started',
+              activeBasePath: 'docs/dev-tools/',
+              label: 'Dev Tools'
             }
           ]
         },

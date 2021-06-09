@@ -13,6 +13,7 @@ const wiki = require('./wiki');
 const nodejs = require('./nodejs');
 const feGuidelines = require('./fe-guidelines');
 const python = require('./python');
+const devTools = require('./dev-tools');
 
 module.exports = {
   javascript,
@@ -29,5 +30,6 @@ module.exports = {
   webpack,
   nodejs,
   feGuidelines,
-  python
+  python,
+  devTools
 };
