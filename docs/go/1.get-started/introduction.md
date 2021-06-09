@@ -6,6 +6,7 @@ title: Introduction
 
 - Go Official Doc: https://golang.org/
 - GoCN: https://gocn.vip/
+- Awesome Go: https://awesome-go.com/
 
 ## Google 开源
 
@@ -138,7 +139,7 @@ Go 语言实现了开发效率与执行效率的完美结合，让你像写 Pyth
 
 ### 包管理不够完善
 
-大部分包都在 Github 上，Github 上大部分的代码，都是第三方私人的，这个危险还是比较大的，这样对代码的定性还是比较有风险的。
+大部分包都在 Github 上，Github 上大部分的代码是第三方私人的，这样对代码的稳定性还是比较有风险的。
 
 ### 无泛化类型
 
