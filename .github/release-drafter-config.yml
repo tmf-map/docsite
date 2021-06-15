@@ -1,5 +1,5 @@
-name-template: '2021-Q?-M?'
-tag-template: '2021-Q?-M?'
+name-template: '2021.x'
+tag-template: '2021.x'
 sort-by: 'title'
 sort-direction: 'ascending'
 exclude-labels:
