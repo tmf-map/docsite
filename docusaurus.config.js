@@ -33,7 +33,6 @@ module.exports = {
   projectName: 'docsite', // Usually your repo name.
   plugins: [
     ['@docusaurus/plugin-google-analytics', {id: 'plugin-google-analytics'}],
-    ['docusaurus-lunr-search', {id: 'plugin-lunr-search'}],
     [
       '@docusaurus/plugin-pwa',
       {
@@ -114,7 +113,9 @@ module.exports = {
         {
           label: 'Basics',
           position: 'right',
-          activeBaseRegex: 'docs/(design-patterns|algorithm|http)',
+          // no `to` means activeBaseRegex gets ignored, so it's a must
+          to: 'docs/algorithm/1.get-started/asymptotic-notations',
+          activeBaseRegex: 'docs/(design-patterns|algorithm|http)/',
           items: [
             {
               to: 'docs/algorithm/1.get-started/asymptotic-notations',
@@ -136,8 +137,10 @@ module.exports = {
         {
           label: 'Frontend',
           position: 'right',
+          // no `to` means activeBaseRegex gets ignored, so it's a must
+          to: 'docs/javascript/1.basic/js-engine',
           activeBaseRegex:
-            'docs/(javascript|typescript|html|css|web|react|webpack|nodejs|fe-guidelines)',
+            'docs/(javascript|typescript|html|css|web|react|webpack|nodejs|fe-guidelines)/',
           items: [
             {
               to: 'docs/javascript/1.basic/js-engine',
@@ -189,7 +192,9 @@ module.exports = {
         {
           label: 'Backend',
           position: 'right',
-          activeBaseRegex: 'docs/(java/)',
+          // no `to` means activeBaseRegex gets ignored, so it's a must
+          to: 'docs/java/1.get-started/introduction',
+          activeBaseRegex: 'docs/(java)/', // `/` can avoid the confusion such as `javascript`
           items: [
             {
               to: 'docs/java/1.get-started/introduction',
@@ -201,7 +206,9 @@ module.exports = {
         {
           label: 'AI',
           position: 'right',
-          activeBaseRegex: 'docs/(python)',
+          // no `to` means activeBaseRegex gets ignored, so it's a must
+          to: 'docs/python/1.get-started/history',
+          activeBaseRegex: 'docs/(python)/',
           items: [
             {
               to: 'docs/python/1.get-started/history',

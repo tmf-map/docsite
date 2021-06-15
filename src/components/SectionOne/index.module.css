@@ -17,7 +17,7 @@
   width: 100% !important;
   margin-right: auto !important;
   padding-top: 10rem;
-  padding-bottom: 12rem;
+  padding-bottom: 10rem;
   color: #fff;
   font-family: 'Fira Sans';
 }
@@ -27,7 +27,7 @@
   font-weight: 300;
   font-size: 52px;
   line-height: 74px;
-  max-width: 55vw;
+  max-width: 60vw;
   opacity: 0.85;
 }
 
