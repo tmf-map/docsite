@@ -200,6 +200,11 @@ module.exports = {
               to: 'docs/java/1.get-started/introduction',
               activeBasePath: 'docs/java/',
               label: 'Java'
+            },
+            {
+              to: 'docs/go/1.get-started/introduction',
+              activeBasePath: 'docs/go/',
+              label: 'Go'
             }
           ]
         },

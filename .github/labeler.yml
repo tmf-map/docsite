@@ -29,3 +29,4 @@ wiki: docs/wiki/**/*
 "docs: nodejs": docs/nodejs/**/*
 "docs: fe guidelines": docs/fe-guidelines/**/*
 "docs: python": docs/python/**/*
+"docs: go": docs/go/**/*

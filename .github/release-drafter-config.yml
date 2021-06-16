@@ -1,5 +1,5 @@
-name-template: '2021.1'
-tag-template: '2021.1'
+name-template: '2021.x'
+tag-template: '2021.x'
 sort-by: 'title'
 sort-direction: 'ascending'
 exclude-labels:
@@ -25,6 +25,7 @@ categories:
   - title: 'Backend'
     labels:
       - 'docs: java'
+      - 'docs: go'
   - title: 'AI'
     labels:
       - 'docs: python'
