@@ -1,4 +1,4 @@
-/* iPhone */
+/* Phone */
 @media (max-width: 767px) {
   :root {
     --ifm-font-size-base: 14px;
@@ -12,6 +12,11 @@
   .main-wrapper main .container {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
+  }
+  /* Sidebar Nav */
+  .navbar + .main-wrapper > div > div:not(.row):not(.main):not(.hero--primary) {
+    width: 0 !important;
+    margin-right: 0 !important;
   }
 }
 
@@ -29,6 +34,11 @@
   .main-wrapper main .container {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
+  }
+  /* Sidebar Nav */
+  .navbar + .main-wrapper > div > div:not(.row):not(.main):not(.hero--primary) {
+    width: 0 !important;
+    margin-right: 0 !important;
   }
 }
 
