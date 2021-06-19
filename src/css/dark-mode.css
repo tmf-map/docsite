@@ -1,13 +1,13 @@
 html[data-theme="dark"] {
   --ifm-color-primary: rgb(10, 132, 255);
   --ifm-navbar-shadow: none;
-  --ifm-navbar-background-color: #161b22;
+  --ifm-navbar-background-color: #222;
   --ifm-toc-link-color: #fff;
 }
 
-/* html[data-theme="dark"] .footer.footer--dark {
+html[data-theme="dark"] .footer.footer--dark {
   --ifm-footer-background-color: var(--ifm-background-color);
-} */
+}
 
 html[data-theme="dark"] blockquote {
   color: var(--ifm-code-color);

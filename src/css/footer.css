@@ -1,5 +1,5 @@
 .footer.footer--dark {
-  --ifm-footer-background-color: var(--ifm-navbar-background-color);
+  --ifm-footer-background-color: #1f232e;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
