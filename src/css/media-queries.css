@@ -36,7 +36,7 @@
     padding-bottom: 0 !important;
   }
   /* Sidebar Nav */
-  .navbar + .main-wrapper > div > div:not(.row):not(.main):not(.hero--primary) {
+  .navbar + .main-wrapper > div > div:not(.row):not(.main):not(main):not(.hero--primary) {
     width: 0 !important;
     margin-right: 0 !important;
   }
@@ -50,7 +50,7 @@
   html {
     font-size: 16px;
   }
-  .navbar + .main-wrapper > div > div:not(.row):not(.hero):not(.main) {
+  .navbar + .main-wrapper > div > div:not(.row):not(.hero):not(.main):not(main) {
     width: 290px;
   }
   .footer.footer--dark .container .text--center {

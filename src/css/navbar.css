@@ -53,7 +53,7 @@
 }
 
 /* Sidebar Nav */
-.navbar + .main-wrapper > div > div:not(.row):not(.main):not(.hero--primary) {
+.navbar + .main-wrapper > div > div:not(.row):not(.main):not(main):not(.hero--primary) {
   flex-shrink: 0;
   background-color: var(--my-color-background);
   /* (1 - x) * 100 * 3 / 12 = 100x => x = 20 */
