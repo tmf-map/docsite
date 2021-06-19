@@ -11,7 +11,9 @@ const SectionOne = () => {
   const [version, setVersion] = useState('');
   useEffect(() => {
     request
-      .p('https://api.github.com/repos/thinkbucket/docsite/releases')
+      .p(
+        `https://api.github.com/repos/${organizationName}/${projectName}/releases`
+      )
       .q('per_page', 1)
       .get()
       .then(res => {
@@ -26,17 +28,26 @@ const SectionOne = () => {
   }, []);
   return (
     <div className={styles.container}>
-      <p className={styles.slogan}>{tagline}</p>
-      <a
-        className={styles.version}
-        href={`https://github.com/${organizationName}/${projectName}/releases`}
-        target="blank">
-        Latest version: {version}
-      </a>
-      <div className={styles.getStartedBtn}>
-        <Button to={`/${themeConfig?.navbar?.items?.[0]?.items?.[0]?.to}`}>
-          Get Started
-        </Button>
+      <div className={styles.textPart}>
+        <p className={styles.slogan}>{tagline}</p>
+        <div className={styles.buttons}>
+          <a
+            className={styles.version}
+            href={`https://github.com/${organizationName}/${projectName}/releases`}
+            target="blank">
+            Version {version}
+          </a>
+          <Button to={`/${themeConfig?.navbar?.items?.[0]?.items?.[0]?.to}`}>
+            Get Started
+          </Button>
+        </div>
+      </div>
+      <div className={styles.imgPart}>
+        <img className={styles.ellipseLarge} src="/img/ellipse-large.svg" />
+        <img className={styles.ellipseSmall} src="/img/ellipse-small.svg" />
+        <img className={styles.triangle} src="/img/triangle.svg" />
+        <img className={styles.rectangle} src="/img/rectangle.svg" />
+        <img className={styles.pattern} src="/img/pattern.svg" />
       </div>
     </div>
   );
