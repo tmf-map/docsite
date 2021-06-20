@@ -36,6 +36,7 @@ const SectionTwo = () => {
       .asRaw()
       .get()
       .then(res => {
+        // https://stackoverflow.com/questions/44347339/github-api-how-efficiently-get-the-total-contributors-amount-per-repository
         const contributionsCount = res?.headers?.get('link')?.match(/\d+(?=>; rel="last")/)?.[0];
         contributionsCount && setContributors(contributionsCount);
       })

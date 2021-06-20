@@ -10,6 +10,7 @@ function httpGet(theUrl, returnHeaders) {
     return xmlHttp.responseText;
 }
 
+// https://gist.github.com/yershalom/a7c08f9441d1aadb13777bce4c7cdc3b
 function getFirstCommit(owner, repo) {
     let url = `${BASE_URL}/repos/${owner}/${repo}/commits`;
     let req = httpGet(url, true);
