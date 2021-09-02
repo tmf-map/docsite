@@ -129,5 +129,6 @@ module.exports = {
     'algorithm/12.reverse/rotate-string',
     'algorithm/12.reverse/reverse-integer'
   ],
-  '13. 数学': ['algorithm/13.math/powx-n', 'algorithm/13.math/count-and-say']
+  '13. 数学': ['algorithm/13.math/powx-n', 'algorithm/13.math/count-and-say'],
+  '14. 并查集': ['algorithm/14.disjoint-set/disjoint-set']
 };
