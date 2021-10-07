@@ -406,13 +406,114 @@ componentDidUpdate(prevProps) {
 ```text
 1.页面首次渲染
 2.替friend.id=1的朋友注册
-
 3.突然friend.id变成了2
 4.页面重新渲染
 5.清除friend.id=1的绑定
 6.替friend.id=2的朋友注册
 ...
 ```
+
+### 如何获取previous props
+在[React官方文档](https://reactjs.org/docs/hooks-faq.html#how-to-get-the-previous-props-or-state)中给出了如下方案：
+
+自定义一个hook：
+```js
+function usePrevious(value) {
+  const ref = useRef();
+  useEffect(() => {
+    ref.current = value;
+  });
+  return ref.current;
+}
+```
+
+在组件中使用上述hook就可以得到previous props：
+```js
+function Counter() {
+  const [count, setCount] = useState(0);
+  // 👇 look here
+  const prevCount = usePrevious(count)
+
+  return <h1> Now: {count}, before: {prevCount} </h1>;
+}
+```
+
+为什么上述方式可以获取previous props呢？首先需要理解`useRef`。
+```js
+// class component 
+class Count extends Component {
+  
+   constructor() {
+     this.specialVariable = "SPECIAL_VARIABLE"
+   }
+  
+  render() {
+    return null
+  }
+}
+```
+
+上述例子中，`Count`类的每个实例都有自己的`specialVariable`。在函数组件中使用`useRef`可以模拟类组件的这种行为：
+
+```js
+// functional component 
+
+function Count() {
+  const specialVariable = useRef("SPECIAL_VARAIBLE");
+  // specialVariable resolves to {current: "SPECIAL_VARIABLE"}
+  return null
+}
+```
+`useRef`可以将初始值存储下来。例如`useRef("INITIAL_VALUE")`，会返回一个含`current`属性的对象：`{current: "INITIAL_VALUE"}`。
+
+与普通变量不同，当重新渲染`Count`组件时，不会重新计算`specialVariable`。使用`useRef`，保存在`ref`对象中的值在重新渲染时保持不变。该值不会重新计算，也不会丢失。
+
+更新`ref`对象的唯一方法是直接设置当前属性的值：
+```js
+specialVariable.current = "NEW_SPECIAL_VARIABLE"
+```
+
+回到官方`Counter`的例子，我们来逐步执行一下：
+1. 执行useState，目前`count`的值为`0`
+
+<Img width="500" align="center" src='https://blog.logrocket.com/wp-content/uploads/2019/12/function-counter-nocdn.png'/>
+
+2. 执行`usePrevious`，传入`count`为`0`，
+
+<Img width="500" align="center" src='https://blog.logrocket.com/wp-content/uploads/2019/12/const-prevCount-screenshot-nocdn.png'/>
+
+3. 创建一个`ref`对象，初始值为`{current: undefined}`
+
+<Img width="500" align="center" src='https://blog.logrocket.com/wp-content/uploads/2019/12/const-ref-useref.png'/>
+
+4. 不会执行`useEffcect`，因为当`render`完了才会执行`useEffcect`。所以直接执行`return undefined`
+
+<Img width="500" align="center" src='https://blog.logrocket.com/wp-content/uploads/2019/12/return-ref-current-nocdn.png'/>
+
+5. `prevCount`拿到了值为`undefined`
+
+<Img width="500" align="center" src='https://blog.logrocket.com/wp-content/uploads/2019/12/prevCount.png'/>
+
+6. 组件`render`
+
+<Img width="500" align="center" src='https://blog.logrocket.com/wp-content/uploads/2019/12/Now-count-before-prevCount-nocdn.png'/>
+
+7. 组件`render`以后执行`useEffect`。
+
+<Img width="500" align="center" src='https://blog.logrocket.com/wp-content/uploads/2019/12/prevCount.png'/>
+
+8. 改变`ref`对象存储的值，变为`{current: 0}`
+
+<Img width="500" align="center" src='https://blog.logrocket.com/wp-content/uploads/2019/12/eight-value-nocdn.png'/>
+
+
+:::tip
+
+1. `ref`对象将始终返回`ref.current`中保存的相同值，除非显式更新。
+
+2. `useEffect`仅在使用前一个值`render`组件后调用。只有渲染完成后，才会在`useEffect`中更新`ref`对象。
+
+:::
 
 ## 自带的 Hook
 
@@ -516,7 +617,7 @@ function FriendListItem(props) {
 
 仔细观察，你会发现我们没有对其行为做任何的改变，我们只是将两个函数之间一些共同的代码提取到单独的函数中。**自定义 Hook 是一种自然遵循 Hook 设计的约定，而并不是 React 的特性**。
 
-**在两个组件中使用相同的 Hook 会共享 state 吗？**不会。自定义 Hook 是一种重用状态逻辑的机制(例如设置为订阅并存储当前值)，所以每次使用自定义 Hook 时，其中的所有 state 和副作用都是完全隔离的。
+**在两个组件中使用相同的 Hook 会共享 state 吗？**不会。自定义 Hook 是一种重用状态逻辑的机制(例如设置为订阅并存储当前值)，所以每次使用自定义 Hook 时，其中的所有 state 和副作用都是完全隔离的。如果需要公用状态，可以把状态挂在状态树上。
 
 **自定义 Hook 如何获取独立的 state？**每次调用 Hook，它都会获取独立的 state。由于我们直接调用了 `useFriendStatus` ，从 React 的角度来看，我们的组件只是调用了 `useState` 和 `useEffect` 。 正如我们在之前了解到的一样，我们可以在一个组件中多次调用 `useState` 和 `useEffect` ，它们是完全独立的。
 
@@ -530,3 +631,4 @@ function FriendListItem(props) {
 4. [2019 年了，整理了 N 个实用案例帮你快速迁移到 React Hooks(收藏慢慢看系列)，作者：_sx_](https://juejin.im/post/5d594ea5518825041301bbcb#heading-52)
 5. [精读《useEffect 完全指南》，作者：黄子毅](https://juejin.im/post/5c9827745188250ff85afe50)
 6. [useEffect 源码解析](https://react.jokcy.me/book/hooks/hooks-use-effect.html)
+7. [How to get previous props/state with React Hooks, by Ohans Emmanuel](https://blog.logrocket.com/how-to-get-previous-props-state-with-react-hooks/)
