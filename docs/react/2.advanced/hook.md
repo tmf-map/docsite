@@ -476,35 +476,35 @@ specialVariable.current = "NEW_SPECIAL_VARIABLE"
 回到官方`Counter`的例子，我们来逐步执行一下：
 1. 执行useState，目前`count`的值为`0`
 
-<Img width="500" align="center" src='https://blog.logrocket.com/wp-content/uploads/2019/12/function-counter-nocdn.png'/>
+<Img width="500" align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/function-counter-nocdn.png'/>
 
 2. 执行`usePrevious`，传入`count`为`0`，
 
-<Img width="500" align="center" src='https://blog.logrocket.com/wp-content/uploads/2019/12/const-prevCount-screenshot-nocdn.png'/>
+<Img width="500" align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/const-prevCount-screenshot-nocdn.png'/>
 
 3. 创建一个`ref`对象，初始值为`{current: undefined}`
 
-<Img width="500" align="center" src='https://blog.logrocket.com/wp-content/uploads/2019/12/const-ref-useref.png'/>
+<Img width="500" align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/const-ref-useref.png'/>
 
 4. 不会执行`useEffcect`，因为当`render`完了才会执行`useEffcect`。所以直接执行`return undefined`
 
-<Img width="500" align="center" src='https://blog.logrocket.com/wp-content/uploads/2019/12/return-ref-current-nocdn.png'/>
+<Img width="500" align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/return-ref-current-nocdn.png'/>
 
 5. `prevCount`拿到了值为`undefined`
 
-<Img width="500" align="center" src='https://blog.logrocket.com/wp-content/uploads/2019/12/prevCount.png'/>
+<Img width="500" align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/prevCount.png'/>
 
 6. 组件`render`
 
-<Img width="500" align="center" src='https://blog.logrocket.com/wp-content/uploads/2019/12/Now-count-before-prevCount-nocdn.png'/>
+<Img width="500" align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/Now-count-before-prevCount-nocdn.png'/>
 
 7. 组件`render`以后执行`useEffect`。
 
-<Img width="500" align="center" src='https://blog.logrocket.com/wp-content/uploads/2019/12/prevCount.png'/>
+<Img width="500" align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/seven-nocdn.png'/>
 
 8. 改变`ref`对象存储的值，变为`{current: 0}`
 
-<Img width="500" align="center" src='https://blog.logrocket.com/wp-content/uploads/2019/12/eight-value-nocdn.png'/>
+<Img width="500" align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/eight-value-nocdn.png'/>
 
 
 :::tip
