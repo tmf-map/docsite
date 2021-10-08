@@ -157,7 +157,7 @@ useState([{text: 'Learn Hook'}]); //读取到的却是状态变量fruit的值，
 
 :::bad
 
-React 规定我们必须把 hook 写在函数的最外层，不能写在 `ifelse` 等条件语句当中，来确保 hook 的执行顺序一致。
+React 规定我们必须把 hook 写在函数的最外层，不能写在 `if-else` 等条件语句当中，来确保 hook 的执行顺序一致。
 
 :::
 
@@ -165,7 +165,13 @@ React 规定我们必须把 hook 写在函数的最外层，不能写在 `ifelse
 
 ### 解剖图
 
-<img style={{border: "1px solid #eee"}} src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/hook-structure.png'/>
+<Img style={{border: "1px solid #eee"}} src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/hook-structure.png'/>
+
+代码的执行顺序，简化如下：
+
+<Img w={450} src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/0wN6Tf.png' />
+
+Online Example: https://stackblitz.com/edit/react-xzwcgp
 
 ### 生命周期
 
