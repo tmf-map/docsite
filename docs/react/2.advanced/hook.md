@@ -413,10 +413,12 @@ componentDidUpdate(prevProps) {
 ...
 ```
 
-### 如何获取previous props
-在[React官方文档](https://reactjs.org/docs/hooks-faq.html#how-to-get-the-previous-props-or-state)中给出了如下方案：
+### 如何获取 previous props
 
-自定义一个hook：
+在[React 官方文档](https://reactjs.org/docs/hooks-faq.html#how-to-get-the-previous-props-or-state)中给出了如下方案：
+
+自定义一个 hook：
+
 ```js
 function usePrevious(value) {
   const ref = useRef();
@@ -427,28 +429,36 @@ function usePrevious(value) {
 }
 ```
 
-在组件中使用上述hook就可以得到previous props：
+在组件中使用上述 hook 就可以得到 previous props：
+
 ```js
 function Counter() {
   const [count, setCount] = useState(0);
   // 👇 look here
-  const prevCount = usePrevious(count)
+  const prevCount = usePrevious(count);
 
-  return <h1> Now: {count}, before: {prevCount} </h1>;
+  return (
+    <h1>
+      {' '}
+      Now: {count}, before: {prevCount}{' '}
+    </h1>
+  );
 }
 ```
 
-为什么上述方式可以获取previous props呢？首先需要理解`useRef`。
+Online Example: https://stackblitz.com/edit/react-sxsbo1
+
+为什么上述方式可以获取 previous props 呢？首先需要理解`useRef`。
+
 ```js
-// class component 
+// class component
 class Count extends Component {
-  
-   constructor() {
-     this.specialVariable = "SPECIAL_VARIABLE"
-   }
-  
+  constructor() {
+    this.specialVariable = 'SPECIAL_VARIABLE';
+  }
+
   render() {
-    return null
+    return null;
   }
 }
 ```
@@ -456,25 +466,28 @@ class Count extends Component {
 上述例子中，`Count`类的每个实例都有自己的`specialVariable`。在函数组件中使用`useRef`可以模拟类组件的这种行为：
 
 ```js
-// functional component 
+// functional component
 
 function Count() {
-  const specialVariable = useRef("SPECIAL_VARAIBLE");
+  const specialVariable = useRef('SPECIAL_VARAIBLE');
   // specialVariable resolves to {current: "SPECIAL_VARIABLE"}
-  return null
+  return null;
 }
 ```
+
 `useRef`可以将初始值存储下来。例如`useRef("INITIAL_VALUE")`，会返回一个含`current`属性的对象：`{current: "INITIAL_VALUE"}`。
 
 与普通变量不同，当重新渲染`Count`组件时，不会重新计算`specialVariable`。使用`useRef`，保存在`ref`对象中的值在重新渲染时保持不变。该值不会重新计算，也不会丢失。
 
 更新`ref`对象的唯一方法是直接设置当前属性的值：
+
 ```js
-specialVariable.current = "NEW_SPECIAL_VARIABLE"
+specialVariable.current = 'NEW_SPECIAL_VARIABLE';
 ```
 
 回到官方`Counter`的例子，我们来逐步执行一下：
-1. 执行useState，目前`count`的值为`0`
+
+1. 执行 useState，目前`count`的值为`0`
 
 <Img width="500" align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/function-counter-nocdn.png'/>
 
@@ -505,7 +518,6 @@ specialVariable.current = "NEW_SPECIAL_VARIABLE"
 8. 改变`ref`对象存储的值，变为`{current: 0}`
 
 <Img width="500" align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/eight-value-nocdn.png'/>
-
 
 :::tip
 
