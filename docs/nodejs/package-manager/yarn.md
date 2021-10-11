@@ -21,9 +21,21 @@ curl -o- -L https://yarnpkg.com/install.sh | bash
 
 根据提示，由于已经安装了 yarn，所以需要先删除`~/.yarn`文件，然后再重新执行该命令，即可安装最新版 yarn。
 
+2. 通过`Homebrew`安装：
+
+```bash
+brew install yarn
+# upgrade yarn
+brew upgrade yarn
+```
+
+安装过程中会安装很多依赖包，也包括 nodejs，要确保 Homebrew 连接流畅，国内可以使用 [ustc 镜像](https://mirrors.ustc.edu.cn/)进行加速：
+
+<Img w="700" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/Xnip2021-10-09_16-10-42.jpg' />
+
 :::note
 
-好处就是如果使用`nvm`管理`node`的版本，那么每次对`node`进行版本升级之后，无需重新安装`yarn`。
+1, 2 安装方式的好处就是如果使用`nvm`管理`node`的版本，那么每次对`node`进行版本升级之后，无需重新安装`yarn`，但安装的时候可能会稍微慢点。
 
 :::
 
@@ -275,7 +287,7 @@ $ ll
 
 :::danger
 
-千万不要 `yarn global add npm`，否则会在 `/usr/local/bin` 中创建两个软链：`npm` 和 `npx`
+千万不要 `yarn global add npm`（如果 macOS 更新后或其他未知原因也可能导致出现以下问题），它会在 `/usr/local/bin` 中创建两个软链：`npm` 和 `npx`
 
 <Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/Xnip2021-10-08_14-57-34.jpg' />
 
