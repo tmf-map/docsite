@@ -28,6 +28,17 @@ go version go1.15.8 darwin/amd64
 
 Confirm that the command prints the installed version of Go.
 
+You can reinstall go via installation pkg if you want upgrade go to the latest version:
+
+<Img w="650" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/Screen Shot 2021-10-14 at 9.49.01 PM.png' />
+
+Then check the version
+
+```bash
+$ go version
+go version go1.17.2 darwin/amd64
+```
+
 ## Environment Variables
 
 ### GOROOT
