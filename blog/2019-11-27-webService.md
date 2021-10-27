@@ -3,7 +3,7 @@ title: 什么是Web Service
 author: Robbie Han
 author_title: Front End Engineer @ Tradeshift
 author_url: https://github.com/Robbie-Han
-author_image_url: https://robbie-pic.oss-cn-beijing.aliyuncs.com/IMG_4175.JPG?x-oss-process=style/compress
+author_image_url: https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/Dnx3Ag.jpg
 tags: [webService]
 ---
 

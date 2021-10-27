@@ -10,38 +10,31 @@ title: '%'
 
 宽和高在使用百分比值时，其参照都是元素的包含块（Containing Block，详情）。width 参照包含块的宽度，height 参照包含块的高度。在大部分情况下，**包含块就是父元素的内容区（盒模型里的 content）**。
 
-我们有时会写这样的代码 `width:100%; height:100%;` 来实现尺寸和父元素一致。但会发现有时候宽度是符合意思（100%）的，但高度却没有效果。请看下面这个示例：
+我们有时会写这样的代码 `width: 100%; height: 100%;` 来实现尺寸和父元素一致。但会发现有时候 `width: 100%` 是可以生效的 ，但 `height: 100%;` 却没有效果。请看下面这个示例：
 
-```html
-<div class="grandpa">
-  <div class="parent">
-    <div class="child"></div>
+```jsx live
+<div style={{width: '100px', height: '100px', border: '1px dotted #ee3979'}}>
+  <div>
+    <div style={{height: '70%', backgroundColor: '#98d4fb'}}></div>
   </div>
 </div>
 ```
 
-```css
-.grandpa {
-  border: 1px dotted #ee3979;
-  width: 100px;
-  height: 100px;
-}
-.parent {
-  height: 100%;
-}
-.child {
-  background-color: #98d4fb;
-  height: 70%;
-}
-```
+如果我们在中间的 div 中加上 `height: 100%;` 看下效果：
 
-<Img width="530" align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/6HhVta.png'/>
+```jsx live
+<div style={{width: '100px', height: '100px', border: '1px dotted #ee3979'}}>
+  <div style={{height: '100%'}}>
+    <div style={{height: '70%', backgroundColor: '#98d4fb'}}></div>
+  </div>
+</div>
+```
 
 可以看到，直接父元素（包含块）是否有明确的高度定义，会影响 height 为百分比值时的结果。
 
 :::tip
 
-如果直接父元素 `height` 为 `auto` ，只要子元素在文档流中（即 `position` 不等于 `fixed` 或者 `absolute` ），那子元素 `height:100%` 会完全就被忽略了，等同于 `auto` 初始默认值。
+如果直接父元素 `height` 为 `auto` ，只要子元素在文档流中（即 `position` 不等于 `fixed` 或者 `absolute` ），那子元素 `height: 100%` 会完全就被忽略了，等同于 `auto` 初始默认值。
 
 :::
 
@@ -66,7 +59,29 @@ body {
 
 这两个属性属于混合属性，也通过一个例子说明：
 
-<Img width="530" align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/hLkljH.png'/>
+```jsx live
+<div
+  style={{
+    width: '100px',
+    height: '100px',
+    border: '1px dotted #ee3979',
+    boxSizing: 'content-box'
+  }}
+>
+  <div
+    style={{
+      margin: '5%',
+      padding: '10%',
+      width: '50px',
+      height: '50px',
+      backgroundColor: '#98d4fb',
+      boxSizing: 'content-box'
+    }}
+  ></div>
+</div>
+```
+
+<Img width="240" align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/HdQzQZ.png'/>
 
 :::tip
 
@@ -102,7 +117,43 @@ body {
 
 `background-position` 的初始值就是百分比值 `0% 0%` 。下面是一个使用示例：
 
-<Img width="530" align="center" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/ydDH2X.png'/>
+```jsx live
+<div style={{display: 'flex', justifyContent: 'space-between', width: '350px'}}>
+  <div
+    style={{
+      width: '100px',
+      height: '100px',
+      backgroundColor: '#98d4fb',
+      backgroundImage:
+        'url("https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/css-background-position.jpeg")',
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: '0% 0%'
+    }}
+  ></div>
+  <div
+    style={{
+      width: '100px',
+      height: '100px',
+      backgroundColor: '#98d4fb',
+      backgroundImage:
+        'url("https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/css-background-position.jpeg")',
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: '100% 100%'
+    }}
+  ></div>
+  <div
+    style={{
+      width: '100px',
+      height: '100px',
+      backgroundColor: '#98d4fb',
+      backgroundImage:
+        'url("https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/css-background-position.jpeg")',
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'right 20% bottom 80%'
+    }}
+  ></div>
+</div>
+```
 
 :::tip
 
@@ -110,11 +161,7 @@ body {
 
 :::
 
-对照上面的示例，思考一下，应该可以感受到，以这个减法计算值为参照的话，正好可以符合我们感官上对背景图位置的理解。
-
-这个属性包括水平位置和垂直位置，它们分别参照的是宽度减法计算值和高度减法计算值。
-
-你可能注意到了上面示例的最后一个竟然写了 4 个值（一般都只用 2 个值）。关于它的意义，请查看 [W3C 的 background-position](http://www.w3.org/TR/css3-background/#background-position) 。
+对照上面的示例，思考一下，应该可以感受到，以这个减法计算值为参照的话，正好可以符合我们感官上对背景图位置的理解。这个属性包括水平位置和垂直位置，它们分别参照的是宽度减法计算值和高度减法计算值。
 
 ### font-size
 
@@ -222,11 +269,9 @@ p {
 
 :::
 
-例如，一个宽度为 150px，高度为 100px 的元素，定义 transform:translate(50%, 50%)的效果是 transform:translate(75px, 50px);。
+例如，一个宽度为 150px，高度为 100px 的元素，定义 `transform:translate(50%, 50%)` 的效果是 `transform:translate(75px, 50px)`。另外，`translate3d` 对应是还有第三个维度的，但经过测试，最后的第 3 个值不可以使用百分比（否则样式定义无效）。
 
-还可以补充一点，translate3d 对应是还有第三个维度的，但是，经过测试，最后的第 3 个值不可以使用百分比（否则样式定义无效）。至于为什么不可以参照呢，大概是因为那是神秘的第三维度吧…
-
-如果你想要知道更多的百分比值在 css 属性中的可用情况及参照值，请参考 MDN 的 CSS percentage values。
+如果你想要知道更多的百分比值在 CSS 属性中的可用情况及参照值，请参考 [MDN CSS percentage values](https://developer.mozilla.org/en-US/docs/Web/CSS/percentage)。
 
 ## 百分比值的继承
 

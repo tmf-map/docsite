@@ -1,6 +1,6 @@
 {
   "name": "thinkbucket",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
@@ -46,6 +46,7 @@
     "@docusaurus/plugin-pwa": "^2.0.0-alpha.73",
     "@docusaurus/preset-classic": "2.0.0-alpha.73",
     "@docusaurus/theme-live-codeblock": "2.0.0-alpha.73",
+    "@http-util/request": "^0.1.0",
     "classnames": "^2.2.6",
     "npm-to-yarn": "^1.0.1",
     "react": "^16.14.0",

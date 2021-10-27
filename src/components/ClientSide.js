@@ -12,12 +12,14 @@ export default function ClientSide() {
         'hero hero--primary',
         styles['overflow-hidden'],
         styles.whyus
-      )}>
+      )}
+    >
       <div className="container">
         <div className="section">
           <div className="row">
             <div
-              className={classNames('col col--5', styles['section-content'])}>
+              className={classNames('col col--5', styles['section-content'])}
+            >
               {/* <Subtitle>Why choose us</Subtitle> */}
               <Heading className={styles['heading-white']}>
                 Client Technology
@@ -42,7 +44,8 @@ export default function ClientSide() {
                 'col',
                 styles['section-content'],
                 styles['section-bgwhite']
-              )}>
+              )}
+            >
               <span
                 className={classNames(
                   styles['section-bgwhite-block'],

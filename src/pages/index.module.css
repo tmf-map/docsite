@@ -10,24 +10,24 @@
 :root {
   --black: #000;
   --bright-cyan-50: rgba(63, 196, 254, 0.2);
-  --bright-cyan: #4184EF;
+  --bright-cyan: #506B77;
   --dark-blue-grey: #211b50;
   --dark-slate-blue: #2d2665;
   --dodger-blue-10: rgba(63, 187, 254, 0.1);
   --dodger-blue: #69BFF6;
-  --dusk-blue: #412a94;
+  --dusk-blue: #333;
   --greenblue-10: rgba(31, 216, 152, 0.1);
   --greenblue: #1fd898;
   --greyish-brown: #474747;
   --pale-grey: #e8e6f5;
   --periwinkle-50: rgba(136, 89, 255, 0.2);
-  --periwinkle: #444CE9;
+  --periwinkle: var(--ifm-color-primary);
   --sea-green-50: rgba(66, 255, 172, 0.2);
   --sea-green: #42ffac;
   --white: #fff;
 
   --uni-background-color: var(--white);
-  --uni-heading-color: var(--dusk-blue);
+  --uni-heading-color: #444;
   --uni-heading-helper-color: var(--dusk-blue);
   --uni-hero-bgcolor: var(--dark-blue-grey);
   --uni-oval-background-color: var(--white);
@@ -382,9 +382,8 @@ html[data-theme="dark"] .section-bgwhite-block-left {
   border-width: 6px;
   border-image-source: linear-gradient(
     var(--uni-border-gradient-degrees),
-    var(--periwinkle),
-    var(--bright-cyan) 51%,
-    var(--sea-green)
+    #999,
+    #444
   );
   border-image-slice: 1;
 }
@@ -554,9 +553,9 @@ html[data-theme="dark"] .section-bgwhite-block-left {
   --ifm-button-background-color: var(--periwinkle) !important;
   --ifm-button-border-color: var(--periwinkle) !important;
   --ifm-color-primary-darker: var(--bright-cyan) !important;
-  margin-top: 4em;
+  /* margin-top: 4em; */
   border-radius: 2em;
-  min-width: 240px;
+  /* min-width: 240px; */
 }
 
 /*.call-to-action:hover {*/

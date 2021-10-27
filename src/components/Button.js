@@ -14,7 +14,8 @@ export default function Button({children, className, to, ...props}) {
           'button button--lg button--primary',
           styles['call-to-action'],
           className
-        )}>
+        )}
+      >
         {children}
       </button>
     </Link>

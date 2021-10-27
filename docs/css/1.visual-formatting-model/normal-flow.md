@@ -84,7 +84,11 @@ Demo: https://codepen.io/muwenzi/pen/vqdJxz
 
 IFC(Inline Formatting Context)，IFC 和 BFC 都是虚拟概念。BFC 可能和某一个具体产生 BFC 的元素还有关系，而 IFC 则更玄乎了。它来规定同一行盒子的宽高、垂直和水平排列方式等，虽然是虚拟概念，但是它会影响到 containing block 的排列和大小。在 CSS 规范中也解释了 IFC 的 I 不是指 inline box，而是 inline-level box，它不包括 inline-block inline-table 等，因为它们遵循的是 BFC。
 
-> Inline-level boxes that are not inline boxes (such as replaced inline-level elements, inline-block elements, and inline-table elements) are called atomic inline-level boxes because they participate in their inline formatting context as a single opaque box.
+:::tip
+
+Inline-level boxes that are not inline boxes (such as replaced inline-level elements, inline-block elements, and inline-table elements) are called atomic inline-level boxes because they participate in their inline formatting context as a single opaque box.
+
+:::
 
 ### IFC 特点
 
@@ -149,6 +153,48 @@ https://codepen.io/muwenzi/pen/LKQaqW
 - 图片 vertical-align:bottom
 - 父元素设置 line-height:0 原因是当 line-height:0 时,行盒的基线会上移
 
-补充：
+### 内联盒模型
 
-<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/cOGAiu.jpg'/>
+下面是一段很普通的 HTML，
+
+<img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/example-html.png' alt='example-html' width='400'/>
+
+看似普通，实际上包含了很多术语和概念，通俗地说，包含了很多种盒子：
+
+#### 内容区域（content area）
+
+<img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/content-area.png' alt='content-area' width='400'/>
+
+内容区域指围绕着文字"看不见的"盒子，其大小仅受字符本身特性控制。可以理解为如图中选中的区域。
+
+如果内容是字符，可以理解为字符盒子（character box）。如果是图片这样的替换元素，可以理解为元素本身。
+
+#### 内联盒子（inline box）
+
+<img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/inline-box.png' alt='inline-box' width='400'/>
+
+内联盒子不会让内容显示成块，而是排成一行。
+
+这种盒子又可细分为内联盒子和匿名内联盒子。如果含有内联标签（虚线框标注），就属于前者；如果只有光秃秃的文字（实线框标注），就属于后者。
+
+:::tip
+
+并不是所有光秃秃的文字都是“匿名内联盒子”，还有可能是匿名块级盒子，关键是看所在的标签是块级还是内联。
+
+:::
+
+#### 行框盒子（line box）
+
+<img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/line-box.png' alt='line-box' width='400'/>
+
+每一行就是一个行框盒子，如上图实线框标注，此盒子由一个个“内联盒子”组成。
+
+#### 包含块（containing block）
+
+<img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/containing-block.png' alt='containing-block' width='400'/>
+
+整个 p 标签就是一个包含块，如上图实线框标注，此盒子由一行一行的“行框盒子”组成。
+
+## 参考资料
+
+1. [CSS 世界，by 张鑫旭](https://book.douban.com/subject/27615777/)

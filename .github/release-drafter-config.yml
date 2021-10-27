@@ -1,12 +1,12 @@
-name-template: '2020-Q?-M?'
-tag-template: '2020-Q?-M?'
+name-template: '2021.x'
+tag-template: '2021.x'
 sort-by: 'title'
 sort-direction: 'ascending'
 exclude-labels:
   - 'dependencies'
   - 'security'
 categories:
-  - title: 'Basis'
+  - title: 'Basics'
     labels:
       - 'docs: algorithm'
       - 'docs: design patterns'
@@ -25,6 +25,7 @@ categories:
   - title: 'Backend'
     labels:
       - 'docs: java'
+      - 'docs: go'
   - title: 'AI'
     labels:
       - 'docs: python'

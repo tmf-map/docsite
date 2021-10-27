@@ -12,12 +12,19 @@ article.margin-bottom--xl {
   margin-bottom: 3rem !important;
 }
 
-.main-wrapper > div.container.margin-vert--lg > .row > div.col.col--8.col--offset-2 {
+.main-wrapper
+  > div.container.margin-vert--lg
+  > .row
+  > div.col.col--8.col--offset-2 {
   padding-left: var(--ifm-spacing-horizontal);
   padding-right: var(--ifm-spacing-horizontal);
 }
 
-.main-wrapper > div.container.margin-vert--lg > .row > div.col.col--8.col--offset-2 > article {
+.main-wrapper
+  > div.container.margin-vert--lg
+  > .row
+  > div.col.col--8.col--offset-2
+  > article {
   background-color: var(--my-color-main-page-background);
   padding: 1.5rem;
   padding-left: 3rem;
@@ -25,7 +32,12 @@ article.margin-bottom--xl {
   border-radius: 8px;
 }
 
-.main-wrapper > div.container.margin-vert--lg > .row > div.col.col--8.col--offset-2 > article + div {
+.main-wrapper
+  > div.container.margin-vert--lg
+  > .row
+  > div.col.col--8.col--offset-2
+  > article
+  + div {
   background-color: var(--my-color-main-page-background);
   padding-left: 3rem;
   padding-right: 3rem;
@@ -35,16 +47,39 @@ article.margin-bottom--xl {
   border-bottom-right-radius: 8px;
 }
 
-.main-wrapper > div.container.margin-vert--lg > .row > div.col.col--8.col--offset-2 > div.margin-vert--xl {
+.main-wrapper
+  > div.container.margin-vert--lg
+  > .row
+  > div.col.col--8.col--offset-2
+  > div.margin-vert--xl {
   margin-bottom: 0 !important;
 }
 
-.main-wrapper > div.container.margin-vert--lg > .row > div.col.col--8.col--offset-2 > article footer.margin-vert--lg {
+.main-wrapper
+  > div.container.margin-vert--lg
+  > .row
+  > div.col.col--8.col--offset-2
+  > article
+  footer.margin-vert--lg {
   margin-top: 1rem !important;
   margin-bottom: 1rem !important;
 }
 
-.main-wrapper > div.container.margin-vert--lg > .row > .col.col--8.col--offset-2 > .margin-vert--xl {
+.main-wrapper
+  > div.container.margin-vert--lg
+  > .row
+  > .col.col--8.col--offset-2
+  > .margin-vert--xl {
   margin-bottom: 1.8rem !important;
   margin-top: 1.8rem !important;
+}
+
+.main-wrapper.blog-wrapper .pagination-nav__item a {
+  background-color: var(--my-color-main-page-background);
+}
+
+.main-wrapper.blog-wrapper .container main article {
+  padding: 1.8rem 2rem;
+  background-color: var(--my-color-main-page-background);
+  border-radius: 5px;
 }

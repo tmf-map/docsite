@@ -12,7 +12,8 @@ export default function ServerSide() {
 
   return (
     <div
-      className={classNames('hero hero--primary', styles['overflow-hidden'])}>
+      className={classNames('hero hero--primary', styles['overflow-hidden'])}
+    >
       <div className="container">
         <div className="section">
           <div className="row">
@@ -21,7 +22,8 @@ export default function ServerSide() {
                 'col',
                 styles['section-content'],
                 styles['section-bgwhite']
-              )}>
+              )}
+            >
               <span
                 className={classNames(
                   styles['section-bgwhite-block'],
@@ -73,7 +75,8 @@ export default function ServerSide() {
               </div>
             </div>
             <div
-              className={classNames('col col--5', styles['section-content'])}>
+              className={classNames('col col--5', styles['section-content'])}
+            >
               {/* <Subtitle>Why choose us</Subtitle> */}
               <Heading className={styles['heading-white']}>
                 Server Technology

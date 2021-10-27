@@ -19,7 +19,25 @@ curl -o- -L https://yarnpkg.com/install.sh | bash
 > Remove it (rm -rf /Users/xxx/.yarn) and run this script again.
 ```
 
-根据提示，由于已经安装了 yarn，所以需要先删除`.yarn`文件，然后再重新执行该命令，即可安装最新版 yarn。
+根据提示，由于已经安装了 yarn，所以需要先删除`~/.yarn`文件，然后再重新执行该命令，即可安装最新版 yarn。
+
+2. 通过`Homebrew`安装：
+
+```bash
+brew install yarn
+# upgrade yarn
+brew upgrade yarn
+```
+
+安装过程中会安装很多依赖包，也包括 nodejs，要确保 Homebrew 连接流畅，国内可以使用 [ustc 镜像](https://mirrors.ustc.edu.cn/)进行加速：
+
+<Img w="700" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/Xnip2021-10-09_16-10-42.jpg' />
+
+:::note
+
+1, 2 安装方式的好处就是如果使用`nvm`管理`node`的版本，那么每次对`node`进行版本升级之后，无需重新安装`yarn`，但安装的时候可能会稍微慢点。
+
+:::
 
 2. 通过`npm`安装/升级最新版本：
 
@@ -41,7 +59,7 @@ npm install -g yarn@1.19.2
 
 :::note
 
-如果你使用`nvm`管理`node`的版本，那么每次对`node`进行版本升级之后，都需要重新安装`yarn`。不过，通过 npm 安装依赖包的速度非常快，所以即使需要重新安装，花费的时间也非常少。
+如果使用`nvm`管理`node`的版本，那么每次对`node`进行版本升级之后，都需要重新安装`yarn`，因为通过 `npm i -g` 方式安装的全局包和 node 版本挂钩，导致全局包全部丢失。不过，通过 `yarn global add` 方式添加的全局包不会丢失，对应包的 bin cli 也可以正常使用，原因参考 [yarn global](#yarn-global)。
 
 :::
 
@@ -245,7 +263,50 @@ create-react-app my-app
 
 :::
 
-`yarn global bin` 查看 yarn 全局安装的根目录
+通过 yarn 安装的全局包（无论 yarn 的安装方式），会放在`~/.config/yarn/global/node_modules`里面。
+
+```bash
+# if has installed global packages via yarn
+$ ll ~/.config/yarn/global
+node_modules
+package.json
+yarn.lock
+```
+
+`yarn global bin` 查看 yarn 全局安装的 bin 文件夹地址：
+
+```bash
+$ yarn global bin
+/usr/local/bin
+$ ll
+```
+
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/Xnip2021-10-08_14-56-31.jpg' />
+
+如上图 `pm2` 被安装在了全局，在 cli 中输入 `pm2` 将执行 yarn global 的 pm2，无论是否安装 `npm i -g pm2`。
+
+:::danger
+
+千万不要 `yarn global add npm`（如果 macOS 更新后或其他未知原因也可能导致出现以下问题），它会在 `/usr/local/bin` 中创建两个软链：`npm` 和 `npx`
+
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/Xnip2021-10-08_14-57-34.jpg' />
+
+将会导致无论用 nvm 怎么切换 node 或重新安装 npm，都会使 npm 的版本锁定在 yarn global 中 npm 的版本，如果 yarn global 中 npm 的版本过低，可能还会导致以下错误，没踩过坑的话会非常难以定位到该问题：
+
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/Xnip2021-10-08_15-02-05.jpg' />
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/Xnip2021-10-08_15-01-16.jpg' />
+
+这时候也不要尝试升级 yarn global 中 npm 的版本，即使修改后版本兼容了，还有可能因为 yarn 中残留的 npm 版本问题导致以下错误：
+
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/Xnip2021-10-08_23-09-35.jpg' />
+
+最好通过 `yarn global remove npm`删除或者全局包不多的话可以彻底删除 global 文件夹:
+
+```bash
+$ rm -rf ~/.config/yarn/global
+```
+
+:::
 
 ## yarn help
 
