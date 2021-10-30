@@ -9,14 +9,19 @@ const remarkPlugins = [
 ];
 
 const admonitions = {
+  infima: true,
   customTypes: {
     good: {
+      ifmClass: 'success',
       keyword: 'good',
-      svg: '<svg preserveAspectRatio="xMidYMid meet" height="1rem" width="1rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g><path d="M22 11.07V12a10 10 0 1 1-5.93-9.14"></path><polyline points="23 3 12 14 9 11"></polyline></g></svg>'
+      svg:
+        '<svg preserveAspectRatio="xMidYMid meet" height="1rem" width="1rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g><path d="M22 11.07V12a10 10 0 1 1-5.93-9.14"></path><polyline points="23 3 12 14 9 11"></polyline></g></svg>'
     },
     bad: {
+      ifmClass: 'danger',
       keyword: 'bad',
-      svg: '<svg preserveAspectRatio="xMidYMid meet" height="1rem" width="1rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" stroke="none"><g><path d="M512 992c-262.4 0-480-217.6-480-480 0-262.4 217.6-480 480-480s480 217.6 480 480C992 774.4 774.4 992 512 992zM512 108.8C288 108.8 108.8 288 108.8 512c0 224 179.2 403.2 403.2 403.2s403.2-179.2 403.2-403.2C915.2 288 736 108.8 512 108.8zM697.6 684.8l-12.8 12.8c-6.4 6.4-19.2 6.4-25.6 0L512 550.4l-140.8 140.8c-6.4 6.4-19.2 6.4-25.6 0l-12.8-12.8c-6.4-6.4-6.4-19.2 0-25.6L473.6 512 326.4 371.2C320 358.4 320 345.6 326.4 339.2l12.8-12.8C345.6 320 358.4 320 371.2 326.4L512 473.6l140.8-140.8c6.4-6.4 19.2-6.4 25.6 0l12.8 12.8c6.4 6.4 6.4 19.2 0 25.6L550.4 512l140.8 140.8C704 665.6 704 678.4 697.6 684.8z"></path></g></svg>'
+      svg:
+        '<svg preserveAspectRatio="xMidYMid meet" height="1rem" width="1rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" stroke="none"><g><path d="M512 992c-262.4 0-480-217.6-480-480 0-262.4 217.6-480 480-480s480 217.6 480 480C992 774.4 774.4 992 512 992zM512 108.8C288 108.8 108.8 288 108.8 512c0 224 179.2 403.2 403.2 403.2s403.2-179.2 403.2-403.2C915.2 288 736 108.8 512 108.8zM697.6 684.8l-12.8 12.8c-6.4 6.4-19.2 6.4-25.6 0L512 550.4l-140.8 140.8c-6.4 6.4-19.2 6.4-25.6 0l-12.8-12.8c-6.4-6.4-6.4-19.2 0-25.6L473.6 512 326.4 371.2C320 358.4 320 345.6 326.4 339.2l12.8-12.8C345.6 320 358.4 320 371.2 326.4L512 473.6l140.8-140.8c6.4-6.4 19.2-6.4 25.6 0l12.8 12.8c6.4 6.4 6.4 19.2 0 25.6L550.4 512l140.8 140.8C704 665.6 704 678.4 697.6 684.8z"></path></g></svg>'
     }
   }
 };
@@ -99,33 +104,33 @@ module.exports = {
     googleAnalytics: {
       trackingID: 'UA-152610996-1'
     },
-    showGithub: true,
     navbar: {
       title: githubOrg,
       logo: {
         alt: 'Logo',
-        src: 'https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/docsite-logo-white-mode.png'
+        src:
+          'https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/docsite-logo-white-mode.png'
       },
       items: [
         {
           label: 'Basics',
           position: 'right',
           // no `to` means activeBaseRegex gets ignored, so it's a must
-          to: 'docs/algorithm/get-started/asymptotic-notations',
+          to: 'docs/algorithm/1.get-started/asymptotic-notations',
           activeBaseRegex: 'docs/(design-patterns|algorithm|http)/',
           items: [
             {
-              to: 'docs/algorithm/get-started/asymptotic-notations',
+              to: 'docs/algorithm/1.get-started/asymptotic-notations',
               activeBasePath: 'docs/algorithm/',
               label: 'Algorithm'
             },
             {
-              to: 'docs/design-patterns/get-started',
+              to: 'docs/design-patterns/1.get-started',
               activeBasePath: 'docs/design-patterns/',
               label: 'Design Patterns'
             },
             {
-              to: 'docs/http/get-started',
+              to: 'docs/http/1.get-started',
               activeBasePath: 'docs/http/',
               label: 'HTTP'
             }
@@ -135,52 +140,52 @@ module.exports = {
           label: 'Frontend',
           position: 'right',
           // no `to` means activeBaseRegex gets ignored, so it's a must
-          to: 'docs/javascript/basic/js-engine',
+          to: 'docs/javascript/1.basic/js-engine',
           activeBaseRegex:
             'docs/(javascript|typescript|html|css|web|react|webpack|nodejs|fe-guidelines)/',
           items: [
             {
-              to: 'docs/javascript/basic/js-engine',
+              to: 'docs/javascript/1.basic/js-engine',
               activeBasePath: 'docs/javascript/',
               label: 'JavaScript'
             },
             {
-              to: 'docs/typescript/get-started',
+              to: 'docs/typescript/1.get-started',
               activeBasePath: 'docs/typescript/',
               label: 'TypeScript'
             },
             {
-              to: 'docs/html/get-started',
+              to: 'docs/html/1.get-started',
               activeBasePath: 'docs/html/',
               label: 'HTML'
             },
             {
-              to: 'docs/css/visual-formatting-model/basic-concept',
+              to: 'docs/css/1.visual-formatting-model/basic-concept',
               activeBasePath: 'docs/css/',
               label: 'CSS'
             },
             {
-              to: 'docs/web/get-started',
+              to: 'docs/web/1.get-started',
               activeBasePath: 'docs/web/',
               label: 'Web'
             },
             {
-              to: 'docs/react/basic/jsx',
+              to: 'docs/react/1.basic/jsx',
               activeBasePath: 'docs/react/',
               label: 'React'
             },
             {
-              to: 'docs/webpack/get-started',
+              to: 'docs/webpack/1.get-started',
               activeBasePath: 'docs/webpack/',
               label: 'Webpack'
             },
             {
-              to: 'docs/nodejs/get-started',
+              to: 'docs/nodejs/1.get-started',
               activeBasePath: 'docs/nodejs/',
               label: 'NodeJS'
             },
             {
-              to: 'docs/fe-guidelines/introduction',
+              to: 'docs/fe-guidelines/1.introduction',
               activeBasePath: 'docs/fe-guidelines/',
               label: 'Coding Guidelines'
             }
@@ -190,16 +195,16 @@ module.exports = {
           label: 'Backend',
           position: 'right',
           // no `to` means activeBaseRegex gets ignored, so it's a must
-          to: 'docs/java/get-started/introduction',
+          to: 'docs/java/1.get-started/introduction',
           activeBaseRegex: 'docs/(java)/', // `/` can avoid the confusion such as `javascript`
           items: [
             {
-              to: 'docs/java/get-started/introduction',
+              to: 'docs/java/1.get-started/introduction',
               activeBasePath: 'docs/java/',
               label: 'Java'
             },
             {
-              to: 'docs/go/get-started/introduction',
+              to: 'docs/go/1.get-started/introduction',
               activeBasePath: 'docs/go/',
               label: 'Go'
             }
@@ -209,11 +214,11 @@ module.exports = {
           label: 'AI',
           position: 'right',
           // no `to` means activeBaseRegex gets ignored, so it's a must
-          to: 'docs/python/get-started/history',
+          to: 'docs/python/1.get-started/history',
           activeBaseRegex: 'docs/(python)/',
           items: [
             {
-              to: 'docs/python/get-started/history',
+              to: 'docs/python/1.get-started/history',
               activeBasePath: 'docs/python/',
               label: 'Python'
             }
@@ -224,7 +229,13 @@ module.exports = {
           label: 'Wiki',
           position: 'right',
           activeBasePath: 'docs/wiki/',
-          to: 'docs/wiki/get-started'
+          to: 'docs/wiki/1.get-started'
+        },
+        {
+          href: `https://github.com/${githubOrg}/${githubRepo}`,
+          position: 'right',
+          className: 'header-github-link',
+          'aria-label': 'GitHub repository'
         }
       ]
     },
@@ -238,7 +249,8 @@ module.exports = {
               html: `<img class="footer-logo" loading="lazy" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/docsite-logo-dark-mode.png" /><span>${githubOrg}</span>`
             },
             {
-              html: '<p class="footer-desc">Explore and study full stack technology. Here gathers developers\' thinking, summary and imagination on the future development of technology.</p>'
+              html:
+                '<p class="footer-desc">Explore and study full stack technology. Here gathers developers\' thinking, summary and imagination on the future development of technology.</p>'
             }
           ]
         },
@@ -246,7 +258,8 @@ module.exports = {
           title: 'Subscription',
           items: [
             {
-              html: '<img class="footer-reward" loading="lazy" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/qrcode_for_wechat.jpg" />'
+              html:
+                '<img class="footer-reward" loading="lazy" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/qrcode_for_wechat.jpg" />'
             }
           ]
         },
@@ -288,7 +301,7 @@ module.exports = {
       //   alt: `${githubOrg} Logo`,
       //   src: '',
       // },
-      copyright: `Copyright © ${new Date().getFullYear()} ${githubOrg}`
+      copyright: `Copyright © 2019-${new Date().getFullYear()} ${githubOrg}`
     },
     prism: {
       theme: require('prism-react-renderer/themes/nightOwl'),
@@ -308,7 +321,8 @@ module.exports = {
           // Equivalent to `enableUpdateTime`.
           showLastUpdateTime: true,
           remarkPlugins,
-          admonitions
+          admonitions,
+          numberPrefixParser: false
         },
         blog: {
           editUrl: `https://github.com/${githubOrg}/${githubRepo}/edit/master/`,

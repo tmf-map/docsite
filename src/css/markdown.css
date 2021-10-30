@@ -1,5 +1,9 @@
-.markdown {
-  font-size: 0.9375rem;
+/*.markdown {*/
+/*  font-size: 0.9375rem;*/
+/*}*/
+
+.markdown h1:first-child {
+    --ifm-h1-font-size: 2rem;
 }
 
 .markdown > h2 {

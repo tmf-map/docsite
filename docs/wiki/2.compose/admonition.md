@@ -5,40 +5,64 @@ title: Admonition
 ## Hint
 
 ```text
+:::note
+
+Some **content** with _markdown_ `syntax`. Check [this `api`](#).
+
+:::
+
 :::tip
 
-This is a tip.
+Some **content** with _markdown_ `syntax`. Check [this `api`](#).
+
+:::
+
+:::info
+
+Some **content** with _markdown_ `syntax`. Check [this `api`](#).
 
 :::
 
 :::caution
 
-You should pay more attention to this otherwise error `may` occur.
+Some **content** with _markdown_ `syntax`. Check [this `api`](#).
 
 :::
 
 :::danger
 
-You should pay close attention to this otherwise error `must` occur.
+Some **content** with _markdown_ `syntax`. Check [this `api`](#).
 
 :::
 ```
 
+:::note
+
+Some **content** with _markdown_ `syntax`. Check [this `api`](#).
+
+:::
+
 :::tip
 
-This is a tip. [link test](https://thinkbucket.cn)
+Some **content** with _markdown_ `syntax`. Check [this `api`](#).
+
+:::
+
+:::info
+
+Some **content** with _markdown_ `syntax`. Check [this `api`](#).
 
 :::
 
 :::caution
 
-You should pay more attention to this otherwise error `may` occur. [link test](https://thinkbucket.cn)
+Some **content** with _markdown_ `syntax`. Check [this `api`](#).
 
 :::
 
 :::danger
 
-You should pay close attention to this otherwise error `must` occur. [link test](https://thinkbucket.cn)
+Some **content** with _markdown_ `syntax`. Check [this `api`](#).
 
 :::
 

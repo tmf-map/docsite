@@ -1,8 +1,8 @@
 .dropdown .dropdown__menu {
-  border-radius: 0 0 0.25rem 0.25rem;
+  /*border-radius: 0 0 0.25rem 0.25rem;*/
   box-shadow: var(--ifm-navbar-shadow);
   border: 1px solid var(--my-color-gray-5);
-  border-top: 0px;
+  transform: translateY(0);
 }
 
 .dropdown .dropdown__menu > li {
