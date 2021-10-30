@@ -13,8 +13,7 @@ function Section({who, company, position, description, mirror}) {
         mirror
           ? styles['border-disable-top-right']
           : styles['border-disable-bottom-left']
-      )}
-    >
+      )}>
       <div
         className={classNames(
           'text--center',
@@ -23,8 +22,7 @@ function Section({who, company, position, description, mirror}) {
           mirror
             ? styles['border-disable-bottom-left']
             : styles['border-disable-top-right']
-        )}
-      >
+        )}>
         <h2>{who}</h2>
         <p>
           <b>{company}</b>
@@ -32,8 +30,10 @@ function Section({who, company, position, description, mirror}) {
           {position}
         </p>
         <p
-          className={classNames(styles.text, styles['testimonial-description'])}
-        >
+          className={classNames(
+            styles.text,
+            styles['testimonial-description']
+          )}>
           {description}
         </p>
       </div>

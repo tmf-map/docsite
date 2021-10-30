@@ -30,8 +30,7 @@ const SectionOne = () => {
       <a
         className={styles.version}
         href={`https://github.com/${organizationName}/${projectName}/releases`}
-        target="blank"
-      >
+        target="blank">
         Latest version: {version}
       </a>
       <div className={styles.getStartedBtn}>

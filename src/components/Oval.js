@@ -8,8 +8,7 @@ export default function Oval({children, className, size, ...props}) {
     <span
       {...props}
       style={size && {width: `${size}`, height: `${size}`}}
-      className={classNames(styles.oval, className)}
-    >
+      className={classNames(styles.oval, className)}>
       {children}
     </span>
   );

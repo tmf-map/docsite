@@ -162,8 +162,7 @@ margin 合并（重叠） 3 种场景：
       marginBottom: '20px',
       backgroundColor: '#ffa39e',
       display: 'inline-block'
-    }}
-  >
+    }}>
     第一行
   </div>
   <div style={{marginTop: '20px', backgroundColor: '#91d5ff'}}>第二行</div>

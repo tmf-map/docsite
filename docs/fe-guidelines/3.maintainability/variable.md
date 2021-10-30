@@ -16,8 +16,7 @@ ctrl.selectedBPItemStatus =
 :::good
 
 ```js
-const bpItemStatusCardDataFilterId =
-  bpItemStatusCardDataFilter.value.toUpperCase();
+const bpItemStatusCardDataFilterId = bpItemStatusCardDataFilter.value.toUpperCase();
 ctrl.selectedBPItemStatus =
   ctrl.BP_ITEM_STATUS_FILTERS[bpItemStatusCardDataFilterId];
 ```

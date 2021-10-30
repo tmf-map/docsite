@@ -27,8 +27,7 @@ function FooterLink({to, href, label, ...props}) {
         : {
             to: toUrl
           })}
-      {...props}
-    >
+      {...props}>
       {label}
     </Link>
   );
@@ -56,8 +55,7 @@ function Footer() {
     <footer
       className={classnames('footer', {
         'footer--dark': footer.style === 'dark'
-      })}
-    >
+      })}>
       <div className="container">
         {links && links.length > 0 && (
           <div className="row footer__links">
@@ -102,8 +100,7 @@ function Footer() {
                     href={logo.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={styles.footerLogoLink}
-                  >
+                    className={styles.footerLogoLink}>
                     <FooterLogo alt={logo.alt} url={logoUrl} />
                   </a>
                 ) : (

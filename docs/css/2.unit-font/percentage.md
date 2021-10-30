@@ -66,8 +66,7 @@ body {
     height: '100px',
     border: '1px dotted #ee3979',
     boxSizing: 'content-box'
-  }}
->
+  }}>
   <div
     style={{
       margin: '5%',
@@ -76,8 +75,7 @@ body {
       height: '50px',
       backgroundColor: '#98d4fb',
       boxSizing: 'content-box'
-    }}
-  ></div>
+    }}></div>
 </div>
 ```
 
@@ -128,8 +126,7 @@ body {
         'url("https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/css-background-position.jpeg")',
       backgroundRepeat: 'no-repeat',
       backgroundPosition: '0% 0%'
-    }}
-  ></div>
+    }}></div>
   <div
     style={{
       width: '100px',
@@ -139,8 +136,7 @@ body {
         'url("https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/css-background-position.jpeg")',
       backgroundRepeat: 'no-repeat',
       backgroundPosition: '100% 100%'
-    }}
-  ></div>
+    }}></div>
   <div
     style={{
       width: '100px',
@@ -150,8 +146,7 @@ body {
         'url("https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/css-background-position.jpeg")',
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'right 20% bottom 80%'
-    }}
-  ></div>
+    }}></div>
 </div>
 ```
 
