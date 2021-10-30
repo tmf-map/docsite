@@ -53,9 +53,9 @@
 /*}*/
 
 .menu .menu__link.menu__link--sublist:after {
-  background-image: url('data:image/svg+xml;utf8,<svg preserveAspectRatio="xMidYMid meet" height="1em" width="1em" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="rgba(157,170,182,1)"><g><polyline points="9 18 15 12 9 6"></polyline></g></svg>');
+  background-image: url('data:image/svg+xml;utf8,<svg preserveAspectRatio="xMidYMid meet" height="1em" width="1em" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="%239daab6"><g><polyline points="9 18 15 12 9 6"></polyline></g></svg>');
   background-size: 1.1rem 1.1rem;
-  color: rgba(0, 0, 0, 0.2)
+  color: rgba(157, 170, 182, 1)
 }
 
 .menu .menu__list-item {
