@@ -78,6 +78,20 @@ for x in range(2, 101, 2):
 print(sum) # 2550
 ```
 
+遍历数组也可以用`for in`:
+
+```py
+for val in ['a', 'b', 'c']:
+    print(val)
+```
+
+如果需要获取数组下标可以用 built-in function [enumerate()](https://docs.python.org/3/library/functions.html#enumerate):
+
+```py
+for idx, val in enumerate(['a', 'b', 'c']):
+    print(idx, val)
+```
+
 ### while 循环
 
 如果要构造不知道具体循环次数的循环结构，可以使用 while 循环。下面我们通过一个“猜数字”的小游戏来看看如何使用 while 循环。
