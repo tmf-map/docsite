@@ -1,81 +1,81 @@
 /* Phone */
 @media (max-width: 767px) {
-  :root {
-    --ifm-font-size-base: 14px;
-  }
-  html {
-    font-size: 14px;
-  }
+  /*:root {*/
+  /*  --ifm-font-size-base: 14px;*/
+  /*}*/
+  /*html {*/
+  /*  font-size: 14px;*/
+  /*}*/
   footer.footer {
     display: none;
   }
-  .main-wrapper main .container {
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-  }
-  /* Sidebar Nav */
-  .navbar + .main-wrapper > div > div:not(.row):not(.main):not(.hero--primary) {
-    width: 0 !important;
-    margin-right: 0 !important;
-  }
+  /*.main-wrapper main .container {*/
+  /*  padding-top: 0 !important;*/
+  /*  padding-bottom: 0 !important;*/
+  /*}*/
+  /*!* Sidebar Nav *!*/
+  /*.navbar + .main-wrapper > div > div:not(.row):not(.main):not(.hero--primary) {*/
+  /*  width: 0 !important;*/
+  /*  margin-right: 0 !important;*/
+  /*}*/
 }
 
-/* iPad */
-@media (min-width: 768px) and (max-width: 995px) {
-  :root {
-    --ifm-font-size-base: 16px;
-  }
-  html {
-    font-size: 16px;
-  }
-  footer.footer {
-    display: none;
-  }
-  .main-wrapper main .container {
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-  }
-  /* Sidebar Nav */
-  .navbar + .main-wrapper > div > div:not(.row):not(.main):not(.hero--primary) {
-    width: 0 !important;
-    margin-right: 0 !important;
-  }
-}
+/*!* iPad *!*/
+/*@media (min-width: 768px) and (max-width: 995px) {*/
+/*  :root {*/
+/*    --ifm-font-size-base: 16px;*/
+/*  }*/
+/*  html {*/
+/*    font-size: 16px;*/
+/*  }*/
+/*  footer.footer {*/
+/*    display: none;*/
+/*  }*/
+/*  .main-wrapper main .container {*/
+/*    padding-top: 0 !important;*/
+/*    padding-bottom: 0 !important;*/
+/*  }*/
+/*  !* Sidebar Nav *!*/
+/*  .navbar + .main-wrapper > div > div:not(.row):not(.main):not(.hero--primary) {*/
+/*    width: 0 !important;*/
+/*    margin-right: 0 !important;*/
+/*  }*/
+/*}*/
 
-/* iPad Pro, MacBook Pro 13.3 */
-@media (min-width: 996px) and (max-width: 1440px) {
-  :root {
-    --ifm-font-size-base: 16px;
-  }
-  html {
-    font-size: 16px;
-  }
-  .navbar + .main-wrapper > div > div:not(.row):not(.hero):not(.main) {
-    width: 290px;
-  }
-  .footer.footer--dark .container .text--center {
-    font-size: 12px;
-  }
-}
+/*!* iPad Pro, MacBook Pro 13.3 *!*/
+/*@media (min-width: 996px) and (max-width: 1440px) {*/
+/*  :root {*/
+/*    --ifm-font-size-base: 16px;*/
+/*  }*/
+/*  html {*/
+/*    font-size: 16px;*/
+/*  }*/
+/*  .navbar + .main-wrapper > div > div:not(.row):not(.hero):not(.main) {*/
+/*    width: 290px;*/
+/*  }*/
+/*  .footer.footer--dark .container .text--center {*/
+/*    font-size: 12px;*/
+/*  }*/
+/*}*/
 
-@media (min-width: 997px) {
-  .menu.menu--responsive {
-    padding-top: 0;
-    padding-bottom: 2rem;
-    padding-left: 1.2rem;
-    margin-top: 1.8rem;
-    margin-bottom: 0;
-  }
-  .container .col:first-child > div {
-    max-width: 48vw !important;
-  }
-  footer.footer {
-    display: block;
-  }
-}
+/*@media (min-width: 997px) {*/
+/*  .menu.menu--responsive {*/
+/*    padding-top: 0;*/
+/*    padding-bottom: 2rem;*/
+/*    padding-left: 1.2rem;*/
+/*    margin-top: 1.8rem;*/
+/*    margin-bottom: 0;*/
+/*  }*/
+/*  .container .col:first-child > div {*/
+/*    max-width: 48vw !important;*/
+/*  }*/
+/*  footer.footer {*/
+/*    display: block;*/
+/*  }*/
+/*}*/
 
-@media (min-width: 1440px) {
-  .main-wrapper.blog-wrapper .container {
-    max-width: 92vw;
-  }
-}
+/*@media (min-width: 1440px) {*/
+/*  .main-wrapper.blog-wrapper .container {*/
+/*    max-width: 92vw;*/
+/*  }*/
+/*}*/

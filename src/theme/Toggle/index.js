@@ -8,7 +8,7 @@
 import React from 'react';
 import Toggle from 'react-toggle';
 
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import useIsBrowser from '@docusaurus/useIsBrowser';
 
 import classnames from 'classnames';
 import styles from './styles.module.css';
@@ -17,10 +17,10 @@ const Moon = () => <span className={classnames(styles.toggle, styles.moon)} />;
 // const Sun = () => <span className={classnames(styles.toggle, styles.sun)} />;
 
 export default function (props) {
-  const {isClient} = useDocusaurusContext();
+  const isBrowser = useIsBrowser();
   return (
     <Toggle
-      disabled={!isClient}
+      disabled={!isBrowser}
       icons={{
         checked: <Moon />,
         // unchecked: <Sun />,

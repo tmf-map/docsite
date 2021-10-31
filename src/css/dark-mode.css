@@ -21,6 +21,10 @@ html[data-theme="dark"] .markdown ul.tabs .tabs__item--active {
   color: rgb(255, 255, 255);
 }
 
-html[data-theme="dark"] .markdown .admonition.admonition-note {
-  color: #1c1e21;
+html[data-theme="dark"] .pagination-nav .pagination-nav__link {
+  border-color: rgba(152, 152, 152, 0.25);
+}
+
+html[data-theme="dark"] .pagination-nav .pagination-nav__link:hover {
+  border-color: var(--ifm-color-primary);
 }

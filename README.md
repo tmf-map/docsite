@@ -4,7 +4,7 @@
 
 A learning website where you can explore full stack technology.
 
-[![Netlify Status][netlify-image]][netlify-url] [![Dependencies][dependencies-image]][dependencies-url]
+[![Netlify Status][netlify-image]][netlify-url]
 
 ## Table of Contents
 
