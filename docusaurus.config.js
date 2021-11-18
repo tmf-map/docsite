@@ -37,6 +37,13 @@ module.exports = {
   plugins: [
     ['@docusaurus/plugin-google-analytics', {id: 'plugin-google-analytics'}],
     [
+      require.resolve('@thinkbucket/docusaurus-search-local'),
+      {
+        hashed: true,
+        language: ['en', 'zh']
+      }
+    ],
+    [
       '@docusaurus/plugin-pwa',
       {
         debug: true,

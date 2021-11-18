@@ -264,20 +264,20 @@ function Navbar(): JSX.Element {
           {leftItems.map((item, i) => (
             <NavbarItem {...item} key={i} />
           ))}
-        </div>
-        <div className="navbar__items navbar__items--right">
-          {rightItems.map((item, i) => (
-            <NavbarItem {...item} key={i} />
-          ))}
-          {!colorModeToggle.disabled && (
-            <Toggle
-              className={styles.toggle}
-              checked={colorModeToggle.isDarkTheme}
-              onChange={colorModeToggle.toggle}
-            />
-          )}
           {!hasSearchNavbarItem && <SearchBar />}
         </div>
+      </div>
+      <div className="navbar__items navbar__items--right">
+        {rightItems.map((item, i) => (
+          <NavbarItem {...item} key={i} />
+        ))}
+        {!colorModeToggle.disabled && (
+          <Toggle
+            className={styles.toggle}
+            checked={colorModeToggle.isDarkTheme}
+            onChange={colorModeToggle.toggle}
+          />
+        )}
       </div>
 
       <div
