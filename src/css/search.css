@@ -3,14 +3,8 @@
   --ifm-navbar-search-input-color: #d4d4d8;
 }
 
-.navbar__search > span > span {
-  right: auto !important;
-  left: 0 !important;
-}
-
 .navbar__search > div {
-  left: auto !important;
-  right: 0.6rem !important;
+  left: 10px !important;
 }
 
 .navbar__search-input {
