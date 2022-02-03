@@ -47,11 +47,8 @@ footer.footer {
   margin-top: -5px;
 }
 
-.footer-reward {
-  width: 5rem;
-  height: 5rem;
-  border-radius: 1px;
-  margin-top: 0.5rem;
+.footer-power-by {
+  height: 1.8rem;
 }
 
 .footer-logo {
@@ -77,4 +74,3 @@ footer.footer {
   margin-right: 6rem;
   flex-shrink: 0;
 }
-

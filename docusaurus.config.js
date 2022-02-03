@@ -35,12 +35,11 @@ module.exports = {
   organizationName: githubOrg, // Usually your GitHub org/user name.
   projectName: 'docsite', // Usually your repo name.
   plugins: [
-    ['@docusaurus/plugin-google-analytics', {id: 'plugin-google-analytics'}],
     [
       require.resolve('@thinkbucket/docusaurus-search-local'),
       {
         hashed: true,
-        language: ['en', 'zh']
+        language: ['en']
       }
     ],
     [
@@ -108,9 +107,6 @@ module.exports = {
     }
   },
   themeConfig: {
-    googleAnalytics: {
-      trackingID: 'UA-152610996-1'
-    },
     navbar: {
       title: githubOrg,
       logo: {
@@ -262,11 +258,15 @@ module.exports = {
           ]
         },
         {
-          title: 'Subscription',
+          title: 'Power by',
           items: [
             {
               html:
-                '<img class="footer-reward" loading="lazy" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/qrcode_for_wechat.jpg" />'
+                '<img class="footer-power-by" loading="lazy" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/netlify-color-accent.svg" />'
+            },
+            {
+              html:
+                '<img class="footer-power-by" loading="lazy" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/docusaurus.svg" />'
             }
           ]
         },
@@ -320,6 +320,9 @@ module.exports = {
     [
       '@docusaurus/preset-classic',
       {
+        googleAnalytics: {
+          trackingID: 'UA-152610996-1'
+        },
         docs: {
           sidebarPath: require.resolve('./sidebars/index.js'),
           editUrl: `https://github.com/${githubOrg}/${githubRepo}/edit/master/`,
