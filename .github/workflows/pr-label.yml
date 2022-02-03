@@ -1,0 +1,13 @@
+name: pull-request
+
+on: pull_request
+
+jobs:
+  # https://github.com/actions/labeler/issues/117#issuecomment-771825205
+  if: github.actor != 'dependabot[bot]'
+  add-labels:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/labeler@v3
+        with:
+          repo-token: '${{ secrets.GITHUB_TOKEN }}'
