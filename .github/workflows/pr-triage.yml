@@ -1,6 +1,7 @@
 name: pr-triage
 
-on: pull_request
+# https://github.com/actions/labeler/issues/12#issuecomment-991806288
+on: pull_request_target
 
 jobs:
   add-reviewers-assignees:
