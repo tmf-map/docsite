@@ -25,7 +25,7 @@ However, this can be modified by assigning different strings to this attribute. 
 
 ```python title=hello.py
 def SayHello(name):
-    print ("Hi {}! How are you?".format(name))
+    print("Hi {}! How are you?".format(name))
 
 __name__="SayHello"
 ```
@@ -56,7 +56,7 @@ Let's modify the `hello.py`:
 
 ```python title=hello.py
 def SayHello(name):
-    print ("Hi {}! How are you?".format(name))
+    print("Hi {}! How are you?".format(name))
 
 if __name__=='__main__':
   SayHello('Alice')
@@ -98,7 +98,7 @@ Consider the following script is saved as `test.py` module.
 """This is docstring of test module"""
 
 def SayHello(name):
-    print ("Hi {}! How are you?".format(name))
+    print("Hi {}! How are you?".format(name))
     return
 ```
 
