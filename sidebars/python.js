@@ -17,6 +17,7 @@ module.exports = [
       'python/3.built-in-data-structure/dict'
     ],
     '5. Class': [
+      'python/5.class/class-instance',
       'python/5.class/access-modifiers',
       'python/5.class/inheritance'
     ],
