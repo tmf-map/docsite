@@ -30,3 +30,4 @@ wiki: docs/wiki/**/*
 "docs: fe guidelines": docs/fe-guidelines/**/*
 "docs: python": docs/python/**/*
 "docs: go": docs/go/**/*
+"docs: mysql": docs/mysql/**/*
