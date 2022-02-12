@@ -2,6 +2,8 @@
 title: Intro to SQL
 ---
 
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/sql-illustration.png' alt='mysql cover'/>
+
 SQL stands for **Structured Query Language**. SQL is used to query and manipulate the underlying relational databases such as SQL Server, Oracle, MySQL, PostgreSQL, SQLite, etc.
 
 SQL is an ANSI (American National Standards Institute) and ISO (International Organization for Standardization) standard language. However, not all the databases support the same SQL, but there is little variation. Also, most databases include their own addition to SQL.
