@@ -14,6 +14,7 @@ const nodejs = require('./nodejs');
 const feGuidelines = require('./fe-guidelines');
 const python = require('./python');
 const go = require('./go');
+const mysql = require('./mysql');
 
 module.exports = {
   javascript,
@@ -31,5 +32,6 @@ module.exports = {
   nodejs,
   feGuidelines,
   python,
-  go
+  go,
+  mysql
 };
