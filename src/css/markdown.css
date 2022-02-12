@@ -3,7 +3,7 @@
 /*}*/
 
 .markdown h1:first-child {
-    --ifm-h1-font-size: 2rem;
+  --ifm-h1-font-size: 2rem;
 }
 
 .markdown > h2 {
@@ -21,7 +21,11 @@
   -webkit-font-smoothing: initial;
 }
 
-.markdown > pre, .markdown > ul, .markdown > ol, .markdown > p, blockquote p {
+.markdown > pre,
+.markdown > ul,
+.markdown > ol,
+.markdown > p,
+blockquote p {
   line-height: 1.8;
 }
 
@@ -72,7 +76,8 @@
   font-style: normal !important;
 }
 
-.markdown div[style="color: rgb(214, 222, 235); background-color: rgb(1, 22, 39);"] {
+.markdown
+  div[style='color: rgb(214, 222, 235); background-color: rgb(1, 22, 39);'] {
   border-bottom-color: #444950;
 }
 
@@ -103,4 +108,9 @@
 
 .markdown code {
   color: var(--ifm-code-color);
+}
+
+.markdown table {
+  display: table;
+  width: 100%;
 }
