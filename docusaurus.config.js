@@ -259,11 +259,11 @@ module.exports = {
           items: [
             {
               html:
-                '<img class="footer-power-by" loading="lazy" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/netlify-color-accent.svg" />'
+                '<a href="https://www.netlify.com/" target="blank"><img class="footer-power-by" loading="lazy" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/netlify-color-accent.svg" /></a>'
             },
             {
               html:
-                '<img class="footer-power-by" loading="lazy" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/docusaurus.svg" />'
+                '<a href="https://docusaurus.io/docs/" target="blank"><img class="footer-power-by" loading="lazy" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/docusaurus.svg" /></a>'
             }
           ]
         },
