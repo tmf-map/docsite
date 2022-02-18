@@ -198,9 +198,15 @@ module.exports = {
           label: 'Backend',
           position: 'right',
           // no `to` means activeBaseRegex gets ignored, so it's a must
-          to: 'docs/java/1.get-started/introduction',
-          activeBaseRegex: 'docs/(java)/', // `/` can avoid the confusion such as `javascript`
+          to: 'docs/python/1.get-started/history',
+          activeBaseRegex:
+            'docs/(python|java|go|mysql|fastapi|docker|kubernetes)/', // `/` can avoid the confusion such as `javascript`
           items: [
+            {
+              to: 'docs/python/1.get-started/history',
+              activeBasePath: 'docs/python/',
+              label: 'Python'
+            },
             {
               to: 'docs/java/1.get-started/introduction',
               activeBasePath: 'docs/java/',
@@ -210,20 +216,11 @@ module.exports = {
               to: 'docs/go/1.get-started/introduction',
               activeBasePath: 'docs/go/',
               label: 'Go'
-            }
-          ]
-        },
-        {
-          label: 'AI',
-          position: 'right',
-          // no `to` means activeBaseRegex gets ignored, so it's a must
-          to: 'docs/python/1.get-started/history',
-          activeBaseRegex: 'docs/(python)/',
-          items: [
+            },
             {
-              to: 'docs/python/1.get-started/history',
-              activeBasePath: 'docs/python/',
-              label: 'Python'
+              to: 'docs/mysql/1.get-started/intro-to-sql',
+              activeBasePath: 'docs/mysql/',
+              label: 'MySQL'
             }
           ]
         },
@@ -262,11 +259,11 @@ module.exports = {
           items: [
             {
               html:
-                '<img class="footer-power-by" loading="lazy" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/netlify-color-accent.svg" />'
+                '<a href="https://www.netlify.com/" target="blank"><img class="footer-power-by" loading="lazy" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/netlify-color-accent.svg" /></a>'
             },
             {
               html:
-                '<img class="footer-power-by" loading="lazy" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/docusaurus.svg" />'
+                '<a href="https://docusaurus.io/docs/" target="blank"><img class="footer-power-by" loading="lazy" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/docusaurus.svg" /></a>'
             }
           ]
         },
