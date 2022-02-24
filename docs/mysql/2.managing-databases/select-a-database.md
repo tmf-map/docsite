@@ -59,13 +59,13 @@ To select a database to work with, you use the `USE` statement:
 USE database_name;
 ```
 
-For example, the following statement uses the `USE` statement to set the current database to `classicmodels`:
+For example, the following statement uses the `USE` statement to set the current database to `testdb`:
 
 ```shell
-USE classicmodels;
+USE testdb;
 ```
 
-If you see the following message, it means that you have changed the database to `classicmodels` successfully:
+If you see the following message, it means that you have changed the database to `testdb` successfully:
 
 ```shell
 Database changed
@@ -83,15 +83,15 @@ It’ll return something like:
 +---------------+
 | database()    |
 +---------------+
-| classicmodels |
+| testdb |
 +---------------+
 1 row in set (0.00 sec)
 ```
 
-If the `classicmodels` database doesn’t exist, you’ll get the following error after executing the `USE` statement:
+If the `testdb` database doesn’t exist, you’ll get the following error after executing the `USE` statement:
 
 ```shell
-ERROR 1049 (42000): Unknown database 'classicmodels'
+ERROR 1049 (42000): Unknown database 'testdb'
 ```
 
 ### `SHOW DATABASES`
@@ -118,13 +118,13 @@ The output may look like the following:
 
 ### Selecting a database when login
 
-If you know which database you want to work with before you log in, you can use the `-D` flag. For example, the following command connects to the `classicmodels` database with the user account `root`:
+If you know which database you want to work with before you log in, you can use the `-D` flag. For example, the following command connects to the `testdb` database with the user account `root`:
 
 ```shell
-mysql -u root -D classicmodels -p
+mysql -u root -D testdb -p
 ```
 
-In this command, we specify the database `classicmodels` after the `-D` flag.
+In this command, we specify the database `testdb` after the `-D` flag.
 
 After entering the password and logging in successfully, you can check the current database:
 
@@ -138,11 +138,21 @@ Output:
 +---------------+
 | database()    |
 +---------------+
-| classicmodels |
+| testdb |
 +---------------+
 1 row in set (0.00 sec)
 ```
 
-## Using DataGrip
+## Using TablePlus
 
-Doing...
+If you connect to a MySQL Server via the [TablePlus](https://tableplus.com/) application, you can select a database when you create the database connection as shown in the following screenshot:
+
+<Img w="500" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/aDQMkD.png' />
+
+Once logged in, you can select another database by clicking the database icon on toolbar or using the shortcut: `CMD K` provided by TablePlus:
+
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/Qskhwl.png' />
+
+## Reference
+
+1. [Selecting a MySQL Database Using USE Statement by mysqltutorial](https://www.mysqltutorial.org/mysql-select-database/)
