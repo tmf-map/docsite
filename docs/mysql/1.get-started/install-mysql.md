@@ -22,19 +22,9 @@ All downloads for MySQL are located at MySQL [Downloads](https://dev.mysql.com/d
 
 ## Connect
 
-Let's use [TablePlus](https://tableplus.com/) as the default DB client for the demo, you can choose whatever client you like.
+### Using Terminal
 
-<Img w="600" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/table-plus-connect1.png' alt='table-plus-connect1'/>
-<Img w="600" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/table-plus-connect2.png' alt='table-plus-connect2'/>
-<Img w="600" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/table-plus-connect3.png' alt='table-plus-connect3'/>
-
-:::tip
-
-You can check the connection by clicking `Test` before establishing a formal connection.
-
-:::
-
-You can connect to MySQL via terminal as well, take macOS as an example:
+You can connect to MySQL via terminal, take macOS as an example:
 
 ```shell
 $ mysql -u root -p
@@ -57,5 +47,40 @@ mysql>
 :::info
 
 If it returns `command not found: mysql` in terminal, you can add `export PATH=${PATH}:/usr/local/mysql/bin/` in `~/.zshrc` and run `. ~/.zshrc` at last.
+
+:::
+
+In addition, we recommend [mycli](https://github.com/dbcli/mycli) which is a command line client for MySQL that can do auto-completion and syntax highlighting.
+
+- HomePage: http://mycli.net
+- Documentation: http://mycli.net/docs
+
+<GifPlayer
+  w="580"
+  gif="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/mycli-intro.gif"
+  still="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/fJEuvN.jpg"
+/>
+
+Install mycli:
+
+```shell
+$ brew install mycli  # Only on macOS
+```
+
+Connect to MySQL:
+
+<Img w="710" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/RNwqwU.png'/>
+
+### Using TablePlus
+
+[TablePlus](https://tableplus.com/) supports a whole set of relational databases (and some NoSQL).
+
+<Img w="600" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/table-plus-connect1.png' alt='table-plus-connect1'/>
+<Img w="600" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/table-plus-connect2.png' alt='table-plus-connect2'/>
+<Img w="600" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/table-plus-connect3.png' alt='table-plus-connect3'/>
+
+:::tip
+
+You can check the connection by clicking `Test` before establishing a formal connection.
 
 :::
