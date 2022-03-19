@@ -5,5 +5,6 @@ module.exports = [
       'mysql/1.get-started/intro-to-dbms',
       'mysql/1.get-started/install-mysql'
     ]
-  }
+  },
+  'mysql/2.manage-databases'
 ];
