@@ -6,8 +6,8 @@
   --ifm-color-primary-dark: #0085cc;
   --ifm-color-primary-darker: #0065a3;
   --ifm-color-primary-darkest: #00508a;
-  --ifm-navbar-background-color: #1f232e;
-  --ifm-navbar-link-color: #eee;
+  /* --ifm-navbar-background-color: #1f232e; */
+  /* --ifm-navbar-link-color: #eee; */
 
   --ifm-color-emphasis-alpha-60: #5c6975;
   --ifm-contents-border-color: rgba(191, 191, 191, 0.2);
@@ -21,7 +21,7 @@
   --ifm-table-stripe-background: rgba(185, 202, 218, 0.15);
   --ifm-table-cell-padding: 0.7rem;
   /*--ifm-menu-color-background-active: rgb(255, 255, 255);*/
-  --ifm-navbar-shadow: none;
+  /* --ifm-navbar-shadow: none; */
   --ifm-navbar-height: 3.75rem;
   --ifm-navbar-padding-horizontal: 2rem;
   --ifm-navbar-item-padding-horizontal: 1rem;
@@ -33,6 +33,10 @@
   --ifm-line-height-base: 1.5;
 
   --ifm-code-font-size: 85%;
+  /* --ifm-font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe WPC',
+    'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif, Roboto, Ubuntu,
+    Cantarell, 'Noto Sans', BlinkMacSystemFont, Helvetica, Arial,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; */
 
   --my-color-gray-1: #ffffff;
   --my-color-gray-2: #fafafa;

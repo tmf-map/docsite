@@ -1,7 +1,7 @@
 .dropdown .dropdown__menu {
   /*border-radius: 0 0 0.25rem 0.25rem;*/
   box-shadow: var(--ifm-navbar-shadow);
-  border: 1px solid var(--my-color-gray-5);
+  border: 1px solid var(--my-color-gray-4);
   transform: translateY(0);
   /* top: 64px; */
   /* background-color: var(--ifm-navbar-background-color); */
@@ -48,6 +48,7 @@
 
 html[data-theme='dark'] .dropdown__menu {
   background-color: var(--my-color-gray-10);
+  border: 1px solid var(--my-color-gray-10);
 }
 
 html[data-theme='dark'] .dropdown.navbar__item:hover:before {
