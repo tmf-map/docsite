@@ -4,7 +4,7 @@ title: Code Blocks
 
 Code blocks within documentation are super-powered 💪.
 
-### Code title
+## Code title
 
 You can add a title to the code block by adding `title` key after the language (leave a space between them).
 
@@ -20,37 +20,98 @@ function HelloCodeTitle(props) {
 }
 ```
 
-### Line highlighting
+## Line highlighting
 
-You can bring emphasis to certain lines of code by specifying line ranges after the language meta string (leave a space after the language).
+### Highlighting with comments
 
-    ```jsx {3}
+You can use comments with `highlight-next-line`, `highlight-start`, and `highlight-end` to select which lines are highlighted.
+
+    ```js
     function HighlightSomeText(highlight) {
       if (highlight) {
+        // highlight-next-line
         return 'This text is highlighted!';
       }
 
       return 'Nothing highlighted';
     }
+
+    function HighlightMoreText(highlight) {
+      // highlight-start
+      if (highlight) {
+        return 'This range is highlighted!';
+      }
+      // highlight-end
+
+      return 'Nothing highlighted';
+    }
     ```
 
-```jsx {3}
+```js
 function HighlightSomeText(highlight) {
   if (highlight) {
+    // highlight-next-line
     return 'This text is highlighted!';
   }
 
   return 'Nothing highlighted';
 }
+
+function HighlightMoreText(highlight) {
+  // highlight-start
+  if (highlight) {
+    return 'This range is highlighted!';
+  }
+  // highlight-end
+
+  return 'Nothing highlighted';
+}
 ```
 
-:::tip
+Supported commenting syntax:
 
-If you would like to highlight multiple lines, you can use `{3,4,5}` or shorthand: `{3-5}`.
+| Style      | Syntax                   |
+| ---------- | ------------------------ |
+| C-style    | `/* ... */` and `// ...` |
+| JSX-style  | `{/* ... */}`            |
+| Bash-style | `# ...`                  |
+| HTML-style | `<!-- ... -->`           |
 
-:::
+### Highlighting with metadata string
 
-### Code diff
+You can also specify highlighted line ranges within the language meta string (leave a space after the language). To highlight multiple lines, separate the line numbers by commas or use the range syntax to select a chunk of lines. This feature uses the `parse-number-range` library and you can find [more syntax](https://www.npmjs.com/package/parse-numeric-range) on their project details.
+
+````md
+```jsx {1,4-6,11}
+import React from 'react';
+
+function MyComponent(props) {
+  if (props.isBar) {
+    return <div>Bar</div>;
+  }
+
+  return <div>Foo</div>;
+}
+
+export default MyComponent;
+```
+````
+
+```jsx {1,4-6,11}
+import React from 'react';
+
+function MyComponent(props) {
+  if (props.isBar) {
+    return <div>Bar</div>;
+  }
+
+  return <div>Foo</div>;
+}
+
+export default MyComponent;
+```
+
+## Code diff
 
 This will help you to find out which line is added or deleted, using likes following:
 
@@ -88,7 +149,7 @@ module.exports = {
 };
 ```
 
-### Interactive code editor
+## Interactive code editor
 
 This is powered by [React Live](https://github.com/FormidableLabs/react-live). You can create an interactive coding editor with with `live` attached to the language meta string.
 
