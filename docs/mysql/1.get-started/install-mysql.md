@@ -64,7 +64,7 @@ In addition, we recommend [mycli](https://github.com/dbcli/mycli) which is a com
 Install mycli:
 
 ```shell
-$ brew install mycli  # Only on macOS
+brew install mycli  # Only on macOS
 ```
 
 Connect to MySQL:
