@@ -14,6 +14,11 @@ Hide toggle in small viewports
   }
 }
 
+.toggle {
+  transform: scale(0.9);
+  margin-top: 1px;
+}
+
 .navbarHideable {
   transition: transform var(--ifm-transition-fast) ease;
 }

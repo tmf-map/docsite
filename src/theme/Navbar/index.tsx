@@ -3,28 +3,24 @@
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
+ * https://github.com/facebook/docusaurus/blob/main/packages/docusaurus-theme-classic/src/theme/Navbar/index.tsx
  */
 
-import React, {useCallback, useState, useEffect} from 'react';
 import clsx from 'clsx';
-import Translate from '@docusaurus/Translate';
-import SearchBar from '@theme/SearchBar';
-import Toggle from '@theme/Toggle';
+import React, { useCallback, useEffect, useState } from 'react';
+
+import { useActivePlugin } from '@docusaurus/plugin-content-docs/client';
 import {
-  useThemeConfig,
-  useMobileSecondaryMenuRenderer,
-  usePrevious,
-  useHistoryPopHandler,
-  useHideableNavbar,
-  useLockBodyScroll,
-  useWindowSize,
-  useColorMode
+    useColorMode, useHideableNavbar, useHistoryPopHandler, useLockBodyScroll,
+    useMobileSecondaryMenuRenderer, usePrevious, useThemeConfig, useWindowSize
 } from '@docusaurus/theme-common';
-import {useActivePlugin} from '@docusaurus/plugin-content-docs/client';
-import NavbarItem, {Props as NavbarItemConfig} from '@theme/NavbarItem';
-import Logo from '@theme/Logo';
-import IconMenu from '@theme/IconMenu';
+import Translate from '@docusaurus/Translate';
+import ColorModeToggle from '@theme/ColorModeToggle';
 import IconClose from '@theme/IconClose';
+import IconMenu from '@theme/IconMenu';
+import Logo from '@theme/Logo';
+import NavbarItem, { Props as NavbarItemConfig } from '@theme/NavbarItem';
+import SearchBar from '@theme/SearchBar';
 
 import styles from './styles.module.css';
 
@@ -170,7 +166,7 @@ function NavbarMobileSidebar({
           titleClassName="navbar__title"
         />
         {!colorModeToggle.disabled && (
-          <Toggle
+          <ColorModeToggle
             className={styles.navbarSidebarToggle}
             checked={colorModeToggle.isDarkTheme}
             onChange={colorModeToggle.toggle}
@@ -272,7 +268,7 @@ function Navbar(): JSX.Element {
           <NavbarItem {...item} key={i} />
         ))}
         {!colorModeToggle.disabled && (
-          <Toggle
+          <ColorModeToggle
             className={styles.toggle}
             checked={colorModeToggle.isDarkTheme}
             onChange={colorModeToggle.toggle}
