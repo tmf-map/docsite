@@ -1,5 +1,6 @@
 ---
 title: Install MySQL
+sidebar_position: 3
 ---
 
 All downloads for MySQL are located at MySQL [Downloads](https://dev.mysql.com/downloads/mysql/). Pick the version number of **MySQL Community Server** which is required along with the platform you will be running it on.

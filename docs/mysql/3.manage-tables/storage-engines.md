@@ -62,7 +62,7 @@ The FEDERATED storage engine allows you to manage data from a remote MySQL serve
 
 You can use the following checklist to choose the most appropriate storage engine, or table type, based on various criteria.
 
-<Img w="700" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/WVvMWq.png' legend='Figure: MySQL Storage Engines Feature Summary'/>
+<Img w="700" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/WVvMWq.png' legend='Figure: MySQL Storage Engines Feature Summary' origin="https://www.mysqltutorial.org/wp-content/uploads/2018/03/MySQL-Storage-Engines-Feature-Summary.pdf"/>
 
 ## Reference
 
