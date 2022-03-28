@@ -36,7 +36,7 @@ module.exports = {
   projectName: 'docsite', // Usually your repo name.
   plugins: [
     [
-      require.resolve('@thinkbucket/docusaurus-search-local'),
+      require.resolve('@easyops-cn/docusaurus-search-local'),
       {
         hashed: true
       }
