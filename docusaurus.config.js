@@ -38,8 +38,7 @@ module.exports = {
     [
       require.resolve('@thinkbucket/docusaurus-search-local'),
       {
-        hashed: true,
-        language: ['en']
+        hashed: true
       }
     ],
     [
