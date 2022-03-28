@@ -116,6 +116,10 @@ module.exports = {
       },
       items: [
         {
+          type: 'search',
+          position: 'left'
+        },
+        {
           label: 'Basics',
           position: 'right',
           // no `to` means activeBaseRegex gets ignored, so it's a must
