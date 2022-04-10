@@ -182,7 +182,8 @@ table tbody {
 /*  padding: 0 var(--ifm-pre-padding);*/
 /*}*/
 
-.main-wrapper {
+html.docs-wrapper .main-wrapper,
+html.blog-wrapper .main-wrapper {
   display: flex;
 }
 
