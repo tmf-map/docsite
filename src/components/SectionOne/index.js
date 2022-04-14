@@ -34,7 +34,8 @@ const SectionOne = () => {
         Latest version: {version}
       </a>
       <div className={styles.getStartedBtn}>
-        <Button to={`/${themeConfig?.navbar?.items?.[0]?.items?.[0]?.to}`}>
+        <Button
+          to={`/${themeConfig?.navbar?.items?.[1]?.items?.[0]?.to ?? ''}`}>
           Get Started
         </Button>
       </div>
