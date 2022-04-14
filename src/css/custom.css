@@ -182,9 +182,10 @@ table tbody {
 /*  padding: 0 var(--ifm-pre-padding);*/
 /*}*/
 
-/*!*.main-wrapper {*!*/
-/*!*  background-color: var(--my-color-background);*!*/
-/*!*}*!*/
+html.docs-wrapper .main-wrapper,
+html.blog-wrapper .main-wrapper {
+  display: flex;
+}
 
 .table-of-contents__link--active:before {
   position: absolute;

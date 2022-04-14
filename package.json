@@ -44,14 +44,13 @@
     }
   },
   "dependencies": {
-    "@docusaurus/core": "2.0.0-beta.17",
-    "@docusaurus/plugin-pwa": "^2.0.0-beta.17",
-    "@docusaurus/preset-classic": "2.0.0-beta.17",
-    "@docusaurus/theme-live-codeblock": "2.0.0-beta.17",
+    "@docusaurus/core": "2.0.0-beta.18",
+    "@docusaurus/plugin-pwa": "^2.0.0-beta.18",
+    "@docusaurus/preset-classic": "2.0.0-beta.18",
+    "@docusaurus/theme-live-codeblock": "2.0.0-beta.18",
+    "@easyops-cn/docusaurus-search-local": "^0.23.0",
     "@http-util/request": "^0.1.0",
-    "@thinkbucket/docusaurus-search-local": "^0.20.0-1",
     "classnames": "^2.3.1",
-    "nodejieba": "^2.5.2",
     "npm-to-yarn": "^1.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -59,7 +58,7 @@
     "react-toggle": "^4.1.1"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "^2.0.0-beta.17",
+    "@docusaurus/module-type-aliases": "^2.0.0-beta.18",
     "@tsconfig/docusaurus": "^1.0.2",
     "@types/react": "^17.0.1",
     "@types/react-helmet": "^6.1.0",

@@ -36,10 +36,9 @@ module.exports = {
   projectName: 'docsite', // Usually your repo name.
   plugins: [
     [
-      require.resolve('@thinkbucket/docusaurus-search-local'),
+      require.resolve('@easyops-cn/docusaurus-search-local'),
       {
-        hashed: true,
-        language: ['en']
+        hashed: true
       }
     ],
     [
@@ -115,6 +114,10 @@ module.exports = {
           'https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/docsite-logo-white-mode.png'
       },
       items: [
+        {
+          type: 'search',
+          position: 'left'
+        },
         {
           label: 'Basics',
           position: 'right',
@@ -218,7 +221,7 @@ module.exports = {
               label: 'Go'
             },
             {
-              to: 'docs/mysql/1.get-started/intro-to-sql',
+              to: 'docs/mysql/1.get-started/1.1.intro-to-sql',
               activeBasePath: 'docs/mysql/',
               label: 'MySQL'
             }
