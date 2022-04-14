@@ -221,7 +221,7 @@ module.exports = {
               label: 'Go'
             },
             {
-              to: 'docs/mysql/1.get-started/intro-to-sql',
+              to: 'docs/mysql/1.get-started/1.1.intro-to-sql',
               activeBasePath: 'docs/mysql/',
               label: 'MySQL'
             }
