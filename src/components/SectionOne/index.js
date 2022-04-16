@@ -37,7 +37,7 @@ const SectionOne = () => {
             target="blank">
             Version {version}
           </a>
-          <Button to={`/${themeConfig?.navbar?.items?.[0]?.items?.[0]?.to}`}>
+          <Button to={`/${themeConfig?.navbar?.items?.[1]?.items?.[0]?.to ?? ''}`}>
             Get Started
           </Button>
         </div>

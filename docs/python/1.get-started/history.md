@@ -113,11 +113,19 @@ Python 诞生后得到了 Guido 同事的欢迎，他们也都纷纷参与到 Py
 
 <Img w="500" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/ktg1GV.png' alt='ktg1GV'/>
 
-### 2019：Guido 功成身退
+### 2019：Guido 宣布退休
 
-10 月 30 日，Guido 宣布退休，离开了 Dropbox。
+2019 年 10 月 30 日，Guido 宣布退休，离开了 Dropbox。
 
-<Img w="500" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/EuSkkx.png' alt='EuSkkx'/>
+<Img w="500" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/EuSkkx.png' alt='Guido 宣布退休'/>
+
+### 2020：Guido 加入微软
+
+2020 年 11 月 64 岁的 Python 之父 Guido van Rossum 在自己的官方宣布：由于退休生活太无聊，自己决定加入微软的 Developer Division 组。至于要做什么，他表示有太多要做的，将致力于让 Python 变得更好用（不仅仅是在 Windows 上），微软这里有很多开源资源，值得关注 。
+
+<Img w="310" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/kwRT1a.jpg' alt='Guido 加入微软'/>
+
+同在微软 Developer Division 的 Delphi/C#/TypeScript 之父 Anders Hejlsberg 表示欢迎！而 Guido 的加入对微软来说肯定是如虎添翼，后来能在 Excel 中使用 Python，想必也与 Guido 的加入存在一定关联。
 
 ## Python 的优势
 
@@ -199,3 +207,4 @@ Python 语言从群众中来到群众中去，随着奇点临近，AI 到来，P
 1. [互联网圈顶级流量,你不了解的 Python 的前世今生,负门槛科普, by 冬至饮雪](https://www.bilibili.com/video/BV1Z7411s7xc)
 2. [Python Knowledge Handbook, by liyangbit](https://github.com/liyangbit/Python-Knowledge-Handbook)
 3. [Python Developers Survey 2019 Results, by Jetbrains](https://www.jetbrains.com/lp/python-developers-survey-2019/)
+4. [AI 编程语言 Python 之父重入职场加入微软：退休太无聊，澎湃新闻记者 王心馨](https://finance.sina.com.cn/tech/2020-11-13/doc-iiznezxs1672843.shtml)

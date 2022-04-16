@@ -2,7 +2,8 @@
 
 .container {
   position: relative;
-  background: linear-gradient(0deg, #E8EFF5, #E8EFF5), linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, #DBEDFF 100%);
+  background-image: url(https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/homepage-cosmos-bg.svg),
+    linear-gradient(180deg, #1f232e 0, rgba(20, 20, 20) 100%);
   background-repeat: repeat-x;
   background-position: center;
   background-color: #E8EFF5 !important;

@@ -2,9 +2,9 @@
 
 <h1 align="left"><a href="https://thinkbucket.cn">ThinkBucket</a></h1>
 
-A learning website where you can explore full stack technology.
+Small steps get us to faraway places.
 
-[![Netlify Status][netlify-image]][netlify-url] [![Dependencies][dependencies-image]][dependencies-url]
+[![Netlify Status][netlify-image]][netlify-url]
 
 ## Table of Contents
 

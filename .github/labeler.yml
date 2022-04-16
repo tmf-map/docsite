@@ -1,4 +1,4 @@
-"dev experience":
+'dev experience':
   - .github/**/*
   - .editorconfig
   - .eslintignore
@@ -15,18 +15,18 @@ website:
   - docusaurus.config.js
 blog: blog/**/*
 wiki: docs/wiki/**/*
-"docs: algorithm": docs/algorithm/**/*
-"docs: css": docs/css/**/*
-"docs: design patterns": docs/design-patterns/**/*
-"docs: html": docs/html/**/*
-"docs: javascript": docs/javascript/**/*
-"docs: react": docs/react/**/*
-"docs: web": docs/web/**/*
-"docs: java": docs/java/**/*
-"docs: http": docs/http/**/*
-"docs: typescript": docs/typescript/**/*
-"docs: webpack": docs/webpack/**/*
-"docs: nodejs": docs/nodejs/**/*
-"docs: fe guidelines": docs/fe-guidelines/**/*
-"docs: python": docs/python/**/*
-"docs: go": docs/go/**/*
+'docs: algorithm': docs/algorithm/**/*
+'docs: css': docs/css/**/*
+'docs: design patterns': docs/design-patterns/**/*
+'docs: html': docs/html/**/*
+'docs: javascript': docs/javascript/**/*
+'docs: react': docs/react/**/*
+'docs: web': docs/web/**/*
+'docs: http': docs/http/**/*
+'docs: typescript': docs/typescript/**/*
+'docs: webpack': docs/webpack/**/*
+'docs: nodejs': docs/nodejs/**/*
+'docs: fe guidelines': docs/fe-guidelines/**/*
+'docs: python': docs/python/**/*
+'docs: go': docs/go/**/*
+'docs: mysql': docs/mysql/**/*
