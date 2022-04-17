@@ -8,7 +8,7 @@ const SectionOne = () => {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
   const {tagline, organizationName, projectName, themeConfig} = siteConfig;
-  const [version, setVersion] = useState('');
+  const [version, setVersion] = useState('-');
   useEffect(() => {
     request
       .p(
@@ -37,17 +37,11 @@ const SectionOne = () => {
             target="blank">
             Version {version}
           </a>
-          <Button to={`/${themeConfig?.navbar?.items?.[1]?.items?.[0]?.to ?? ''}`}>
+          <Button
+            to={`/${themeConfig?.navbar?.items?.[1]?.items?.[0]?.to ?? ''}`}>
             Get Started
           </Button>
         </div>
-      </div>
-      <div className={styles.imgPart}>
-        <img className={styles.ellipseLarge} src="/img/ellipse-large.svg" />
-        <img className={styles.ellipseSmall} src="/img/ellipse-small.svg" />
-        <img className={styles.triangle} src="/img/triangle.svg" />
-        <img className={styles.rectangle} src="/img/rectangle.svg" />
-        <img className={styles.pattern} src="/img/pattern.svg" />
       </div>
     </div>
   );

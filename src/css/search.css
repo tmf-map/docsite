@@ -3,9 +3,16 @@
   right: auto !important;
 }
 
-html[data-theme='dark'] .navbar__search > div > kbd {
+html[data-theme='dark'] .navbar__search > div > kbd,
+html.plugin-pages .navbar__search > div > kbd {
   border: 1px solid #666;
   box-shadow: inset 0 -1px 0 #666;
+}
+
+html.plugin-pages[data-theme='light'] .navbar__search {
+  --ifm-navbar-search-input-background-color: var(--ifm-color-emphasis-800) !important;
+  --ifm-navbar-search-input-color: var(--ifm-color-emphasis-200) !important;
+  --ifm-navbar-background-color: #242526;
 }
 
 .navbar__search-input {

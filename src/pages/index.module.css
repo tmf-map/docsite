@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Muli:400,600&display=swap');
+/* @import url('https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Muli:400,600&display=swap'); */
 
 @media (max-width: 996px) {
   .center-if-sm {
@@ -10,11 +10,11 @@
 :root {
   --black: #000;
   --bright-cyan-50: rgba(63, 196, 254, 0.2);
-  --bright-cyan: #506B77;
+  --bright-cyan: #506b77;
   --dark-blue-grey: #211b50;
   --dark-slate-blue: #2d2665;
   --dodger-blue-10: rgba(63, 187, 254, 0.1);
-  --dodger-blue: #69BFF6;
+  --dodger-blue: #69bff6;
   --dusk-blue: #333;
   --greenblue-10: rgba(31, 216, 152, 0.1);
   --greenblue: #1fd898;
@@ -45,11 +45,11 @@
   --uni-testimonial-text-color: var(--ifm-font-color-base);
 }
 
-html[data-theme="dark"] .section-bgwhite-block-right {
+html[data-theme='dark'] .section-bgwhite-block-right {
   background: var(--my-board--background);
 }
 
-html[data-theme="dark"] .section-bgwhite-block-left {
+html[data-theme='dark'] .section-bgwhite-block-left {
   background: var(--my-board--background);
 }
 
@@ -106,7 +106,7 @@ html[data-theme="dark"] .section-bgwhite-block-left {
 .landing ul {
   padding: 0;
   opacity: 0.7;
-  font-family: Muli;
+  /* font-family: Muli; */
   font-size: 1em;
   font-weight: 600;
   line-height: 1.33;
@@ -131,7 +131,8 @@ html[data-theme="dark"] .section-bgwhite-block-left {
 
 .landing :global .hero.hero--primary {
   --ifm-hero-background-color: var(--dark-blue-grey);
-  background-image: url(https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/homepage-cosmos-bg.svg),linear-gradient(135deg, #08003c 0%, #062875 100%);
+  background-image: url(https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/homepage-cosmos-bg.svg),
+    linear-gradient(135deg, #08003c 0%, #062875 100%);
   background-repeat: repeat-x;
   background-position: center;
   padding-top: 7.2rem;
@@ -578,7 +579,7 @@ html[data-theme="dark"] .section-bgwhite-block-left {
 }
 
 .text {
-  font-family: Poppins, sans-serif;
+  /* font-family: Poppins, sans-serif; */
   font-stretch: normal;
   font-style: normal;
   letter-spacing: normal;
@@ -599,7 +600,7 @@ html[data-theme="dark"] .section-bgwhite-block-left {
 
 .text.heading-helper {
   color: var(--uni-heading-helper-color);
-  font-family: Muli;
+  /* font-family: Muli; */
   font-size: 1em;
   font-weight: 600;
   letter-spacing: 1px;
@@ -608,7 +609,7 @@ html[data-theme="dark"] .section-bgwhite-block-left {
 
 .heading {
   color: var(--uni-heading-color);
-  font-family: Poppins;
+  /* font-family: Poppins; */
   font-size: 2em;
   font-weight: bold;
   line-height: 1.31;
@@ -621,7 +622,7 @@ html[data-theme="dark"] .section-bgwhite-block-left {
 
 .text.emphasis {
   color: var(--dodger-blue);
-  font-family: Poppins;
+  /* font-family: Poppins; */
   font-size: 24px;
   font-weight: 600;
   line-height: 1.42;
@@ -630,7 +631,7 @@ html[data-theme="dark"] .section-bgwhite-block-left {
 .text.paragraph {
   overflow: hidden;
   color: var(--white);
-  font-family: Muli;
+  /* font-family: Muli; */
   font-size: 1em;
   line-height: 1.75;
   margin-bottom: 0.8em;
@@ -648,14 +649,14 @@ html[data-theme="dark"] .section-bgwhite-block-left {
 
 .text.footer-heading {
   color: var(--dodger-blue);
-  font-family: Muli;
+  /* font-family: Muli; */
   font-size: 18px;
   font-weight: 600;
 }
 
 .supported {
   color: var(--white);
-  font-family: Muli;
+  /* font-family: Muli; */
   font-size: 0.85em;
   font-weight: 600;
   line-height: 2;
@@ -689,7 +690,7 @@ html[data-theme="dark"] .section-bgwhite-block-left {
 
 .text.testimonial-description {
   color: var(--uni-testimonial-text-color);
-  font-family: Muli;
+  /* font-family: Muli; */
   font-size: 1em;
   line-height: 1.75;
   opacity: 0.8;
