@@ -1,7 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 
-import Heading from './Heading';
+import Heading from '../components/Heading';
 import styles from '../pages/index.module.css';
 
 export default function Gitter() {

@@ -11,13 +11,12 @@ import cx from 'classnames';
 import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
-import WIP from '../components/WIP';
-import Gitter from '../components/Gitter';
+import WIP from './WIP';
+import Gitter from './Gitter';
 import SectionOne from './SectionOne';
 import SectionTwo from './SectionTwo';
-import Overview from '../components/Overview';
-import ClientSide from '../components/ClientSide';
-import ServerSide from '../components/ServerSide';
+import SectionIntro from './SectionIntro';
+import ServerSide from './ServerSide';
 
 import styles from './index.module.css';
 
@@ -34,16 +33,14 @@ export default function HomePage() {
         <SectionOne />
         <SectionTwo />
         <div className="main">
-          {/* <div className="container">
-            <Overview />
-          </div> */}
-          <ClientSide />
+          <SectionIntro title="Part I. Basics" />
           <WIP />
-          <ServerSide />
+          <ServerSide title="Part II. Frontend" />
           <WIP />
-          <ClientSide />
+          <SectionIntro title="Part III. Backend" />
           <WIP />
-          <ServerSide />
+          <ServerSide title="Part IV. Data" />
+          <WIP />
           <Gitter />
         </div>
       </div>

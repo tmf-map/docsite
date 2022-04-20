@@ -2,11 +2,11 @@ import React from 'react';
 import classNames from 'classnames';
 // import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
-import Oval from './Oval';
-import Heading from './Heading';
+import Oval from '../components/Oval';
+import Heading from '../components/Heading';
 import styles from '../pages/index.module.css';
 
-export default function ServerSide() {
+export default function ServerSide({title}) {
   // const context = useDocusaurusContext();
   // const {  } = context.siteConfig.customFields;
 
@@ -76,7 +76,7 @@ export default function ServerSide() {
               className={classNames('col col--5', styles['section-content'])}>
               {/* <Subtitle>Why choose us</Subtitle> */}
               <Heading className={styles['heading-white']}>
-                Server Technology
+                {title}
                 {/* <br />
                 to implement solution */}
               </Heading>

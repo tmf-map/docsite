@@ -1,11 +1,11 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import Heading from './Heading';
-import Oval from './Oval';
+import Heading from '../components/Heading';
+import Oval from '../components/Oval';
 import styles from '../pages/index.module.css';
 
-export default function ClientSide() {
+const SectionIntro = ({title}) => {
   return (
     <div
       className={classNames(
@@ -19,9 +19,7 @@ export default function ClientSide() {
             <div
               className={classNames('col col--5', styles['section-content'])}>
               {/* <Subtitle>Why choose us</Subtitle> */}
-              <Heading className={styles['heading-white']}>
-                Client Technology
-              </Heading>
+              <Heading className={styles['heading-white']}>{title}</Heading>
               <p className={classNames(styles.text, styles.paragraph)}>
                 <cite>
                   &quot;Any application that can be written in JavaScript, will
@@ -100,4 +98,6 @@ export default function ClientSide() {
       </div>
     </div>
   );
-}
+};
+
+export default SectionIntro;

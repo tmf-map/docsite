@@ -9,23 +9,23 @@ const SectionOne = () => {
   const {siteConfig = {}} = context;
   const {tagline, organizationName, projectName, themeConfig} = siteConfig;
   const [version, setVersion] = useState('-');
-  useEffect(() => {
-    request
-      .p(
-        `https://api.github.com/repos/${organizationName}/${projectName}/releases`
-      )
-      .q('per_page', 1)
-      .get()
-      .then(res => {
-        const tagName = res?.[0]?.tag_name;
-        const d = new Date();
-        setVersion(tagName ?? `${d.getFullYear()}.${d.getMonth()}`);
-      })
-      .catch(() => {
-        const d = new Date();
-        setVersion(`${d.getFullYear()}.${d.getMonth()}`);
-      });
-  }, []);
+  // useEffect(() => {
+  //   request
+  //     .p(
+  //       `https://api.github.com/repos/${organizationName}/${projectName}/releases`
+  //     )
+  //     .q('per_page', 1)
+  //     .get()
+  //     .then(res => {
+  //       const tagName = res?.[0]?.tag_name;
+  //       const d = new Date();
+  //       setVersion(tagName ?? `${d.getFullYear()}.${d.getMonth()}`);
+  //     })
+  //     .catch(() => {
+  //       const d = new Date();
+  //       setVersion(`${d.getFullYear()}.${d.getMonth()}`);
+  //     });
+  // }, []);
   return (
     <div className={styles.container}>
       <div className={styles.textPart}>

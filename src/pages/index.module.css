@@ -35,6 +35,8 @@
   --uni-testimonial-text-color: var(--greyish-brown);
 
   --ifm-button-color: var(--white);
+  --homepage-opacity: .4;
+  --homepage-section-bg: #dcdce6;
 }
 
 :root[data-theme='dark'] {
@@ -55,6 +57,7 @@ html[data-theme='dark'] .section-bgwhite-block-left {
 
 .padding {
   padding-top: 2em;
+  /* padding-bottom: 2em; */
 }
 
 .landing {
@@ -132,7 +135,7 @@ html[data-theme='dark'] .section-bgwhite-block-left {
 .landing :global .hero.hero--primary {
   --ifm-hero-background-color: var(--dark-blue-grey);
   background-image: url(https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/homepage-cosmos-bg.svg),
-    linear-gradient(135deg, #08003c 0%, #062875 100%);
+    linear-gradient(135deg, #273351 0, rgba(20, 20, 20) 100%);
   background-repeat: repeat-x;
   background-position: center;
   padding-top: 7.2rem;
@@ -443,13 +446,17 @@ html[data-theme='dark'] .section-bgwhite-block-left {
 }
 
 .section-bgwhite-block-left {
-  background: var(--white);
+  background: var(--homepage-section-bg);
   margin-left: -100%;
+  opacity: var(--homepage-opacity);
+  border-top-right-radius: 1rem;
 }
 
 .section-bgwhite-block-right {
-  background: var(--white);
+  background: var(--homepage-section-bg);
   margin-right: -100%;
+  opacity: var(--homepage-opacity);
+  border-top-left-radius: 1rem;
 }
 
 @media (min-width: 997px) {
@@ -498,12 +505,13 @@ html[data-theme='dark'] .section-bgwhite-block-left {
   height: 64px;
   padding: 20px;
   border-radius: 50%;
-  box-shadow: 0 8px 23px 0 var(--uni-oval-shadow-color);
+  /* box-shadow: 0 8px 23px 0 var(--uni-oval-shadow-color); */
   background-color: var(--uni-oval-background-color);
+  opacity: var(--homepage-opacity);
 }
 
 .oval.white {
-  background-color: var(--white);
+  background-color: var(--homepage-section-bg);
   width: 5rem;
   height: 5rem;
 }
