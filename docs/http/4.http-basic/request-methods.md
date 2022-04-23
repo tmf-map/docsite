@@ -1,6 +1,6 @@
 ---
-title: HTTP Method
-sidebar_label: HTTP Method
+title: Request Methods
+sidebar_label: Request Methods
 ---
 
 上一节本文介绍了 HTTP 的报文结构，它是由 `header+body` 构成，请求头里有`请求方法`和`请求目标`，响应头里有`状态码`和`原因短语`，本节的主要内容就是`请求头里的请求方法`。
@@ -52,9 +52,13 @@ PUT 的作用与 POST 类似，也可以向服务器提交数据，但与 POST �
 
 DELETE 方法**指示服务器删除资源**，因为这个动作危险性太大，所以通常服务器不会执行真正的删除操作，而是对资源做一个删除标记。当然，更多的时候服务器就直接不处理 DELETE 请求。
 
-:::tip
+> A payload within a DELETE request message has no defined semantics;
+   sending a payload body on a DELETE request might cause some existing
+   implementations to reject the request. -- [RFCs (7230-7237) IETF](https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-p2-semantics-22#section-4.3.5)
 
-Do not pass any data in body when using DELETE method.
+:::good
+
+Do not send a payload body on a DELETE request.
 
 :::
 
