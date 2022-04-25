@@ -51,6 +51,14 @@ footer.footer {
   height: 1.8rem;
 }
 
+.footer-mobile-qr-code {
+  /* width: 5rem; */
+  width: 4.6rem;
+  height: 4.6rem;
+  border-radius: 1px;
+  margin-top: 0.5rem;
+}
+
 .footer-logo {
   width: 2rem;
 }
