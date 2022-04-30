@@ -227,6 +227,20 @@ module.exports = {
             }
           ]
         },
+        {
+          label: 'Data & AI',
+          position: 'right',
+          // no `to` means activeBaseRegex gets ignored, so it's a must
+          to: 'docs/svg/1.get-started',
+          activeBaseRegex: 'docs/(svg|canvas|neo4j)/',
+          items: [
+            {
+              to: 'docs/svg/1.get-started',
+              activeBasePath: 'docs/svg/',
+              label: 'SVG'
+            }
+          ]
+        },
         {to: 'blog', label: 'Blog', position: 'right'},
         {
           label: 'Wiki',
