@@ -24,11 +24,12 @@ categories:
       - 'docs: fe guidelines'
   - title: 'Backend'
     labels:
-      - 'docs: java'
-      - 'docs: go'
-  - title: 'AI'
-    labels:
       - 'docs: python'
+      - 'docs: go'
+      - 'docs: mysql'
+  - title: 'Data & AI'
+    labels:
+      - 'docs: svg'
   - title: 'Blog'
     labels:
       - 'blog'

@@ -30,3 +30,4 @@ wiki: docs/wiki/**/*
 'docs: python': docs/python/**/*
 'docs: go': docs/go/**/*
 'docs: mysql': docs/mysql/**/*
+'docs: svg': docs/svg/**/*
