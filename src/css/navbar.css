@@ -35,10 +35,16 @@ html.plugin-pages[data-theme='light'] .navbar__items--right > :last-child {
 }
 
 /* Sidebar Nav */
-.navbar
+html.plugin-docs
+  .navbar
   + .main-wrapper
   > div
-  > div:not(.row):not(.main):not(main):not(.hero--primary) {
+  > div:not(.row):not(.main):not(main),
+html.plugin-blog
+  .navbar
+  + .main-wrapper
+  > div
+  > div:not(.row):not(.main):not(main) {
   flex-shrink: 0;
   background-color: var(--my-color-background);
   /* (1 - x) * 100 * 3 / 12 = 100x => x = 20 */

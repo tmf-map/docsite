@@ -12,7 +12,7 @@ export default function ServerSide({title}) {
 
   return (
     <div
-      className={classNames('hero hero--primary', styles['overflow-hidden'])}>
+      className={classNames('hero homepage__section', styles['overflow-hidden'])}>
       <div className="container">
         <div className="section">
           <div className="row">

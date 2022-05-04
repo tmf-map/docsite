@@ -11,7 +11,7 @@ const Card = ({bannerUrl, title, intro, moreUrl}) => {
       <div className={styles.cardTitle}>{title}</div>
       <p className={styles.cardIntro}>{intro}</p>
       <div className={styles.cardReadMore}>
-        <span>Read More</span>
+        <a href={moreUrl}>Read More</a>
       </div>
     </div>
   );
@@ -23,28 +23,28 @@ const cards = [
     title: 'Basics',
     intro:
       "The core language of frontend is JS. From here, you can learn not only JS/CSS/HTML, but also React, NodeJS, Webpack as well. In the following lessons, you'll get a healthy understanding of each of front-end.",
-    moreUrl: '/'
+    moreUrl: '#basics'
   },
   {
     bannerUrl: 'https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/cardBanner2.svg',
     title: 'Frontend',
     intro:
       "The core language of frontend is JS. From here, you can learn not only JS/CSS/HTML, but also React, NodeJS, Webpack as well. In the following lessons, you'll get a healthy understanding of each of front-end.",
-    moreUrl: '/'
+    moreUrl: '#frontend'
   },
   {
     bannerUrl: 'https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/cardBanner3.svg',
     title: 'Backend',
     intro:
       "The core language of frontend is JS. From here, you can learn not only JS/CSS/HTML, but also React, NodeJS, Webpack as well. In the following lessons, you'll get a healthy understanding of each of front-end.",
-    moreUrl: '/'
+    moreUrl: '#backend'
   },
   {
     bannerUrl: 'https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/cardBanner4.svg',
-    title: 'Data',
+    title: 'Data & AI',
     intro:
       "The core language of frontend is JS. From here, you can learn not only JS/CSS/HTML, but also React, NodeJS, Webpack as well. In the following lessons, you'll get a healthy understanding of each of front-end.",
-    moreUrl: '/'
+    moreUrl: '#data-ai'
   }
 ];
 

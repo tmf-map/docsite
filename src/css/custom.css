@@ -13,7 +13,7 @@
 @import './search.css';
 
 /* homepage banner */
-/* .hero.hero--primary {
+/* .hero.homepage__section {
   color: rgba(255,255,255,0.65);
   background-image: url(https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/homepage-cosmos-bg.svg),linear-gradient(135deg, #08003c 0%, #062875 100%);
   background-repeat: repeat-x;

@@ -1,5 +1,5 @@
 import React from 'react';
-import classNames from 'classnames';
+import cx from 'classnames';
 
 import Heading from '../components/Heading';
 import Oval from '../components/Oval';
@@ -8,46 +8,46 @@ import styles from '../pages/index.module.css';
 const SectionIntro = ({title}) => {
   return (
     <div
-      className={classNames(
-        'hero hero--primary',
+      className={cx(
+        'homepage__section',
         styles['overflow-hidden'],
-        styles.whyus
+        // styles.whyus
       )}>
       <div className="container">
         <div className="section">
           <div className="row">
             <div
-              className={classNames('col col--5', styles['section-content'])}>
+              className={cx('col col--5', styles['section-content'])}>
               {/* <Subtitle>Why choose us</Subtitle> */}
               <Heading className={styles['heading-white']}>{title}</Heading>
-              <p className={classNames(styles.text, styles.paragraph)}>
+              <p className={cx(styles.text, styles.paragraph)}>
                 <cite>
                   &quot;Any application that can be written in JavaScript, will
                   eventually be written in JavaScript.&quot; - Atwood
                 </cite>
                 {/* <cite style={{float: 'right'}}>- Jeff Atwood</cite> */}
               </p>
-              <h2 className={classNames(styles.text, styles.emphasis)}>
+              <h2 className={cx(styles.text, styles.emphasis)}>
                 Write in one language, run in more clients.
               </h2>
-              <p className={classNames(styles.text, styles.paragraph)}>
+              <p className={cx(styles.text, styles.paragraph)}>
                 As the web and JS develop rapidly, there are many frameworks
                 available to build client applications for different ends.
               </p>
             </div>
             <div
-              className={classNames(
+              className={cx(
                 'col',
                 styles['section-content'],
                 styles['section-bgwhite']
               )}>
               <span
-                className={classNames(
+                className={cx(
                   styles['section-bgwhite-block'],
                   styles['section-bgwhite-block-right']
                 )}
               />
-              <div className={classNames('row', styles.padding)}>
+              <div className={cx('row', styles.padding)}>
                 <div className="col">
                   <Oval className={styles.white}>
                     <img
