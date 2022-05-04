@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import request from '@http-util/request';
-import {getAllCommitsCount} from '../../pages/utils';
+import {getAllCommitsCount} from '../utils';
+import cards from './cards';
 import styles from './index.module.css';
 
 const Card = ({bannerUrl, title, intro, moreUrl}) => {
@@ -17,38 +18,7 @@ const Card = ({bannerUrl, title, intro, moreUrl}) => {
   );
 };
 
-const cards = [
-  {
-    bannerUrl: 'https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/cardBanner1.svg',
-    title: 'Basics',
-    intro:
-      "The core language of frontend is JS. From here, you can learn not only JS/CSS/HTML, but also React, NodeJS, Webpack as well. In the following lessons, you'll get a healthy understanding of each of front-end.",
-    moreUrl: '#basics'
-  },
-  {
-    bannerUrl: 'https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/cardBanner2.svg',
-    title: 'Frontend',
-    intro:
-      "The core language of frontend is JS. From here, you can learn not only JS/CSS/HTML, but also React, NodeJS, Webpack as well. In the following lessons, you'll get a healthy understanding of each of front-end.",
-    moreUrl: '#frontend'
-  },
-  {
-    bannerUrl: 'https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/cardBanner3.svg',
-    title: 'Backend',
-    intro:
-      "The core language of frontend is JS. From here, you can learn not only JS/CSS/HTML, but also React, NodeJS, Webpack as well. In the following lessons, you'll get a healthy understanding of each of front-end.",
-    moreUrl: '#backend'
-  },
-  {
-    bannerUrl: 'https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/cardBanner4.svg',
-    title: 'Data & AI',
-    intro:
-      "The core language of frontend is JS. From here, you can learn not only JS/CSS/HTML, but also React, NodeJS, Webpack as well. In the following lessons, you'll get a healthy understanding of each of front-end.",
-    moreUrl: '#data-ai'
-  }
-];
-
-const SectionTwo = () => {
+const Section2 = () => {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
   const {organizationName, projectName} = siteConfig;
@@ -126,4 +96,4 @@ const SectionTwo = () => {
   );
 };
 
-export default SectionTwo;
+export default Section2;

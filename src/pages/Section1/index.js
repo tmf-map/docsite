@@ -4,7 +4,7 @@ import request from '@http-util/request';
 import Button from '../Button';
 import styles from './index.module.css';
 
-const SectionOne = () => {
+const Section1 = () => {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
   const {tagline, organizationName, projectName, themeConfig} = siteConfig;
@@ -47,4 +47,4 @@ const SectionOne = () => {
   );
 };
 
-export default SectionOne;
+export default Section1;

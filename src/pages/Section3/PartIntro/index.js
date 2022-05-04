@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import Heading from '../../components/Heading';
-import Oval from '../../components/Oval';
+import Heading from '../../../components/Heading';
+import Oval from '../../../components/Oval';
 import styles from './index.module.css';
 import cx from 'classnames';
 
@@ -27,14 +27,14 @@ const PartIntro = ({title, titlePosition = 'left', content, id}) => {
       </div>
       <div className={styles.categoryIntro}>
         {content.map(tech => (
-          <div className={styles.techColumn}>
+          <div className={styles.techColumn} key={tech.title}>
             <Oval className={cx(styles.oval, styles.white)}>
               <img src={tech.icon} className={styles.image} />
             </Oval>
             <h2 className={styles.sectionHeading}>{tech.title}</h2>
             <ul>
               {tech.list.map(v => (
-                <li className={cx(styles.contentItem, {[styles.contentItemCreated]: v.created})}>
+                <li className={cx(styles.contentItem, {[styles.contentItemCreated]: v.created})} key={v.name}>
                   {v.name}
                 </li>
               ))}
