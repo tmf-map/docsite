@@ -10,10 +10,10 @@ import React from 'react';
 import cx from 'classnames';
 import Layout from '@theme/Layout';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Gitter from './Gitter';
 import Section1 from './Section1';
 import Section2 from './Section2';
 import Section3 from './Section3';
+import Section4 from './Section4';
 
 import styles from './index.module.css';
 
@@ -30,7 +30,7 @@ export default function HomePage() {
         <Section1 />
         <Section2 />
         <Section3 />
-        <Gitter />
+        <Section4 />
       </div>
     </Layout>
   );
