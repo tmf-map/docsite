@@ -258,7 +258,7 @@ module.exports = {
               html: `<img class="footer-logo" loading="lazy" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/docsite-logo-dark-mode.png" /><span>${githubOrg}</span>`
             },
             {
-              html: '<p class="footer-desc">Small steps get us to faraway places. Here gathers developers\' thinking, summary and imagination on the future development of technology.</p>'
+              html: '<p class="footer-desc">Small steps get us to faraway places. Keep exploring and stay up-to-date. Here gathers developers\' thinking, summary and imagination on the future development of technology.</p>'
             }
           ]
         },

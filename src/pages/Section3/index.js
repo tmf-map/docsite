@@ -12,6 +12,7 @@ const Section3 = () => {
             title={category.title.name}
             titlePosition={category.title.position}
             content={category.content}
+            intro={category.intro}
             id={category.id}
             key={category.id}
           />

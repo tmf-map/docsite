@@ -41,6 +41,7 @@
   --ifm-button-color: var(--white);
   --homepage-opacity: .8;
   --homepage-section-bg: #fff;
+  --homepage-max-width: 78rem;
 }
 
 :root[data-theme='dark'] {

@@ -1,9 +1,9 @@
 .container {
-  width: 100%;
-  /* border: 1px solid #f00; */
+  max-width: 90rem;
   overflow: hidden;
   display: flex;
-  padding: 5rem 6rem;
+  padding: 5rem 0;
+  margin: 0 auto;
 }
 
 .titleFrom--left {
@@ -20,7 +20,6 @@
 }
 
 .textIntro {
-  /* border: 1px solid blue; */
   width: 40%;
 }
 
@@ -41,10 +40,49 @@
   color: var(--white);
   /* font-family: Poppins; */
   font-size: 2rem;
-  font-weight: bold;
+  font-weight: 800;
   line-height: 1.2;
   margin-bottom: 3rem;
 }
+
+.decorationLine {
+  margin: 2rem 2px 1rem 2px;
+  width: 50px;
+  height: 3px;
+  background: rgba(255,255,255,0.75);
+}
+
+/* .textBg1, .textBg2, .textBg3, .textBg4 {
+    background-image: url(https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/qywmbQ.jpg);
+    background-repeat: no-repeat;
+    background-clip: text;
+    background-position: left;
+    -webkit-text-fill-color: transparent;
+} */
+
+/* .textBg2 {
+    background-image: url(https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/Bd7DNd.jpg);
+    background-repeat: no-repeat;
+    background-clip: text;
+    background-position: left;
+    -webkit-text-fill-color: transparent;
+}
+
+.textBg3 {
+    background-image: url(https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/PdHRmE.jpg);
+    background-repeat: no-repeat;
+    background-clip: text;
+    background-position: left;
+    -webkit-text-fill-color: transparent;
+}
+
+.textBg4 {
+    background-image: url(https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/e01J0w.jpg);
+    background-repeat: no-repeat;
+    background-clip: text;
+    background-position: left;
+    -webkit-text-fill-color: transparent;
+} */
 
 /* =============================================== */
 
