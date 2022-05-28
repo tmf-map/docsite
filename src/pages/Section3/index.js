@@ -1,6 +1,6 @@
 import React from 'react';
 import PartIntro from './PartIntro';
-import categories from './categories';
+import categories from '../categories';
 import styles from './index.module.css';
 
 const Section3 = () => {

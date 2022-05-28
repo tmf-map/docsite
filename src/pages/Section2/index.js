@@ -2,19 +2,28 @@ import React, {useEffect, useState} from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import request from '@http-util/request';
 import {getAllCommitsCount} from '../utils';
-import cards from './cards';
+import categories from '../categories';
 import styles from './index.module.css';
+
+const cards = categories.map((item, idx) => ({
+  bannerUrl: `https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/cardBanner${
+    idx + 1
+  }.svg`,
+  title: item.title.name,
+  intro: item.intro.post,
+  moreUrl: `#${item.id}`
+}));
 
 const Card = ({bannerUrl, title, intro, moreUrl}) => {
   return (
-    <div className={styles.card}>
+    <a className={styles.card} href={moreUrl}>
       <img src={bannerUrl} alt={title} className={styles.cardBanner} />
       <div className={styles.cardTitle}>{title}</div>
       <p className={styles.cardIntro}>{intro}</p>
-      <div className={styles.cardReadMore}>
+      {/* <div className={styles.cardReadMore}>
         <a href={moreUrl}>Read More</a>
-      </div>
-    </div>
+      </div> */}
+    </a>
   );
 };
 

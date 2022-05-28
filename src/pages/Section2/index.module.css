@@ -27,7 +27,6 @@
 .statsBlock {
   padding-left: 50px;
   padding-right: 50px;
-  /* border: 2px solid #ff0; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -71,7 +70,6 @@
 }
 
 .content {
-  /* border: 1px solid #000; */
   display: flex;
   max-width: var(--homepage-max-width);
   justify-content: space-between;
@@ -81,12 +79,17 @@
 .card {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   width: 17rem;
   height: 24rem;
   border-radius: 0.75rem;
   overflow: hidden;
   box-shadow: 0px 0px 1.5rem rgba(0, 0, 0, 0.172837);
+  cursor: pointer;
+}
+
+.card:hover {
+  box-shadow: 0px 0px 1rem rgba(0, 122, 255, 0.5);
+  text-decoration: none;
 }
 
 .cardBanner {
@@ -101,8 +104,8 @@
 }
 
 .cardIntro {
-  font-size: 0.75rem;
-  line-height: 1.1rem;
+  font-size: 0.78rem;
+  line-height: 1.24rem;
   color: #a3a3a3;
   text-align: start;
   padding-left: 1.25rem;
@@ -110,7 +113,7 @@
   word-break: break-all;
   display: -webkit-box;
   -webkit-box-orient: vertical;
-  -webkit-line-clamp: 5;
+  -webkit-line-clamp: 6;
   overflow: hidden;
 }
 
