@@ -9,6 +9,7 @@
 import React from 'react';
 import cx from 'classnames';
 import Layout from '@theme/Layout';
+import BackToTopButton from '@theme/BackToTopButton';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Section1 from './Section1';
 import Section2 from './Section2';
@@ -32,6 +33,7 @@ export default function HomePage() {
         <Section3 />
         <Section4 />
       </div>
+      <BackToTopButton />
     </Layout>
   );
 }
