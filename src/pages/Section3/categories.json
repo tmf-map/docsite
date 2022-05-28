@@ -8,7 +8,7 @@
     "intro": {
       "pre": "Learning web technologies is like building a house. Laying a strong foundation is the first and most important step.",
       "emphasis": "Rome wasn't built in a day.",
-      "post": "Like building a house, learning web technologies takes some time. The road to true success is never smooth and easy. During this journey, sometimes you may think that some theories are too low-level, but please remember that these low-level things often determine how far away to your technological journey."
+      "post": "Like building a house, learning the basics takes some time. The road to true success is never smooth and easy. When starting this journey, it's necessary not only to understand some underlying theories, but also to be proficient in development tools. Those will be very helpful for the further development."
     },
     "content": [
       {
@@ -84,9 +84,9 @@
       "position": "right"
     },
     "intro": {
-      "pre": "The part of a website that the user interacts with directly is termed the frontend. It is also referred to as the ‘client side’ of the application.",
-      "emphasis": "Write in one language, run in more clients.",
-      "post": "It includes everything that users experience directly. JavaScript, HTML and CSS are the languages used for Front End development. The structure, design, behavior, and content of everything seen on browser screens when websites, web applications, or mobile apps are opened up, is implemented by frontend developers."
+      "pre": "Frontend is the client side of the website that the user interacts with directly. It is also referred to as the \"presentation layer\".",
+      "emphasis": "What you see is what you get.",
+      "post": "It includes everything that users experience directly. JavaScript, HTML and CSS are the languages used for frontend development. The structure, design, behavior, and content of everything seen on browser screens when websites, web applications, or mobile apps are opened up, is implemented by frontend developers."
     },
     "content": [
       {
@@ -170,9 +170,9 @@
       "position": "left"
     },
     "intro": {
-      "pre": "Backend is the server-side of the website. It stores and arranges data, and also makes sure everything on the client-side of the website works fine.",
-      "emphasis": "Write in one language, run in more clients.",
-      "post": "It is the part of the website that you cannot see and interact with. It is the portion of software that does not come in direct contact with the users. Activities, like writing APIs, creating libraries, and working with system components without user interfaces."
+      "pre": "Backend is the server side of the website. It stores and arranges data, and it's also referred to as the \"data access layer\".",
+      "emphasis": "Powers client side from behind the scenes.",
+      "post": "It is the part of the website that you cannot see and interact with. It includes all the code needed to build out the database, server, and application. From database migrations to API integrations to setting up the server side technologies that make a website tick."
     },
     "content": [
       {
@@ -253,7 +253,7 @@
     },
     "intro": {
       "pre": "An average Fortune 500 company makes 400 million decisions per day. These decisions are made in a rapidly changing and complex global environment.",
-      "emphasis": "Data is the New Oil, the world's most valuable resource.",
+      "emphasis": "Data is the new oil, the world's most valuable resource.",
       "post": "Data & AI enables a range of unforeseen opportunities to amplify, automate and optimize decisions. Forerunners can already do customer obsession at scale, reinvent R&D, optimize entire value chains and upskill how the organization does design and strategy."
     },
     "content": [
