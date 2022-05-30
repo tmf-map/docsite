@@ -17,18 +17,13 @@ const cards = categories.map((item, idx) => ({
 const Card = ({bannerUrl, title, intro, moreUrl}) => {
   useEffect(() => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click',  e => {
+      anchor.addEventListener('click',  (e) => {
         e.preventDefault();
         document.querySelector(this.getAttribute('href')).scrollIntoView({
           behavior: 'smooth'
         });
       });
     });
-    return () => {
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.removeEventListener('click');
-      });
-    };
   }, []);
 
   return (
