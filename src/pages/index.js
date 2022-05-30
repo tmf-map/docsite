@@ -1,11 +1,3 @@
-/**
- * Copyright (c) 2016-2019 Vazco
- * https://github.com/vazco/uniforms
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
 import React from 'react';
 import cx from 'classnames';
 import Layout from '@theme/Layout';
