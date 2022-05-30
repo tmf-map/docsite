@@ -56,13 +56,16 @@
 .version:hover {
   background-color: var(--ifm-color-primary-light);
   color: #fff;
-  text-decoration: none;
 }
 
 .buttons {
   display: inline-flex;
   margin-top: 2.5rem;
   margin-bottom: 10px;
+}
+
+.buttons a:hover {
+  text-decoration: none;
 }
 
 .buttons button {

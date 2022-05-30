@@ -17,7 +17,7 @@ const cards = categories.map((item, idx) => ({
 const Card = ({bannerUrl, title, intro, moreUrl}) => {
   useEffect(() => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click',  (e) => {
+      anchor.addEventListener('click',  function(e) {
         e.preventDefault();
         document.querySelector(this.getAttribute('href')).scrollIntoView({
           behavior: 'smooth'
