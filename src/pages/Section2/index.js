@@ -47,42 +47,43 @@ const Section2 = () => {
   const [commits, setCommits] = useState('-');
   const [stars, setStars] = useState('-');
 
-  // useEffect(() => {
-  //   request
-  //     .p(`https://api.github.com/repos/${organizationName}/${projectName}`)
-  //     .get()
-  //     .then(res => {
-  //       const {stargazers_count: stargazersCount, created_at: createdAt} =
-  //         res ?? {};
-  //       stargazersCount && setStars(stargazersCount);
-  //       createdAt &&
-  //         setDays(
-  //           Math.floor((new Date() - new Date(createdAt)) / 24 / 3600 / 1000)
-  //         );
-  //     })
-  //     .catch(() => {});
-  //   const commitsCount = getAllCommitsCount(
-  //     organizationName,
-  //     projectName,
-  //     'master'
-  //   );
-  //   commitsCount && setCommits(commitsCount);
-  //   request
-  //     .p(
-  //       `https://api.github.com/repos/${organizationName}/${projectName}/contributors`
-  //     )
-  //     .q('per_page', 1)
-  //     .asRaw()
-  //     .get()
-  //     .then(res => {
-  //       // https://stackoverflow.com/questions/44347339/github-api-how-efficiently-get-the-total-contributors-amount-per-repository
-  //       const contributionsCount = res?.headers
-  //         ?.get('link')
-  //         ?.match(/\d+(?=>; rel="last")/)?.[0];
-  //       contributionsCount && setContributors(contributionsCount);
-  //     })
-  //     .catch(() => {});
-  // }, []);
+  useEffect(() => {
+    request
+      .p(`https://api.github.com/repos/${organizationName}/${projectName}`)
+      .get()
+      .then(res => {
+        const {stargazers_count: stargazersCount, created_at: createdAt} =
+          res ?? {};
+        stargazersCount && setStars(stargazersCount);
+        createdAt &&
+          setDays(
+            Math.floor((new Date() - new Date(createdAt)) / 24 / 3600 / 1000)
+          );
+      })
+      .catch(() => {});
+    const commitsCount = getAllCommitsCount(
+      organizationName,
+      projectName,
+      'master'
+    );
+    commitsCount && setCommits(commitsCount);
+    request
+      .p(
+        `https://api.github.com/repos/${organizationName}/${projectName}/contributors`
+      )
+      .q('per_page', 1)
+      .asRaw()
+      .get()
+      .then(res => {
+        // https://stackoverflow.com/questions/44347339/github-api-how-efficiently-get-the-total-contributors-amount-per-repository
+        const contributionsCount = res?.headers
+          ?.get('link')
+          ?.match(/\d+(?=>; rel="last")/)?.[0];
+        contributionsCount && setContributors(contributionsCount);
+      })
+      .catch(() => {});
+  }, []);
+
   return (
     <main>
       <div className={styles.container}>

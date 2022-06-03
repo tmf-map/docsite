@@ -9,7 +9,8 @@ const PartIntro = ({
   titlePosition = 'left',
   content,
   id,
-  intro = {}
+  intro = {},
+  linksMapping
 }) => {
   return (
     <div
@@ -20,7 +21,6 @@ const PartIntro = ({
         <h1 className={styles.heading}>{title}</h1>
         <p className={cx(styles.text, styles.paragraph)}>
           <cite>{intro.pre}</cite>
-          {/* <cite style={{float: 'right'}}>- Jeff Atwood</cite> */}
         </p>
         <h2 className={cx(styles.text, styles.emphasis)}>{intro.emphasis}</h2>
         <p className={cx(styles.text, styles.paragraph)}>{intro.post}</p>
@@ -36,10 +36,10 @@ const PartIntro = ({
               {tech.list.map(v => (
                 <li
                   className={cx(styles.contentItem, {
-                    [styles.contentItemCreated]: v.created
+                    [styles.contentItemCreated]: linksMapping.find(mapping => mapping.label === v.name)
                   })}
                   key={v.name}>
-                  {v.name}
+                    <a href={linksMapping.find(mapping => mapping.label === v.name)?.to} >{v.name}</a>
                 </li>
               ))}
             </ul>

@@ -174,12 +174,18 @@
   cursor: not-allowed;
 }
 
-.contentItem:hover {
-  text-decoration: underline;
+.contentItem a {
+  color: inherit;
+  pointer-events: none;
 }
 
 .contentItem::before {
   background-color: #bbb !important;
+}
+
+.contentItemCreated a {
+  color: inherit;
+  pointer-events: auto;
 }
 
 .contentItemCreated {
@@ -188,7 +194,7 @@
 }
 
 .contentItemCreated::before {
-  background-color: var(--ifm-font-color-base) !important;
+  background-color: #333 !important;
 }
 
 .section-bgwhite {

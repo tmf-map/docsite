@@ -120,6 +120,7 @@ html[data-theme='dark'] .section-bgwhite-block-left {
   position: relative;
   padding-left: 1em;
   margin-bottom: 1em;
+  /* color: var(--ifm-font-color-base); */
 }
 
 .landing ul li::before {
@@ -129,7 +130,6 @@ html[data-theme='dark'] .section-bgwhite-block-left {
   left: 0;
   width: 4px;
   height: 4px;
-  background-color: var(--ifm-font-color-base);
 }
 
 .landing :global .hero.homepage__section {

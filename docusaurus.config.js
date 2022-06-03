@@ -2,6 +2,7 @@ const path = require('path');
 
 const githubOrg = 'ThinkBucket';
 const githubRepo = 'docsite';
+const siteIntro = "Small steps get us to faraway places. Here you can learn web technologies in different fields, including basics, frontend, backend, and data & ai. Keep exploring and stay up-to-date."
 
 const remarkPlugins = [
   require('./src/plugins/remark-npm2yarn'),
@@ -101,7 +102,8 @@ module.exports = {
     icp: {
       href: 'http://beian.miit.gov.cn/',
       text: '冀ICP备19034211号'
-    }
+    },
+    siteIntro
   },
   themeConfig: {
     navbar: {
@@ -125,7 +127,7 @@ module.exports = {
             {
               to: 'docs/algorithm/1.get-started/asymptotic-notations',
               activeBasePath: 'docs/algorithm/',
-              label: 'Algorithm'
+              label: 'DS & Algorithms'
             },
             {
               to: 'docs/design-patterns/1.get-started',
@@ -135,7 +137,7 @@ module.exports = {
             {
               to: 'docs/http/1.get-started',
               activeBasePath: 'docs/http/',
-              label: 'HTTP'
+              label: 'Network'
             }
           ]
         },
@@ -175,7 +177,7 @@ module.exports = {
             {
               to: 'docs/react/1.basic/jsx',
               activeBasePath: 'docs/react/',
-              label: 'React'
+              label: 'React Stack'
             },
             {
               to: 'docs/webpack/1.get-started',
@@ -258,7 +260,7 @@ module.exports = {
               html: `<img class="footer-logo" loading="lazy" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/docsite-logo-dark-mode.png" /><span>${githubOrg}</span>`
             },
             {
-              html: '<p class="footer-desc">Small steps get us to faraway places. Keep exploring and stay up-to-date. Here gathers developers\' thinking, summary and imagination on the future development of technology.</p>'
+              html: `<p class="footer-desc">${siteIntro}</p>`
             }
           ]
         },

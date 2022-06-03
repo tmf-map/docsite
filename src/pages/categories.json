@@ -16,20 +16,16 @@
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/book-2-line.svg",
         "list": [
           {
-            "name": "DS & Algorithms",
-            "created": true
+            "name": "DS & Algorithms"
           },
           {
-            "name": "Design Patterns",
-            "created": true
+            "name": "Design Patterns"
           },
           {
-            "name": "Network",
-            "created": true
+            "name": "Network"
           },
           {
-            "name": "Operation System",
-            "created": false
+            "name": "Operation System"
           }
         ]
       },
@@ -38,20 +34,16 @@
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/tools-fill.svg",
         "list": [
           {
-            "name": "Git",
-            "created": false
+            "name": "Git"
           },
           {
-            "name": "Terminal",
-            "created": false
+            "name": "Terminal"
           },
           {
-            "name": "IDE",
-            "created": false
+            "name": "IDE"
           },
           {
-            "name": "Chrome Devtools",
-            "created": false
+            "name": "Chrome Devtools"
           }
         ]
       },
@@ -60,8 +52,7 @@
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/pen-nib-line.svg",
         "list": [
           {
-            "name": "Markdown",
-            "created": false
+            "name": "Markdown"
           }
         ]
       },
@@ -70,8 +61,7 @@
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/flow-chart.svg",
         "list": [
           {
-            "name": "UML",
-            "created": false
+            "name": "UML"
           }
         ]
       }
@@ -94,20 +84,16 @@
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/code-s-slash-fill.svg",
         "list": [
           {
-            "name": "JavaScript",
-            "created": true
+            "name": "JavaScript"
           },
           {
-            "name": "TypeScript",
-            "created": true
+            "name": "TypeScript"
           },
           {
-            "name": "HTML",
-            "created": true
+            "name": "HTML"
           },
           {
-            "name": "CSS",
-            "created": true
+            "name": "CSS"
           }
         ]
       },
@@ -116,12 +102,10 @@
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/stack-line.svg",
         "list": [
           {
-            "name": "React Stack",
-            "created": true
+            "name": "React Stack"
           },
           {
-            "name": "NodeJS",
-            "created": true
+            "name": "NodeJS"
           }
         ]
       },
@@ -130,20 +114,16 @@
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/icon-package.svg",
         "list": [
           {
-            "name": "Electron",
-            "created": false
+            "name": "Electron"
           },
           {
-            "name": "Playwright",
-            "created": false
+            "name": "Playwright"
           },
           {
-            "name": "Webpack",
-            "created": true
+            "name": "Webpack"
           },
           {
-            "name": "Vite",
-            "created": false
+            "name": "Vite"
           }
         ]
       },
@@ -152,12 +132,10 @@
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/palette-line.svg",
         "list": [
           {
-            "name": "Icon & Font",
-            "created": false
+            "name": "Icon & Font"
           },
           {
-            "name": "Figma",
-            "created": false
+            "name": "Figma"
           }
         ]
       }
@@ -180,16 +158,13 @@
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/code-s-slash-fill.svg",
         "list": [
           {
-            "name": "Python",
-            "created": true
+            "name": "Python"
           },
           {
-            "name": "Go",
-            "created": true
+            "name": "Go"
           },
           {
-            "name": "Shell",
-            "created": false
+            "name": "Shell"
           }
         ]
       },
@@ -198,8 +173,7 @@
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/stack-line.svg",
         "list": [
           {
-            "name": "FastAPI",
-            "created": false
+            "name": "FastAPI"
           }
         ]
       },
@@ -208,16 +182,13 @@
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/database-2-line.svg",
         "list": [
           {
-            "name": "MySQL",
-            "created": true
+            "name": "MySQL"
           },
           {
-            "name": "Redis",
-            "created": false
+            "name": "Redis"
           },
           {
-            "name": "MongoDB",
-            "created": false
+            "name": "MongoDB"
           }
         ]
       },
@@ -226,20 +197,16 @@
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/cloud-line.svg",
         "list": [
           {
-            "name": "Docker",
-            "created": false
+            "name": "Docker"
           },
           {
-            "name": "Kubernetes",
-            "created": false
+            "name": "Kubernetes"
           },
           {
-            "name": "CI",
-            "created": false
+            "name": "CI"
           },
           {
-            "name": "Nginx",
-            "created": false
+            "name": "Nginx"
           }
         ]
       }
@@ -252,7 +219,7 @@
       "position": "right"
     },
     "intro": {
-      "pre": "An average Fortune 500 company makes 400 million decisions per day. These decisions are made in a rapidly changing and complex global environment.",
+      "pre": "\"An average Fortune 500 company makes 400 million decisions per day. These decisions are made in a rapidly changing and complex global environment.\" -Thoughtworks",
       "emphasis": "Data is the new oil, the world's most valuable resource.",
       "post": "Data & AI enables a range of unforeseen opportunities to amplify, automate and optimize decisions. Forerunners can already do customer obsession at scale, reinvent R&D, optimize entire value chains and upskill how the organization does design and strategy."
     },
@@ -262,16 +229,13 @@
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/database-line.svg",
         "list": [
           {
-            "name": "Scraping",
-            "created": false
+            "name": "Scraping"
           },
           {
-            "name": "Buried Point",
-            "created": false
+            "name": "Buried Point"
           },
           {
-            "name": "Public Datasets",
-            "created": false
+            "name": "Public Datasets"
           }
         ]
       },
@@ -280,20 +244,16 @@
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/data-preprocessing.svg",
         "list": [
           {
-            "name": "Data Cleaning",
-            "created": false
+            "name": "Data Cleaning"
           },
           {
-            "name": "Data Integration",
-            "created": false
+            "name": "Data Integration"
           },
           {
-            "name": "Data Transformation",
-            "created": false
+            "name": "Data Transformation"
           },
           {
-            "name": "Data Reduction",
-            "created": false
+            "name": "Data Reduction"
           }
         ]
       },
@@ -302,20 +262,16 @@
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/search-eye-line.svg",
         "list": [
           {
-            "name": "Statistics",
-            "created": false
+            "name": "Statistics"
           },
           {
-            "name": "DM Algorithms",
-            "created": false
+            "name": "DM Algorithms"
           },
           {
-            "name": "Machine Learning",
-            "created": false
+            "name": "Machine Learning"
           },
           {
-            "name": "Deep Learning",
-            "created": false
+            "name": "Deep Learning"
           }
         ]
       },
@@ -324,24 +280,19 @@
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/bar-chart-2-line.svg",
         "list": [
           {
-            "name": "SVG",
-            "created": true
+            "name": "SVG"
           },
           {
-            "name": "Canvas2d",
-            "created": false
+            "name": "Canvas2d"
           },
           {
-            "name": "D3",
-            "created": false
+            "name": "D3"
           },
           {
-            "name": "WebGL & WebGPU",
-            "created": false
+            "name": "WebGL & WebGPU"
           },
           {
-            "name": "Python Vis Libs",
-            "created": false
+            "name": "Python Vis Libs"
           }
         ]
       }

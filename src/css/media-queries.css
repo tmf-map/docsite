@@ -42,21 +42,21 @@
 /*  }*/
 /*}*/
 
-/*!* iPad Pro, MacBook Pro 13.3 *!*/
-/*@media (min-width: 996px) and (max-width: 1440px) {*/
-/*  :root {*/
-/*    --ifm-font-size-base: 16px;*/
-/*  }*/
-/*  html {*/
-/*    font-size: 16px;*/
-/*  }*/
-/*  .navbar + .main-wrapper > div > div:not(.row):not(.hero):not(.main) {*/
-/*    width: 290px;*/
-/*  }*/
-/*  .footer.footer--dark .container .text--center {*/
-/*    font-size: 12px;*/
-/*  }*/
-/*}*/
+/* iPad Pro, MacBook Pro 13.3 */
+/* @media (min-width: 996px) and (max-width: 1440px) { */
+  /* :root {
+    --ifm-font-size-base: 16px;
+  } */
+  /* html { */
+    /* font-size: 14px; */
+  /* } */
+  /* .navbar + .main-wrapper > div > div:not(.row):not(.hero):not(.main) {
+    width: 290px;
+  }
+  .footer.footer--dark .container .text--center {
+    font-size: 12px;
+  } */
+/* } */
 
 /*@media (min-width: 997px) {*/
 /*  .menu.menu--responsive {*/

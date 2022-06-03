@@ -52,17 +52,23 @@
 .link {
   color: var(--ifm-color-primary-lighter);
   cursor: pointer;
+  margin-left: 4px;
 }
 
-.link:hover {
+.link:hover, .name:hover {
   text-decoration: underline;
+  color: var(--ifm-color-primary-lighter);
 }
 
 .title {
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   font-size: 14px;
   line-height: 20px;
   color: #fff;
+}
+
+.linkName {
+  text-transform: capitalize;
 }
 
 .avatars {
@@ -70,31 +76,51 @@
 }
 
 .avatar {
-  margin-right: 30px;
-  width: 48px;
-  cursor: pointer;
-}
-
-.avatar:hover {
-  text-decoration: underline;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 20px;
 }
 
 .image {
   border-radius: 50%;
-  border: 1px solid var(--ifm-color-primary);
+  border: 1px solid #88909b;
   width: 48px;
   height: 48px;
+  margin-bottom: 5px;
 }
 
-.name {
-  width: 48px;
+.name, .sponsorName {
+  width: 80px;
   font-size: 14px;
   line-height: 20px;
   color: #ddd;
   text-align: center;
   word-wrap: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .sponsor {
   margin-top: 48px;
 }
+
+.sponsorAdd {
+  border-radius: 50%;
+  border: 1px solid #88909b;
+  font-size: 28px;
+  font-weight: 200;
+  color: #ddd;
+  width: 48px;
+  height: 48px;
+  text-align: center;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.sponsorName {
+  cursor: default;
+}
+
