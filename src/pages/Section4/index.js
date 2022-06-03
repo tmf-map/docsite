@@ -39,7 +39,7 @@ const Section4 = () => {
           <div className={styles.about}>About {title}</div>
           <div className={styles.intro}>{siteIntro}</div>
           <ul>
-            {Object.keys(urls).map(key => (
+            {Object.keys(urls)?.map(key => (
               <li key={key}>
                 <span className={styles.linkName}>{key}:</span>
                 <a className={styles.link} href={urls[key]} target="_blank">

@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import request from '@http-util/request';
-import {getAllCommitsCount} from '../utils';
 import categories from '../categories';
 import styles from './index.module.css';
 
@@ -13,6 +12,48 @@ const cards = categories.map((item, idx) => ({
   intro: item.intro.post,
   moreUrl: `#${item.id}`
 }));
+
+const BASE_URL = 'https://api.github.com';
+
+const httpGet = (theUrl, returnHeaders) => {
+  var xmlHttp = new XMLHttpRequest();
+  xmlHttp.open('GET', theUrl, false); // false for synchronous request
+  xmlHttp.send(null);
+  if (returnHeaders) {
+    return xmlHttp;
+  }
+  return xmlHttp.responseText;
+}
+
+// https://gist.github.com/yershalom/a7c08f9441d1aadb13777bce4c7cdc3b
+const getFirstCommit = (owner, repo) => {
+  let url = `${BASE_URL}/repos/${owner}/${repo}/commits`;
+  let req = httpGet(url, true);
+  let firstCommitHash = '';
+  if (req.getResponseHeader('Link')) {
+    let pageUrl = req
+      .getResponseHeader('Link')
+      .split(',')[1]
+      .split(';')[0]
+      .split('<')[1]
+      .split('>')[0];
+    let reqLastCommit = httpGet(pageUrl);
+    let firstCommit = JSON.parse(reqLastCommit);
+    firstCommitHash = firstCommit[firstCommit.length - 1]?.sha;
+  } else {
+    let firstCommit = JSON.parse(req.responseText);
+    firstCommitHash = firstCommit[firstCommit.length - 1]?.sha;
+  }
+  return firstCommitHash;
+}
+
+const getAllCommitsCount = (owner, repo, sha) => {
+  let firstCommit = getFirstCommit(owner, repo);
+  let compareUrl = `${BASE_URL}/repos/${owner}/${repo}/compare/${firstCommit}...${sha}`;
+  let commitReq = httpGet(compareUrl);
+  let commitCount = JSON.parse(commitReq)['total_commits'] + 1;
+  return commitCount;
+}
 
 const Card = ({bannerUrl, title, intro, moreUrl}) => {
   useEffect(() => {
@@ -49,7 +90,7 @@ const Section2 = () => {
 
   useEffect(() => {
     request
-      .p(`https://api.github.com/repos/${organizationName}/${projectName}`)
+      .p(`${BASE_URL}/repos/${organizationName}/${projectName}`)
       .get()
       .then(res => {
         const {stargazers_count: stargazersCount, created_at: createdAt} =
@@ -69,7 +110,7 @@ const Section2 = () => {
     commitsCount && setCommits(commitsCount);
     request
       .p(
-        `https://api.github.com/repos/${organizationName}/${projectName}/contributors`
+        `${BASE_URL}/repos/${organizationName}/${projectName}/contributors`
       )
       .q('per_page', 1)
       .asRaw()
@@ -108,7 +149,7 @@ const Section2 = () => {
         <div className={styles.whatWeDo}>
           <p className={styles.title}>What we are exploring</p>
           <div className={styles.content}>
-            {cards.map(card => (
+            {cards?.map(card => (
               <Card key={card.title} {...card} />
             ))}
           </div>
