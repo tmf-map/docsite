@@ -1,0 +1,15 @@
+.section3 {
+  --ifm-hero-background-color: var(--dark-blue-grey);
+  /* background-image: url(https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/homepage-cosmos-bg.svg),
+    linear-gradient(135deg, #273351 0, rgba(20, 20, 20) 100%);
+  background-repeat: repeat;
+  background-position: center; */
+  background: linear-gradient(to right, #141414 0%, #212c45 50%, #141414 100%);
+}
+
+.container {
+  max-width: 1880px;
+  margin: 0 auto;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}

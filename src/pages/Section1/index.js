@@ -4,14 +4,16 @@ import request from '@http-util/request';
 import Button from '../Button';
 import styles from './index.module.css';
 
-const SectionOne = () => {
+const Section1 = () => {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
   const {tagline, organizationName, projectName, themeConfig} = siteConfig;
-  const [version, setVersion] = useState('');
+  const [version, setVersion] = useState('-');
   useEffect(() => {
     request
-      .p('https://api.github.com/repos/thinkbucket/docsite/releases')
+      .p(
+        `https://api.github.com/repos/${organizationName}/${projectName}/releases`
+      )
       .q('per_page', 1)
       .get()
       .then(res => {
@@ -26,21 +28,23 @@ const SectionOne = () => {
   }, []);
   return (
     <div className={styles.container}>
-      <p className={styles.slogan}>{tagline}</p>
-      <a
-        className={styles.version}
-        href={`https://github.com/${organizationName}/${projectName}/releases`}
-        target="blank">
-        Latest version: {version}
-      </a>
-      <div className={styles.getStartedBtn}>
-        <Button
-          to={`/${themeConfig?.navbar?.items?.[1]?.items?.[0]?.to ?? ''}`}>
-          Get Started
-        </Button>
+      <div className={styles.textPart}>
+        <p className={styles.slogan}>{tagline}</p>
+        <div className={styles.buttons}>
+          <a
+            className={styles.version}
+            href={`https://github.com/${organizationName}/${projectName}/releases`}
+            target="blank">
+            Version {version}
+          </a>
+          <Button
+            to={`/${themeConfig?.navbar?.items?.[1]?.items?.[0]?.to ?? ''}`}>
+            Get Started
+          </Button>
+        </div>
       </div>
     </div>
   );
 };
 
-export default SectionOne;
+export default Section1;
