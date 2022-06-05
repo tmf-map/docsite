@@ -49,7 +49,7 @@
     "@docusaurus/preset-classic": "2.0.0-beta.21",
     "@docusaurus/remark-plugin-npm2yarn": "^2.0.0-beta.21",
     "@docusaurus/theme-live-codeblock": "2.0.0-beta.21",
-    "@easyops-cn/docusaurus-search-local": "^0.23.0",
+    "@easyops-cn/docusaurus-search-local": "^0.27.0",
     "@http-util/request": "^0.1.0",
     "classnames": "^2.3.1",
     "npm-to-yarn": "^1.0.1",
