@@ -1,13 +1,9 @@
 const path = require('path');
+const npm2yarn = require('@docusaurus/remark-plugin-npm2yarn');
 
 const githubOrg = 'ThinkBucket';
 const githubRepo = 'docsite';
 const siteIntro = "Small steps get us to faraway places. Here you can learn web technologies in different fields, including basics, frontend, backend, and data & ai. Keep exploring and stay up-to-date."
-
-const remarkPlugins = [
-  require('./src/plugins/remark-npm2yarn'),
-  require('./src/plugins/remark-global-modules')
-];
 
 const admonitions = {
   infima: true,
@@ -332,13 +328,13 @@ module.exports = {
           showLastUpdateAuthor: true,
           // Equivalent to `enableUpdateTime`.
           showLastUpdateTime: true,
-          remarkPlugins,
+          remarkPlugins: [npm2yarn],
           admonitions,
           numberPrefixParser: false
         },
         blog: {
           editUrl: `https://github.com/${githubOrg}/${githubRepo}/edit/master/`,
-          remarkPlugins,
+          remarkPlugins: [npm2yarn],
           admonitions
         },
         theme: {
