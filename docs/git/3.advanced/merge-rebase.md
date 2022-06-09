@@ -1,5 +1,6 @@
 ---
 title: Merge & Rebase
+sidebar_label: Merge & Rebase
 ---
 
 分支的合并主要有两种方法：**merge** 和 **rebase**，例如 `release` 分支或 `hotfix` 分支测试完成后，最后要合并回 `master` 分支，使用这两种方法，合并后分支的历史记录会有很大的差别。
