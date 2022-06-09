@@ -1,5 +1,5 @@
-name-template: '2022.xx'
-tag-template: '2022.xx'
+name-template: '2022.x'
+tag-template: '2022.x'
 sort-by: 'title'
 sort-direction: 'ascending'
 exclude-labels:
