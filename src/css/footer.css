@@ -1,6 +1,6 @@
 .footer.footer--dark {
-  --ifm-footer-background-color: var(--ifm-navbar-background-color);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: #1f232e;
 }
 
 .footer.footer--dark .container .footer__links {
@@ -47,9 +47,14 @@ footer.footer {
   margin-top: -5px;
 }
 
-.footer-reward {
-  width: 5rem;
-  height: 5rem;
+.footer-power-by {
+  height: 1.8rem;
+}
+
+.footer-mobile-qr-code {
+  /* width: 5rem; */
+  width: 4.6rem;
+  height: 4.6rem;
   border-radius: 1px;
   margin-top: 0.5rem;
 }
@@ -77,4 +82,3 @@ footer.footer {
   margin-right: 6rem;
   flex-shrink: 0;
 }
-

@@ -7,6 +7,8 @@ Dict 全称 Dictionary（字典），在其他语言中也称为 Map，使用 ke
 - key 最好是唯一的（如果有两个相同的 key，后一个值会覆盖前一个），必须是不可变的，如字符串，数字。
 - value 不必唯一，可以取任何数据类型。
 
+## 创建
+
 一个简单的字典实例：
 
 ```py
@@ -36,7 +38,15 @@ TypeError                                 Traceback (most recent call last)
 TypeError: unhashable type: 'list'
 ```
 
-## 访问字典里的值
+## 增加
+
+```py
+>>> dict1['Kevin'] = '777'
+>>> dict1
+{'Kimi': '123', 'Jack': '456', 'Alice': '789', 'Kevin': '777'}
+```
+
+## 访问
 
 把相应的键放入到方括号中，如下实例:
 
@@ -62,7 +72,21 @@ KeyError                                  Traceback (most recent call last)
 KeyError: 'Gender'
 ```
 
-:::caution
+避免以上错误的常见两种写法：
+
+```py
+if 'Gender' in dict6:
+```
+
+```py
+dict6.get('Gender') # None
+# 可以加上 default 参数
+dict6.get('Gender'， 'Male') # Male
+```
+
+更多处理方法请参考：[Python:操作 dict 时避免出现 KeyError 的几种方法](https://www.polarxiong.com/archives/Python-%E6%93%8D%E4%BD%9Cdict%E6%97%B6%E9%81%BF%E5%85%8D%E5%87%BA%E7%8E%B0KeyError%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95.html)
+
+:::danger
 
 虽然字典的定义和 JS 中对象类似，但不支持 JS 中点取属性的语法：
 
@@ -78,7 +102,7 @@ AttributeError: 'dict' object has no attribute 'Name'
 
 :::
 
-## 修改字典
+## 修改
 
 向字典添加新内容的方法是增加新的键/值对，修改或删除已有键/值对如下实例:
 
@@ -94,7 +118,7 @@ AttributeError: 'dict' object has no attribute 'Name'
 'ABC'
 ```
 
-## 删除字典元素
+## 删除
 
 能删单一的元素也能清空字典。显式删除一个字典用 `del` 命令，如下实例：
 

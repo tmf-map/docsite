@@ -1,0 +1,14 @@
+name: github-actions
+
+on: pull_request
+
+jobs:
+  add-labels:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/labeler@v3
+        # https://github.com/actions/labeler/issues/117#issuecomment-771825205
+        # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsif
+        if: ${{ github.actor != 'dependabot[bot]' }}
+        with:
+          repo-token: '${{ secrets.GITHUB_TOKEN }}'

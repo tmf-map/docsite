@@ -62,6 +62,7 @@ Similar to Facebook's GIF toggle UI, this React component displays a still image
 | --- | --- | --- | --- |
 | gif | string | '' | Address to an animated GIF image. |
 | still | string | '' | Address to a still preview of the GIF (e.g. JPG, PNG, etc.) |
+| with \| w | integer \| percentage | - | Specify one width you want to use to make sure the texts' fontsize in image are same to the context. |
 | autoplay | boolean | `false` | It can be set true if you want to immediately bombard your user with a moving GIF as soon as it's available |
 | onTogglePlay | func | - | A function which is called whenever the GIF toggles between playing and paused. Receives one argument, playing, which is a boolean. |
 | pauseRef | func | - | A function callback is called with another function, pause - this can be saved and called later to remotely pause the playing of the GIF, in such cases where that might be desired. For example, you might want to stop the GIF when it scrolls offscreen. Here's a [jsfiddle](http://jsfiddle.net/1snhzgo8/7/) which shows how to use `pauseRef`. |

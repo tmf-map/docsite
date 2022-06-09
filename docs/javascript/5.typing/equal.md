@@ -80,11 +80,11 @@ undefined >= 0 || undefined <= 0 // false
 
 ## Object.is 等值比较
 
-|  | 解释 | 基础类型 | 引用类型 | +0 和-0 | NaN 和 NaN |
-| --- | --- | --- | --- | --- | --- |
+| 解释 | 基础类型 | 引用类型 | +0 和-0 | NaN 和 NaN |
+| --- | --- | --- | --- | --- |
 | == | 相等运算符 | 值的比较（会自动转换数据类型） | 引用地址比较 | true | false |
 | === | 严格相等运算符 | 值+类型的比较（不会自动转换数据类型） | 引用地址比较 | true | false |
-| Object.is | (a,b) | 同值相等比较 | 值+类型的比较（不会自动转换数据类型） | 引用地址比较 | false | true |
+| Object.is | 同值相等比较 | 值+类型的比较（不会自动转换数据类型） | 引用地址比较 | false | true |
 
 `undefined` 和 `null` 与自（严格）相等。
 
@@ -106,6 +106,12 @@ NaN === NaN; // false
 Object.is(+0, -0); // false
 Object.is(NaN, NaN); // true
 ```
+
+:::tip
+
+For `+0\-0` and `NaN`, the result of `Object.is` is the same as what it looks like to the naked eye.
+
+:::
 
 ## 浅比较 shallowEqual
 

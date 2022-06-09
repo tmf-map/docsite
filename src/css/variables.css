@@ -6,26 +6,26 @@
   --ifm-color-primary-dark: #0085cc;
   --ifm-color-primary-darker: #0065a3;
   --ifm-color-primary-darkest: #00508a;
-  --ifm-navbar-background-color: #1f232e;
-  --ifm-navbar-link-color: #eee;
-  --ifm-navbar-search-input-background-color: #34383d;
+  /* --ifm-navbar-background-color: #1f232e; */
+  /* --ifm-navbar-link-color: #eee; */
 
-  --ifm-color-emphasis-alpha-60: #5C6975;
+  --ifm-color-emphasis-alpha-60: #5c6975;
   --ifm-contents-border-color: rgba(191, 191, 191, 0.2);
   --ifm-contents-link-color: rgb(116, 129, 141);
   --ifm-contents-padding-vertical: 0.5rem;
-  --ifm-toc-border-color: rgba(191, 191, 191, 0.3);
+  /*--ifm-toc-border-color: rgba(191, 191, 191, 0.3);*/
   --ifm-toc-link-color: var(--ifm-contents-link-color);
   --ifm-code-background: rgba(191, 191, 191, 0.25);
   --ifm-hero-background-color: #24292e;
   --ifm-table-border-color: rgba(191, 191, 191, 0.3);
   --ifm-table-stripe-background: rgba(185, 202, 218, 0.15);
   --ifm-table-cell-padding: 0.7rem;
-  --ifm-menu-color-background-active: rgb(255, 255, 255);
-  --ifm-navbar-shadow: none;
+  /*--ifm-menu-color-background-active: rgb(255, 255, 255);*/
+  /* --ifm-navbar-shadow: none; */
   --ifm-navbar-height: 3.75rem;
   --ifm-navbar-padding-horizontal: 2rem;
-  --ifm-spacing-horizontal: 1.5rem;
+  --ifm-navbar-item-padding-horizontal: 1rem;
+  --ifm-spacing-horizontal: 2.5rem;
   /* --ifm-heading-font-weight: 500; */
   --ifm-list-item-margin: 0.18rem;
   --ifm-leading: 1rem;
@@ -33,6 +33,10 @@
   --ifm-line-height-base: 1.5;
 
   --ifm-code-font-size: 85%;
+  /* --ifm-font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe WPC',
+    'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif, Roboto, Ubuntu,
+    Cantarell, 'Noto Sans', BlinkMacSystemFont, Helvetica, Arial,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; */
 
   --my-color-gray-1: #ffffff;
   --my-color-gray-2: #fafafa;
@@ -49,6 +53,7 @@
   --my-color-gray-13: #000000;
   --my-board--background: rgba(185, 202, 218, 0.15);
   --my-color-background: #f2f3f4;
+  --my-color-blog-card-background: var(--my-color-gray-2);
   --my-color-main-page-background: var(--my-color-gray-1);
   --my-color-main-page-shadow: rgba(60, 64, 67, 0.1) 0px 1px 3px 1px;
   --my-color-scrollbar-thumb: var(--my-color-gray-5);
@@ -60,9 +65,10 @@
 
 :root[data-theme='dark'] {
   --my-color-background: var(--my-color-gray-10);
+  --my-color-blog-card-background: var(--my-color-gray-10);
   --my-color-main-page-background: var(--ifm-background-color);
   --my-color-main-page-shadow: rgba(230, 233, 236, 0.09) 0px 0px 1px 1px;
   --my-color-scrollbar-thumb: var(--my-color-gray-8);
   --my-color-scrollbar-thumb-hover: var(--my-color-gray-7);
-  --ifm-toc-border-color: rgba(191, 191, 191, 0.16);
+  --ifm-toc-border-color: rgba(255, 255, 255, 0.2);
 }

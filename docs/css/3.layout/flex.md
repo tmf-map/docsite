@@ -4,9 +4,10 @@ title: Flex
 
 ## 概览
 
-[Flexbox 布局语法速查手册](http://www.webhek.com/apps/flex-cheatsheet/)
+- [Flexbox 布局语法速查手册](http://www.webhek.com/apps/flex-cheatsheet/)
+- [Learn Flexbox with 30 Code Tidbits](https://www.samanthaming.com/flexbox30/)
 
-<img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/Uff7mw.jpg'/>
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/Uff7mw.jpg'/>
 
 ## 盒子大小：flex
 
@@ -30,9 +31,17 @@ flex: none = flex: 0 0 auto; // 常用于固定尺寸 不伸缩
 
 ## 伸缩比例：flex-grow/flex-shrink
 
-<img width="430" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/Qzg5IF.jpg'/>
+### flex-grow calculation
 
-<img width="510" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/DsKEvq.jpg'/>
+<Math code="new\;width\;=\;width\;+\;\frac{grow}{\displaystyle\sum_{i\;=\;1}^ngrow_i}\times free\;space" block/>
+
+<Img w="480" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/flex-grow-calculation.jpeg' legend="Samanthaming: Day 22 flex-grow calculation" origin="https://www.samanthaming.com/flexbox30/22-flex-grow-calculation/" />
+
+### flex-shrink calculation
+
+<Math code="new\;width\;=\;width\;-\;\frac{width\times shrink}{\displaystyle\sum_{i\;=\;1}^nwidth_i\times shrink_i}\times shrunk\;space" block/>
+
+<Img w="480" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/flex-shrink-calculation.jpeg' legend="Samanthaming: Day 24 flex-shrink calculation" origin="https://www.samanthaming.com/flexbox30/24-flex-shrink-calculation/" />
 
 :::caution
 
@@ -58,4 +67,4 @@ flex: none = flex: 0 0 auto; // 常用于固定尺寸 不伸缩
 
 ## 兼容性
 
-<img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/Ac3uy6.jpg'/>
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/Ac3uy6.jpg'/>

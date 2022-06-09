@@ -1,26 +1,29 @@
-html[data-theme="dark"] {
+html[data-theme='dark'] {
   --ifm-color-primary: rgb(10, 132, 255);
   --ifm-navbar-shadow: none;
-  --ifm-navbar-background-color: #161b22;
   --ifm-toc-link-color: #fff;
 }
 
-/* html[data-theme="dark"] .footer.footer--dark {
-  --ifm-footer-background-color: var(--ifm-background-color);
-} */
+html[data-theme='dark'] .footer.footer--dark {
+  --ifm-footer-background-color: #1f232e;
+}
 
-html[data-theme="dark"] blockquote {
+html[data-theme='dark'] blockquote {
   color: var(--ifm-code-color);
 }
 
-html[data-theme="dark"] .markdown ul.tabs .tabs__item {
+html[data-theme='dark'] .markdown ul.tabs .tabs__item {
   color: rgba(255, 255, 255, 0.5);
 }
 
-html[data-theme="dark"] .markdown ul.tabs .tabs__item--active {
+html[data-theme='dark'] .markdown ul.tabs .tabs__item--active {
   color: rgb(255, 255, 255);
 }
 
-html[data-theme="dark"] .markdown .admonition.admonition-note {
-  color: #1c1e21;
+html[data-theme='dark'] .pagination-nav .pagination-nav__link {
+  border-color: rgba(152, 152, 152, 0.25);
+}
+
+html[data-theme='dark'] .pagination-nav .pagination-nav__link:hover {
+  border-color: var(--ifm-color-primary);
 }

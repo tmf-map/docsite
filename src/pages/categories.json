@@ -1,0 +1,301 @@
+[
+  {
+    "id": "basics",
+    "title": {
+      "name": "Basics",
+      "position": "left"
+    },
+    "intro": {
+      "pre": "Learning web technologies is like building a house. Laying a strong foundation is the first and most important step.",
+      "emphasis": "Rome wasn't built in a day.",
+      "post": "Like building a house, learning the basics takes some time. The road to true success is never smooth and easy. When starting this journey, it's necessary not only to understand some underlying theories, but also to be proficient in development tools. Those will be very helpful for the further development."
+    },
+    "content": [
+      {
+        "title": "Theories",
+        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/book-2-line.svg",
+        "list": [
+          {
+            "name": "DS & Algorithms"
+          },
+          {
+            "name": "Design Patterns"
+          },
+          {
+            "name": "Network"
+          },
+          {
+            "name": "Operation System"
+          }
+        ]
+      },
+      {
+        "title": "Devtools",
+        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/tools-fill.svg",
+        "list": [
+          {
+            "name": "Git"
+          },
+          {
+            "name": "Terminal"
+          },
+          {
+            "name": "IDE"
+          },
+          {
+            "name": "Chrome Devtools"
+          }
+        ]
+      },
+      {
+        "title": "Document",
+        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/pen-nib-line.svg",
+        "list": [
+          {
+            "name": "Markdown"
+          }
+        ]
+      },
+      {
+        "title": "Diagram",
+        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/flow-chart.svg",
+        "list": [
+          {
+            "name": "UML"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "frontend",
+    "title": {
+      "name": "Frontend",
+      "position": "right"
+    },
+    "intro": {
+      "pre": "Frontend is the client side of the website that the user interacts with directly. It is also referred to as the \"presentation layer\".",
+      "emphasis": "What you see is what you get.",
+      "post": "It includes everything that users experience directly. JavaScript, HTML and CSS are the languages used for frontend development. The structure, design, behavior, and content of everything seen on browser screens when websites, web applications, or mobile apps are opened up, is implemented by frontend developers."
+    },
+    "content": [
+      {
+        "title": "Languages",
+        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/code-s-slash-fill.svg",
+        "list": [
+          {
+            "name": "JavaScript"
+          },
+          {
+            "name": "TypeScript"
+          },
+          {
+            "name": "HTML"
+          },
+          {
+            "name": "CSS"
+          }
+        ]
+      },
+      {
+        "title": "Frameworks",
+        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/stack-line.svg",
+        "list": [
+          {
+            "name": "React Stack"
+          },
+          {
+            "name": "NodeJS"
+          }
+        ]
+      },
+      {
+        "title": "Libraries",
+        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/icon-package.svg",
+        "list": [
+          {
+            "name": "Electron"
+          },
+          {
+            "name": "Playwright"
+          },
+          {
+            "name": "Webpack"
+          },
+          {
+            "name": "Vite"
+          }
+        ]
+      },
+      {
+        "title": "Design",
+        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/palette-line.svg",
+        "list": [
+          {
+            "name": "Icon & Font"
+          },
+          {
+            "name": "Figma"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "backend",
+    "title": {
+      "name": "Backend",
+      "position": "left"
+    },
+    "intro": {
+      "pre": "Backend is the server side of the website. It stores and arranges data, and it's also referred to as the \"data access layer\".",
+      "emphasis": "Powers client side from behind the scenes.",
+      "post": "It is the part of the website that you cannot see and interact with. It includes all the code needed to build out the database, server, and application. From database migrations to API integrations to setting up the server side technologies that make a website tick."
+    },
+    "content": [
+      {
+        "title": "Languages",
+        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/code-s-slash-fill.svg",
+        "list": [
+          {
+            "name": "Python"
+          },
+          {
+            "name": "Go"
+          },
+          {
+            "name": "Shell"
+          }
+        ]
+      },
+      {
+        "title": "Frameworks",
+        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/stack-line.svg",
+        "list": [
+          {
+            "name": "FastAPI"
+          }
+        ]
+      },
+      {
+        "title": "Databases",
+        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/database-2-line.svg",
+        "list": [
+          {
+            "name": "MySQL"
+          },
+          {
+            "name": "Redis"
+          },
+          {
+            "name": "MongoDB"
+          }
+        ]
+      },
+      {
+        "title": "Devops",
+        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/cloud-line.svg",
+        "list": [
+          {
+            "name": "Docker"
+          },
+          {
+            "name": "Kubernetes"
+          },
+          {
+            "name": "CI"
+          },
+          {
+            "name": "Nginx"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "data-ai",
+    "title": {
+      "name": "Data & AI",
+      "position": "right"
+    },
+    "intro": {
+      "pre": "\"An average Fortune 500 company makes 400 million decisions per day. These decisions are made in a rapidly changing and complex global environment.\" -Thoughtworks",
+      "emphasis": "Data is the new oil, the world's most valuable resource.",
+      "post": "Data & AI enables a range of unforeseen opportunities to amplify, automate and optimize decisions. Forerunners can already do customer obsession at scale, reinvent R&D, optimize entire value chains and upskill how the organization does design and strategy."
+    },
+    "content": [
+      {
+        "title": "Collection",
+        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/database-line.svg",
+        "list": [
+          {
+            "name": "Scraping"
+          },
+          {
+            "name": "Buried Point"
+          },
+          {
+            "name": "Public Datasets"
+          }
+        ]
+      },
+      {
+        "title": "Preprocessing",
+        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/data-preprocessing.svg",
+        "list": [
+          {
+            "name": "Data Cleaning"
+          },
+          {
+            "name": "Data Integration"
+          },
+          {
+            "name": "Data Transformation"
+          },
+          {
+            "name": "Data Reduction"
+          }
+        ]
+      },
+      {
+        "title": "Mining",
+        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/search-eye-line.svg",
+        "list": [
+          {
+            "name": "Statistics"
+          },
+          {
+            "name": "DM Algorithms"
+          },
+          {
+            "name": "Machine Learning"
+          },
+          {
+            "name": "Deep Learning"
+          }
+        ]
+      },
+      {
+        "title": "Visualization",
+        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/bar-chart-2-line.svg",
+        "list": [
+          {
+            "name": "SVG"
+          },
+          {
+            "name": "Canvas2d"
+          },
+          {
+            "name": "D3"
+          },
+          {
+            "name": "WebGL & WebGPU"
+          },
+          {
+            "name": "Python Vis Libs"
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,5 +1,5 @@
-name-template: '2020-Q?-M?'
-tag-template: '2020-Q?-M?'
+name-template: '2022.x'
+tag-template: '2022.x'
 sort-by: 'title'
 sort-direction: 'ascending'
 exclude-labels:
@@ -24,10 +24,12 @@ categories:
       - 'docs: fe guidelines'
   - title: 'Backend'
     labels:
-      - 'docs: java'
-  - title: 'AI'
-    labels:
       - 'docs: python'
+      - 'docs: go'
+      - 'docs: mysql'
+  - title: 'Data & AI'
+    labels:
+      - 'docs: svg'
   - title: 'Blog'
     labels:
       - 'blog'
