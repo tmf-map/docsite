@@ -118,7 +118,7 @@ module.exports = {
           position: 'right',
           // no `to` means activeBaseRegex gets ignored, so it's a must
           to: 'docs/algorithm/1.get-started/asymptotic-notations',
-          activeBaseRegex: 'docs/(design-patterns|algorithm|http)/',
+          activeBaseRegex: 'docs/(design-patterns|algorithm|http|git)/',
           items: [
             {
               to: 'docs/algorithm/1.get-started/asymptotic-notations',
@@ -134,6 +134,11 @@ module.exports = {
               to: 'docs/http/1.get-started',
               activeBasePath: 'docs/http/',
               label: 'Network'
+            },
+            {
+              to: 'docs/git/1.get-started',
+              activeBasePath: 'docs/git/',
+              label: 'Git'
             }
           ]
         },

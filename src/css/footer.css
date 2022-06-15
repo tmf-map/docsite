@@ -30,6 +30,12 @@ footer.footer {
   margin-top: 1.3rem;
 }
 
+.footer__items {
+  list-style: none;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
 .footer__item {
   font-size: 0.875rem;
   line-height: 2.3;
