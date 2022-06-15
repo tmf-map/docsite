@@ -9,11 +9,11 @@ module.exports = {
     jest: true,
     node: true
   },
-  parser: 'babel-eslint',
+  parser: '@babel/eslint-parser',
   parserOptions: {
     allowImportExportEverywhere: true
   },
-  extends: ['airbnb', 'prettier', 'prettier/react'],
+  extends: ['airbnb', 'prettier'],
   plugins: ['react-hooks'],
   rules: {
     'class-methods-use-this': OFF, // It's a way of allowing private variables.
