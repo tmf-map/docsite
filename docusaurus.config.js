@@ -176,7 +176,7 @@ module.exports = {
               label: 'Web'
             },
             {
-              to: 'docs/react/1.basic/jsx',
+              to: 'docs/react/1.basics/1.1.jsx',
               activeBasePath: 'docs/react/',
               label: 'React Stack'
             },
