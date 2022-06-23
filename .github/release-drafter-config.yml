@@ -8,16 +8,17 @@ exclude-labels:
 categories:
   - title: 'Basics'
     labels:
-      - 'docs: algorithm'
+      - 'docs: ds & algorithm'
       - 'docs: design patterns'
-      - 'docs: http'
+      - 'docs: network'
+      - 'docs: git'
   - title: 'Frontend'
     labels:
       - 'docs: javascript'
       - 'docs: html'
       - 'docs: css'
       - 'docs: web'
-      - 'docs: react'
+      - 'docs: react stack'
       - 'docs: webpack'
       - 'docs: typescript'
       - 'docs: nodejs'

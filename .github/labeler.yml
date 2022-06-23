@@ -15,14 +15,14 @@ website:
   - docusaurus.config.js
 blog: blog/**/*
 wiki: docs/wiki/**/*
-'docs: algorithm': docs/algorithm/**/*
+'docs: ds & algorithm': docs/algorithm/**/*
 'docs: css': docs/css/**/*
 'docs: design patterns': docs/design-patterns/**/*
 'docs: html': docs/html/**/*
 'docs: javascript': docs/javascript/**/*
-'docs: react': docs/react/**/*
+'docs: react stack': docs/react/**/*
 'docs: web': docs/web/**/*
-'docs: http': docs/http/**/*
+'docs: network': docs/http/**/*
 'docs: typescript': docs/typescript/**/*
 'docs: webpack': docs/webpack/**/*
 'docs: nodejs': docs/nodejs/**/*
@@ -31,3 +31,4 @@ wiki: docs/wiki/**/*
 'docs: go': docs/go/**/*
 'docs: mysql': docs/mysql/**/*
 'docs: svg': docs/svg/**/*
+'docs: git': docs/git/**/*

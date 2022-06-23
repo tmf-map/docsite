@@ -17,7 +17,6 @@ const javascript = require('./javascript');
 const html = require('./html');
 const css = require('./css');
 const web = require('./web');
-const react = require('./react');
 const designPatterns = require('./design-patterns');
 const algorithm = require('./algorithm');
 const http = require('./http');
@@ -35,7 +34,6 @@ module.exports = {
   html,
   css,
   web,
-  react,
   designPatterns,
   algorithm,
   http,
@@ -45,6 +43,5 @@ module.exports = {
   nodejs,
   feGuidelines,
   python,
-  go,
-  python
+  go
 };
