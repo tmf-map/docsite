@@ -27,7 +27,7 @@ module.exports = {
   url: 'https://thinkbucket.cn',
   baseUrl: '/',
   favicon: '/img/favicon/docsite.png',
-  organizationName: githubOrg, // Usually your GitHub org/user name.
+  organizationName: githubOrg, // Usually your GitHub org/username.
   projectName: 'docsite', // Usually your repo name.
   plugins: [
     [
@@ -219,6 +219,11 @@ module.exports = {
               to: 'docs/mysql/1.get-started/1.1.intro-to-sql',
               activeBasePath: 'docs/mysql/',
               label: 'MySQL'
+            },
+            {
+              to: 'docs/docker/1.get-started/1.what-is-docker',
+              activeBasePath: 'docs/docker/',
+              label: 'Docker'
             }
           ]
         },

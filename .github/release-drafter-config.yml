@@ -28,6 +28,7 @@ categories:
       - 'docs: python'
       - 'docs: go'
       - 'docs: mysql'
+      - 'docs: docker'
   - title: 'Data & AI'
     labels:
       - 'docs: svg'
