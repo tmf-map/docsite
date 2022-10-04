@@ -56,7 +56,7 @@ DELETE 方法**指示服务器删除资源**，因为这个动作危险性太大
    sending a payload body on a DELETE request might cause some existing
    implementations to reject the request. -- [RFCs (7230-7237) IETF](https://datatracker.ietf.org/doc/html/draft-ietf-httpbis-p2-semantics-22#section-4.3.5)
 
-:::good
+:::tip
 
 Do not send a payload body on a DELETE request.
 

@@ -375,7 +375,7 @@ Object.getOwnPropertyDescriptor(
 
 总的来说，操作中引入继承的属性会让问题复杂化，大多数时候，我们只关心对象自身的属性。
 
-:::good
+:::tip
 
 尽量不要用 `for...in` 循环，而用 `Object.keys()`代替。
 
@@ -413,7 +413,7 @@ ES6 一共有 5 种方法可以遍历对象的属性。
 
 :::
 
-:::bad
+:::caution
 
 `Reflect.ownKeys()` 方法的第一个参数必须是对象，否则会报错。
 
@@ -449,7 +449,7 @@ Reflect.ownKeys(obj); // ["1", "2", "3", "m", "b", "a", Symbol(b), Symbol(a)]
 - 其次遍历所有 normal keys (包括加 `''` 和不加 `''`)，按照定义的顺序排列。
 - 最后遍历所有 symbol keys，按照定义的顺序排列。
 
-:::bad
+:::caution
 
 如果对象的 key 为 integer-like ，千万不要依赖其定义的顺序。
 

@@ -164,7 +164,7 @@ let foo = {} as Foo; // OK, but is not as we expected.
 
 The above code does not strictly constraint a bar attribute according to the type convention which will cause some potential error when using `foo.bar`.
 
-:::good
+:::tip
 
 `let foo: Foo = {};` is better than `let foo = {} as Foo;`
 

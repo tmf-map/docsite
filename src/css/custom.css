@@ -226,3 +226,7 @@ html.blog-wrapper .main-wrapper {
   /* Color which works with dark mode syntax highlighting theme */
   background-color: rgb(100, 100, 100);
 }
+
+.codeBlockTitle_node_modules-\@docusaurus-theme-classic-lib-theme-CodeBlock-Content-styles-module {
+  border-bottom-color: transparent !important;
+}

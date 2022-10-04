@@ -5,22 +5,6 @@ const githubOrg = 'ThinkBucket';
 const githubRepo = 'docsite';
 const siteIntro = "Small steps get us to faraway places. Here you can learn web technologies in different fields, including basics, frontend, backend, and data & ai. Keep exploring and stay up-to-date."
 
-const admonitions = {
-  infima: true,
-  customTypes: {
-    good: {
-      ifmClass: 'success',
-      keyword: 'good',
-      svg: '<svg preserveAspectRatio="xMidYMid meet" height="1rem" width="1rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g><path d="M22 11.07V12a10 10 0 1 1-5.93-9.14"></path><polyline points="23 3 12 14 9 11"></polyline></g></svg>'
-    },
-    bad: {
-      ifmClass: 'danger',
-      keyword: 'bad',
-      svg: '<svg preserveAspectRatio="xMidYMid meet" height="1rem" width="1rem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" stroke="none"><g><path d="M512 992c-262.4 0-480-217.6-480-480 0-262.4 217.6-480 480-480s480 217.6 480 480C992 774.4 774.4 992 512 992zM512 108.8C288 108.8 108.8 288 108.8 512c0 224 179.2 403.2 403.2 403.2s403.2-179.2 403.2-403.2C915.2 288 736 108.8 512 108.8zM697.6 684.8l-12.8 12.8c-6.4 6.4-19.2 6.4-25.6 0L512 550.4l-140.8 140.8c-6.4 6.4-19.2 6.4-25.6 0l-12.8-12.8c-6.4-6.4-6.4-19.2 0-25.6L473.6 512 326.4 371.2C320 358.4 320 345.6 326.4 339.2l12.8-12.8C345.6 320 358.4 320 371.2 326.4L512 473.6l140.8-140.8c6.4-6.4 19.2-6.4 25.6 0l12.8 12.8c6.4 6.4 6.4 19.2 0 25.6L550.4 512l140.8 140.8C704 665.6 704 678.4 697.6 684.8z"></path></g></svg>'
-    }
-  }
-};
-
 module.exports = {
   title: githubOrg,
   tagline: 'Small steps get us to faraway places',
@@ -148,7 +132,7 @@ module.exports = {
           // no `to` means activeBaseRegex gets ignored, so it's a must
           to: 'docs/javascript/1.basic/js-engine',
           activeBaseRegex:
-            'docs/(javascript|typescript|html|css|web|react|webpack|nodejs|fe-guidelines)/',
+            'docs/(javascript|typescript|html|css|web|react|webpack|nodejs)/',
           items: [
             {
               to: 'docs/javascript/1.basic/js-engine',
@@ -189,11 +173,6 @@ module.exports = {
               to: 'docs/nodejs/1.get-started',
               activeBasePath: 'docs/nodejs/',
               label: 'NodeJS'
-            },
-            {
-              to: 'docs/fe-guidelines/1.introduction',
-              activeBasePath: 'docs/fe-guidelines/',
-              label: 'Coding Guidelines'
             }
           ]
         },
@@ -339,13 +318,11 @@ module.exports = {
           // Equivalent to `enableUpdateTime`.
           showLastUpdateTime: true,
           remarkPlugins: [npm2yarn],
-          admonitions,
           numberPrefixParser: false
         },
         blog: {
           editUrl: `https://github.com/${githubOrg}/${githubRepo}/edit/master/`,
           remarkPlugins: [npm2yarn],
-          admonitions
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css')

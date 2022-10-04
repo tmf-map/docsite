@@ -281,7 +281,7 @@ handler1 = handler2; // Error: Type '(a: number, b: number, c: number) => void' 
 
 双变(Bivariance)：协变和逆变都支持。
 
-:::good
+:::tip
 
 `--strictFunctionTypes` 默认配置是 `false`, 即函数（standalone functions not methods）参数采用的是双变，但并不是很安全，`strictFunctionTypes` 建议设为 `true`：
 

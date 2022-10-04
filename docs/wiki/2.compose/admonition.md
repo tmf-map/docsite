@@ -65,31 +65,3 @@ Some **content** with _markdown_ `syntax`. Check [this `api`](#).
 Some **content** with _markdown_ `syntax`. Check [this `api`](#).
 
 :::
-
-## Do's and Don'ts
-
-```text
-:::good
-
-This is a `good practice`, you should do it.
-
-:::
-
-:::bad
-
-This is a `bad practice`, you should not do it.
-
-:::
-```
-
-:::good
-
-This is a `good practice`, you should do it. [link test](https://thinkbucket.cn)
-
-:::
-
-:::bad
-
-This is a `bad practice`, you should not do it. [link test](https://thinkbucket.cn)
-
-:::

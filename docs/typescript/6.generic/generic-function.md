@@ -56,7 +56,7 @@ let output = identity('myString'); // type of output will be 'string'
 
 使用类型推断并没有明确传入的具体类型，编译器通过查看传递参数的类型，然后推断出`T`应该设置的类型。
 
-:::good
+:::tip
 
 推荐使用第二种方式调用泛型函数，类型推断不仅可以简化代码，而且还可以提高代码的可读性。
 
