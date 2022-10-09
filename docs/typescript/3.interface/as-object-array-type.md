@@ -54,7 +54,7 @@ let p2: Person = {name: 'kimi', age: 20, id: 888}; // OK
 
 There are two types of supported index signatures: `string` and `number`. It is possible to support both types of indexers.
 
-:::good
+:::tip
 
 Recommend to use string indexer in object and numeric indexer in array.
 
@@ -204,7 +204,7 @@ In other words, don’t check whether it IS-a duck, check whether it QUACKS-like
 
 Thus, in TypeScript we only need to pass in the object that meets the necessary conditions of the interface. It will pass the type checking even if the excess fields are passed in.
 
-:::bad
+:::caution
 
 It will cause an error if we pass in object literal.
 

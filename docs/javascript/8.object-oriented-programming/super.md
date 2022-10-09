@@ -122,7 +122,7 @@ b.m; // undefined
 
 React 也必须遵循 JS ，强制在 `constructor` 中必须先调用 `super` 才能引用 `this` 。
 
-:::bad
+:::caution
 
 在 React class `constructor` 中使用 `this.props` 得先调用 `super(props)` 。
 
@@ -153,7 +153,7 @@ class Button extends React.Component {
 
 :::
 
-:::good
+:::tip
 
 React 官方文档里面有一句 [Class components should always call the base constructor with props](https://reactjs.org/docs/state-and-lifecycle.html#adding-local-state-to-a-class).
 

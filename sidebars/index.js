@@ -24,7 +24,6 @@ const typescript = require('./typescript');
 const webpack = require('./webpack');
 const wiki = require('./wiki');
 const nodejs = require('./nodejs');
-const feGuidelines = require('./fe-guidelines');
 const python = require('./python');
 const go = require('./go');
 
@@ -41,7 +40,6 @@ module.exports = {
   wiki,
   webpack,
   nodejs,
-  feGuidelines,
   python,
   go
 };

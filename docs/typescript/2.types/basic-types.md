@@ -68,7 +68,7 @@ num = null; // OK
 
 However, when using the `--strictNullChecks` flag, `null` and `undefined` are only assignable to any and their respective types (the one exception being that `undefined` is also assignable to `void`). This helps avoid many common errors. In cases where you want to pass in either a `number` or `null` or `undefined`, you can use the union type `number | null | undefined`.
 
-:::good
+:::tip
 
 We encourage the use of `--strictNullChecks` when possible.
 
@@ -141,7 +141,7 @@ let prettySure: Object = 4; // OK
 prettySure.toFixed(); // Error: Property 'toFixed' doesn't exist on type 'Object'.
 ```
 
-:::good
+:::tip
 
 Avoid using `Object` in favor of the non-primitive object type, please use the non-primitive `object` type ([added in TypeScript 2.2](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-2.html#object-type)).
 
@@ -247,7 +247,7 @@ let arr: any[] = [123, 'abc'];
 
 With the intent of compatibility of JS, `any` may be useful in some scenarios, but we should not count on it.
 
-:::good
+:::tip
 
 We should use `any` as less as possible.
 
@@ -307,7 +307,7 @@ console.log(tuple1); // [1, 'a', 2]
 tuple1[2]; // Error, Tuple type '[number, string]' of length '2' has no element at index '2'.
 ```
 
-:::bad
+:::caution
 
 Use `push()` method in tuple is a bad idea.
 

@@ -268,7 +268,7 @@ setTimeout(function run() {
 
 这是因为下一次调用是在前一次调用完成时再调度的。
 
-:::good
+:::tip
 
 尽量递归版 `setTimeout` ，它比 `setInterval` 用起来更加灵活，同时也能保证每一轮执行的最小时间间隔。
 

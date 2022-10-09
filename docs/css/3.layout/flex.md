@@ -13,7 +13,7 @@ title: Flex
 
 该部分是弹性盒子当中的精华所在，必须要掌握这几个概念，才能运用好 flex。flex 是 `flex-grow`, `flex-shrink`, `flex-basis` 的缩写初始值是 `0 1 auto` 。
 
-:::good
+:::tip
 
 flex 属性不要采用缩写的方式，最好明确定义是哪个属性的值。
 

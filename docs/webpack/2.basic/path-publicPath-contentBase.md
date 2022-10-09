@@ -162,7 +162,7 @@ module.exports = {
 3. 若`output.publicPath`的值没有设置，则所有静态文件以`devServer.publicPath`值为前缀。
 4. 若两者都有设置且不相同，则使用`loader`打包出的静态文件以`output.publicPath`的值为前缀，`html`文件以`devServer.publicPath`为前缀。
 
-:::good
+:::tip
 
 从上面两者的联系可以看出，我们最好只设置`output.publicPath`的值，或者两者设置为相同的值，不然两者关系太复杂。
 

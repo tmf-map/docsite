@@ -44,12 +44,12 @@
     }
   },
   "dependencies": {
-    "@docusaurus/core": "2.0.0-beta.21",
-    "@docusaurus/plugin-pwa": "^2.0.0-beta.21",
-    "@docusaurus/preset-classic": "2.0.0-beta.21",
-    "@docusaurus/remark-plugin-npm2yarn": "^2.0.0-beta.21",
-    "@docusaurus/theme-live-codeblock": "2.0.0-beta.21",
-    "@easyops-cn/docusaurus-search-local": "^0.27.0",
+    "@docusaurus/core": "^2.1.0",
+    "@docusaurus/plugin-pwa": "^2.1.0",
+    "@docusaurus/preset-classic": "^2.1.0",
+    "@docusaurus/remark-plugin-npm2yarn": "^2.1.0",
+    "@docusaurus/theme-live-codeblock": "^2.1.0",
+    "@easyops-cn/docusaurus-search-local": "^0.32.0",
     "@http-util/request": "^0.1.0",
     "classnames": "^2.3.1",
     "npm-to-yarn": "^1.0.1",
@@ -60,7 +60,7 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.18.2",
-    "@docusaurus/module-type-aliases": "^2.0.0-beta.21",
+    "@docusaurus/module-type-aliases": "^2.1.0",
     "@tsconfig/docusaurus": "^1.0.2",
     "@types/react": "^17.0.1",
     "@types/react-helmet": "^6.1.0",

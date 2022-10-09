@@ -26,7 +26,6 @@ wiki: docs/wiki/**/*
 'docs: typescript': docs/typescript/**/*
 'docs: webpack': docs/webpack/**/*
 'docs: nodejs': docs/nodejs/**/*
-'docs: fe guidelines': docs/fe-guidelines/**/*
 'docs: python': docs/python/**/*
 'docs: go': docs/go/**/*
 'docs: mysql': docs/mysql/**/*
