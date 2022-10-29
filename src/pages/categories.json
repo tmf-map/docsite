@@ -280,19 +280,19 @@
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/bar-chart-2-line.svg",
         "list": [
           {
+            "name": "Chart"
+          },
+          {
+            "name": "Graph"
+          },
+          {
             "name": "SVG"
           },
           {
             "name": "Canvas2d"
           },
           {
-            "name": "D3"
-          },
-          {
             "name": "WebGL & WebGPU"
-          },
-          {
-            "name": "Python Vis Libs"
           }
         ]
       }
