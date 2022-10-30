@@ -280,10 +280,7 @@
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/bar-chart-2-line.svg",
         "list": [
           {
-            "name": "Chart"
-          },
-          {
-            "name": "Graph"
+            "name": "Data Viz Guidebook"
           },
           {
             "name": "SVG"
