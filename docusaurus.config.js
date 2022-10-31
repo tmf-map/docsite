@@ -3,7 +3,8 @@ const npm2yarn = require('@docusaurus/remark-plugin-npm2yarn');
 
 const githubOrg = 'ThinkBucket';
 const githubRepo = 'docsite';
-const siteIntro = "Small steps get us to faraway places. Here you can learn web technologies in different fields, including basics, frontend, backend, and data & ai. Keep exploring and stay up-to-date."
+const siteIntro =
+  'Small steps get us to faraway places. Here you can learn web technologies in different fields, including basics, frontend, backend, and data & ai. Keep exploring and stay up-to-date.';
 
 module.exports = {
   title: githubOrg,
@@ -17,8 +18,8 @@ module.exports = {
     [
       require.resolve('@easyops-cn/docusaurus-search-local'),
       {
-        hashed: true
-      }
+        hashed: true,
+      },
     ],
     [
       '@docusaurus/plugin-pwa',
@@ -30,72 +31,72 @@ module.exports = {
           {
             tagName: 'link',
             rel: 'icon',
-            href: '/img/icons/mobile-512x512@2x.png'
+            href: '/img/icons/mobile-512x512@2x.png',
           },
           {
             tagName: 'link',
             rel: 'manifest',
-            href: '/manifest.json' // your PWA manifest
+            href: '/manifest.json', // your PWA manifest
           },
           {
             tagName: 'meta',
             name: 'theme-color',
-            content: '#434343'
+            content: '#434343',
           },
           {
             tagName: 'meta',
             name: 'apple-mobile-web-app-capable',
-            content: 'yes'
+            content: 'yes',
           },
           {
             tagName: 'meta',
             name: 'apple-mobile-web-app-status-bar-style',
-            content: '#000'
+            content: '#000',
           },
           {
             tagName: 'link',
             rel: 'apple-touch-icon',
-            href: '/img/icons/mobile-512x512@2x.png'
+            href: '/img/icons/mobile-512x512@2x.png',
           },
           {
             tagName: 'link',
             rel: 'mask-icon',
             href: '/img/favicon/docsite.svg',
-            color: 'rgb(62, 204, 94)'
+            color: 'rgb(62, 204, 94)',
           },
           {
             tagName: 'meta',
             name: 'msapplication-TileImage',
-            content: '/img/icons/mobile-512x512@2x.png'
+            content: '/img/icons/mobile-512x512@2x.png',
           },
           {
             tagName: 'meta',
             name: 'msapplication-TileColor',
-            content: '#000'
-          }
-        ]
-      }
-    ]
+            content: '#000',
+          },
+        ],
+      },
+    ],
   ],
   themes: [require.resolve('@docusaurus/theme-live-codeblock')],
   customFields: {
     icp: {
       href: 'http://beian.miit.gov.cn/',
-      text: '冀ICP备19034211号'
+      text: '冀ICP备19034211号',
     },
-    siteIntro
+    siteIntro,
   },
   themeConfig: {
     navbar: {
       title: githubOrg,
       logo: {
         alt: 'Logo',
-        src: 'https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/docsite-logo-white-mode.png'
+        src: 'https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/docsite-logo-white-mode.png',
       },
       items: [
         {
           type: 'search',
-          position: 'left'
+          position: 'left',
         },
         {
           label: 'Basics',
@@ -107,24 +108,24 @@ module.exports = {
             {
               to: 'docs/algorithm/1.get-started/asymptotic-notations',
               activeBasePath: 'docs/algorithm/',
-              label: 'DS & Algorithms'
+              label: 'DS & Algorithms',
             },
             {
               to: 'docs/design-patterns/1.get-started',
               activeBasePath: 'docs/design-patterns/',
-              label: 'Design Patterns'
+              label: 'Design Patterns',
             },
             {
               to: 'docs/http/1.get-started',
               activeBasePath: 'docs/http/',
-              label: 'Network'
+              label: 'Network',
             },
             {
               to: 'docs/git/1.get-started',
               activeBasePath: 'docs/git/',
-              label: 'Git'
-            }
-          ]
+              label: 'Git',
+            },
+          ],
         },
         {
           label: 'Frontend',
@@ -137,44 +138,44 @@ module.exports = {
             {
               to: 'docs/javascript/1.basic/js-engine',
               activeBasePath: 'docs/javascript/',
-              label: 'JavaScript'
+              label: 'JavaScript',
             },
             {
               to: 'docs/typescript/1.get-started',
               activeBasePath: 'docs/typescript/',
-              label: 'TypeScript'
+              label: 'TypeScript',
             },
             {
               to: 'docs/html/1.get-started',
               activeBasePath: 'docs/html/',
-              label: 'HTML'
+              label: 'HTML',
             },
             {
               to: 'docs/css/1.visual-formatting-model/basic-concept',
               activeBasePath: 'docs/css/',
-              label: 'CSS'
+              label: 'CSS',
             },
             {
               to: 'docs/web/1.get-started',
               activeBasePath: 'docs/web/',
-              label: 'Web'
+              label: 'Web',
             },
             {
               to: 'docs/react/1.basics/1.1.jsx',
               activeBasePath: 'docs/react/',
-              label: 'React Stack'
+              label: 'React Stack',
             },
             {
               to: 'docs/webpack/1.get-started',
               activeBasePath: 'docs/webpack/',
-              label: 'Webpack'
+              label: 'Webpack',
             },
             {
               to: 'docs/nodejs/1.get-started',
               activeBasePath: 'docs/nodejs/',
-              label: 'NodeJS'
-            }
-          ]
+              label: 'NodeJS',
+            },
+          ],
         },
         {
           label: 'Backend',
@@ -187,53 +188,58 @@ module.exports = {
             {
               to: 'docs/python/1.get-started/history',
               activeBasePath: 'docs/python/',
-              label: 'Python'
+              label: 'Python',
             },
             {
               to: 'docs/go/1.get-started/introduction',
               activeBasePath: 'docs/go/',
-              label: 'Go'
+              label: 'Go',
             },
             {
               to: 'docs/mysql/1.get-started/1.1.intro-to-sql',
               activeBasePath: 'docs/mysql/',
-              label: 'MySQL'
+              label: 'MySQL',
             },
             {
               to: 'docs/docker/1.get-started/1.what-is-docker',
               activeBasePath: 'docs/docker/',
-              label: 'Docker'
-            }
-          ]
+              label: 'Docker',
+            },
+          ],
         },
         {
           label: 'Data & AI',
           position: 'right',
           // no `to` means activeBaseRegex gets ignored, so it's a must
-          to: 'docs/svg/1.get-started',
-          activeBaseRegex: 'docs/(svg|canvas|neo4j)/',
+          to: 'docs/data-viz-guidebook/1.get-started/1.overview',
+          activeBaseRegex: 'docs/(data-viz-guidebook|svg)/',
           items: [
+            {
+              to: 'docs/data-viz-guidebook/1.get-started/1.overview',
+              activeBasePath: 'docs/data-viz-guidebook/',
+              label: 'Data Viz Guidebook',
+            },
             {
               to: 'docs/svg/1.get-started',
               activeBasePath: 'docs/svg/',
-              label: 'SVG'
-            }
-          ]
+              label: 'SVG',
+            },
+          ],
         },
         {to: 'blog', label: 'Blog', position: 'right'},
         {
           label: 'Wiki',
           position: 'right',
           activeBasePath: 'docs/wiki/',
-          to: 'docs/wiki/1.get-started'
+          to: 'docs/wiki/1.get-started',
         },
         {
           href: `https://github.com/${githubOrg}/${githubRepo}`,
           position: 'right',
           className: 'header-github-link',
-          'aria-label': 'GitHub repository'
-        }
-      ]
+          'aria-label': 'GitHub repository',
+        },
+      ],
     },
     footer: {
       style: 'dark',
@@ -242,73 +248,73 @@ module.exports = {
           title: githubOrg,
           items: [
             {
-              html: `<img class="footer-logo" loading="lazy" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/docsite-logo-dark-mode.png" /><span>${githubOrg}</span>`
+              html: `<img class="footer-logo" loading="lazy" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/docsite-logo-dark-mode.png" /><span>${githubOrg}</span>`,
             },
             {
-              html: `<p class="footer-desc">${siteIntro}</p>`
-            }
-          ]
+              html: `<p class="footer-desc">${siteIntro}</p>`,
+            },
+          ],
         },
         {
           title: 'Mobile',
           items: [
             {
-              html: '<img class="footer-mobile-qr-code" loading="lazy" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/mobile_qrcode.png" />'
-            }
-          ]
+              html: '<img class="footer-mobile-qr-code" loading="lazy" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/mobile_qrcode.png" />',
+            },
+          ],
         },
         {
           title: 'Help',
           items: [
             {
               label: 'Release Notes',
-              href: `https://github.com/${githubOrg}/${githubRepo}/releases`
+              href: `https://github.com/${githubOrg}/${githubRepo}/releases`,
             },
             {
               label: 'Issues',
-              href: `https://github.com/${githubOrg}/${githubRepo}/issues`
+              href: `https://github.com/${githubOrg}/${githubRepo}/issues`,
             },
             {
               label: 'Bug Report',
-              href: `https://github.com/${githubOrg}/${githubRepo}/issues/new`
-            }
-          ]
+              href: `https://github.com/${githubOrg}/${githubRepo}/issues/new`,
+            },
+          ],
         },
         {
           title: 'Community',
           items: [
             {
               label: 'Blog',
-              to: 'blog'
+              to: 'blog',
             },
             {
               label: 'GitHub',
-              href: `https://github.com/${githubOrg}/${githubRepo}`
+              href: `https://github.com/${githubOrg}/${githubRepo}`,
             },
             {
-              html: `<iframe src="https://ghbtns.com/github-btn.html?user=${githubOrg}&repo=${githubRepo}&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>`
-            }
-          ]
-        }
+              html: `<iframe src="https://ghbtns.com/github-btn.html?user=${githubOrg}&repo=${githubRepo}&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>`,
+            },
+          ],
+        },
       ],
       // logo: {
       //   alt: `${githubOrg} Logo`,
       //   src: '',
       // },
-      copyright: `Copyright © 2019-${new Date().getFullYear()} ${githubOrg}`
+      copyright: `Copyright © 2019-${new Date().getFullYear()} ${githubOrg}`,
     },
     prism: {
       theme: require('prism-react-renderer/themes/nightOwl'),
       darkTheme: require('prism-react-renderer/themes/dracula'),
-      additionalLanguages: ['java']
-    }
+      additionalLanguages: ['java'],
+    },
   },
   presets: [
     [
       '@docusaurus/preset-classic',
       {
         googleAnalytics: {
-          trackingID: 'UA-152610996-1'
+          trackingID: 'UA-152610996-1',
         },
         docs: {
           sidebarPath: require.resolve('./sidebars/index.js'),
@@ -318,16 +324,16 @@ module.exports = {
           // Equivalent to `enableUpdateTime`.
           showLastUpdateTime: true,
           remarkPlugins: [npm2yarn],
-          numberPrefixParser: false
+          numberPrefixParser: false,
         },
         blog: {
           editUrl: `https://github.com/${githubOrg}/${githubRepo}/edit/master/`,
           remarkPlugins: [npm2yarn],
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css')
-        }
-      }
-    ]
-  ]
+          customCss: require.resolve('./src/css/custom.css'),
+        },
+      },
+    ],
+  ],
 };
