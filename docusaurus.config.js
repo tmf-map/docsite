@@ -211,13 +211,13 @@ module.exports = {
           label: 'Data & AI',
           position: 'right',
           // no `to` means activeBaseRegex gets ignored, so it's a must
-          to: 'docs/data-viz-guidebook/1.get-started/1.overview',
-          activeBaseRegex: 'docs/(data-viz-guidebook|svg)/',
+          to: 'docs/data-viz-guide/1.get-started/1.overview',
+          activeBaseRegex: 'docs/(data-viz-guide|svg)/',
           items: [
             {
-              to: 'docs/data-viz-guidebook/1.get-started/1.overview',
-              activeBasePath: 'docs/data-viz-guidebook/',
-              label: 'Data Viz Guidebook',
+              to: 'docs/data-viz-guide/1.get-started/1.overview',
+              activeBasePath: 'docs/data-viz-guide/',
+              label: 'Data Viz Guide',
             },
             {
               to: 'docs/svg/1.get-started',
