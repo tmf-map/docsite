@@ -32,4 +32,4 @@ wiki: docs/wiki/**/*
 'docs: svg': docs/svg/**/*
 'docs: git': docs/git/**/*
 'docs: docker': docs/docker/**/*
-'docs: data viz guidebook': docs/data-viz-guidebook/**/*
+'docs: data viz guide': docs/data-viz-guide/**/*
