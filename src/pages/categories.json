@@ -226,7 +226,7 @@
     "content": [
       {
         "title": "Collection",
-        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/database-line.svg",
+        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/data-preprocessing.svg",
         "list": [
           {
             "name": "Scraping"
@@ -241,7 +241,7 @@
       },
       {
         "title": "Bigdata",
-        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/data-preprocessing.svg",
+        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/database-line.svg",
         "list": [
           {
             "name": "Hadoop"
