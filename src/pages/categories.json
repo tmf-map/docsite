@@ -23,9 +23,6 @@
           },
           {
             "name": "Network"
-          },
-          {
-            "name": "Operation System"
           }
         ]
       },
@@ -37,10 +34,10 @@
             "name": "Git"
           },
           {
-            "name": "Terminal"
+            "name": "IDE"
           },
           {
-            "name": "IDE"
+            "name": "Linux Commands"
           },
           {
             "name": "Chrome Devtools"
@@ -164,6 +161,9 @@
             "name": "Go"
           },
           {
+            "name": "Java"
+          },
+          {
             "name": "Shell"
           }
         ]
@@ -226,7 +226,7 @@
     "content": [
       {
         "title": "Collection",
-        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/database-line.svg",
+        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/data-preprocessing.svg",
         "list": [
           {
             "name": "Scraping"
@@ -240,26 +240,26 @@
         ]
       },
       {
-        "title": "Preprocessing",
-        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/data-preprocessing.svg",
+        "title": "Bigdata",
+        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/database-line.svg",
         "list": [
           {
-            "name": "Data Cleaning"
+            "name": "Hadoop"
           },
           {
-            "name": "Data Integration"
+            "name": "Spark"
           },
           {
-            "name": "Data Transformation"
+            "name": "Flink"
           },
           {
-            "name": "Data Reduction"
+            "name": "Data Warehouse"
           }
         ]
       },
       {
-        "title": "Mining",
-        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/search-eye-line.svg",
+        "title": "AI",
+        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/psychotherapy-line.svg",
         "list": [
           {
             "name": "Statistics"
@@ -277,7 +277,7 @@
       },
       {
         "title": "Visualization",
-        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/bar-chart-2-line.svg",
+        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/line-chart-line.svg",
         "list": [
           {
             "name": "Data Viz Guide"
