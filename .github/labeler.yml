@@ -22,7 +22,7 @@ wiki: docs/wiki/**/*
 'docs: javascript': docs/javascript/**/*
 'docs: react': docs/react/**/*
 'docs: web': docs/web/**/*
-'docs: network': docs/http/**/*
+'docs: http': docs/http/**/*
 'docs: typescript': docs/typescript/**/*
 'docs: webpack': docs/webpack/**/*
 'docs: nodejs': docs/nodejs/**/*

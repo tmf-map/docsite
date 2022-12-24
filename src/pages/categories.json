@@ -22,7 +22,10 @@
             "name": "Design Patterns"
           },
           {
-            "name": "Network"
+            "name": "HTTP"
+          },
+          {
+            "name": "Linux"
           }
         ]
       },
@@ -35,9 +38,6 @@
           },
           {
             "name": "IDE"
-          },
-          {
-            "name": "Linux Commands"
           },
           {
             "name": "Chrome Devtools"
@@ -59,6 +59,9 @@
         "list": [
           {
             "name": "UML"
+          },
+          {
+            "name": "Excalidraw"
           }
         ]
       }

@@ -10,7 +10,7 @@ categories:
     labels:
       - 'docs: ds & algorithm'
       - 'docs: design patterns'
-      - 'docs: network'
+      - 'docs: http'
       - 'docs: git'
   - title: 'Frontend'
     labels:

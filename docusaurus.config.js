@@ -118,7 +118,7 @@ module.exports = {
             {
               to: 'docs/http/1.get-started',
               activeBasePath: 'docs/http/',
-              label: 'Network',
+              label: 'HTTP',
             },
             {
               to: 'docs/git/1.get-started',
