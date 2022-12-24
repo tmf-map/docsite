@@ -75,11 +75,11 @@ The package folder contains a special file called `__init__.py`, which stores th
 - The Python interpreter recognizes a folder as the package if it contains `__init__.py` file.
 - `__init__.py` exposes specified resources from its modules to be imported.
 
-An empty` __init__.py` file makes all functions from the above modules available when this package is imported.
+An empty`__init__.py` file makes all functions from the above modules available when this package is imported.
 
 :::tip
 
-` __init__.py` is essential for the folder to be recognized by Python as a package. Otherwise, Python treats this folder as a normal folder instead of a package. `__init__.py` can be an empty file or have Python code, because the `init.py` itself is a module, and its module name is `mypackage`.
+`__init__.py` is essential for the folder to be recognized by Python as a package. Otherwise, Python treats this folder as a normal folder instead of a package. `__init__.py` can be an empty file or have Python code, because the `__init.py__` itself is a module, and its module name is `mypackage`.
 
 :::
 
