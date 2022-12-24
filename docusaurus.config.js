@@ -196,6 +196,11 @@ module.exports = {
               label: 'Go',
             },
             {
+              to: 'docs/fastapi/1.get-started/introduction',
+              activeBasePath: 'docs/fastapi/',
+              label: 'FastAPI',
+            },
+            {
               to: 'docs/mysql/1.get-started/1.intro-to-sql',
               activeBasePath: 'docs/mysql/',
               label: 'MySQL',
