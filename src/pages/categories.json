@@ -99,7 +99,7 @@
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/stack-line.svg",
         "list": [
           {
-            "name": "React Stack"
+            "name": "React"
           },
           {
             "name": "NodeJS"
@@ -111,7 +111,7 @@
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/icon-package.svg",
         "list": [
           {
-            "name": "Electron"
+            "name": "Jest"
           },
           {
             "name": "Playwright"
@@ -129,7 +129,7 @@
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/palette-line.svg",
         "list": [
           {
-            "name": "Icon & Font"
+            "name": "Prototype"
           },
           {
             "name": "Figma"
@@ -225,17 +225,17 @@
     },
     "content": [
       {
-        "title": "Collection",
+        "title": "Basics",
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/data-preprocessing.svg",
         "list": [
           {
-            "name": "Scraping"
+            "name": "数学基础"
           },
           {
-            "name": "Buried Point"
+            "name": "分析算法"
           },
           {
-            "name": "Public Datasets"
+            "name": "分析思维"
           }
         ]
       },
@@ -253,7 +253,7 @@
             "name": "Flink"
           },
           {
-            "name": "Data Warehouse"
+            "name": "ClickHouse"
           }
         ]
       },
@@ -261,9 +261,6 @@
         "title": "AI",
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/psychotherapy-line.svg",
         "list": [
-          {
-            "name": "Statistics"
-          },
           {
             "name": "DM Algorithms"
           },
