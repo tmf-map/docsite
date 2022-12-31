@@ -22,7 +22,10 @@
             "name": "Design Patterns"
           },
           {
-            "name": "Network"
+            "name": "HTTP"
+          },
+          {
+            "name": "Linux"
           }
         ]
       },
@@ -37,9 +40,6 @@
             "name": "IDE"
           },
           {
-            "name": "Linux Commands"
-          },
-          {
             "name": "Chrome Devtools"
           }
         ]
@@ -50,6 +50,9 @@
         "list": [
           {
             "name": "Markdown"
+          },
+          {
+            "name": "LaTeX"
           }
         ]
       },
@@ -59,6 +62,9 @@
         "list": [
           {
             "name": "UML"
+          },
+          {
+            "name": "Excalidraw"
           }
         ]
       }
@@ -99,7 +105,7 @@
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/stack-line.svg",
         "list": [
           {
-            "name": "React Stack"
+            "name": "React"
           },
           {
             "name": "NodeJS"
@@ -111,7 +117,7 @@
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/icon-package.svg",
         "list": [
           {
-            "name": "Electron"
+            "name": "Jest"
           },
           {
             "name": "Playwright"
@@ -129,7 +135,7 @@
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/palette-line.svg",
         "list": [
           {
-            "name": "Icon & Font"
+            "name": "Prototype"
           },
           {
             "name": "Figma"
@@ -225,17 +231,17 @@
     },
     "content": [
       {
-        "title": "Collection",
+        "title": "Maths",
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/data-preprocessing.svg",
         "list": [
           {
-            "name": "Scraping"
+            "name": "Probability Theory"
           },
           {
-            "name": "Buried Point"
+            "name": "Linear Algebra"
           },
           {
-            "name": "Public Datasets"
+            "name": "Numerical Computation"
           }
         ]
       },
@@ -253,7 +259,7 @@
             "name": "Flink"
           },
           {
-            "name": "Data Warehouse"
+            "name": "ClickHouse"
           }
         ]
       },
@@ -262,10 +268,7 @@
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/psychotherapy-line.svg",
         "list": [
           {
-            "name": "Statistics"
-          },
-          {
-            "name": "DM Algorithms"
+            "name": "AI Algorithms"
           },
           {
             "name": "Machine Learning"

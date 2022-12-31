@@ -10,7 +10,7 @@ categories:
     labels:
       - 'docs: ds & algorithm'
       - 'docs: design patterns'
-      - 'docs: network'
+      - 'docs: http'
       - 'docs: git'
   - title: 'Frontend'
     labels:
@@ -18,7 +18,7 @@ categories:
       - 'docs: html'
       - 'docs: css'
       - 'docs: web'
-      - 'docs: react stack'
+      - 'docs: react'
       - 'docs: webpack'
       - 'docs: typescript'
       - 'docs: nodejs'

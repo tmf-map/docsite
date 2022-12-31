@@ -2,6 +2,8 @@
 title: HTTP/2
 ---
 
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/C-8t70YXoAEShUL.jpeg' alt='C-8t70YXoAEShUL'/>
+
 ## 简介
 
 HTTP/2 主要目的是提高网页性能，最近几年比较火，将其单独抽成一块讲。2015 年，HTTP/2 发布。它不叫 HTTP/2.0，是因为标准委员会不打算再发布子版本了，下一个新版本将是 HTTP/3。
