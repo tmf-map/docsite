@@ -50,6 +50,9 @@
         "list": [
           {
             "name": "Markdown"
+          },
+          {
+            "name": "LaTeX"
           }
         ]
       },
@@ -228,17 +231,17 @@
     },
     "content": [
       {
-        "title": "Basics",
+        "title": "Maths",
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/data-preprocessing.svg",
         "list": [
           {
-            "name": "数学基础"
+            "name": "Probability Theory"
           },
           {
-            "name": "分析算法"
+            "name": "Linear Algebra"
           },
           {
-            "name": "分析思维"
+            "name": "Numerical Computation"
           }
         ]
       },
@@ -265,7 +268,7 @@
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/psychotherapy-line.svg",
         "list": [
           {
-            "name": "DM Algorithms"
+            "name": "AI Algorithms"
           },
           {
             "name": "Machine Learning"
