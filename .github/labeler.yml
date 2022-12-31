@@ -20,9 +20,9 @@ wiki: docs/wiki/**/*
 'docs: design patterns': docs/design-patterns/**/*
 'docs: html': docs/html/**/*
 'docs: javascript': docs/javascript/**/*
-'docs: react stack': docs/react/**/*
+'docs: react': docs/react/**/*
 'docs: web': docs/web/**/*
-'docs: network': docs/http/**/*
+'docs: http': docs/http/**/*
 'docs: typescript': docs/typescript/**/*
 'docs: webpack': docs/webpack/**/*
 'docs: nodejs': docs/nodejs/**/*

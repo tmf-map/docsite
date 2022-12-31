@@ -11,17 +11,18 @@ const Section4 = () => {
   const [contributors, setContributors] = useState([]);
 
   useEffect(() => {
-    request
-      .p(
-        `https://api.github.com/repos/${organizationName}/${projectName}/contributors`
-      )
-      .q('per_page', 100)
-      .get()
-      .then(res => {
-        const contributors = res.filter(ctb => !ctb.login.includes('[bot]'));
-        setContributors(contributors);
-      })
-      .catch(() => {});
+    process.env.NODE_ENV !== 'development' &&
+      request
+        .p(
+          `https://api.github.com/repos/${organizationName}/${projectName}/contributors`
+        )
+        .q('per_page', 100)
+        .get()
+        .then(res => {
+          const contributors = res.filter(ctb => !ctb.login.includes('[bot]'));
+          setContributors(contributors);
+        })
+        .catch(() => {});
   }, []);
 
   const domain = 'https://github.com';
@@ -29,7 +30,7 @@ const Section4 = () => {
     repository: `${domain}/${organizationName}/${projectName}`,
     releases: `${domain}/${organizationName}/${projectName}/releases`,
     issues: `${domain}/${organizationName}/${projectName}/issues`,
-    discussions: `${domain}/${organizationName}/${projectName}/discussions`
+    discussions: `${domain}/${organizationName}/${projectName}/discussions`,
   };
 
   return (

@@ -2,6 +2,8 @@
 title: HTTP/1.X
 ---
 
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/C-8t64sXYAEf7GG.jpeg' alt='C-8t64sXYAEf7GG'/>
+
 ## 前言
 
 在 HTTP 发布正式版之前，HTTP 的版本号被定位在 0.9 以区分后来的版本。HTTP/0.9 极其简单：请求由单行指令构成，以唯一可用方法 GET 开头，其后跟目标资源的路径。

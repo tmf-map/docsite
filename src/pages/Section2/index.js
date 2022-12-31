@@ -10,7 +10,7 @@ const cards = categories.map((item, idx) => ({
   }.svg`,
   title: item.title.name,
   intro: item.intro.post,
-  moreUrl: `#${item.id}`
+  moreUrl: `#${item.id}`,
 }));
 
 const BASE_URL = 'https://api.github.com';
@@ -23,7 +23,7 @@ const httpGet = (theUrl, returnHeaders) => {
     return xmlHttp;
   }
   return xmlHttp.responseText;
-}
+};
 
 // https://gist.github.com/yershalom/a7c08f9441d1aadb13777bce4c7cdc3b
 const getFirstCommit = (owner, repo) => {
@@ -45,7 +45,7 @@ const getFirstCommit = (owner, repo) => {
     firstCommitHash = firstCommit[firstCommit.length - 1]?.sha;
   }
   return firstCommitHash;
-}
+};
 
 const getAllCommitsCount = (owner, repo, sha) => {
   let firstCommit = getFirstCommit(owner, repo);
@@ -53,15 +53,15 @@ const getAllCommitsCount = (owner, repo, sha) => {
   let commitReq = httpGet(compareUrl);
   let commitCount = JSON.parse(commitReq)['total_commits'] + 1;
   return commitCount;
-}
+};
 
 const Card = ({bannerUrl, title, intro, moreUrl}) => {
   useEffect(() => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click',  function(e) {
+      anchor.addEventListener('click', function (e) {
         e.preventDefault();
         document.querySelector(this.getAttribute('href')).scrollIntoView({
-          behavior: 'smooth'
+          behavior: 'smooth',
         });
       });
     });
@@ -89,40 +89,38 @@ const Section2 = () => {
   const [stars, setStars] = useState('-');
 
   useEffect(() => {
-    request
-      .p(`${BASE_URL}/repos/${organizationName}/${projectName}`)
-      .get()
-      .then(res => {
-        const {stargazers_count: stargazersCount, created_at: createdAt} =
-          res ?? {};
-        stargazersCount && setStars(stargazersCount);
-        createdAt &&
-          setDays(
-            Math.floor((new Date() - new Date(createdAt)) / 24 / 3600 / 1000)
-          );
-      })
-      .catch(() => {});
-    const commitsCount = getAllCommitsCount(
-      organizationName,
-      projectName,
-      'master'
-    );
+    process.env.NODE_ENV !== 'development' &&
+      request
+        .p(`${BASE_URL}/repos/${organizationName}/${projectName}`)
+        .get()
+        .then(res => {
+          const {stargazers_count: stargazersCount, created_at: createdAt} =
+            res ?? {};
+          stargazersCount && setStars(stargazersCount);
+          createdAt &&
+            setDays(
+              Math.floor((new Date() - new Date(createdAt)) / 24 / 3600 / 1000)
+            );
+        })
+        .catch(() => {});
+    const commitsCount =
+      process.env.NODE_ENV !== 'development' &&
+      getAllCommitsCount(organizationName, projectName, 'master');
     commitsCount && setCommits(commitsCount);
-    request
-      .p(
-        `${BASE_URL}/repos/${organizationName}/${projectName}/contributors`
-      )
-      .q('per_page', 1)
-      .asRaw()
-      .get()
-      .then(res => {
-        // https://stackoverflow.com/questions/44347339/github-api-how-efficiently-get-the-total-contributors-amount-per-repository
-        const contributionsCount = res?.headers
-          ?.get('link')
-          ?.match(/\d+(?=>; rel="last")/)?.[0];
-        contributionsCount && setContributors(contributionsCount);
-      })
-      .catch(() => {});
+    process.env.NODE_ENV !== 'development' &&
+      request
+        .p(`${BASE_URL}/repos/${organizationName}/${projectName}/contributors`)
+        .q('per_page', 1)
+        .asRaw()
+        .get()
+        .then(res => {
+          // https://stackoverflow.com/questions/44347339/github-api-how-efficiently-get-the-total-contributors-amount-per-repository
+          const contributionsCount = res?.headers
+            ?.get('link')
+            ?.match(/\d+(?=>; rel="last")/)?.[0];
+          contributionsCount && setContributors(contributionsCount);
+        })
+        .catch(() => {});
   }, []);
 
   return (

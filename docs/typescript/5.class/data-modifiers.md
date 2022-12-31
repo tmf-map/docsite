@@ -92,7 +92,7 @@ console.log(testClass.city);
 
 ### private constructor
 
-If constructor of a class is private then its instance cannot be created outside. A famous use of private constructor is applying [singleton pattern](/docs/design-patterns/2.creation-pattern/singleton):
+If constructor of a class is private then its instance cannot be created outside. A famous use of private constructor is applying [singleton pattern](/docs/design-patterns/2.creational-patterns/singleton):
 
 ```typescript
 class SingletonExample {

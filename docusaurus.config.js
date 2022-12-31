@@ -118,7 +118,7 @@ module.exports = {
             {
               to: 'docs/http/1.get-started',
               activeBasePath: 'docs/http/',
-              label: 'Network',
+              label: 'HTTP',
             },
             {
               to: 'docs/git/1.get-started',
@@ -163,7 +163,7 @@ module.exports = {
             {
               to: 'docs/react/1.basics/1.1.jsx',
               activeBasePath: 'docs/react/',
-              label: 'React Stack',
+              label: 'React',
             },
             {
               to: 'docs/webpack/1.get-started',
@@ -194,6 +194,11 @@ module.exports = {
               to: 'docs/go/1.get-started/introduction',
               activeBasePath: 'docs/go/',
               label: 'Go',
+            },
+            {
+              to: 'docs/fastapi/1.get-started/introduction',
+              activeBasePath: 'docs/fastapi/',
+              label: 'FastAPI',
             },
             {
               to: 'docs/mysql/1.get-started/1.intro-to-sql',

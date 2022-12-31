@@ -22,10 +22,10 @@
             "name": "Design Patterns"
           },
           {
-            "name": "Network"
+            "name": "HTTP"
           },
           {
-            "name": "Operation System"
+            "name": "Linux"
           }
         ]
       },
@@ -35,9 +35,6 @@
         "list": [
           {
             "name": "Git"
-          },
-          {
-            "name": "Terminal"
           },
           {
             "name": "IDE"
@@ -53,6 +50,9 @@
         "list": [
           {
             "name": "Markdown"
+          },
+          {
+            "name": "LaTeX"
           }
         ]
       },
@@ -62,6 +62,9 @@
         "list": [
           {
             "name": "UML"
+          },
+          {
+            "name": "Excalidraw"
           }
         ]
       }
@@ -102,7 +105,7 @@
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/stack-line.svg",
         "list": [
           {
-            "name": "React Stack"
+            "name": "React"
           },
           {
             "name": "NodeJS"
@@ -114,7 +117,7 @@
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/icon-package.svg",
         "list": [
           {
-            "name": "Electron"
+            "name": "Jest"
           },
           {
             "name": "Playwright"
@@ -132,7 +135,7 @@
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/palette-line.svg",
         "list": [
           {
-            "name": "Icon & Font"
+            "name": "Prototype"
           },
           {
             "name": "Figma"
@@ -162,6 +165,9 @@
           },
           {
             "name": "Go"
+          },
+          {
+            "name": "Java"
           },
           {
             "name": "Shell"
@@ -225,47 +231,44 @@
     },
     "content": [
       {
-        "title": "Collection",
-        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/database-line.svg",
-        "list": [
-          {
-            "name": "Scraping"
-          },
-          {
-            "name": "Buried Point"
-          },
-          {
-            "name": "Public Datasets"
-          }
-        ]
-      },
-      {
-        "title": "Preprocessing",
+        "title": "Maths",
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/data-preprocessing.svg",
         "list": [
           {
-            "name": "Data Cleaning"
+            "name": "Probability Theory"
           },
           {
-            "name": "Data Integration"
+            "name": "Linear Algebra"
           },
           {
-            "name": "Data Transformation"
-          },
-          {
-            "name": "Data Reduction"
+            "name": "Numerical Computation"
           }
         ]
       },
       {
-        "title": "Mining",
-        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/search-eye-line.svg",
+        "title": "Bigdata",
+        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/database-line.svg",
         "list": [
           {
-            "name": "Statistics"
+            "name": "Hadoop"
           },
           {
-            "name": "DM Algorithms"
+            "name": "Spark"
+          },
+          {
+            "name": "Flink"
+          },
+          {
+            "name": "ClickHouse"
+          }
+        ]
+      },
+      {
+        "title": "AI",
+        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/psychotherapy-line.svg",
+        "list": [
+          {
+            "name": "AI Algorithms"
           },
           {
             "name": "Machine Learning"
@@ -277,7 +280,7 @@
       },
       {
         "title": "Visualization",
-        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/bar-chart-2-line.svg",
+        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/line-chart-line.svg",
         "list": [
           {
             "name": "Data Viz Guide"
