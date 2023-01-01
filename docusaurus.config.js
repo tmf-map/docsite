@@ -121,6 +121,11 @@ module.exports = {
               label: 'HTTP',
             },
             {
+              to: 'docs/linux/1.get-started/introduction',
+              activeBasePath: 'docs/linux/',
+              label: 'Linux',
+            },
+            {
               to: 'docs/git/1.get-started',
               activeBasePath: 'docs/git/',
               label: 'Git',
