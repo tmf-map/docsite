@@ -108,7 +108,7 @@ module.exports = {
             {
               to: 'docs/algorithm/1.get-started/asymptotic-notations',
               activeBasePath: 'docs/algorithm/',
-              label: 'DS & Algorithms',
+              label: 'Algorithm',
             },
             {
               to: 'docs/design-patterns/1.get-started',

@@ -8,7 +8,7 @@ exclude-labels:
 categories:
   - title: 'Basics'
     labels:
-      - 'docs: ds & algorithm'
+      - 'docs: algorithm'
       - 'docs: design patterns'
       - 'docs: http'
       - 'docs: git'
