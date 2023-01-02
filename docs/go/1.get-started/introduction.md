@@ -2,7 +2,7 @@
 title: Introduction
 ---
 
-<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/go-gopher.png' alt='go-cover'/>
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/go-cover.png' alt='go-cover'/>
 
 - Go Official Doc: https://golang.org/
 - GoCN: https://gocn.vip/
