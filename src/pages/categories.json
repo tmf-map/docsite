@@ -188,7 +188,7 @@
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/database-2-line.svg",
         "list": [
           {
-            "name": "MySQL"
+            "name": "SQL"
           },
           {
             "name": "Redis"

@@ -28,7 +28,7 @@ wiki: docs/wiki/**/*
 'docs: nodejs': docs/nodejs/**/*
 'docs: python': docs/python/**/*
 'docs: go': docs/go/**/*
-'docs: mysql': docs/mysql/**/*
+'docs: sql': docs/sql/**/*
 'docs: svg': docs/svg/**/*
 'docs: git': docs/git/**/*
 'docs: docker': docs/docker/**/*

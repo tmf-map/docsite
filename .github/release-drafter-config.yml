@@ -27,7 +27,7 @@ categories:
     labels:
       - 'docs: python'
       - 'docs: go'
-      - 'docs: mysql'
+      - 'docs: sql'
       - 'docs: docker'
   - title: 'Data & AI'
     labels:
