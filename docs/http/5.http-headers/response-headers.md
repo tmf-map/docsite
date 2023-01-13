@@ -115,7 +115,7 @@ Vary: Accept-Encoding,User-Agent,Accept
 
 ## 其他字段
 
-除了上述字段外还有`Access-Control-Allow-Origin`、`Access-Control-Allow-Methods`、`Access-Control-Allow-Headers`、`Access-Control-Allow-Credentials`等字段，这些`Access-Control-Allow-*`用在`CORS`跨域的预检请求对应的响应头中。关于这部分可以参考文档中关于[CORS](/docs/web/2.cross-domain/cors)的内容。
+除了上述字段外还有`Access-Control-Allow-Origin`、`Access-Control-Allow-Methods`、`Access-Control-Allow-Headers`、`Access-Control-Allow-Credentials`等字段，这些`Access-Control-Allow-*`用在`CORS`跨域的预检请求对应的响应头中。关于这部分可以参考文档中关于[CORS](/docs/browser/02-cross-domain/03-cors)的内容。
 
 ## 参考资料
 

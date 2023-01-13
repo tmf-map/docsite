@@ -16,7 +16,6 @@ dirNames.forEach(dirName => {
 const javascript = require('./javascript');
 const html = require('./html');
 const css = require('./css');
-const web = require('./web');
 const algorithm = require('./algorithm');
 const http = require('./http');
 const typescript = require('./typescript');
@@ -30,7 +29,6 @@ module.exports = {
   javascript,
   html,
   css,
-  web,
   algorithm,
   http,
   typescript,

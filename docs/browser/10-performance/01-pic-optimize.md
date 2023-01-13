@@ -11,8 +11,8 @@ title: 图片优化
 
 使用雪碧图，可以整合页面中的多个图片为单个图片减少网络请求。内部通过设置 CSS 属性
 
-```
-background：url(xx.img) no-repeat x y。
+```css
+background：url(xx.img) no-repeat x y;
 ```
 
 参考：https://cloud.tencent.com/developer/article/1334594

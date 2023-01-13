@@ -103,7 +103,8 @@ module.exports = {
           position: 'right',
           // no `to` means activeBaseRegex gets ignored, so it's a must
           to: 'docs/algorithm/1.get-started/asymptotic-notations',
-          activeBaseRegex: 'docs/(design-patterns|algorithm|http|linux|git)/',
+          activeBaseRegex:
+            'docs/(design-patterns|algorithm|http|browser|web-security|linux|git)/',
           items: [
             {
               to: 'docs/algorithm/1.get-started/asymptotic-notations',
@@ -119,6 +120,16 @@ module.exports = {
               to: 'docs/http/1.get-started',
               activeBasePath: 'docs/http/',
               label: 'HTTP',
+            },
+            {
+              to: 'docs/browser/01-get-started',
+              activeBasePath: 'docs/browser/',
+              label: 'Browser',
+            },
+            {
+              to: 'docs/web-security/01-cookie',
+              activeBasePath: 'docs/web-security/',
+              label: 'Web Security',
             },
             {
               to: 'docs/linux/1.get-started/1.introduction',
@@ -138,7 +149,7 @@ module.exports = {
           // no `to` means activeBaseRegex gets ignored, so it's a must
           to: 'docs/javascript/1.basic/js-engine',
           activeBaseRegex:
-            'docs/(javascript|typescript|html|css|web|react|webpack|nodejs)/',
+            'docs/(javascript|typescript|html|css|react|webpack|nodejs)/',
           items: [
             {
               to: 'docs/javascript/1.basic/js-engine',
@@ -159,11 +170,6 @@ module.exports = {
               to: 'docs/css/1.visual-formatting-model/basic-concept',
               activeBasePath: 'docs/css/',
               label: 'CSS',
-            },
-            {
-              to: 'docs/web/1.get-started',
-              activeBasePath: 'docs/web/',
-              label: 'Web',
             },
             {
               to: 'docs/react/1.basics/1.1.jsx',
