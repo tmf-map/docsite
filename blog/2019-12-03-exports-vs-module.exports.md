@@ -127,7 +127,7 @@ require：  function () {
     var module = (installedModules[moduleId] = {
       i: moduleId,
       l: false,
-      exports: {}
+      exports: {},
     });
     // Execute the module function
     modules[moduleId].call(
@@ -151,7 +151,7 @@ require：  function () {
   '/lib.js': function (module, exports) {
     exports.info = {
       name: 'Robbie',
-      age: 18
+      age: 18,
     };
 
     console.log('module.exports: ', module.exports);
@@ -163,7 +163,7 @@ require：  function () {
     console.log('---修改后---');
     console.log('module.exports: ', module.exports);
     console.log('exports: ', exports);
-  }
+  },
 });
 ```
 
@@ -177,7 +177,7 @@ require：  function () {
 
 ## 相关拓展
 
-与本文内容相关的还有 ES6 模块的导出规范，如果对 ES6 模块`export`和`export default`感兴趣，可以[点击此处查看相关总结](https://www.thinkbucket.cn/docs/javascript/6.modules/es6-module)。
+与本文内容相关的还有 ES6 模块的导出规范，如果对 ES6 模块`export`和`export default`感兴趣，可以[点击此处查看相关总结](/docs/javascript/06-modules/02-es6-module)。
 
 ## 参考资料
 

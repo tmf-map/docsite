@@ -43,7 +43,7 @@ title: 外观数列
 
 ## 思路
 
-1. 思路一：使用正则表达式的反向引用，相关知识可参考 [此处](/docs/javascript/7.reference-type/regex#%E5%8F%8D%E5%90%91%E5%BC%95%E7%94%A8)
+1. 思路一：使用正则表达式的反向引用，相关知识可参考 [此处](/docs/javascript/07-reference-type/03-regex#%E5%8F%8D%E5%90%91%E5%BC%95%E7%94%A8)
 
 2. 思路二：想要获得数字 n 的外观数列，先获取 n-1 对应的外观数列 str，然后遍历 str，通过 startIndex 和 endIndex 获取连续相同数字的长度
 

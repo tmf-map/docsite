@@ -101,7 +101,7 @@ Promise.resolve()
 
 :::tip
 
-`throw 'Oh no!'` 相当于 `Promise.reject('Oh no!')`，catch 中即使有 return 也还是会执行后面的 then，注意 return 在 promise 的 `.catch()` 中和 [在 async/await 的 try-catch 中的差异](/docs/javascript/9.async-programming/async-await#2-加工一下再抛给外层函数去处理异常)。
+`throw 'Oh no!'` 相当于 `Promise.reject('Oh no!')`，catch 中即使有 return 也还是会执行后面的 then，注意 return 在 promise 的 `.catch()` 中和 [在 async/await 的 try-catch 中的差异](/docs/javascript/09-async-programming/06-async-await#2-加工一下再抛给外层函数去处理异常)。
 
 :::
 
@@ -436,7 +436,7 @@ Promise.resolve(thenable);
 var p1 = Promise.resolve({
   then: function (test, rej) {
     rej('rejected!');
-  }
+  },
 });
 console.log(p1 instanceof Promise); // true, 这是一个Promise对象
 

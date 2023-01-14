@@ -13,7 +13,7 @@ tags: [exports, export, export default]
 
 ## export 和 export default
 
-ES6 导出模块一般会使用`export`或`export default`，使用两者的语法在 javaScript 文档中的[ES6 Module](/docs/javascript/6.modules/es6-module)已经做了详细的讲解，此处不再赘述。那么为什么已经有了`export`还要整个`export default`呢？`export`和`export default`之间的关系是什么呢？下面的内容也将通过这两个问题进行展开。
+ES6 导出模块一般会使用`export`或`export default`，使用两者的语法在 javaScript 文档中的[ES6 Module](/docs/javascript/06-modules/02-es6-module)已经做了详细的讲解，此处不再赘述。那么为什么已经有了`export`还要整个`export default`呢？`export`和`export default`之间的关系是什么呢？下面的内容也将通过这两个问题进行展开。
 
 ### 为什么已经有了 export 还要整个 export default 呢？
 
@@ -41,12 +41,12 @@ Babel 转义后：
 'use strict';
 
 Object.defineProperty(exports, '__esModule', {
-  value: true
+  value: true,
 });
 exports.default = exports.info = void 0;
 var info = {
   age: 22,
-  name: 'han'
+  name: 'han',
 };
 exports.info = info;
 var email = 'SA17225105@gmail.com';
@@ -83,7 +83,7 @@ function _interopRequireDefault(obj) {
   return obj && obj.__esModule
     ? obj
     : {
-        default: obj
+        default: obj,
       };
 }
 
@@ -100,7 +100,7 @@ console.log(_myInfo.default);
 
 ## ES6 模块与 CommonJS 模块的差异
 
-关于 ES6 模块与 CommonJS 模块的差异可以参考[ES6 Module](/docs/javascript/6.modules/es6-module)这一篇的文章。
+关于 ES6 模块与 CommonJS 模块的差异可以参考[ES6 Module](/docs/javascript/06-modules/02-es6-module)这一篇的文章。
 
 如果对 ES6 模块和 CommonJS 模块打包后的内容感兴趣，可以结合下面这两个文件一起研究：
 

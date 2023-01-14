@@ -47,7 +47,7 @@ title: 编译选项
 
 ### module
 
-`module`是指生成代码的模块标准，当`target`的值为`es6`时，`module`的默认值为`es6`，否则默认为`commonjs`。其中`es6`是`js`模块化规范，`commonjs`是`node.js`的模块化规范。除了默认的这两个之外，它的值还可以是 'amd', 'umd'等。关于模块化的内容推荐学习 [javaScript：模块机制](/docs/javascript/1.basic/js-engine)。
+`module`是指生成代码的模块标准，当`target`的值为`es6`时，`module`的默认值为`es6`，否则默认为`commonjs`。其中`es6`是`js`模块化规范，`commonjs`是`node.js`的模块化规范。除了默认的这两个之外，它的值还可以是 'amd', 'umd'等。关于模块化的内容推荐学习 [javaScript：模块机制](/docs/javascript/01-basic/01-js-engine)。
 
 下面我们通过一个`ts`文件，列举了不同`module`值编译后的结果：
 
@@ -418,7 +418,7 @@ var __values =
         next: function () {
           if (o && i >= o.length) o = void 0;
           return {value: o && o[i++], done: !o};
-        }
+        },
       };
     throw new TypeError(
       s ? 'Object is not iterable.' : 'Symbol.iterator is not defined.'

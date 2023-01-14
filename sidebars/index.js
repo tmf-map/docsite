@@ -13,7 +13,6 @@ dirNames.forEach(dirName => {
   ];
 });
 
-const javascript = require('./javascript');
 const html = require('./html');
 const css = require('./css');
 const algorithm = require('./algorithm');
@@ -26,7 +25,6 @@ const go = require('./go');
 
 module.exports = {
   ...sidebars,
-  javascript,
   html,
   css,
   algorithm,

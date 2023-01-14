@@ -147,12 +147,12 @@ module.exports = {
           label: 'Frontend',
           position: 'right',
           // no `to` means activeBaseRegex gets ignored, so it's a must
-          to: 'docs/javascript/1.basic/js-engine',
+          to: 'docs/javascript/01-basic/01-js-engine',
           activeBaseRegex:
             'docs/(javascript|typescript|html|css|react|webpack|nodejs)/',
           items: [
             {
-              to: 'docs/javascript/1.basic/js-engine',
+              to: 'docs/javascript/01-basic/01-js-engine',
               activeBasePath: 'docs/javascript/',
               label: 'JavaScript',
             },

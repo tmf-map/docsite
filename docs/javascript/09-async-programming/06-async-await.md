@@ -404,7 +404,7 @@ fetchA()
   });
 ```
 
-其执行顺序为 `A1 -> B -> A2`，具体原因参见 [宏任务和微任务：await 做了什么](/docs/javascript/9.async-programming/macro-micro-task#await-做了什么)
+其执行顺序为 `A1 -> B -> A2`，具体原因参见 [宏任务和微任务：await 做了什么](/docs/javascript/09-async-programming/01-macro-micro-task#await-做了什么)
 
 :::
 

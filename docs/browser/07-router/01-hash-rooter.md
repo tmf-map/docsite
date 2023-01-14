@@ -1,5 +1,4 @@
 ---
-id: hash-rooter
 title: Hash 路由
 ---
 
