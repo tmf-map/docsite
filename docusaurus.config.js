@@ -221,6 +221,11 @@ module.exports = {
               activeBasePath: 'docs/docker/',
               label: 'Docker',
             },
+            {
+              to: 'docs/kubernetes/01-get-started/01-introduction',
+              activeBasePath: 'docs/kubernetes/',
+              label: 'Kubernetes',
+            },
           ],
         },
         {
