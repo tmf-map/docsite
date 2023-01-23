@@ -127,7 +127,7 @@ module.exports = {
               label: 'Browser',
             },
             {
-              to: 'docs/web-security/01-cookie',
+              to: 'docs/web-security/01-introduction',
               activeBasePath: 'docs/web-security/',
               label: 'Web Security',
             },
