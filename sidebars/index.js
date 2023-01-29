@@ -19,7 +19,6 @@ const algorithm = require('./algorithm');
 const http = require('./http');
 const typescript = require('./typescript');
 const webpack = require('./webpack');
-const wiki = require('./wiki');
 const python = require('./python');
 const go = require('./go');
 
@@ -30,7 +29,6 @@ module.exports = {
   algorithm,
   http,
   typescript,
-  wiki,
   webpack,
   python,
   go,

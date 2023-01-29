@@ -252,7 +252,7 @@ module.exports = {
           label: 'Wiki',
           position: 'right',
           activeBasePath: 'docs/wiki/',
-          to: 'docs/wiki/1.get-started',
+          to: 'docs/wiki/01-get-started',
         },
         {
           href: `https://github.com/${githubOrg}/${githubRepo}`,
