@@ -21,7 +21,9 @@ wiki: docs/wiki/**/*
 'docs: html': docs/html/**/*
 'docs: javascript': docs/javascript/**/*
 'docs: react': docs/react/**/*
-'docs: web': docs/web/**/*
+'docs: browser': docs/browser/**/*
+'docs: linux': docs/linux/**/*
+'docs: web security': docs/web-security/**/*
 'docs: http': docs/http/**/*
 'docs: typescript': docs/typescript/**/*
 'docs: webpack': docs/webpack/**/*
@@ -31,5 +33,7 @@ wiki: docs/wiki/**/*
 'docs: sql': docs/sql/**/*
 'docs: svg': docs/svg/**/*
 'docs: git': docs/git/**/*
+'docs: fastapi': docs/fastapi/**/*
 'docs: docker': docs/docker/**/*
-'docs: data viz guide': docs/data-viz-guide/**/*
+'docs: kubernetes': docs/kubernetes/**/*
+'docs: data viz': docs/data-viz-guide/**/*
