@@ -203,7 +203,7 @@ Set-Cookie: id=a3fWa; Expires=Wed, 21 0ct 2015 07:28:00GMT; Secure;
 
 :::caution
 
-为了避免跨域脚本([XSS](/docs/web-security/06-xss))攻击，可以禁止 JavaScript 操作 cookie，那么通过 JavaScript 的 `document.cookie` 将无法访问带有 `HttpOnly` 标记的 cookie。
+为了避免跨域脚本([XSS](/docs/web-security/07-xss))攻击，可以禁止 JavaScript 操作 cookie，那么通过 JavaScript 的 `document.cookie` 将无法访问带有 `HttpOnly` 标记的 cookie。
 
 ```http
 Set-Cookie: __Secure-ID=123; Secure; Domain=example.com; HttpOnly
