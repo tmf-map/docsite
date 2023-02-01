@@ -12,20 +12,44 @@
     },
     "content": [
       {
-        "title": "Theories",
+        "title": "Coding",
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/book-2-line.svg",
         "list": [
           {
-            "name": "DS & Algorithms"
+            "name": "Algorithm"
           },
           {
             "name": "Design Patterns"
-          },
+          }
+        ]
+      },
+      {
+        "title": "Web",
+        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/pen-nib-line.svg",
+        "list": [
           {
             "name": "HTTP"
           },
           {
+            "name": "Browser"
+          },
+          {
+            "name": "Web Security"
+          }
+        ]
+      },
+      {
+        "title": "OS",
+        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/flow-chart.svg",
+        "list": [
+          {
             "name": "Linux"
+          },
+          {
+            "name": "macOS"
+          },
+          {
+            "name": "Windows"
           }
         ]
       },
@@ -40,31 +64,10 @@
             "name": "IDE"
           },
           {
-            "name": "Chrome Devtools"
-          }
-        ]
-      },
-      {
-        "title": "Document",
-        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/pen-nib-line.svg",
-        "list": [
-          {
-            "name": "Markdown"
+            "name": "Vim"
           },
-          {
-            "name": "LaTeX"
-          }
-        ]
-      },
-      {
-        "title": "Diagram",
-        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/flow-chart.svg",
-        "list": [
           {
             "name": "UML"
-          },
-          {
-            "name": "Excalidraw"
           }
         ]
       }
@@ -188,7 +191,7 @@
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/database-2-line.svg",
         "list": [
           {
-            "name": "MySQL"
+            "name": "SQL"
           },
           {
             "name": "Redis"

@@ -103,12 +103,13 @@ module.exports = {
           position: 'right',
           // no `to` means activeBaseRegex gets ignored, so it's a must
           to: 'docs/algorithm/1.get-started/asymptotic-notations',
-          activeBaseRegex: 'docs/(design-patterns|algorithm|http|git)/',
+          activeBaseRegex:
+            'docs/(design-patterns|algorithm|http|browser|web-security|linux|git)/',
           items: [
             {
               to: 'docs/algorithm/1.get-started/asymptotic-notations',
               activeBasePath: 'docs/algorithm/',
-              label: 'DS & Algorithms',
+              label: 'Algorithm',
             },
             {
               to: 'docs/design-patterns/1.get-started',
@@ -121,6 +122,21 @@ module.exports = {
               label: 'HTTP',
             },
             {
+              to: 'docs/browser/01-get-started',
+              activeBasePath: 'docs/browser/',
+              label: 'Browser',
+            },
+            {
+              to: 'docs/web-security/01-introduction',
+              activeBasePath: 'docs/web-security/',
+              label: 'Web Security',
+            },
+            {
+              to: 'docs/linux/1.get-started/1.introduction',
+              activeBasePath: 'docs/linux/',
+              label: 'Linux',
+            },
+            {
               to: 'docs/git/1.get-started',
               activeBasePath: 'docs/git/',
               label: 'Git',
@@ -131,12 +147,12 @@ module.exports = {
           label: 'Frontend',
           position: 'right',
           // no `to` means activeBaseRegex gets ignored, so it's a must
-          to: 'docs/javascript/1.basic/js-engine',
+          to: 'docs/javascript/01-basic/01-js-engine',
           activeBaseRegex:
-            'docs/(javascript|typescript|html|css|web|react|webpack|nodejs)/',
+            'docs/(javascript|typescript|html|css|react|webpack|nodejs)/',
           items: [
             {
-              to: 'docs/javascript/1.basic/js-engine',
+              to: 'docs/javascript/01-basic/01-js-engine',
               activeBasePath: 'docs/javascript/',
               label: 'JavaScript',
             },
@@ -154,11 +170,6 @@ module.exports = {
               to: 'docs/css/1.visual-formatting-model/basic-concept',
               activeBasePath: 'docs/css/',
               label: 'CSS',
-            },
-            {
-              to: 'docs/web/1.get-started',
-              activeBasePath: 'docs/web/',
-              label: 'Web',
             },
             {
               to: 'docs/react/1.basics/1.1.jsx',
@@ -183,7 +194,7 @@ module.exports = {
           // no `to` means activeBaseRegex gets ignored, so it's a must
           to: 'docs/python/1.get-started/history',
           activeBaseRegex:
-            'docs/(python|go|mysql|redis|fastapi|docker|kubernetes)/', // `/` can avoid the confusion such as `javascript`
+            'docs/(python|go|sql|redis|fastapi|docker|kubernetes)/', // `/` can avoid the confusion such as `javascript`
           items: [
             {
               to: 'docs/python/1.get-started/history',
@@ -196,19 +207,24 @@ module.exports = {
               label: 'Go',
             },
             {
-              to: 'docs/fastapi/1.get-started/introduction',
+              to: 'docs/fastapi/1.get-started/1.introduction',
               activeBasePath: 'docs/fastapi/',
               label: 'FastAPI',
             },
             {
-              to: 'docs/mysql/1.get-started/1.intro-to-sql',
-              activeBasePath: 'docs/mysql/',
-              label: 'MySQL',
+              to: 'docs/sql/1.get-started/1.intro-to-sql',
+              activeBasePath: 'docs/sql/',
+              label: 'SQL',
             },
             {
               to: 'docs/docker/1.get-started/1.what-is-docker',
               activeBasePath: 'docs/docker/',
               label: 'Docker',
+            },
+            {
+              to: 'docs/kubernetes/01-get-started/01-introduction',
+              activeBasePath: 'docs/kubernetes/',
+              label: 'Kubernetes',
             },
           ],
         },
@@ -236,7 +252,7 @@ module.exports = {
           label: 'Wiki',
           position: 'right',
           activeBasePath: 'docs/wiki/',
-          to: 'docs/wiki/1.get-started',
+          to: 'docs/wiki/01-get-started',
         },
         {
           href: `https://github.com/${githubOrg}/${githubRepo}`,

@@ -2,7 +2,7 @@
 title: History
 ---
 
-<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/DhC3L9.png' alt='python cover'/>
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/python-cover.png' alt='python-cover'/>
 
 Python Official Doc: https://www.python.org/doc/
 

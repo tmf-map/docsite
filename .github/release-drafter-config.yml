@@ -8,30 +8,33 @@ exclude-labels:
 categories:
   - title: 'Basics'
     labels:
-      - 'docs: ds & algorithm'
+      - 'docs: algorithm'
       - 'docs: design patterns'
       - 'docs: http'
+      - 'docs: browser'
+      - 'docs: web security'
+      - 'docs: linux'
       - 'docs: git'
   - title: 'Frontend'
     labels:
       - 'docs: javascript'
       - 'docs: html'
       - 'docs: css'
-      - 'docs: web'
       - 'docs: react'
       - 'docs: webpack'
       - 'docs: typescript'
       - 'docs: nodejs'
-      - 'docs: fe guidelines'
   - title: 'Backend'
     labels:
       - 'docs: python'
       - 'docs: go'
-      - 'docs: mysql'
+      - 'docs: fastapi'
+      - 'docs: sql'
       - 'docs: docker'
+      - 'docs: kubernetes'
   - title: 'Data & AI'
     labels:
-      - 'docs: data viz guide'
+      - 'docs: data viz'
       - 'docs: svg'
   - title: 'Blog'
     labels:

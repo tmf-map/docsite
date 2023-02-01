@@ -13,31 +13,23 @@ dirNames.forEach(dirName => {
   ];
 });
 
-const javascript = require('./javascript');
 const html = require('./html');
 const css = require('./css');
-const web = require('./web');
 const algorithm = require('./algorithm');
 const http = require('./http');
 const typescript = require('./typescript');
 const webpack = require('./webpack');
-const wiki = require('./wiki');
-const nodejs = require('./nodejs');
 const python = require('./python');
 const go = require('./go');
 
 module.exports = {
   ...sidebars,
-  javascript,
   html,
   css,
-  web,
   algorithm,
   http,
   typescript,
-  wiki,
   webpack,
-  nodejs,
   python,
   go,
 };

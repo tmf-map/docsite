@@ -15,7 +15,7 @@ Even if you don't know too much about singleton, I believe that you've used it. 
 ```js
 const foo = {
   doSomethingA: function () {},
-  doSomethingB: function () {}
+  doSomethingB: function () {},
 };
 ```
 
@@ -54,7 +54,7 @@ let Singleton = (function (name) {
 
 The above `Singleton` is actually a **IIFE**, `instance` as the instance is initially assigned to `null`, `init` is actually a constructor, used to instantiate the object, the immediate execution of the function returns an anonymous function to determine whether the instance is created, only when `Singleton()` is called to instantiate the instance.
 
-Because the **IIFE** returns a function(actually, it's a **closure**, [see more](/docs/javascript/3.closure/closure-external)), the instance is created only when first call through `Singleton()`. This is the **lazy singleton**. Instead of creating instance when loading, the instance is created only when needed, then if `Singleton()` is called again, the first instance object will be returned.
+Because the **IIFE** returns a function(actually, it's a **closure**, [see more](/docs/javascript/03-closure/01-closure-external)), the instance is created only when first call through `Singleton()`. This is the **lazy singleton**. Instead of creating instance when loading, the instance is created only when needed, then if `Singleton()` is called again, the first instance object will be returned.
 
 ```js
 let instanceA = Singleton();
@@ -112,7 +112,7 @@ class Backdrop extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      hasExisted: !!document.getElementsByClassName('dialog__backdrop')[0]
+      hasExisted: !!document.getElementsByClassName('dialog__backdrop')[0],
     };
   }
   handleClick = () => {
