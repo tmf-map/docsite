@@ -137,7 +137,7 @@ module.exports = {
               label: 'Linux',
             },
             {
-              to: 'docs/git/1.get-started',
+              to: 'docs/git/01-get-started',
               activeBasePath: 'docs/git/',
               label: 'Git',
             },
