@@ -25,7 +25,7 @@
       },
       {
         "title": "Web",
-        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/pen-nib-line.svg",
+        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/global-line.svg",
         "list": [
           {
             "name": "HTTP"
@@ -40,7 +40,7 @@
       },
       {
         "title": "OS",
-        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/flow-chart.svg",
+        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/terminal-window-line.svg",
         "list": [
           {
             "name": "Linux"
@@ -116,32 +116,29 @@
         ]
       },
       {
-        "title": "Libraries",
-        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/icon-package.svg",
+        "title": "Tests",
+        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/flask-line.svg",
         "list": [
           {
             "name": "Jest"
           },
           {
-            "name": "Playwright"
+            "name": "Cypress"
           },
+          {
+            "name": "Playwright"
+          }
+        ]
+      },
+      {
+        "title": "Bundlers",
+        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/icon-package.svg",
+        "list": [
           {
             "name": "Webpack"
           },
           {
             "name": "Vite"
-          }
-        ]
-      },
-      {
-        "title": "Design",
-        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/palette-line.svg",
-        "list": [
-          {
-            "name": "Prototype"
-          },
-          {
-            "name": "Figma"
           }
         ]
       }
@@ -167,12 +164,6 @@
             "name": "Python"
           },
           {
-            "name": "Go"
-          },
-          {
-            "name": "Java"
-          },
-          {
             "name": "Shell"
           }
         ]
@@ -183,6 +174,9 @@
         "list": [
           {
             "name": "FastAPI"
+          },
+          {
+            "name": "SQLAlchemy"
           }
         ]
       },
