@@ -20,7 +20,6 @@ const http = require('./http');
 const typescript = require('./typescript');
 const webpack = require('./webpack');
 const python = require('./python');
-const go = require('./go');
 
 module.exports = {
   ...sidebars,
@@ -31,5 +30,4 @@ module.exports = {
   typescript,
   webpack,
   python,
-  go,
 };

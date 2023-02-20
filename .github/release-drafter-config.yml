@@ -27,7 +27,6 @@ categories:
   - title: 'Backend'
     labels:
       - 'docs: python'
-      - 'docs: go'
       - 'docs: fastapi'
       - 'docs: sql'
       - 'docs: docker'

@@ -29,7 +29,6 @@ wiki: docs/wiki/**/*
 'docs: webpack': docs/webpack/**/*
 'docs: nodejs': docs/nodejs/**/*
 'docs: python': docs/python/**/*
-'docs: go': docs/go/**/*
 'docs: sql': docs/sql/**/*
 'docs: svg': docs/svg/**/*
 'docs: git': docs/git/**/*

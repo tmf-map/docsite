@@ -202,11 +202,6 @@ module.exports = {
               label: 'Python',
             },
             {
-              to: 'docs/go/1.get-started/introduction',
-              activeBasePath: 'docs/go/',
-              label: 'Go',
-            },
-            {
               to: 'docs/fastapi/1.get-started/1.introduction',
               activeBasePath: 'docs/fastapi/',
               label: 'FastAPI',
