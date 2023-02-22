@@ -111,22 +111,10 @@
             "name": "React"
           },
           {
+            "name": "Tests"
+          },
+          {
             "name": "NodeJS"
-          }
-        ]
-      },
-      {
-        "title": "Tests",
-        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/flask-line.svg",
-        "list": [
-          {
-            "name": "Jest"
-          },
-          {
-            "name": "Cypress"
-          },
-          {
-            "name": "Playwright"
           }
         ]
       },
@@ -139,6 +127,24 @@
           },
           {
             "name": "Vite"
+          }
+        ]
+      },
+      {
+        "title": "Visualization",
+        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/line-chart-line.svg",
+        "list": [
+          {
+            "name": "Data Viz Guide"
+          },
+          {
+            "name": "SVG"
+          },
+          {
+            "name": "Canvas2d"
+          },
+          {
+            "name": "WebGL & WebGPU"
           }
         ]
       }
@@ -228,35 +234,32 @@
     },
     "content": [
       {
-        "title": "Maths",
-        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/data-preprocessing.svg",
+        "title": "Basics",
+        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/database-line.svg",
         "list": [
           {
-            "name": "Probability Theory"
+            "name": "Statistics"
           },
           {
-            "name": "Linear Algebra"
+            "name": "A/B Testing"
           },
           {
-            "name": "Numerical Computation"
+            "name": "User Portrait"
           }
         ]
       },
       {
-        "title": "Bigdata",
-        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/database-line.svg",
+        "title": "Analysis",
+        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/search-eye-line.svg",
         "list": [
           {
-            "name": "Hadoop"
+            "name": "Numpy"
           },
           {
-            "name": "Spark"
+            "name": "Pandas"
           },
           {
-            "name": "Flink"
-          },
-          {
-            "name": "ClickHouse"
+            "name": "Scipy"
           }
         ]
       },
@@ -265,13 +268,13 @@
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/psychotherapy-line.svg",
         "list": [
           {
-            "name": "AI Algorithms"
+            "name": "Sklearn"
           },
           {
-            "name": "Machine Learning"
+            "name": "Kaggle"
           },
           {
-            "name": "Deep Learning"
+            "name": "Tensorflow"
           }
         ]
       },
@@ -280,16 +283,16 @@
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/line-chart-line.svg",
         "list": [
           {
-            "name": "Data Viz Guide"
+            "name": "Matplotlib"
           },
           {
-            "name": "SVG"
+            "name": "Seaborn"
           },
           {
-            "name": "Canvas2d"
+            "name": "Plotly"
           },
           {
-            "name": "WebGL & WebGPU"
+            "name": "Plotnine"
           }
         ]
       }
