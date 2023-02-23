@@ -135,9 +135,6 @@
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/line-chart-line.svg",
         "list": [
           {
-            "name": "Data Viz Guide"
-          },
-          {
             "name": "SVG"
           },
           {
@@ -234,65 +231,59 @@
     },
     "content": [
       {
-        "title": "Basics",
+        "title": "Data Collection",
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/database-line.svg",
         "list": [
           {
-            "name": "Statistics"
+            "name": "爬虫"
           },
           {
-            "name": "A/B Testing"
-          },
-          {
-            "name": "User Portrait"
+            "name": "埋点"
           }
         ]
       },
       {
-        "title": "Analysis",
+        "title": "Data Preparation",
+        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/data-preprocessing.svg",
+        "list": [
+          {
+            "name": "清洗"
+          },
+          {
+            "name": "集成 ETL/ELT"
+          },
+          {
+            "name": "变换"
+          }
+        ]
+      },
+      {
+        "title": "Data Mining",
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/search-eye-line.svg",
         "list": [
           {
-            "name": "Numpy"
+            "name": "数学基础"
           },
           {
-            "name": "Pandas"
+            "name": "分析算法"
           },
           {
-            "name": "Scipy"
+            "name": "Modeling"
+          },
+          {
+            "name": "A/B Testing"
           }
         ]
       },
       {
-        "title": "AI",
-        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/psychotherapy-line.svg",
-        "list": [
-          {
-            "name": "Sklearn"
-          },
-          {
-            "name": "Kaggle"
-          },
-          {
-            "name": "Tensorflow"
-          }
-        ]
-      },
-      {
-        "title": "Visualization",
+        "title": "Data Visualization",
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/line-chart-line.svg",
         "list": [
           {
-            "name": "Matplotlib"
+            "name": "Data Viz Guide"
           },
           {
-            "name": "Seaborn"
-          },
-          {
-            "name": "Plotly"
-          },
-          {
-            "name": "Plotnine"
+            "name": "Python Viz Libs"
           }
         ]
       }
