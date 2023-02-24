@@ -231,52 +231,55 @@
     },
     "content": [
       {
-        "title": "Data Collection",
+        "title": "DataSource",
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/database-line.svg",
         "list": [
           {
-            "name": "爬虫"
+            "name": "Web Crawler"
           },
           {
-            "name": "埋点"
+            "name": "Tracking"
+          },
+          {
+            "name": "Warehouse"
           }
         ]
       },
       {
-        "title": "Data Preparation",
+        "title": "Preparation",
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/data-preprocessing.svg",
         "list": [
           {
-            "name": "清洗"
+            "name": "Cleaning"
           },
           {
-            "name": "集成 ETL/ELT"
+            "name": "Integration"
           },
           {
-            "name": "变换"
+            "name": "Transformation"
           }
         ]
       },
       {
-        "title": "Data Mining",
+        "title": "Mining",
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/search-eye-line.svg",
         "list": [
           {
-            "name": "数学基础"
+            "name": "Maths"
           },
           {
-            "name": "分析算法"
+            "name": "Algorithms"
           },
           {
             "name": "Modeling"
           },
           {
-            "name": "A/B Testing"
+            "name": "A/B Test"
           }
         ]
       },
       {
-        "title": "Data Visualization",
+        "title": "Visualization",
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/line-chart-line.svg",
         "list": [
           {
