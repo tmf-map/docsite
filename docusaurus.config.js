@@ -194,7 +194,7 @@ module.exports = {
           // no `to` means activeBaseRegex gets ignored, so it's a must
           to: 'docs/python/1.get-started/history',
           activeBaseRegex:
-            'docs/(python|go|sql|redis|fastapi|docker|kubernetes)/', // `/` can avoid the confusion such as `javascript`
+            'docs/(python|sqlalchemy|sql|redis|fastapi|docker|kubernetes)/', // `/` can avoid the confusion such as `javascript`
           items: [
             {
               to: 'docs/python/1.get-started/history',
@@ -205,6 +205,11 @@ module.exports = {
               to: 'docs/fastapi/1.get-started/1.introduction',
               activeBasePath: 'docs/fastapi/',
               label: 'FastAPI',
+            },
+            {
+              to: 'docs/sqlalchemy/01-get-started',
+              activeBasePath: 'docs/sqlalchemy/',
+              label: 'SQLAlchemy',
             },
             {
               to: 'docs/sql/1.get-started/1.intro-to-sql',

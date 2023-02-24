@@ -28,6 +28,7 @@ categories:
     labels:
       - 'docs: python'
       - 'docs: fastapi'
+      - 'docs: sqlalchemy'
       - 'docs: sql'
       - 'docs: docker'
       - 'docs: kubernetes'
