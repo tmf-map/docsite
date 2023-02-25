@@ -12,11 +12,14 @@
     },
     "content": [
       {
-        "title": "Coding",
+        "title": "Programming",
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/book-2-line.svg",
         "list": [
           {
-            "name": "Algorithm"
+            "name": "Data Structure"
+          },
+          {
+            "name": "Algorithms"
           },
           {
             "name": "Design Patterns"
@@ -268,7 +271,7 @@
             "name": "Maths"
           },
           {
-            "name": "Algorithms"
+            "name": "DM Algorithms"
           },
           {
             "name": "Modeling"

@@ -15,7 +15,8 @@ website:
   - docusaurus.config.js
 blog: blog/**/*
 wiki: docs/wiki/**/*
-'docs: algorithm': docs/algorithm/**/*
+'docs: data structure': docs/data-structure/**/*
+'docs: algorithms': docs/algorithms/**/*
 'docs: css': docs/css/**/*
 'docs: design patterns': docs/design-patterns/**/*
 'docs: html': docs/html/**/*

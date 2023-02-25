@@ -15,7 +15,6 @@ dirNames.forEach(dirName => {
 
 const html = require('./html');
 const css = require('./css');
-const algorithm = require('./algorithm');
 const http = require('./http');
 const typescript = require('./typescript');
 const webpack = require('./webpack');
@@ -25,7 +24,6 @@ module.exports = {
   ...sidebars,
   html,
   css,
-  algorithm,
   http,
   typescript,
   webpack,
