@@ -252,13 +252,6 @@ module.exports = {
             },
           ],
         },
-        {to: 'blog', label: 'Blog', position: 'right'},
-        {
-          label: 'Wiki',
-          position: 'right',
-          activeBasePath: 'docs/wiki/',
-          to: 'docs/wiki/01-get-started',
-        },
         {
           href: `https://github.com/${githubOrg}/${githubRepo}`,
           position: 'right',
@@ -293,16 +286,16 @@ module.exports = {
           title: 'Help',
           items: [
             {
-              label: 'Release Notes',
-              href: `https://github.com/${githubOrg}/${githubRepo}/releases`,
+              label: 'Wiki',
+              href: "/docs/wiki/01-get-started",
             },
             {
               label: 'Issues',
               href: `https://github.com/${githubOrg}/${githubRepo}/issues`,
             },
             {
-              label: 'Bug Report',
-              href: `https://github.com/${githubOrg}/${githubRepo}/issues/new`,
+              label: 'Release Notes',
+              href: `https://github.com/${githubOrg}/${githubRepo}/releases`,
             },
           ],
         },
@@ -314,8 +307,8 @@ module.exports = {
               to: 'blog',
             },
             {
-              label: 'GitHub',
-              href: `https://github.com/${githubOrg}/${githubRepo}`,
+              label: 'Discussions',
+              href: `https://github.com/${githubOrg}/${githubRepo}/discussions`,
             },
             {
               html: `<iframe src="https://ghbtns.com/github-btn.html?user=${githubOrg}&repo=${githubRepo}&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>`,
