@@ -38,3 +38,4 @@ wiki: docs/wiki/**/*
 'docs: kubernetes': docs/kubernetes/**/*
 'docs: data viz': docs/data-viz-guide/**/*
 'docs: sqlalchemy': docs/sqlalchemy/**/*
+'docs: macos': docs/macos/**/*

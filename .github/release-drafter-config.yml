@@ -16,6 +16,7 @@ categories:
       - 'docs: web security'
       - 'docs: linux'
       - 'docs: git'
+      - 'docs: macos'
   - title: 'Frontend'
     labels:
       - 'docs: javascript'
