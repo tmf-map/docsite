@@ -3,7 +3,7 @@ title: Get Started
 sidebar_label: 1. Get Started
 ---
 
-<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/sqlalchemy-cover.png' alt='sqlalchemy-cover'/>
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/macos-cover.png' alt='macos-cover'/>
 
 ## Menu bar
 
@@ -27,4 +27,4 @@ Control Center on Mac gives you quick access to key macOS settings—such as vol
 
 You use Finder windows to organize and access almost everything on your Mac.
 
-<Img w="500" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/pmaHRc.jpg' alt='pmaHRc'/>
+<Img w="520" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/pmaHRc.jpg' alt='pmaHRc'/>

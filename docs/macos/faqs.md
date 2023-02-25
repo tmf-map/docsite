@@ -3,9 +3,11 @@ title: FAQs
 sidebar_label: FAQs
 ---
 
-## 相簿中多次收到垃圾信息
+<details>
 
-<Img w="400" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/xiaPgG.jpg' alt='xiaPgG'/>
+<summary>相簿中多次收到垃圾信息</summary>
+
+<Img w="380" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/xiaPgG.jpg' alt='xiaPgG'/>
 
 当你使用共享相薄的时候会偶尔收到此类邮件，目前没发现特别好的解决方法，可以尝试：
 
@@ -14,7 +16,11 @@ sidebar_label: FAQs
 
 [More](https://discussionschinese.apple.com/thread/251911981)
 
-## 系统英文，将地图显示内容改为中文
+</details>
+
+<details>
+
+<summary>系统英文，将地图显示内容改为中文</summary>
 
 ```bash
 defaults write com.apple.maps AppleLanguages '(zh-CN)'
@@ -22,7 +28,11 @@ defaults write com.apple.maps AppleLanguages '(zh-CN)'
 
 想变回英文只需改成 `'en-US'` 即可。
 
-## 显示器突然局部花屏
+</details>
+
+<details>
+
+<summary>显示器突然局部花屏</summary>
 
 ```bash
 sudo pmset -a GPUSwitch 0
@@ -37,4 +47,12 @@ sudo pmset -a GPUSwitch 0
 ```bash
 ```
 
-## No Xcode or CLT version detected
+</details>
+
+
+<details>
+
+<summary>No Xcode or CLT version detected</summary>
+
+</details>
+

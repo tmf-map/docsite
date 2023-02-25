@@ -1,6 +1,6 @@
 ---
-title: HomeBrew
-sidebar_label: 4. HomeBrew
+title: Homebrew
+sidebar_label: 4. Homebrew
 ---
 
 [Homebrew](https://brew.sh/) 可以安装 Apple 没有预装但非常需要的东西。它会将软件包安装到独立目录，并将其文件软链接至 `/usr/local`。
