@@ -12,11 +12,11 @@
     },
     "content": [
       {
-        "title": "Programming",
+        "title": "Programs",
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/book-2-line.svg",
         "list": [
           {
-            "name": "Data Structure"
+            "name": "Data Structures"
           },
           {
             "name": "Algorithms"
