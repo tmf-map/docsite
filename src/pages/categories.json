@@ -12,11 +12,14 @@
     },
     "content": [
       {
-        "title": "Coding",
+        "title": "Programs",
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/book-2-line.svg",
         "list": [
           {
-            "name": "Algorithm"
+            "name": "Data Structures"
+          },
+          {
+            "name": "Algorithms"
           },
           {
             "name": "Design Patterns"
@@ -25,7 +28,7 @@
       },
       {
         "title": "Web",
-        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/pen-nib-line.svg",
+        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/global-line.svg",
         "list": [
           {
             "name": "HTTP"
@@ -40,7 +43,7 @@
       },
       {
         "title": "OS",
-        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/flow-chart.svg",
+        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/terminal-window-line.svg",
         "list": [
           {
             "name": "Linux"
@@ -111,20 +114,17 @@
             "name": "React"
           },
           {
+            "name": "Tests"
+          },
+          {
             "name": "NodeJS"
           }
         ]
       },
       {
-        "title": "Libraries",
+        "title": "Bundlers",
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/icon-package.svg",
         "list": [
-          {
-            "name": "Jest"
-          },
-          {
-            "name": "Playwright"
-          },
           {
             "name": "Webpack"
           },
@@ -134,14 +134,17 @@
         ]
       },
       {
-        "title": "Design",
-        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/palette-line.svg",
+        "title": "Visualization",
+        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/line-chart-line.svg",
         "list": [
           {
-            "name": "Prototype"
+            "name": "SVG"
           },
           {
-            "name": "Figma"
+            "name": "Canvas2d"
+          },
+          {
+            "name": "WebGL & WebGPU"
           }
         ]
       }
@@ -167,12 +170,6 @@
             "name": "Python"
           },
           {
-            "name": "Go"
-          },
-          {
-            "name": "Java"
-          },
-          {
             "name": "Shell"
           }
         ]
@@ -183,6 +180,9 @@
         "list": [
           {
             "name": "FastAPI"
+          },
+          {
+            "name": "SQLAlchemy"
           }
         ]
       },
@@ -234,50 +234,50 @@
     },
     "content": [
       {
-        "title": "Maths",
-        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/data-preprocessing.svg",
-        "list": [
-          {
-            "name": "Probability Theory"
-          },
-          {
-            "name": "Linear Algebra"
-          },
-          {
-            "name": "Numerical Computation"
-          }
-        ]
-      },
-      {
-        "title": "Bigdata",
+        "title": "DataSource",
         "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/database-line.svg",
         "list": [
           {
-            "name": "Hadoop"
+            "name": "Web Crawler"
           },
           {
-            "name": "Spark"
+            "name": "Tracking"
           },
           {
-            "name": "Flink"
-          },
-          {
-            "name": "ClickHouse"
+            "name": "Warehouse"
           }
         ]
       },
       {
-        "title": "AI",
-        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/psychotherapy-line.svg",
+        "title": "Preparation",
+        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/data-preprocessing.svg",
         "list": [
           {
-            "name": "AI Algorithms"
+            "name": "Cleaning"
           },
           {
-            "name": "Machine Learning"
+            "name": "Integration"
           },
           {
-            "name": "Deep Learning"
+            "name": "Transformation"
+          }
+        ]
+      },
+      {
+        "title": "Mining",
+        "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/search-eye-line.svg",
+        "list": [
+          {
+            "name": "Maths"
+          },
+          {
+            "name": "DM Algorithms"
+          },
+          {
+            "name": "Modeling"
+          },
+          {
+            "name": "A/B Test"
           }
         ]
       },
@@ -289,13 +289,7 @@
             "name": "Data Viz Guide"
           },
           {
-            "name": "SVG"
-          },
-          {
-            "name": "Canvas2d"
-          },
-          {
-            "name": "WebGL & WebGPU"
+            "name": "Python Viz Libs"
           }
         ]
       }

@@ -15,7 +15,8 @@ website:
   - docusaurus.config.js
 blog: blog/**/*
 wiki: docs/wiki/**/*
-'docs: algorithm': docs/algorithm/**/*
+'docs: data structures': docs/data-structures/**/*
+'docs: algorithms': docs/algorithms/**/*
 'docs: css': docs/css/**/*
 'docs: design patterns': docs/design-patterns/**/*
 'docs: html': docs/html/**/*
@@ -29,7 +30,6 @@ wiki: docs/wiki/**/*
 'docs: webpack': docs/webpack/**/*
 'docs: nodejs': docs/nodejs/**/*
 'docs: python': docs/python/**/*
-'docs: go': docs/go/**/*
 'docs: sql': docs/sql/**/*
 'docs: svg': docs/svg/**/*
 'docs: git': docs/git/**/*
@@ -37,3 +37,5 @@ wiki: docs/wiki/**/*
 'docs: docker': docs/docker/**/*
 'docs: kubernetes': docs/kubernetes/**/*
 'docs: data viz': docs/data-viz-guide/**/*
+'docs: sqlalchemy': docs/sqlalchemy/**/*
+'docs: macos': docs/macos/**/*

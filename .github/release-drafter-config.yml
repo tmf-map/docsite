@@ -8,13 +8,15 @@ exclude-labels:
 categories:
   - title: 'Basics'
     labels:
-      - 'docs: algorithm'
+      - 'docs: data structures'
+      - 'docs: algorithms'
       - 'docs: design patterns'
       - 'docs: http'
       - 'docs: browser'
       - 'docs: web security'
       - 'docs: linux'
       - 'docs: git'
+      - 'docs: macos'
   - title: 'Frontend'
     labels:
       - 'docs: javascript'
@@ -27,8 +29,8 @@ categories:
   - title: 'Backend'
     labels:
       - 'docs: python'
-      - 'docs: go'
       - 'docs: fastapi'
+      - 'docs: sqlalchemy'
       - 'docs: sql'
       - 'docs: docker'
       - 'docs: kubernetes'

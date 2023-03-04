@@ -102,14 +102,19 @@ module.exports = {
           label: 'Basics',
           position: 'right',
           // no `to` means activeBaseRegex gets ignored, so it's a must
-          to: 'docs/algorithm/1.get-started/asymptotic-notations',
+          to: 'docs/data-structures/01-get-started/01-asymptotic-notations',
           activeBaseRegex:
-            'docs/(design-patterns|algorithm|http|browser|web-security|linux|git)/',
+            'docs/(algorithms|data-structures|design-patterns|http|browser|web-security|linux|git|macos)/',
           items: [
             {
-              to: 'docs/algorithm/1.get-started/asymptotic-notations',
-              activeBasePath: 'docs/algorithm/',
-              label: 'Algorithm',
+              to: 'docs/data-structures/01-get-started/01-asymptotic-notations',
+              activeBasePath: 'docs/data-structures/',
+              label: 'Data Structures',
+            },
+            {
+              to: 'docs/algorithms/01-get-started/01-overview',
+              activeBasePath: 'docs/algorithms/',
+              label: 'Algorithms',
             },
             {
               to: 'docs/design-patterns/1.get-started',
@@ -137,9 +142,14 @@ module.exports = {
               label: 'Linux',
             },
             {
-              to: 'docs/git/1.get-started',
+              to: 'docs/git/01-get-started',
               activeBasePath: 'docs/git/',
               label: 'Git',
+            },
+            {
+              to: 'docs/macos/01-get-started',
+              activeBasePath: 'docs/macos/',
+              label: 'macOS',
             },
           ],
         },
@@ -194,7 +204,7 @@ module.exports = {
           // no `to` means activeBaseRegex gets ignored, so it's a must
           to: 'docs/python/1.get-started/history',
           activeBaseRegex:
-            'docs/(python|go|sql|redis|fastapi|docker|kubernetes)/', // `/` can avoid the confusion such as `javascript`
+            'docs/(python|sqlalchemy|sql|redis|fastapi|docker|kubernetes)/', // `/` can avoid the confusion such as `javascript`
           items: [
             {
               to: 'docs/python/1.get-started/history',
@@ -202,14 +212,14 @@ module.exports = {
               label: 'Python',
             },
             {
-              to: 'docs/go/1.get-started/introduction',
-              activeBasePath: 'docs/go/',
-              label: 'Go',
-            },
-            {
               to: 'docs/fastapi/1.get-started/1.introduction',
               activeBasePath: 'docs/fastapi/',
               label: 'FastAPI',
+            },
+            {
+              to: 'docs/sqlalchemy/01-get-started',
+              activeBasePath: 'docs/sqlalchemy/',
+              label: 'SQLAlchemy',
             },
             {
               to: 'docs/sql/1.get-started/1.intro-to-sql',
@@ -247,13 +257,6 @@ module.exports = {
             },
           ],
         },
-        {to: 'blog', label: 'Blog', position: 'right'},
-        {
-          label: 'Wiki',
-          position: 'right',
-          activeBasePath: 'docs/wiki/',
-          to: 'docs/wiki/01-get-started',
-        },
         {
           href: `https://github.com/${githubOrg}/${githubRepo}`,
           position: 'right',
@@ -288,16 +291,16 @@ module.exports = {
           title: 'Help',
           items: [
             {
-              label: 'Release Notes',
-              href: `https://github.com/${githubOrg}/${githubRepo}/releases`,
+              label: 'Wiki',
+              href: "/docs/wiki/01-get-started",
             },
             {
               label: 'Issues',
               href: `https://github.com/${githubOrg}/${githubRepo}/issues`,
             },
             {
-              label: 'Bug Report',
-              href: `https://github.com/${githubOrg}/${githubRepo}/issues/new`,
+              label: 'Release Notes',
+              href: `https://github.com/${githubOrg}/${githubRepo}/releases`,
             },
           ],
         },
@@ -309,8 +312,8 @@ module.exports = {
               to: 'blog',
             },
             {
-              label: 'GitHub',
-              href: `https://github.com/${githubOrg}/${githubRepo}`,
+              label: 'Discussions',
+              href: `https://github.com/${githubOrg}/${githubRepo}/discussions`,
             },
             {
               html: `<iframe src="https://ghbtns.com/github-btn.html?user=${githubOrg}&repo=${githubRepo}&type=star&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>`,
