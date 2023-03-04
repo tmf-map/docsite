@@ -163,7 +163,7 @@ const deleteAtIndex = function (head, index) {
 };
 ```
 
-具体例子可以参考 [删除链表倒数第 n 个结点](/docs/algorithm/4.linkedlist/remove-nth-node-from-end-of-list)。
+具体例子可以参考 [删除链表倒数第 n 个结点](/docs/data-structures/05-linkedlist/08-remove-nth-node-from-end-of-list)。
 
 ## 双指针技巧
 
@@ -173,7 +173,7 @@ const deleteAtIndex = function (head, index) {
 2. 两个指针以不同速度移动：一个指针快一些，另一个慢一些
 3. 两个指针从同一位置出发：一个先走到一定位置，另一个再出发
 
-由于一般的链表只有后继指针，因此第一种场景不太适用。比较常用的是第二种和第三种。具体的算法可以参考[判断链表中是否有环](/docs/algorithm/4.linkedlist/linked-list-cycle)、[链表的中间结点](/docs/algorithm/4.linkedlist/middle-of-the-linked-list)、[删除链表倒数第 n 个结点](/docs/algorithm/4.linkedlist/remove-nth-node-from-end-of-list)
+由于一般的链表只有后继指针，因此第一种场景不太适用。比较常用的是第二种和第三种。具体的算法可以参考[判断链表中是否有环](/docs/data-structures/05-linkedlist/06-linked-list-cycle)、[链表的中间结点](/docs/data-structures/05-linkedlist/07-middle-of-the-linked-list)、[删除链表倒数第 n 个结点](/docs/data-structures/05-linkedlist/08-remove-nth-node-from-end-of-list)
 
 ## 重点留意边界条件处理
 

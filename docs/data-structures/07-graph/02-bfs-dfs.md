@@ -14,7 +14,7 @@ title: 广度和深度优先搜索
 
 <Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/bfs.png' alt='bfs' width="450"/>
 
-代码请参考：[岛屿数量](/docs/algorithm/6.graph/number-of-islands#bfs)
+代码请参考：[岛屿数量](/docs/data-structures/07-graph/03-number-of-islands#bfs)
 
 ## 深度优先搜索
 
@@ -22,7 +22,7 @@ title: 广度和深度优先搜索
 
 <Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/dfs.png' alt='dfs' width="450"/>
 
-代码请参考：[岛屿数量](/docs/algorithm/6.graph/number-of-islands#dfs)
+代码请参考：[岛屿数量](/docs/data-structures/07-graph/03-number-of-islands#dfs)
 
 ## 参考资料
 

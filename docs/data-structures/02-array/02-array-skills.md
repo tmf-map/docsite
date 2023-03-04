@@ -17,13 +17,13 @@ keywords:
 1. 有序的数组，需要利用下标随机访问元素，所以不能是链表等其他数据结构
 2. 数据量太小的时候不适合，顺序遍历就足够；数据量太大（比如超过 1GB）的时候也不合适，数组为了支持随机访问的特性，要求内存空间连续，对内存的要求比较苛刻，此时的内存压力比较大
 
-相关题目：[搜索插入位置](/docs/algorithm/2.array/search-insert-position)
+相关题目：[搜索插入位置](/docs/data-structures/02-array/03-search-insert-position)
 
 ## 排序算法
 
-利用快速排序、归并排序、冒泡排序等[排序算法](/docs/algorithm/8.sort/sort-summary)，先将数组转化为有序数组，再按照题目要求获取结果。
+利用快速排序、归并排序、冒泡排序等[排序算法](/docs/algorithms/02-sort/05-sort-summary)，先将数组转化为有序数组，再按照题目要求获取结果。
 
-相关题目：[数组中的第 K 个最大元素](/docs/algorithm/2.array/kth-largest-element-in-an-array)(使用快速排序)、合并两个有序数组（合并排序）等。
+相关题目：[数组中的第 K 个最大元素](/docs/data-structures/02-array/05-kth-largest-element-in-an-array)(使用快速排序)、合并两个有序数组（合并排序）等。
 
 ## 双指针
 
@@ -31,7 +31,7 @@ keywords:
 
 指针 i 和 j 分别指向数组的第一个元素和最后一个元素，然后指针 `i` 不断向前， 指针 `j` 不断递减，直到 `i = j`（具体的逻辑和操作视情况而定）
 
-相关题目：[外观数列](/docs/algorithm/13.math/count-and-say)
+相关题目：[外观数列](/docs/algorithms/07-maths/02-count-and-say)
 
 ### 滑动窗口
 
@@ -45,7 +45,7 @@ keywords:
 
 通过滑动窗口法，可以将一些需要使用嵌套 for 循环的题目，转化为单个 for 循环，减少了许多重复计算，将时间复杂度降为 O(n)。
 
-相关题目：[长度最小的子数组](/docs/algorithm/2.array/minimum-size-subarray-sum)
+相关题目：[长度最小的子数组](/docs/data-structures/02-array/10-minimum-size-subarray-sum)
 
 ## 警惕数组的访问越界问题
 

@@ -79,7 +79,7 @@ a.next = a.next.next;
 
 :::tip
 
-在具体实现单链表插入和删除操作时，建议使用[**带头链表**](/docs/algorithm/4.linkedlist/linkedlist-2)
+在具体实现单链表插入和删除操作时，建议使用[**带头链表**](/docs/data-structures/05-linkedlist/02-linkedlist-2)
 
 :::
 
@@ -139,7 +139,7 @@ head.next.prev = head
   - 需要多分配一个指针域
   - 执行各种操作后，为了维护双向链表结构，导致复杂度有所增加
 - 优点
-  - 可以支持 **O(1)** 时间复杂度的情况下找到前驱结点，正是这样的特点，也使双向链表在某些情况下的插入、删除等操作都要比单链表简单、高效。比如在 [LRU 缓存](/docs/algorithm/4.linkedlist/LRU-cache) 中的应用
+  - 可以支持 **O(1)** 时间复杂度的情况下找到前驱结点，正是这样的特点，也使双向链表在某些情况下的插入、删除等操作都要比单链表简单、高效。比如在 [LRU 缓存](/docs/data-structures/05-linkedlist/09-LRU-cache) 中的应用
 
 :::tip
 

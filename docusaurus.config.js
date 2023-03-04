@@ -102,7 +102,7 @@ module.exports = {
           label: 'Basics',
           position: 'right',
           // no `to` means activeBaseRegex gets ignored, so it's a must
-          to: 'docs/algorithm/1.get-started/asymptotic-notations',
+          to: 'docs/data-structures/01-get-started/01-asymptotic-notations',
           activeBaseRegex:
             'docs/(algorithms|data-structures|design-patterns|http|browser|web-security|linux|git|macos)/',
           items: [

@@ -1,5 +1,4 @@
 ---
-id: sort-summary
 title: 排序总结
 ---
 

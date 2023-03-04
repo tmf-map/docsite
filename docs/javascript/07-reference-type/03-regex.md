@@ -433,7 +433,7 @@ console.log(reg.test('dot is \3')); //true
 console.log(reg.test('dolby is dolby')); //false
 ```
 
-尝试用反向引用解决[外观数列](/docs/algorithm/13.math/count-and-say)问题。
+尝试用反向引用解决[外观数列](/docs/algorithms/07-maths/02-count-and-say)问题。
 
 ### 非捕获型 `(?: )`
 

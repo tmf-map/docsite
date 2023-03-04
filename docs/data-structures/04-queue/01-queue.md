@@ -30,7 +30,7 @@ title: 队列
 
 ## 循环队列
 
-为充分利用空间，克服"假溢出"现象，将空间想象为一个首尾相接的圆环，这种队列我们将其称为[循环队列（Circular Queue）](/docs/algorithm/3.stack-queue/circular-queue)，如下图所示：
+为充分利用空间，克服"假溢出"现象，将空间想象为一个首尾相接的圆环，这种队列我们将其称为[循环队列（Circular Queue）](/docs/data-structures/04-queue/02-circular-queue)，如下图所示：
 
 <Img w="750" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/crnFrD.png' alt='crnFrD'/>
 

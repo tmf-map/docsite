@@ -105,7 +105,7 @@ LRU 策略全称为 **Least Recently Used** 最近最少使用，即最近最少
 
 **Q:** 为什么需要双向链表而不是单链表？
 
-因为需要[删除给定指针(`hash_map[key]`)指向的结点](/docs/algorithm/4.linkedlist/linkedlist-1#双向链表)，且确保该操作时间复杂度为 **O(1)**。单链表无法以 O(1) 的时间复杂度获取指定结点的前驱结点。
+因为需要[删除给定指针(`hash_map[key]`)指向的结点](/docs/data-structures/05-linkedlist/01-linkedlist-1#双向链表)，且确保该操作时间复杂度为 **O(1)**。单链表无法以 O(1) 的时间复杂度获取指定结点的前驱结点。
 
 :::
 

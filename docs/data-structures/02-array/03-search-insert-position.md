@@ -42,7 +42,7 @@ title: 搜索插入位置
 
 ## 思路
 
-**[二分查找](/docs/algorithm/2.array/array-skills)**：
+**[二分查找](/docs/data-structures/02-array/02-array-skills)**：
 
 - ans 初始值设置为数组长度可以省略边界条件的判断，因为存在一种情况，target 大于数组中的所有数，此时需要插入到索引为数组长度的位置
 - target 的插入位置 position 要满足：`nums[position-1] < target <= nums[position+1]`
