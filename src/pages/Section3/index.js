@@ -13,7 +13,7 @@ const Section3 = () => {
   return (
     <div className={styles.section3}>
       <div className={styles.container}>
-        {categories?.map(category => (
+        {categories?.technology?.map?.(category => (
           <PartIntro
             title={category.title.name}
             titlePosition={category.title.position}

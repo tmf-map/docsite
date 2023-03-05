@@ -258,6 +258,30 @@ module.exports = {
           ],
         },
         {
+          label: 'Management',
+          position: 'right',
+          // no `to` means activeBaseRegex gets ignored, so it's a must
+          to: 'docs/software-mgmt/01-get-started',
+          activeBaseRegex: 'docs/(software-mgmt|product-mgmt|people-mgmt)/',
+          items: [
+            {
+              to: 'docs/software-mgmt/01-get-started',
+              activeBasePath: 'docs/software-mgmt/',
+              label: 'Software Management',
+            },
+            {
+              to: 'docs/product-mgmt/01-get-started',
+              activeBasePath: 'docs/product-mgmt/',
+              label: 'Product Management',
+            },
+            {
+              to: 'docs/people-mgmt/01-get-started',
+              activeBasePath: 'docs/people-mgmt/',
+              label: 'People Management',
+            },
+          ],
+        },
+        {
           href: `https://github.com/${githubOrg}/${githubRepo}`,
           position: 'right',
           className: 'header-github-link',
