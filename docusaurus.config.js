@@ -159,7 +159,7 @@ module.exports = {
           // no `to` means activeBaseRegex gets ignored, so it's a must
           to: 'docs/javascript/01-basic/01-js-engine',
           activeBaseRegex:
-            'docs/(javascript|typescript|html|css|react|webpack|nodejs)/',
+            'docs/(javascript|typescript|html|css|react|webpack|nodejs|vite|svg)/',
           items: [
             {
               to: 'docs/javascript/01-basic/01-js-engine',
@@ -195,6 +195,11 @@ module.exports = {
               to: 'docs/nodejs/1.get-started',
               activeBasePath: 'docs/nodejs/',
               label: 'NodeJS',
+            },
+            {
+              to: 'docs/svg/01-get-started',
+              activeBasePath: 'docs/svg/',
+              label: 'SVG',
             },
           ],
         },
@@ -243,17 +248,12 @@ module.exports = {
           position: 'right',
           // no `to` means activeBaseRegex gets ignored, so it's a must
           to: 'docs/data-viz-guide/1.get-started/1.overview',
-          activeBaseRegex: 'docs/(data-viz-guide|svg)/',
+          activeBaseRegex: 'docs/(data-viz-guide)/',
           items: [
             {
               to: 'docs/data-viz-guide/1.get-started/1.overview',
               activeBasePath: 'docs/data-viz-guide/',
               label: 'Data Viz Guide',
-            },
-            {
-              to: 'docs/svg/1.get-started',
-              activeBasePath: 'docs/svg/',
-              label: 'SVG',
             },
           ],
         },
