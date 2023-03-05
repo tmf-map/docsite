@@ -53,6 +53,15 @@ brew search <package>
 brew list
 ```
 
+You can also use `grep` to filter package:
+
+```bash
+$ brew list | grep python
+python@3.10
+python@3.8
+python@3.9
+```
+
 ### 更新 Homebrew 自己
 
 更新包，把所有的 Formula 目录更新，并且会对本机已经安装并有更新的软件用 `*` 标明。
