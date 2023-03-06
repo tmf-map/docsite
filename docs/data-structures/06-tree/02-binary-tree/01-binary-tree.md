@@ -1,5 +1,5 @@
 ---
-title: 二叉树
+title: 二叉树的基本概念
 keywords:
   - binary tree
   - perfect binary tree
