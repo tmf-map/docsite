@@ -3,7 +3,29 @@ title: Homebrew
 sidebar_label: 4. Homebrew
 ---
 
-[Homebrew](https://brew.sh/) 可以安装 Apple 没有预装但非常需要的东西。它会将软件包安装到独立目录，并将其文件软链接至 `/usr/local`。
+### Introduction
+
+[Homebrew](https://brew.sh/) is a package manger, and it supports `macOS`and`Linux`as for now. It mainly includes four part: `brew`, `homebrew-core` , `homebrew-cask`, `homebrew-bottles`.
+
+|名称|说明|
+|-|-|
+|brew|Homebrew 源代码仓库|
+|homebrew-core|Homebrew 核心源|
+|homebrew-cask|提供 macOS 应用和大型二进制文件的安装|
+|homebrew-bottles|预编译二进制软件包|
+
+
+相关用到的脚本 [homebrew-install][github] 都托管在`GitHub`上。
+
+:::tip
+
+Sometimes there maybe a delay and no found for some package when using mirror. In this case, homebrew wil fall back to default domain.
+
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/1hmAO6.jpg' alt='1hmAO6'/>
+
+:::
+
+Homebrew 可以安装 Apple 没有预装但非常需要的东西。它会将软件包安装到独立目录，并将其文件软链接至 `/usr/local`。
 
 :::tip
 
