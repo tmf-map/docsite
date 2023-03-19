@@ -207,12 +207,12 @@ module.exports = {
           label: 'Backend',
           position: 'right',
           // no `to` means activeBaseRegex gets ignored, so it's a must
-          to: 'docs/python/1.get-started/history',
+          to: 'docs/python/01-get-started/01-history',
           activeBaseRegex:
             'docs/(python|sqlalchemy|sql|redis|fastapi|docker|kubernetes)/', // `/` can avoid the confusion such as `javascript`
           items: [
             {
-              to: 'docs/python/1.get-started/history',
+              to: 'docs/python/01-get-started/01-history',
               activeBasePath: 'docs/python/',
               label: 'Python',
             },
