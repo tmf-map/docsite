@@ -131,7 +131,7 @@ class Student:
     name=property(getname, setname)
 ```
 
-In the above example, `property(getname, setname)` returns the property object and assigns it to `name`. Thus, the `name` property hides the [private instance attribute](/docs/python/5.class/access-modifiers#private-members) `__name`. The name property is accessed directly, but internally it will invoke the `getname()` or `setname()` method, as shown below.
+In the above example, `property(getname, setname)` returns the property object and assigns it to `name`. Thus, the `name` property hides the [private instance attribute](/docs/python/05-class/02-access-modifiers#private-members) `__name`. The name property is accessed directly, but internally it will invoke the `getname()` or `setname()` method, as shown below.
 
 ```shell
 >>> std = Student()
