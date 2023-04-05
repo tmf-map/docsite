@@ -18,7 +18,6 @@ const css = require('./css');
 const http = require('./http');
 const typescript = require('./typescript');
 const webpack = require('./webpack');
-const python = require('./python');
 
 module.exports = {
   ...sidebars,
@@ -27,5 +26,4 @@ module.exports = {
   http,
   typescript,
   webpack,
-  python,
 };

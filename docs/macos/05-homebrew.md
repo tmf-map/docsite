@@ -3,9 +3,31 @@ title: Homebrew
 sidebar_label: 4. Homebrew
 ---
 
-[Homebrew](https://brew.sh/) 可以安装 Apple 没有预装但非常需要的东西。它会将软件包安装到独立目录，并将其文件软链接至 `/usr/local`。
+### Introduction
 
-:::note
+[Homebrew](https://brew.sh/) is a package manger, and it supports `macOS`and`Linux`as for now. It mainly includes four part: `brew`, `homebrew-core` , `homebrew-cask`, `homebrew-bottles`.
+
+|名称|说明|
+|-|-|
+|brew|Homebrew 源代码仓库|
+|homebrew-core|Homebrew 核心源|
+|homebrew-cask|提供 macOS 应用和大型二进制文件的安装|
+|homebrew-bottles|预编译二进制软件包|
+
+
+相关用到的脚本 [homebrew-install][github] 都托管在`GitHub`上。
+
+:::tip
+
+Sometimes there maybe a delay and no found for some package when using mirror. In this case, homebrew wil fall back to default domain.
+
+<Img src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/1hmAO6.jpg' alt='1hmAO6'/>
+
+:::
+
+Homebrew 可以安装 Apple 没有预装但非常需要的东西。它会将软件包安装到独立目录，并将其文件软链接至 `/usr/local`。
+
+:::tip
 
 - macOS Intel: `/usr/local`
 - macOS ARM: `/opt/homebrew`
@@ -51,6 +73,15 @@ brew search <package>
 
 ```bash
 brew list
+```
+
+You can also use `grep` to filter package:
+
+```bash
+$ brew list | grep python
+python@3.10
+python@3.8
+python@3.9
 ```
 
 ### 更新 Homebrew 自己
@@ -153,4 +184,112 @@ git -C "$(brew --repo homebrew/cask-drivers)" remote set-url origin https://gith
 git -C "$(brew --repo homebrew/command-not-found)" remote set-url origin https://github.com/Homebrew/homebrew-command-not-found.git
 ```
 
+:::note
+
+In fact, homebrew repo is git repo. You can go to the following path to see what consist of homebrew:
+
+```bash
+$ ll /usr/local/Homebrew/Library/Taps/homebrew
+total 0
+drwxr-xr-x  17 xx  admin   544B Oct  8  2021 homebrew-cask
+drwxr-xr-x  11 xx  admin   352B Feb 24 10:10 homebrew-cask-drivers
+drwxr-xr-x  13 xx  admin   416B Feb 24 10:09 homebrew-cask-fonts
+drwxr-xr-x  12 xx  admin   384B Feb 24 10:06 homebrew-cask-versions
+drwxr-xr-x  14 xx  admin   448B Feb 24 10:10 homebrew-command-not-found
+drwxr-xr-x  16 xx  admin   512B Oct  8  2021 homebrew-core
+drwxr-xr-x  13 xx  admin   416B Jan 17 13:46 homebrew-services
+```
+
+:::
+
+To check homebrew git remote url, run:
+
+```bash
+$ git -C "$(brew --repo homebrew/core)" remote get-url origin
+https://mirrors.ustc.edu.cn/homebrew-core.git
+```
+
+:::tip
+
+If encounter no such file or directory when change mirror url as following: 
+
+```bash
+$ git -C "$(brew --repo)" remote set-url origin https://github.com/Homebrew//brew.git
+$ git -C "$(brew --repo homebrew/core)" remote set-url origin https://github.com/Homebrew/homebrew-core.git
+$ git -C "$(brew --repo homebrew/cask)" remote set-url origin https://github.com/Homebrew/homebrew-cask.git
+$ git -C "$(brew --repo homebrew/cask-versions)" remote set-url origin https://github.com/Homebrew/homebrew-cask-versions.git
+fatal: cannot change to '/usr/local/Homebrew/Library/Taps/homebrew/homebrew-cask-versions': No such file or directory
+```
+
+Go to `/usr/local/Homebrew/Library/Taps/homebrew`, and then run:
+
+```bash
+$ gcl https://mirrors.ustc.edu.cn/homebrew-cask-versions.git
+Cloning into 'homebrew-cask-versions'...
+remote: Enumerating objects: 254739, done.
+remote: Total 254739 (delta 0), reused 0 (delta 0), pack-reused 254739
+Receiving objects: 100% (254739/254739), 66.53 MiB | 15.62 MiB/s, done.
+Resolving deltas: 100% (176688/176688), done.
+```
+
+:::
+
 ## Issues
+
+<details>
+
+<summary>1. There is no permission when run `brew install`</summary>
+
+For Example:
+
+```bash
+$ brew install podman-compose
+==> Downloading https://ghcr.io/v2/homebrew/portable-ruby/portable-ruby/blobs/sha256:1f50bf80583bd436c9542d4fa5ad47df0ef0f0bea22ae710c4f04c42d7560bca
+####################################################################################################################################################################################################################################################### 100.0%
+==> Pouring portable-ruby-2.6.8_1.el_capitan.bottle.tar.gz
+==> Downloading https://formulae.brew.sh/api/formula.jws.json
+######################################################################## 100.0%
+==> Downloading https://formulae.brew.sh/api/cask.jws.json
+######################################################################## 100.0%
+Error: The following directories are not writable by your user:
+/usr/local/bin
+
+You should change the ownership of these directories to your user.
+  sudo chown -R $(whoami) /usr/local/bin
+
+And make sure that your user has write permission.
+  chmod u+w /usr/local/bin
+```
+
+Ensure you have the sudo permission and run as tips:
+
+```bash
+$ sudo chown -R $(whoami) /usr/local/bin
+$ chmod u+w /usr/local/bin
+```
+
+</details>
+
+<details>
+
+<summary>2. homebrew-core is a shallow clone.</summary>
+
+Remove homebrew-core and run `brew update` again.
+
+<Img w="620" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/I8q3Fk.jpg' alt='I8q3Fk'/>
+
+<Img w="620" src='https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/dm9g6s.jpg' alt='dm9g6s'/>
+
+If it's hard to download after removing `homebrew-core`, you can change to other mirror as follows: 
+
+```bash
+cd /usr/local/Homebrew/Library/Taps/homebrew
+git clone https://mirrors.ustc.edu.cn/homebrew-core.git
+```
+
+</details>
+
+## References
+
+1. [清华大学开源软件镜像站: Homebrew / Linuxbrew 镜像使用帮助](https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/)
+1. [USTC Mirror Help 文档: Homebrew Bottles 源使用帮助](https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/)

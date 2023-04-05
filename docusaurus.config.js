@@ -159,7 +159,7 @@ module.exports = {
           // no `to` means activeBaseRegex gets ignored, so it's a must
           to: 'docs/javascript/01-basic/01-js-engine',
           activeBaseRegex:
-            'docs/(javascript|typescript|html|css|react|webpack|nodejs)/',
+            'docs/(javascript|typescript|html|css|react|webpack|nodejs|vite|svg)/',
           items: [
             {
               to: 'docs/javascript/01-basic/01-js-engine',
@@ -196,18 +196,23 @@ module.exports = {
               activeBasePath: 'docs/nodejs/',
               label: 'NodeJS',
             },
+            {
+              to: 'docs/svg/01-get-started',
+              activeBasePath: 'docs/svg/',
+              label: 'SVG',
+            },
           ],
         },
         {
           label: 'Backend',
           position: 'right',
           // no `to` means activeBaseRegex gets ignored, so it's a must
-          to: 'docs/python/1.get-started/history',
+          to: 'docs/python/01-get-started/01-history',
           activeBaseRegex:
             'docs/(python|sqlalchemy|sql|redis|fastapi|docker|kubernetes)/', // `/` can avoid the confusion such as `javascript`
           items: [
             {
-              to: 'docs/python/1.get-started/history',
+              to: 'docs/python/01-get-started/01-history',
               activeBasePath: 'docs/python/',
               label: 'Python',
             },
@@ -243,17 +248,36 @@ module.exports = {
           position: 'right',
           // no `to` means activeBaseRegex gets ignored, so it's a must
           to: 'docs/data-viz-guide/1.get-started/1.overview',
-          activeBaseRegex: 'docs/(data-viz-guide|svg)/',
+          activeBaseRegex: 'docs/(data-viz-guide)/',
           items: [
             {
               to: 'docs/data-viz-guide/1.get-started/1.overview',
               activeBasePath: 'docs/data-viz-guide/',
               label: 'Data Viz Guide',
             },
+          ],
+        },
+        {
+          label: 'Management',
+          position: 'right',
+          // no `to` means activeBaseRegex gets ignored, so it's a must
+          to: 'docs/software-mgmt/01-get-started',
+          activeBaseRegex: 'docs/(software-mgmt|product-mgmt|people-mgmt)/',
+          items: [
             {
-              to: 'docs/svg/1.get-started',
-              activeBasePath: 'docs/svg/',
-              label: 'SVG',
+              to: 'docs/software-mgmt/01-get-started',
+              activeBasePath: 'docs/software-mgmt/',
+              label: 'Software Management',
+            },
+            {
+              to: 'docs/product-mgmt/01-get-started',
+              activeBasePath: 'docs/product-mgmt/',
+              label: 'Product Management',
+            },
+            {
+              to: 'docs/people-mgmt/01-get-started',
+              activeBasePath: 'docs/people-mgmt/',
+              label: 'People Management',
             },
           ],
         },

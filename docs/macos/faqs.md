@@ -54,5 +54,9 @@ sudo pmset -a GPUSwitch 0
 
 <summary>No Xcode or CLT version detected</summary>
 
+```bash
+xcode-select --install
+```
+
 </details>
 

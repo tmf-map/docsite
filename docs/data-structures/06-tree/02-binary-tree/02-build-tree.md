@@ -18,10 +18,7 @@ title: 重建二叉树
 
 返回如下的二叉树：
 
-<div align="center">
-    <img width="160" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/HipCM5.jpg" />
-    <p>图：构造后的二叉树</p>
-</div>
+<Img width="160" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/HipCM5.jpg" legend="图：构造后的二叉树" />
 
 ## 思路
 
@@ -31,10 +28,7 @@ title: 重建二叉树
 4. 对左右子树的前序和中序再分别进行递归求解
 5. 最后返回根节点
 
-<div align="center">
-    <img width="430" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/HxOdfm.jpg" />
-    <p>图：确定根结点后划分左右子树（前序和中序都要划分）</p>
-</div>
+<Img width="430" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/HxOdfm.jpg" legend="图：确定根结点后划分左右子树（前序和中序都要划分）" />
 
 ## 代码实现
 
