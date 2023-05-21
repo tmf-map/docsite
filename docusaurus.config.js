@@ -261,13 +261,13 @@ module.exports = {
           label: 'Management',
           position: 'right',
           // no `to` means activeBaseRegex gets ignored, so it's a must
-          to: 'docs/software-mgmt/01-get-started',
-          activeBaseRegex: 'docs/(software-mgmt|product-mgmt|people-mgmt)/',
+          to: 'docs/project-mgmt/01-get-started',
+          activeBaseRegex: 'docs/(project-mgmt|product-mgmt|people-mgmt)/',
           items: [
             {
-              to: 'docs/software-mgmt/01-get-started',
-              activeBasePath: 'docs/software-mgmt/',
-              label: 'Software Management',
+              to: 'docs/project-mgmt/01-get-started',
+              activeBasePath: 'docs/project-mgmt/',
+              label: 'Project Management',
             },
             {
               to: 'docs/product-mgmt/01-get-started',
@@ -316,7 +316,7 @@ module.exports = {
           items: [
             {
               label: 'Wiki',
-              href: "/docs/wiki/01-get-started",
+              href: '/docs/wiki/01-get-started',
             },
             {
               label: 'Issues',
@@ -384,4 +384,4 @@ module.exports = {
       },
     ],
   ],
-};
+}

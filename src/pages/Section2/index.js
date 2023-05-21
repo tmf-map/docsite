@@ -12,7 +12,7 @@ const techCards = categories?.technology?.map?.((item, idx) => ({
 }))
 
 const mgmtCards = categories?.management?.map?.((item, idx) => ({
-  bannerUrl: `https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/cardBanner${idx + 1}.svg`,
+  bannerUrl: `https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/cardBannerMgmt${idx + 1}.svg`,
   title: item.title.name,
   intro: item.intro.post,
   moreUrl: `#${item.id}`,
