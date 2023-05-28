@@ -69,7 +69,7 @@ module.exports = {
 | webpack-livereload-plugin | 开启监听模式时，代码更改自动刷新页面 |
 | copy-webpack-plugin | 将文件或者文件夹拷贝到构建的输出目录 |
 
-为了更好的理解这些插件，可以点击下载我写的这个[demo](https://github.com/ThinkBucket/webpack-demo/tree/master/plugins)，本文中所有插件在 demo 中都有涉及，可以运行学习一下。
+为了更好的理解这些插件，可以点击下载我写的这个[demo](https://github.com/tmf-map/webpack-demo/tree/master/plugins)，本文中所有插件在 demo 中都有涉及，可以运行学习一下。
 
 :::danger
 
@@ -329,7 +329,7 @@ const webpackConfig = {
 };
 ```
 
-为了更好的理解该插件可以下载[webpack-demo/plugins](https://github.com/ThinkBucket/webpack-demo/tree/master/plugins)执行以下，运行效果如下所示：
+为了更好的理解该插件可以下载[webpack-demo/plugins](https://github.com/tmf-map/webpack-demo/tree/master/plugins)执行以下，运行效果如下所示：
 
 <Img width="700" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200419120449.gif" />
 

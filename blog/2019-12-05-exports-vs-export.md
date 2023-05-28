@@ -31,7 +31,7 @@ ES6 导出模块一般会使用`export`或`export default`，使用两者的语�
 
 ```js
 export var info = {age: 22, name: 'han'};
-var email = 'xiaoming@thinkbucket.com';
+var email = 'xiaoming@tmf-map.com';
 export default email;
 ```
 

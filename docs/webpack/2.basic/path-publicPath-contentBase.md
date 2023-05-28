@@ -10,7 +10,7 @@ title: path 路径
 - `publicPath`在生产环境一般用来**为`CDN`资源添加前缀**，在开启 webpackDevServer 的开发环境中代表**打包后资源在内存中存放的相对路径**，默认为**项目根目录**。
 - `contentBase`是 devServer 对象中的一个字段，决定了 webpackDevServer 启动时**服务器资源的根目录**，默认是**项目的根目录**。
 
-下面我们将结合一个[demo](https://github.com/ThinkBucket/webpack-demo/tree/master/path-publicPath)来分别阐述三者的具体含义。在该 demo 中可以执行`npm run build`进入生产环境，执行`npm run dev`后进入开发环境。demo 中的`package.json`配置如下所示：
+下面我们将结合一个[demo](https://github.com/tmf-map/webpack-demo/tree/master/path-publicPath)来分别阐述三者的具体含义。在该 demo 中可以执行`npm run build`进入生产环境，执行`npm run dev`后进入开发环境。demo 中的`package.json`配置如下所示：
 
 ```js {4,5} title="./package.json"
 {

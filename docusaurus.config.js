@@ -1,15 +1,15 @@
-const path = require('path');
-const npm2yarn = require('@docusaurus/remark-plugin-npm2yarn');
+const path = require('path')
+const npm2yarn = require('@docusaurus/remark-plugin-npm2yarn')
 
-const githubOrg = 'ThinkBucket';
-const githubRepo = 'docsite';
+const githubOrg = 'tmf-map'
+const githubRepo = 'docsite'
 const siteIntro =
-  'Small steps get us to faraway places. Here you can learn web technologies in different fields, including basics, frontend, backend, and data & ai. Keep exploring and stay up-to-date.';
+  'Small steps get us to faraway places. Here you can learn web technologies in different fields, including basics, frontend, backend, and data & ai. Keep exploring and stay up-to-date.'
 
 module.exports = {
   title: githubOrg,
   tagline: 'Small steps get us to faraway places',
-  url: 'https://thinkbucket.cn',
+  url: 'https://tmf-map.netlify.app',
   baseUrl: '/',
   favicon: '/img/favicon/docsite.png',
   organizationName: githubOrg, // Usually your GitHub org/username.
@@ -192,6 +192,11 @@ module.exports = {
               label: 'Webpack',
             },
             {
+              to: 'docs/vite/01-get-started',
+              activeBasePath: 'docs/vite/',
+              label: 'Vite',
+            },
+            {
               to: 'docs/nodejs/1.get-started',
               activeBasePath: 'docs/nodejs/',
               label: 'NodeJS',
@@ -209,12 +214,17 @@ module.exports = {
           // no `to` means activeBaseRegex gets ignored, so it's a must
           to: 'docs/python/01-get-started/01-history',
           activeBaseRegex:
-            'docs/(python|sqlalchemy|sql|redis|fastapi|docker|kubernetes)/', // `/` can avoid the confusion such as `javascript`
+            'docs/(python|shell|sqlalchemy|sql|redis|fastapi|docker|kubernetes|nginx)/', // `/` can avoid the confusion such as `javascript`
           items: [
             {
               to: 'docs/python/01-get-started/01-history',
               activeBasePath: 'docs/python/',
               label: 'Python',
+            },
+            {
+              to: 'docs/shell/01-get-started',
+              activeBasePath: 'docs/shell/',
+              label: 'Shell',
             },
             {
               to: 'docs/fastapi/1.get-started/1.introduction',
@@ -240,6 +250,11 @@ module.exports = {
               to: 'docs/kubernetes/01-get-started/01-introduction',
               activeBasePath: 'docs/kubernetes/',
               label: 'Kubernetes',
+            },
+            {
+              to: 'docs/nginx/01-get-started',
+              activeBasePath: 'docs/nginx/',
+              label: 'Nginx',
             },
           ],
         },

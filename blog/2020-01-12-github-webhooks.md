@@ -46,7 +46,7 @@ SITE_PATH='/home/docsite'
 
 if [ ! -d ${SITE_PATH} ]; then
   cd /home
-  git clone git@github.com:ThinkBucket/docsite.git
+  git clone git@github.com:tmf-map/docsite.git
 fi
 
 cd ${SITE_PATH}

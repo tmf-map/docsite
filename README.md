@@ -1,6 +1,6 @@
-<img align="right" width="100" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/docsite-logo-ghrm.png" alt="ThinkBucket Logo"/>
+<img align="right" width="100" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/docsite-logo-ghrm.png" alt="TMF Map Logo"/>
 
-<h1 align="left"><a href="https://thinkbucket.cn">ThinkBucket</a></h1>
+<h1 align="left"><a href="https://tmf-map.netlify.app">TMF Map</a></h1>
 
 Small steps get us to faraway places.
 
@@ -13,7 +13,7 @@ Small steps get us to faraway places.
 - [Get Started](#get-started)
 - [Development](#development)
   - [Format Document](#format-document)
-  - [Commit and PR Title](#commit-and-pr-title)
+  - [Commit and PR Title](#commit-and-pr-title)[README.md](README.md)
 - [Deployment](#deployment)
 - [Thanks](#thanks)
 
@@ -63,7 +63,7 @@ But make sure the PR title follow above pattern and common types can be:
 - revert
 - remove
 
-For real world examples, please see [commit logs](https://github.com/ThinkBucket/docsite/commits/master).
+For real world examples, please see [commit logs](https://github.com/tmf-map/docsite/commits/master).
 
 ## Deployment
 
@@ -75,6 +75,6 @@ The website can be deployed automatically when master branch has been updated.
 - [Netlify](https://www.netlify.com/): all-in-one platform for automating modern web projects.
 
 [netlify-image]: https://api.netlify.com/api/v1/badges/adf81997-fa00-404e-a542-24a510d41d82/deploy-status
-[dependencies-image]: https://badgen.net/david/dep/ThinkBucket/docsite
-[netlify-url]: (https://app.netlify.com/sites/thinkbucket/deploys)
-[dependencies-url]: https://david-dm.org/ThinkBucket/docsite
+[dependencies-image]: https://badgen.net/david/dep/tmf-map/docsite
+[netlify-url]: (https://app.netlify.com/sites/tmf-map/deploys)
+[dependencies-url]: https://david-dm.org/tmf-map/docsite
