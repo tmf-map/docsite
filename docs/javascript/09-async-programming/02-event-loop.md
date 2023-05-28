@@ -62,7 +62,7 @@ VM84:3 Wed Oct 09 2019 09:29:47 GMT+0800 (中国标准时间) 5 */
 2. 使用 let 定义变量 i
 3. 使用 setTimeOut 的第三个参数，将第三个参数作为 setTimeout 回调函数。
 
-[点击查看三种解决方案](https://tmf-map.github.io/docsite/blog/for循环中的setTimeout)
+[点击查看三种解决方案](/blog/2019/10/09/setTimeout和for循环)
 
 ## 相关拓展
 

@@ -23,7 +23,7 @@ title: DOMContentLoaded & load
 
 ## JS 脚本与 DOMContentLoaded
 
-DOMContentLoaded 事件的触发代表**HTML 文档被加载和解析完成**，由[页面渲染](https://tmf-map.github.io/docsite/docs/web/6.browser-rendering/page-rendering)这一节可知，JS 脚本的加载、解析和执行会会影响 DOM 树的构建，那么两者之间到底是什么关系呢？本节将对两者的关系进行详细的介绍。
+DOMContentLoaded 事件的触发代表**HTML 文档被加载和解析完成**，由[页面渲染](/docs/browser/05-render-load/01-page-rendering)这一节可知，JS 脚本的加载、解析和执行会会影响 DOM 树的构建，那么两者之间到底是什么关系呢？本节将对两者的关系进行详细的介绍。
 
 ## 1. JS 脚本都在 CSS 引入前
 
@@ -63,7 +63,7 @@ DOMContentLoaded 事件的触发代表**HTML 文档被加载和解析完成**，
 
 如果存在 JS 脚本在 CSS 引入后，那么该脚本的执行必须等到 CSSOM 树构建完才能执行，而 DOM 树的构建会因为 js 脚本加载或执行而暂停，直到脚本执行完，才会继续构建 DOM 树。所以 DOMContentLoaded 事件的触发要等待 CSSOM 构建完后触发。
 
-关于 GUI 渲染线程与 JS 线程之间的关系可以参考：[浏览器内核](https://tmf-map.github.io/docsite/docs/web/13.rendering-engine/rendering-engine)
+关于 GUI 渲染线程与 JS 线程之间的关系可以参考：[浏览器内核](/docs/browser/04-browser/03-rendering-engine)
 
 测试代码：
 
@@ -95,13 +95,13 @@ DOMContentLoaded 事件的触发代表**HTML 文档被加载和解析完成**，
 
 ## async 和 defer 与 DOMContentLoaded
 
-由[async 和 defer](https://tmf-map.github.io/docsite/docs/web/6.browser-rendering/async-defer)这一节可知，当外联的 script 添加了 async 或 defer 时，会影响页面 DOM 树的构建。那么这两个属性和 DOMContentLoaded 是什么关系呢？
+由[async 和 defer](/docs/browser/05-render-load/02-script#async--defer)这一节可知，当外联的 script 添加了 async 或 defer 时，会影响页面 DOM 树的构建。那么这两个属性和 DOMContentLoaded 是什么关系呢？
 
 ### 1. async 和 DOMContentLoaded
 
 对于设置了 async 属性的外链 JS 脚本，DOMContentLoaded 事件的触发无需等待样式表加载，当 DOM 构建完成后就可以触发。
 
-由[async 和 defer](https://tmf-map.github.io/docsite/docs/web/6.browser-rendering/async-defer)中可知，设置 async 的脚本加载不影响 DOM 的构建，执行的时候会影响。也就是说如果 DOM 的构建快于 JS 脚本的加载速度，那么 DOMContentLoaded 和外联脚本无关。如果 DOM 构建的速度慢于 JS 脚本的加载时间，那脚本的执行会影响 DOMContentLoaded 的触发时间。
+由[async 和 defer](/docs/browser/05-render-load/02-script#async--defer)中可知，设置 async 的脚本加载不影响 DOM 的构建，执行的时候会影响。也就是说如果 DOM 的构建快于 JS 脚本的加载速度，那么 DOMContentLoaded 和外联脚本无关。如果 DOM 构建的速度慢于 JS 脚本的加载时间，那脚本的执行会影响 DOMContentLoaded 的触发时间。
 
 测试脚本：
 
