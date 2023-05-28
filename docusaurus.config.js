@@ -3,11 +3,12 @@ const npm2yarn = require('@docusaurus/remark-plugin-npm2yarn')
 
 const githubOrg = 'tmf-map'
 const githubRepo = 'docsite'
+const teamName = 'tmf map'
 const siteIntro =
   'Small steps get us to faraway places. Here you can learn web technologies in different fields, including basics, frontend, backend, and data & ai. Keep exploring and stay up-to-date.'
 
 module.exports = {
-  title: githubOrg,
+  title: teamName,
   tagline: 'Small steps get us to faraway places',
   url: 'https://tmf-map.netlify.app',
   baseUrl: '/',
@@ -82,16 +83,16 @@ module.exports = {
   customFields: {
     icp: {
       href: 'http://beian.miit.gov.cn/',
-      text: '冀ICP备19034211号',
+      text: '',
     },
     siteIntro,
   },
   themeConfig: {
     navbar: {
-      title: githubOrg,
+      title: teamName,
       logo: {
         alt: 'Logo',
-        src: 'https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/docsite-logo-white-mode.png',
+        src: 'https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/docsite-logo-blue.svg',
       },
       items: [
         {
@@ -311,7 +312,7 @@ module.exports = {
           title: githubOrg,
           items: [
             {
-              html: `<img class="footer-logo" loading="lazy" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/docsite-logo-dark-mode.png" /><span>${githubOrg}</span>`,
+              html: `<img class="footer-logo" loading="lazy" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/docsite-logo-gray.svg" />`,
             },
             {
               html: `<p class="footer-desc">${siteIntro}</p>`,
@@ -364,7 +365,7 @@ module.exports = {
       //   alt: `${githubOrg} Logo`,
       //   src: '',
       // },
-      copyright: `Copyright © 2019-${new Date().getFullYear()} ${githubOrg}`,
+      copyright: `Copyright © 2019-${new Date().getFullYear()} ${teamName}`,
     },
     prism: {
       theme: require('prism-react-renderer/themes/nightOwl'),
