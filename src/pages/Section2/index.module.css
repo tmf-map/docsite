@@ -77,12 +77,12 @@
     box-shadow: 0px 4px 4px rgba(135, 146, 161, 0.16),
     0px 6px 41px rgba(135, 146, 161, 0.11);
     color: #32435f;
-    cursor: pointer;
+    cursor: default;
 }
 
-.title:hover {
-    border: 1px solid rgba(47, 61, 95, 0.2);
-}
+/*.title:hover {*/
+/*    border: 1px solid rgba(47, 61, 95, 0.2);*/
+/*}*/
 
 .content {
     display: flex;

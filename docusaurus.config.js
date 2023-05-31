@@ -3,12 +3,12 @@ const npm2yarn = require('@docusaurus/remark-plugin-npm2yarn')
 
 const githubOrg = 'tmf-map'
 const githubRepo = 'docsite'
-const teamName = 'tmf map'
+const siteTitle = 'TMF Map'
 const siteIntro =
   'Small steps get us to faraway places. Here you can learn web technologies in different fields, including basics, frontend, backend, and data & ai. Keep exploring and stay up-to-date.'
 
 module.exports = {
-  title: teamName,
+  title: siteTitle,
   tagline: 'Small steps get us to faraway places',
   url: 'https://tmf-map.netlify.app',
   baseUrl: '/',
@@ -89,7 +89,7 @@ module.exports = {
   },
   themeConfig: {
     navbar: {
-      title: teamName,
+      title: siteTitle,
       logo: {
         alt: 'Logo',
         src: 'https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/docsite-logo-blue.svg',
@@ -365,7 +365,7 @@ module.exports = {
       //   alt: `${githubOrg} Logo`,
       //   src: '',
       // },
-      copyright: `Copyright © 2019-${new Date().getFullYear()} ${teamName}`,
+      copyright: `Copyright © 2019-${new Date().getFullYear()} ${siteTitle}`,
     },
     prism: {
       theme: require('prism-react-renderer/themes/nightOwl'),

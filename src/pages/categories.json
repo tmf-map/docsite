@@ -300,6 +300,7 @@
   "management": [
     {
       "id": "project-mgmt",
+      "to": "/docs/project-mgmt/01-get-started",
       "title": {
         "name": "Project Management",
         "position": "left"
@@ -312,6 +313,7 @@
     },
     {
       "id": "product-mgmt",
+      "to": "/docs/product-mgmt/01-get-started",
       "title": {
         "name": "Product Management",
         "position": "right"
@@ -324,6 +326,7 @@
     },
     {
       "id": "people-mgmt",
+      "to": "/docs/people-mgmt/01-get-started",
       "title": {
         "name": "People Management",
         "position": "left"
