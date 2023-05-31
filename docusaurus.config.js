@@ -17,9 +17,9 @@ module.exports = {
   projectName: 'docsite', // Usually your repo name.
   plugins: [
     [
-      require.resolve('@easyops-cn/docusaurus-search-local'),
+      require.resolve("@cmfcmf/docusaurus-search-local"),
       {
-        hashed: true,
+        language: ["en", "zh"],
       },
     ],
     [
@@ -332,7 +332,7 @@ module.exports = {
           items: [
             {
               label: 'Wiki',
-              href: '/docs/wiki/01-get-started',
+              to: '/docs/wiki/01-get-started',
             },
             {
               label: 'Issues',
