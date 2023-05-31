@@ -1,24 +1,25 @@
-const path = require('path');
-const npm2yarn = require('@docusaurus/remark-plugin-npm2yarn');
+const path = require('path')
+const npm2yarn = require('@docusaurus/remark-plugin-npm2yarn')
 
-const githubOrg = 'ThinkBucket';
-const githubRepo = 'docsite';
+const githubOrg = 'tmf-map'
+const githubRepo = 'docsite'
+const siteTitle = 'TMF Map'
 const siteIntro =
-  'Small steps get us to faraway places. Here you can learn web technologies in different fields, including basics, frontend, backend, and data & ai. Keep exploring and stay up-to-date.';
+  'Small steps get us to faraway places. Here you can learn web technologies in different fields, including basics, frontend, backend, and data & ai. Keep exploring and stay up-to-date.'
 
 module.exports = {
-  title: githubOrg,
+  title: siteTitle,
   tagline: 'Small steps get us to faraway places',
-  url: 'https://thinkbucket.cn',
+  url: 'https://tmf-map.netlify.app',
   baseUrl: '/',
   favicon: '/img/favicon/docsite.png',
   organizationName: githubOrg, // Usually your GitHub org/username.
   projectName: 'docsite', // Usually your repo name.
   plugins: [
     [
-      require.resolve('@easyops-cn/docusaurus-search-local'),
+      require.resolve("@cmfcmf/docusaurus-search-local"),
       {
-        hashed: true,
+        language: ["en", "zh"],
       },
     ],
     [
@@ -82,16 +83,16 @@ module.exports = {
   customFields: {
     icp: {
       href: 'http://beian.miit.gov.cn/',
-      text: '冀ICP备19034211号',
+      text: '',
     },
     siteIntro,
   },
   themeConfig: {
     navbar: {
-      title: githubOrg,
+      title: siteTitle,
       logo: {
         alt: 'Logo',
-        src: 'https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/docsite-logo-white-mode.png',
+        src: 'https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/docsite-logo-blue.svg',
       },
       items: [
         {
@@ -192,6 +193,11 @@ module.exports = {
               label: 'Webpack',
             },
             {
+              to: 'docs/vite/01-get-started',
+              activeBasePath: 'docs/vite/',
+              label: 'Vite',
+            },
+            {
               to: 'docs/nodejs/1.get-started',
               activeBasePath: 'docs/nodejs/',
               label: 'NodeJS',
@@ -209,12 +215,17 @@ module.exports = {
           // no `to` means activeBaseRegex gets ignored, so it's a must
           to: 'docs/python/01-get-started/01-history',
           activeBaseRegex:
-            'docs/(python|sqlalchemy|sql|redis|fastapi|docker|kubernetes)/', // `/` can avoid the confusion such as `javascript`
+            'docs/(python|shell|sqlalchemy|sql|redis|fastapi|docker|kubernetes|nginx)/', // `/` can avoid the confusion such as `javascript`
           items: [
             {
               to: 'docs/python/01-get-started/01-history',
               activeBasePath: 'docs/python/',
               label: 'Python',
+            },
+            {
+              to: 'docs/shell/01-get-started',
+              activeBasePath: 'docs/shell/',
+              label: 'Shell',
             },
             {
               to: 'docs/fastapi/1.get-started/1.introduction',
@@ -241,6 +252,11 @@ module.exports = {
               activeBasePath: 'docs/kubernetes/',
               label: 'Kubernetes',
             },
+            {
+              to: 'docs/nginx/01-get-started',
+              activeBasePath: 'docs/nginx/',
+              label: 'Nginx',
+            },
           ],
         },
         {
@@ -261,13 +277,13 @@ module.exports = {
           label: 'Management',
           position: 'right',
           // no `to` means activeBaseRegex gets ignored, so it's a must
-          to: 'docs/software-mgmt/01-get-started',
-          activeBaseRegex: 'docs/(software-mgmt|product-mgmt|people-mgmt)/',
+          to: 'docs/project-mgmt/01-get-started',
+          activeBaseRegex: 'docs/(project-mgmt|product-mgmt|people-mgmt)/',
           items: [
             {
-              to: 'docs/software-mgmt/01-get-started',
-              activeBasePath: 'docs/software-mgmt/',
-              label: 'Software Management',
+              to: 'docs/project-mgmt/01-get-started',
+              activeBasePath: 'docs/project-mgmt/',
+              label: 'Project Management',
             },
             {
               to: 'docs/product-mgmt/01-get-started',
@@ -296,7 +312,7 @@ module.exports = {
           title: githubOrg,
           items: [
             {
-              html: `<img class="footer-logo" loading="lazy" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/docsite-logo-dark-mode.png" /><span>${githubOrg}</span>`,
+              html: `<img class="footer-logo" loading="lazy" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/docsite-logo-gray.svg" />`,
             },
             {
               html: `<p class="footer-desc">${siteIntro}</p>`,
@@ -316,7 +332,7 @@ module.exports = {
           items: [
             {
               label: 'Wiki',
-              href: "/docs/wiki/01-get-started",
+              to: '/docs/wiki/01-get-started',
             },
             {
               label: 'Issues',
@@ -349,7 +365,7 @@ module.exports = {
       //   alt: `${githubOrg} Logo`,
       //   src: '',
       // },
-      copyright: `Copyright © 2019-${new Date().getFullYear()} ${githubOrg}`,
+      copyright: `Copyright © 2019-${new Date().getFullYear()} ${siteTitle}`,
     },
     prism: {
       theme: require('prism-react-renderer/themes/nightOwl'),
@@ -384,4 +400,4 @@ module.exports = {
       },
     ],
   ],
-};
+}

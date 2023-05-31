@@ -8,6 +8,7 @@ html.plugin-pages .navbar {
 }
 
 .navbar .navbar__title {
+  display: none;
   font-family: var(--my-logo-font-family);
   font-weight: 500;
 }
@@ -32,6 +33,10 @@ html.plugin-pages[data-theme='light'] .navbar__items--right > :last-child {
 
 .navbar__logo.active {
   min-width: 185px;
+}
+
+.navbar__brand {
+  margin-right: 0;
 }
 
 /* Sidebar Nav */

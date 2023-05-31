@@ -299,39 +299,42 @@
   ],
   "management": [
     {
-      "id": "software-management",
+      "id": "project-mgmt",
+      "to": "/docs/project-mgmt/01-get-started",
       "title": {
-        "name": "Software Management",
+        "name": "Project Management",
         "position": "left"
       },
       "intro": {
-        "pre": "Learning web technologies is like building a house. Laying a strong foundation is the first and most important step.",
-        "emphasis": "Rome wasn't built in a day.",
-        "post": "Like building a house, learning the basics takes some time. The road to true success is never smooth and easy. When starting this journey, it's necessary not only to understand some underlying theories, but also to be proficient in development tools. Those will be very helpful for the further development."
+        "pre": "",
+        "emphasis": "",
+        "post": "Project management is the practice of applying knowledge, skills, tools, and techniques to complete a project according to specific requirements. Proper execution of this practice comes down to identifying the problem, creating a plan to solve the problem, and then executing that plan until the problem has been solved. That may sound simple, but there is a lot that goes into it at every stage of the process. With the proper management plan, the project will be completed on time and within budget."
       }
     },
     {
-      "id": "product-management",
+      "id": "product-mgmt",
+      "to": "/docs/product-mgmt/01-get-started",
       "title": {
         "name": "Product Management",
         "position": "right"
       },
       "intro": {
-        "pre": "Frontend is the client side of the website that the user interacts with directly. It is also referred to as the \"presentation layer\".",
-        "emphasis": "What you see is what you get.",
-        "post": "It includes everything that users experience directly. JavaScript, HTML and CSS are the languages used for frontend development. The structure, design, behavior, and content of everything seen on browser screens when websites, web applications, or mobile apps are opened up, is implemented by frontend developers."
+        "pre": "",
+        "emphasis": "",
+        "post": "A product manager sets the strategy, roadmap, and feature definition for a product or product line. The role may also include product marketing, forecasting, and profit and loss (P&L) responsibilities. Product managers analyze market and competitive conditions, laying out a product vision that is differentiated and delivers unique value based on customer demands."
       }
     },
     {
-      "id": "people-management",
+      "id": "people-mgmt",
+      "to": "/docs/people-mgmt/01-get-started",
       "title": {
         "name": "People Management",
         "position": "left"
       },
       "intro": {
-        "pre": "Backend is the server side of the website. It stores and arranges data, and it's also referred to as the \"data access layer\".",
-        "emphasis": "Powers client side from behind the scenes.",
-        "post": "It is the part of the website that you cannot see and interact with. It includes all the code needed to build out the database, server, and application. From database migrations to API integrations to setting up the server side technologies that make a website tick."
+        "pre": "",
+        "emphasis": "",
+        "post": "People management is the process of hiring, leading, and developing team members to support the organization's overall mission. People managers handle all people-related tasks involving new talent, employee engagement, and career development. They are often responsible for the onboarding and training processes of new employees. After onboarding, people managers then support and work alongside managers to provide feedback and mentorship to employees."
       }
     }
   ],

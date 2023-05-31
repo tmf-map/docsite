@@ -56,7 +56,7 @@ Chrome 的渲染机制要先构建 DOM 树和 CSSOM 树，二者都得构建完�
 
 ## 相关拓展
 
-1. [DOMContentLoaded, 深入了解一下](https://thinkbucket.github.io/docsite/docs/web/6.browser-rendering/DOMContentLoaded)
+1. [DOMContentLoaded, 深入了解一下](/docs/browser/05-render-load/DOMContentLoaded)
 
 ## 参考资料
 

@@ -3,6 +3,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import request from '@http-util/request'
 import categories from '../categories'
 import styles from './index.module.css'
+import Link from '@docusaurus/Link'
 
 const techCards = categories?.technology?.map?.((item, idx) => ({
   bannerUrl: `https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/cardBanner${idx + 1}.svg`,
@@ -12,10 +13,11 @@ const techCards = categories?.technology?.map?.((item, idx) => ({
 }))
 
 const mgmtCards = categories?.management?.map?.((item, idx) => ({
-  bannerUrl: `https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/cardBanner${idx + 1}.svg`,
+  bannerUrl: `https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/cardBannerMgmt${idx + 1}.svg`,
   title: item.title.name,
   intro: item.intro.post,
   moreUrl: `#${item.id}`,
+  ['to']: item?.to
 }))
 
 const BASE_URL = 'https://api.github.com'
@@ -60,7 +62,7 @@ const getAllCommitsCount = (owner, repo, sha) => {
   return commitCount
 }
 
-const Card = ({ bannerUrl, title, intro, moreUrl }) => {
+const Card = ({ bannerUrl, title, intro, moreUrl, to }) => {
   useEffect(() => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
@@ -72,14 +74,18 @@ const Card = ({ bannerUrl, title, intro, moreUrl }) => {
     })
   }, [])
 
-  return (<a className={styles.card} href={moreUrl}>
-    <img src={bannerUrl} alt={title} className={styles.cardBanner}/>
-    <div className={styles.cardTitle}>{title}</div>
-    <p className={styles.cardIntro}>{intro}</p>
-    {/* <div className={styles.cardReadMore}>
+  const children = (
+    <>
+      <img src={bannerUrl} alt={title} className={styles.cardBanner}/>
+      <div className={styles.cardTitle}>{title}</div>
+      <p className={styles.cardIntro}>{intro}</p>
+      {/* <div className={styles.cardReadMore}>
         <a href={moreUrl}>Read More</a>
       </div> */}
-  </a>)
+    </>
+  )
+
+  return to ? <Link to={to} className={styles.card} >{children}</Link> : <a className={styles.card} href={moreUrl}>{children}</a>
 }
 
 const Section2 = () => {
@@ -141,23 +147,27 @@ const Section2 = () => {
       <div className={styles.whatWeDo}>
         <p className={styles.title}>Technology</p>
         <div className={styles.treeEdgeTop}>
-          <img className={styles.treeEdgeImg1} src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/tree-edge-1.svg" alt=""/>
+          <img className={styles.treeEdgeImg1} src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/tree-edge-1.svg"
+               alt=""/>
         </div>
         <div className={styles.content}>
           {techCards?.map(card => (<Card key={card.title} {...card} />))}
         </div>
         <div className={styles.treeEdgeBottom}>
-          <img className={styles.treeEdgeImg2} src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/tree-edge-2.svg" alt=""/>
+          <img className={styles.treeEdgeImg2} src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/tree-edge-2.svg"
+               alt=""/>
         </div>
         <p className={styles.title}>Management</p>
         <div className={styles.treeEdgeTop}>
-          <img className={styles.treeEdgeImg3} src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/tree-edge-3.svg" alt=""/>
+          <img className={styles.treeEdgeImg3} src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/tree-edge-3.svg"
+               alt=""/>
         </div>
         <div className={styles.content}>
           {mgmtCards?.map(card => (<Card key={card.title} {...card} />))}
         </div>
         <div className={styles.treeEdgeBottom}>
-          <img className={styles.treeEdgeImg4} src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/tree-edge-4.svg" alt=""/>
+          <img className={styles.treeEdgeImg4} src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/tree-edge-4.svg"
+               alt=""/>
         </div>
         <div className={styles.title}>Future</div>
       </div>

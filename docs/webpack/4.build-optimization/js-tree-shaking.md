@@ -16,7 +16,7 @@ tree shaking 要求必须是`ES6`模块，不支持`commonJS`模块，如果引�
 
 :::
 
-下面我们将通过一个 demo 来讲述 tree shaking 的相关内容，demo 中的相关代码已经上传到`github`仓库[js-tree-shaking](https://github.com/ThinkBucket/webpack-demo/tree/master/js-tree-shaking)中，可以下载下来执行一下。
+下面我们将通过一个 demo 来讲述 tree shaking 的相关内容，demo 中的相关代码已经上传到`github`仓库[js-tree-shaking](https://github.com/tmf-map/webpack-demo/tree/master/js-tree-shaking)中，可以下载下来执行一下。
 
 ## 相关代码
 

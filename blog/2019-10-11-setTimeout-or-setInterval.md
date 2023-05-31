@@ -15,7 +15,7 @@ tags: [setTimeout, setInterval]
 
 ## 为什么要模拟
 
-为什么使用`setTimeout`模仿`setInterval`呢？这需要通过事件循环机制来解释，如果不清楚的话可以点击查看[事件循环机制](https://thinkbucket.github.io/docsite/docs/javascript/8.async-programming/event-loop)和[浏览器内核](https://thinkbucket.github.io/docsite/docs/web/13.rendering-engine/rendering-engine)相关内容。
+为什么使用`setTimeout`模仿`setInterval`呢？这需要通过事件循环机制来解释，如果不清楚的话可以点击查看[事件循环机制](/docs/javascript/09-async-programming/02-event-loop)和[浏览器内核](/docs/browser/04-browser/03-rendering-engine)相关内容。
 
 由于`setInterval`或`setTimeout`不是 JS 中定义的，他们并不会在 JS 引擎线程中直接执行。当代码执行到`setInterval`或`setTimeout`时，事件循环机制会为`setTimeout`或`setInterval`开一个定时器线程并开始计时，等定义的时间过后，将回调函数放到回调队列里，等到函数调用栈空（`JS`引擎线程空闲）时，将回调函数放入函数调用栈（使用 JS 引擎线程）执行。
 

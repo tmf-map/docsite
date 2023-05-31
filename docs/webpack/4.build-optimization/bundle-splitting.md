@@ -154,7 +154,7 @@ module.exports = {
 
 ## 结果展示
 
-项目中的所有代码已经上传到`github`仓库[resource-extraction](https://github.com/ThinkBucket/webpack-demo/tree/master/resource-extraction)中，可以下载下来执行一下。
+项目中的所有代码已经上传到`github`仓库[resource-extraction](https://github.com/tmf-map/webpack-demo/tree/master/resource-extraction)中，可以下载下来执行一下。
 
 当我们未配置`optimization.splitChunks`时，执行`npm run build`的构建结果如下：
 

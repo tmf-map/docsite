@@ -119,7 +119,7 @@ module.exports = {
 };
 ```
 
-为了更好的理解`babel-loader`，可以下载我所编写的小[demo](https://github.com/ThinkBucket/webpack-demo/tree/master/loaders/babel-loader)执行一下。demo 打包的结果如下所示：
+为了更好的理解`babel-loader`，可以下载我所编写的小[demo](https://github.com/tmf-map/webpack-demo/tree/master/loaders/babel-loader)执行一下。demo 打包的结果如下所示：
 
 <Img width="600" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200416145533.png" />
 
@@ -206,7 +206,7 @@ module.exports = {
 
 通过上例可以看出，先`postcss-loader`为匹配的`.less`文件中的 CSS3 属性添加前缀，再用`less-loader`将 Less 代码编译为 CSS 代码，然后再使用 `css-loader` 加载和解析 CSS 代码，最后将其交给 `style-loader` 插入到网页中去。
 
-为了更好的理解与样式相关的`loader`，可以下载我所编写的小[demo](https://github.com/ThinkBucket/webpack-demo/tree/master/loaders/css-loader)执行一下。demo 打包后的结果如下图所示：
+为了更好的理解与样式相关的`loader`，可以下载我所编写的小[demo](https://github.com/tmf-map/webpack-demo/tree/master/loaders/css-loader)执行一下。demo 打包后的结果如下图所示：
 
 <Img width="600" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200416145040.png" />
 
@@ -271,7 +271,7 @@ module.exports = {
 };
 ```
 
-为了更好的理解`file-loader`，可以下载我所编写的小[demo](https://github.com/ThinkBucket/webpack-demo/tree/master/loaders/file-loader)执行一下。该 demo 的打包结果如下图所示：
+为了更好的理解`file-loader`，可以下载我所编写的小[demo](https://github.com/tmf-map/webpack-demo/tree/master/loaders/file-loader)执行一下。该 demo 的打包结果如下图所示：
 
 <Img width="600" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200416145950.png" />
 
@@ -352,7 +352,7 @@ module.exports = {
 };
 ```
 
-为了更好的理解`url-loader`，可以下载我所编写的小[demo](https://github.com/ThinkBucket/webpack-demo/tree/master/loaders/url-loader)执行一下。
+为了更好的理解`url-loader`，可以下载我所编写的小[demo](https://github.com/tmf-map/webpack-demo/tree/master/loaders/url-loader)执行一下。
 
 在该 demo 中，`src/images`目录下创建的图片`logo.png`的体积小于`10kb`，在`src/font`文件下导入的字体库`LiuJianMaoCao-Regular`的体积大于`10kb`。
 
@@ -409,7 +409,7 @@ module.exports = {
 };
 ```
 
-为了更好的理解`ts-loader`，可以下载我编写的小[demo](https://github.com/ThinkBucket/webpack-demo/tree/master/loaders/ts-loader)执行一下。打包后的结果如下图所示
+为了更好的理解`ts-loader`，可以下载我编写的小[demo](https://github.com/tmf-map/webpack-demo/tree/master/loaders/ts-loader)执行一下。打包后的结果如下图所示
 
 <Img width="600" src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/20200416143400.png" />
 

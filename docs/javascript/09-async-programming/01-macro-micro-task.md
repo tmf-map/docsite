@@ -83,13 +83,13 @@ setTimeout(function () {
 
 我们都知道`setTimeout`和`setInterval`是异步任务的定时器，需要添加到任务队列等待主线程执行，那么使用`setTimeout`模拟实现`setInterval`，会有区别吗？
 
-如果感兴趣，想深入了解两者的不同，可以[点击此处查看](https://thinkbucket.github.io/docsite/blog/setTimeout-or-setInterval)
+如果感兴趣，想深入了解两者的不同，可以[点击此处查看](/blog/2019/10/11/setTimeout-or-setInterval)
 
 #### setTimeout 应用拓展
 
 1. [防抖和节流教程](https://css-tricks.com/debouncing-throttling-explained-examples/)
-2. [防抖源码实现](https://github.com/ThinkBucket/codebox/blob/master/src/debounce.js)
-3. [节流源码实现](https://github.com/ThinkBucket/codebox/blob/master/src/throttle.js)
+2. [防抖源码实现](https://github.com/tmf-map/codebox/blob/master/src/debounce.js)
+3. [节流源码实现](https://github.com/tmf-map/codebox/blob/master/src/throttle.js)
 
 ## 微任务
 

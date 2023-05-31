@@ -157,7 +157,7 @@ module.exports = {
 
 <Img width="400"  src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/lazy-import.gif" />
 
-项目中所有的代码和配置已经上传到`github`仓库的[code-split](https://github.com/ThinkBucket/webpack-demo/tree/master/code-split)中，可以下载运行一下。
+项目中所有的代码和配置已经上传到`github`仓库的[code-split](https://github.com/tmf-map/webpack-demo/tree/master/code-split)中，可以下载运行一下。
 
 ## 魔法注释
 
@@ -246,7 +246,7 @@ src
 
 :::
 
-添加魔法注释后的代码可以点击`github`仓库的[code-split-1](https://github.com/ThinkBucket/webpack-demo/tree/master/code-split-1)下载运行。
+添加魔法注释后的代码可以点击`github`仓库的[code-split-1](https://github.com/tmf-map/webpack-demo/tree/master/code-split-1)下载运行。
 
 ## 参考资料
 
