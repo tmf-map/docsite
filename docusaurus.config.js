@@ -243,7 +243,7 @@ module.exports = {
               label: 'SQL',
             },
             {
-              to: 'docs/docker/1.get-started/1.what-is-docker',
+              to: 'docs/docker/01-get-started/01-what-is-docker',
               activeBasePath: 'docs/docker/',
               label: 'Docker',
             },
