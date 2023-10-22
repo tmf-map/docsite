@@ -100,28 +100,13 @@ module.exports = {
           position: 'left',
         },
         {
-          label: 'Basics',
+          label: 'Frontend',
           position: 'right',
           // no `to` means activeBaseRegex gets ignored, so it's a must
-          to: 'docs/data-structures/01-get-started/01-asymptotic-notations',
+          to: 'docs/javascript/01-basic/01-js-engine',
           activeBaseRegex:
-            'docs/(algorithms|data-structures|design-patterns|http|browser|web-security|linux|git|macos)/',
+            'docs/(javascript|typescript|html|css|react|webpack|nodejs|vite|data-viz-guide|svg)/',
           items: [
-            {
-              to: 'docs/data-structures/01-get-started/01-asymptotic-notations',
-              activeBasePath: 'docs/data-structures/',
-              label: 'Data Structures',
-            },
-            {
-              to: 'docs/algorithms/01-get-started/01-overview',
-              activeBasePath: 'docs/algorithms/',
-              label: 'Algorithms',
-            },
-            {
-              to: 'docs/design-patterns/1.get-started',
-              activeBasePath: 'docs/design-patterns/',
-              label: 'Design Patterns',
-            },
             {
               to: 'docs/http/1.get-started',
               activeBasePath: 'docs/http/',
@@ -137,31 +122,6 @@ module.exports = {
               activeBasePath: 'docs/web-security/',
               label: 'Web Security',
             },
-            {
-              to: 'docs/linux/1.get-started/1.introduction',
-              activeBasePath: 'docs/linux/',
-              label: 'Linux',
-            },
-            {
-              to: 'docs/git/01-get-started',
-              activeBasePath: 'docs/git/',
-              label: 'Git',
-            },
-            {
-              to: 'docs/macos/01-get-started',
-              activeBasePath: 'docs/macos/',
-              label: 'macOS',
-            },
-          ],
-        },
-        {
-          label: 'Frontend',
-          position: 'right',
-          // no `to` means activeBaseRegex gets ignored, so it's a must
-          to: 'docs/javascript/01-basic/01-js-engine',
-          activeBaseRegex:
-            'docs/(javascript|typescript|html|css|react|webpack|nodejs|vite|svg)/',
-          items: [
             {
               to: 'docs/javascript/01-basic/01-js-engine',
               activeBasePath: 'docs/javascript/',
@@ -202,11 +162,6 @@ module.exports = {
               activeBasePath: 'docs/nodejs/',
               label: 'NodeJS',
             },
-            {
-              to: 'docs/svg/01-get-started',
-              activeBasePath: 'docs/svg/',
-              label: 'SVG',
-            },
           ],
         },
         {
@@ -217,6 +172,26 @@ module.exports = {
           activeBaseRegex:
             'docs/(python|shell|sqlalchemy|sql|redis|fastapi|docker|kubernetes|nginx)/', // `/` can avoid the confusion such as `javascript`
           items: [
+            {
+              to: 'docs/data-structures/01-get-started/01-asymptotic-notations',
+              activeBasePath: 'docs/data-structures/',
+              label: 'Data Structures',
+            },
+            {
+              to: 'docs/algorithms/01-get-started/01-overview',
+              activeBasePath: 'docs/algorithms/',
+              label: 'Algorithms',
+            },
+            {
+              to: 'docs/linux/1.get-started/1.introduction',
+              activeBasePath: 'docs/linux/',
+              label: 'Linux',
+            },
+            {
+              to: 'docs/design-patterns/1.get-started',
+              activeBasePath: 'docs/design-patterns/',
+              label: 'Design Patterns',
+            },
             {
               to: 'docs/python/01-get-started/01-history',
               activeBasePath: 'docs/python/',
@@ -260,16 +235,39 @@ module.exports = {
           ],
         },
         {
-          label: 'Data & AI',
+          label: 'User Experience',
           position: 'right',
           // no `to` means activeBaseRegex gets ignored, so it's a must
-          to: 'docs/data-viz-guide/1.get-started/1.overview',
-          activeBaseRegex: 'docs/(data-viz-guide)/',
+          to: 'docs/data-structures/01-get-started/01-asymptotic-notations',
+          items: [
+
+            {
+              to: 'docs/git/01-get-started',
+              activeBasePath: 'docs/git/',
+              label: 'Git',
+            },
+            {
+              to: 'docs/macos/01-get-started',
+              activeBasePath: 'docs/macos/',
+              label: 'macOS',
+            },
+          ],
+        },
+        {
+          label: 'Visualization',
+          position: 'right',
+          // no `to` means activeBaseRegex gets ignored, so it's a must
+          to: 'docs/data-structures/01-get-started/01-asymptotic-notations',
           items: [
             {
               to: 'docs/data-viz-guide/1.get-started/1.overview',
               activeBasePath: 'docs/data-viz-guide/',
               label: 'Data Viz Guide',
+            },
+            {
+              to: 'docs/svg/01-get-started',
+              activeBasePath: 'docs/svg/',
+              label: 'SVG',
             },
           ],
         },
@@ -294,6 +292,20 @@ module.exports = {
               to: 'docs/people-mgmt/01-get-started',
               activeBasePath: 'docs/people-mgmt/',
               label: 'People Management',
+            },
+          ],
+        },
+        {
+          label: 'Metaverse',
+          position: 'right',
+          // no `to` means activeBaseRegex gets ignored, so it's a must
+          to: 'docs/project-mgmt/01-get-started',
+          activeBaseRegex: 'docs/(project-mgmt|product-mgmt|people-mgmt)/',
+          items: [
+            {
+              to: 'docs/project-mgmt/01-get-started',
+              activeBasePath: 'docs/project-mgmt/',
+              label: 'AR/MR/VR',
             },
           ],
         },
