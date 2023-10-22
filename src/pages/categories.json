@@ -1,32 +1,18 @@
 {
   "technology": [
     {
-      "id": "basics",
+      "id": "frontend",
+      "level": "Proficient",
       "title": {
-        "name": "Basics",
-        "position": "left"
+        "name": "Frontend",
+        "position": "right"
       },
       "intro": {
-        "pre": "Learning web technologies is like building a house. Laying a strong foundation is the first and most important step.",
-        "emphasis": "Rome wasn't built in a day.",
-        "post": "Like building a house, learning the basics takes some time. The road to true success is never smooth and easy. When starting this journey, it's necessary not only to understand some underlying theories, but also to be proficient in development tools. Those will be very helpful for the further development."
+        "pre": "Frontend is the client side of the website that the user interacts with directly. It is also referred to as the \"presentation layer\".",
+        "emphasis": "What you see is what you get.",
+        "post": "It includes everything that users experience directly. JavaScript, HTML and CSS are the languages used for frontend development. The structure, design, behavior, and content of everything seen on browser screens when websites, web applications, or mobile apps are opened up, is implemented by frontend developers."
       },
       "content": [
-        {
-          "title": "Programs",
-          "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/book-2-line.svg",
-          "list": [
-            {
-              "name": "Data Structures"
-            },
-            {
-              "name": "Algorithms"
-            },
-            {
-              "name": "Design Patterns"
-            }
-          ]
-        },
         {
           "title": "Web",
           "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/global-line.svg",
@@ -42,53 +28,6 @@
             }
           ]
         },
-        {
-          "title": "OS",
-          "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/terminal-window-line.svg",
-          "list": [
-            {
-              "name": "Linux"
-            },
-            {
-              "name": "macOS"
-            },
-            {
-              "name": "Windows"
-            }
-          ]
-        },
-        {
-          "title": "Devtools",
-          "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/tools-fill.svg",
-          "list": [
-            {
-              "name": "Git"
-            },
-            {
-              "name": "IDE"
-            },
-            {
-              "name": "Vim"
-            },
-            {
-              "name": "UML"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "frontend",
-      "title": {
-        "name": "Frontend",
-        "position": "right"
-      },
-      "intro": {
-        "pre": "Frontend is the client side of the website that the user interacts with directly. It is also referred to as the \"presentation layer\".",
-        "emphasis": "What you see is what you get.",
-        "post": "It includes everything that users experience directly. JavaScript, HTML and CSS are the languages used for frontend development. The structure, design, behavior, and content of everything seen on browser screens when websites, web applications, or mobile apps are opened up, is implemented by frontend developers."
-      },
-      "content": [
         {
           "title": "Languages",
           "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/code-s-slash-fill.svg",
@@ -115,10 +54,10 @@
               "name": "React"
             },
             {
-              "name": "Tests"
+              "name": "NodeJS"
             },
             {
-              "name": "NodeJS"
+              "name": "Testing"
             }
           ]
         },
@@ -133,26 +72,12 @@
               "name": "Vite"
             }
           ]
-        },
-        {
-          "title": "Visualization",
-          "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/line-chart-line.svg",
-          "list": [
-            {
-              "name": "SVG"
-            },
-            {
-              "name": "Canvas2d"
-            },
-            {
-              "name": "WebGL & WebGPU"
-            }
-          ]
         }
       ]
     },
     {
       "id": "backend",
+      "level": "Competent",
       "title": {
         "name": "Backend",
         "position": "left"
@@ -163,6 +88,24 @@
         "post": "It is the part of the website that you cannot see and interact with. It includes all the code needed to build out the database, server, and application. From database migrations to API integrations to setting up the server side technologies that make a website tick."
       },
       "content": [
+        {
+          "title": "Basics",
+          "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/book-2-line.svg",
+          "list": [
+            {
+              "name": "Data Structures"
+            },
+            {
+              "name": "Algorithms"
+            },
+            {
+              "name": "Linux"
+            },
+            {
+              "name": "Design Patterns"
+            }
+          ]
+        },
         {
           "title": "Languages",
           "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/code-s-slash-fill.svg",
@@ -223,9 +166,24 @@
       ]
     },
     {
-      "id": "data-ai",
+      "id": "basics",
+      "level": "Beginner",
       "title": {
-        "name": "Data & AI",
+        "name": "User Experience",
+        "position": "left"
+      },
+      "intro": {
+        "pre": "Learning web technologies is like building a house. Laying a strong foundation is the first and most important step.",
+        "emphasis": "Rome wasn't built in a day.",
+        "post": "Like building a house, learning the basics takes some time. The road to true success is never smooth and easy. When starting this journey, it's necessary not only to understand some underlying theories, but also to be proficient in development tools. Those will be very helpful for the further development."
+      },
+      "content": []
+    },
+    {
+      "id": "data-ai",
+      "level": "Beginner",
+      "title": {
+        "name": "Visualization",
         "position": "right"
       },
       "intro": {
@@ -235,54 +193,6 @@
       },
       "content": [
         {
-          "title": "DataSource",
-          "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/database-line.svg",
-          "list": [
-            {
-              "name": "Web Crawler"
-            },
-            {
-              "name": "Tracking"
-            },
-            {
-              "name": "Warehouse"
-            }
-          ]
-        },
-        {
-          "title": "Preparation",
-          "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/data-preprocessing.svg",
-          "list": [
-            {
-              "name": "Cleaning"
-            },
-            {
-              "name": "Integration"
-            },
-            {
-              "name": "Transformation"
-            }
-          ]
-        },
-        {
-          "title": "Mining",
-          "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/search-eye-line.svg",
-          "list": [
-            {
-              "name": "Maths"
-            },
-            {
-              "name": "DM Algorithms"
-            },
-            {
-              "name": "Modeling"
-            },
-            {
-              "name": "A/B Test"
-            }
-          ]
-        },
-        {
           "title": "Visualization",
           "icon": "https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/line-chart-line.svg",
           "list": [
@@ -290,7 +200,13 @@
               "name": "Data Viz Guide"
             },
             {
-              "name": "Python Viz Libs"
+              "name": "SVG"
+            },
+            {
+              "name": "Canvas2d"
+            },
+            {
+              "name": "WebGL & WebGPU"
             }
           ]
         }
@@ -300,6 +216,7 @@
   "management": [
     {
       "id": "project-mgmt",
+      "level": "Competent",
       "to": "/docs/project-mgmt/01-get-started",
       "title": {
         "name": "Project Management",
@@ -313,6 +230,7 @@
     },
     {
       "id": "product-mgmt",
+      "level": "Competent",
       "to": "/docs/product-mgmt/01-get-started",
       "title": {
         "name": "Product Management",
@@ -326,6 +244,7 @@
     },
     {
       "id": "people-mgmt",
+      "level": "Beginner",
       "to": "/docs/people-mgmt/01-get-started",
       "title": {
         "name": "People Management",
@@ -338,5 +257,48 @@
       }
     }
   ],
-  "future": []
+  "metaverse": [
+    {
+      "id": "xr",
+      "level": "Beginner",
+      "to": "/docs/xr/01-get-started",
+      "title": {
+        "name": "AR/MR/VR",
+        "position": "left"
+      },
+      "intro": {
+        "pre": "",
+        "emphasis": "",
+        "post": "Project management is the practice of applying knowledge, skills, tools, and techniques to complete a project according to specific requirements. Proper execution of this practice comes down to identifying the problem, creating a plan to solve the problem, and then executing that plan until the problem has been solved. That may sound simple, but there is a lot that goes into it at every stage of the process. With the proper management plan, the project will be completed on time and within budget."
+      }
+    },
+    {
+      "id": "xr2",
+      "level": "Beginner",
+      "to": "/docs/xr/01-get-started",
+      "title": {
+        "name": "交互感知",
+        "position": "left"
+      },
+      "intro": {
+        "pre": "",
+        "emphasis": "",
+        "post": "Project management is the practice of applying knowledge, skills, tools, and techniques to complete a project according to specific requirements. Proper execution of this practice comes down to identifying the problem, creating a plan to solve the problem, and then executing that plan until the problem has been solved. That may sound simple, but there is a lot that goes into it at every stage of the process. With the proper management plan, the project will be completed on time and within budget."
+      }
+    },
+    {
+      "id": "xr3",
+      "level": "Beginner",
+      "to": "/docs/xr/01-get-started",
+      "title": {
+        "name": "虚拟仿真",
+        "position": "left"
+      },
+      "intro": {
+        "pre": "",
+        "emphasis": "",
+        "post": "Project management is the practice of applying knowledge, skills, tools, and techniques to complete a project according to specific requirements. Proper execution of this practice comes down to identifying the problem, creating a plan to solve the problem, and then executing that plan until the problem has been solved. That may sound simple, but there is a lot that goes into it at every stage of the process. With the proper management plan, the project will be completed on time and within budget."
+      }
+    }
+  ]
 }

@@ -1,0 +1,18 @@
+.section3 {
+  background: #fff;
+}
+
+.container {
+  max-width: 1880px;
+  margin: 0 auto;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.title {
+  color: #000;
+  font-size: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 300;
+}

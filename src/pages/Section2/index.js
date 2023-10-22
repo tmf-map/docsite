@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import request from '@http-util/request'
 import categories from '../categories'
+import Badge from './Badge';
 import styles from './index.module.css'
 import Link from '@docusaurus/Link'
 
 const techCards = categories?.technology?.map?.((item, idx) => ({
   bannerUrl: `https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/cardBanner${idx + 1}.svg`,
+  level: item.level,
   title: item.title.name,
   intro: item.intro.post,
   moreUrl: `#${item.id}`,
@@ -14,6 +16,16 @@ const techCards = categories?.technology?.map?.((item, idx) => ({
 
 const mgmtCards = categories?.management?.map?.((item, idx) => ({
   bannerUrl: `https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/cardBannerMgmt${idx + 1}.svg`,
+  level: item.level,
+  title: item.title.name,
+  intro: item.intro.post,
+  moreUrl: `#${item.id}`,
+  ['to']: item?.to
+}))
+
+const metaverseCards = categories?.metaverse?.map?.((item, idx) => ({
+  bannerUrl: `https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/cardBannerMgmt2.svg`,
+  level: item.level,
   title: item.title.name,
   intro: item.intro.post,
   moreUrl: `#${item.id}`,
@@ -62,7 +74,7 @@ const getAllCommitsCount = (owner, repo, sha) => {
   return commitCount
 }
 
-const Card = ({ bannerUrl, title, intro, moreUrl, to }) => {
+const Card = ({ bannerUrl, title, intro, moreUrl, to, level }) => {
   useEffect(() => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
@@ -75,14 +87,15 @@ const Card = ({ bannerUrl, title, intro, moreUrl, to }) => {
   }, [])
 
   const children = (
-    <>
+    <div className={styles.card}>
       <img src={bannerUrl} alt={title} className={styles.cardBanner}/>
+      {level && <Badge>{level}</Badge>}
       <div className={styles.cardTitle}>{title}</div>
       <p className={styles.cardIntro}>{intro}</p>
       {/* <div className={styles.cardReadMore}>
         <a href={moreUrl}>Read More</a>
       </div> */}
-    </>
+    </div>
   )
 
   return to ? <Link to={to} className={styles.card} >{children}</Link> : <a className={styles.card} href={moreUrl}>{children}</a>
@@ -169,7 +182,14 @@ const Section2 = () => {
           <img className={styles.treeEdgeImg4} src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/tree-edge-4.svg"
                alt=""/>
         </div>
-        <div className={styles.title}>Future</div>
+        <p className={styles.title}>Metaverse</p>
+        <div className={styles.treeEdgeTop}>
+          <img className={styles.treeEdgeImg3} src="https://cosmos-x.oss-cn-hangzhou.aliyuncs.com/tree-edge-3.svg"
+               alt=""/>
+        </div>
+        <div className={styles.content} style={{marginBottom: 0}}>
+          {metaverseCards?.map(card => (<Card key={card.title} {...card} />))}
+        </div>
       </div>
     </div>
   </main>)

@@ -196,3 +196,17 @@
 .treeEdgeImg4 {
     width: 40rem;
 }
+
+.card {
+  position: relative;
+}
+
+.badge {
+  position: absolute;
+  right: 0;
+  /* background-color: #b55b31; */
+  color: #fff;
+  padding: 3px 12px;
+  font-size: 10px;
+  border-bottom-left-radius: 0.6rem;
+}
